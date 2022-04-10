@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "target": "es2016",
+      "module": "commonjs",
+      "esModuleInterop": true,
+      // "moduleResolution": "node",
+      // "declaration": true,
+      "outDir": "./build",
+      "strict": true,
+      // "allowJs": true
+    },
+    "include": ["./src/**/*", "server.ts"],
+    "exclude": ["node_modules", "**/__tests__/*"]
+  }
