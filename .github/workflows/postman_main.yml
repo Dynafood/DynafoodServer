@@ -1,0 +1,14 @@
+name: Run postman tests
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  run_postman_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: sed -i "s/DEFAULT_BASE_URL/https:\/\/dynafood-deployment.herokuapp.com/g" ./tests/postman.json
+      - uses: matt-ball/newman-action@master
+        with:
+          collection: ./tests/postman.json
