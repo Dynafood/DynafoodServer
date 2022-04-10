@@ -1,10 +1,11 @@
 //import { db_adm_conn } from "./index";
 import { checkInputBeforeSqlQuery } from './scripts';
 import db_adm_conn from "./index";
+import { QueryResult } from 'pg';
 import { Request, Response } from 'express';
-export const getSettings = async (req: Request, res: Response) => {
+export const getSettings = async (req: Request, res: Response) : Promise<void> => {
     try {
-        let userSettings = await db_adm_conn.query(`
+        let userSettings : QueryResult = await db_adm_conn.query(`
                 SELECT R.restrictionName, ER.alertActivation 
                 FROM Restriction R
                 LEFT JOIN EndUser_Restriction ER ON ER.restrictionID = R.restrictionID
@@ -28,9 +29,9 @@ export const getSettings = async (req: Request, res: Response) => {
         alertActivation: (true of false),
     }
 */
-export const postSettings = async (req: Request, res: Response) => {
+export const postSettings = async (req: Request, res: Response) : Promise<void> => {
     try {
-        let newSettings = await db_adm_conn.query(`
+        let newSettings : QueryResult = await db_adm_conn.query(`
             INSERT INTO EndUser_Restriction (alertActivation, endUserId, restrictionID)
             SELECT
                 ${checkInputBeforeSqlQuery(req.body.alertActivation)},
@@ -48,9 +49,9 @@ export const postSettings = async (req: Request, res: Response) => {
 };
 
 
-export const patchSettings = async (req: Request, res: Response) => {
+export const patchSettings = async (req: Request, res: Response): Promise<void> => {
     try {
-        let newSettings = await db_adm_conn.query(`
+        let newSettings : QueryResult = await db_adm_conn.query(`
             UPDATE EndUser_Restriction
             SET alertActivation = ${checkInputBeforeSqlQuery(req.body.alertActivation)}
             WHERE restrictionID = '${checkInputBeforeSqlQuery(res.locals.restrictionID)}'
@@ -63,9 +64,9 @@ export const patchSettings = async (req: Request, res: Response) => {
     }
 }
 
-export const deleteSettings = async (req: Request, res: Response) => {
+export const deleteSettings = async (req: Request, res: Response) : Promise<void> => {
     try {
-        let newSettings = await db_adm_conn.query(`
+        let newSettings : QueryResult = await db_adm_conn.query(`
             DELETE FROM EndUser_Restriction
             WHERE restrictionID = '${checkInputBeforeSqlQuery(res.locals.restrictionID)}'
             AND endUserID = '${checkInputBeforeSqlQuery(res.locals.user.userid)}';

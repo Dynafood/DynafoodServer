@@ -1,4 +1,6 @@
 import { db_adm_conn } from "../../modules/db/index";
+import { QueryResult } from 'pg'
+
 import { checkInputBeforeSqlQuery } from '../../modules/db/scripts';
 import Joi from "joi";
 import { Request, Response, NextFunction } from "express";
@@ -39,7 +41,7 @@ const schema = Joi.object({
                     .required()
 })
 
-export const checkUserIdReq = (req: Request, res: Response, next: NextFunction) => {
+export const checkUserIdReq = (req: Request, res: Response, next: NextFunction) : void => {
     if (typeof res.locals.user.userid == 'undefined' || res.locals.user.userid === null) {
         res.status(400).send({"Error": "No valid token provided."})
         return
@@ -47,13 +49,13 @@ export const checkUserIdReq = (req: Request, res: Response, next: NextFunction) 
     next()
 }
 
-export const checkCreateUserReq = async (req: Request, res: Response, next: NextFunction) => {
+export const checkCreateUserReq = async (req: Request, res: Response, next: NextFunction) : Promise<void> => {
     const { error, value } = schema.validate(req.body)
     if (error != undefined) {
         res.status(400).send({"Error": error})
         return
     }
-    let prevCheckEmail = await db_adm_conn.query(`
+    let prevCheckEmail : QueryResult = await db_adm_conn.query(`
         SELECT email
         FROM EndUser
         WHERE email = '${checkInputBeforeSqlQuery(req.body.email)}'`)

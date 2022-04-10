@@ -1,10 +1,12 @@
 import db_adm_conn from "../modules/db/index";
+import { QueryResult } from 'pg'
+
 import { checkInputBeforeSqlQuery } from './../modules/db/scripts';
 import { Request, Response, NextFunction } from "express";
 
-export const getRestrictionIdByName = async (req: Request, res: Response, next: NextFunction) => {
+export const getRestrictionIdByName = async (req: Request, res: Response, next: NextFunction) : Promise<void> => {
     try {
-        let restrictionID = await db_adm_conn.query(`
+        let restrictionID : QueryResult = await db_adm_conn.query(`
             SELECT restrictionID
             FROM Restriction
             WHERE restrictionName = '${req.body.restrictionName}'
@@ -21,9 +23,9 @@ export const getRestrictionIdByName = async (req: Request, res: Response, next: 
     }
 }
 
-export const hasRestriction = async (req: Request, res: Response, next: NextFunction) => {
+export const hasRestriction = async (req: Request, res: Response, next: NextFunction) : Promise<void> => {
     try {
-        let restriction = await db_adm_conn.query(`
+        let restriction : QueryResult = await db_adm_conn.query(`
             SELECT * FROM EndUser_Restriction
             WHERE endUserID = '${checkInputBeforeSqlQuery(res.locals.user.userid)}'
             AND restrictionID = '${checkInputBeforeSqlQuery(res.locals.restrictionID)}'

@@ -1,5 +1,5 @@
 import { Router } from 'express'
-const router = Router();
+const router: Router = Router();
 import { urlencoded } from 'express';
 import { json } from 'express';
 import cookieParser from 'cookie-parser';
@@ -13,7 +13,7 @@ import {
 import logger from '../middleware/logger'
 
 
-import { dbPool2 } from '../modules/sketches/herokupgsql'
+// import { dbPool2 } from '../modules/sketches/herokupgsql'
 
 router.use(json({limit: '200kb'}));
 router.use(urlencoded({extended: true}));
@@ -27,7 +27,7 @@ router.get('/welcome', (req: Request, res: Response) => {
 })
 
 //DB TEST FUNCS
-router.get('/pg', dbPool2)
+// router.get('/pg', dbPool2)
 router.get('/pgtables', showTables)
 
 
