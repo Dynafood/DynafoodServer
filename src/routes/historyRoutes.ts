@@ -1,8 +1,7 @@
 import { Router } from 'express'
-const router = Router();
+const router: Router = Router();
 import { urlencoded } from 'express';
 
-import { checkDeleteElementReq, checkGetElementsFromHistoryReq } from '../middleware/security/history'
 import { getElementsFromHistory, deleteElementFromHistory } from '../modules/db/historyManagement'
 import { secureRouteMiddleware } from '../middleware/security/secureRouting'
 
@@ -53,7 +52,7 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *               items:
  *                 $ref: '#/components/schemas/History'
  */
-router.get('/history/', secureRouteMiddleware, checkGetElementsFromHistoryReq, getElementsFromHistory)
+router.get('/history/', secureRouteMiddleware, getElementsFromHistory)
 
 /**
  * @swagger
@@ -77,6 +76,6 @@ router.get('/history/', secureRouteMiddleware, checkGetElementsFromHistoryReq, g
  *       200:
  *         description: Deleted
  */
-router.delete('/history/:elementID', secureRouteMiddleware, checkDeleteElementReq, deleteElementFromHistory)
+router.delete('/history/:elementID', secureRouteMiddleware, deleteElementFromHistory)
 
 export default router;

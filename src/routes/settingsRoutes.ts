@@ -1,5 +1,5 @@
 import { Router } from 'express'
-const router = Router();
+const router : Router = Router();
 import { urlencoded } from 'express';
 
 import { secureRouteMiddleware } from '../middleware/security/secureRouting'

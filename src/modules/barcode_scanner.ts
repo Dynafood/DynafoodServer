@@ -1,14 +1,18 @@
 
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import https from 'https';
 import { updateHistory } from './db/historyManagement'
 import { db_adm_conn } from './db/index'
+import { QueryResult } from 'pg'
+
 import { checkInputBeforeSqlQuery } from './db/scripts';
 import { Request, Response } from 'express';
-const getInnerIngredients = (ingredient: any): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<any>} => {
-    let inner = []
-    let vegan = true
-    let vegetarian = true
+import { JsonObjectExpression } from 'typescript';
+import { JsonObject } from 'swagger-ui-express';
+const getInnerIngredients = (ingredient: JsonObject): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
+    let inner : Array<object> = []
+    let vegan : boolean = true
+    let vegetarian : boolean = true
     if (typeof ingredient.ingredients != "undefined" && ingredient.ingredients != null) {
         for (var i = 0; i  < ingredient.ingredients.length; i++) {
             var tmp = {
@@ -31,8 +35,8 @@ const getInnerIngredients = (ingredient: any): {vegan: boolean | null, vegetaria
     return {vegan: null, vegetarian: null, ingredients: []}
 }
 
-const getAllAllergenes = (hierarchy: Array<any>) : Array<any> => {
-    let allergenes: Array<any> = [];
+const getAllAllergenes = (hierarchy: Array<string>) : Array<string> => {
+    let allergenes: Array<string> = [];
     if (typeof hierarchy != "undefined" && hierarchy != null) {
         hierarchy.forEach((entry) => {
             allergenes.push(entry.substring(entry.indexOf(":") + 1));
@@ -42,7 +46,7 @@ const getAllAllergenes = (hierarchy: Array<any>) : Array<any> => {
     return allergenes;
 }
 
-const getNutriments = (nutriments: any): any => {
+const getNutriments = (nutriments: JsonObject): JsonObject | null => {
     if (typeof nutriments != "undefined" && nutriments != null) {
         return {
             calcium : nutriments.calcium_100g,
@@ -68,7 +72,7 @@ const getNutriments = (nutriments: any): any => {
     return null
 }
 
-const getNutrimentsScore = (data: any): {
+const getNutrimentsScore = (data: JsonObject): {
     energy_points: null | number, 
         fiber_points : null | number,
         negative_points : null | number,
@@ -110,15 +114,17 @@ const getNutrimentsScore = (data: any): {
     }
 }
 
-const getEcoScore = (data: any): {
+interface EcoScoreInterface {
     eco_grade : null | string | number,
-        eco_score : null | string | number,
-        epi_score : null | string | number,
-        transportation_scores : any, // subdivided in countries // mostly empty
-        packaging : any, // information about packaging, // mostly empty
-        agribalyse : any,
-} => {
-    let ret = {
+    eco_score : null | string | number,
+    epi_score : null | string | number,
+    transportation_scores : JsonObject | null, // subdivided in countries // mostly empty
+    packaging : JsonObject | null, // information about packaging, // mostly empty
+    agribalyse : JsonObject | null,
+}
+
+const getEcoScore = (data: JsonObject): EcoScoreInterface => {
+    let ret : EcoScoreInterface = {
         eco_grade : null,
         eco_score : null,
         epi_score : null,
@@ -137,9 +143,9 @@ const getEcoScore = (data: any): {
     return ret
 }
 
-export const checkAlertVegetarian = async (userid: string, product: any) => {
+export const checkAlertVegetarian = async (userid: string, product: JsonObject) : Promise<Boolean>=> {
     if (product.ingredients.vegetarian) {
-        let response = await db_adm_conn.query(`
+        let response : QueryResult = await db_adm_conn.query(`
         SELECT R.restrictionName, ER.alertActivation 
         FROM Restriction R
         LEFT JOIN EndUser_Restriction ER ON ER.restrictionID = R.restrictionID
@@ -152,27 +158,27 @@ export const checkAlertVegetarian = async (userid: string, product: any) => {
     return false
 }
 
-export const getProduct = async (req: Request, res: Response) => {
+export const getProduct = async (req: Request, res: Response) : Promise<void> => {
     try {
-        const userID =res.locals.user.userid//here insert checking for existing acces_token in EndUser and find user
+        const userID: string =res.locals.user.userid
         
-        let response = {
+        let response : JsonObject = {
             name: null,
             keywords: [],
-            allergens: <any>[],
+            allergens: [],
             categories: [],
             qualities: [],
             warings: [],
-            ecoscoreData: <any>null,
+            ecoscoreData: null,
             packing: [],
-            images: <any>[],
-            ingredients: <any>[],
+            images: [],
+            ingredients: [],
             nutriments_g_pro_100g: [],
-            nutriments_scores: <any>[],
+            nutriments_scores: [],
             vegetarian_alert: false
         }
-        const url = `https://world.openfoodfacts.org/api/2/product/${req.params.barcode}.json`
-        const product = await axios.get(url)
+        const url: string = `https://world.openfoodfacts.org/api/2/product/${req.params.barcode}.json`
+        const product: AxiosResponse = await axios.get(url)
         if (typeof product === "undefined" || product == null) {
             res.status(500).send({error: "undefined response from OpenFoodFacts Api"})
         }
