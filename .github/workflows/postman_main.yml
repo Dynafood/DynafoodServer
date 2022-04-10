@@ -12,15 +12,3 @@ jobs:
       - uses: matt-ball/newman-action@master
         with:
           collection: ./tests/postman.json
-on:
-  push:
-    branches: [ deployment ]
-jobs:
-  run_postman_test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: sed -i "s/DEFAULT_BASE_URL/https:\/\/dynafood-development.herokuapp.com/g"
-      - uses: matt-ball/newman-action@master
-        with:
-          collection: ./tests/postman.json
