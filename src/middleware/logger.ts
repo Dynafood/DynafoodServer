@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
 
-const logger = (req: Request, res: Response, next: NextFunction) => {
+const logger = (req: Request, res: Response, next: NextFunction): void => {
     //console.log ("Hello, I am the logger");
     console.log(`${req.protocol}://${req.get('host')}${req.originalUrl}`);
 

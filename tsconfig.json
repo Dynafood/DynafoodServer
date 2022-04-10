@@ -9,6 +9,6 @@
       "strict": true,
       // "allowJs": true
     },
-    "include": ["./src/**/*", "server.ts"],
+    "include": ["./src/**/*", "./include/**/*.ts", "server.ts"],
     "exclude": ["node_modules", "**/__tests__/*"]
   }

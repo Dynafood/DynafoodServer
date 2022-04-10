@@ -1670,6 +1670,10 @@
 	"variable": [
 		{
 			"key": "base_url",
+			"value": "DEFAULT_BASE_URL"
+		},
+		{
+			"key": "base_url",
 			"value": "https://dynafood.herokuapp.com",
 			"disabled": true
 		},
@@ -1687,7 +1691,8 @@
 		},
 		{
 			"key": "base_url",
-			"value": "localhost:8081"
+			"value": "localhost:8081",
+			"disabled": true
 		}
 	]
 }

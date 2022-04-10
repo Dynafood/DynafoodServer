@@ -1,16 +1,30 @@
 import { db_adm_conn } from "./index";
+import { QueryResult, QueryResultRow } from 'pg'
 import { checkInputBeforeSqlQuery } from './scripts';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt'
 import { Request, Response } from "express";
-const parseGetUserResponse = (rows: Array<{firstname: string, lastname: string, username: string, phonenumber: string, email: string, restrictionname: string, alertactivation: boolean}>) => {
-    let userObj = {
+interface RestrictionObj {
+    alertactivation: boolean,
+    restrictionName: string
+}
+interface UserObj {
+    firstName : string,     
+    lastName : string,
+    userName : string,
+    email : string,
+    phoneNumber : string,
+    restrictons: Array<RestrictionObj>
+}
+
+const parseGetUserResponse = (rows: Array<QueryResultRow>) : UserObj => {
+    let userObj : UserObj = {
         firstName : rows[0].firstname,     
         lastName : rows[0].lastname,
         userName : rows[0].username,
         email : rows[0].email,
         phoneNumber : rows[0].phonenumber,
-        restrictons: <any>[]
+        restrictons: []
     };
     for (var row of rows) {
         if (!row.restrictionname)
@@ -21,9 +35,9 @@ const parseGetUserResponse = (rows: Array<{firstname: string, lastname: string, 
     return userObj;
 };
 
-export const getUser = async (req: Request, res: Response) => {
+export const getUser = async (req: Request, res: Response) : Promise<void> => {
     try {
-        let newUser = await db_adm_conn.query(`
+        let newUser : QueryResult = await db_adm_conn.query(`
         SELECT EU.firstName, EU.lastName, EU.userName, EU.email, EU.phoneNumber, ER.alertActivation, R.restrictionName
         FROM EndUser EU
         LEFT JOIN EndUser_Restriction ER ON ER.endUserID = EU.endUserID
@@ -41,9 +55,9 @@ export const getUser = async (req: Request, res: Response) => {
     return;
 };
 
-export const deleteUser = async (req: Request, res: Response) => {
+export const deleteUser = async (req: Request, res: Response) : Promise<void> => {
     try {
-        let response = await db_adm_conn.query(`
+        let response : QueryResult = await db_adm_conn.query(`
         DELETE FROM EndUser
         WHERE endUserID = '${checkInputBeforeSqlQuery(res.locals.user.userid)}' RETURNING *;`);
         res.send({"Deleted": response.rows});
@@ -56,8 +70,8 @@ export const deleteUser = async (req: Request, res: Response) => {
 export const createUser = async (req: Request, res: Response) =>
 {
     try {
-        const passcode = await bcrypt.hash(req.body.password, 10)
-        let user = await db_adm_conn.query(`
+        const passcode: string = await bcrypt.hash(req.body.password, 10)
+        let user : QueryResult = await db_adm_conn.query(`
         INSERT INTO EndUser (firstName, lastName, userName, email, phoneNumber, passcode, emailConfirmed)
         VALUES 
             (
@@ -69,8 +83,8 @@ export const createUser = async (req: Request, res: Response) =>
                 '${checkInputBeforeSqlQuery(passcode)}',
                 true
             ) RETURNING *;`);
-        const userid = user.rows[0].enduserid;
-        const token = jwt.sign({ userid: userid }, <string>process.env.JWT_SECRET, { expiresIn: "1h" });
+        const userid: string = user.rows[0].enduserid;
+        const token: string = jwt.sign({ userid: userid }, <string>process.env.JWT_SECRET, { expiresIn: "1h" });
         res.cookie("token", token, {
             httpOnly: true,
         });
@@ -83,11 +97,11 @@ export const createUser = async (req: Request, res: Response) =>
 };
 
 
-export const getToken = async (req: Request, res: Response) => {
-    const email = req.query.email;
-    const password = <string>req.query.password;
+export const getToken = async (req: Request, res: Response) : Promise<void> => {
+    const email: string = <string> req.query.email;
+    const password: string = <string>req.query.password;
 
-    const user = await db_adm_conn.query(`
+    const user : QueryResult = await db_adm_conn.query(`
         SELECT *
         FROM EndUser
         WHERE email = '${email}';
@@ -104,10 +118,10 @@ export const getToken = async (req: Request, res: Response) => {
         return;
     }
 
-    const correctPassword = await bcrypt.compare(password, user.rows[0].passcode);
+    const correctPassword: boolean = await bcrypt.compare(password, user.rows[0].passcode);
     if (user.rows[0].email == email && correctPassword) {
-        const userid = user.rows[0].enduserid;
-        const token = jwt.sign({ userid: userid }, <string>process.env.JWT_SECRET, { expiresIn: "1h" });
+        const userid : string = user.rows[0].enduserid;
+        const token : string = jwt.sign({ userid: userid }, <string>process.env.JWT_SECRET, { expiresIn: "1h" });
         res.cookie("token", token, {
             httpOnly: true,
         });
