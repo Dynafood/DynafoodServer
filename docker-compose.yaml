@@ -1,0 +1,47 @@
+version: '3'
+
+networks:
+    back-tier:
+       null
+volumes:
+  db-data:
+
+    null
+services:
+  db:
+    image: postgres:14.1
+    restart: always
+    networks:
+     - back-tier
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./user_db.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=password"
+
+  adminer:
+    # networks:
+    #     - back-tier
+    image: adminer
+    restart: always
+    ports:
+      - 8082:8080  
+
+  server:
+    depends_on:
+      - db
+    build: .
+    restart: always
+    ports:
+      - "8081:8081"
+    networks:
+      - back-tier
+    environment:
+      - "DB_USER=postgres"
+      - "DB_PASSWORD=password"
+      - "DB_STRING=@db:5432/postgres"
+      - "JWT_SECRET=dynafood_secret"
+    command: npm start  

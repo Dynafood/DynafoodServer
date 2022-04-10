@@ -1,0 +1,21 @@
+version: '3'
+
+networks:
+    back-tier:
+     null
+
+services:
+
+  
+  server:
+      build: .
+      restart: always
+      networks:
+      - back-tier
+      ports:
+        - "8081:8081"
+      environment:
+        # - "DB_USER=postgres"
+        # - "DB_PASSWORD=password"
+        - "DB_STRING=@db/postgres"
+      command: npm start
