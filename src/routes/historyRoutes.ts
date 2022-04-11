@@ -1,10 +1,8 @@
-import { Router } from 'express'
+import { Router } from 'express';
+import { getElementsFromHistory, deleteElementFromHistory } from '../modules/db/historyManagement';
+import { secureRouteMiddleware } from '../middleware/security/secureRouting';
+
 const router: Router = Router();
-import { urlencoded } from 'express';
-
-import { getElementsFromHistory, deleteElementFromHistory } from '../modules/db/historyManagement'
-import { secureRouteMiddleware } from '../middleware/security/secureRouting'
-
 
 /**
  * @swagger
@@ -16,13 +14,13 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *         historyID:
  *           type: string
  *           description: Unique identifier of the history element
- *         barcode: 
+ *         barcode:
  *           type: string
  *           description: barcode from product
  *         productName:
  *           type: string
  *           description: name of product
- *         lastUsed: 
+ *         lastUsed:
  *           type: string
  *           description: time and date the product was scanned
  *         pictureLink:
@@ -52,7 +50,7 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *               items:
  *                 $ref: '#/components/schemas/History'
  */
-router.get('/history/', secureRouteMiddleware, getElementsFromHistory)
+router.get('/history/', secureRouteMiddleware, getElementsFromHistory);
 
 /**
  * @swagger
@@ -76,6 +74,6 @@ router.get('/history/', secureRouteMiddleware, getElementsFromHistory)
  *       200:
  *         description: Deleted
  */
-router.delete('/history/:elementID', secureRouteMiddleware, deleteElementFromHistory)
+router.delete('/history/:elementID', secureRouteMiddleware, deleteElementFromHistory);
 
 export default router;

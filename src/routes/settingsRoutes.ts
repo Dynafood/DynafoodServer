@@ -1,10 +1,9 @@
-import { Router } from 'express'
-const router : Router = Router();
-import { urlencoded } from 'express';
-
-import { secureRouteMiddleware } from '../middleware/security/secureRouting'
+import { Router } from 'express';
+import { secureRouteMiddleware } from '../middleware/security/secureRouting';
 import { getSettings, postSettings, patchSettings, deleteSettings } from '../modules/db/settingsManagement';
-import { getRestrictionIdByName, hasRestriction } from '../middleware/settings'
+import { getRestrictionIdByName, hasRestriction } from '../middleware/settings';
+
+const router : Router = Router();
 
 /**
  * @swagger
@@ -173,6 +172,5 @@ router.patch('/settings', secureRouteMiddleware, getRestrictionIdByName, hasRest
  *                 $ref: '#/components/schemas/Error'
 */
 router.delete('/settings', secureRouteMiddleware, getRestrictionIdByName, deleteSettings);
-
 
 export default router;
