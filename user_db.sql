@@ -96,3 +96,11 @@ CREATE TABLE IF NOT EXISTS History
             REFERENCES EndUser(endUserID)
             ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS Feedback
+(
+    feedbackID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    reason VARCHAR(20) NOT NULL,
+    content VARCHAR(65535) NOT NULL,
+    userhash VARCHAR(255) NOT NULL
+);
