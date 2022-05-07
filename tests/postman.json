@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1558f3ce-cb07-4aa6-8855-3ec4a5a2a55c",
+		"_postman_id": "cf91fc3d-60e6-413e-b9c8-7bb633083f76",
 		"name": "DynaFood",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1370,6 +1370,303 @@
 			"response": []
 		},
 		{
+			"name": "Reset password email trigger",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/resetPassword",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"resetPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check correct response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.equal('OK: updated password');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "oldPassword",
+							"value": "{{test_password}}",
+							"type": "text"
+						},
+						{
+							"key": "newPassword",
+							"value": "{{new_password_after_reset}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/resetPassword",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"resetPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset password Not matching",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});",
+							"",
+							"pm.test(\"Check correct response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.Error).to.equal('Old password is not matching');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "oldPassword",
+							"value": "{{test_password}}",
+							"type": "text"
+						},
+						{
+							"key": "newPassword",
+							"value": "{{new_password_after_reset}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/resetPassword",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"resetPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate password change",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Check correct response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.Error).to.equal('Wrong credentials');",
+							"    console.log(jsonData);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "{{test_email}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "{{test_password}}",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/login?email={{test_email}}&password={{test_password}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "{{test_email}}"
+						},
+						{
+							"key": "password",
+							"value": "{{test_password}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset password Back",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check correct response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.equal('OK: updated password');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "oldPassword",
+							"value": "{{new_password_after_reset}}",
+							"type": "text"
+						},
+						{
+							"key": "newPassword",
+							"value": "{{test_password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/resetPassword",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"resetPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset password Weak password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 409\", function () {",
+							"    pm.response.to.have.status(409);",
+							"});",
+							"",
+							"pm.test(\"Check correct response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.Error).to.equal(\"New password is not strong enough\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "oldPassword",
+							"value": "{{test_password}}",
+							"type": "text"
+						},
+						{
+							"key": "newPassword",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/resetPassword",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"resetPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Delete User <- also deletes jwt",
 			"event": [
 				{
@@ -1670,11 +1967,17 @@
 	"variable": [
 		{
 			"key": "base_url",
-			"value": "DEFAULT_BASE_URL"
+			"value": "https://dynafood-development.herokuapp.com",
+			"disabled": true
 		},
 		{
 			"key": "base_url",
 			"value": "https://dynafood.herokuapp.com",
+			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "localhost:8081",
 			"disabled": true
 		},
 		{
@@ -1690,9 +1993,12 @@
 			"value": ""
 		},
 		{
+			"key": "new_password_after_reset",
+			"value": "#SuperSecurePassword123"
+		},
+		{
 			"key": "base_url",
-			"value": "localhost:8081",
-			"disabled": true
+			"value": "DEFAULT_BASE_URL"
 		}
 	]
 }
