@@ -49,13 +49,35 @@ export const checkUserIdReq = (req: Request, res: Response, next: NextFunction) 
     next();
 };
 
+export const checkPassword = (password: string) : string => 
+{
+    let regexplower = new RegExp('?=.*[a-z]')
+    let regexpupper = new RegExp('?=.*[A-Z]')
+    let regexpNumber = new RegExp('?=.*[0-9]')
+    let regexpCharacter = new RegExp('?=.*[@#$%^&+-!?=]')
+    if (regexplower.test(password) == false)
+        return "Need a lowerCase"
+    if (regexpupper.test(password) == false)
+        return "Need a uppercase"
+    if (regexpNumber.test(password) == false)
+        return "Need a digit"
+    if (regexpCharacter.test(password) == false)
+        return "Need a special character (@, #, $, %, ^, &, +, -, !, ? or =)"
+    return "Good"
+}
+
 export const checkCreateUserReq = async (req: Request, res: Response, next: NextFunction) : Promise<void> => {
     const { error } = schema.validate(req.body);
     if (error !== undefined) {
         res.status(400).send({ Error: error });
         return;
     }
-    const prevCheckEmail : QueryResult = await db_adm_conn.query(`
+    const passwordCheck: string = checkPassword(req.body.password)
+    if (passwordCheck != "Good") {
+        res.status(400).send({"Error": passwordCheck})
+        return
+    }
+    let prevCheckEmail : QueryResult = await db_adm_conn.query(`
         SELECT email
         FROM EndUser
         WHERE email = '${checkInputBeforeSqlQuery(req.body.email)}'`);
