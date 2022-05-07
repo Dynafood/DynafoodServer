@@ -4,6 +4,15 @@ import { QueryResult } from 'pg';
 import { checkInputBeforeSqlQuery } from './scripts';
 import bcrypt from 'bcrypt';
 
+import Joi from 'joi';
+
+const schema = Joi.object({
+    password: Joi.string()
+        .min(8)
+        .max(72)
+        .required()
+});
+
 export const sendResetPasswordEmail = async (req: Request, res: Response) => {
     try {
         const user: QueryResult = await db_adm_conn.query(`
@@ -50,7 +59,14 @@ export const resetPassword = async (req: Request, res: Response) => {
         const correctPassword: boolean = await bcrypt.compare(oldPassword, currentPassword);
 
         if (!correctPassword) {
-            res.status(301).send({ Error: 'Old password is not matching' });
+            res.status(403).send({ Error: 'Old password is not matching' });
+            return;
+        }
+
+        const { error } = schema.validate({ password: req.body.newPassword });
+
+        if (error !== undefined) {
+            res.status(409).send({ Error: 'New password is not strong enough' });
             return;
         }
 

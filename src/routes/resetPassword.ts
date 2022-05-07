@@ -64,8 +64,16 @@ router.get('/resetPassword', secureRouteMiddleware, sendResetPasswordEmail);
  *     responses:
  *       200:
  *         description: OK, password got updated
- *       301:
+ *       403:
  *         description: Old password is not matching
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               items:
+ *                 $ref: '#/components/schemas/Error'
+ *       409:
+ *         description: Password is not strong enough
  *         content:
  *           application/json:
  *             schema:
