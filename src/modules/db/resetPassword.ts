@@ -13,7 +13,7 @@ export const sendResetPasswordEmail = async (req: Request, res: Response) => {
         `);
 
         if (user.rows.length === 0) {
-            res.status(404).send('There is no EndUser with that id.');
+            res.status(404).send({ Error: 'There is no EndUser with that id.' });
             return;
         }
 
@@ -42,7 +42,7 @@ export const resetPassword = async (req: Request, res: Response) => {
         `);
 
         if (user.rows.length === 0) {
-            res.status(404).send('There is no EndUser with this id.');
+            res.status(404).send({ Error: 'There is no EndUser with this id.' });
             return;
         }
 
