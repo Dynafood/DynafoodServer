@@ -17,7 +17,7 @@ router.use(cookieParser());
 router.use(logger);
 
 router.get('/welcome', (req: Request, res: Response) => {
-    res.status(200).send('Welcome 🙌 ');
+    res.status(200).send('Welcome 🙌 xxx');
 });
 
 // DB TEST FUNCS
