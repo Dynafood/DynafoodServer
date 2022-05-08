@@ -1,4 +1,4 @@
-import db_adm_conn from './index';
+import { db_adm_conn } from './index';
 import { QueryResult } from 'pg';
 import { checkInputBeforeSqlQuery } from './scripts';
 import { Request, Response } from 'express';

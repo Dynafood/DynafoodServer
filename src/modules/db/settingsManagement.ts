@@ -1,6 +1,6 @@
 // import { db_adm_conn } from "./index";
 import { checkInputBeforeSqlQuery } from './scripts';
-import db_adm_conn from './index';
+import { db_adm_conn } from './index';
 import { QueryResult } from 'pg';
 import { Request, Response } from 'express';
 export const getSettings = async (req: Request, res: Response) : Promise<void> => {

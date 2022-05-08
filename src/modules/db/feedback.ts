@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import { QueryResult } from 'pg'
 import { Md5 } from 'ts-md5';
-import db_adm_conn from "./index";
+import { db_adm_conn } from "./index";
 import { checkInputBeforeSqlQuery } from './scripts';
 
 
@@ -35,4 +35,8 @@ export const createFeedback = async (req: Request, res: Response) => {
         res.status(500).send({"Error": err, "Details": err.stack})
     }
 
+}
+
+export default {
+    createFeedback
 }

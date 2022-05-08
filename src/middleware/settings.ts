@@ -1,4 +1,4 @@
-import db_adm_conn from '../modules/db/index';
+import { db_adm_conn } from '../modules/db/index';
 import { QueryResult } from 'pg';
 
 import { checkInputBeforeSqlQuery } from './../modules/db/scripts';
