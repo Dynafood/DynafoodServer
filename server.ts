@@ -50,6 +50,6 @@ app.use(historyRouter);
 app.use(productRouter);
 app.use(logger);
 
-server.listen(PORT, () =>
+server.listen(PORT, (): void =>
 
 console.log(`[LOGGER] The server is listening on port ${PORT}`))

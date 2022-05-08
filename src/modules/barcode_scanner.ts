@@ -9,6 +9,7 @@ import { checkInputBeforeSqlQuery } from './db/scripts';
 import { Request, Response } from 'express';
 import { JsonObjectExpression } from 'typescript';
 import { JsonObject } from 'swagger-ui-express';
+import { detect_language, translate_object } from './translation';
 const getInnerIngredients = (ingredient: JsonObject): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
     let inner : Array<object> = []
     let vegan : boolean = true
@@ -16,7 +17,7 @@ const getInnerIngredients = (ingredient: JsonObject): {vegan: boolean | null, ve
     if (typeof ingredient.ingredients != "undefined" && ingredient.ingredients != null) {
         for (var i = 0; i  < ingredient.ingredients.length; i++) {
             var tmp = {
-                name: ingredient.ingredients[i].text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match: string) => match.toUpperCase()),
+                name: ingredient.ingredients[i].text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match: string):string => match.toUpperCase()),
                 vegan: ingredient.ingredients[i].vegan,
                 vegetarian: ingredient.ingredients[i].vegetarian,
                 ingredients : getInnerIngredients(ingredient.ingredients[i])
@@ -38,7 +39,7 @@ const getInnerIngredients = (ingredient: JsonObject): {vegan: boolean | null, ve
 const getAllAllergenes = (hierarchy: Array<string>) : Array<string> => {
     let allergenes: Array<string> = [];
     if (typeof hierarchy != "undefined" && hierarchy != null) {
-        hierarchy.forEach((entry) => {
+        hierarchy.forEach((entry): void => {
             allergenes.push(entry.substring(entry.indexOf(":") + 1));
         })
     }
@@ -212,8 +213,8 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             response.nutriments_scores = getNutrimentsScore(product.data.product)
             // response.vegetarian_alert = await checkAlertVegetarian(userID, response)
         }
-
-        res.status(200).send(response)
+        var detected_lang: string = await detect_language(response)
+        res.status(200).send(await translate_object(response, detected_lang, "de"))
     } catch(error) {
         console.log(error)
         res.status(500).send("Internal Server Error")

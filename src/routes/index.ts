@@ -20,7 +20,7 @@ router.use(urlencoded({extended: true}));
 router.use(cookieParser());
 router.use(logger);
 
-router.get('/welcome', (req: Request, res: Response) => {
+router.get('/welcome', (req: Request, res: Response):void => {
 
     res.status(200).send("Welcome 🙌 ");
 

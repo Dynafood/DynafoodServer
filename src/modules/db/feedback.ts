@@ -12,9 +12,9 @@ const _feedbackReasons = [
      "comment"
 ]
 
-export const createFeedback = async (req: Request, res: Response) => {
-    const content : string = req.body.content
-    const reason : string = req.body.reason
+export const createFeedback = async (req: Request, res: Response): Promise<void> => {
+    const content : string = req.body.content || null
+    const reason : string = req.body.reason || null
 
     if (!content || content.length === 0) {
         res.status(404).send({"Error": "No content provided", "Details": `Content is not provided or empty!`})
