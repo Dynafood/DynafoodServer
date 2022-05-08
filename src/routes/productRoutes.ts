@@ -1,9 +1,8 @@
-import { Router } from 'express'
-const router : Router = Router();
-import { urlencoded } from 'express';
+import { Router } from 'express';
+import { getProduct } from '../modules/barcode_scanner';
+import { secureRouteMiddleware } from '../middleware/security/secureRouting';
 
-import { getProduct } from '../modules/barcode_scanner'
-import { secureRouteMiddleware } from '../middleware/security/secureRouting'
+const router : Router = Router();
 
 /**
  * @swagger
@@ -15,7 +14,7 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *         eco_grade:
  *           type: string
  *           description: ecological grade
- *         eco_score: 
+ *         eco_score:
  *           type: integer
  *           description: ecological score
  *         epi_score:
@@ -23,11 +22,11 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *           description: ask lucas xD
  *         transportation_scores:
  *           descripten: do not use? subdivided in countries but mostly empty
- *         packing: 
+ *         packing:
  *           descripten: integeromation about the packing but mostly empty
  *         agribalyse:
  *           description: Co2 emission from different parts
- *    
+ *
  */
 
 /**
@@ -39,13 +38,13 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *       properties:
  *         energy_pointegers:
  *           type: integer
- *         fiber_pointegers: 
+ *         fiber_pointegers:
  *           type: integer
  *         negative_pointegers:
  *           type: integer
  *         positive_pointegers:
  *           type: integer
- *         proteins_pointegers: 
+ *         proteins_pointegers:
  *           type: integer
  *         saturated_fat_pointegers:
  *           type: integer
@@ -57,7 +56,7 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *           type: integer
  *         total_score:
  *           type: integer
- *    
+ *
  */
 
 /**
@@ -70,13 +69,13 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *       properties:
  *         calcium:
  *           type: string
- *         carbohydrates: 
+ *         carbohydrates:
  *           type: string
  *         cholesterol:
  *           type: string
  *         kcal:
  *           type: string
- *         fat: 
+ *         fat:
  *           type: string
  *         fiber:
  *           type: string
@@ -102,7 +101,7 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *           type: string
  *         vitamin_e:
  *           type: string
- *    
+ *
  */
 
 /**
@@ -114,7 +113,7 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *       properties:
  *         name:
  *           type: string
- *         vegan: 
+ *         vegan:
  *           type: boolean
  *         vegetarian:
  *           type: boolean
@@ -134,7 +133,7 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *         name:
  *           type: string
  *           description: name of the product
- *         keywords: 
+ *         keywords:
  *           description: barcode from product
  *           type: array
  *           items:
@@ -144,7 +143,7 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *           items:
  *             type: string
  *           description: allergens the product can have
- *         categories: 
+ *         categories:
  *           type: array
  *           items:
  *             type: string
@@ -166,12 +165,12 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *           type: string
  *           description: link to small image of product
  *         ingredients:
- *           $ref: '#/components/schemas/Ingredients'  
+ *           $ref: '#/components/schemas/Ingredients'
  *         nutriments_g_pro_100g:
  *           $ref: '#/components/schemas/Nutriments'
  *         nutriments_score:
  *           $ref: '#/components/schemas/Nutriments_score'
- *               
+ *
  */
 
 /**
@@ -197,5 +196,5 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *              schema:
  *                $ref: '#/components/schemas/Product'
  */
-router.get('/products/barcode/:barcode', secureRouteMiddleware, getProduct)
+router.get('/products/barcode/:barcode', secureRouteMiddleware, getProduct);
 export default router;

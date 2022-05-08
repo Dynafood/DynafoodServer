@@ -1,11 +1,9 @@
-import { Router } from 'express'
+import { Router } from 'express';
+import { getUser, deleteUser, createUser, getToken } from '../modules/db/userManagement';
+import { checkUserIdReq, checkCreateUserReq } from '../middleware/security/user';
+import { secureRouteMiddleware } from '../middleware/security/secureRouting';
+
 const router : Router = Router();
-import { urlencoded } from 'express';
-
-import { getUser, deleteUser, createUser, getToken } from '../modules/db/userManagement'
-import { checkUserIdReq, checkCreateUserReq } from '../middleware/security/user'
-import { secureRouteMiddleware } from '../middleware/security/secureRouting'
-
 
 /**
  * @swagger
@@ -48,7 +46,7 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *                $ref: '#/components/schemas/User'
  */
 
-router.get('/user', secureRouteMiddleware, checkUserIdReq, getUser)
+router.get('/user', secureRouteMiddleware, checkUserIdReq, getUser);
 
 /**
  * @swagger
@@ -76,10 +74,10 @@ router.get('/user', secureRouteMiddleware, checkUserIdReq, getUser)
  *                  type: string
  *                  description: JWT token assigned to user
  */
-router.post('/signup', checkCreateUserReq, createUser)
+router.post('/signup', checkCreateUserReq, createUser);
 
 /**
- * 
+ *
  * /user:
  *   post:
  *     summary: create new user
@@ -114,7 +112,7 @@ router.post('/signup', checkCreateUserReq, createUser)
  *       200:
  *         description: DELETED
  */
-router.delete('/user', secureRouteMiddleware, checkUserIdReq, deleteUser)
+router.delete('/user', secureRouteMiddleware, checkUserIdReq, deleteUser);
 
 /**
  * @swagger
