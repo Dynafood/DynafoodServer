@@ -13,9 +13,9 @@ import { JsonObject } from 'swagger-ui-express';
 
 const associateWordLactose = (ingredient: Array<JsonObject>): boolean => {
     ingredient.forEach(ingredientElem => {
-        if (ingredientElem.ingredient == "cheese" || ingredientElem.ingredient == "milk" || ingredientElem.ingredient == "yogurt"
-        || ingredientElem.ingredient == "chocolate" || ingredientElem.ingredient == "butter" || ingredientElem.ingredient == "cream"
-        || ingredientElem.ingredient == "XXXX" || ingredientElem.ingredient == "YYYY" || ingredientElem.ingredient == "ZZZZ")
+        if (ingredientElem.ingredient.indexOf("cheese") > -1 || ingredientElem.ingredient.indexOf("milk") > -1 || ingredientElem.ingredient.indexOf("yogurt") > -1
+        || ingredientElem.ingredient.indexOf("chocolate") > -1 || ingredientElem.ingredient.indexOf("butter") > -1 || ingredientElem.ingredient.indexOf("cream") > -1
+        || ingredientElem.ingredient.indexOf("lactose") > -1 || ingredientElem.ingredient.indexOf("YYYY") > -1 || ingredientElem.ingredient.indexOf("ZZZZ") > -1)
         return true;
     });
     return false;
@@ -24,10 +24,10 @@ const associateWordLactose = (ingredient: Array<JsonObject>): boolean => {
 const associateWordNuts = (ingredient: Array<JsonObject>): boolean => {
 
     ingredient.forEach(ingredientElem => {
-        if (ingredientElem.ingredient == "coconut" || ingredientElem.ingredient == "cashews" || ingredientElem.ingredient == "walnuts"
-        || ingredientElem.ingredient == "hazelnuts" || ingredientElem.ingredient == "filberts" || ingredientElem.ingredient == "almonds"
-        || ingredientElem.ingredient == "peanuts" || ingredientElem.ingredient == "peans" || ingredientElem.ingredient == "pistachios"
-        || ingredientElem.ingredient == "chestnuts" || ingredientElem.ingredient == "XXXXX" || ingredientElem.ingredient == "YYYYY")
+        if (ingredientElem.ingredient.indexOf("coconut") > -1 || ingredientElem.ingredient.indexOf("cashews") > -1 || ingredientElem.ingredient.indexOf("walnuts") > -1
+        || ingredientElem.ingredient.indexOf("hazelnuts") > -1 || ingredientElem.ingredient.indexOf("filberts") > -1 || ingredientElem.ingredient.indexOf("almonds") > -1
+        || ingredientElem.ingredient.indexOf("peanuts") > -1 || ingredientElem.ingredient.indexOf("peans") > -1 || ingredientElem.ingredient.indexOf("pistachios") > -1
+        || ingredientElem.ingredient.indexOf("chestnuts") > -1 || ingredientElem.ingredient.indexOf("nuts") > -1 || ingredientElem.ingredient.indexOf("YYYYY") > -1)
         return true;
     });
     return false;
