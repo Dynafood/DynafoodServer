@@ -9,6 +9,39 @@ import { checkInputBeforeSqlQuery } from './db/scripts';
 import { Request, Response } from 'express';
 import { JsonObjectExpression } from 'typescript';
 import { JsonObject } from 'swagger-ui-express';
+
+
+const associateWordLactose = (ingredient: Array<JsonObject>): boolean => {
+    ingredient.forEach(ingredientElem => {
+        if (ingredientElem.ingredient == "cheese" || ingredientElem.ingredient == "milk" || ingredientElem.ingredient == "yogurt"
+        || ingredientElem.ingredient == "chocolate" || ingredientElem.ingredient == "butter" || ingredientElem.ingredient == "cream"
+        || ingredientElem.ingredient == "XXXX" || ingredientElem.ingredient == "YYYY" || ingredientElem.ingredient == "ZZZZ")
+        return true;
+    });
+    return false;
+}
+
+const associateWordNuts = (ingredient: Array<JsonObject>): boolean => {
+
+    ingredient.forEach(ingredientElem => {
+        if (ingredientElem.ingredient == "coconut" || ingredientElem.ingredient == "cashews" || ingredientElem.ingredient == "walnuts"
+        || ingredientElem.ingredient == "hazelnuts" || ingredientElem.ingredient == "filberts" || ingredientElem.ingredient == "almonds"
+        || ingredientElem.ingredient == "peanuts" || ingredientElem.ingredient == "peans" || ingredientElem.ingredient == "pistachios"
+        || ingredientElem.ingredient == "chestnuts" || ingredientElem.ingredient == "XXXXX" || ingredientElem.ingredient == "YYYYY")
+        return true;
+    });
+    return false;
+}
+
+const associateWordMain = (ingredient: Array<JsonObject>): {lactose: boolean | null, nuts: boolean | null} =>  {
+
+    let lactoseresult : boolean = associateWordLactose(ingredient);
+    let nutsresult : boolean = associateWordNuts(ingredient);
+    
+
+    return ({lactose : lactoseresult, nuts : nutsresult})
+
+}
 const getInnerIngredients = (ingredient: JsonObject): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
     let inner : Array<object> = []
     let vegan : boolean = true
