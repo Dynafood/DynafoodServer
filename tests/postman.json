@@ -161,6 +161,306 @@
 			"response": []
 		},
 		{
+			"name": "SignUp invalid password : no Digit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Response contains 'Error'\", () => {",
+							"    pm.expect(response.Error).to.be.an('object');",
+							"});",
+							"",
+							"pm.test(\"Weak password message\", () => {",
+							"    pm.expect(response.Error.details[0].message).to.eql(\"\\\"password\\\" length must be at least 8 characters long\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "userName",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{test_email}}",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "123123123",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "TESTtestTEST@",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/signup",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignUp invalid password : no Special Character",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Response contains 'Error'\", () => {",
+							"    pm.expect(response.Error).to.be.an('object');",
+							"});",
+							"",
+							"pm.test(\"Weak password message\", () => {",
+							"    pm.expect(response.Error.details[0].message).to.eql(\"\\\"password\\\" length must be at least 8 characters long\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "userName",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{test_email}}",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "123123123",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "TESTtestTEST1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/signup",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignUp invalid password : no Lowercase",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Response contains 'Error'\", () => {",
+							"    pm.expect(response.Error).to.be.an('object');",
+							"});",
+							"",
+							"pm.test(\"Weak password message\", () => {",
+							"    pm.expect(response.Error.details[0].message).to.eql(\"\\\"password\\\" length must be at least 8 characters long\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "userName",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{test_email}}",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "123123123",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "TESTTEST1234@",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/signup",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignUp invalid password : no Uppercase",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Response contains 'Error'\", () => {",
+							"    pm.expect(response.Error).to.be.an('object');",
+							"});",
+							"",
+							"pm.test(\"Weak password message\", () => {",
+							"    pm.expect(response.Error.details[0].message).to.eql(\"\\\"password\\\" length must be at least 8 characters long\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "userName",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{test_email}}",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "123123123",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testtest1234@",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/signup",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "SignUp invalid email",
 			"event": [
 				{
