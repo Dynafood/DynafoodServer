@@ -1,6 +1,5 @@
 import express, { Express, Request, Response, NextFunction } from 'express'
-import http from 'http'
-import path from 'path'
+
 import logger from './src/middleware/logger'
 import swaggerUI from 'swagger-ui-express'
 import swaggerJSDoc from 'swagger-jsdoc'
@@ -11,11 +10,8 @@ import productRouter from './src/routes/productRoutes'; //DIR_IMPORT NOT SUPPORT
 import settingRouter from './src/routes/settingsRoutes'; //DIR_IMPORT NOT SUPPORTED
 import userRouter from './src/routes/userRoutes'; //DIR_IMPORT NOT SUPPORTED
 // import { HOST, PORT} from './src/config/index';
-const PORT: string | undefined = process.env.PORT
-const app: Express = express(); 
-const server: http.Server = new http.Server(app);
+export const app: Express = express(); 
 import cookieParser from 'cookie-parser';
-import jwt from 'express-jwt';
 import cors from 'cors'; //dont know what is it for
 
 const options : object = {
@@ -49,7 +45,3 @@ app.use(settingRouter);
 app.use(historyRouter);
 app.use(productRouter);
 app.use(logger);
-
-server.listen(PORT, () =>
-
-console.log(`[LOGGER] The server is listening on port ${PORT}`))

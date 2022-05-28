@@ -3,12 +3,10 @@
       "target": "es2016",
       "module": "commonjs",
       "esModuleInterop": true,
-      // "moduleResolution": "node",
-      // "declaration": true,
-      "outDir": "./",
+      "outDir": "./dist",
       "strict": true,
-      // "allowJs": true
+      "noImplicitAny": true
     },
-    "include": ["./src/**/*", "./include/**/*.ts", "server.ts"],
-    "exclude": ["node_modules", "**/__tests__/*"]
-  }
+    "include": ["./src/**/*", "./include/**/*.ts", "server.ts", "server_listen.ts"],
+    "exclude": ["node_modules", "**/__tests__/*", "**/*.spec.ts"]
+}
