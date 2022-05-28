@@ -35,19 +35,38 @@ const parseGetUserResponse = (rows: Array<QueryResultRow>) : UserObj => {
     return userObj;
 };
 
-export const getUser = async (req: Request, res: Response) : Promise<void> => {
-    try {
-        let newUser : QueryResult = await db_adm_conn.query(`
+export const dbGetUserByMail = async (mail: string) : Promise<string | null> => {
+    let prevCheckEmail : QueryResult = await db_adm_conn.query(`
+        SELECT email
+        FROM EndUser
+        WHERE email = '${checkInputBeforeSqlQuery(mail)}'`)
+    if (prevCheckEmail.rowCount == 0) {
+        return null
+    }
+    return prevCheckEmail.rows[0].email
+}
+
+export const dbGetUser = async (userID: string) : Promise<Array<QueryResultRow> | null> => {
+    let user : QueryResult = await db_adm_conn.query(`
         SELECT EU.firstName, EU.lastName, EU.userName, EU.email, EU.phoneNumber, ER.alertActivation, R.restrictionName
         FROM EndUser EU
         LEFT JOIN EndUser_Restriction ER ON ER.endUserID = EU.endUserID
         LEFT JOIN Restriction R ON R.restrictionID = ER.restrictionID
-        WHERE EU.endUserID = '${checkInputBeforeSqlQuery(res.locals.user.userid)}';`);
-        if (newUser.rows.length == 0) {
+        WHERE EU.endUserID = '${checkInputBeforeSqlQuery(userID)}';`);
+    if (user.rowCount == 0) {
+        return null
+    }
+    return user.rows
+}
+
+export const getUser = async (req: Request, res: Response) : Promise<void> => {
+    try {
+        let user = await dbGetUser(res.locals.user.userid) 
+        if (user == null) {
             res.status(404).send("There is no EndUser with this id.");
             return;
         }
-        res.send(parseGetUserResponse(newUser.rows));
+        res.send(parseGetUserResponse(user));
     } catch (err: any) {
         console.log(err.stack);
         res.status(500).send({"Error": err, "Details": err.stack});

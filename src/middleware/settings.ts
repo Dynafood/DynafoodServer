@@ -1,21 +1,13 @@
-import db_adm_conn from "../modules/db/index";
-import { QueryResult } from 'pg'
-
-import { checkInputBeforeSqlQuery } from './../modules/db/scripts';
 import { Request, Response, NextFunction } from "express";
-
+import { restrictionIdByName, userHasRestriction } from "../modules/db/restrictionManagement";
 export const getRestrictionIdByName = async (req: Request, res: Response, next: NextFunction) : Promise<void> => {
     try {
-        let restrictionID : QueryResult = await db_adm_conn.query(`
-            SELECT restrictionID
-            FROM Restriction
-            WHERE restrictionName = '${req.body.restrictionName}'
-        `);
-        if (restrictionID.rowCount === 0) {
+        let restrictionID: string | null = await restrictionIdByName(req.body.restrictionName)
+        if (restrictionID == null) {
             res.status(404).json({"Error" : `The restriction ${req.body.restrictionName} is not available on dynafood!`})
             return
         }
-        res.locals.restrictionID = restrictionID.rows[0].restrictionid;
+        res.locals.restrictionID = restrictionID;
         next();
     } catch (err: any) {
         console.error(err);
@@ -25,13 +17,9 @@ export const getRestrictionIdByName = async (req: Request, res: Response, next: 
 
 export const hasRestriction = async (req: Request, res: Response, next: NextFunction) : Promise<void> => {
     try {
-        let restriction : QueryResult = await db_adm_conn.query(`
-            SELECT * FROM EndUser_Restriction
-            WHERE endUserID = '${checkInputBeforeSqlQuery(res.locals.user.userid)}'
-            AND restrictionID = '${checkInputBeforeSqlQuery(res.locals.restrictionID)}'
-        `)
+        let hasRestriction = userHasRestriction(res.locals.user.userid, res.locals.restrictionID)
 
-        if (restriction.rowCount == 0) {
+        if (!hasRestriction) {
             res.status(400).send( {"Error": "Bad request", "Details": `This user does not have a restriction for ${req.body.restrictionName}.` })
             return
         }
