@@ -1,7 +1,6 @@
 import { checkPassword } from './user'
 import supertest from "supertest"
 import {app} from "../../../server"
-import { dbGetUserByMail } from '../../modules/db/userManagement'
 
 test('check if password requirements are working', () => {
     expect(checkPassword("1")).toBe("Need a lowerCase")
@@ -10,7 +9,6 @@ test('check if password requirements are working', () => {
     expect(checkPassword("aA1")).toBe("Need a special character (@, #, $, %, ^, &, +, -, !, ?, _, *, ., or ,)")
     expect(checkPassword("aA1-")).toBe("Good")
 })
-
 
 
 describe('check Create user Request', () => {
@@ -54,7 +52,10 @@ describe('check Create user Request', () => {
 
 describe('check get user Request', () => {
     	
-    
-})
 
-// afterAll(async () => {await db_adm_conn.end()})
+    test('', async () => {
+       const response = await supertest(app).post("/signup").send();
+       expect(response.statusCode).toBe(400)
+       expect(response.body.Error.details[0].message).toBe("\"firstName\" is required")
+    })
+})
