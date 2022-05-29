@@ -1986,7 +1986,7 @@
 		},
 		{
 			"key": "test_password",
-			"value": "SuperSecurePassword123"
+			"value": "SuperSecurePassword123-"
 		},
 		{
 			"key": "history_id",
@@ -1994,7 +1994,7 @@
 		},
 		{
 			"key": "new_password_after_reset",
-			"value": "#SuperSecurePassword123"
+			"value": "#SuperSecurePassword123-"
 		},
 		{
 			"key": "base_url",

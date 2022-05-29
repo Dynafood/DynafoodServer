@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const router = (0, express_1.Router)();
 const secureRouting_1 = require("../middleware/security/secureRouting");
-const settingsManagement_1 = require("../modules/db/settingsManagement");
-const settings_1 = require("../middleware/settings");
+const Settings_1 = require("../modules/Settings");
+const settings_1 = require("../modules/settings");
+const router = (0, express_1.Router)();
 /**
  * @swagger
  * components:
@@ -66,7 +66,7 @@ const settings_1 = require("../middleware/settings");
  *               items:
  *                 $ref: '#/components/schemas/Error'
 */
-router.get('/settings', secureRouting_1.secureRouteMiddleware, settingsManagement_1.getSettings);
+router.get('/settings', secureRouting_1.secureRouteMiddleware, Settings_1.getSettings);
 /**
  * @swagger
  * /settings:
@@ -97,7 +97,7 @@ router.get('/settings', secureRouting_1.secureRouteMiddleware, settingsManagemen
  *               items:
  *                 $ref: '#/components/schemas/Error'
 */
-router.post('/settings', secureRouting_1.secureRouteMiddleware, settings_1.getRestrictionIdByName, settingsManagement_1.postSettings);
+router.post('/settings', secureRouting_1.secureRouteMiddleware, settings_1.getRestrictionIdByName, Settings_1.postSettings);
 /**
  * @swagger
  * /settings:
@@ -128,7 +128,7 @@ router.post('/settings', secureRouting_1.secureRouteMiddleware, settings_1.getRe
  *               items:
  *                 $ref: '#/components/schemas/Error'
 */
-router.patch('/settings', secureRouting_1.secureRouteMiddleware, settings_1.getRestrictionIdByName, settings_1.hasRestriction, settingsManagement_1.patchSettings);
+router.patch('/settings', secureRouting_1.secureRouteMiddleware, settings_1.getRestrictionIdByName, settings_1.hasRestriction, Settings_1.patchSettings);
 /**
  * @swagger
  * /settings:
@@ -167,5 +167,5 @@ router.patch('/settings', secureRouting_1.secureRouteMiddleware, settings_1.getR
  *               items:
  *                 $ref: '#/components/schemas/Error'
 */
-router.delete('/settings', secureRouting_1.secureRouteMiddleware, settings_1.getRestrictionIdByName, settingsManagement_1.deleteSettings);
+router.delete('/settings', secureRouting_1.secureRouteMiddleware, settings_1.getRestrictionIdByName, Settings_1.deleteSettings);
 exports.default = router;

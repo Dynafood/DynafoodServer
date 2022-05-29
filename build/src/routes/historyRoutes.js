@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const router = (0, express_1.Router)();
-const historyManagement_1 = require("../modules/db/historyManagement");
+const history_1 = require("../modules/history");
 const secureRouting_1 = require("../middleware/security/secureRouting");
+const router = (0, express_1.Router)();
 /**
  * @swagger
  * components:
@@ -49,7 +49,7 @@ const secureRouting_1 = require("../middleware/security/secureRouting");
  *               items:
  *                 $ref: '#/components/schemas/History'
  */
-router.get('/history/', secureRouting_1.secureRouteMiddleware, historyManagement_1.getElementsFromHistory);
+router.get('/history/', secureRouting_1.secureRouteMiddleware, history_1.getElementsFromHistory);
 /**
  * @swagger
  * /history/{elementID}:
@@ -72,5 +72,5 @@ router.get('/history/', secureRouting_1.secureRouteMiddleware, historyManagement
  *       200:
  *         description: Deleted
  */
-router.delete('/history/:elementID', secureRouting_1.secureRouteMiddleware, historyManagement_1.deleteElementFromHistory);
+router.delete('/history/:elementID', secureRouting_1.secureRouteMiddleware, history_1.deleteElementFromHistory);
 exports.default = router;
