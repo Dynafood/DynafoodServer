@@ -21,6 +21,7 @@ services:
     environment:
       - "POSTGRES_USER=postgres"
       - "POSTGRES_PASSWORD=password"
+      - "POSTGRES_DATABASE=dynafood"
 
   adminer:
     # networks:
@@ -44,4 +45,10 @@ services:
       - "DB_PASSWORD=password"
       - "DB_STRING=@db:5432/postgres"
       - "JWT_SECRET=dynafood_secret"
+      - "DB_PORT=5432"
+      - "DB_HOST=localhost"
+      - "DB_DATABASE=dynafood"
+      - "PORT=8081"
+      - "NODE_ENV=production"
+      - "DATABASE_URL=postgres://wnqkgrypszzfdw:39d4d34974c16f7c97858f2fae1ea2a288c651c960b443cba245bf6035d74a21@ec2-34-246-227-219.eu-west-1.compute.amazonaws.com:5432/dap56c0cqcc052"
     command: npm start  

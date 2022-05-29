@@ -2,7 +2,7 @@ import { Router } from 'express'
 const router : Router = Router();
 
 import { secureRouteMiddleware } from '../middleware/security/secureRouting'
-import { createFeedback } from '../modules/db/feedback';
+import { createFeedback } from '../modules/feedback';
 
 /**
  * @swagger

@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const router = (0, express_1.Router)();
-const userManagement_1 = require("../modules/db/userManagement");
-const user_1 = require("../middleware/security/user");
+const user_1 = require("../modules/user");
+const user_2 = require("../middleware/security/user");
 const secureRouting_1 = require("../middleware/security/secureRouting");
+const router = (0, express_1.Router)();
 /**
  * @swagger
  * components:
@@ -44,7 +44,7 @@ const secureRouting_1 = require("../middleware/security/secureRouting");
  *              schema:
  *                $ref: '#/components/schemas/User'
  */
-router.get('/user', secureRouting_1.secureRouteMiddleware, user_1.checkUserIdReq, userManagement_1.getUser);
+router.get('/user', secureRouting_1.secureRouteMiddleware, user_2.checkUserIdReq, user_1.getUser);
 /**
  * @swagger
  * /signup:
@@ -71,7 +71,7 @@ router.get('/user', secureRouting_1.secureRouteMiddleware, user_1.checkUserIdReq
  *                  type: string
  *                  description: JWT token assigned to user
  */
-router.post('/signup', user_1.checkCreateUserReq, userManagement_1.createUser);
+router.post('/signup', user_2.checkCreateUserReq, user_1.createUser);
 /**
  *
  * /user:
@@ -107,7 +107,7 @@ router.post('/signup', user_1.checkCreateUserReq, userManagement_1.createUser);
  *       200:
  *         description: DELETED
  */
-router.delete('/user', secureRouting_1.secureRouteMiddleware, user_1.checkUserIdReq, userManagement_1.deleteUser);
+router.delete('/user', secureRouting_1.secureRouteMiddleware, user_2.checkUserIdReq, user_1.deleteUser);
 /**
  * @swagger
  * /login:
@@ -139,6 +139,6 @@ router.delete('/user', secureRouting_1.secureRouteMiddleware, user_1.checkUserId
  *                  type: string
  *                  description: JWT token assigned to user
  */
-router.get('/token', userManagement_1.getToken);
-router.get('/login', userManagement_1.getToken);
+router.get('/token', user_1.getToken);
+router.get('/login', user_1.getToken);
 exports.default = router;

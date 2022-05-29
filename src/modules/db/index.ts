@@ -1,32 +1,70 @@
 import pg from 'pg';
 import * as dotenv from 'dotenv';
-import feedback from "./feedback";
+import { createNewFeedback } from "./feedback";
 import {cleanDublicateHistory, deleteElementFromHistory, getElementsFromHistory, insertIntoHistory, updateHistory, updateHistoryElement} from "./historyManagement";
-import {resetPassword, sendResetPasswordEmail} from "./resetPassword";
-import {checkInputBeforeSqlQuery} from "./scripts";
-import {deleteSettings, getSettings, patchSettings, postSettings} from "./settingsManagement";
-import {createUser, deleteUser, getToken, getUser} from "./userManagement";
+import {updatePassword} from "./resetPassword";
+import {updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting} from "./settingsManagement";
+import {createUser, deleteUser, getUser} from "./userManagement";
+import { DatabaseInterface } from '../../../server_config';
 
 dotenv.config();
 
-console.log('this is db_vars:',
-    process.env.DB_USER, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
+console.log('this is db_vars:', process.env.NODE_ENV, process.env.DB_USER, process.env.PG_PASSWORD, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
 
+const connect = async () => {
+    const connectionString: string = `postgresql://${process.env.PG_USER}:${process.env.PG_PASSWORD}@${process.env.PG_HOST}:${process.env.PG_PORT}/${process.env.PG_DATABASE}`;
 
-const connectionString: string = `postgresql://${process.env.PG_USER}:${process.env.PG_PASSWORD}@${process.env.PG_HOST}:${process.env.PG_PORT}/${process.env.PG_DATABASE}`;
+    if (process.env.NODE_ENV !== 'production') {
+        console.log("connect by using", connectionString)
+        db_adm_conn = new pg.Client({
+            connectionString
+        });
+    } else {
+        console.log("connect by using", process.env.DATABASE_URL)
+        db_adm_conn = new pg.Client({
+            connectionString: process.env.DATABASE_URL,
+            ssl: {
+                rejectUnauthorized: false
+            }
+        });
+    }
 
-export let db_adm_conn: pg.Client;
-if (process.env.NODE_ENV !== 'production') {
-    db_adm_conn = new pg.Client({
-        connectionString
-    });
-} else {
-    db_adm_conn = new pg.Client({
-        connectionString: process.env.DATABASE_URL,
-        ssl: {
-            rejectUnauthorized: false
-        }
-    });
+    await db_adm_conn.connect();
 }
 
-db_adm_conn.connect();
+const end = async () => {
+    await db_adm_conn.end()
+}
+
+const Database: DatabaseInterface = {
+    Feedback: {
+        createNewFeedback
+    }, 
+    ProductHistory: {
+        cleanDublicateHistory,
+        deleteElementFromHistory, 
+        getElementsFromHistory,
+        insertIntoHistory,
+        updateHistory,
+        updateHistoryElement
+    },
+    Password : {
+        updatePassword
+    }, 
+    User: {
+        createUser, 
+        deleteUser, 
+        getUser
+    }, 
+    Settings: {
+        getRestrictionIdByName,
+        userHasRestriction,
+        getAlertSettings,
+        updateAlertSetting,
+        deleteAlertSetting
+    }, 
+    connect,
+    end
+}
+export default Database
+export let db_adm_conn: pg.Client;

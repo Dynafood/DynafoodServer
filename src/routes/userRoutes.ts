@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getUser, deleteUser, createUser, getToken } from '../modules/db/userManagement';
+import { getUser, deleteUser, createUser, getToken } from '../modules/user';
 import { checkUserIdReq, checkCreateUserReq } from '../middleware/security/user';
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
 

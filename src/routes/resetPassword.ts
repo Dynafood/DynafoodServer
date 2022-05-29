@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
-import { sendResetPasswordEmail, resetPassword } from '../modules/db/resetPassword';
+import { sendResetPasswordEmail, resetPassword } from '../modules/password';
 
 const router: Router = Router();
 
