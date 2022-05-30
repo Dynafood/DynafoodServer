@@ -7,7 +7,6 @@ import { database } from '../../../server_config';
 
 export const checkUserExists = async (user: UserInterface): Promise<boolean> => {
     const userFound: Array<QueryResultRow> = await database.User.getUser(user.userid, null)
-    console.log(userFound[0]);
     if (userFound.length > 0) {
         return true;
     }
@@ -16,7 +15,6 @@ export const checkUserExists = async (user: UserInterface): Promise<boolean> => 
 
 export const secureRouteMiddleware = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const token: string | null | undefined = req.cookies.token;
-    console.log(token)
     let header_token: string | undefined | null = req.headers.authorization;
     if (typeof token !== 'undefined' && token != null) {
         try {

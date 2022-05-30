@@ -20,7 +20,7 @@ export const createUser = async (firstName: string, lastName: string, userName: 
 
 export const getUser = async (userid: string | null = null, email: string | null = null) : Promise<Array<QueryResultRow>> => {
     var query: string = `
-    SELECT EU.passcode, EU.firstName, EU.lastName, EU.userName, EU.email, EU.phoneNumber, ER.alertActivation, R.restrictionName
+    SELECT EU.enduserid, EU.passcode, EU.firstName, EU.lastName, EU.userName, EU.email, EU.phoneNumber, ER.alertActivation, R.restrictionName
     FROM EndUser EU
     LEFT JOIN EndUser_Restriction ER ON ER.endUserID = EU.endUserID
     LEFT JOIN Restriction R ON R.restrictionID = ER.restrictionID

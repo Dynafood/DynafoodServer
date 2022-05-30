@@ -52,11 +52,11 @@ export const getSettings = async (req: Request, res: Response) : Promise<void> =
 
 export const postSettings = async (req: Request, res: Response) : Promise<void> => {
     try {
-        
+        await database.Settings.createSetting(req.body.alertActivation,res.locals.user.userid, res.locals.restrictionID)
         res.status(200).send();
     } catch (err: any) {
         console.log(err);
-        res.status(500).send({ Error: err, Details: err.stack });
+        res.status(500).send({"Error": err, "Details": err.stack})
     }
 };
 

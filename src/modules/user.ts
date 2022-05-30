@@ -42,8 +42,7 @@ export const createUser = async (req: Request, res: Response) => {
         res.cookie('token', token, {
             httpOnly: true
         });
-        console.log("result: ", res.cookie)
-        res.status(200).send(token);
+        res.status(200).json(token);
         return;
     } catch (error: any) {
         res.status(400).send({ Error: 'Unable to create new User.', Details: `${error.stack}` });
@@ -96,7 +95,7 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
         res.cookie('token', token, {
             httpOnly: true
         });
-        res.status(200).send(token);
+        res.status(200).json(token);
         return;
     }
     res.status(401).send({ Error: 'Wrong credentials' });

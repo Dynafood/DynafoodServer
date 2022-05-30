@@ -1,9 +1,9 @@
 import pg from 'pg';
 import * as dotenv from 'dotenv';
 import { createNewFeedback } from "./feedback";
-import {cleanDublicateHistory, deleteElementFromHistory, getElementsFromHistory, insertIntoHistory, updateHistory, updateHistoryElement} from "./historyManagement";
+import {cleanDublicateHistory, deleteElementFromHistory, getElements, insertIntoHistory, updateHistory, updateHistoryElement} from "./historyManagement";
 import {updatePassword} from "./resetPassword";
-import {updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting} from "./settingsManagement";
+import {updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting} from "./settingsManagement";
 import {createUser, deleteUser, getUser} from "./userManagement";
 import { DatabaseInterface } from '../../../server_config';
 
@@ -43,7 +43,7 @@ const Database: DatabaseInterface = {
     ProductHistory: {
         cleanDublicateHistory,
         deleteElementFromHistory, 
-        getElementsFromHistory,
+        getElements,
         insertIntoHistory,
         updateHistory,
         updateHistoryElement
@@ -61,7 +61,8 @@ const Database: DatabaseInterface = {
         userHasRestriction,
         getAlertSettings,
         updateAlertSetting,
-        deleteAlertSetting
+        deleteAlertSetting,
+        createSetting
     }, 
     connect,
     end

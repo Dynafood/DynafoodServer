@@ -20,7 +20,7 @@ export interface DatabaseInterface {
     ProductHistory: {
         cleanDublicateHistory: (userid: string, barcode: string) => Promise<void>
         deleteElementFromHistory: (elementid: string, userid: string) => Promise<void>
-        getElementsFromHistory: (userid: string) => Promise<Array<QueryResultRow>>
+        getElements: (userid: string) => Promise<Array<QueryResultRow>>
         insertIntoHistory: (userID: string, barcode: string, product: JsonObject) => Promise<void>
         updateHistory: (userID: string, barcode: string, product: JsonObject) => Promise<void>
         updateHistoryElement: (userID: string, barcode: string, product: JsonObject) => Promise<void>
@@ -39,6 +39,7 @@ export interface DatabaseInterface {
         getAlertSettings: (userid: string) => Promise<Array<QueryResultRow>>
         updateAlertSetting: (userid: string, alertActivation: string, restrictionID: string) => Promise<void>
         deleteAlertSetting: (userid: string, restrictionID: string) => Promise<QueryResultRow>
+        createSetting: (alertactivation: string, userid: string, restrictionid: string) => Promise<void>
     }
     connect: () => Promise<void>
     end: () => Promise<void>

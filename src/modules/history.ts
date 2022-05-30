@@ -19,7 +19,7 @@ export const deleteElementFromHistory = async (req: Request, res: Response) : Pr
 export const getElementsFromHistory = async (req: Request, res: Response) : Promise<void> => {
     const userID: string = res.locals.user.userid;
     try {
-        const response : Array<QueryResultRow> = await database.ProductHistory.getElementsFromHistory(userID)
+        const response : Array<QueryResultRow> = await database.ProductHistory.getElements(userID)
         res.send({ elements: response });
     } catch (err: any) {
         res.status(500).send({"Error": err, "Details": err.stack})

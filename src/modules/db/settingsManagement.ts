@@ -2,15 +2,15 @@ import { checkInputBeforeSqlQuery } from './scripts';
 import { db_adm_conn } from './index';
 import { QueryResult, QueryResultRow } from 'pg';
 
-export const getRestrictionIdByName = async (restrictinoName: string) : Promise<string | null> => {
+export const getRestrictionIdByName = async (restrictionName: string) : Promise<string | null> => {
     const restrictionID : QueryResult = await db_adm_conn.query(`
         SELECT restrictionID
         FROM Restriction
-        WHERE restrictionName = '${checkInputBeforeSqlQuery(restrictinoName)}'
+        WHERE restrictionName = '${checkInputBeforeSqlQuery(restrictionName)}'
     `);
     if (restrictionID.rowCount == 0)
         return null;
-    return restrictionID.rows[0].restrictionID;
+    return restrictionID.rows[0].restrictionid;
 }
 
 export const userHasRestriction = async (userid: string, restrictionid: string) : Promise<boolean> => {
@@ -31,16 +31,26 @@ export const getAlertSettings = async (userid: string) : Promise<Array<QueryResu
     return result.rows
 }
 
-export const updateAlertSetting = async (userid: string, alertActivation: string, restrictionID: string) => {
+export const createSetting = async (alertActivation: string, userid: string, restrictionid:string) => {
     await db_adm_conn.query(`
             INSERT INTO EndUser_Restriction (alertActivation, endUserId, restrictionID)
             SELECT
                 ${checkInputBeforeSqlQuery(alertActivation)},
                 '${checkInputBeforeSqlQuery(userid)}',
-                '${checkInputBeforeSqlQuery(restrictionID)}'
+                '${checkInputBeforeSqlQuery(restrictionid)}'
             WHERE NOT EXISTS (SELECT * FROM EndUser_Restriction EU
             WHERE EU.endUserID = '${checkInputBeforeSqlQuery(userid)}'
-            AND EU.restrictionID = '${checkInputBeforeSqlQuery(restrictionID)}');
+            AND EU.restrictionID = '${checkInputBeforeSqlQuery(restrictionid)}');
+        `);
+}
+
+export const updateAlertSetting = async (userid: string, alertActivation: string, restrictionID: string) => {
+    console.log(alertActivation)
+    await db_adm_conn.query(`
+    UPDATE EndUser_Restriction
+    SET alertActivation = ${checkInputBeforeSqlQuery(alertActivation)}
+    WHERE restrictionID = '${checkInputBeforeSqlQuery(restrictionID)}'
+    AND endUserID = '${checkInputBeforeSqlQuery(userid)}';
         `);
 }
 

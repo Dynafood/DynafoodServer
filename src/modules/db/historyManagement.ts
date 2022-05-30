@@ -56,7 +56,7 @@ export const deleteElementFromHistory = async (elementid: string, userid: string
     WHERE historyID = '${elementID}' AND enduserid = '${checkInputBeforeSqlQuery(userid)}';`);
 };
 
-export const getElementsFromHistory = async (userid: string) : Promise<Array<QueryResultRow>> => {
+export const getElements = async (userid: string) : Promise<Array<QueryResultRow>> => {
     const userID: string = checkInputBeforeSqlQuery(userid);
     const response : QueryResult = await db_adm_conn.query(`
     SELECT H.historyID, H.barcode, H.productName, H.lastUsed, H.pictureLink
