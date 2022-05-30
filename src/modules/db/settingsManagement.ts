@@ -45,7 +45,6 @@ export const createSetting = async (alertActivation: string, userid: string, res
 }
 
 export const updateAlertSetting = async (userid: string, alertActivation: string, restrictionID: string) => {
-    console.log(alertActivation)
     await db_adm_conn.query(`
     UPDATE EndUser_Restriction
     SET alertActivation = ${checkInputBeforeSqlQuery(alertActivation)}

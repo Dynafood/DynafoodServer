@@ -1,9 +1,8 @@
-import jwt from 'jsonwebtoken';
 import { QueryResultRow } from 'pg';
 
 import { Request, Response, NextFunction } from 'express';
 import { UserInterface } from '../../../include/userInterface';
-import { database } from '../../../server_config';
+import { database, JWT } from '../../../server_config';
 
 export const checkUserExists = async (user: UserInterface): Promise<boolean> => {
     const userFound: Array<QueryResultRow> = await database.User.getUser(user.userid, null)
@@ -18,7 +17,7 @@ export const secureRouteMiddleware = async (req: Request, res: Response, next: N
     let header_token: string | undefined | null = req.headers.authorization;
     if (typeof token !== 'undefined' && token != null) {
         try {
-            const user: UserInterface = <UserInterface>(jwt.verify(token, <string>process.env.JWT_SECRET));
+            const user: UserInterface = JWT.validate(token);
             res.locals.user = user;
             if (!await checkUserExists(user)) {
                 throw new Error('user does not exist');
@@ -36,13 +35,14 @@ export const secureRouteMiddleware = async (req: Request, res: Response, next: N
                 throw new Error('no valid bearer');
             }
             header_token = header_token.substring(7);
-            const user: UserInterface = <UserInterface>(jwt.verify(header_token, <string>process.env.JWT_SECRET));
+            const user: UserInterface =  JWT.validate(header_token)
             res.locals.user = user;
             if (!await checkUserExists(user)) {
                 throw new Error('user does not exist');
             }
             next();
         } catch (error) {
+            console.log(error)
             res.status(401).send({ Error: '401 Unauthorized' });
         }
     } else {

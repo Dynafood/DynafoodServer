@@ -15,7 +15,6 @@ const getInnerIngredients = (ingredient: JsonObject): {vegan: boolean | null, ve
                 vegetarian: ingredient.ingredients[i].vegetarian,
                 ingredients: getInnerIngredients(ingredient.ingredients[i])
             };
-            console.log(tmp.name);
             if (tmp.vegan) {
                 vegan = true;
             }

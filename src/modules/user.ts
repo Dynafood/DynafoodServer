@@ -1,8 +1,7 @@
-import { QueryResult, QueryResultRow } from 'pg';
-import jwt from 'jsonwebtoken';
+import { QueryResultRow } from 'pg';
 import bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
-import { database } from '../../server_config';
+import { database, JWT } from '../../server_config';
 
 type RestrictionObj = {
     alertactivation: boolean,
@@ -38,7 +37,7 @@ export const createUser = async (req: Request, res: Response) => {
         const passcode: string = await bcrypt.hash(req.body.password, 10);
         const created: QueryResultRow = await database.User.createUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.email, req.body.phoneNumber, passcode)
         const userid: string = created.enduserid;
-        const token: string = jwt.sign({ userid: userid }, <string>process.env.JWT_SECRET, { expiresIn: '1h' });
+        const token: string = JWT.create(userid)
         res.cookie('token', token, {
             httpOnly: true
         });
@@ -87,11 +86,10 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
         res.status(404).send({ Error: `There is no user with the email ${email}` });
         return;
     }
-    console.log(password, user)
     const correctPassword: boolean = await bcrypt.compare(password, user[0].passcode);
     if (user[0].email === email && correctPassword) {
         const userid : string = user[0].enduserid;
-        const token : string = jwt.sign({ userid: userid }, <string>process.env.JWT_SECRET, { expiresIn: '1h' });
+        const token : string = JWT.create(userid)
         res.cookie('token', token, {
             httpOnly: true
         });

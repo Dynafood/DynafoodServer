@@ -12,6 +12,7 @@ import resetPasswordRouter from './src/routes/resetPassword';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { QueryResultRow } from 'pg';
+import { UserInterface } from './include/userInterface';
 
 export interface DatabaseInterface {
     Feedback: {
@@ -44,12 +45,23 @@ export interface DatabaseInterface {
     connect: () => Promise<void>
     end: () => Promise<void>
 }
-
-export const app: Express = express();
-export var database: DatabaseInterface
-export const init_db = (db: DatabaseInterface) => {
+export const init_db = (db: JsonObject) => {
     database = db
 }
+export var database: JsonObject
+
+export interface JWT {
+    create: (userid: string) => string
+    validate: (token: string) => UserInterface
+}
+export const init_jwt = (jwt_obj: JWT) => {
+    JWT = jwt_obj
+}
+export var JWT: JWT;
+
+export const app: Express = express();
+
+
 
 const options : object = {
     apis: ['./src/routes/*.ts'],
