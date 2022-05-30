@@ -1,10 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
-import { updateHistory } from './db/historyManagement';
-import { db_adm_conn } from './db/index';
-import { QueryResult } from 'pg';
-import { checkInputBeforeSqlQuery } from './db/scripts';
 import { Request, Response } from 'express';
 import { JsonObject } from 'swagger-ui-express';
+import { database } from '../../server_config';
 
 const getInnerIngredients = (ingredient: JsonObject): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
     const inner : Array<object> = [];
@@ -201,7 +198,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             if (product.data.product && product.data.product.nutriments) {
                 response.nutriments_g_pro_100g = getNutriments(product.data.product.nutriments);
             }
-            updateHistory(userID, req.params.barcode, response);
+            await database.History.updateHistory(userID, req.params.barcode, response);
             response.nutriments_scores = getNutrimentsScore(product.data.product);
             // response.vegetarian_alert = await checkAlertVegetarian(userID, response)
         }

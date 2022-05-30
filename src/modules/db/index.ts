@@ -40,14 +40,6 @@ const Database: DatabaseInterface = {
     Feedback: {
         createNewFeedback
     }, 
-    ProductHistory: {
-        cleanDublicateHistory,
-        deleteElementFromHistory, 
-        getElements,
-        insertIntoHistory,
-        updateHistory,
-        updateHistoryElement
-    },
     Password : {
         updatePassword
     }, 
@@ -64,6 +56,14 @@ const Database: DatabaseInterface = {
         deleteAlertSetting,
         createSetting
     }, 
+    History: {
+        cleanDublicateHistory,
+        deleteElementFromHistory, 
+        getElements,
+        insertIntoHistory,
+        updateHistory,
+        updateHistoryElement
+    },
     connect,
     end
 }

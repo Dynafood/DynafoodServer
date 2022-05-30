@@ -17,7 +17,7 @@ export interface DatabaseInterface {
     Feedback: {
         createNewFeedback: (reason: string, content: string, userid: string) => Promise<void>
     }
-    ProductHistory: {
+    History: {
         cleanDublicateHistory: (userid: string, barcode: string) => Promise<void>
         deleteElementFromHistory: (elementid: string, userid: string) => Promise<void>
         getElements: (userid: string) => Promise<Array<QueryResultRow>>
