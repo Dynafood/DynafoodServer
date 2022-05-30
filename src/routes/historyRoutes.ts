@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getElementsFromHistory, deleteElementFromHistory } from '../modules/db/historyManagement';
+import { getElementsFromHistory, deleteElementFromHistory } from '../modules/history';
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
 
 const router: Router = Router();

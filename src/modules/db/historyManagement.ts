@@ -1,7 +1,6 @@
-import db_adm_conn from './index';
-import { QueryResult } from 'pg';
+import { db_adm_conn } from './index';
+import { QueryResult, QueryResultRow } from 'pg';
 import { checkInputBeforeSqlQuery } from './scripts';
-import { Request, Response } from 'express';
 import { JsonObject } from 'swagger-ui-express';
 
 export const updateHistory = async (userID: string, barcode: string, product: JsonObject) : Promise<void> => {
@@ -50,21 +49,20 @@ export const insertIntoHistory = async (userID: string, barcode: string, product
     VALUES ('${userID}', '${barcode}', '${product.name}', '${product.images}');`);
 };
 
-export const deleteElementFromHistory = async (req: Request, res: Response) : Promise<void> => {
-    const elementID: string = checkInputBeforeSqlQuery(req.params.elementID);
+export const deleteElementFromHistory = async (elementid: string, userid: string) : Promise<void> => {
+    const elementID: string = checkInputBeforeSqlQuery(elementid);
     await db_adm_conn.query(`
     DELETE FROM history
-    WHERE historyID = '${elementID}' AND enduserid = '${checkInputBeforeSqlQuery(res.locals.user.userid)}';`);
-    res.send('DELETED');
+    WHERE historyID = '${elementID}' AND enduserid = '${checkInputBeforeSqlQuery(userid)}';`);
 };
 
-export const getElementsFromHistory = async (req: Request, res: Response) : Promise<void> => {
-    const userID: string = checkInputBeforeSqlQuery(res.locals.user.userid);
+export const getElements = async (userid: string) : Promise<Array<QueryResultRow>> => {
+    const userID: string = checkInputBeforeSqlQuery(userid);
     const response : QueryResult = await db_adm_conn.query(`
     SELECT H.historyID, H.barcode, H.productName, H.lastUsed, H.pictureLink
     FROM History H
     JOIN EndUser EU ON EU.endUserID = H.endUserID
     WHERE EU.endUserID = '${userID}'
     ORDER BY H.lastused DESC;`);
-    res.send({ elements: response.rows });
+    return response.rows
 };

@@ -1,10 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
-import { updateHistory } from './db/historyManagement';
-import { db_adm_conn } from './db/index';
-import { QueryResult } from 'pg';
-import { checkInputBeforeSqlQuery } from './db/scripts';
 import { Request, Response } from 'express';
 import { JsonObject } from 'swagger-ui-express';
+import { database } from '../../server_config';
 
 const getInnerIngredients = (ingredient: JsonObject): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
     const inner : Array<object> = [];
@@ -139,20 +136,20 @@ const getEcoScore = (data: JsonObject): EcoScoreInterface => {
     return ret;
 };
 
-export const checkAlertVegetarian = async (userid: string, product: JsonObject) : Promise<Boolean> => {
-    if (product.ingredients.vegetarian) {
-        const response : QueryResult = await db_adm_conn.query(`
-        SELECT R.restrictionName, ER.alertActivation
-        FROM Restriction R
-        LEFT JOIN EndUser_Restriction ER ON ER.restrictionID = R.restrictionID
-        WHERE ER.endUserID = '${checkInputBeforeSqlQuery(userid)}'
-            AND R.restrivtionName = 'vegetarian';`);
-        if (response.rows.length > 0 && response.rows[0].alertActivation) {
-            return true;
-        }
-    }
-    return false;
-};
+// export const checkAlertVegetarian = async (userid: string, product: JsonObject) : Promise<Boolean> => {
+//     if (product.ingredients.vegetarian) {
+//         const response : QueryResult = await db_adm_conn.query(`
+//         SELECT R.restrictionName, ER.alertActivation
+//         FROM Restriction R
+//         LEFT JOIN EndUser_Restriction ER ON ER.restrictionID = R.restrictionID
+//         WHERE ER.endUserID = '${checkInputBeforeSqlQuery(userid)}'
+//             AND R.restrivtionName = 'vegetarian';`);
+//         if (response.rows.length > 0 && response.rows[0].alertActivation) {
+//             return true;
+//         }
+//     }
+//     return false;
+// };
 
 export const getProduct = async (req: Request, res: Response) : Promise<void> => {
     try {
@@ -201,7 +198,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             if (product.data.product && product.data.product.nutriments) {
                 response.nutriments_g_pro_100g = getNutriments(product.data.product.nutriments);
             }
-            updateHistory(userID, req.params.barcode, response);
+            await database.History.updateHistory(userID, req.params.barcode, response);
             response.nutriments_scores = getNutrimentsScore(product.data.product);
             // response.vegetarian_alert = await checkAlertVegetarian(userID, response)
         }

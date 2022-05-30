@@ -1,16 +1,13 @@
 import jwt from 'jsonwebtoken';
-import { db_adm_conn } from '../../modules/db/index';
-import { QueryResult } from 'pg';
+import { QueryResultRow } from 'pg';
 
-import { checkInputBeforeSqlQuery } from '../../modules/db/scripts';
 import { Request, Response, NextFunction } from 'express';
 import { UserInterface } from '../../../include/userInterface';
+import { database } from '../../../server_config';
 
 export const checkUserExists = async (user: UserInterface): Promise<boolean> => {
-    const response : QueryResult = await db_adm_conn.query(`
-    SELECT COUNT(enduserid) FROM enduser WHERE enduserid = '${checkInputBeforeSqlQuery(user.userid)}'`);
-    console.log(response);
-    if (response.rows[0].count === '1') {
+    const userFound: Array<QueryResultRow> = await database.User.getUser(user.userid, null)
+    if (userFound.length > 0) {
         return true;
     }
     return false;
@@ -28,7 +25,7 @@ export const secureRouteMiddleware = async (req: Request, res: Response, next: N
             }
             next();
         } catch (error) {
-            // console.log(`Clearing ${token} at request: `, req.path);
+            console.log(`Clearing ${token} at request: `, req.path);
             res.clearCookie('token');
             res.status(401).send({ Error: '401 Unauthorized' });
         }
