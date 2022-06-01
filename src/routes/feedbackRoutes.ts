@@ -64,7 +64,7 @@ import { createFeedback } from '../modules/feedback';
  *               items:
  *                 $ref: '#/components/schemas/Error'
 */
-router.post('/settings', secureRouteMiddleware, createFeedback);
+router.post('/feedback', secureRouteMiddleware, createFeedback);
 
 
 export default router;

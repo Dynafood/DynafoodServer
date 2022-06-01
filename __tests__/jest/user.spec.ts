@@ -1,0 +1,135 @@
+import supertest from "supertest"
+import {app} from "../../server_config"
+import jwt from "../mock_jwt"
+import db from "../mock_db/mock_db"
+
+jwt.init()
+db.init()
+
+describe('check get user routes', () => {
+    test('getExistingUser with token', async () => {
+        const response = await supertest(app).get("/user").send().set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(200)
+        expect(response.body).toMatchObject({
+            firstName: "test",
+            lastName: "user",
+            userName: "testUser123",
+            email: "email@gmail.com",
+            phoneNumber: "00000000",
+            restrictons: [{ alertactivation: true, restrictionName: 'peanut' }]
+        } )
+    })
+    test('getExistingUser with cookie token', async () => {
+        const response = await supertest(app).get("/user").send().set('Cookie', ['token=token_existing']);
+        expect(response.statusCode).toBe(200)
+        expect(response.body).toMatchObject({
+            firstName: "test",
+            lastName: "user",
+            userName: "testUser123",
+            email: "email@gmail.com",
+            phoneNumber: "00000000",
+            restrictons: [{ alertactivation: true, restrictionName: 'peanut' }]
+        } )
+    })
+})
+
+describe('check create user routes', () => {
+    const parameters = [
+        ["firstName", "karl"],
+        ["lastName", "stoer"],
+        ["userName", "karl123"],
+        ["email", "karl@gmail.com"],
+        ["phoneNumber", "00000000"],
+        ["password", "aA1asbfdoazierf-"]
+    ]
+    test('wrong arguments signup', async () => { 
+        let cur : any = {}
+        for (let i = 0; i < parameters.length; i++)  {
+            const response = await supertest(app).post("/signup").send(cur);
+            expect(response.statusCode).toBe(400)
+            expect(response.body).toMatchObject({Error: {details: [{message: "\"" + parameters[i][0] + "\" is required"}]}})
+            cur[parameters[i][0]] = parameters[i][1]
+        }
+        
+     })
+     test('wrong password fail', async () => {
+        let cur : any = {}
+        for (let i = 0; i < parameters.length; i++)  {
+            cur[parameters[i][0]] = parameters[i][1]
+        }
+        const passwords = [
+            ["UUUUUUUU", "Need a lowerCase"],
+            ["llllllll", "Need a uppercase"],
+            ["UUUUllll", "Need a digit"],
+            ["UUUUllll1234", "Need a special character (@, #, $, %, ^, &, +, -, !, ?, _, *, ., or ,)"]
+        ]
+        for (const password of passwords) {
+            cur["password"] = password[0]
+            const response = await supertest(app).post("/signup").send(cur);
+            expect(response.statusCode).toBe(400)
+            expect(response.body).toMatchObject({Error: password[1]})
+        }
+    })
+    test('signup existing email', async () => {
+        let cur : any = {}
+        for (let i = 0; i < parameters.length; i++)  {
+            cur[parameters[i][0]] = parameters[i][1]
+        }
+        cur["email"] = "email@gmail.com"
+        const response = await supertest(app).post("/signup").send(cur);
+        expect(response.statusCode).toBe(409)
+        expect(response.body).toMatchObject({ Error: 'email already exists' })
+    })
+    test('right signup', async () => {
+        let cur : any = {}
+        for (let i = 0; i < parameters.length; i++)  {
+            cur[parameters[i][0]] = parameters[i][1]
+        }
+        const response = await supertest(app).post("/signup").send(cur);
+        expect(response.statusCode).toBe(200)
+        expect(response.body).toBe("token_existing")
+    })
+})
+
+describe('check delete user route', () => {
+    test('delete user', async () => {
+        const response = await supertest(app).delete("/user").send().set('Cookie', ['token=token_existing']);
+        expect(response.statusCode).toBe(200)
+        expect(response.body).toMatchObject({Deleted: {
+            enduserid: "existing", 
+            passcode: "$2b$10$TQ1P6jaOk8YHzLC3JYlciepXBkf45LVQKIL77VfEmJG7B5PVM.JSG", 
+            firstname: "test", 
+            lastname: "user", 
+            username: "testUser123",
+            email: "email@gmail.com",
+            phonenumber: "00000000"
+    } } )
+    })
+})
+
+describe('check login user route', () => {
+    test('invalid password', async () => {
+        const response = await supertest(app).get("/login").query({
+            email: "email@gmail.com",
+            password: "wrong password"
+        }).send();
+        expect(response.statusCode).toBe(401)
+        expect(response.body).toMatchObject({ Error: 'Wrong credentials' })
+    })
+    test('non existing email', async () => {
+        const response = await supertest(app).get("/login").query({
+            email: "nop@gmail.com",
+            password: "wrong password"
+        }).send();
+        expect(response.statusCode).toBe(404)
+        expect(response.body).toMatchObject({ Error: "There is no user with the email nop@gmail.com" })
+    })
+    test('valid login', async () => {
+        const response = await supertest(app).get("/login").query({
+            email: "email@gmail.com",
+            password: "password"
+        }).send();
+        expect(response.statusCode).toBe(200)
+        expect(response.body).toBe("token_existing")
+    })
+})

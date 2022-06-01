@@ -34,7 +34,6 @@ const router: Router = Router();
  *   get:
  *     summary: trigger an email to be send to the user
  *     responses:
- *     responses:
  *       200:
  *         description: OK, email send (not working right now)
  *       404:

@@ -40,14 +40,6 @@ const schema = Joi.object({
         .required()
 });
 
-export const checkUserIdReq = (req: Request, res: Response, next: NextFunction) : void => {
-    if (typeof res.locals.user.userid === 'undefined' || res.locals.user.userid === null) {
-        res.status(400).send({ Error: 'No valid token provided.' });
-        return;
-    }
-    next();
-};
-
 export const checkPassword = (password: string) : string => 
 {
     let regexplower = new RegExp('^(?=.*[a-z]).+$')

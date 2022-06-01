@@ -1,5 +1,5 @@
 {
-  "main": "./server.js",
+  "main": "./dist/server.js",
   "type": "commonjs",
   "name": "apidynafood",
   "version": "1.0.0",

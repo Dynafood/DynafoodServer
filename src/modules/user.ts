@@ -52,10 +52,6 @@ export const createUser = async (req: Request, res: Response) => {
 export const getUser = async (req: Request, res: Response) : Promise<void> => {
     try {
         const user : Array<QueryResultRow> = await database.User.getUser(res.locals.user.userid, null)
-        if (user.length == 0) {
-            res.status(404).send('There is no EndUser with this id.');
-            return;
-        }
         res.send(parseGetUserResponse(user));
     } catch (err: any) {
         console.log(err.stack);

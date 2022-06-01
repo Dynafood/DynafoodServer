@@ -9,6 +9,8 @@ import productRouter from './src/routes/productRoutes';
 import settingRouter from './src/routes/settingsRoutes';
 import userRouter from './src/routes/userRoutes';
 import resetPasswordRouter from './src/routes/resetPassword';
+import feedbackRouter from './src/routes/feedbackRoutes'
+
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { QueryResultRow } from 'pg';
@@ -94,6 +96,7 @@ app.use(settingRouter);
 app.use(historyRouter);
 app.use(productRouter);
 app.use(resetPasswordRouter);
+app.use(feedbackRouter)
 app.use(logger);
 
 

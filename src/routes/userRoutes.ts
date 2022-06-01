@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { getUser, deleteUser, createUser, getToken } from '../modules/user';
-import { checkUserIdReq, checkCreateUserReq } from '../middleware/security/user';
+import { checkCreateUserReq } from '../middleware/security/user';
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
 
 const router : Router = Router();
@@ -46,7 +46,7 @@ const router : Router = Router();
  *                $ref: '#/components/schemas/User'
  */
 
-router.get('/user', secureRouteMiddleware, checkUserIdReq, getUser);
+router.get('/user', secureRouteMiddleware, getUser);
 
 /**
  * @swagger
@@ -112,7 +112,7 @@ router.post('/signup', checkCreateUserReq, createUser);
  *       200:
  *         description: DELETED
  */
-router.delete('/user', secureRouteMiddleware, checkUserIdReq, deleteUser);
+router.delete('/user', secureRouteMiddleware, deleteUser);
 
 /**
  * @swagger

@@ -13,11 +13,15 @@ export const createFeedback = async (req: Request, res: Response) => {
     const reason : string = req.body.reason
 
     if (!content || content.length === 0) {
-        res.status(404).send({"Error": "No content provided", "Details": `Content is not provided or empty!`})
+        res.status(400).send({"Error": "No content provided", "Details": `Content is not provided or empty!`})
+        return
+    }
+    if (!reason || reason.length === 0) {
+        res.status(400).send({"Error": "No reason provided", "Details": `Reason is not provided or empty!`})
         return
     }
     if (!_feedbackReasons.includes(reason)){
-        res.status(404).send({"Error": "Reason not valid", "Details": `Given reason '${reason}' is not part of possible reasons: ${_feedbackReasons}!`});
+        res.status(400).send({"Error": "Reason not valid", "Details": `Given reason '${reason}' is not part of possible reasons: ${_feedbackReasons}!`});
         return
     }
     try {
