@@ -1,7 +1,7 @@
 import pg from 'pg';
 import * as dotenv from 'dotenv';
 import { createNewFeedback } from "./feedback";
-import {cleanDublicateHistory, deleteElementFromHistory, getElements, insertIntoHistory, updateHistory, updateHistoryElement} from "./historyManagement";
+import {deleteElementFromHistory, getElements, updateHistory} from "./historyManagement";
 import {updatePassword} from "./resetPassword";
 import {updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting} from "./settingsManagement";
 import {createUser, deleteUser, getUser} from "./userManagement";
@@ -57,12 +57,9 @@ const Database: DatabaseInterface = {
         createSetting
     }, 
     History: {
-        cleanDublicateHistory,
         deleteElementFromHistory, 
         getElements,
-        insertIntoHistory,
         updateHistory,
-        updateHistoryElement
     },
     connect,
     end

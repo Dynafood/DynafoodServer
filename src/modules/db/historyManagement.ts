@@ -19,7 +19,7 @@ export const updateHistory = async (userID: string, barcode: string, product: Js
     }
 };
 
-export const cleanDublicateHistory = async (userID: string, barcode: string) : Promise<void> => {
+const cleanDublicateHistory = async (userID: string, barcode: string) : Promise<void> => {
     await db_adm_conn.query(`
     DELETE
     FROM History
@@ -27,7 +27,7 @@ export const cleanDublicateHistory = async (userID: string, barcode: string) : P
         AND enduserId = '${checkInputBeforeSqlQuery(userID)}';`);
 };
 
-export const updateHistoryElement = async (userID: string, barcode: string, product: JsonObject) : Promise<void> => {
+const updateHistoryElement = async (userID: string, barcode: string, product: JsonObject) : Promise<void> => {
     product.name = checkInputBeforeSqlQuery(product.name);
     product.images = checkInputBeforeSqlQuery(product.images);
     await db_adm_conn.query(`
@@ -38,7 +38,7 @@ export const updateHistoryElement = async (userID: string, barcode: string, prod
         AND enduserId = '${checkInputBeforeSqlQuery(userID)}';`);
 };
 
-export const insertIntoHistory = async (userID: string, barcode: string, product: JsonObject) : Promise<void> => {
+const insertIntoHistory = async (userID: string, barcode: string, product: JsonObject) : Promise<void> => {
     userID = checkInputBeforeSqlQuery(userID);
     barcode = checkInputBeforeSqlQuery(barcode);
     product.name = checkInputBeforeSqlQuery(product.name);

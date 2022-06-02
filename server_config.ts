@@ -21,12 +21,9 @@ export interface DatabaseInterface {
         createNewFeedback: (reason: string, content: string, userid: string) => Promise<void>
     }
     History: {
-        cleanDublicateHistory: (userid: string, barcode: string) => Promise<void>
         deleteElementFromHistory: (elementid: string, userid: string) => Promise<void>
         getElements: (userid: string) => Promise<Array<QueryResultRow>>
-        insertIntoHistory: (userID: string, barcode: string, product: JsonObject) => Promise<void>
         updateHistory: (userID: string, barcode: string, product: JsonObject) => Promise<void>
-        updateHistoryElement: (userID: string, barcode: string, product: JsonObject) => Promise<void>
     }
     Password: {
         updatePassword: (userid: string, newPassword: string) => Promise<void>

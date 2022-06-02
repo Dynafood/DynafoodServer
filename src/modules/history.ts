@@ -4,11 +4,7 @@ import { database } from "../../server_config";
 
 export const deleteElementFromHistory = async (req: Request, res: Response) : Promise<void> => {
     try {
-        const elementID = req.params.elementID || null
-        if (elementID == null) {
-            res.status(400).send({"Error": "BadRequest", "Details": "elementID missing"})
-            return
-        }
+        const elementID = req.params.elementID
         await database.History.deleteElementFromHistory(elementID, res.locals.user.userid)
         res.send('DELETED');
     } catch(err: any) {

@@ -11,12 +11,9 @@ const mock_db: JsonObject = {
         createNewFeedback: createNewFeedback
     },
     History: {
-        cleanDublicateHistory: null,
         deleteElementFromHistory: null,
         getElements: null,
-        insertIntoHistory: null,
         updateHistory: null,
-        updateHistoryElement: null
     },
     Password: {
         updatePassword: null
