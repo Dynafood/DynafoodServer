@@ -53,7 +53,7 @@ const router = (0, express_1.Router)();
  *               items:
  *                 $ref: '#/components/schemas/Error'
  */
-router.get('/resetPassword', secureRouting_1.secureRouteMiddleware, resetPassword_1.sendResetPasswordEmail);
+router.get('/resetPassword', secureRouting_1.secureRouteMiddleware, resetPassword_1.triggerResetPasswordEmail);
 /**
  * @swagger
  * /resetPassword:

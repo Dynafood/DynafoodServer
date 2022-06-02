@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
-import { sendResetPasswordEmail, resetPassword } from '../modules/db/resetPassword';
+import { triggerResetPasswordEmail, resetPassword } from '../modules/db/resetPassword';
 
 const router: Router = Router();
 
@@ -54,7 +54,7 @@ const router: Router = Router();
  *               items:
  *                 $ref: '#/components/schemas/Error'
  */
-router.get('/resetPassword', secureRouteMiddleware, sendResetPasswordEmail);
+router.get('/resetPassword', secureRouteMiddleware, triggerResetPasswordEmail);
 
 /**
  * @swagger

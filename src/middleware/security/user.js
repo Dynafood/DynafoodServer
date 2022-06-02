@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.checkCreateUserReq = exports.checkUserIdReq = void 0;
+exports.checkCreateUserReq = exports.checkPassword = exports.checkUserIdReq = void 0;
 const index_1 = require("../../modules/db/index");
 const scripts_1 = require("../../modules/db/scripts");
 const joi_1 = __importDefault(require("joi"));
@@ -58,13 +58,34 @@ const checkUserIdReq = (req, res, next) => {
     next();
 };
 exports.checkUserIdReq = checkUserIdReq;
+const checkPassword = (password) => {
+    let regexplower = new RegExp('^(?=.*[a-z]).+$');
+    let regexpupper = new RegExp('^(?=.*[A-Z]).+$');
+    let regexpNumber = new RegExp('^(?=.*[0-9]).+$');
+    let regexpCharacter = new RegExp('^(?=.*[-+_!@#$%^&*.,?]).+$');
+    if (regexplower.test(password) == false)
+        return "Need a lowerCase";
+    if (regexpupper.test(password) == false)
+        return "Need a uppercase";
+    if (regexpNumber.test(password) == false)
+        return "Need a digit";
+    if (regexpCharacter.test(password) == false)
+        return "Need a special character (@, #, $, %, ^, &, +, -, !, ?, _, *, ., or ,)";
+    return "Good";
+};
+exports.checkPassword = checkPassword;
 const checkCreateUserReq = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const { error } = schema.validate(req.body);
     if (error !== undefined) {
         res.status(400).send({ Error: error });
         return;
     }
-    const prevCheckEmail = yield index_1.db_adm_conn.query(`
+    const passwordCheck = (0, exports.checkPassword)(req.body.password);
+    if (passwordCheck != "Good") {
+        res.status(400).send({ "Error": passwordCheck });
+        return;
+    }
+    let prevCheckEmail = yield index_1.db_adm_conn.query(`
         SELECT email
         FROM EndUser
         WHERE email = '${(0, scripts_1.checkInputBeforeSqlQuery)(req.body.email)}'`);
