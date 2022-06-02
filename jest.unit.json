@@ -8,5 +8,5 @@
     "resetMocks": true,
     "clearMocks": true,
     "setupFilesAfterEnv": ["./__tests__/setup.ts"],
-    "collectCoverageFrom" : ["src/*{!(db),}/*.ts"]
+    "collectCoverageFrom" : ["src/**/{!(db),}/*.ts"]
 }

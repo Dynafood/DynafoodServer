@@ -1,10 +1,31 @@
 import supertest from "supertest"
-import {app} from "../../server_config"
-import jwt from "../mock_jwt"
-import db from "../mock_db/mock_db"
+import {app, database} from "../../../server_config"
+import jwt from "./mocks/mock_jwt"
+import db from "./mocks/mock_db"
+import { QueryResultRow } from "pg"
 
 jwt.init()
 db.init()
+
+export const getUser = async (userid: string | null = null, email: string | null = null) : Promise<Array<QueryResultRow>> => {
+    return new Promise((resolve, reject) => {
+        if (userid == "existing" || email == "email@gmail.com")
+            {
+                resolve( [
+                    {
+                        enduserid: "existing", 
+                        passcode: "$2b$10$TQ1P6jaOk8YHzLC3JYlciepXBkf45LVQKIL77VfEmJG7B5PVM.JSG", 
+                        firstname: "test", 
+                        lastname: "user", 
+                        username: "testUser123",
+                        email: "email@gmail.com",
+                        phonenumber: "00000000",
+                    }
+                ] )
+            }
+            resolve( [] )
+    });
+}
 
 describe('check get user routes', () => {
     test('getExistingUser with token', async () => {
@@ -29,6 +50,19 @@ describe('check get user routes', () => {
             email: "email@gmail.com",
             phoneNumber: "00000000",
             restrictons: [{ alertactivation: true, restrictionName: 'peanut' }]
+        } )
+    })
+    test('getExistingUser with cookie token without restriction', async () => {
+        database.User.getUser = getUser
+        const response = await supertest(app).get("/user").send().set('Cookie', ['token=token_existing']);
+        expect(response.statusCode).toBe(200)
+        expect(response.body).toMatchObject({
+            firstName: "test",
+            lastName: "user",
+            userName: "testUser123",
+            email: "email@gmail.com",
+            phoneNumber: "00000000",
+            restrictons: []
         } )
     })
 })

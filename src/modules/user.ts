@@ -50,13 +50,8 @@ export const createUser = async (req: Request, res: Response) => {
 
 
 export const getUser = async (req: Request, res: Response) : Promise<void> => {
-    try {
-        const user : Array<QueryResultRow> = await database.User.getUser(res.locals.user.userid, null)
-        res.send(parseGetUserResponse(user));
-    } catch (err: any) {
-        console.log(err.stack);
-        res.status(500).send({ Error: err, Details: err.stack });
-    }
+    const user : Array<QueryResultRow> = await database.User.getUser(res.locals.user.userid, null)
+    res.send(parseGetUserResponse(user));    
 };
 
 export const deleteUser = async (req: Request, res: Response) : Promise<void> => {
@@ -72,25 +67,29 @@ export const deleteUser = async (req: Request, res: Response) : Promise<void> =>
 
 
 export const getToken = async (req: Request, res: Response) : Promise<void> => {
-    const email: string = <string> req.query.email;
-    const password: string = <string>req.query.password;
+    try {
+        const email: string = <string> req.query.email;
+        const password: string = <string>req.query.password;
 
-    const user : Array<QueryResultRow> = await database.User.getUser(null, email)
+        const user : Array<QueryResultRow> = await database.User.getUser(null, email)
 
-    if (user.length === 0) {
-        console.log(`There is no user with the email: ${email}`);
-        res.status(404).send({ Error: `There is no user with the email ${email}` });
-        return;
+        if (user.length === 0) {
+            console.log(`There is no user with the email: ${email}`);
+            res.status(404).send({ Error: `There is no user with the email ${email}` });
+            return;
+        }
+        const correctPassword: boolean = await bcrypt.compare(password, user[0].passcode);
+        if (user[0].email === email && correctPassword) {
+            const userid : string = user[0].enduserid;
+            const token : string = JWT.create(userid)
+            res.cookie('token', token, {
+                httpOnly: true
+            });
+            res.status(200).json(token);
+            return;
+        }
+        res.status(401).send({ Error: 'Wrong credentials' });
+    } catch (error: any) {
+        res.status(500).send({Error: error, details: error.stack})
     }
-    const correctPassword: boolean = await bcrypt.compare(password, user[0].passcode);
-    if (user[0].email === email && correctPassword) {
-        const userid : string = user[0].enduserid;
-        const token : string = JWT.create(userid)
-        res.cookie('token', token, {
-            httpOnly: true
-        });
-        res.status(200).json(token);
-        return;
-    }
-    res.status(401).send({ Error: 'Wrong credentials' });
 };

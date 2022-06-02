@@ -1,5 +1,5 @@
-import { init_jwt } from "../server_config";
-import { UserInterface } from '../include/userInterface';
+import { init_jwt } from "../../../../server_config";
+import { UserInterface } from '../../../../include/userInterface';
 
 
 const init = () => {

@@ -1,7 +1,7 @@
 import supertest from "supertest"
-import {app} from "../../server_config"
-import jwt from "../mock_jwt"
-import db from "../mock_db/mock_db"
+import {app} from "../../../server_config"
+import jwt from "./mocks/mock_jwt"
+import db from "./mocks/mock_db"
 
 jwt.init()
 db.init()
