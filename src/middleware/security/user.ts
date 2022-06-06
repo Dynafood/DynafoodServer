@@ -42,28 +42,23 @@ const schema = Joi.object({
 
 export const checkUserIdReq = (req: Request, res: Response, next: NextFunction) : void => {
     if (typeof res.locals.user.userid === 'undefined' || res.locals.user.userid === null) {
-        res.status(400).send({ Error: 'No valid token provided.' });
+        res.status(400).send({ Error: '400 Bad Request', Details: 'No valid token provided.' });
         return;
     }
     next();
 };
 
-export const checkPassword = (password: string) : string => 
-{
-    let regexplower = new RegExp('^(?=.*[a-z]).+$')
-    let regexpupper = new RegExp('^(?=.*[A-Z]).+$')
-    let regexpNumber = new RegExp('^(?=.*[0-9]).+$')
-    let regexpCharacter = new RegExp('^(?=.*[-+_!@#$%^&*.,?]).+$')
-    if (regexplower.test(password) == false)
-        return "Need a lowerCase"
-    if (regexpupper.test(password) == false)
-        return "Need a uppercase"
-    if (regexpNumber.test(password) == false)
-        return "Need a digit"
-    if (regexpCharacter.test(password) == false)
-        return "Need a special character (@, #, $, %, ^, &, +, -, !, ?, _, *, ., or ,)"
-    return "Good"
-}
+export const checkPassword = (password: string) : string => {
+    const regexplower = new RegExp('^(?=.*[a-z]).+$'); // eslint-disable-line prefer-regex-literals
+    const regexpupper = new RegExp('^(?=.*[A-Z]).+$'); // eslint-disable-line prefer-regex-literals
+    const regexpNumber = new RegExp('^(?=.*[0-9]).+$'); // eslint-disable-line prefer-regex-literals
+    const regexpCharacter = new RegExp('^(?=.*[-+_!@#$%^&*.,?]).+$'); // eslint-disable-line prefer-regex-literals
+    if (regexplower.test(password) === false) { return 'Need a lowerCase'; }
+    if (regexpupper.test(password) === false) { return 'Need a uppercase'; }
+    if (regexpNumber.test(password) === false) { return 'Need a digit'; }
+    if (regexpCharacter.test(password) === false) { return 'Need a special character (@, #, $, %, ^, &, +, -, !, ?, _, *, ., or ,)'; }
+    return 'Good';
+};
 
 export const checkCreateUserReq = async (req: Request, res: Response, next: NextFunction) : Promise<void> => {
     const { error } = schema.validate(req.body);
@@ -71,14 +66,14 @@ export const checkCreateUserReq = async (req: Request, res: Response, next: Next
         res.status(400).send({ Error: error });
         return;
     }
-    const passwordCheck: string = checkPassword(req.body.password)
-    if (passwordCheck != "Good") {
-        res.status(400).send({"Error": passwordCheck})
-        return
+    const passwordCheck: string = checkPassword(req.body.password);
+    if (passwordCheck !== 'Good') {
+        res.status(400).send({ Error: '400 Bad Request', Details: passwordCheck });
+        return;
     }
-    let prevCheckEmail : Array<QueryResultRow> = await database.User.getUser(null, req.body.email)
+    const prevCheckEmail : Array<QueryResultRow> = await database.User.getUser(null, req.body.email);
     if (prevCheckEmail.length !== 0) {
-        res.status(409).send({ Error: 'email already exists' });
+        res.status(409).send({ Error: '409 Conflict', Details: 'email already exists' });
         return;
     }
     next();

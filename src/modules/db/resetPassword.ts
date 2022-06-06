@@ -23,7 +23,7 @@ export const triggerResetPasswordEmail = async (req: Request, res: Response) => 
         `);
 
         if (user.rows.length === 0) {
-            res.status(404).send({ Error: 'There is no EndUser with that id.' });
+            res.status(404).send({ Error: '404 Not Found', Details: 'There is no EndUser with that id.' });
             return;
         }
 
@@ -35,7 +35,7 @@ export const triggerResetPasswordEmail = async (req: Request, res: Response) => 
         res.status(200).send({ status: 'OK' });
     } catch (err: any) {
         console.log(err.stack);
-        res.status(500).send({ Error: err, Details: err.stack });
+        res.status(500).send({ Error: '500 Internal Server Error', Details: err.stack });
     }
 };
 
@@ -51,7 +51,7 @@ export const resetPassword = async (req: Request, res: Response) => {
         `);
 
         if (user.rows.length === 0) {
-            res.status(404).send({ Error: 'There is no EndUser with this id.' });
+            res.status(404).send({ Error: '404 Not Found', Details: 'There is no EndUser with this id.' });
             return;
         }
 
@@ -59,14 +59,14 @@ export const resetPassword = async (req: Request, res: Response) => {
         const correctPassword: boolean = await bcrypt.compare(oldPassword, currentPassword);
 
         if (!correctPassword) {
-            res.status(403).send({ Error: 'Old password is not matching' });
+            res.status(403).send({ Error: '403 Forbidden', Details: 'Old password is not matching' });
             return;
         }
 
         const { error } = schema.validate({ password: req.body.newPassword });
 
         if (error !== undefined) {
-            res.status(409).send({ Error: 'New password is not strong enough' });
+            res.status(409).send({ Error: '409 Conflict', Details: 'New password is not strong enough' });
             return;
         }
 
@@ -81,7 +81,7 @@ export const resetPassword = async (req: Request, res: Response) => {
         });
     } catch (err: any) {
         console.log(err.stack);
-        res.status(500).send({ Error: err, Details: err.stack });
+        res.status(500).send({ Error: '500 Internal Server Error', Details: err.stack });
     }
 };
 

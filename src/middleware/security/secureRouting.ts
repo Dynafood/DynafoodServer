@@ -6,7 +6,7 @@ import { UserInterface } from '../../../include/userInterface';
 import { database } from '../../../server_config';
 
 export const checkUserExists = async (user: UserInterface): Promise<boolean> => {
-    const userFound: Array<QueryResultRow> = await database.User.getUser(user.userid, null)
+    const userFound: Array<QueryResultRow> = await database.User.getUser(user.userid, null);
     if (userFound.length > 0) {
         return true;
     }
@@ -27,7 +27,7 @@ export const secureRouteMiddleware = async (req: Request, res: Response, next: N
         } catch (error) {
             console.log(`Clearing ${token} at request: `, req.path);
             res.clearCookie('token');
-            res.status(401).send({ Error: '401 Unauthorized' });
+            res.status(401).send({ Error: '401 Unauthorized', Details: error });
         }
     } else
     if (typeof header_token !== 'undefined' && header_token != null) {
@@ -43,9 +43,9 @@ export const secureRouteMiddleware = async (req: Request, res: Response, next: N
             }
             next();
         } catch (error) {
-            res.status(401).send({ Error: '401 Unauthorized' });
+            res.status(401).send({ Error: '401 Unauthorized', Details: error });
         }
     } else {
-        res.status(401).send({ Error: '401 Unauthorized' });
+        res.status(401).send({ Error: '401 Unauthorized', Details: 'header token and token are undefined' });
     }
 };

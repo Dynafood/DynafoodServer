@@ -173,11 +173,11 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
         const url: string = `https://world.openfoodfacts.org/api/2/product/${req.params.barcode}.json`;
         const product: AxiosResponse = await axios.get(url);
         if (typeof product === 'undefined' || product == null) {
-            res.status(500).send({ error: 'undefined response from OpenFoodFacts Api' });
+            res.status(500).send({ Error: '500 Internal Server Error', Details: 'undefined response from OpenFoodFacts Api' });
         }
 
         if (product.data.status !== 1) {
-            res.status(204).send({ response: 'Product not found' });
+            res.status(204).send({ Error: '204 No Content', Details: 'Product not found' });
             return;
         }
 
@@ -206,6 +206,6 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
         res.status(200).send(response);
     } catch (error) {
         console.log(error);
-        res.status(500).send('Internal Server Error');
+        res.status(500).send({ Error: '500 Internal Server Error', Details: error });
     }
 };

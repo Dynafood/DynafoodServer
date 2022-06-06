@@ -1,7 +1,7 @@
 import { Router, urlencoded, json, Request, Response } from 'express';
 import cookieParser from 'cookie-parser';
 import logger from '../middleware/logger';
-import { database } from '../../server_config';
+// import { database } from '../../server_config';
 const router: Router = Router();
 
 router.use(json({ limit: '200kb' }));
