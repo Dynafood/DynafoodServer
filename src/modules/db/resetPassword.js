@@ -38,7 +38,7 @@ const triggerResetPasswordEmail = (req, res) => __awaiter(void 0, void 0, void 0
         const email = user.rows[0].email;
         const username = user.rows[0].username;
         (0, email_1.sendResetPasswordEmail)(username, email);
-        res.status(200).send({ status: "OK" });
+        res.status(200).send({ status: 'OK' });
     }
     catch (err) {
         console.log(err.stack);
