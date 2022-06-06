@@ -12,18 +12,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getProduct = exports.checkAlertVegetarian = void 0;
+exports.getProduct = void 0;
 const axios_1 = __importDefault(require("axios"));
-const historyManagement_1 = require("./db/historyManagement");
-const index_1 = require("./db/index");
-const scripts_1 = require("./db/scripts");
+const server_config_1 = require("../../server_config");
 const getInnerIngredients = (ingredient) => {
-    let inner = [];
+    const inner = [];
     let vegan = true;
     let vegetarian = true;
-    if (typeof ingredient.ingredients != "undefined" && ingredient.ingredients != null) {
-        for (var i = 0; i < ingredient.ingredients.length; i++) {
-            var tmp = {
+    if (typeof ingredient.ingredients !== 'undefined' && ingredient.ingredients !== null) {
+        for (let i = 0; i < ingredient.ingredients.length; i++) {
+            const tmp = {
                 name: ingredient.ingredients[i].text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match) => match.toUpperCase()),
                 vegan: ingredient.ingredients[i].vegan,
                 vegetarian: ingredient.ingredients[i].vegetarian,
@@ -43,16 +41,16 @@ const getInnerIngredients = (ingredient) => {
     return { vegan: null, vegetarian: null, ingredients: [] };
 };
 const getAllAllergenes = (hierarchy) => {
-    let allergenes = [];
-    if (typeof hierarchy != "undefined" && hierarchy != null) {
+    const allergenes = [];
+    if (typeof hierarchy !== 'undefined' && hierarchy != null) {
         hierarchy.forEach((entry) => {
-            allergenes.push(entry.substring(entry.indexOf(":") + 1));
+            allergenes.push(entry.substring(entry.indexOf(':') + 1));
         });
     }
     return allergenes;
 };
 const getNutriments = (nutriments) => {
-    if (typeof nutriments != "undefined" && nutriments != null) {
+    if (typeof nutriments !== 'undefined' && nutriments != null) {
         return {
             calcium: nutriments.calcium_100g,
             carbohydrates: nutriments.carbohydrates_100g,
@@ -77,8 +75,8 @@ const getNutriments = (nutriments) => {
     return null;
 };
 const getNutrimentsScore = (data) => {
-    if (typeof data.nutriscore_data != "undefined" && data.nutriscore_data != null) {
-        var ret = {
+    if (typeof data.nutriscore_data !== 'undefined' && data.nutriscore_data != null) {
+        const ret = {
             energy_points: data.nutriscore_data.energy_points,
             fiber_points: data.nutriscore_data.fiber_points,
             negative_points: data.nutriscore_data.negative_points,
@@ -90,8 +88,9 @@ const getNutrimentsScore = (data) => {
             total_score: 0,
             total_grade: data.nutriscore_grade
         };
-        if (ret.negative_points && ret.positive_points)
+        if (ret.negative_points && ret.positive_points) {
             ret.total_score = ret.positive_points - ret.negative_points;
+        }
     }
     return {
         energy_points: null,
@@ -103,19 +102,19 @@ const getNutrimentsScore = (data) => {
         sodium_points: null,
         sugars_points: null,
         total_grade: null,
-        total_score: null,
+        total_score: null
     };
 };
 const getEcoScore = (data) => {
-    let ret = {
+    const ret = {
         eco_grade: null,
         eco_score: null,
         epi_score: null,
         transportation_scores: null,
         packaging: null,
-        agribalyse: null, // Co2 emission from different parts
+        agribalyse: null // Co2 emission from different parts
     };
-    if (typeof data.ecoscore_data != "undefined" && data.ecoscore_data != null && data.ecoscore_grade !== "not-applicable") {
+    if (typeof data.ecoscore_data !== 'undefined' && data.ecoscore_data != null && data.ecoscore_grade !== 'not-applicable') {
         ret.eco_score = data.ecoscore_score;
         ret.epi_score = data.ecoscore_data.adjustments.origins_of_ingredients.epi_score;
         ret.transportation_scores = data.ecoscore_data.adjustments.origins_of_ingredients.transportation_scores;
@@ -125,25 +124,24 @@ const getEcoScore = (data) => {
     ret.eco_grade = data.ecoscore_grade;
     return ret;
 };
-const checkAlertVegetarian = (userid, product) => __awaiter(void 0, void 0, void 0, function* () {
-    if (product.ingredients.vegetarian) {
-        let response = yield index_1.db_adm_conn.query(`
-        SELECT R.restrictionName, ER.alertActivation 
-        FROM Restriction R
-        LEFT JOIN EndUser_Restriction ER ON ER.restrictionID = R.restrictionID
-        WHERE ER.endUserID = '${(0, scripts_1.checkInputBeforeSqlQuery)(userid)}'
-            AND R.restrivtionName = 'vegetarian';`);
-        if (response.rows.length > 0 && response.rows[0].alertActivation) {
-            return true;
-        }
-    }
-    return false;
-});
-exports.checkAlertVegetarian = checkAlertVegetarian;
+// export const checkAlertVegetarian = async (userid: string, product: JsonObject) : Promise<Boolean> => {
+//     if (product.ingredients.vegetarian) {
+//         const response : QueryResult = await db_adm_conn.query(`
+//         SELECT R.restrictionName, ER.alertActivation
+//         FROM Restriction R
+//         LEFT JOIN EndUser_Restriction ER ON ER.restrictionID = R.restrictionID
+//         WHERE ER.endUserID = '${checkInputBeforeSqlQuery(userid)}'
+//             AND R.restrivtionName = 'vegetarian';`);
+//         if (response.rows.length > 0 && response.rows[0].alertActivation) {
+//             return true;
+//         }
+//     }
+//     return false;
+// };
 const getProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const userID = res.locals.user.userid;
-        let response = {
+        const response = {
             name: null,
             keywords: [],
             allergens: [],
@@ -160,34 +158,36 @@ const getProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         };
         const url = `https://world.openfoodfacts.org/api/2/product/${req.params.barcode}.json`;
         const product = yield axios_1.default.get(url);
-        if (typeof product === "undefined" || product == null) {
-            res.status(500).send({ error: "undefined response from OpenFoodFacts Api" });
+        if (typeof product === 'undefined' || product == null) {
+            res.status(500).send({ error: 'undefined response from OpenFoodFacts Api' });
         }
-        if (product.data.status != 1) {
-            res.status(204).send({ response: "Product not found" });
+        if (product.data.status !== 1) {
+            res.status(204).send({ response: 'Product not found' });
             return;
         }
-        if (typeof product === "object" && product.data && product.data.product) {
-            const data = product["data"]["product"];
-            response.keywords = data["_keywords"];
-            response.allergens = getAllAllergenes(data["allergens_hierarchy"]);
-            response.categories = data["categories"] ? data["categories"].split(',') : [];
-            response.qualities = data["data_quality_tags"];
-            response.warings = data["data_quality_warnings_tags"];
+        if (typeof product === 'object' && product.data && product.data.product) {
+            const data = product.data.product;
+            response.keywords = data._keywords;
+            response.allergens = getAllAllergenes(data.allergens_hierarchy);
+            response.categories = data.categories ? data.categories.split(',') : [];
+            response.qualities = data.data_quality_tags;
+            response.warings = data.data_quality_warnings_tags;
             response.ecoscoreData = getEcoScore(data);
-            response.packing = data["packaging"];
+            response.packing = data.packaging;
             response.name = product.data.product.product_name;
-            if (typeof data["image_front_url"] === "undefined" || data["image_front_url"] == null)
+            if (typeof data.image_front_url === 'undefined' || data.image_front_url == null) {
                 response.images = null;
-            else
-                response.images = data["image_small_url"];
+            }
+            else {
+                response.images = data.image_small_url;
+            }
             if (product.data.product) {
                 response.ingredients = getInnerIngredients(product.data.product);
             }
             if (product.data.product && product.data.product.nutriments) {
                 response.nutriments_g_pro_100g = getNutriments(product.data.product.nutriments);
             }
-            (0, historyManagement_1.updateHistory)(userID, req.params.barcode, response);
+            yield server_config_1.database.History.updateHistory(userID, req.params.barcode, response);
             response.nutriments_scores = getNutrimentsScore(product.data.product);
             // response.vegetarian_alert = await checkAlertVegetarian(userID, response)
         }
@@ -195,7 +195,7 @@ const getProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
     catch (error) {
         console.log(error);
-        res.status(500).send("Internal Server Error");
+        res.status(500).send('Internal Server Error');
     }
 });
 exports.getProduct = getProduct;

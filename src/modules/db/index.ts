@@ -1,99 +1,71 @@
-import pg, { QueryResult } from 'pg';
-import { Request, Response } from 'express';
-// import { PG_USER, PG_PASSWORD, PG_HOST, PG_PORT, PG_DATABASE } from '../../config/index';
+import pg from 'pg';
 import * as dotenv from 'dotenv';
+import { createNewFeedback } from "./feedback";
+import {cleanDublicateHistory, deleteElementFromHistory, getElements, insertIntoHistory, updateHistory, updateHistoryElement} from "./historyManagement";
+import {updatePassword} from "./resetPassword";
+import {updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting} from "./settingsManagement";
+import {createUser, deleteUser, getUser} from "./userManagement";
+import { DatabaseInterface } from '../../../server_config';
+
 dotenv.config();
 
-console.log('this is db_vars:',
-    process.env.DB_USER, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
+console.log('this is db_vars:', process.env.NODE_ENV, process.env.DB_USER, process.env.PG_PASSWORD, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
 
-// const connectionString =  'postgres://' + process.env.DB_USER + ':' + process.env.DB_PASSWORD + DB_STRING
+const connect = async () => {
+    const connectionString: string = `postgresql://${process.env.PG_USER}:${process.env.PG_PASSWORD}@${process.env.PG_HOST}:${process.env.PG_PORT}/${process.env.PG_DATABASE}`;
 
-const connectionString: string = `postgresql://${process.env.PG_USER}:${process.env.PG_PASSWORD}@${process.env.PG_HOST}:${process.env.PG_PORT}/${process.env.PG_DATABASE}`;
-// const connectionString =  process.env.NODE_ENV === 'production' ? process.env.DATABASE_URL : `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}${DB_STRING}`
+    if (process.env.NODE_ENV !== 'production') {
+        console.log("connect by using", connectionString)
+        db_adm_conn = new pg.Client({
+            connectionString
+        });
+    } else {
+        console.log("connect by using", process.env.DATABASE_URL)
+        db_adm_conn = new pg.Client({
+            connectionString: process.env.DATABASE_URL,
+            ssl: {
+                rejectUnauthorized: false
+            }
+        });
+    }
 
-export let db_adm_conn: pg.Client;
-if (process.env.NODE_ENV !== 'production') {
-    db_adm_conn = new pg.Client({
-        connectionString
-    });
-} else {
-    db_adm_conn = new pg.Client({
-        connectionString: process.env.DATABASE_URL,
-        ssl: {
-            rejectUnauthorized: false
-        }
-    });
+    await db_adm_conn.connect();
 }
 
-db_adm_conn.connect();
+const end = async () => {
+    await db_adm_conn.end()
+}
 
-export const showTables = (req: Request, res: Response) : void => {
-    db_adm_conn.query('SELECT table_schema,table_name FROM information_schema.tables;', (err: object, res : QueryResult) : void => {
-        if (err) throw err;
-        for (const row of res.rows) {
-            console.log(JSON.stringify(row));
-        }
-    });
-    res.status(200).json({ msg: 'showtables function' });
-};
-
-export const whatTimePGQL = (req: Request, res: Response) : void => {
-    db_adm_conn.query('SELECT NOW()', (err, result) : void => {
-        if (err) {
-            res.status(500).json(err.stack);
-            return console.error('Error executing query', err.stack);
-        }
-        console.log(result.rows);
-        res.status(200).send(result.rows);
-    });
-};
-
-export const getEcho = async (req: Request, res: Response) : Promise<void> => {
-    res.send(JSON.stringify(req.query));
-};
-
-export const getUsers = async (req: Request, res: Response) : Promise<void> => {
-    console.log('[LOGGER], getUsers func');
-    res.send(await db_adm_conn.query('SELECT * FROM EndUser'));
-};
-
-export default db_adm_conn;
-
-// export const poolExample = () => {
-
-//     console.log('[EXAMPLE] I am DB Pool example func')
-
-//     const pool = new Pool({
-//         connectionString: connectionString,
-//         max: 20,
-//         idleTimeoutMillis: 30000,
-//         connectionTimeoutMillis: 2000,
-//     })
-
-//     pool.connect((err, client, release) => {
-//         if (err) {
-//             return console.error('Error acquiring client', err.stack)
-//         }
-//         client.query('SELECT NOW()', (err, result) => {
-//             release()
-//             if (err) {
-//             return console.error('Error executing query', err.stack)
-//             }
-//         console.log(result.rows)
-//         })
-//     })
-
-// }
-
-// export function connect() {
-//     let db_adm_conn = new Client({
-//         connectionString : connectionString
-//     });
-//     db_adm_conn.on('error', error => {
-//         connect();
-//     });
-//     db_adm_conn.connect().catch(() => { connect() });
-//     return db_adm_conn
-// }
-// export let db_adm_conn = connect()
+const Database: DatabaseInterface = {
+    Feedback: {
+        createNewFeedback
+    }, 
+    Password : {
+        updatePassword
+    }, 
+    User: {
+        createUser, 
+        deleteUser, 
+        getUser
+    }, 
+    Settings: {
+        getRestrictionIdByName,
+        userHasRestriction,
+        getAlertSettings,
+        updateAlertSetting,
+        deleteAlertSetting,
+        createSetting
+    }, 
+    History: {
+        cleanDublicateHistory,
+        deleteElementFromHistory, 
+        getElements,
+        insertIntoHistory,
+        updateHistory,
+        updateHistoryElement
+    },
+    connect,
+    end
+}
+export default Database
+export let db_adm_conn: pg.Client;

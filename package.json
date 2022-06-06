@@ -29,7 +29,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "express-jwt": "^6.1.1",
+    "express-jwt": "^6.1.2",
     "express-openid-connect": "^2.7.2",
     "heroku": "^7.60.1",
     "jsonwebtoken": "^8.5.1",

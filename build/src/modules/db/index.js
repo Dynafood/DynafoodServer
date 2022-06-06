@@ -35,89 +35,67 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getUsers = exports.getEcho = exports.whatTimePGQL = exports.showTables = exports.db_adm_conn = void 0;
+exports.db_adm_conn = void 0;
 const pg_1 = __importDefault(require("pg"));
-// import { PG_USER, PG_PASSWORD, PG_HOST, PG_PORT, PG_DATABASE } from '../../config/index';
 const dotenv = __importStar(require("dotenv"));
+const feedback_1 = require("./feedback");
+const historyManagement_1 = require("./historyManagement");
+const resetPassword_1 = require("./resetPassword");
+const settingsManagement_1 = require("./settingsManagement");
+const userManagement_1 = require("./userManagement");
 dotenv.config();
-console.log('this is db_vars:', process.env.DB_USER, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
-//const connectionString =  'postgres://' + process.env.DB_USER + ':' + process.env.DB_PASSWORD + DB_STRING
-const connectionString = `postgresql://${process.env.PG_USER}:${process.env.PG_PASSWORD}@${process.env.PG_HOST}:${process.env.PG_PORT}/${process.env.PG_DATABASE}`;
-if (process.env.NODE_ENV !== 'production') {
-    exports.db_adm_conn = new pg_1.default.Client({
-        connectionString,
-    });
-}
-else {
-    exports.db_adm_conn = new pg_1.default.Client({
-        connectionString: process.env.DATABASE_URL,
-        ssl: {
-            rejectUnauthorized: false
-        }
-    });
-}
-exports.db_adm_conn.connect();
-const showTables = (req, res) => {
-    exports.db_adm_conn.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
-        if (err)
-            throw err;
-        for (let row of res.rows) {
-            console.log(JSON.stringify(row));
-        }
-    });
-    res.status(200).json({ "msg": "showtables function" });
-};
-exports.showTables = showTables;
-const whatTimePGQL = (req, res) => {
-    exports.db_adm_conn.query('SELECT NOW()', (err, result) => {
-        if (err) {
-            res.status(500).json(err.stack);
-            return console.error('Error executing query', err.stack);
-        }
-        console.log(result.rows);
-        res.status(200).send(result.rows);
-    });
-};
-exports.whatTimePGQL = whatTimePGQL;
-const getEcho = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.send(JSON.stringify(req.query));
+console.log('this is db_vars:', process.env.NODE_ENV, process.env.DB_USER, process.env.PG_PASSWORD, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
+const connect = () => __awaiter(void 0, void 0, void 0, function* () {
+    const connectionString = `postgresql://${process.env.PG_USER}:${process.env.PG_PASSWORD}@${process.env.PG_HOST}:${process.env.PG_PORT}/${process.env.PG_DATABASE}`;
+    if (process.env.NODE_ENV !== 'production') {
+        console.log("connect by using", connectionString);
+        exports.db_adm_conn = new pg_1.default.Client({
+            connectionString
+        });
+    }
+    else {
+        console.log("connect by using", process.env.DATABASE_URL);
+        exports.db_adm_conn = new pg_1.default.Client({
+            connectionString: process.env.DATABASE_URL,
+            ssl: {
+                rejectUnauthorized: false
+            }
+        });
+    }
+    yield exports.db_adm_conn.connect();
 });
-exports.getEcho = getEcho;
-const getUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log('[LOGGER], getUsers func');
-    res.send(yield exports.db_adm_conn.query(`SELECT * FROM EndUser`));
+const end = () => __awaiter(void 0, void 0, void 0, function* () {
+    yield exports.db_adm_conn.end();
 });
-exports.getUsers = getUsers;
-exports.default = exports.db_adm_conn;
-// export const poolExample = () => {
-//     console.log('[EXAMPLE] I am DB Pool example func')
-//     const pool = new Pool({
-//         connectionString: connectionString,
-//         max: 20,
-//         idleTimeoutMillis: 30000,
-//         connectionTimeoutMillis: 2000,
-//     })
-//     pool.connect((err, client, release) => {
-//         if (err) {
-//             return console.error('Error acquiring client', err.stack)
-//         }
-//         client.query('SELECT NOW()', (err, result) => {
-//             release()
-//             if (err) {
-//             return console.error('Error executing query', err.stack)
-//             }
-//         console.log(result.rows)
-//         })
-//     })    
-// }
-// export function connect() {
-//     let db_adm_conn = new Client({
-//         connectionString : connectionString
-//     });
-//     db_adm_conn.on('error', error => {
-//         connect();
-//     });
-//     db_adm_conn.connect().catch(() => { connect() });
-//     return db_adm_conn
-// }
-// export let db_adm_conn = connect()
+const Database = {
+    Feedback: {
+        createNewFeedback: feedback_1.createNewFeedback
+    },
+    Password: {
+        updatePassword: resetPassword_1.updatePassword
+    },
+    User: {
+        createUser: userManagement_1.createUser,
+        deleteUser: userManagement_1.deleteUser,
+        getUser: userManagement_1.getUser
+    },
+    Settings: {
+        getRestrictionIdByName: settingsManagement_1.getRestrictionIdByName,
+        userHasRestriction: settingsManagement_1.userHasRestriction,
+        getAlertSettings: settingsManagement_1.getAlertSettings,
+        updateAlertSetting: settingsManagement_1.updateAlertSetting,
+        deleteAlertSetting: settingsManagement_1.deleteAlertSetting,
+        createSetting: settingsManagement_1.createSetting
+    },
+    History: {
+        cleanDublicateHistory: historyManagement_1.cleanDublicateHistory,
+        deleteElementFromHistory: historyManagement_1.deleteElementFromHistory,
+        getElements: historyManagement_1.getElements,
+        insertIntoHistory: historyManagement_1.insertIntoHistory,
+        updateHistory: historyManagement_1.updateHistory,
+        updateHistoryElement: historyManagement_1.updateHistoryElement
+    },
+    connect,
+    end
+};
+exports.default = Database;

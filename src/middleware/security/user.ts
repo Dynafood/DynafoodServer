@@ -1,9 +1,8 @@
-import { db_adm_conn } from '../../modules/db/index';
-import { QueryResult } from 'pg';
+import { QueryResultRow } from 'pg';
 
-import { checkInputBeforeSqlQuery } from '../../modules/db/scripts';
 import Joi from 'joi';
 import { Request, Response, NextFunction } from 'express';
+import { database } from '../../../server_config';
 
 const schema = Joi.object({
     firstName: Joi.string()
@@ -77,11 +76,8 @@ export const checkCreateUserReq = async (req: Request, res: Response, next: Next
         res.status(400).send({"Error": passwordCheck})
         return
     }
-    let prevCheckEmail : QueryResult = await db_adm_conn.query(`
-        SELECT email
-        FROM EndUser
-        WHERE email = '${checkInputBeforeSqlQuery(req.body.email)}'`);
-    if (prevCheckEmail.rowCount !== 0) {
+    let prevCheckEmail : Array<QueryResultRow> = await database.User.getUser(null, req.body.email)
+    if (prevCheckEmail.length !== 0) {
         res.status(409).send({ Error: 'email already exists' });
         return;
     }

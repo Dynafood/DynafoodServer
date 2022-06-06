@@ -1,10 +1,10 @@
-import { Request, Response } from 'express';
-import { db_adm_conn } from './index';
-import { QueryResult } from 'pg';
+import { db_adm_conn } from '.';
 import { checkInputBeforeSqlQuery } from './scripts';
+
 import bcrypt from 'bcrypt';
 import Joi from 'joi';
-
+import { QueryResult } from 'pg';
+import { Request, Response } from 'express';
 import { sendResetPasswordEmail } from './../email';
 
 const schema = Joi.object({
@@ -83,4 +83,12 @@ export const resetPassword = async (req: Request, res: Response) => {
         console.log(err.stack);
         res.status(500).send({ Error: err, Details: err.stack });
     }
+};
+
+export const updatePassword = async (userid: string, newPassword: string) => {
+    await db_adm_conn.query(`
+            UPDATE endUser
+            SET passcode = '${newPassword}'
+            WHERE endUserID = '${checkInputBeforeSqlQuery(userid)}';
+        `);
 };

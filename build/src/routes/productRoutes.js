@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const router = (0, express_1.Router)();
 const barcode_scanner_1 = require("../modules/barcode_scanner");
 const secureRouting_1 = require("../middleware/security/secureRouting");
+const router = (0, express_1.Router)();
 /**
  * @swagger
  * components:

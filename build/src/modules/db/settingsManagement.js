@@ -8,89 +8,68 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteSettings = exports.patchSettings = exports.postSettings = exports.getSettings = void 0;
-//import { db_adm_conn } from "./index";
+exports.deleteAlertSetting = exports.updateAlertSetting = exports.createSetting = exports.getAlertSettings = exports.userHasRestriction = exports.getRestrictionIdByName = void 0;
 const scripts_1 = require("./scripts");
-const index_1 = __importDefault(require("./index"));
-const getSettings = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        let userSettings = yield index_1.default.query(`
-                SELECT R.restrictionName, ER.alertActivation 
-                FROM Restriction R
-                LEFT JOIN EndUser_Restriction ER ON ER.restrictionID = R.restrictionID
-                WHERE ER.endUserID = '${(0, scripts_1.checkInputBeforeSqlQuery)(res.locals.user.userid)}';`);
-        if (userSettings.rows.length == 0) {
-            res.status(204).send();
-            return;
-        }
-        res.status(200).send(userSettings.rows);
-    }
-    catch (err) {
-        console.log(err);
-        res.status(500).send({ "Error": err, "Details": err.stack });
-    }
+const index_1 = require("./index");
+const getRestrictionIdByName = (restrictionName) => __awaiter(void 0, void 0, void 0, function* () {
+    const restrictionID = yield index_1.db_adm_conn.query(`
+        SELECT restrictionID
+        FROM Restriction
+        WHERE restrictionName = '${(0, scripts_1.checkInputBeforeSqlQuery)(restrictionName)}'
+    `);
+    if (restrictionID.rowCount == 0)
+        return null;
+    return restrictionID.rows[0].restrictionid;
 });
-exports.getSettings = getSettings;
-/*
-    currently there are only the restrictions 'deez' & 'nutz' hardcoded in the database
-    body:
-    {
-        restrictionName: '',
-        alertActivation: (true of false),
-    }
-*/
-const postSettings = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        let newSettings = yield index_1.default.query(`
+exports.getRestrictionIdByName = getRestrictionIdByName;
+const userHasRestriction = (userid, restrictionid) => __awaiter(void 0, void 0, void 0, function* () {
+    const restriction = yield index_1.db_adm_conn.query(`
+            SELECT * FROM EndUser_Restriction
+            WHERE endUserID = '${(0, scripts_1.checkInputBeforeSqlQuery)(userid)}'
+            AND restrictionID = '${(0, scripts_1.checkInputBeforeSqlQuery)(restrictionid)}'
+        `);
+    return restriction.rowCount > 0;
+});
+exports.userHasRestriction = userHasRestriction;
+const getAlertSettings = (userid) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield index_1.db_adm_conn.query(`
+    SELECT R.restrictionName, ER.alertActivation
+    FROM Restriction R
+    LEFT JOIN EndUser_Restriction ER ON ER.restrictionID = R.restrictionID
+    WHERE ER.endUserID = '${(0, scripts_1.checkInputBeforeSqlQuery)(userid)}';`);
+    return result.rows;
+});
+exports.getAlertSettings = getAlertSettings;
+const createSetting = (alertActivation, userid, restrictionid) => __awaiter(void 0, void 0, void 0, function* () {
+    yield index_1.db_adm_conn.query(`
             INSERT INTO EndUser_Restriction (alertActivation, endUserId, restrictionID)
             SELECT
-                ${(0, scripts_1.checkInputBeforeSqlQuery)(req.body.alertActivation)},
-                '${(0, scripts_1.checkInputBeforeSqlQuery)(res.locals.user.userid)}',
-                '${(0, scripts_1.checkInputBeforeSqlQuery)(res.locals.restrictionID)}'
+                ${(0, scripts_1.checkInputBeforeSqlQuery)(alertActivation)},
+                '${(0, scripts_1.checkInputBeforeSqlQuery)(userid)}',
+                '${(0, scripts_1.checkInputBeforeSqlQuery)(restrictionid)}'
             WHERE NOT EXISTS (SELECT * FROM EndUser_Restriction EU
-            WHERE EU.endUserID = '${(0, scripts_1.checkInputBeforeSqlQuery)(res.locals.user.userid)}'
-            AND EU.restrictionID = '${(0, scripts_1.checkInputBeforeSqlQuery)(res.locals.restrictionID)}');
+            WHERE EU.endUserID = '${(0, scripts_1.checkInputBeforeSqlQuery)(userid)}'
+            AND EU.restrictionID = '${(0, scripts_1.checkInputBeforeSqlQuery)(restrictionid)}');
         `);
-        res.status(200).send();
-    }
-    catch (err) {
-        console.log(err);
-        res.status(500).send({ "Error": err, "Details": err.stack });
-    }
 });
-exports.postSettings = postSettings;
-const patchSettings = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        let newSettings = yield index_1.default.query(`
-            UPDATE EndUser_Restriction
-            SET alertActivation = ${(0, scripts_1.checkInputBeforeSqlQuery)(req.body.alertActivation)}
-            WHERE restrictionID = '${(0, scripts_1.checkInputBeforeSqlQuery)(res.locals.restrictionID)}'
-            AND endUserID = '${(0, scripts_1.checkInputBeforeSqlQuery)(res.locals.user.userid)}';
+exports.createSetting = createSetting;
+const updateAlertSetting = (userid, alertActivation, restrictionID) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log(alertActivation);
+    yield index_1.db_adm_conn.query(`
+    UPDATE EndUser_Restriction
+    SET alertActivation = ${(0, scripts_1.checkInputBeforeSqlQuery)(alertActivation)}
+    WHERE restrictionID = '${(0, scripts_1.checkInputBeforeSqlQuery)(restrictionID)}'
+    AND endUserID = '${(0, scripts_1.checkInputBeforeSqlQuery)(userid)}';
         `);
-        res.status(200).send();
-    }
-    catch (err) {
-        console.log(err);
-        res.status(500).send({ "Error": err, "Details": err.stack });
-    }
 });
-exports.patchSettings = patchSettings;
-const deleteSettings = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        let newSettings = yield index_1.default.query(`
+exports.updateAlertSetting = updateAlertSetting;
+const deleteAlertSetting = (userid, restrictionID) => __awaiter(void 0, void 0, void 0, function* () {
+    const deleted = yield index_1.db_adm_conn.query(`
             DELETE FROM EndUser_Restriction
-            WHERE restrictionID = '${(0, scripts_1.checkInputBeforeSqlQuery)(res.locals.restrictionID)}'
-            AND endUserID = '${(0, scripts_1.checkInputBeforeSqlQuery)(res.locals.user.userid)}';
+            WHERE restrictionID = '${(0, scripts_1.checkInputBeforeSqlQuery)(restrictionID)}'
+            AND endUserID = '${(0, scripts_1.checkInputBeforeSqlQuery)(userid)}';
         `);
-        res.status(200).send(newSettings.rows);
-    }
-    catch (err) {
-        console.log(err);
-        res.status(500).send({ "Error": err, "Details": err.stack });
-    }
+    return deleted.rows[0];
 });
-exports.deleteSettings = deleteSettings;
+exports.deleteAlertSetting = deleteAlertSetting;

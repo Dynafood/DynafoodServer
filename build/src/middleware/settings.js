@@ -8,22 +8,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hasRestriction = exports.getRestrictionIdByName = void 0;
-const index_1 = __importDefault(require("../modules/db/index"));
+const index_1 = require("../modules/db/index");
 const scripts_1 = require("./../modules/db/scripts");
 const getRestrictionIdByName = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        let restrictionID = yield index_1.default.query(`
+        const restrictionID = yield index_1.db_adm_conn.query(`
             SELECT restrictionID
             FROM Restriction
             WHERE restrictionName = '${req.body.restrictionName}'
         `);
         if (restrictionID.rowCount === 0) {
-            res.status(404).json({ "Error": `The restriction ${req.body.restrictionName} is not available on dynafood!` });
+            res.status(404).json({ Error: `The restriction ${req.body.restrictionName} is not available on dynafood!` });
             return;
         }
         res.locals.restrictionID = restrictionID.rows[0].restrictionid;
@@ -31,26 +28,26 @@ const getRestrictionIdByName = (req, res, next) => __awaiter(void 0, void 0, voi
     }
     catch (err) {
         console.error(err);
-        res.status(500).send({ "Error": err, "Details": err.stack });
+        res.status(500).send({ Error: err, Details: err.stack });
     }
 });
 exports.getRestrictionIdByName = getRestrictionIdByName;
 const hasRestriction = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        let restriction = yield index_1.default.query(`
+        const restriction = yield index_1.db_adm_conn.query(`
             SELECT * FROM EndUser_Restriction
             WHERE endUserID = '${(0, scripts_1.checkInputBeforeSqlQuery)(res.locals.user.userid)}'
             AND restrictionID = '${(0, scripts_1.checkInputBeforeSqlQuery)(res.locals.restrictionID)}'
         `);
-        if (restriction.rowCount == 0) {
-            res.status(400).send({ "Error": "Bad request", "Details": `This user does not have a restriction for ${req.body.restrictionName}.` });
+        if (restriction.rowCount === 0) {
+            res.status(400).send({ Error: 'Bad request', Details: `This user does not have a restriction for ${req.body.restrictionName}.` });
             return;
         }
         next();
     }
     catch (err) {
         console.error(err);
-        res.status(500).send({ "Error": err, "Details": err.stack });
+        res.status(500).send({ Error: err, Details: err.stack });
     }
 });
 exports.hasRestriction = hasRestriction;
