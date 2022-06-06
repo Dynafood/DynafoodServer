@@ -2211,18 +2211,6 @@
 	],
 	"variable": [
 		{
-			"key": "base_url",
-			"value": "https://dynafood-development.herokuapp.com"
-		},
-		{
-			"key": "base_url",
-			"value": "https://dynafood.herokuapp.com"
-		},
-		{
-			"key": "base_url",
-			"value": "localhost:8081"
-		},
-		{
 			"key": "test_email",
 			"value": "test@gmail.com"
 		},
@@ -2241,10 +2229,6 @@
 		{
 			"key": "base_url",
 			"value": "DEFAULT_BASE_URL"
-		},
-		{
-			"key": "base_url",
-			"value": "https://dynafood-dev.herokuapp.com"
 		},
 		{
 			"key": "email_test_email",
