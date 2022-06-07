@@ -34,7 +34,7 @@ export interface DatabaseInterface {
         deleteUser: (userid: string) => Promise<QueryResultRow>
     }
     Settings: {
-        getRestrictionIdByName: (restrictinoName: string) => Promise<string | null>
+        getRestrictionIdByName: (restrictionName: string) => Promise<string | null>
         userHasRestriction: (userid: string, restrictionid: string) => Promise<boolean>
         getAlertSettings: (userid: string) => Promise<Array<QueryResultRow>>
         updateAlertSetting: (userid: string, alertActivation: string, restrictionID: string) => Promise<void>

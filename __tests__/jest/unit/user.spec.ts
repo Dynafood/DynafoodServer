@@ -23,7 +23,7 @@ export const getUser = async (userid: string | null = null, email: string | null
                     }
                 ] )
             }
-            resolve( [] )
+        resolve( [] )
     });
 }
 
@@ -37,7 +37,7 @@ describe('check get user routes', () => {
             userName: "testUser123",
             email: "email@gmail.com",
             phoneNumber: "00000000",
-            restrictons: [{ alertactivation: true, restrictionName: 'peanut' }]
+            restriction: [{ alertactivation: true, restrictionName: 'peanut' }]
         } )
     })
     test('getExistingUser with cookie token', async () => {
@@ -49,7 +49,7 @@ describe('check get user routes', () => {
             userName: "testUser123",
             email: "email@gmail.com",
             phoneNumber: "00000000",
-            restrictons: [{ alertactivation: true, restrictionName: 'peanut' }]
+            restriction: [{ alertactivation: true, restrictionName: 'peanut' }]
         } )
     })
     test('getExistingUser with cookie token without restriction', async () => {
@@ -62,7 +62,7 @@ describe('check get user routes', () => {
             userName: "testUser123",
             email: "email@gmail.com",
             phoneNumber: "00000000",
-            restrictons: []
+            restriction: []
         } )
     })
 })

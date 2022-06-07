@@ -2,11 +2,11 @@ import { QueryResultRow } from "pg";
 
 export const getUser = async (userid: string | null = null, email: string | null = null) : Promise<Array<QueryResultRow>> => {
     return new Promise((resolve, reject) => {
-        if (userid == "existing" || email == "email@gmail.com")
+        if ((userid && userid.startsWith("existing")) || email == "email@gmail.com")
             {
                 resolve( [
                     {
-                        enduserid: "existing", 
+                        enduserid: userid, 
                         passcode: "$2b$10$TQ1P6jaOk8YHzLC3JYlciepXBkf45LVQKIL77VfEmJG7B5PVM.JSG", 
                         firstname: "test", 
                         lastname: "user", 

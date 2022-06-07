@@ -10,11 +10,12 @@ describe('check get product routes', () => {
     test('get non existing product', async () => {
         const response = await supertest(app).get("/products/barcode/123").send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(204)
+        expect(response.body).toStrictEqual({})
     })
     test('existing product nutella', async () => {
         const response = await supertest(app).get("/products/barcode/3017620425035").send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200)
-        expect(response.body).toMatchObject({
+        expect(response.body).toStrictEqual({
             "name": "Nutella pâte à tartiner aux noisettes et au cacao 1kg",
             "keywords": [
                 "nougatcreme",

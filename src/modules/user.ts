@@ -13,7 +13,7 @@ type UserObj = {
     userName : string,
     email : string,
     phoneNumber : string,
-    restrictons: Array<RestrictionObj>
+    restriction: Array<RestrictionObj>
 }
 
 const parseGetUserResponse = (rows: Array<QueryResultRow>) : UserObj => {
@@ -23,11 +23,11 @@ const parseGetUserResponse = (rows: Array<QueryResultRow>) : UserObj => {
         userName: rows[0].username,
         email: rows[0].email,
         phoneNumber: rows[0].phonenumber,
-        restrictons: []
+        restriction: []
     };
     for (const row of rows) {
         if (!row.restrictionname) { continue; }
-        if (row.restrictionname.length !== 0) { userObj.restrictons.push({ alertactivation: row.alertactivation, restrictionName: row.restrictionname }); }
+        if (row.restrictionname.length !== 0) { userObj.restriction.push({ alertactivation: row.alertactivation, restrictionName: row.restrictionname }); }
     }
     return userObj;
 };

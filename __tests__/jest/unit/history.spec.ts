@@ -10,7 +10,7 @@ describe('check get history routes', () => {
     test('get history elements', async () => {
         const response = await supertest(app).get("/history").send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200)
-        expect(response.body).toMatchObject({elements: [
+        expect(response.body).toStrictEqual({elements: [
             {
                 "historyid": "d245f854-0f55-4bb5-b5a9-087b7102a729",
                 "barcode": "00000",

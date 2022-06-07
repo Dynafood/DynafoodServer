@@ -4,11 +4,12 @@ import { database } from '../../server_config';
 
 export const getRestrictionIdByName = async (req: Request, res: Response, next: NextFunction) : Promise<void> => {
     try {
-        const restrictinoName = req.body.restrictionName || null
-        if (restrictinoName == null) {
+        const restrictionName = req.body.restrictionName || null
+        if (restrictionName == null) {
             res.status(400).send({"Error": "BadRequest", "Details": "Missing restrictionName"})
+            return;
         }
-        const restrictionID : string | null = await database.Settings.getRestrictionIdByName(restrictinoName)
+        const restrictionID : string | null = await database.Settings.getRestrictionIdByName(restrictionName)
         if (restrictionID == null) {
             res.status(404).json({ Error: `The restriction ${req.body.restrictionName} is not available on dynafood!` });
             return;

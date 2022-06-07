@@ -21,6 +21,7 @@ describe('check create feedback routes', () => {
                 reason: reason
             }).set('authorization', 'Bearer token_existing');
             expect(response.statusCode).toBe(200)
+            expect(response.body).toStrictEqual({})
         }
     })
     test('create feedback missing content', async () => {
@@ -28,14 +29,14 @@ describe('check create feedback routes', () => {
             reason: "appreciation"
         }).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(400)
-        expect(response.body).toMatchObject({"Error": "No content provided", "Details": `Content is not provided or empty!`})
+        expect(response.body).toStrictEqual({"Error": "No content provided", "Details": `Content is not provided or empty!`})
     })
     test('create feedback missing reason', async () => {
         const response = await supertest(app).post("/feedback").send({            
             content: "fooocking awesome!!!",
         }).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(400)
-        expect(response.body).toMatchObject({"Error": "No reason provided", "Details": `Reason is not provided or empty!`})
+        expect(response.body).toStrictEqual({"Error": "No reason provided", "Details": `Reason is not provided or empty!`})
     })
     test('create feedback invalid reason', async () => {
         const response = await supertest(app).post("/feedback").send({            
@@ -43,6 +44,6 @@ describe('check create feedback routes', () => {
             content: "fooocking awesome!!!",
         }).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(400)
-        expect(response.body).toMatchObject({"Error": "Reason not valid", "Details": `Given reason 'because I like you' is not part of possible reasons: ${_feedbackReasons}!`})
+        expect(response.body).toStrictEqual({"Error": "Reason not valid", "Details": `Given reason 'because I like you' is not part of possible reasons: ${_feedbackReasons}!`})
     })
 })

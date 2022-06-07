@@ -2,6 +2,8 @@ import { init_db } from "../../../../server_config"
 import { JsonObject } from "swagger-ui-express";
 import { createUser, deleteUser, getUser } from "./mock_user";
 import { createNewFeedback } from "./mock_feedback";
+import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, updateSettings, userHasRestriction } from "./mock_settings";
+import { deleteElementFromHistory, getElements, updateHistory } from "./mock_history";
 
 
 
@@ -11,20 +13,20 @@ const mock_db: JsonObject = {
         createNewFeedback: createNewFeedback
     },
     History: {
-        deleteElementFromHistory: null,
-        getElements: null,
-        updateHistory: null,
+        deleteElementFromHistory: deleteElementFromHistory,
+        getElements: getElements,
+        updateHistory: updateHistory,
     },
     Password: {
         updatePassword: null
     },
     Settings: {
-        createSetting: null,
-        deleteAlertSetting: null,
-        getAlertSettings: null,
-        getRestrictionIdByName: null,
-        updateAlertSetting: null,
-        userHasRestriction: null
+        createSetting: createSettings,
+        deleteAlertSetting: deleteSettings,
+        getAlertSettings: getSettings,
+        getRestrictionIdByName: getRestrictionIdByName,
+        updateAlertSetting: updateSettings,
+        userHasRestriction: userHasRestriction
     },
     User: {
         createUser: createUser,

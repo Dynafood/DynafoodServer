@@ -748,7 +748,7 @@
 							"    pm.expect(jsonData.userName).to.eql(\"TestUser\");",
 							"    pm.expect(jsonData.email).to.eql(\"test@gmail.com\");",
 							"    pm.expect(jsonData.phoneNumber).to.eql(\"123123123\");",
-							"    pm.expect(jsonData.restrictons).to.eql([]);",
+							"    pm.expect(jsonData.restriction).to.eql([]);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -1141,7 +1141,7 @@
 							"    pm.expect(jsonData.userName).to.eql(\"TestUser\");",
 							"    pm.expect(jsonData.email).to.eql(\"test@gmail.com\");",
 							"    pm.expect(jsonData.phoneNumber).to.eql(\"123123123\");",
-							"    pm.expect(jsonData.restrictons).to.eql([{",
+							"    pm.expect(jsonData.restriction).to.eql([{",
 							"            \"alertactivation\": true,",
 							"            \"restrictionName\": \"peanut\"",
 							"    }]);",

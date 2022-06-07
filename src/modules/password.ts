@@ -16,11 +16,6 @@ export const sendResetPasswordEmail = async (req: Request, res: Response) => {
     try {
         const user: Array<QueryResultRow> = await database.User.getUser(res.locals.user.userid, null)
 
-        if (user.length === 0) {
-            res.status(404).send({ Error: 'There is no EndUser with that id.' });
-            return;
-        }
-
         const email: string = user[0].email;
         const passcode: string = user[0].passcode;
         const username: string = user[0].username;
