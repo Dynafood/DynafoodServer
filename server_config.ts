@@ -40,7 +40,10 @@ export interface DatabaseInterface {
         updateAlertSetting: (userid: string, alertActivation: string, restrictionID: string) => Promise<void>
         deleteAlertSetting: (userid: string, restrictionID: string) => Promise<QueryResultRow>
         createSetting: (alertactivation: string, userid: string, restrictionid: string) => Promise<void>
-    }
+    },
+    ResetPassword: {
+        updatePassword: (userid: string, newPassword: string) => Promise<void>
+    },
     connect: () => Promise<void>
     end: () => Promise<void>
 }
@@ -57,6 +60,15 @@ export const init_jwt = (jwt_obj: JWT) => {
     JWT = jwt_obj
 }
 export var JWT: JWT;
+
+
+export interface EmailSender {
+    send: (email: JsonObject) => Promise<void>
+}
+export const init_mail = (mail: JsonObject) => {
+    mail_sender = mail
+}
+export var mail_sender: JsonObject
 
 export const app: Express = express();
 

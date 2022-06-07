@@ -4,7 +4,7 @@ import { createUser, deleteUser, getUser } from "./mock_user";
 import { createNewFeedback } from "./mock_feedback";
 import { updateHistory, getElements, deleteElementFromHistory } from "./mock_history";
 import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, updateSettings, userHasRestriction } from "./mock_settings";
-
+import {updatePassword} from "./mock_password"
 
 
 
@@ -32,6 +32,9 @@ const mock_db: JsonObject = {
         createUser: createUser,
         deleteUser: deleteUser,
         getUser: getUser
+    },
+    ResetPassword: {
+        updatePassword: updatePassword
     },
     connect: async () => {},
     end: async () => {}

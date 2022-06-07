@@ -18,7 +18,9 @@ export const getUser = async (userid: string | null = null, email: string | null
                     }
                 ] )
             }
-            resolve( [] )
+        if (userid == "throw")
+            throw new Error("ErrorMock")
+        resolve( [] )
     });
 }
 

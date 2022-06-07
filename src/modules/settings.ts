@@ -17,7 +17,7 @@ export const getRestrictionIdByName = async (req: Request, res: Response, next: 
         res.locals.restrictionID = restrictionID;
         next();
     } catch (err: any) {
-        console.error(err);
+        console.log(err);
         res.status(500).send({ Error: err, Details: err.stack });
     }
 };
@@ -31,7 +31,7 @@ export const hasRestriction = async (req: Request, res: Response, next: NextFunc
         }
         next();
     } catch (err: any) {
-        console.error(err);
+        console.log(err);
         res.status(500).send({ Error: err, Details: err.stack });
     }
 };

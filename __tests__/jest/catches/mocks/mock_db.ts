@@ -33,6 +33,9 @@ const mock_db: JsonObject = {
         deleteUser: deleteUser,
         getUser: getUser
     },
+    ResetPassword: {
+        updatePassword: null
+    },
     connect: async () => {throw "ErrorMock"},
     end: async () => {throw "ErrorMock"}
 }

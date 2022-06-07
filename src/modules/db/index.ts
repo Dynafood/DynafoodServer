@@ -61,6 +61,9 @@ const Database: DatabaseInterface = {
         getElements,
         updateHistory,
     },
+    ResetPassword: {
+        updatePassword
+    },
     connect,
     end
 }
