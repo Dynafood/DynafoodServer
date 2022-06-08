@@ -1,20 +1,13 @@
 import bcrypt from 'bcrypt';
-import Joi from 'joi';
 import { QueryResultRow } from 'pg';
 import { Request, Response } from 'express';
 import { sendResetPasswordEmail } from './email';
 import { database } from '../../server_config';
-
-const schema = Joi.object({
-    password: Joi.string()
-        .min(8)
-        .max(72)
-        .required()
-});
+import { checkPassword } from '../middleware/security/user';
 
 export const triggerResetPasswordEmail = async (req: Request, res: Response) => {
     try {
-        const rows: Array<QueryResultRow> = await database.User.getUser(res.locals.user.userid)
+        const rows: Array<QueryResultRow> = await database.User.getUser(res.locals.user.userid);
 
         const email: string = rows[0].email;
         const username: string = rows[0].username;
@@ -31,18 +24,26 @@ export const triggerResetPasswordEmail = async (req: Request, res: Response) => 
 export const resetPassword = async (req: Request, res: Response) => {
     try {
         const oldPassword: string | null = req.body.oldPassword;
-        let newPassword: string | null =  req.body.newPassword
+        let newPassword: string | null = req.body.newPassword;
         if (oldPassword == null) {
-            res.status(400).send({Error: "missing old Password"})
-            return
+            res.status(400).send({ Error: 'missing old Password' });
+            return;
         }
         if (newPassword == null) {
-            res.status(400).send({Error: "missing new Password"})
-            return
+            res.status(400).send({ Error: 'missing new Password' });
+            return;
         }
+
+        const passwordState: string = checkPassword(newPassword);
+
+        if (passwordState !== 'Good') {
+            res.status(406).send({ Error: passwordState });
+            return;
+        }
+
         newPassword = await bcrypt.hash(newPassword, 10);
 
-        const rows: Array<QueryResultRow> = await database.User.getUser(res.locals.user.userid)
+        const rows: Array<QueryResultRow> = await database.User.getUser(res.locals.user.userid);
 
         const currentPassword: string = rows[0].passcode;
         const correctPassword: boolean = await bcrypt.compare(oldPassword, currentPassword);
@@ -52,14 +53,7 @@ export const resetPassword = async (req: Request, res: Response) => {
             return;
         }
 
-        const { error } = schema.validate({ password: req.body.newPassword });
-
-        if (error !== undefined) {
-            res.status(409).send({ Error: 'New password is not strong enough' });
-            return;
-        }
-
-        await database.ResetPassword.updatePassword(res.locals.user.userid, newPassword)
+        await database.ResetPassword.updatePassword(res.locals.user.userid, newPassword);
 
         res.status(200).send({
             status: 'OK: updated password'

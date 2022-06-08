@@ -35,9 +35,9 @@ const parseGetUserResponse = (rows: Array<QueryResultRow>) : UserObj => {
 export const createUser = async (req: Request, res: Response) => {
     try {
         const passcode: string = await bcrypt.hash(req.body.password, 10);
-        const created: QueryResultRow = await database.User.createUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.email, req.body.phoneNumber, passcode)
+        const created: QueryResultRow = await database.User.createUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.email, req.body.phoneNumber, passcode);
         const userid: string = created.enduserid;
-        const token: string = JWT.create(userid)
+        const token: string = JWT.create(userid);
         res.cookie('token', token, {
             httpOnly: true
         });
@@ -48,15 +48,14 @@ export const createUser = async (req: Request, res: Response) => {
     }
 };
 
-
 export const getUser = async (req: Request, res: Response) : Promise<void> => {
-    const user : Array<QueryResultRow> = await database.User.getUser(res.locals.user.userid, null)
-    res.send(parseGetUserResponse(user));    
+    const user : Array<QueryResultRow> = await database.User.getUser(res.locals.user.userid, null);
+    res.send(parseGetUserResponse(user));
 };
 
 export const deleteUser = async (req: Request, res: Response) : Promise<void> => {
     try {
-        const deleted: QueryResultRow = await  database.User.deleteUser(res.locals.user.userid)
+        const deleted: QueryResultRow = await database.User.deleteUser(res.locals.user.userid);
         res.send({ Deleted: deleted });
     } catch (err: any) {
         console.log(err.stack);
@@ -64,14 +63,12 @@ export const deleteUser = async (req: Request, res: Response) : Promise<void> =>
     }
 };
 
-
-
 export const getToken = async (req: Request, res: Response) : Promise<void> => {
     try {
         const email: string = <string> req.query.email;
         const password: string = <string>req.query.password;
 
-        const user : Array<QueryResultRow> = await database.User.getUser(null, email)
+        const user : Array<QueryResultRow> = await database.User.getUser(null, email);
 
         if (user.length === 0) {
             console.log(`There is no user with the email: ${email}`);
@@ -81,7 +78,7 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
         const correctPassword: boolean = await bcrypt.compare(password, user[0].passcode);
         if (user[0].email === email && correctPassword) {
             const userid : string = user[0].enduserid;
-            const token : string = JWT.create(userid)
+            const token : string = JWT.create(userid);
             res.cookie('token', token, {
                 httpOnly: true
             });
@@ -90,6 +87,6 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
         }
         res.status(401).send({ Error: 'Wrong credentials' });
     } catch (error: any) {
-        res.status(500).send({Error: error, details: error.stack})
+        res.status(500).send({ Error: error, details: error.stack });
     }
 };

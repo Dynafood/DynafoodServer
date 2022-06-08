@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
-import { getSettings, postSettings, patchSettings, deleteSettings } from '../modules/settings';
-import { getRestrictionIdByName, hasRestriction } from '../modules/settings';
+import { getSettings, postSettings, patchSettings, deleteSettings, getRestrictionIdByName, hasRestriction } from '../modules/settings';
 
 const router : Router = Router();
 

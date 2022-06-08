@@ -5,7 +5,7 @@ import { UserInterface } from '../../../include/userInterface';
 import { database, JWT } from '../../../server_config';
 
 export const checkUserExists = async (user: UserInterface): Promise<boolean> => {
-    const userFound: Array<QueryResultRow> = await database.User.getUser(user.userid, null)
+    const userFound: Array<QueryResultRow> = await database.User.getUser(user.userid, null);
     if (userFound.length > 0) {
         return true;
     }
@@ -35,14 +35,14 @@ export const secureRouteMiddleware = async (req: Request, res: Response, next: N
                 throw new Error('no valid bearer');
             }
             header_token = header_token.substring(7);
-            const user: UserInterface =  JWT.validate(header_token)
+            const user: UserInterface = JWT.validate(header_token);
             res.locals.user = user;
             if (!await checkUserExists(user)) {
                 throw new Error('user does not exist');
             }
             next();
         } catch (error) {
-            console.log(error)
+            console.log(error);
             res.status(401).send({ Error: '401 Unauthorized' });
         }
     } else {

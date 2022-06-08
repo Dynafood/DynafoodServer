@@ -7,4 +7,4 @@ export const updatePassword = async (userid: string, newPassword: string) => {
             SET passcode = '${newPassword}'
             WHERE endUserID = '${checkInputBeforeSqlQuery(userid)}';
         `);
-}
+};

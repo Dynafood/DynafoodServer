@@ -1,8 +1,8 @@
-import { Router } from 'express'
-const router : Router = Router();
+import { Router } from 'express';
 
-import { secureRouteMiddleware } from '../middleware/security/secureRouting'
+import { secureRouteMiddleware } from '../middleware/security/secureRouting';
 import { createFeedback } from '../modules/feedback';
+const router : Router = Router();
 
 /**
  * @swagger
@@ -32,7 +32,6 @@ import { createFeedback } from '../modules/feedback';
  *           type: string
  *           description: Details of the occurred error.
 */
-
 
 /**
  * @swagger
@@ -65,6 +64,5 @@ import { createFeedback } from '../modules/feedback';
  *                 $ref: '#/components/schemas/Error'
 */
 router.post('/feedback', secureRouteMiddleware, createFeedback);
-
 
 export default router;

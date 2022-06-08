@@ -8,4 +8,4 @@ export const createNewFeedback = async (reason: string, content: string, userid:
             INSERT INTO Feedback (reason, content, userhash)
             VALUES ('${checkInputBeforeSqlQuery(reason)}', '${checkInputBeforeSqlQuery(content)}', '${checkInputBeforeSqlQuery(Md5.hashStr(userid))}');
         `);
-}
+};

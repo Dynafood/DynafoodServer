@@ -8,10 +8,9 @@ export const getRestrictionIdByName = async (restrictionName: string) : Promise<
         FROM Restriction
         WHERE restrictionName = '${checkInputBeforeSqlQuery(restrictionName)}'
     `);
-    if (restrictionID.rowCount == 0)
-        return null;
+    if (restrictionID.rowCount === 0) { return null; }
     return restrictionID.rows[0].restrictionid;
-}
+};
 
 export const userHasRestriction = async (userid: string, restrictionid: string) : Promise<boolean> => {
     const restriction : QueryResult = await db_adm_conn.query(`
@@ -19,8 +18,8 @@ export const userHasRestriction = async (userid: string, restrictionid: string) 
             WHERE endUserID = '${checkInputBeforeSqlQuery(userid)}'
             AND restrictionID = '${checkInputBeforeSqlQuery(restrictionid)}'
         `);
-    return restriction.rowCount > 0
-}
+    return restriction.rowCount > 0;
+};
 
 export const getAlertSettings = async (userid: string) : Promise<Array<QueryResultRow>> => {
     const result: QueryResult = await db_adm_conn.query(`
@@ -28,8 +27,8 @@ export const getAlertSettings = async (userid: string) : Promise<Array<QueryResu
     FROM Restriction R
     LEFT JOIN EndUser_Restriction ER ON ER.restrictionID = R.restrictionID
     WHERE ER.endUserID = '${checkInputBeforeSqlQuery(userid)}';`);
-    return result.rows
-}
+    return result.rows;
+};
 
 export const createSetting = async (alertActivation: string, userid: string, restrictionid:string) => {
     await db_adm_conn.query(`
@@ -42,7 +41,7 @@ export const createSetting = async (alertActivation: string, userid: string, res
             WHERE EU.endUserID = '${checkInputBeforeSqlQuery(userid)}'
             AND EU.restrictionID = '${checkInputBeforeSqlQuery(restrictionid)}');
         `);
-}
+};
 
 export const updateAlertSetting = async (userid: string, alertActivation: string, restrictionID: string) => {
     await db_adm_conn.query(`
@@ -51,7 +50,7 @@ export const updateAlertSetting = async (userid: string, alertActivation: string
     WHERE restrictionID = '${checkInputBeforeSqlQuery(restrictionID)}'
     AND endUserID = '${checkInputBeforeSqlQuery(userid)}';
         `);
-}
+};
 
 export const deleteAlertSetting = async (userid: string, restrictionID: string) : Promise<QueryResultRow> => {
     const deleted : QueryResult = await db_adm_conn.query(`
@@ -59,5 +58,5 @@ export const deleteAlertSetting = async (userid: string, restrictionID: string) 
             WHERE restrictionID = '${checkInputBeforeSqlQuery(restrictionID)}'
             AND endUserID = '${checkInputBeforeSqlQuery(userid)}';
         `);
-    return deleted.rows[0]
-}
+    return deleted.rows[0];
+};

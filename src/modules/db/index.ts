@@ -1,10 +1,10 @@
 import pg from 'pg';
 import * as dotenv from 'dotenv';
-import { createNewFeedback } from "./feedback";
-import {deleteElementFromHistory, getElements, updateHistory} from "./historyManagement";
-import {updatePassword} from "./resetPassword";
-import {updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting} from "./settingsManagement";
-import {createUser, deleteUser, getUser} from "./userManagement";
+import { createNewFeedback } from './feedback';
+import { deleteElementFromHistory, getElements, updateHistory } from './historyManagement';
+import { updatePassword } from './resetPassword';
+import { updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting } from './settingsManagement';
+import { createUser, deleteUser, getUser } from './userManagement';
 import { DatabaseInterface } from '../../../server_config';
 
 dotenv.config();
@@ -15,12 +15,12 @@ const connect = async () => {
     const connectionString: string = `postgresql://${process.env.PG_USER}:${process.env.PG_PASSWORD}@${process.env.PG_HOST}:${process.env.PG_PORT}/${process.env.PG_DATABASE}`;
 
     if (process.env.NODE_ENV !== 'production') {
-        console.log("connect by using", connectionString)
+        console.log('connect by using', connectionString);
         db_adm_conn = new pg.Client({
             connectionString
         });
     } else {
-        console.log("connect by using", process.env.DATABASE_URL)
+        console.log('connect by using', process.env.DATABASE_URL);
         db_adm_conn = new pg.Client({
             connectionString: process.env.DATABASE_URL,
             ssl: {
@@ -30,24 +30,24 @@ const connect = async () => {
     }
 
     await db_adm_conn.connect();
-}
+};
 
 const end = async () => {
-    await db_adm_conn.end()
-}
+    await db_adm_conn.end();
+};
 
 const Database: DatabaseInterface = {
     Feedback: {
         createNewFeedback
-    }, 
-    Password : {
+    },
+    Password: {
         updatePassword
-    }, 
+    },
     User: {
-        createUser, 
-        deleteUser, 
+        createUser,
+        deleteUser,
         getUser
-    }, 
+    },
     Settings: {
         getRestrictionIdByName,
         userHasRestriction,
@@ -55,17 +55,17 @@ const Database: DatabaseInterface = {
         updateAlertSetting,
         deleteAlertSetting,
         createSetting
-    }, 
+    },
     History: {
-        deleteElementFromHistory, 
+        deleteElementFromHistory,
         getElements,
-        updateHistory,
+        updateHistory
     },
     ResetPassword: {
         updatePassword
     },
     connect,
     end
-}
-export default Database
+};
+export default Database;
 export let db_adm_conn: pg.Client;

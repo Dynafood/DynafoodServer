@@ -64,5 +64,5 @@ export const getElements = async (userid: string) : Promise<Array<QueryResultRow
     JOIN EndUser EU ON EU.endUserID = H.endUserID
     WHERE EU.endUserID = '${userID}'
     ORDER BY H.lastused DESC;`);
-    return response.rows
+    return response.rows;
 };
