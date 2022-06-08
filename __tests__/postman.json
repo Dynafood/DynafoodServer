@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "cf91fc3d-60e6-413e-b9c8-7bb633083f76",
-		"name": "DynaFood",
+		"_postman_id": "f0fc9a96-4de8-4ff6-8a1f-d0cac3a27a50",
+		"name": "DynaFood Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -1869,12 +1869,12 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Status code is 409\", function () {",
-							"    pm.response.to.have.status(409);",
+							"    pm.response.to.have.status(406);",
 							"});",
 							"",
 							"pm.test(\"Check correct response\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.Error).to.equal(\"New password is not strong enough\");",
+							"    pm.expect(jsonData.Error).to.equal(\"Need a lowerCase\");",
 							"});"
 						],
 						"type": "text/javascript"
