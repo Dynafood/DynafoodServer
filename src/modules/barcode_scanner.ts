@@ -158,6 +158,24 @@ export const checkAlertVegetarian = async (userid: string, product: JsonObject) 
     return false
 }
 
+const getIngredientsAlert = (ingredient: JsonObject, ingredientsalert : Array<string>) : Array<JsonObject> => {
+    let alert : Array<Object> = []
+    if (typeof ingredient.ingredients != "undefined" && ingredient.ingredients != null) {
+        for (var i = 0; i  < ingredient.ingredients.length; i++) {
+                var tmp = {
+                    name : ingredient.ingredients[i].text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match: string) => match.toUpperCase()),
+                    isAlert : false,
+                    ingredients : getInnerIngredients(ingredient.ingredients[i])
+                }
+                if (ingredientsalert.indexOf(tmp.name) > -1)
+                    tmp.isAlert = true
+                console.log(tmp)
+                alert.push(tmp)
+        }
+    }
+    return alert
+}
+
 export const getProduct = async (req: Request, res: Response) : Promise<void> => {
     try {
         const userID: string =res.locals.user.userid
