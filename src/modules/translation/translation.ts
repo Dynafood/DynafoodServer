@@ -1,12 +1,14 @@
 import german_ingreds from './de.json' 
 import italian_ingreds from './it.json' 
 import frensh_ingreds from './fr.json' 
+import english_ingreds from './en.json' 
 
 
 export const translations = [
     {id: "de", translation: german_ingreds},
     {id: "it", translation: italian_ingreds},
-    {id: "fr", translation: frensh_ingreds}
+    {id: "fr", translation: frensh_ingreds},
+    {id: "en", translation: english_ingreds}
 ]
 
 export const translate = (en_word: string, language: string = "de") : null | string =>  {
