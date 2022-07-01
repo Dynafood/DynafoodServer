@@ -1911,6 +1911,205 @@
 			},
 			"response": []
 		},
+		{"name": "Create Valid Feedback",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "reason",
+							"value": "appreciation",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "fooocking awesome!!!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/feedback",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"feedback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Feedback missing content",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct error message\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.Error).to.eql(\"No content provided\");\r",
+							"    pm.expect(jsonData.Details).to.eql(\"Content is not provided or empty!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "reason",
+							"value": "appreciation",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "fooocking awesome!!!",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/feedback",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"feedback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Feedback missing reason",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct error message\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.Error).to.eql(\"No reason provided\");\r",
+							"    pm.expect(jsonData.Details).to.eql(\"Reason is not provided or empty!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "reason",
+							"value": "appreciation",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "content",
+							"value": "fooocking awesome!!!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/feedback",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"feedback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Feedback invalid reason",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct error message\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.Error).to.eql(\"Reason not valid\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "reason",
+							"value": "random_reason",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "fooocking awesome!!!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/feedback",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"feedback"
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "Delete User <- also deletes jwt",
 			"event": [
@@ -2233,6 +2432,12 @@
 		{
 			"key": "email_test_email",
 			"value": "taubert.marcel@gmail.com"
+		},
+		{
+			"key": "base_url",
+			"value": "https://dynafood-server.herokuapp.com",
+			"type": "string",
+			"disabled": true
 		}
 	]
 }
