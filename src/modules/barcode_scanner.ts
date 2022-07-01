@@ -2,18 +2,20 @@ import axios, { AxiosResponse } from 'axios';
 import { Request, Response } from 'express';
 import { JsonObject } from 'swagger-ui-express';
 import { database } from '../../server_config';
+import { translate } from './translation/translation';
 
-const getInnerIngredients = (ingredient: JsonObject): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
+const getInnerIngredients = (ingredient: JsonObject, language: string): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
     const inner : Array<object> = [];
     let vegan : boolean = true;
     let vegetarian : boolean = true;
     if (typeof ingredient.ingredients !== 'undefined' && ingredient.ingredients !== null) {
         for (let i = 0; i < ingredient.ingredients.length; i++) {
+            const name = translate(ingredient.ingredients[i].id, language)
             const tmp = {
-                name: ingredient.ingredients[i].text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match: string) => match.toUpperCase()),
+                name: name ? name : ingredient.ingredients[i].text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match: string) => match.toUpperCase()),
                 vegan: ingredient.ingredients[i].vegan,
                 vegetarian: ingredient.ingredients[i].vegetarian,
-                ingredients: getInnerIngredients(ingredient.ingredients[i])
+                ingredients: getInnerIngredients(ingredient.ingredients[i], language)
             };
             if (tmp.vegan) {
                 vegan = true;
@@ -153,6 +155,7 @@ const getEcoScore = (data: JsonObject): EcoScoreInterface => {
 export const getProduct = async (req: Request, res: Response) : Promise<void> => {
     try {
         const userID: string = res.locals.user.userid;
+        const language: string = <string>(req.query.language || "de");
 
         const response : JsonObject = {
             name: null,
@@ -192,7 +195,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             response.name = product.data.product.product_name;
             if (typeof data.image_front_url === 'undefined' || data.image_front_url == null) { response.images = null; } else { response.images = data.image_small_url; }
             if (product.data.product) {
-                response.ingredients = getInnerIngredients(product.data.product);
+                response.ingredients = getInnerIngredients(product.data.product, language);
             }
             if (product.data.product && product.data.product.nutriments) {
                 response.nutriments_g_pro_100g = getNutriments(product.data.product.nutriments);

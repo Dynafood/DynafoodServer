@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { getProduct } from '../modules/barcode_scanner';
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
-
+import { languageValidation } from '../middleware/languageValidation';
 const router : Router = Router();
 
 /**
@@ -196,5 +196,5 @@ const router : Router = Router();
  *              schema:
  *                $ref: '#/components/schemas/Product'
  */
-router.get('/products/barcode/:barcode', secureRouteMiddleware, getProduct);
+router.get('/products/barcode/:barcode', secureRouteMiddleware, languageValidation, getProduct);
 export default router;
