@@ -1,9 +1,7 @@
 import { mail_sender } from '../../server_config';
 
-// const verify_template_id: string = 'd-557636803ac34c618d0cacbdd1c5dd29';
-const reset_password_template_id: string = 'd-10543ac9938e420cacc6fc86aa6bc3e3';
-// const thanks_for_signup_template_id: string = 'd-58f1334bf277429cba6051fec7a77d9f';
-const sender_email: string = 'marcel.taubert@epitech.eu'; // @todo replace
+const reset_password_template_id: string = 'd-c075a6859e224245aa76f0300e56f66b';
+const sender_email: string = 'info.dynafood@gmail.com';
 
 export const sendResetPasswordEmail = async (name: string, email: string) => {
     await mail_sender.send({
