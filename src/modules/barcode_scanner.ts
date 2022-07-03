@@ -172,7 +172,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             nutriments_scores: [],
             vegetarian_alert: false
         };
-        const fields: string = 'generic_name,_keywords,allergens_hierarchy,categories,data_quality_tags,data_quality_warnings_tags,packaging,product_name,ecoscore_score,ecoscore_data';
+        const fields: string = 'generic_name,_keywords,allergens_hierarchy,categories,data_quality_tags,data_quality_warnings_tags,packaging,product_name,ecoscore_score,ecoscore_data,ecoscore_grade,image_front_url,image_small_url,nutriments,nutriscore_data,nutriscore_grade,ingredients';
         const url: string = `https://world.openfoodfacts.org/api/2/product/${req.params.barcode}.json?fields=${fields}`;
         const product: AxiosResponse = await axios.get(url);
         if (typeof product === 'undefined' || product == null) {

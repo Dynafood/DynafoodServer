@@ -21,7 +21,7 @@ describe('check get product routes', () => {
         const response = await supertest(app).get("/products/barcode/3017620425035?language=fr").send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200)
         expect(response.body).toStrictEqual({
-            "name": "Pâte à tartiner Nutella noisettes et cacao - 1kg",
+            "name": "Nutella",
             "keywords": [
                 "point",
                 "fruhstucke",
@@ -383,12 +383,12 @@ describe('check get product routes', () => {
             "vegetarian_alert": false
         })
     })
-    
+
     test('existing product nutella de', async () => {
         const response = await supertest(app).get("/products/barcode/3017620425035?language=de").send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200)
         expect(response.body).toStrictEqual({
-            "name": "Pâte à tartiner Nutella noisettes et cacao - 1kg",
+            "name": "Nutella",
             "keywords": [
                 "point",
                 "fruhstucke",
@@ -755,7 +755,7 @@ describe('check get product routes', () => {
         const response = await supertest(app).get("/products/barcode/3017620425035?language=it").send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200)
         expect(response.body).toStrictEqual({
-            "name": "Pâte à tartiner Nutella noisettes et cacao - 1kg",
+            "name": "Nutella",
             "keywords": [
                 "point",
                 "fruhstucke",
@@ -1117,12 +1117,12 @@ describe('check get product routes', () => {
             "vegetarian_alert": false
         })
     })
-    
+
     test('existing product nutella en', async () => {
         const response = await supertest(app).get("/products/barcode/3017620425035?language=en").send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200)
         expect(response.body).toStrictEqual({
-            "name": "Pâte à tartiner Nutella noisettes et cacao - 1kg",
+            "name": "Nutella",
             "keywords": [
                 "point",
                 "fruhstucke",
@@ -1484,12 +1484,12 @@ describe('check get product routes', () => {
             "vegetarian_alert": false
         })
     })
-    
+
     test('existing product nutella default language', async () => {
         const response = await supertest(app).get("/products/barcode/3017620425035").send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200)
         expect(response.body).toStrictEqual({
-            "name": "Pâte à tartiner Nutella noisettes et cacao - 1kg",
+            "name": "Nutella",
             "keywords": [
                 "point",
                 "fruhstucke",
