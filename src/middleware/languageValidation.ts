@@ -1,14 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
-import { translations } from '../modules/translation/translation'
+import { get_language_key } from '../modules/translation/translation'
 
 export const languageValidation = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-    const language: string = <string>(req.query.language || "de");
+    const language: string = <string>(req.query.language || "en");
 
-    for (var it of translations) {
-        if (it.id == language) {
-            next()
-            return
-        }
+    if (get_language_key(language) < 0) {
+        res.status(400).json({Error: `The language '${language}' is not supported`});
+        return;
     }
-    res.status(400).json({Error: `The language '${language}' is not supported`})
+    next();
 }

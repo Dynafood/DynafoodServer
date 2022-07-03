@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import { Request, Response } from 'express';
 import { JsonObject } from 'swagger-ui-express';
 import { database } from '../../server_config';
-import { translate } from './translation/translation';
+import { translate_ingredient, translate_nutriment } from './translation/translation';
 
 const getInnerIngredients = (ingredient: JsonObject, language: string): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
     const inner : Array<object> = [];
@@ -10,7 +10,7 @@ const getInnerIngredients = (ingredient: JsonObject, language: string): {vegan: 
     let vegetarian : boolean = true;
     if (typeof ingredient.ingredients !== 'undefined' && ingredient.ingredients !== null) {
         for (let i = 0; i < ingredient.ingredients.length; i++) {
-            const name = translate(ingredient.ingredients[i].id, language)
+            const name = translate_ingredient(ingredient.ingredients[i].id, language)
             const tmp = {
                 name: name ? name : ingredient.ingredients[i].text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match: string) => match.toUpperCase()),
                 vegan: ingredient.ingredients[i].vegan,
@@ -41,27 +41,27 @@ const getAllAllergenes = (hierarchy: Array<string>) : Array<string> => {
     return allergenes;
 };
 
-const getNutriments = (nutriments: JsonObject): JsonObject | null => {
+const getNutriments = (nutriments: JsonObject, language: string): JsonObject | null => {
     if (typeof nutriments !== 'undefined' && nutriments != null) {
         return {
-            calcium: nutriments.calcium_100g,
-            carbohydrates: nutriments.carbohydrates_100g,
-            cholesterol: nutriments.cholesterol_100g,
-            kcal: nutriments.energy_100g,
-            fat: nutriments.fat_100g,
-            fiber: nutriments.fiber_100g,
-            iron: nutriments.iron_100g,
-            proteins: nutriments.proteins_100g,
-            salt: nutriments.salt_100g,
-            'saturated fat': nutriments['saturated-fat_100g'],
-            sodium: nutriments.sodium_100g,
-            sugars: nutriments.sugars_100g,
-            'trans fat': nutriments['trans-fat_100g'],
-            'vitamin A': nutriments['vitamin-a_100g'],
-            'vitamin B': nutriments['vitamin-b_100g'],
-            'vitamin C': nutriments['vitamin-c_100g'],
-            'vitamin D': nutriments['vitamin-d_100g'],
-            'vitamin E': nutriments['vitamin-e_100g']
+            calcium:            {name: translate_nutriment('calcium', language), score: nutriments.calcium_100g},
+            carbohydrates:      {name: translate_nutriment('carbohydrates', language), score: nutriments.carbohydrates_100g},
+            cholesterol:        {name: translate_nutriment('cholesterol', language), score: nutriments.cholesterol_100g},
+            kcal:               {name: translate_nutriment('kcal', language), score: nutriments.energy_100g},
+            fat:                {name: translate_nutriment('fat', language), score: nutriments.fat_100g},
+            fiber:              {name: translate_nutriment('fiber', language), score: nutriments.fiber_100g},
+            iron:               {name: translate_nutriment('iron', language), score: nutriments.iron_100g},
+            proteins:           {name: translate_nutriment('proteins', language), score: nutriments.proteins_100g},
+            salt:               {name: translate_nutriment('salt', language), score: nutriments.salt_100g},
+            'saturated fat':    {name: translate_nutriment('saturated fat', language), score: nutriments['saturated-fat_100g']},
+            sodium:             {name: translate_nutriment('sodium', language), score: nutriments.sodium_100g},
+            sugars:             {name: translate_nutriment('sugars', language), score: nutriments.sugars_100g},
+            'trans fat':        {name: translate_nutriment('trans fat', language), score: nutriments['trans-fat_100g']},
+            'vitamin A':        {name: translate_nutriment('vitamin A', language), score: nutriments['vitamin-a_100g']},
+            'vitamin B':        {name: translate_nutriment('vitamin B', language), score: nutriments['vitamin-b_100g']},
+            'vitamin C':        {name: translate_nutriment('vitamin C', language), score: nutriments['vitamin-c_100g']},
+            'vitamin D':        {name: translate_nutriment('vitamin D', language), score: nutriments['vitamin-d_100g']},
+            'vitamin E':        {name: translate_nutriment('vitamin E', language), score: nutriments['vitamin-e_100g']}
         };
     }
     return null;
@@ -155,7 +155,7 @@ const getEcoScore = (data: JsonObject): EcoScoreInterface => {
 export const getProduct = async (req: Request, res: Response) : Promise<void> => {
     try {
         const userID: string = res.locals.user.userid;
-        const language: string = <string>(req.query.language || "de");
+        const language: string = <string>(req.query.language || "en");
 
         const response : JsonObject = {
             name: null,
@@ -198,7 +198,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
                 response.ingredients = getInnerIngredients(product.data.product, language);
             }
             if (product.data.product && product.data.product.nutriments) {
-                response.nutriments_g_pro_100g = getNutriments(product.data.product.nutriments);
+                response.nutriments_g_pro_100g = getNutriments(product.data.product.nutriments, language);
             }
             await database.History.updateHistory(userID, req.params.barcode, response);
             response.nutriments_scores = getNutrimentsScore(product.data.product);
