@@ -10,9 +10,9 @@ const getInnerIngredients = (ingredient: JsonObject, language: string): {vegan: 
     let vegetarian : boolean = true;
     if (typeof ingredient.ingredients !== 'undefined' && ingredient.ingredients !== null) {
         for (let i = 0; i < ingredient.ingredients.length; i++) {
-            const name = translate_ingredient(ingredient.ingredients[i].id, language)
+            const name = translate_ingredient(ingredient.ingredients[i].id, language);
             const tmp = {
-                name: name ? name : ingredient.ingredients[i].text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match: string) => match.toUpperCase()),
+                name: name || ingredient.ingredients[i].text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match: string) => match.toUpperCase()),
                 vegan: ingredient.ingredients[i].vegan,
                 vegetarian: ingredient.ingredients[i].vegetarian,
                 ingredients: getInnerIngredients(ingredient.ingredients[i], language)
@@ -44,24 +44,24 @@ const getAllAllergenes = (hierarchy: Array<string>) : Array<string> => {
 const getNutriments = (nutriments: JsonObject, language: string): JsonObject | null => {
     if (typeof nutriments !== 'undefined' && nutriments != null) {
         return {
-            calcium:            {name: translate_nutriment('calcium', language), score: nutriments.calcium_100g},
-            carbohydrates:      {name: translate_nutriment('carbohydrates', language), score: nutriments.carbohydrates_100g},
-            cholesterol:        {name: translate_nutriment('cholesterol', language), score: nutriments.cholesterol_100g},
-            kcal:               {name: translate_nutriment('kcal', language), score: nutriments.energy_100g},
-            fat:                {name: translate_nutriment('fat', language), score: nutriments.fat_100g},
-            fiber:              {name: translate_nutriment('fiber', language), score: nutriments.fiber_100g},
-            iron:               {name: translate_nutriment('iron', language), score: nutriments.iron_100g},
-            proteins:           {name: translate_nutriment('proteins', language), score: nutriments.proteins_100g},
-            salt:               {name: translate_nutriment('salt', language), score: nutriments.salt_100g},
-            'saturated fat':    {name: translate_nutriment('saturated fat', language), score: nutriments['saturated-fat_100g']},
-            sodium:             {name: translate_nutriment('sodium', language), score: nutriments.sodium_100g},
-            sugars:             {name: translate_nutriment('sugars', language), score: nutriments.sugars_100g},
-            'trans fat':        {name: translate_nutriment('trans fat', language), score: nutriments['trans-fat_100g']},
-            'vitamin A':        {name: translate_nutriment('vitamin A', language), score: nutriments['vitamin-a_100g']},
-            'vitamin B':        {name: translate_nutriment('vitamin B', language), score: nutriments['vitamin-b_100g']},
-            'vitamin C':        {name: translate_nutriment('vitamin C', language), score: nutriments['vitamin-c_100g']},
-            'vitamin D':        {name: translate_nutriment('vitamin D', language), score: nutriments['vitamin-d_100g']},
-            'vitamin E':        {name: translate_nutriment('vitamin E', language), score: nutriments['vitamin-e_100g']}
+            calcium: { name: translate_nutriment('calcium', language), score: nutriments.calcium_100g },
+            carbohydrates: { name: translate_nutriment('carbohydrates', language), score: nutriments.carbohydrates_100g },
+            cholesterol: { name: translate_nutriment('cholesterol', language), score: nutriments.cholesterol_100g },
+            kcal: { name: translate_nutriment('kcal', language), score: nutriments.energy_100g },
+            fat: { name: translate_nutriment('fat', language), score: nutriments.fat_100g },
+            fiber: { name: translate_nutriment('fiber', language), score: nutriments.fiber_100g },
+            iron: { name: translate_nutriment('iron', language), score: nutriments.iron_100g },
+            proteins: { name: translate_nutriment('proteins', language), score: nutriments.proteins_100g },
+            salt: { name: translate_nutriment('salt', language), score: nutriments.salt_100g },
+            'saturated fat': { name: translate_nutriment('saturated fat', language), score: nutriments['saturated-fat_100g'] },
+            sodium: { name: translate_nutriment('sodium', language), score: nutriments.sodium_100g },
+            sugars: { name: translate_nutriment('sugars', language), score: nutriments.sugars_100g },
+            'trans fat': { name: translate_nutriment('trans fat', language), score: nutriments['trans-fat_100g'] },
+            'vitamin A': { name: translate_nutriment('vitamin A', language), score: nutriments['vitamin-a_100g'] },
+            'vitamin B': { name: translate_nutriment('vitamin B', language), score: nutriments['vitamin-b_100g'] },
+            'vitamin C': { name: translate_nutriment('vitamin C', language), score: nutriments['vitamin-c_100g'] },
+            'vitamin D': { name: translate_nutriment('vitamin D', language), score: nutriments['vitamin-d_100g'] },
+            'vitamin E': { name: translate_nutriment('vitamin E', language), score: nutriments['vitamin-e_100g'] }
         };
     }
     return null;
@@ -155,7 +155,7 @@ const getEcoScore = (data: JsonObject): EcoScoreInterface => {
 export const getProduct = async (req: Request, res: Response) : Promise<void> => {
     try {
         const userID: string = res.locals.user.userid;
-        const language: string = <string>(req.query.language || "en");
+        const language: string = <string>(req.query.language || 'en');
 
         const response : JsonObject = {
             name: null,
@@ -172,7 +172,8 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             nutriments_scores: [],
             vegetarian_alert: false
         };
-        const url: string = `https://world.openfoodfacts.org/api/2/product/${req.params.barcode}.json`;
+        const fields: string = 'generic_name,_keywords,allergens_hierarchy,categories,data_quality_tags,data_quality_warnings_tags,packaging,product_name,ecoscore_score,ecoscore_data';
+        const url: string = `https://world.openfoodfacts.org/api/2/product/${req.params.barcode}.json?fields=${fields}`;
         const product: AxiosResponse = await axios.get(url);
         if (typeof product === 'undefined' || product == null) {
             res.status(500).send({ error: 'undefined response from OpenFoodFacts Api' });
