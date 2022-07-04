@@ -74,6 +74,31 @@ export const triggerResetPasswordEmail = async (req: Request, res: Response) => 
 
 export const resetPassword = async (req: Request, res: Response) => {
     try {
+        let newPassword: string | null = req.body.password;
+
+        if (newPassword === null || typeof newPassword === 'undefined') {
+            res.status(400).send({ Error: 'No password provided', Details: 'No password provided' });
+            return;
+        }
+
+        const passwordState: string = checkPassword(newPassword);
+
+        if (passwordState !== 'Good') {
+            res.status(409).send({ Error: 'Password is not strong enough', Details: passwordState });
+            return;
+        }
+        newPassword = await bcrypt.hash(newPassword, 10);
+        await database.ResetPassword.updatePassword(res.locals.user.userid, newPassword);
+        res.status(200).send({ status: 'OK' });
+    } catch (err: any) {
+        console.log(err.stack);
+        res.status(500).send({ Error: err, Details: err.stack });
+    }
+};
+
+/* this one should be for changing password not resetting it because it needs an 'oldPassword'
+export const resetPassword = async (req: Request, res: Response) => {
+    try {
         const oldPassword: string | null = req.body.oldPassword;
         let newPassword: string | null = req.body.newPassword;
         if (oldPassword == null) {
@@ -114,3 +139,4 @@ export const resetPassword = async (req: Request, res: Response) => {
         res.status(500).send({ Error: err, Details: err.stack });
     }
 };
+*/

@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "f0fc9a96-4de8-4ff6-8a1f-d0cac3a27a50",
-		"name": "DynaFood Copy",
+		"_postman_id": "c3ee8417-7a8d-4587-b273-1bbdace30783",
+		"name": "DynaFood New",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -991,7 +991,7 @@
 							"    pm.expect(jsonData.firstName).to.eql(\"TestUser\");",
 							"    pm.expect(jsonData.lastName).to.eql(\"TestUser\");",
 							"    pm.expect(jsonData.userName).to.eql(\"TestUser\");",
-							"    pm.expect(jsonData.email).to.eql(\"test@gmail.com\");",
+							"    pm.expect(jsonData.email).to.eql(\"taubert.marcel@gmail.com\");",
 							"    pm.expect(jsonData.phoneNumber).to.eql(\"123123123\");",
 							"    pm.expect(jsonData.restriction).to.eql([]);",
 							"});"
@@ -1028,7 +1028,7 @@
 							"",
 							"pm.test(\"Correct error message\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.Error).to.eql(\"There is no user with the email 111test@gmail.com\");",
+							"    pm.expect(jsonData.Error).to.eql(\"There is no user with the email 111taubert.marcel@gmail.com\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -1379,12 +1379,12 @@
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
-							"pm.test(\"TODO: validate response data\", function () {",
+							"pm.test(\"validate response data\", function () {",
 							"    var jsonData = pm.response.json();",
 							"    pm.expect(jsonData.firstName).to.eql(\"TestUser\");",
 							"    pm.expect(jsonData.lastName).to.eql(\"TestUser\");",
 							"    pm.expect(jsonData.userName).to.eql(\"TestUser\");",
-							"    pm.expect(jsonData.email).to.eql(\"test@gmail.com\");",
+							"    pm.expect(jsonData.email).to.eql(\"taubert.marcel@gmail.com\");",
 							"    pm.expect(jsonData.phoneNumber).to.eql(\"123123123\");",
 							"    pm.expect(jsonData.restriction).to.eql([{",
 							"            \"alertactivation\": true,",
@@ -1645,6 +1645,96 @@
 			"response": []
 		},
 		{
+			"name": "VerifyCode Not Matching",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});",
+							"",
+							"pm.test(\"Check correct response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.Error).to.equal('Code is not matching');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "code",
+							"value": "1234567",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/verifyCode",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"verifyCode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerifyCode No code provided",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Check correct response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.Error).to.equal('No code provided');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "code",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/verifyCode",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"verifyCode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Reset password",
 			"event": [
 				{
@@ -1657,7 +1747,7 @@
 							"",
 							"pm.test(\"Check correct response\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.status).to.equal('OK: updated password');",
+							"    pm.expect(jsonData.status).to.equal('OK');",
 							"});"
 						],
 						"type": "text/javascript"
@@ -1671,62 +1761,7 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "oldPassword",
-							"value": "{{test_password}}",
-							"type": "text"
-						},
-						{
-							"key": "newPassword",
-							"value": "{{new_password_after_reset}}",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "{{base_url}}/resetPassword",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"resetPassword"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Reset password Not matching",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 403\", function () {",
-							"    pm.response.to.have.status(403);",
-							"});",
-							"",
-							"pm.test(\"Check correct response\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.Error).to.equal('Old password is not matching');",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "oldPassword",
-							"value": "{{test_password}}",
-							"type": "text"
-						},
-						{
-							"key": "newPassword",
+							"key": "password",
 							"value": "{{new_password_after_reset}}",
 							"type": "text"
 						}
@@ -1824,7 +1859,7 @@
 							"",
 							"pm.test(\"Check correct response\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.status).to.equal('OK: updated password');",
+							"    pm.expect(jsonData.status).to.equal('OK');",
 							"});"
 						],
 						"type": "text/javascript"
@@ -1838,12 +1873,7 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "oldPassword",
-							"value": "{{new_password_after_reset}}",
-							"type": "text"
-						},
-						{
-							"key": "newPassword",
+							"key": "password",
 							"value": "{{test_password}}",
 							"type": "text"
 						}
@@ -1869,12 +1899,12 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Status code is 409\", function () {",
-							"    pm.response.to.have.status(406);",
+							"    pm.response.to.have.status(409);",
 							"});",
 							"",
 							"pm.test(\"Check correct response\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.Error).to.equal(\"Need a lowerCase\");",
+							"    pm.expect(jsonData.Details).to.equal(\"Need a lowerCase\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -1888,12 +1918,7 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "oldPassword",
-							"value": "{{test_password}}",
-							"type": "text"
-						},
-						{
-							"key": "newPassword",
+							"key": "password",
 							"value": "1",
 							"type": "text"
 						}
@@ -1911,7 +1936,8 @@
 			},
 			"response": []
 		},
-		{"name": "Create Valid Feedback",
+		{
+			"name": "Create Valid Feedback",
 			"event": [
 				{
 					"listen": "test",
@@ -2124,7 +2150,7 @@
 							"pm.test(\"Correct response content\", function () {",
 							"    var jsonData = pm.response.json();",
 							"    pm.expect(jsonData.Deleted).to.be.an('object');",
-							"    pm.expect(jsonData.Deleted.email).to.eql(\"test@gmail.com\");",
+							"    pm.expect(jsonData.Deleted.email).to.eql(\"taubert.marcel@gmail.com\");",
 							"});",
 							"",
 							"// deleting jwt because the following requests should not have a valid token",
@@ -2321,6 +2347,51 @@
 			"response": []
 		},
 		{
+			"name": "VerifyCode not logged in",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});",
+							"",
+							"pm.test(\"Check correct response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.Error).to.equal('401 Unauthorized');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "code",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/verifyCode",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"verifyCode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Delete history not logged in",
 			"event": [
 				{
@@ -2411,7 +2482,7 @@
 	"variable": [
 		{
 			"key": "test_email",
-			"value": "test@gmail.com"
+			"value": "taubert.marcel@gmail.com"
 		},
 		{
 			"key": "test_password",
@@ -2427,7 +2498,8 @@
 		},
 		{
 			"key": "base_url",
-			"value": "DEFAULT_BASE_URL"
+			"value": "DEFAULT_BASE_URL",
+			"disabled": true
 		},
 		{
 			"key": "email_test_email",
@@ -2435,9 +2507,12 @@
 		},
 		{
 			"key": "base_url",
-			"value": "https://dynafood-server.herokuapp.com",
-			"type": "string",
+			"value": "https://dynafood-development.herokuapp.com",
 			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "DEFAULT_BASE_URL"
 		}
 	]
 }
