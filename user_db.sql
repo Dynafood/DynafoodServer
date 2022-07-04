@@ -15,7 +15,8 @@ CREATE TABLE IF NOT EXISTS EndUser
     passcode VARCHAR(72) NOT NULL,
     emailConfirmed BOOLEAN NOT NULL,
     currentOAuthUserID uuid,
-    currentAccessToken uuid
+    currentAccessToken uuid,
+    password_reset_token VARCHAR(6)
 );
 
 INSERT INTO EndUser (endUserID, firstName, lastName, userName, email, phoneNumber, passcode, emailConfirmed) VALUES ('123e4567-e89b-12d3-a456-426614174000', 'test', 'user', 'testitest', 'test@test.com', '0000', 'password', true);
@@ -58,7 +59,7 @@ CREATE TABLE IF NOT EXISTS Addresses
 CREATE TABLE IF NOT EXISTS Restriction
 (
     restrictionID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-    restrictionName VARCHAR(50) NOT NULL 
+    restrictionName VARCHAR(50) NOT NULL
 );
 
 INSERT INTO Restriction (restrictionID, restrictionName) VALUES ('f1dc1c61-ec72-41d2-968b-946ef9ef22b3', 'nutz');

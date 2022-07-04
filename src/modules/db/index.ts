@@ -4,7 +4,7 @@ import { createNewFeedback } from './feedback';
 import { deleteElementFromHistory, getElements, updateHistory } from './historyManagement';
 import { updatePassword } from './resetPassword';
 import { updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting } from './settingsManagement';
-import { createUser, deleteUser, getUser } from './userManagement';
+import { createUser, deleteUser, getUser, getPasswordResetToken, setPasswordResetToken } from './userManagement';
 import { DatabaseInterface } from '../../../server_config';
 
 dotenv.config();
@@ -46,7 +46,9 @@ const Database: DatabaseInterface = {
     User: {
         createUser,
         deleteUser,
-        getUser
+        getUser,
+        getPasswordResetToken,
+        setPasswordResetToken
     },
     Settings: {
         getRestrictionIdByName,

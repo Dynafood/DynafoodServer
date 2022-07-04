@@ -6,10 +6,10 @@ export const getUser = async (userid: string | null = null, email: string | null
             {
                 resolve( [
                     {
-                        enduserid: userid, 
-                        passcode: "$2b$10$TQ1P6jaOk8YHzLC3JYlciepXBkf45LVQKIL77VfEmJG7B5PVM.JSG", 
-                        firstname: "test", 
-                        lastname: "user", 
+                        enduserid: userid,
+                        passcode: "$2b$10$TQ1P6jaOk8YHzLC3JYlciepXBkf45LVQKIL77VfEmJG7B5PVM.JSG",
+                        firstname: "test",
+                        lastname: "user",
                         username: "testUser123",
                         email: "email@gmail.com",
                         phonenumber: "00000000",
@@ -26,10 +26,10 @@ export const createUser = async (firstName: string, lastName: string, userName: 
     return new Promise((resolve, reject) => {
         resolve(
         {
-            enduserid: "existing", 
-            passcode: "$2b$10$TQ1P6jaOk8YHzLC3JYlciepXBkf45LVQKIL77VfEmJG7B5PVM.JSG", 
-            firstname: "test", 
-            lastname: "user", 
+            enduserid: "existing",
+            passcode: "$2b$10$TQ1P6jaOk8YHzLC3JYlciepXBkf45LVQKIL77VfEmJG7B5PVM.JSG",
+            firstname: "test",
+            lastname: "user",
             username: "testUser123",
             email: "email@gmail.com",
             phonenumber: "00000000"
@@ -41,13 +41,19 @@ export const deleteUser = async (userid: string) : Promise<QueryResultRow> => {
     return new Promise((resolve, reject) => {
         resolve(
         {
-            enduserid: "existing", 
-            passcode: "$2b$10$TQ1P6jaOk8YHzLC3JYlciepXBkf45LVQKIL77VfEmJG7B5PVM.JSG", 
-            firstname: "test", 
-            lastname: "user", 
+            enduserid: "existing",
+            passcode: "$2b$10$TQ1P6jaOk8YHzLC3JYlciepXBkf45LVQKIL77VfEmJG7B5PVM.JSG",
+            firstname: "test",
+            lastname: "user",
             username: "testUser123",
             email: "email@gmail.com",
             phonenumber: "00000000"
         })
+    });
+}
+
+export const setResetPasswordToken = async (userid: string) : Promise<QueryResultRow> => {
+    return new Promise((resolve, reject) => {
+        resolve({})
     });
 }

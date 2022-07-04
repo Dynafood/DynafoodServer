@@ -32,6 +32,8 @@ export interface DatabaseInterface {
         createUser: (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string) => Promise<QueryResultRow>
         getUser: (userid: string | null, email: string | null) => Promise<Array<QueryResultRow>>
         deleteUser: (userid: string) => Promise<QueryResultRow>
+        getPasswordResetToken: (userid: string) => Promise<QueryResultRow>
+        setPasswordResetToken: (userid: string, token: string) => Promise<QueryResultRow>
     }
     Settings: {
         getRestrictionIdByName: (restrictionName: string) => Promise<string | null>
@@ -107,5 +109,3 @@ app.use(productRouter);
 app.use(resetPasswordRouter);
 app.use(feedbackRouter)
 app.use(logger);
-
-

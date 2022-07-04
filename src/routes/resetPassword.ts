@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
-import { triggerResetPasswordEmail, resetPassword } from '../modules/resetPassword';
+import { triggerResetPasswordEmail, resetPassword, verifyCode } from '../modules/resetPassword';
 
 const router: Router = Router();
 
@@ -97,5 +97,56 @@ router.get('/resetPassword', secureRouteMiddleware, triggerResetPasswordEmail);
  *                 $ref: '#/components/schemas/Error'
  */
 router.post('/resetPassword', secureRouteMiddleware, resetPassword);
+
+/**
+ * @swagger
+ * /verifyCode:
+ *   post:
+ *     summary: Used to check if the code provided by the user is correct
+ *     responses:
+ *       200:
+ *         description: OK, code is correct
+ *       400:
+ *         description: No code provided
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               items:
+ *                 $ref: '#/components/schemas/Error'
+ *       403:
+ *         description: Code is not matching
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               items:
+ *                 $ref: '#/components/schemas/Error'
+ *       404:
+ *         description: There is no endUser with that id
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               items:
+ *                 $ref: '#/components/schemas/Error'
+ *       409:
+ *         description: This user has not requested a code recently
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               items:
+ *                 $ref: '#/components/schemas/Error'
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               items:
+ *                 $ref: '#/components/schemas/Error'
+ */
+router.post('/verifyCode', secureRouteMiddleware, verifyCode);
 
 export default router;

@@ -3,7 +3,7 @@ import { mail_sender } from '../../server_config';
 const reset_password_template_id: string = 'd-c075a6859e224245aa76f0300e56f66b';
 const sender_email: string = 'info.dynafood@gmail.com';
 
-export const sendResetPasswordEmail = async (name: string, email: string) => {
+export const sendResetPasswordEmail = async (name: string, email: string, token: string) => {
     await mail_sender.send({
         from: {
             email: sender_email,
@@ -15,7 +15,8 @@ export const sendResetPasswordEmail = async (name: string, email: string) => {
         },
         templateId: reset_password_template_id,
         dynamicTemplateData: {
-            name: name
+            name: name,
+            token: token
         }
     });
     console.log(`email was sent to ${email}`);
