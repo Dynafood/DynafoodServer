@@ -21,6 +21,23 @@ export const getSettings = async (req: Request, res: Response) : Promise<void> =
     }
 };
 
+export const getSettingsToBack = async (userid: string) : Promise<string | undefined> => {
+
+    try {
+        let userSettings : QueryResult = await db_adm_conn.query(`
+                SELECT R.restrictionName, ER.alertActivation 
+                FROM Restriction R
+                LEFT JOIN EndUser_Restriction ER ON ER.restrictionID = R.restrictionID
+                WHERE ER.endUserID = '${checkInputBeforeSqlQuery(userid)}';`);
+        if (userSettings.rows.length == 0) {
+            return ""
+        }
+        return userSettings.rows.toString()
+    } catch (err: any) {
+        console.log(err);
+    }
+};
+
 /*
     currently there are only the restrictions 'deez' & 'nutz' hardcoded in the database
     body:

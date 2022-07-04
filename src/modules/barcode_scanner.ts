@@ -4,7 +4,7 @@ import https from 'https';
 import { updateHistory } from './db/historyManagement'
 import { db_adm_conn } from './db/index'
 import { QueryResult } from 'pg'
-
+import { getSettingsToBack } from './db/settingsManagement'
 import { checkInputBeforeSqlQuery } from './db/scripts';
 import { Request, Response } from 'express';
 import { JsonObjectExpression } from 'typescript';
@@ -158,8 +158,13 @@ export const checkAlertVegetarian = async (userid: string, product: JsonObject) 
     return false
 }
 
-const getIngredientsAlert = (ingredient: JsonObject, ingredientsalert : Array<string>) : Array<JsonObject> => {
+const getIngredientsAlert = (ingredient: JsonObject, ingredientsAlertString : string | undefined) : Array<JsonObject> => {
     let alert : Array<Object> = []
+    let ingredientsalert : Array<string> = []
+    console.log(ingredientsAlertString);
+    if (ingredientsAlertString == undefined)
+        return alert;
+    // transformer ingredientsAlertsString -> ingredientalert
     if (typeof ingredient.ingredients != "undefined" && ingredient.ingredients != null) {
         for (var i = 0; i  < ingredient.ingredients.length; i++) {
                 var tmp = {
@@ -179,7 +184,7 @@ const getIngredientsAlert = (ingredient: JsonObject, ingredientsalert : Array<st
 export const getProduct = async (req: Request, res: Response) : Promise<void> => {
     try {
         const userID: string =res.locals.user.userid
-        
+        let ingredientsAlertString : string | undefined = await getSettingsToBack(userID);
         let response : JsonObject = {
             name: null,
             keywords: [],
@@ -193,6 +198,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             ingredients: [],
             nutriments_g_pro_100g: [],
             nutriments_scores: [],
+            ingredientsAlert: [],
             vegetarian_alert: false
         }
         const url: string = `https://world.openfoodfacts.org/api/2/product/${req.params.barcode}.json`
@@ -226,6 +232,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             if (product.data.product && product.data.product.nutriments) {
                 response.nutriments_g_pro_100g = getNutriments(product.data.product.nutriments)
             }
+            response.ingredientsAlert = getIngredientsAlert(product.data.product, ingredientsAlertString)
             updateHistory(userID, req.params.barcode, response)
             response.nutriments_scores = getNutrimentsScore(product.data.product)
             // response.vegetarian_alert = await checkAlertVegetarian(userID, response)
