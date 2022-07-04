@@ -13,9 +13,11 @@ On traite de notre coté -> envoie a OpenFoodFact
 import nodemailer from 'nodemailer'
 
 let MAIL_ID = "Area2022dev@gmail.com";
-let MAIL_PSSWORD = "areaPlutus2424";
+let MAIL_PSSWORD = "qffcocegpaefcsba";
 
-
+export const mailbis = () => {
+    mail("pol_antoine.loiseau@yahoo.fr", "TEST")
+}
 export const mail = (destinataire : string, message : string) => {
     var transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
