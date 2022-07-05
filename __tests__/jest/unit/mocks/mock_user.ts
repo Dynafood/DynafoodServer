@@ -52,7 +52,7 @@ export const deleteUser = async (userid: string) : Promise<QueryResultRow> => {
     });
 }
 
-export const setResetPasswordToken = async (userid: string) : Promise<QueryResultRow> => {
+export const setPasswordResetToken = async (userid: string, token: string) : Promise<QueryResultRow> => {
     return new Promise((resolve, reject) => {
         resolve({})
     });

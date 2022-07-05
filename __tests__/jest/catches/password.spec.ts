@@ -17,7 +17,7 @@ describe('check change password asking route with throw', () => {
 
 describe('reset password via verification email', () => {
     test('reset password via verification email valid but with throw', async () => {
-        const response = await supertest(app).post("/resetPassword").send({oldPassword: "password", newPassword: "aA1asbfdoazierf-"}).set('Cookie', ['token=token_existing'])
+        const response = await supertest(app).post("/resetPassword").send({password: "aA1asbfdoazierf-"}).set('Cookie', ['token=token_existing'])
         expect(response.statusCode).toBe(500)
     })
 })
