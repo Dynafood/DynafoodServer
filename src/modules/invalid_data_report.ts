@@ -26,7 +26,6 @@ export const invalid_data_mail = async (req : Request, res : Response) : Promise
             pass: MAIL_PSSWORD
         }
     });
-
     var mailOptions = {
         from: '"Dynafood" <Area2022dev@gmail.com>',
         to: "pol_antoine.loiseau@yahoo.fr",
@@ -59,7 +58,7 @@ export const missing_product_mail = async (req : Request, res : Response) : Prom
     var mailOptions = {
         from: '"Dynafood" <Area2022dev@gmail.com>',
         to: "pol_antoine.loiseau@yahoo.fr",
-        subject: 'Invalid data on a product',
+        subject: 'Missing Product',
         text: req.body.message
     };
 
