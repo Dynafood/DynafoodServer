@@ -196,7 +196,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/resetPassword?email=taubert.marcel@gmail.com",
+							"raw": "{{base_url}}/resetPassword?email=taubert.marcel@googlemail.com",
 							"host": [
 								"{{base_url}}"
 							],
@@ -206,7 +206,7 @@
 							"query": [
 								{
 									"key": "email",
-									"value": "taubert.marcel@gmail.com"
+									"value": "taubert.marcel@googlemail.com"
 								}
 							]
 						}
@@ -2510,7 +2510,8 @@
 		},
 		{
 			"key": "base_url",
-			"value": "DEFAULT_BASE_URL"
+			"value": "DEFAULT_BASE_URL",
+			"disabled": true
 		},
 		{
 			"key": "email_test_email",
@@ -2523,8 +2524,7 @@
 		},
 		{
 			"key": "base_url",
-			"value": "localhost:8081",
-			"disabled": true
+			"value": "localhost:8081"
 		}
 	]
 }

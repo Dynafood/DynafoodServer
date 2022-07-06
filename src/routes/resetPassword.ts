@@ -53,7 +53,7 @@ const router: Router = Router();
  *               items:
  *                 $ref: '#/components/schemas/Error'
  */
-router.get('/resetPassword', secureRouteMiddleware, triggerResetPasswordEmail);
+router.get('/resetPassword', triggerResetPasswordEmail);
 
 /**
  * @swagger

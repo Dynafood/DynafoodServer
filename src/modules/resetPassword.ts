@@ -62,11 +62,11 @@ export const triggerResetPasswordEmail = async (req: Request, res: Response) => 
             res.status(400).send({ Error: 'No email provided', Details: 'No email provided' });
             return;
         }
+
         const token = makeResetPasswordToken();
-
         await sendResetPasswordEmail('', email, token);
-        await database.User.setPasswordResetToken(res.locals.user.userid, token);
-
+        const user = await database.User.getUser(null, email);
+        await database.User.setPasswordResetToken(user[0].enduserid, token);
         res.status(200).send({ status: 'OK' });
     } catch (err: any) {
         console.log(err.stack);
