@@ -196,7 +196,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/resetPassword?email=taubert.marcel@googlemail.com",
+							"raw": "{{base_url}}/resetPassword?email={{email_test_email}}",
 							"host": [
 								"{{base_url}}"
 							],
@@ -206,7 +206,7 @@
 							"query": [
 								{
 									"key": "email",
-									"value": "taubert.marcel@googlemail.com"
+									"value": "{{email_test_email}}"
 								}
 							]
 						}
