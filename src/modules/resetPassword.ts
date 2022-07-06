@@ -56,13 +56,15 @@ function makeResetPasswordToken () {
 
 export const triggerResetPasswordEmail = async (req: Request, res: Response) => {
     try {
-        const rows: Array<QueryResultRow> = await database.User.getUser(res.locals.user.userid);
+        const email: string = req.query.email as string;
 
-        const email: string = rows[0].email;
-        const username: string = rows[0].username;
+        if (typeof email === 'undefined' || email === '' || email === null) {
+            res.status(400).send({ Error: 'No email provided', Details: 'No email provided' });
+            return;
+        }
         const token = makeResetPasswordToken();
 
-        await sendResetPasswordEmail(username, email, token);
+        await sendResetPasswordEmail('', email, token);
         await database.User.setPasswordResetToken(res.locals.user.userid, token);
 
         res.status(200).send({ status: 'OK' });

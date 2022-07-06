@@ -11,7 +11,7 @@ mail.init()
 describe('check change password asking route with throw', () => {
     test('ask for email to reset password catch', async () => {
         const response = await supertest(app).get("/resetPassword").send().set('Cookie', ['token=token_existing'])
-        expect(response.statusCode).toBe(500)
+        expect(response.statusCode).toBe(400)
     })
 })
 

@@ -10,7 +10,7 @@ mail.init()
 
 describe('check change password asking route', () => {
     test('ask for email to reset password', async () => {
-        const response = await supertest(app).get("/resetPassword").send().set('authorization', 'Bearer token_existing');
+        const response = await supertest(app).get("/resetPassword?email=taubert.marcel@gmail.com").send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200)
         expect(response.body).toStrictEqual({status: "OK"})
     })

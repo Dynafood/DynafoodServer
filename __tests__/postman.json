@@ -196,12 +196,18 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/resetPassword",
+							"raw": "{{base_url}}/resetPassword?email=taubert.marcel@gmail.com",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"resetPassword"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "taubert.marcel@gmail.com"
+								}
 							]
 						}
 					},
@@ -1633,12 +1639,18 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/resetPassword",
+					"raw": "{{base_url}}/resetPassword?email=taubert.marcel@gmail.com",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"resetPassword"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "taubert.marcel@gmail.com"
+						}
 					]
 				}
 			},
@@ -2498,8 +2510,7 @@
 		},
 		{
 			"key": "base_url",
-			"value": "DEFAULT_BASE_URL",
-			"disabled": true
+			"value": "DEFAULT_BASE_URL"
 		},
 		{
 			"key": "email_test_email",
@@ -2512,7 +2523,8 @@
 		},
 		{
 			"key": "base_url",
-			"value": "DEFAULT_BASE_URL"
+			"value": "localhost:8081",
+			"disabled": true
 		}
 	]
 }

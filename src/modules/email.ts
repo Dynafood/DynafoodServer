@@ -15,7 +15,6 @@ export const sendResetPasswordEmail = async (name: string, email: string, token:
         },
         templateId: reset_password_template_id,
         dynamicTemplateData: {
-            name: name,
             token: token
         }
     });
