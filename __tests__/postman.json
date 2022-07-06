@@ -2524,7 +2524,7 @@
 		},
 		{
 			"key": "base_url",
-			"value": "localhost:8081"
+			"value": "DEFAULT_BASE_URL"
 		}
 	]
 }
