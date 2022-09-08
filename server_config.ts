@@ -30,6 +30,7 @@ export interface DatabaseInterface {
     }
     User: {
         createUser: (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string) => Promise<QueryResultRow>
+        createUserOAuth: (userid: string, provider_id: string, userName: string, pictureLink: string, email: string, userProviderId: string) => Promise<QueryResultRow>
         getUser: (userid: string | null, email: string | null) => Promise<Array<QueryResultRow>>
         deleteUser: (userid: string) => Promise<QueryResultRow>
         getPasswordResetToken: (userid: string) => Promise<QueryResultRow>
@@ -45,6 +46,9 @@ export interface DatabaseInterface {
     },
     ResetPassword: {
         updatePassword: (userid: string, newPassword: string) => Promise<void>
+    },
+    OAuth: {
+        getProviderByName: (name: string) => Promise<QueryResultRow>
     },
     connect: () => Promise<void>
     end: () => Promise<void>

@@ -4,6 +4,9 @@ CREATE TABLE IF NOT EXISTS OAuthProvider
     oAuthProviderName VARCHAR(20) NOT NULL
 );
 
+INSERT INTO OAuthProvider (oAuthProviderName) VALUES ('google');
+INSERT INTO OAuthProvider (oAuthProviderName) VALUES ('facebook');
+
 CREATE TABLE IF NOT EXISTS EndUser
 (
     endUserID uuid PRIMARY KEY DEFAULT gen_random_uuid(),

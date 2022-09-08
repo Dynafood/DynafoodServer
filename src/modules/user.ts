@@ -2,6 +2,7 @@ import { QueryResultRow } from 'pg';
 import bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
 import { database, JWT } from '../../server_config';
+import jwtDecode from 'jwt-decode';
 
 type RestrictionObj = {
     alertactivation: boolean,
@@ -37,6 +38,36 @@ export const createUser = async (req: Request, res: Response) => {
         const passcode: string = await bcrypt.hash(req.body.password, 10);
         const created: QueryResultRow = await database.User.createUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.email, req.body.phoneNumber, passcode);
         const userid: string = created.enduserid;
+        const token: string = JWT.create(userid);
+        res.cookie('token', token, {
+            httpOnly: true
+        });
+        res.status(200).json(token);
+        return;
+    } catch (error: any) {
+        res.status(400).send({ Error: 'Unable to create new User.', Details: `${error.stack}` });
+    }
+};
+
+export const createUserOAuth = async (req: Request, res: Response) => {
+    try {
+        if (req.body.jwt === undefined) {
+            res.status(400).send({ Error: "Unable to create new User.", Details: "'jwt' is not defined" });
+            return;
+        }
+        if (req.body.jwt === "") {
+            res.status(400).send({ Error: "Unable to create new User.", Details: "'jwt' is empty" });
+            return;
+        }
+
+        const userdata: any = jwtDecode(req.body.jwt);
+        const created: QueryResultRow = await database.User.createUser(userdata.given_name, userdata.family_name, userdata.name, userdata.email, "00", "00");
+        const userid: string = created.enduserid;
+
+        const google_provider_id = await database.OAuth.getProviderByName('google');
+
+        const createOAuth: QueryResultRow = await database.User.createUserOAuth(userid, google_provider_id.oauthproviderid, userdata.name, userdata.picture, userdata.email, "idk");
+
         const token: string = JWT.create(userid);
         res.cookie('token', token, {
             httpOnly: true

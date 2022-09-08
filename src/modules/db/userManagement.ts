@@ -18,6 +18,30 @@ export const createUser = async (firstName: string, lastName: string, userName: 
     return user.rows[0];
 };
 
+export const createUserOAuth = async (userid: string, provider_id: string, userName: string, pictureLink: string, email: string, userProviderId: string): Promise<QueryResultRow> => {
+    const user: QueryResult = await db_adm_conn.query(`
+        INSERT INTO OAuthUser (endUserID, oAuthProviderID, userName, pictureLink, userProviderEmail, userProviderId)
+        VALUES (
+            '${checkInputBeforeSqlQuery(userid)}',
+            '${checkInputBeforeSqlQuery(provider_id)}',
+            '${checkInputBeforeSqlQuery(userName)}',
+            '${checkInputBeforeSqlQuery(pictureLink)}',
+            '${checkInputBeforeSqlQuery(email)}',
+            '${checkInputBeforeSqlQuery(userProviderId)}'
+        ) RETURNING *;
+    `);
+
+    // set the oauthuserid into enduser to show that the enduser is registered with oauth
+    await db_adm_conn.query(`
+        UPDATE EndUser AS eu 
+        SET currentoauthuserid = oa.oauthuserid
+        FROM oauthuser as oa
+        WHERE eu.enduserid = '${checkInputBeforeSqlQuery(userid)}'
+    `);
+
+    return user.rows[0];
+}
+
 export const getUser = async (userid: string | null = null, email: string | null = null) : Promise<Array<QueryResultRow>> => {
     let query: string = `
     SELECT EU.enduserid, EU.passcode, EU.firstName, EU.lastName, EU.userName, EU.email, EU.phoneNumber, ER.alertActivation, R.restrictionName
@@ -29,6 +53,7 @@ export const getUser = async (userid: string | null = null, email: string | null
     const newUser : QueryResult = await db_adm_conn.query(query);
     return newUser.rows;
 };
+
 
 export const getPasswordResetToken = async (userid: string) : Promise<QueryResultRow> => {
     const query: string = `

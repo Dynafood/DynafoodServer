@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getUser, deleteUser, createUser, getToken } from '../modules/user';
+import { getUser, deleteUser, createUser, getToken, createUserOAuth } from '../modules/user';
 import { checkCreateUserReq } from '../middleware/security/user';
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
 
@@ -23,6 +23,12 @@ const router : Router = Router();
  *         phoneNumber:
  *           type: string
  *         password:
+ *           type: string
+ *
+ *     OAuthUser:
+ *       type: object
+ *       properties:
+ *         jwt:
  *           type: string
  */
 
@@ -75,6 +81,34 @@ router.get('/user', secureRouteMiddleware, getUser);
  *                  description: JWT token assigned to user
  */
 router.post('/signup', checkCreateUserReq, createUser);
+
+/**
+ * @swagger
+ * /signupGoogle:
+ *   post:
+ *     summary: use the 'sign in with google' feature
+ *     requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                  schema:
+ *                      $ref: '#/components/schemas/OAuthUser'
+ *     responses:
+ *       200:
+ *         description: user information
+ *         headers:
+ *           Set-Cookie:
+ *             description: >
+ *               Contains the session cookie named `token`.
+ *               Pass this cookie back in subsequent requests.
+ *         content:
+ *           application/json:
+ *              schema:
+ *                token:
+ *                  type: string
+ *                  description: JWT token assigned to user
+ */
+router.post('/signupGoogle', createUserOAuth);
 
 /**
  *
