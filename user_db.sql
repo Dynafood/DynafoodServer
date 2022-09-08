@@ -22,6 +22,16 @@ CREATE TABLE IF NOT EXISTS EndUser
 
 INSERT INTO EndUser (endUserID, firstName, lastName, userName, email, phoneNumber, passcode, emailConfirmed) VALUES ('123e4567-e89b-12d3-a456-426614174000', 'test', 'user', 'testitest', 'test@test.com', '0000', 'password', true);
 
+CREATE TABLE IF NOT EXISTS TrendingProduct
+(
+    barcode VARCHAR(20) NOT NULL,
+    dtime timestamp default current_timestamp,
+    cc VARCHAR(3) NOT NULL,
+    productName VARCHAR(100) NOT NULL,
+    productImageLink VARCHAR(200),
+    PRIMARY KEY (barcode, dtime, cc)
+);
+
 CREATE TABLE IF NOT EXISTS OAuthUser
 (
     oAuthUserID uuid PRIMARY KEY DEFAULT gen_random_uuid(),

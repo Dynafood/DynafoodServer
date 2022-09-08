@@ -10,6 +10,7 @@ import settingRouter from './src/routes/settingsRoutes';
 import userRouter from './src/routes/userRoutes';
 import resetPasswordRouter from './src/routes/resetPassword';
 import feedbackRouter from './src/routes/feedbackRoutes'
+import trendingRouter from './src/routes/trendingProducts'
 
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
@@ -45,6 +46,10 @@ export interface DatabaseInterface {
     },
     ResetPassword: {
         updatePassword: (userid: string, newPassword: string) => Promise<void>
+    },
+    Products: {
+        getTrendingGlobal: (count: number) => Promise<Array<QueryResultRow>>
+        getTrendingLocal: (count: number, country_code: string) => Promise<Array<QueryResultRow>>
     },
     connect: () => Promise<void>
     end: () => Promise<void>
@@ -108,4 +113,5 @@ app.use(historyRouter);
 app.use(productRouter);
 app.use(resetPasswordRouter);
 app.use(feedbackRouter)
+app.use(trendingRouter)
 app.use(logger);
