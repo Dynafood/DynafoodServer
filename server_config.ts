@@ -29,7 +29,7 @@ export interface DatabaseInterface {
         updatePassword: (userid: string, newPassword: string) => Promise<void>
     }
     User: {
-        createUser: (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string) => Promise<QueryResultRow>
+        createUser: (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string, cc: string) => Promise<QueryResultRow>
         getUser: (userid: string | null, email: string | null) => Promise<Array<QueryResultRow>>
         deleteUser: (userid: string) => Promise<QueryResultRow>
         getPasswordResetToken: (userid: string) => Promise<QueryResultRow>

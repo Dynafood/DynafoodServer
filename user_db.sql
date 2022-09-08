@@ -16,7 +16,8 @@ CREATE TABLE IF NOT EXISTS EndUser
     emailConfirmed BOOLEAN NOT NULL,
     currentOAuthUserID uuid,
     currentAccessToken uuid,
-    password_reset_token VARCHAR(6)
+    password_reset_token VARCHAR(6),
+    country_code VARCHAR(3)
 );
 
 INSERT INTO EndUser (endUserID, firstName, lastName, userName, email, phoneNumber, passcode, emailConfirmed) VALUES ('123e4567-e89b-12d3-a456-426614174000', 'test', 'user', 'testitest', 'test@test.com', '0000', 'password', true);

@@ -2,6 +2,7 @@ import { QueryResultRow } from 'pg';
 import bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
 import { database, JWT } from '../../server_config';
+import geoip from 'geoip-lite';
 
 type RestrictionObj = {
     alertactivation: boolean,
@@ -35,9 +36,17 @@ const parseGetUserResponse = (rows: Array<QueryResultRow>) : UserObj => {
 export const createUser = async (req: Request, res: Response) => {
     try {
         const passcode: string = await bcrypt.hash(req.body.password, 10);
-        const created: QueryResultRow = await database.User.createUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.email, req.body.phoneNumber, passcode);
+        const cc: string | undefined = geoip.lookup(req.body.ip)?.country;
+
+        if (cc === undefined) {
+            res.status(400).send({ Error: 'Unable to create new User.', Details: "IP lookup failed" });
+            return
+        }
+
+        const created: QueryResultRow = await database.User.createUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.email, req.body.phoneNumber, passcode, cc);
         const userid: string = created.enduserid;
         const token: string = JWT.create(userid);
+
         res.cookie('token', token, {
             httpOnly: true
         });
