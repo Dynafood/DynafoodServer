@@ -1,8 +1,9 @@
 import supertest from "supertest"
-import {app} from "../../../server_config"
-import jwt from "../unit/mocks/mock_jwt"
+import jwt from "./mocks/mock_jwt"
 import db from "./mocks/mock_db"
 import mail from "./mocks/mock_mail"
+import {app, database} from "../../../server_config"
+import { QueryResultRow } from "pg"
 
 jwt.init()
 db.init()
@@ -17,7 +18,34 @@ mail.init()
     //})
 //})
 
+const getUser = async (userid: string | null = null, email: string | null = null) : Promise<Array<QueryResultRow>> => {
+    return new Promise((resolve, reject) => {
+        if (userid == "existing" || email == "email@gmail.com")
+            {
+                resolve( [
+                    {
+                        enduserid: "existing", 
+                        passcode: "$2b$10$TQ1P6jaOk8YHzLC3JYlciepXBkf45LVQKIL77VfEmJG7B5PVM.JSG", 
+                        firstname: "test", 
+                        lastname: "user", 
+                        username: "testUser123",
+                        email: "email@gmail.com",
+                        phonenumber: "00000000",
+                        country_code: "DE",
+                        password_reset_token: "123456",
+                    }
+                ] )
+            }
+        resolve( [] )
+    });
+}
+
 describe('reset password via verification email', () => {
+    test('trigger reset password email', async () => {
+        database.User.getUser = getUser
+        const response = await supertest(app).get("/resetPassword?email=email@gmail.com").send().set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(200)
+    })
     test('reset password via verification email without password', async () => {
         const response = await supertest(app).post("/resetPassword").send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(400)
