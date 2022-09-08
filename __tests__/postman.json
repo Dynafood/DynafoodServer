@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "c3ee8417-7a8d-4587-b273-1bbdace30783",
+		"_postman_id": "392d5256-d390-47f2-b683-fcc393a079d7",
 		"name": "DynaFood New",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23173318"
 	},
 	"item": [
 		{
@@ -101,6 +102,11 @@
 								{
 									"key": "password",
 									"value": "{{test_password}}",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
 									"type": "text"
 								}
 							]
@@ -227,6 +233,212 @@
 									"pm.test(\"Correct response content\", function () {",
 									"    var jsonData = pm.response.json();",
 									"    pm.expect(jsonData.Deleted).to.be.an('object');",
+									"});",
+									"",
+									"// deleting jwt because the following requests should not have a valid token",
+									"const cookieJar = pm.cookies.jar();",
+									"cookieJar.unset(\"https://dynafood.herokuapp.com\", \"token\", (error) => {});",
+									"cookieJar.unset(\"localhost\", \"token\", (error) => {});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Geolocation",
+			"item": [
+				{
+					"name": "SignUp normal without IP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Response contains 'Error'\", () => {",
+									"    pm.expect(response.Error).to.be.an('object');",
+									"});",
+									"",
+									"pm.test(\"Weak password message\", () => {",
+									"    pm.expect(response.Error.details[0].message).to.eql(\"\\\"ip\\\" is required\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp normal with IP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test correct IP set",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Correct response content\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Deleted).to.be.an('object');",
+									"    pm.expect(jsonData.Deleted.email).to.eql(\"taubert.marcel@gmail.com\");",
+									"    pm.expect(jsonData.Deleted.country_code).to.eql(\"DE\");",
 									"});",
 									"",
 									"// deleting jwt because the following requests should not have a valid token",
@@ -396,6 +608,11 @@
 							"key": "password",
 							"value": "1",
 							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
+							"type": "text"
 						}
 					]
 				},
@@ -470,6 +687,11 @@
 						{
 							"key": "password",
 							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
 							"type": "text"
 						}
 					]
@@ -546,6 +768,11 @@
 							"key": "password",
 							"value": "1",
 							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
+							"type": "text"
 						}
 					]
 				},
@@ -620,6 +847,11 @@
 						{
 							"key": "password",
 							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
 							"type": "text"
 						}
 					]
@@ -696,6 +928,11 @@
 							"key": "password",
 							"value": "1",
 							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
+							"type": "text"
 						}
 					]
 				},
@@ -771,6 +1008,11 @@
 							"key": "password",
 							"value": "1",
 							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
+							"type": "text"
 						}
 					]
 				},
@@ -835,6 +1077,11 @@
 						{
 							"key": "password",
 							"value": "{{test_password}}",
+							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
 							"type": "text"
 						}
 					]
@@ -906,6 +1153,11 @@
 						{
 							"key": "password",
 							"value": "{{test_password}}",
+							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
 							"type": "text"
 						}
 					]
@@ -2501,6 +2753,12 @@
 			"value": "SuperSecurePassword123-"
 		},
 		{
+			"key": "test_ip",
+			"value": "91.0.198.109",
+			"type": "string",
+			"disabled": true
+		},
+		{
 			"key": "history_id",
 			"value": ""
 		},
@@ -2525,6 +2783,17 @@
 		{
 			"key": "base_url",
 			"value": "DEFAULT_BASE_URL"
+		},
+		{
+			"key": "base_url",
+			"value": "http://localhost:8081",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "test_ip",
+			"value": "102.128.165.255",
+			"type": "string"
 		}
 	]
 }
