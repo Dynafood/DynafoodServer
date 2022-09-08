@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "c3ee8417-7a8d-4587-b273-1bbdace30783",
-		"name": "DynaFood New",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "2725cb81-df45-48c5-8a99-a4c01cd8385c",
+		"name": "DynaFood New OAuth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23173318"
 	},
 	"item": [
 		{
@@ -227,6 +228,299 @@
 									"pm.test(\"Correct response content\", function () {",
 									"    var jsonData = pm.response.json();",
 									"    pm.expect(jsonData.Deleted).to.be.an('object');",
+									"});",
+									"",
+									"// deleting jwt because the following requests should not have a valid token",
+									"const cookieJar = pm.cookies.jar();",
+									"cookieJar.unset(\"https://dynafood.herokuapp.com\", \"token\", (error) => {});",
+									"cookieJar.unset(\"localhost\", \"token\", (error) => {});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Google OAuth Copy",
+			"item": [
+				{
+					"name": "SignUp Google",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "TestUser",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "lastName",
+									"value": "TestUser",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "userName",
+									"value": "TestUser",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "jwt",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImNhYWJmNjkwODE5MTYxNmE5MDhhMTM4OTIyMGE5NzViM2MwZmJjYTEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2NjI2NTk3MjcsImF1ZCI6IjkzNzU4MjM0NjIwNS1zOWEwdHQ4aW1lYnJ0OTczZHQwM3ZmN2ZtNGh1azVnci5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExNjE5OTU2NzM0MzczNDM0NDc1NyIsImVtYWlsIjoidGF1YmVydC5tYXJjZWxAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF6cCI6IjkzNzU4MjM0NjIwNS1zOWEwdHQ4aW1lYnJ0OTczZHQwM3ZmN2ZtNGh1azVnci5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsIm5hbWUiOiJNYXJjZWwgVGF1YmVydCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BSXRidm1uLVRlNGVVdmZhemJOb0M1cFBsRUVhb0QwZ0dRT25RN292YVZVTT1zOTYtYyIsImdpdmVuX25hbWUiOiJNYXJjZWwiLCJmYW1pbHlfbmFtZSI6IlRhdWJlcnQiLCJpYXQiOjE2NjI2NjAwMjcsImV4cCI6MTY2MjY2MzYyNywianRpIjoiZGU2YjU4ODM0NGY2NDhhNGVlOWYxY2RjZDhlODEzNmNiZTViZmI1YiJ9.RWJBYv6hZD0Rl7CTFu5tYv3uDGptVvRwkkU_uyZYpHVnABFDFwJBXaoqCz9XH8ODNSCnvCWOq49MRnCsrJD7x8styyzdLNMOZ143fcWLnwbEiL5qgiNzkX8R-0Xici4A1pMZXBCa6I9fSftRYo9dttjQZWuGiClicRovoSs3jfnV5DeM4D26BGWAGgvRtYsORlPBTPeexHrpV4X1EbLpR34nWX3MeJHmTYWz7Mb64epDFvgNXjj3I66QbZQzYyvmfPcfG-3pTK6hDFhlQyNAh-xrco2yyup3PY8zvbrSv8XVdv7LWoMXWSU45z0dUFnkpyQdO6asaci3ZbAKTevGNw",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signupGoogle",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signupGoogle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp Google No JWT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to create new User.\");",
+									"    pm.expect(jsonData.Details).to.eql(\"'jwt' is not defined\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "TestUser",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "lastName",
+									"value": "TestUser",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "userName",
+									"value": "TestUser",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "jwt",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImNhYWJmNjkwODE5MTYxNmE5MDhhMTM4OTIyMGE5NzViM2MwZmJjYTEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2NjI2NTk3MjcsImF1ZCI6IjkzNzU4MjM0NjIwNS1zOWEwdHQ4aW1lYnJ0OTczZHQwM3ZmN2ZtNGh1azVnci5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExNjE5OTU2NzM0MzczNDM0NDc1NyIsImVtYWlsIjoidGF1YmVydC5tYXJjZWxAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF6cCI6IjkzNzU4MjM0NjIwNS1zOWEwdHQ4aW1lYnJ0OTczZHQwM3ZmN2ZtNGh1azVnci5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsIm5hbWUiOiJNYXJjZWwgVGF1YmVydCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BSXRidm1uLVRlNGVVdmZhemJOb0M1cFBsRUVhb0QwZ0dRT25RN292YVZVTT1zOTYtYyIsImdpdmVuX25hbWUiOiJNYXJjZWwiLCJmYW1pbHlfbmFtZSI6IlRhdWJlcnQiLCJpYXQiOjE2NjI2NjAwMjcsImV4cCI6MTY2MjY2MzYyNywianRpIjoiZGU2YjU4ODM0NGY2NDhhNGVlOWYxY2RjZDhlODEzNmNiZTViZmI1YiJ9.RWJBYv6hZD0Rl7CTFu5tYv3uDGptVvRwkkU_uyZYpHVnABFDFwJBXaoqCz9XH8ODNSCnvCWOq49MRnCsrJD7x8styyzdLNMOZ143fcWLnwbEiL5qgiNzkX8R-0Xici4A1pMZXBCa6I9fSftRYo9dttjQZWuGiClicRovoSs3jfnV5DeM4D26BGWAGgvRtYsORlPBTPeexHrpV4X1EbLpR34nWX3MeJHmTYWz7Mb64epDFvgNXjj3I66QbZQzYyvmfPcfG-3pTK6hDFhlQyNAh-xrco2yyup3PY8zvbrSv8XVdv7LWoMXWSU45z0dUFnkpyQdO6asaci3ZbAKTevGNw",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signupGoogle",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signupGoogle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp Google empty JWT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to create new User.\");",
+									"    pm.expect(jsonData.Details).to.eql(\"'jwt' is empty\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "TestUser",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "lastName",
+									"value": "TestUser",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "userName",
+									"value": "TestUser",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "jwt",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signupGoogle",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signupGoogle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User <- also deletes jwt Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Correct response content\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Deleted).to.be.an('object');",
+									"    pm.expect(jsonData.Deleted.email).to.eql(\"taubert.marcel@gmail.com\");",
+									"});",
+									"",
+									"pm.test(\"Check oauth user\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Deleted).to.be.an('object');",
+									"    pm.expect(jsonData.Deleted.currentoauthuserid).to.not.be.empty;",
 									"});",
 									"",
 									"// deleting jwt because the following requests should not have a valid token",
