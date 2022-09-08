@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "392d5256-d390-47f2-b683-fcc393a079d7",
-		"name": "DynaFood New",
+		"_postman_id": "5ba5f771-642c-4783-a2b0-3d4f83fb0ec9",
+		"name": "DynaFood Trending",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "23173318"
 	},
@@ -338,7 +338,7 @@
 							"query": [
 								{
 									"key": "",
-									"value": null,
+									"value": "",
 									"disabled": true
 								}
 							]
@@ -415,7 +415,7 @@
 							"query": [
 								{
 									"key": "",
-									"value": null,
+									"value": "",
 									"disabled": true
 								}
 							]
@@ -439,6 +439,455 @@
 									"    pm.expect(jsonData.Deleted).to.be.an('object');",
 									"    pm.expect(jsonData.Deleted.email).to.eql(\"taubert.marcel@gmail.com\");",
 									"    pm.expect(jsonData.Deleted.country_code).to.eql(\"DE\");",
+									"});",
+									"",
+									"// deleting jwt because the following requests should not have a valid token",
+									"const cookieJar = pm.cookies.jar();",
+									"cookieJar.unset(\"https://dynafood.herokuapp.com\", \"token\", (error) => {});",
+									"cookieJar.unset(\"localhost\", \"token\", (error) => {});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TrendingProducts",
+			"item": [
+				{
+					"name": "API Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/welcome",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"welcome"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp normal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsGlobal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.be.an(\"Array\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsGlobal?count=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsGlobal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsLocal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsLocal?count=2&country_code=XX",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsLocal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2"
+								},
+								{
+									"key": "country_code",
+									"value": "XX"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsGlobal wihtout count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products global\");",
+									"    pm.expect(jsonData.Details).to.eql(\"'count' is not defined\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsGlobal",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsGlobal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsGlobal with negative count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products global\");",
+									"    pm.expect(jsonData.Details).to.eql(\"'count' is negative\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsGlobal?count=-2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsGlobal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "-2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsLocal with negative count Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products local\");",
+									"    pm.expect(jsonData.Details).to.eql(\"'count' is negative\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsLocal?count=-2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsLocal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "-2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsLocal wihtout count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products local\");",
+									"    pm.expect(jsonData.Details).to.eql(\"'count' is not defined\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsLocal",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsLocal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsLocal wihtout country_code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products local\");",
+									"    pm.expect(jsonData.Details).to.eql(\"'country_code' is not defined\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsLocal?count=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsLocal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User <- also deletes jwt Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Correct response content\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Deleted).to.be.an('object');",
+									"    pm.expect(jsonData.Deleted.email).to.eql(\"taubert.marcel@gmail.com\");",
 									"});",
 									"",
 									"// deleting jwt because the following requests should not have a valid token",
@@ -2782,13 +3231,13 @@
 		},
 		{
 			"key": "base_url",
-			"value": "DEFAULT_BASE_URL"
+			"value": "DEFAULT_BASE_URL",
+			"disabled": true
 		},
 		{
 			"key": "base_url",
 			"value": "http://localhost:8081",
-			"type": "string",
-			"disabled": true
+			"type": "string"
 		},
 		{
 			"key": "test_ip",
