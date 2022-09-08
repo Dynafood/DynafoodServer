@@ -32,6 +32,13 @@ CREATE TABLE IF NOT EXISTS TrendingProduct
     PRIMARY KEY (barcode, dtime, cc)
 );
 
+-- Insert dummy data for trending products
+INSERT INTO TrendingProduct (barcode, cc, productName, productImageLink) VALUES ('5555', 'XX', 'product X', 'product X ImageLink');
+INSERT INTO TrendingProduct (barcode, cc, productName, productImageLink) VALUES ('5555', 'XX', 'product X', 'product X ImageLink');
+INSERT INTO TrendingProduct (barcode, cc, productName, productImageLink) VALUES ('5555', 'XX', 'product X', 'product X ImageLink');
+INSERT INTO TrendingProduct (barcode, cc, productName, productImageLink) VALUES ('4444', 'XX', 'product Y', 'product Y ImageLink');
+INSERT INTO TrendingProduct (barcode, cc, productName, productImageLink) VALUES ('4444', 'XX', 'product Y', 'product Y ImageLink');
+
 CREATE TABLE IF NOT EXISTS OAuthUser
 (
     oAuthUserID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
