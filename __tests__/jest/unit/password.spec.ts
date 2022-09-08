@@ -40,10 +40,20 @@ const getUser = async (userid: string | null = null, email: string | null = null
     });
 }
 
+const getPasswordResetToken = async (userid: string) => {
+    return { password_reset_token: "123456" };
+}
+
 describe('reset password via verification email', () => {
     test('trigger reset password email', async () => {
         database.User.getUser = getUser
         const response = await supertest(app).get("/resetPassword?email=email@gmail.com").send().set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(200)
+    })
+    test('verify code', async () => {
+        database.User.getUser = getUser
+        database.User.getPasswordResetToken = getPasswordResetToken
+        const response = await supertest(app).post("/verifyCode").send({ code: "123456" }).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200)
     })
     test('reset password via verification email without password', async () => {
