@@ -44,17 +44,39 @@ const getPasswordResetToken = async (userid: string) => {
     return { password_reset_token: "123456" };
 }
 
+const getPasswordResetTokenUndefined = async (userid: string) => {
+    return undefined;
+}
+
 describe('reset password via verification email', () => {
     test('trigger reset password email', async () => {
         database.User.getUser = getUser
         const response = await supertest(app).get("/resetPassword?email=email@gmail.com").send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200)
     })
-    test('verify code', async () => {
+    test('verify code 200', async () => {
         database.User.getUser = getUser
         database.User.getPasswordResetToken = getPasswordResetToken
         const response = await supertest(app).post("/verifyCode").send({ code: "123456" }).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200)
+    })
+    test('verify code 400', async () => {
+        database.User.getUser = getUser
+        database.User.getPasswordResetToken = getPasswordResetToken
+        const response = await supertest(app).post("/verifyCode").send({ code: "" }).set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(400)
+    })
+    test('verify code 409', async () => {
+        database.User.getUser = getUser
+        database.User.getPasswordResetToken = getPasswordResetTokenUndefined
+        const response = await supertest(app).post("/verifyCode").send({ code: "123456" }).set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(409)
+    })
+    test('verify code 403', async () => {
+        database.User.getUser = getUser
+        database.User.getPasswordResetToken = getPasswordResetToken
+        const response = await supertest(app).post("/verifyCode").send({ code: "12345" }).set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(403)
     })
     test('reset password via verification email without password', async () => {
         const response = await supertest(app).post("/resetPassword").send().set('authorization', 'Bearer token_existing');
