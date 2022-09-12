@@ -26,3 +26,21 @@ export const getTrendingGlobal = async (count: number): Promise<Array<QueryResul
     `);
     return res.rows;
 }
+
+export const insert = async (userID: string, barcode: string, productName: string, imageLink: string): Promise<void> => {
+    const res = await db_adm_conn.query(`
+        SELECT country_code FROM EndUser
+        WHERE enduserid = '${userID}'
+    `);
+
+    const cc = res.rows[0].country_code;
+    await db_adm_conn.query(`
+        INSERT INTO TrendingProduct (barcode, cc, productName, productImageLink)
+        VALUES (
+            '${checkInputBeforeSqlQuery(barcode)}',
+            '${checkInputBeforeSqlQuery(cc)}',
+            '${checkInputBeforeSqlQuery(productName)}',
+            '${checkInputBeforeSqlQuery(imageLink)}'
+        );
+    `);
+}

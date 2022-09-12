@@ -5,7 +5,7 @@ import { deleteElementFromHistory, getElements, updateHistory } from './historyM
 import { updatePassword } from './resetPassword';
 import { updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting } from './settingsManagement';
 import { createUser, deleteUser, getUser, getPasswordResetToken, setPasswordResetToken } from './userManagement';
-import { getTrendingLocal, getTrendingGlobal } from './trendingProducts';
+import { insert, getTrendingLocal, getTrendingGlobal } from './trendingProducts';
 import { DatabaseInterface } from '../../../server_config';
 
 dotenv.config();
@@ -67,9 +67,10 @@ const Database: DatabaseInterface = {
     ResetPassword: {
         updatePassword
     },
-    Products: {
+    TrendingProducts: {
         getTrendingGlobal,
-        getTrendingLocal
+        getTrendingLocal,
+        insert,
     },
     connect,
     end

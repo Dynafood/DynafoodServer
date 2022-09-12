@@ -47,9 +47,10 @@ export interface DatabaseInterface {
     ResetPassword: {
         updatePassword: (userid: string, newPassword: string) => Promise<void>
     },
-    Products: {
+    TrendingProducts: {
         getTrendingGlobal: (count: number) => Promise<Array<QueryResultRow>>
         getTrendingLocal: (count: number, country_code: string) => Promise<Array<QueryResultRow>>
+        insert: (userID: string, barcode: string, productName: string, imageLink: string) => Promise<void>
     },
     connect: () => Promise<void>
     end: () => Promise<void>

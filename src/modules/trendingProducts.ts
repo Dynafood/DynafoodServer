@@ -15,7 +15,7 @@ export const trendingProductsGlobal = async (req: Request, res: Response) => {
             res.status(400).send({ Error: "Unable to get trending products global", Details: "'count' is negative" });
             return;
         }
-        const result: Array<QueryResultRow> = await database.Products.getTrendingGlobal(count);
+        const result: Array<QueryResultRow> = await database.TrendingProducts.getTrendingGlobal(count);
 
         let output = [];
         for (let i = 0; i < result.length; i++) {
@@ -47,7 +47,7 @@ export const trendingProductsLocal = async (req: Request, res: Response) => {
             return;
         }
         const country_code: string = <string> req.query.country_code;
-        const result: Array<QueryResultRow> = await database.Products.getTrendingLocal(count, country_code);
+        const result: Array<QueryResultRow> = await database.TrendingProducts.getTrendingLocal(count, country_code);
 
         let output = [];
         for (let i = 0; i < result.length; i++) {
