@@ -28,8 +28,8 @@ server.listen(PORT, () =>
     console.log(`[LOGGER] The server is listening on port ${PORT}`)
 );
 
-schedule.scheduleJob('0 0 * * *', () => {
-    db_adm_conn.query(`
+schedule.scheduleJob('0 0 * * *', async () => {
+    await db_adm_conn.query(`
         DELETE FROM TrendingProduct
         WHERE dtime < now()-'7 day'::interval;
     `);
