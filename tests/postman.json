@@ -1645,6 +1645,86 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Missing Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "message",
+							"value": "Missing product : [Enter product]",
+							"type": "text"
+						}]
+				},
+				"url": {
+					"raw": "{{base_url}}/missingProduct",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"missingProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid Data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "message",
+							"value": "Invalid Data : [Enter invalid data]",
+							"type": "text"
+						}]
+				},
+				"url": {
+					"raw": "{{base_url}}/invalidDataProduct",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"invalidDataProduct"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
