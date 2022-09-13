@@ -35,10 +35,23 @@ const get_product_ingredient = (product : JsonObject) : Array<JsonObject> => {
     return ingredient
 }
 
-const associationWord_auto = (product: JsonObject, ingredient : JsonObject ) : {categories : Array<JsonObject>, ingredients : Array<JsonObject>  }=> {
+const associationWord_auto = (product: JsonObject) : {categories : Array<JsonObject>, ingredients : Array<JsonObject>  }=> {
     let associateC : Array<object> = []
     let associateI : Array<object> = []
-    associateC = get_product_categorie(product)
-    associateI = get_product_ingredient(ingredient)
-    return { categories : associateC, ingredients : associateI}
+    associateC = get_product_categorie(product.categorie)
+    associateI = get_product_ingredient(product.ingredient)
+    return ({ categories : associateC, ingredients : associateI})
+}
+
+export const associationWord_auto_call = async (req: Request, res: Response) : Promise<void> => {
+    try{
+        let product : JsonObject = []
+        product = associationWord_auto(req.body.product)
+        res.status(200).send(product)
+    }
+    catch(error)
+    {
+        console.log(error)
+        res.status(500).send("Internal Server Error")
+    }
 }
