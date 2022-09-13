@@ -3,6 +3,7 @@ const router : Router = Router();
 import { urlencoded } from 'express';
 
 import { getProduct } from '../modules/barcode_scanner'
+import { associationWord_auto_call } from '../modules/association_word'
 import { secureRouteMiddleware } from '../middleware/security/secureRouting'
 
 /**
@@ -198,4 +199,6 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *                $ref: '#/components/schemas/Product'
  */
 router.get('/products/barcode/:barcode', secureRouteMiddleware, getProduct)
+
+router.post('/associationWords', secureRouteMiddleware, associationWord_auto_call)
 export default router;
