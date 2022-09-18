@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "c3ee8417-7a8d-4587-b273-1bbdace30783",
-		"name": "DynaFood New",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "f0c6ec9f-e3d0-4842-95bd-a66e626dab12",
+		"name": "DynaFood search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23173318"
 	},
 	"item": [
 		{
@@ -102,6 +103,12 @@
 									"key": "password",
 									"value": "{{test_password}}",
 									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -227,6 +234,326 @@
 									"pm.test(\"Correct response content\", function () {",
 									"    var jsonData = pm.response.json();",
 									"    pm.expect(jsonData.Deleted).to.be.an('object');",
+									"});",
+									"",
+									"// deleting jwt because the following requests should not have a valid token",
+									"const cookieJar = pm.cookies.jar();",
+									"cookieJar.unset(\"https://dynafood.herokuapp.com\", \"token\", (error) => {});",
+									"cookieJar.unset(\"localhost\", \"token\", (error) => {});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "SignUp",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login?email={{test_email}}&password={{test_password}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{test_email}}"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search coke",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Check correct output\", function () {",
+									"    pm.expect(jsonData.length).to.eql(20);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/searchProduct?value={{test_search}}&count=20",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"searchProduct"
+							],
+							"query": [
+								{
+									"key": "value",
+									"value": "{{test_search}}"
+								},
+								{
+									"key": "count",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search without value",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Check Error\", function () {",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get product\");",
+									"    pm.expect(jsonData.Details).to.eql(\"'value' is missing.\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/searchProduct?count=20",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"searchProduct"
+							],
+							"query": [
+								{
+									"key": "value",
+									"value": "{{test_search}}",
+									"disabled": true
+								},
+								{
+									"key": "count",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search without count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Check Error\", function () {",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get product\");",
+									"    pm.expect(jsonData.Details).to.eql(\"'count' is missing.\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/searchProduct?value={{test_search}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"searchProduct"
+							],
+							"query": [
+								{
+									"key": "value",
+									"value": "{{test_search}}"
+								},
+								{
+									"key": "count",
+									"value": "20",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User <- also deletes jwt Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Correct response content\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Deleted).to.be.an('object');",
+									"    pm.expect(jsonData.Deleted.email).to.eql(\"taubert.marcel@gmail.com\");",
 									"});",
 									"",
 									"// deleting jwt because the following requests should not have a valid token",
@@ -396,6 +723,12 @@
 							"key": "password",
 							"value": "1",
 							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
@@ -471,6 +804,12 @@
 							"key": "password",
 							"value": "1",
 							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
@@ -546,6 +885,12 @@
 							"key": "password",
 							"value": "1",
 							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
@@ -621,6 +966,12 @@
 							"key": "password",
 							"value": "1",
 							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
@@ -696,6 +1047,12 @@
 							"key": "password",
 							"value": "1",
 							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
@@ -771,6 +1128,12 @@
 							"key": "password",
 							"value": "1",
 							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
@@ -836,6 +1199,12 @@
 							"key": "password",
 							"value": "{{test_password}}",
 							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
@@ -907,6 +1276,12 @@
 							"key": "password",
 							"value": "{{test_password}}",
 							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "{{test_ip}}",
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
@@ -2501,6 +2876,12 @@
 			"value": "SuperSecurePassword123-"
 		},
 		{
+			"key": "test_ip",
+			"value": "91.0.198.109",
+			"type": "string",
+			"disabled": true
+		},
+		{
 			"key": "history_id",
 			"value": ""
 		},
@@ -2524,7 +2905,22 @@
 		},
 		{
 			"key": "base_url",
-			"value": "DEFAULT_BASE_URL"
+			"value": "DEFAULT_BASE_URL",
+			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "http://localhost:8081",
+			"type": "string"
+		},
+		{
+			"key": "test_ip",
+			"value": "102.128.165.255",
+			"type": "string"
+		},
+		{
+			"key": "test_search",
+			"value": "coke"
 		}
 	]
 }

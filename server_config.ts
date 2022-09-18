@@ -10,6 +10,7 @@ import settingRouter from './src/routes/settingsRoutes';
 import userRouter from './src/routes/userRoutes';
 import resetPasswordRouter from './src/routes/resetPassword';
 import feedbackRouter from './src/routes/feedbackRoutes'
+import searchRouter from './src/routes/searchRoutes'
 
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
@@ -108,4 +109,5 @@ app.use(historyRouter);
 app.use(productRouter);
 app.use(resetPasswordRouter);
 app.use(feedbackRouter)
+app.use(searchRouter)
 app.use(logger);
