@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "5ba5f771-642c-4783-a2b0-3d4f83fb0ec9",
-		"name": "DynaFood Trending",
+		"_postman_id": "38843bf3-b84c-4122-9b04-37cc7befebc9",
+		"name": "DynaFood",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "23173318"
 	},
@@ -645,7 +645,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/trendingProductsLocal?count=2&country_code=XX",
+							"raw": "{{base_url}}/trendingProductsLocal?count=2",
 							"host": [
 								"{{base_url}}"
 							],
@@ -656,10 +656,6 @@
 								{
 									"key": "count",
 									"value": "2"
-								},
-								{
-									"key": "country_code",
-									"value": "XX"
 								}
 							]
 						}
@@ -826,47 +822,6 @@
 									"key": "count",
 									"value": "2",
 									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "TrendingProductsLocal wihtout country_code",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 400\", function () {",
-									"    pm.response.to.have.status(400);",
-									"});",
-									"pm.test(\"validate response data\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products local\");",
-									"    pm.expect(jsonData.Details).to.eql(\"'country_code' is not defined\");",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/trendingProductsLocal?count=2",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"trendingProductsLocal"
-							],
-							"query": [
-								{
-									"key": "count",
-									"value": "2"
 								}
 							]
 						}
@@ -3202,23 +3157,12 @@
 			"value": "SuperSecurePassword123-"
 		},
 		{
-			"key": "test_ip",
-			"value": "91.0.198.109",
-			"type": "string",
-			"disabled": true
-		},
-		{
 			"key": "history_id",
 			"value": ""
 		},
 		{
 			"key": "new_password_after_reset",
 			"value": "#SuperSecurePassword123-"
-		},
-		{
-			"key": "base_url",
-			"value": "DEFAULT_BASE_URL",
-			"disabled": true
 		},
 		{
 			"key": "email_test_email",
@@ -3231,13 +3175,13 @@
 		},
 		{
 			"key": "base_url",
-			"value": "DEFAULT_BASE_URL",
-			"disabled": true
+			"value": "DEFAULT_BASE_URL"
 		},
 		{
 			"key": "base_url",
 			"value": "http://localhost:8081",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		},
 		{
 			"key": "test_ip",

@@ -42,11 +42,9 @@ export const trendingProductsLocal = async (req: Request, res: Response) => {
             res.status(400).send({ Error: "Unable to get trending products local", Details: "'count' is negative" });
             return;
         }
-        if (req.query.country_code === undefined) {
-            res.status(400).send({ Error: "Unable to get trending products local", Details: "'country_code' is not defined" });
-            return;
-        }
-        const country_code: string = <string> req.query.country_code;
+
+        // get the current cc of the user
+        const country_code: string = await database.TrendingProducts.getCountryCode(res.locals.user.userid);
         const result: Array<QueryResultRow> = await database.TrendingProducts.getTrendingLocal(count, country_code);
 
         let output = [];

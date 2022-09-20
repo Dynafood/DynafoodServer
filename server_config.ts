@@ -51,6 +51,7 @@ export interface DatabaseInterface {
         getTrendingGlobal: (count: number) => Promise<Array<QueryResultRow>>
         getTrendingLocal: (count: number, country_code: string) => Promise<Array<QueryResultRow>>
         insert: (userID: string, barcode: string, productName: string, imageLink: string) => Promise<void>
+        getCountryCode: (userID: string) => Promise<string>
     },
     connect: () => Promise<void>
     end: () => Promise<void>

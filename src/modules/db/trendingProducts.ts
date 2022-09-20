@@ -44,3 +44,12 @@ export const insert = async (userID: string, barcode: string, productName: strin
         );
     `);
 }
+
+export const getCountryCode = async (userID: string): Promise<string> => {
+    const res = await db_adm_conn.query(`
+        SELECT country_code FROM EndUser
+        WHERE endUserID = '${userID}';
+    `);
+
+    return res.rows[0].country_code;
+}
