@@ -2876,23 +2876,12 @@
 			"value": "SuperSecurePassword123-"
 		},
 		{
-			"key": "test_ip",
-			"value": "91.0.198.109",
-			"type": "string",
-			"disabled": true
-		},
-		{
 			"key": "history_id",
 			"value": ""
 		},
 		{
 			"key": "new_password_after_reset",
 			"value": "#SuperSecurePassword123-"
-		},
-		{
-			"key": "base_url",
-			"value": "DEFAULT_BASE_URL",
-			"disabled": true
 		},
 		{
 			"key": "email_test_email",
@@ -2905,13 +2894,13 @@
 		},
 		{
 			"key": "base_url",
-			"value": "DEFAULT_BASE_URL",
-			"disabled": true
+			"value": "DEFAULT_BASE_URL"
 		},
 		{
 			"key": "base_url",
 			"value": "http://localhost:8081",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		},
 		{
 			"key": "test_ip",
