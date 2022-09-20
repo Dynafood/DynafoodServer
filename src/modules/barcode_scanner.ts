@@ -202,6 +202,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
                 response.nutriments_g_pro_100g = getNutriments(product.data.product.nutriments, language);
             }
             await database.History.updateHistory(userID, req.params.barcode, response);
+            await database.TrendingProducts.insert(userID, req.params.barcode, response.name, response.images[0]);
             response.nutriments_scores = getNutrimentsScore(product.data.product);
             // response.vegetarian_alert = await checkAlertVegetarian(userID, response)
         }

@@ -2,8 +2,9 @@ import http from 'http';
 import jwt from 'jsonwebtoken';
 import { UserInterface } from './include/userInterface';
 import { app, database, init_db, init_jwt, init_mail, JWT } from './server_config'
-import Database from './src/modules/db';
+import Database, { db_adm_conn } from './src/modules/db';
 import mail_1 from '@sendgrid/mail';
+import schedule from 'node-schedule'
 
 const PORT: string | undefined = process.env.PORT;
 
@@ -26,3 +27,10 @@ database.connect()
 server.listen(PORT, () =>
     console.log(`[LOGGER] The server is listening on port ${PORT}`)
 );
+
+schedule.scheduleJob('0 0 * * *', async () => {
+    await db_adm_conn.query(`
+        DELETE FROM TrendingProduct
+        WHERE dtime < now()-'7 day'::interval;
+    `);
+})
