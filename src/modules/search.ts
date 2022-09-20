@@ -32,16 +32,6 @@ export const searchProduct = async (req: Request, res: Response) => {
             };
             products.push(newProduct);
         }
-        //response.data.products.forEach((product: any) => {
-            //let newProduct = {
-                //name: product.product_name,
-                //imageLink: product.image_front_url,
-                //barcode: product.code,
-            //};
-
-            //products.push(newProduct);
-        //});
-        console.log(products);
         res.status(200).send(products);
     } catch (error: any) {
         res.status(400).send({ Error: 'Unable to get product', Details: `${error.stack}` });
