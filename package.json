@@ -21,6 +21,7 @@
   "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
+    "@types/request-ip": "^0.0.37",
     "axios": "^0.26.1",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -39,6 +40,7 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
     "pg": "^8.7.3",
+    "request-ip": "^3.3.0",
     "save": "^2.4.0",
     "swagger": "^0.7.5",
     "swagger-jsdoc": "^6.2.0",

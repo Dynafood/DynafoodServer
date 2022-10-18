@@ -3,6 +3,8 @@ import bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
 import { database, JWT } from '../../server_config';
 
+import requestIP from 'request-ip';
+
 type RestrictionObj = {
     alertactivation: boolean,
     restrictionName: string
@@ -35,6 +37,8 @@ const parseGetUserResponse = (rows: Array<QueryResultRow>) : UserObj => {
 export const createUser = async (req: Request, res: Response) => {
     try {
         const passcode: string = await bcrypt.hash(req.body.password, 10);
+        const ip = requestIP.getClientIp(req);
+        console.log("IP: ", ip);
         const created: QueryResultRow = await database.User.createUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.email, req.body.phoneNumber, passcode);
         const userid: string = created.enduserid;
         const token: string = JWT.create(userid);
