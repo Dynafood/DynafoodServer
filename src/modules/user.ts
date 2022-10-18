@@ -40,7 +40,7 @@ export const createUser = async (req: Request, res: Response) => {
         const passcode: string = await bcrypt.hash(req.body.password, 10);
         const ip = requestIP.getClientIp(req);
         console.log("IP: ", ip);
-        const cc: string | undefined = geoip.lookup(req.body.ip)?.country;
+        const cc: string | undefined = geoip.lookup(ip)?.country;
         console.log("CC: ", cc);
 
         if (cc === undefined) {                                                                                                    
