@@ -67,7 +67,7 @@ export const triggerResetPasswordEmail = async (req: Request, res: Response) => 
         await sendResetPasswordEmail('', email, token);
         const user = await database.User.getUser(null, email);
 
-        if (user === [] || user.length === 0) {
+        if (user.length === 0) {
             res.status(204).send({ Error: 'No user with this email', Details: 'No user with this email' });
             return;
         }
