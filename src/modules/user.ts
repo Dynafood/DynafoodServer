@@ -38,7 +38,7 @@ const parseGetUserResponse = (rows: Array<QueryResultRow>) : UserObj => {
 export const createUser = async (req: Request, res: Response) => {
     try {
         const passcode: string = await bcrypt.hash(req.body.password, 10);
-        const ip = requestIP.getClientIp(req);
+        const ip: string = requestIP.getClientIp(req) || "undefined";
         console.log("IP: ", ip);
         const cc: string | undefined = geoip.lookup(ip)?.country;
         console.log("CC: ", cc);
