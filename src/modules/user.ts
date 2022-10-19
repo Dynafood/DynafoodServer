@@ -2,7 +2,6 @@ import { QueryResultRow } from 'pg';
 import bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
 import { database, JWT } from '../../server_config';
-
 import requestIP from 'request-ip';
 import geoip from 'geoip-lite';
 
@@ -40,7 +39,7 @@ export const createUser = async (req: Request, res: Response) => {
         const passcode: string = await bcrypt.hash(req.body.password, 10);
         let ip: string = requestIP.getClientIp(req) || "undefined";
 
-        // this is localhost, for testing
+        // this is localhost, for testing just put a german address there
         if (ip === "::1" || ip === "::ffff:127.0.0.1") {
             ip = "102.128.165.255";
         }
@@ -48,13 +47,14 @@ export const createUser = async (req: Request, res: Response) => {
         const cc: string | undefined = geoip.lookup(ip)?.country;
 
         if (cc === undefined) {                                                                                                    
-            res.status(400).send({ Error: 'Unable to create new User.', Details: "IP lookup failed" });                            
+            res.status(400).send({ Error: 'Unable to create new User.', Details: `IP lookup failed ${ip}` });                            
             return                                                                                                                 
         }   
 
-        const created: QueryResultRow = await database.User.createUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.email, req.body.phoneNumber, passcode);
+        const created: QueryResultRow = await database.User.createUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.email, req.body.phoneNumber, passcode, cc);
         const userid: string = created.enduserid;
         const token: string = JWT.create(userid);
+
         res.cookie('token', token, {
             httpOnly: true
         });

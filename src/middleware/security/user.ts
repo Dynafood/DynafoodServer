@@ -37,7 +37,7 @@ const schema = Joi.object({
     password: Joi.string()
         .min(8)
         .max(72)
-        .required()
+        .required(),
 });
 
 export const checkPassword = (password: string) : string => {

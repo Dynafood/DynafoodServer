@@ -14,7 +14,7 @@ export const getUser = async (userid: string | null = null, email: string | null
                         email: "email@gmail.com",
                         phonenumber: "00000000",
                         alertactivation: true,
-                        restrictionname: "peanut"
+                        restrictionname: "peanut",
                     }
                 ] )
             }
@@ -32,7 +32,8 @@ export const createUser = async (firstName: string, lastName: string, userName: 
             lastname: "user",
             username: "testUser123",
             email: "email@gmail.com",
-            phonenumber: "00000000"
+            phonenumber: "00000000",
+            country_code: "DE"
         })
     });
 }
@@ -47,7 +48,8 @@ export const deleteUser = async (userid: string) : Promise<QueryResultRow> => {
             lastname: "user",
             username: "testUser123",
             email: "email@gmail.com",
-            phonenumber: "00000000"
+            phonenumber: "00000000",
+            country_code: "DE"
         })
     });
 }

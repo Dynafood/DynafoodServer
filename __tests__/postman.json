@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "f0c6ec9f-e3d0-4842-95bd-a66e626dab12",
-		"name": "DynaFood search",
+		"_postman_id": "7766778d-cf64-40d4-83f8-5e403c4f86a0",
+		"name": "DynaFood Postman Tests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "23173318"
 	},
@@ -316,12 +316,6 @@
 									"key": "password",
 									"value": "{{test_password}}",
 									"type": "text"
-								},
-								{
-									"key": "ip",
-									"value": "{{test_ip}}",
-									"type": "text",
-									"disabled": true
 								}
 							]
 						},
@@ -532,6 +526,524 @@
 								{
 									"key": "count",
 									"value": "20",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User <- also deletes jwt Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Correct response content\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Deleted).to.be.an('object');",
+									"    pm.expect(jsonData.Deleted.email).to.eql(\"taubert.marcel@gmail.com\");",
+									"});",
+									"",
+									"// deleting jwt because the following requests should not have a valid token",
+									"const cookieJar = pm.cookies.jar();",
+									"cookieJar.unset(\"https://dynafood.herokuapp.com\", \"token\", (error) => {});",
+									"cookieJar.unset(\"localhost\", \"token\", (error) => {});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Geolocation Copy",
+			"item": [
+				{
+					"name": "SignUp normal with IP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test correct IP set",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Correct response content\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Deleted).to.be.an('object');",
+									"    pm.expect(jsonData.Deleted.email).to.eql(\"taubert.marcel@gmail.com\");",
+									"    pm.expect(jsonData.Deleted.country_code).to.eql(\"DE\");",
+									"});",
+									"",
+									"// deleting jwt because the following requests should not have a valid token",
+									"const cookieJar = pm.cookies.jar();",
+									"cookieJar.unset(\"https://dynafood.herokuapp.com\", \"token\", (error) => {});",
+									"cookieJar.unset(\"localhost\", \"token\", (error) => {});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TrendingProducts Copy",
+			"item": [
+				{
+					"name": "API Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/welcome",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"welcome"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp normal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsGlobal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.be.an(\"Array\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsGlobal?count=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsGlobal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsLocal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsLocal?count=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsLocal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsGlobal wihtout count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products global\");",
+									"    pm.expect(jsonData.Details).to.eql(\"'count' is not defined\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsGlobal",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsGlobal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsGlobal with negative count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products global\");",
+									"    pm.expect(jsonData.Details).to.eql(\"'count' is negative\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsGlobal?count=-2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsGlobal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "-2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsLocal with negative count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products local\");",
+									"    pm.expect(jsonData.Details).to.eql(\"'count' is negative\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsLocal?count=-2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsLocal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "-2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsLocal wihtout count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products local\");",
+									"    pm.expect(jsonData.Details).to.eql(\"'count' is not defined\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsLocal",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsLocal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2",
 									"disabled": true
 								}
 							]
@@ -1199,12 +1711,6 @@
 							"key": "password",
 							"value": "{{test_password}}",
 							"type": "text"
-						},
-						{
-							"key": "ip",
-							"value": "{{test_ip}}",
-							"type": "text",
-							"disabled": true
 						}
 					]
 				},
@@ -2894,17 +3400,12 @@
 		},
 		{
 			"key": "base_url",
-			"value": "DEFAULT_BASE_URL"
+			"value": "DEFAULT_BASE_URL",
+			"disabled": true
 		},
 		{
 			"key": "base_url",
 			"value": "http://localhost:8081",
-			"type": "string",
-			"disabled": true
-		},
-		{
-			"key": "test_ip",
-			"value": "102.128.165.255",
 			"type": "string"
 		},
 		{

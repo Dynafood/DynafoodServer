@@ -2,9 +2,9 @@ import { db_adm_conn } from './index';
 import { QueryResult, QueryResultRow } from 'pg';
 import { checkInputBeforeSqlQuery } from './scripts';
 
-export const createUser = async (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string) : Promise<QueryResultRow> => {
+export const createUser = async (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string, cc: string) : Promise<QueryResultRow> => {
     const user : QueryResult = await db_adm_conn.query(`
-        INSERT INTO EndUser (firstName, lastName, userName, email, phoneNumber, passcode, emailConfirmed)
+        INSERT INTO EndUser (firstName, lastName, userName, email, phoneNumber, passcode, emailConfirmed, country_code)
         VALUES
             (
                 '${checkInputBeforeSqlQuery(firstName)}',
@@ -13,14 +13,15 @@ export const createUser = async (firstName: string, lastName: string, userName: 
                 '${checkInputBeforeSqlQuery(email)}',
                 '${checkInputBeforeSqlQuery(phoneNumber)}',
                 '${checkInputBeforeSqlQuery(password)}',
-                true
+                true,
+                '${checkInputBeforeSqlQuery(cc)}'
             ) RETURNING *;`);
     return user.rows[0];
 };
 
 export const getUser = async (userid: string | null = null, email: string | null = null) : Promise<Array<QueryResultRow>> => {
     let query: string = `
-    SELECT EU.enduserid, EU.passcode, EU.firstName, EU.lastName, EU.userName, EU.email, EU.phoneNumber, ER.alertActivation, R.restrictionName
+    SELECT EU.enduserid, EU.passcode, EU.firstName, EU.lastName, EU.userName, EU.email, EU.phoneNumber, EU.country_code, ER.alertActivation, R.restrictionName
     FROM EndUser EU
     LEFT JOIN EndUser_Restriction ER ON ER.endUserID = EU.endUserID
     LEFT JOIN Restriction R ON R.restrictionID = ER.restrictionID

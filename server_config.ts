@@ -11,6 +11,7 @@ import userRouter from './src/routes/userRoutes';
 import resetPasswordRouter from './src/routes/resetPassword';
 import feedbackRouter from './src/routes/feedbackRoutes'
 import searchRouter from './src/routes/searchRoutes'
+import trendingRouter from './src/routes/trendingProducts'
 
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
@@ -30,7 +31,7 @@ export interface DatabaseInterface {
         updatePassword: (userid: string, newPassword: string) => Promise<void>
     }
     User: {
-        createUser: (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string) => Promise<QueryResultRow>
+        createUser: (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string, cc: string) => Promise<QueryResultRow>
         getUser: (userid: string | null, email: string | null) => Promise<Array<QueryResultRow>>
         deleteUser: (userid: string) => Promise<QueryResultRow>
         getPasswordResetToken: (userid: string) => Promise<QueryResultRow>
@@ -46,6 +47,12 @@ export interface DatabaseInterface {
     },
     ResetPassword: {
         updatePassword: (userid: string, newPassword: string) => Promise<void>
+    },
+    TrendingProducts: {
+        getTrendingGlobal: (count: number) => Promise<Array<QueryResultRow>>
+        getTrendingLocal: (count: number, country_code: string) => Promise<Array<QueryResultRow>>
+        insert: (userID: string, barcode: string, productName: string, imageLink: string) => Promise<void>
+        getCountryCode: (userID: string) => Promise<string>
     },
     connect: () => Promise<void>
     end: () => Promise<void>
@@ -110,4 +117,5 @@ app.use(productRouter);
 app.use(resetPasswordRouter);
 app.use(feedbackRouter)
 app.use(searchRouter)
+app.use(trendingRouter)
 app.use(logger);
