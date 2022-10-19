@@ -6,7 +6,6 @@ import db from "./mocks/mock_db"
 jwt.init()
 db.init()
 
-
 describe('check create user routes', () => {
     const parameters = [
         ["firstName", "karl"],
@@ -14,8 +13,7 @@ describe('check create user routes', () => {
         ["userName", "karl123"],
         ["email", "karl@gmail.com"],
         ["phoneNumber", "00000000"],
-        ["password", "aA1asbfdoazierf-"],
-        ["ip", "102.128.165.255"],
+        ["password", "aA1asbfdoazierf-"]
     ]
     test('right signup catch', async () => {
         let cur : any = {}
