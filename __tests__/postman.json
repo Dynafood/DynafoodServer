@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "38843bf3-b84c-4122-9b04-37cc7befebc9",
-		"name": "DynaFood",
+		"_postman_id": "5ba5f771-642c-4783-a2b0-3d4f83fb0ec9",
+		"name": "DynaFood Trending",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "23173318"
 	},
@@ -102,11 +102,6 @@
 								{
 									"key": "password",
 									"value": "{{test_password}}",
-									"type": "text"
-								},
-								{
-									"key": "ip",
-									"value": "{{test_ip}}",
 									"type": "text"
 								}
 							]
@@ -266,87 +261,6 @@
 			"name": "Geolocation",
 			"item": [
 				{
-					"name": "SignUp normal without IP",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 400\", function () {",
-									"    pm.response.to.have.status(400);",
-									"});",
-									"const response = pm.response.json();",
-									"",
-									"pm.test(\"Response contains 'Error'\", () => {",
-									"    pm.expect(response.Error).to.be.an('object');",
-									"});",
-									"",
-									"pm.test(\"Weak password message\", () => {",
-									"    pm.expect(response.Error.details[0].message).to.eql(\"\\\"ip\\\" is required\");",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "firstName",
-									"value": "TestUser",
-									"type": "text"
-								},
-								{
-									"key": "lastName",
-									"value": "TestUser",
-									"type": "text"
-								},
-								{
-									"key": "userName",
-									"value": "TestUser",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "{{test_email}}",
-									"type": "text"
-								},
-								{
-									"key": "phoneNumber",
-									"value": "123123123",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "{{test_password}}",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{base_url}}/signup",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"signup"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "SignUp normal with IP",
 					"event": [
 						{
@@ -395,11 +309,6 @@
 								{
 									"key": "password",
 									"value": "{{test_password}}",
-									"type": "text"
-								},
-								{
-									"key": "ip",
-									"value": "{{test_ip}}",
 									"type": "text"
 								}
 							]
@@ -565,11 +474,6 @@
 									"key": "password",
 									"value": "{{test_password}}",
 									"type": "text"
-								},
-								{
-									"key": "ip",
-									"value": "{{test_ip}}",
-									"type": "text"
 								}
 							]
 						},
@@ -634,8 +538,7 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
-									"});",
-									""
+									"});"
 								],
 								"type": "text/javascript"
 							}
@@ -645,7 +548,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/trendingProductsLocal?count=2",
+							"raw": "{{base_url}}/trendingProductsLocal?count=2&country_code=XX",
 							"host": [
 								"{{base_url}}"
 							],
@@ -656,6 +559,10 @@
 								{
 									"key": "count",
 									"value": "2"
+								},
+								{
+									"key": "country_code",
+									"value": "XX"
 								}
 							]
 						}
@@ -822,6 +729,47 @@
 									"key": "count",
 									"value": "2",
 									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsLocal wihtout country_code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products local\");",
+									"    pm.expect(jsonData.Details).to.eql(\"'country_code' is not defined\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsLocal?count=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsLocal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2"
 								}
 							]
 						}
@@ -1012,11 +960,6 @@
 							"key": "password",
 							"value": "1",
 							"type": "text"
-						},
-						{
-							"key": "ip",
-							"value": "{{test_ip}}",
-							"type": "text"
 						}
 					]
 				},
@@ -1091,11 +1034,6 @@
 						{
 							"key": "password",
 							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "ip",
-							"value": "{{test_ip}}",
 							"type": "text"
 						}
 					]
@@ -1172,11 +1110,6 @@
 							"key": "password",
 							"value": "1",
 							"type": "text"
-						},
-						{
-							"key": "ip",
-							"value": "{{test_ip}}",
-							"type": "text"
 						}
 					]
 				},
@@ -1251,11 +1184,6 @@
 						{
 							"key": "password",
 							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "ip",
-							"value": "{{test_ip}}",
 							"type": "text"
 						}
 					]
@@ -1332,11 +1260,6 @@
 							"key": "password",
 							"value": "1",
 							"type": "text"
-						},
-						{
-							"key": "ip",
-							"value": "{{test_ip}}",
-							"type": "text"
 						}
 					]
 				},
@@ -1412,11 +1335,6 @@
 							"key": "password",
 							"value": "1",
 							"type": "text"
-						},
-						{
-							"key": "ip",
-							"value": "{{test_ip}}",
-							"type": "text"
 						}
 					]
 				},
@@ -1481,11 +1399,6 @@
 						{
 							"key": "password",
 							"value": "{{test_password}}",
-							"type": "text"
-						},
-						{
-							"key": "ip",
-							"value": "{{test_ip}}",
 							"type": "text"
 						}
 					]
@@ -1557,11 +1470,6 @@
 						{
 							"key": "password",
 							"value": "{{test_password}}",
-							"type": "text"
-						},
-						{
-							"key": "ip",
-							"value": "{{test_ip}}",
 							"type": "text"
 						}
 					]
@@ -3157,12 +3065,23 @@
 			"value": "SuperSecurePassword123-"
 		},
 		{
+			"key": "test_ip",
+			"value": "91.0.198.109",
+			"type": "string",
+			"disabled": true
+		},
+		{
 			"key": "history_id",
 			"value": ""
 		},
 		{
 			"key": "new_password_after_reset",
 			"value": "#SuperSecurePassword123-"
+		},
+		{
+			"key": "base_url",
+			"value": "DEFAULT_BASE_URL",
+			"disabled": true
 		},
 		{
 			"key": "email_test_email",
@@ -3186,7 +3105,8 @@
 		{
 			"key": "test_ip",
 			"value": "102.128.165.255",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		}
 	]
 }

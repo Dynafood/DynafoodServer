@@ -24,8 +24,6 @@ const router : Router = Router();
  *           type: string
  *         password:
  *           type: string
- *         ip:
- *           type: string
  */
 
 /**
