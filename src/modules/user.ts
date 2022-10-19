@@ -38,10 +38,14 @@ const parseGetUserResponse = (rows: Array<QueryResultRow>) : UserObj => {
 export const createUser = async (req: Request, res: Response) => {
     try {
         const passcode: string = await bcrypt.hash(req.body.password, 10);
-        const ip: string = requestIP.getClientIp(req) || "undefined";
-        console.log("IP: ", ip);
+        let ip: string = requestIP.getClientIp(req) || "undefined";
+
+        // this is localhost, for testing
+        if (ip === "::1" || ip === "::ffff:127.0.0.1") {
+            ip = "102.128.165.255";
+        }
+
         const cc: string | undefined = geoip.lookup(ip)?.country;
-        console.log("CC: ", cc);
 
         if (cc === undefined) {                                                                                                    
             res.status(400).send({ Error: 'Unable to create new User.', Details: "IP lookup failed" });                            
