@@ -3180,51 +3180,6 @@
 			"response": []
 		},
 		{
-			"name": "VerifyCode not logged in",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 401\", function () {",
-							"    pm.response.to.have.status(401);",
-							"});",
-							"",
-							"pm.test(\"Check correct response\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.Error).to.equal('401 Unauthorized');",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "code",
-							"value": "",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "{{base_url}}/verifyCode",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"verifyCode"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Delete history not logged in",
 			"event": [
 				{
