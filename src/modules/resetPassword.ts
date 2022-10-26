@@ -40,7 +40,7 @@ export const verifyCode = async (req: Request, res: Response) => {
             return;
         }
 
-        await database.User.setPasswordResetToken(res.locals.user.userid, "");
+        await database.User.setPasswordResetToken(email, "");
         res.status(200).send({ status: 'OK' });
     } catch (err: any) {
         console.log(err);
@@ -80,7 +80,7 @@ export const triggerResetPasswordEmail = async (req: Request, res: Response) => 
             res.status(204).send({ Error: 'No user with this email', Details: 'No user with this email' });
             return;
         }
-        await database.User.setPasswordResetToken(user[0].enduserid, token);
+        await database.User.setPasswordResetToken(email, token);
         res.status(200).send({ status: 'OK' });
     } catch (err: any) {
         console.log(err.stack);

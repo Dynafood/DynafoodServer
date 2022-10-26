@@ -40,11 +40,11 @@ export const getPasswordResetToken = async (email: string) : Promise<QueryResult
     return result.rows[0];
 };
 
-export const setPasswordResetToken = async (userid: string, token: string) : Promise<QueryResultRow> => {
+export const setPasswordResetToken = async (email: string, token: string) : Promise<QueryResultRow> => {
     const query: string = `
     UPDATE EndUser
     SET password_reset_token = '${token}'
-    WHERE endUserID = '${checkInputBeforeSqlQuery(userid)}';`;
+    WHERE email = '${checkInputBeforeSqlQuery(email)}';`;
 
     const result: QueryResult = await db_adm_conn.query(query);
     return result.rows[0];
