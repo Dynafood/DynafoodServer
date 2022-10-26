@@ -11,9 +11,14 @@ export const verifyCode = async (req: Request, res: Response) => {
             res.status(400).send({ Error: 'No code provided', Details: 'No code provided' });
             return;
         }
+        if (typeof req.body.email === 'undefined' || req.body.email === '') {
+            res.status(400).send({ Error: 'No email provided', Details: 'No email provided' });
+            return;
+        }
 
         const code: string = req.body.code;
-        const old_code_row = await database.User.getPasswordResetToken(res.locals.user.userid);
+        const email: string = req.body.email;
+        const old_code_row = await database.User.getPasswordResetToken(email);
 
         console.log(old_code_row);
 
@@ -22,7 +27,7 @@ export const verifyCode = async (req: Request, res: Response) => {
                 || typeof old_code_row.password_reset_token === 'undefined'
                 || old_code_row.password_reset_token === null
                 || old_code_row.password_reset_token === '') {
-            res.status(409).send({ Error: 'This user has not requested a code recently', Details: 'This user has not requested a code recently' });
+            res.status(409).send({ Error: `The user with the email ${email} has not requested a code recently`, Details: `The user with the email ${email} has not requested a code recently` });
             return;
         }
 

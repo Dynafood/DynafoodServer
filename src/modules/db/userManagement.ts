@@ -31,10 +31,10 @@ export const getUser = async (userid: string | null = null, email: string | null
     return newUser.rows;
 };
 
-export const getPasswordResetToken = async (userid: string) : Promise<QueryResultRow> => {
+export const getPasswordResetToken = async (email: string) : Promise<QueryResultRow> => {
     const query: string = `
     SELECT password_reset_token FROM EndUser
-    WHERE endUserID = '${checkInputBeforeSqlQuery(userid)}';
+    WHERE email = '${checkInputBeforeSqlQuery(email)}';
     `;
     const result: QueryResult = await db_adm_conn.query(query);
     return result.rows[0];
