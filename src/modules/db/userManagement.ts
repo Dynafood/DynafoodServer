@@ -31,20 +31,20 @@ export const getUser = async (userid: string | null = null, email: string | null
     return newUser.rows;
 };
 
-export const getPasswordResetToken = async (userid: string) : Promise<QueryResultRow> => {
+export const getPasswordResetToken = async (email: string) : Promise<QueryResultRow> => {
     const query: string = `
     SELECT password_reset_token FROM EndUser
-    WHERE endUserID = '${checkInputBeforeSqlQuery(userid)}';
+    WHERE email = '${checkInputBeforeSqlQuery(email)}';
     `;
     const result: QueryResult = await db_adm_conn.query(query);
     return result.rows[0];
 };
 
-export const setPasswordResetToken = async (userid: string, token: string) : Promise<QueryResultRow> => {
+export const setPasswordResetToken = async (email: string, token: string) : Promise<QueryResultRow> => {
     const query: string = `
     UPDATE EndUser
     SET password_reset_token = '${token}'
-    WHERE endUserID = '${checkInputBeforeSqlQuery(userid)}';`;
+    WHERE email = '${checkInputBeforeSqlQuery(email)}';`;
 
     const result: QueryResult = await db_adm_conn.query(query);
     return result.rows[0];

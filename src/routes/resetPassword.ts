@@ -147,6 +147,6 @@ router.post('/resetPassword', secureRouteMiddleware, resetPassword);
  *               items:
  *                 $ref: '#/components/schemas/Error'
  */
-router.post('/verifyCode', secureRouteMiddleware, verifyCode);
+router.post('/verifyCode', verifyCode);
 
 export default router;
