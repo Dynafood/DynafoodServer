@@ -57,25 +57,25 @@ describe('reset password via verification email', () => {
     test('verify code 200', async () => {
         database.User.getUser = getUser
         database.User.getPasswordResetToken = getPasswordResetToken
-        const response = await supertest(app).post("/verifyCode").send({ code: "123456" }).set('authorization', 'Bearer token_existing');
+        const response = await supertest(app).post("/verifyCode").send({ code: "123456", email: "email@gmail.com" });
         expect(response.statusCode).toBe(200)
     })
     test('verify code 400', async () => {
         database.User.getUser = getUser
         database.User.getPasswordResetToken = getPasswordResetToken
-        const response = await supertest(app).post("/verifyCode").send({ code: "" }).set('authorization', 'Bearer token_existing');
+        const response = await supertest(app).post("/verifyCode").send({ code: "", email: "email@gmail.com" });
         expect(response.statusCode).toBe(400)
     })
     test('verify code 409', async () => {
         database.User.getUser = getUser
         database.User.getPasswordResetToken = getPasswordResetTokenUndefined
-        const response = await supertest(app).post("/verifyCode").send({ code: "123456" }).set('authorization', 'Bearer token_existing');
+        const response = await supertest(app).post("/verifyCode").send({ code: "123456", email: "email@gmail.com" });
         expect(response.statusCode).toBe(409)
     })
     test('verify code 403', async () => {
         database.User.getUser = getUser
         database.User.getPasswordResetToken = getPasswordResetToken
-        const response = await supertest(app).post("/verifyCode").send({ code: "12345" }).set('authorization', 'Bearer token_existing');
+        const response = await supertest(app).post("/verifyCode").send({ code: "12345", email: "email@gmail.com" });
         expect(response.statusCode).toBe(403)
     })
     test('reset password via verification email without password', async () => {
