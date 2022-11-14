@@ -8,13 +8,14 @@ Si report mauvais value -> envoie un message a nous
 On traite de notre coté -> envoie a OpenFoodFact
 
 
-*/
+
 import { mail_sender } from '../../server_config';
 
 const reset_password_template_id: string = 'd-c075a6859e224245aa76f0300e56f66b';
 const sender_email: string = 'info.dynafood@gmail.com';
 
-export const sendResetPasswordEmail = async (name: string, email: string, token: string) => {
+export const invalid_data_mail = async () => {
+    console.log("in")
     await mail_sender.send({
         from: {
             email: sender_email,
@@ -22,17 +23,35 @@ export const sendResetPasswordEmail = async (name: string, email: string, token:
         },
         to: {
             email: "pol_antoine.loiseau@yahoo.fr",
-            name: name
+            name: "Invalid Dada"
         },
         templateId: reset_password_template_id,
         dynamicTemplateData: {
-            token: token
+            token: "xxxxx"
         }
     });
-    console.log(`email was sent to ${email}`);
+    console.log(`email was sent to pol_antoine.loiseau@yahoo.fr`);
 };
 
-/*
+export const missing_product_mail = async () => {
+    await mail_sender.send({
+        from: {
+            email: sender_email,
+            name: 'DynaFood'
+        },
+        to: {
+            email: "pol_antoine.loiseau@yahoo.fr",
+            name: "Missing Product"
+        },
+        templateId: reset_password_template_id,
+        dynamicTemplateData: {
+            token: "XXXX"
+        }
+    });
+    console.log(`email was sent to pol_antoine.loiseau@yahoo.fr`);
+};
+*/
+
 import nodemailer from 'nodemailer'
 import { Request, Response } from 'express';
 
@@ -94,4 +113,4 @@ export const missing_product_mail = async (req : Request, res : Response) : Prom
             res.status(200).send({response : "Email Sent"})
         }
     });
-}*/
+}
