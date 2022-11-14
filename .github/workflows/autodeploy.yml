@@ -1,0 +1,11 @@
+name: Autodeploy to azure vm
+
+on:
+  push:
+    branches: [ dev_autodeploy ]
+jobs:
+  run_jest_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: curl http://20.101.128.91:5555/master
