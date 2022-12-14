@@ -10,13 +10,17 @@ import settingRouter from './src/routes/settingsRoutes';
 import userRouter from './src/routes/userRoutes';
 import resetPasswordRouter from './src/routes/resetPassword';
 import feedbackRouter from './src/routes/feedbackRoutes'
-
+import shoppingListRouter from './src/routes/shoppingListRoutes';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { QueryResultRow } from 'pg';
 import { UserInterface } from './include/userInterface';
 
 export interface DatabaseInterface {
+    ShoppingList: {
+        createShoppingList: (name: string, userid: string) => Promise<void>
+        createShoppingListItem: (itemName: string, listID: string, barcode: string | null, quantity: number | null) => Promise<void>
+    }
     Feedback: {
         createNewFeedback: (reason: string, content: string, userid: string) => Promise<void>
     }
@@ -106,6 +110,7 @@ app.use(historyRouter);
 app.use(productRouter);
 app.use(resetPasswordRouter);
 app.use(feedbackRouter)
+app.use(shoppingListRouter)
 app.use(logger);
 
 

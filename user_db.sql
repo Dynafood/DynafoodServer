@@ -114,13 +114,13 @@ CREATE TABLE IF NOT EXISTS ShoppingList
         FOREIGN KEY(endUserID)
             REFERENCES EndUser(endUserID)
             ON DELETE CASCADE
-)
+);
 
 CREATE TABLE IF NOT EXISTS ShoppingListItemUnit
 (
     unitID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
     unitName VARCHAR(50) NOT NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS ShoppingListItem
 (
@@ -135,4 +135,4 @@ CREATE TABLE IF NOT EXISTS ShoppingListItem
         FOREIGN KEY(unitID)
             REFERENCES ShoppingListItemUnit(unitID)
             ON DELETE CASCADE
-)
+);
