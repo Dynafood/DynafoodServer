@@ -156,3 +156,84 @@ CREATE TABLE IF NOT EXISTS ShoppingListItem
             REFERENCES ShoppingListItemUnit(unitID)
             ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS Category
+(
+    categoryID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    name VARCHAR(500) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Ingredient
+(
+    ingredientID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    eng_name VARCHAR(500) NOT NULL,
+    frz_name VARCHAR(500) NOT NULL,
+    ger_name VARCHAR(500) NOT NULL,
+    vegetarian BOOLEAN NOT NULL,
+    vegan BOOLEAN NOT NULL,
+    hallal BOOLEAN NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Company
+(
+    companyID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    companyName VARCHAR(500) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Product
+(
+    productID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    companyID uuid NOT NULL,
+    barcode VARCHAR(50) NOT NULL,
+    productName VARCHAR(500) NOT NULL,
+    nutriScore VARCHAR(20),
+    ecoScore VARCHAR(20),
+    pictureLink VARCHAR(1024),
+    carbohydrats VARCHAR(20),
+    cholesterol VARCHAR(20),
+    kcal VARCHAR(20),
+    far VARCHAR(20),
+    fiber VARCHAR(20),
+    iron VARCHAR(20),
+    proteins VARCHAR(20),
+    salt VARCHAR(20),
+    sodium VARCHAR(20),
+    sugars VARCHAR(20),
+    trans_fat VARCHAR(20),
+    vitamin_a VARCHAR(20),
+    vitamin_b VARCHAR(20),
+    vitamin_c VARCHAR(20),
+    vitamin_d VARCHAR(20),
+    vitamin_e VARCHAR(20)
+);
+
+CREATE TABLE IF NOT EXISTS ProductCategory
+(
+    productCategoryID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    productID uuid NOT NULL,
+    categoryID uuid NOT NULL,
+
+    CONSTRAINT fk_product
+        FOREIGN KEY(productID)
+            REFERENCES Product(productID)
+            ON DELETE CASCADE,
+    CONSTRAINT fk_category
+        FOREIGN KEY(categoryID)
+            REFERENCES Category(categoryID)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS ProductRestriction
+(
+    productRestrictionID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    restrictionID uuid NOT NULL,
+    productID uuid NOT NULL,
+    CONSTRAINT fk_restriction
+        FOREIGN KEY(restrictionID)
+            REFERENCES Restriction(restrictionID)
+            ON DELETE CASCADE,
+    CONSTRAINT fk_product
+        FOREIGN KEY(productID)
+            REFERENCES Product(productID)
+            ON DELETE CASCADE
+);
