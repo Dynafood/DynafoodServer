@@ -92,14 +92,14 @@ export const updateShoppingListItem = async (req: Request, res: Response) => {
 
 export const getShoppingListItems = async (req: Request, res: Response) => {
     const listid : string = <string> req.query.listid;
-
+    console.log(listid)
     if (!listid || listid.length === 0) {
         res.status(400).send({ Error: 'No listid provided', Details: 'Listid is not provided or empty!' });
         return;
     }
     try {
         const response : Array<QueryResultRow> = await database.ShoppingList.getShoppingListItems(listid, res.locals.user.userid);
-        res.send({ elements: response });    
+    res.send({ elements: response });    
     } catch (err: any) {
         console.log(err);
         res.status(500).send({ Error: err, Details: err.stack });

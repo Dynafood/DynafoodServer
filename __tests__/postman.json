@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "f0fc9a96-4de8-4ff6-8a1f-d0cac3a27a50",
-		"name": "DynaFood Copy",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "9f648e94-4818-4fa6-8550-6eb47cf40d17",
+		"name": "DynaFood Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14726218"
 	},
 	"item": [
 		{
@@ -1158,7 +1159,7 @@
 							"",
 							"pm.test(\"Respnse contains correct name\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.name).to.eql(\"Mineralwasser still\");",
+							"    pm.expect(jsonData.name).to.eql(\"Mineralwasser still  Jana\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -1912,6 +1913,443 @@
 			"response": []
 		},
 		{
+			"name": "create shoppinglist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/shoppingList",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shoppingList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getting ShoppingLists",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct response content\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.elements[0]).to.be.an('object');\r",
+							"    pm.expect(jsonData.elements[0].listname).to.be.eql('test');\r",
+							"    pm.collectionVariables.set(\"listid\", jsonData.elements[0].listid);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/shoppingList",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shoppingList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ShoppingListItemCreation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "shoppingList",
+							"value": "{{listid}}",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "barcode",
+							"value": "hallo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/shoppingList/Item",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shoppingList",
+						"Item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getting shopping list items",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct response content\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.elements[0]).to.be.an('object');\r",
+							"    pm.expect(jsonData.elements[0].productname).to.be.eql('test');\r",
+							"    pm.expect(jsonData.elements[0].barcode).to.be.eql('hallo');\r",
+							"    pm.expect(jsonData.elements[0].done).to.be.eql(false);\r",
+							"    pm.expect(jsonData.elements[0].quantity).to.be.eql(2);\r",
+							"    pm.collectionVariables.set(\"itemid\", jsonData.elements[0].itemid);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/shoppingList/Item?listid={{listid}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shoppingList",
+						"Item"
+					],
+					"query": [
+						{
+							"key": "listid",
+							"value": "{{listid}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changing a list item to done",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "itemid",
+							"value": "{{itemid}}",
+							"type": "text"
+						},
+						{
+							"key": "check",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/shoppingList/Item",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shoppingList",
+						"Item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getting shopping list items changed",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct response content\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.elements[0]).to.be.an('object');\r",
+							"    pm.expect(jsonData.elements[0].productname).to.be.eql('test');\r",
+							"    pm.expect(jsonData.elements[0].barcode).to.be.eql('hallo');\r",
+							"    pm.expect(jsonData.elements[0].done).to.be.eql(true);\r",
+							"    pm.expect(jsonData.elements[0].quantity).to.be.eql(2);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/shoppingList/Item?listid={{listid}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shoppingList",
+						"Item"
+					],
+					"query": [
+						{
+							"key": "listid",
+							"value": "{{listid}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a list item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "itemid",
+							"value": "{{itemid}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/shoppingList/Item",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shoppingList",
+						"Item"
+					],
+					"query": [
+						{
+							"key": "itemid",
+							"value": "d5f8f14a-5429-4235-912c-fc8068f011e5",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getting shopping list items deleted",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct response content\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.elements.length).to.eql(0);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/shoppingList/Item?listid={{listid}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shoppingList",
+						"Item"
+					],
+					"query": [
+						{
+							"key": "listid",
+							"value": "{{listid}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a shoppinglist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "listid",
+							"value": "{{listid}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/shoppingList",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shoppingList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getting ShoppingLists deleted",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct response content\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.elements.length).to.eql(0)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/shoppingList",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shoppingList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Delete User <- also deletes jwt",
 			"event": [
 				{
@@ -2233,6 +2671,14 @@
 		{
 			"key": "email_test_email",
 			"value": "taubert.marcel@gmail.com"
+		},
+		{
+			"key": "listid",
+			"value": "uninitialized"
+		},
+		{
+			"key": "itemid",
+			"value": "uninitialized"
 		}
 	]
 }

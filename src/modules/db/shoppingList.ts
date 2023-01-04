@@ -3,7 +3,6 @@ import { db_adm_conn } from './index';
 import { QueryResult, QueryResultRow } from 'pg';
 
 export const createShoppingList = async (name: string, userid: string) => {
-    console.log("create shopping list", name, userid)
     await db_adm_conn.query(`
             INSERT INTO ShoppingList (endUserId, listName)
             VALUES ('${checkInputBeforeSqlQuery(userid)}', '${checkInputBeforeSqlQuery(name)}');
@@ -12,7 +11,6 @@ export const createShoppingList = async (name: string, userid: string) => {
 
 //later create units which can be used
 export const createShoppingListItem = async (itemName: string, listID: string, barcode: string | null, quantity: number | null) => {
-    console.log("create list item", barcode, quantity, listID, itemName)
     await db_adm_conn.query(`
             INSERT INTO ShoppingListItem (listID, productName, barcode, quantity, done)
             VALUES ('${checkInputBeforeSqlQuery(listID)}', '${checkInputBeforeSqlQuery(itemName)}', '${checkInputBeforeSqlQuery(barcode)}', '${quantity}', false);
@@ -21,7 +19,6 @@ export const createShoppingListItem = async (itemName: string, listID: string, b
 };
 
 export const deleteShoppingList = async (listID: string, userid: string) => {
-    console.log("delete shopping list", listID, userid)
     await db_adm_conn.query(`
     DELETE
     FROM ShoppingList
@@ -30,7 +27,6 @@ export const deleteShoppingList = async (listID: string, userid: string) => {
 };
 
 export const deleteShoppingListItem = async (itemID: string, userid: string) => {
-    console.log("delete shopping list item", itemID, userid)
 
     const response : QueryResult = await db_adm_conn.query(`
         SELECT itemID
@@ -41,7 +37,6 @@ export const deleteShoppingListItem = async (itemID: string, userid: string) => 
     const itemids: Array<string> = response.rows.map((item) => {return item.itemid})
     
     if (!(itemids.includes(itemID))) {
-        console.log(`unautherized deletion attempt by ${userid} for item ${itemID}`)
         return
     }
     await db_adm_conn.query(`
@@ -51,7 +46,6 @@ export const deleteShoppingListItem = async (itemID: string, userid: string) => 
 };
 
 export const updateShoppingListItem = async (check: boolean, itemid: string) => {
-    console.log("check an item to", check, itemid)
     await db_adm_conn.query(`
     UPDATE ShoppingListItem
     SET done = ${check}
@@ -59,7 +53,6 @@ export const updateShoppingListItem = async (check: boolean, itemid: string) => 
 };
 
 export const getShoppingListItems = async (listID: string, userid: string) => {
-    console.log("get shopping list items", listID, userid)
     const response : QueryResult = await db_adm_conn.query(`
     SELECT itemID, productName, barcode, done, quantity
     FROM ShoppingListItem sli
@@ -70,7 +63,6 @@ export const getShoppingListItems = async (listID: string, userid: string) => {
 };
 
 export const getShoppingLists = async (userid: string) => {
-    console.log("get shopping lists", userid)
     const response : QueryResult = await db_adm_conn.query(`
     SELECT listName, listID
     FROM ShoppingList

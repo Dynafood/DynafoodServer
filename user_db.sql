@@ -63,6 +63,7 @@ CREATE TABLE IF NOT EXISTS Restriction
 
 INSERT INTO Restriction (restrictionID, restrictionName) VALUES ('f1dc1c61-ec72-41d2-968b-946ef9ef22b3', 'nutz');
 INSERT INTO Restriction (restrictionID, restrictionName) VALUES ('f2dc1c61-ec72-41d2-968b-946ef9ef22b3', 'deez');
+INSERT INTO Restriction (restrictionID, restrictionName) VALUES ('f3dc1c61-ec72-41d2-968b-946ef9ef22b3', 'peanut');
 
 CREATE TABLE IF NOT EXISTS EndUser_Restriction
 (
