@@ -20,8 +20,6 @@ export const verifyCode = async (req: Request, res: Response) => {
         const email: string = req.body.email;
         const old_code_row = await database.User.getPasswordResetToken(email);
 
-        console.log(old_code_row);
-
         if (typeof old_code_row === 'undefined'
                 || old_code_row === null
                 || typeof old_code_row.password_reset_token === 'undefined'
@@ -32,8 +30,6 @@ export const verifyCode = async (req: Request, res: Response) => {
         }
 
         const old_code = old_code_row.password_reset_token;
-
-        console.log("old_code: ", old_code);
 
         if (code !== old_code) {
             res.status(403).send({ Error: 'Code is not matching', Details: 'Code is not matching' });

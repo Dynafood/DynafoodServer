@@ -184,31 +184,31 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             return;
         }
 
-        if (typeof product === 'object' && product.data && product.data.product) {
-            const data = product.data.product;
-            response.keywords = data._keywords;
-            response.allergens = getAllAllergenes(data.allergens_hierarchy);
-            response.categories = data.categories ? data.categories.split(',') : [];
-            response.qualities = data.data_quality_tags;
-            response.warings = data.data_quality_warnings_tags;
-            response.ecoscoreData = getEcoScore(data);
-            response.packing = data.packaging;
-            response.name = product.data.product.product_name;
-            if (typeof data.image_front_url === 'undefined' || data.image_front_url == null) { response.images = null; } else { response.images = data.image_small_url; }
-            if (product.data.product) {
-                response.ingredients = getInnerIngredients(product.data.product, language);
+                if (typeof product === 'object' && product.data && product.data.product) {
+                const data = product.data.product;
+                response.keywords = data._keywords;
+                response.allergens = getAllAllergenes(data.allergens_hierarchy);
+                response.categories = data.categories ? data.categories.split(',') : [];
+                response.qualities = data.data_quality_tags;
+                response.warings = data.data_quality_warnings_tags;
+                response.ecoscoreData = getEcoScore(data);
+                response.packing = data.packaging;
+                response.name = product.data.product.product_name;
+                if (typeof data.image_front_url === 'undefined' || data.image_front_url == null) { response.images = null; } else { response.images = data.image_small_url; }
+                if (product.data.product) {
+                    response.ingredients = getInnerIngredients(product.data.product, language);
+                }
+                if (product.data.product && product.data.product.nutriments) {
+                    response.nutriments_g_pro_100g = getNutriments(product.data.product.nutriments, language);
+                }
+                    await database.History.updateHistory(userID, req.params.barcode, response);
+                        await database.TrendingProducts.insert(userID, req.params.barcode, response.name, response.images[0]);
+                            response.nutriments_scores = getNutrimentsScore(product.data.product);
+                                // response.vegetarian_alert = await checkAlertVegetarian(userID, response)
             }
-            if (product.data.product && product.data.product.nutriments) {
-                response.nutriments_g_pro_100g = getNutriments(product.data.product.nutriments, language);
-            }
-            await database.History.updateHistory(userID, req.params.barcode, response);
-            await database.TrendingProducts.insert(userID, req.params.barcode, response.name, response.images[0]);
-            response.nutriments_scores = getNutrimentsScore(product.data.product);
-            // response.vegetarian_alert = await checkAlertVegetarian(userID, response)
-        }
-
         res.status(200).send(response);
-    } catch (error) {
+    }
+    catch (error) {
         console.log(error);
         res.status(500).send('Internal Server Error');
     }

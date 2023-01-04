@@ -3,6 +3,7 @@ import { JsonObject } from "swagger-ui-express";
 import { createUser, deleteUser, getUser, setPasswordResetToken } from "./mock_user";
 import { createNewFeedback } from "./mock_feedback";
 import { updateHistory, getElements, deleteElementFromHistory } from "./mock_history";
+import {insert} from "./mock_trendingProduct"
 import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, updateSettings, userHasRestriction } from "./mock_settings";
 import {updatePassword} from "./mock_password"
 
@@ -36,6 +37,9 @@ const mock_db: JsonObject = {
     },
     ResetPassword: {
         updatePassword: updatePassword
+    },
+    TrendingProducts: {
+        insert: insert
     },
     connect: async () => {},
     end: async () => {}

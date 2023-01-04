@@ -1,0 +1,1 @@
+export const insert = async (userID: string, barcode: string, productName: string, imageLink: string): Promise<void> => {}

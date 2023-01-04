@@ -12,13 +12,22 @@ import resetPasswordRouter from './src/routes/resetPassword';
 import feedbackRouter from './src/routes/feedbackRoutes'
 import searchRouter from './src/routes/searchRoutes'
 import trendingRouter from './src/routes/trendingProducts'
-
+import shoppingListRouter from './src/routes/shoppingListRoutes';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { QueryResultRow } from 'pg';
 import { UserInterface } from './include/userInterface';
 
 export interface DatabaseInterface {
+    ShoppingList: {
+        createShoppingList: (name: string, userid: string) => Promise<void>
+        createShoppingListItem: (itemName: string, listID: string, barcode: string | null, quantity: number | null) => Promise<void>
+        deleteShoppingList: (listid: string, userid: string) => Promise<void>
+        deleteShoppingListItem: (itemid: string, userid: string) => Promise<void>
+        updateShoppingListItem: (check: boolean, itemid: string) => Promise<void>
+        getShoppingListItems: (listid: string, userid: string) => Promise<Array<QueryResultRow>>
+        getShoppingLists: (userid: string) => Promise<Array<QueryResultRow>>
+    }
     Feedback: {
         createNewFeedback: (reason: string, content: string, userid: string) => Promise<void>
     }
@@ -118,4 +127,5 @@ app.use(resetPasswordRouter);
 app.use(feedbackRouter)
 app.use(searchRouter)
 app.use(trendingRouter)
+app.use(shoppingListRouter)
 app.use(logger);

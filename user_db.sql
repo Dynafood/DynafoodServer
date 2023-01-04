@@ -82,6 +82,7 @@ CREATE TABLE IF NOT EXISTS Restriction
 
 INSERT INTO Restriction (restrictionID, restrictionName) VALUES ('f1dc1c61-ec72-41d2-968b-946ef9ef22b3', 'nutz');
 INSERT INTO Restriction (restrictionID, restrictionName) VALUES ('f2dc1c61-ec72-41d2-968b-946ef9ef22b3', 'deez');
+INSERT INTO Restriction (restrictionID, restrictionName) VALUES ('f3dc1c61-ec72-41d2-968b-946ef9ef22b3', 'peanut');
 
 CREATE TABLE IF NOT EXISTS EndUser_Restriction
 (
@@ -122,4 +123,36 @@ CREATE TABLE IF NOT EXISTS Feedback
     reason VARCHAR(20) NOT NULL,
     content VARCHAR(65535) NOT NULL,
     userhash VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS ShoppingList
+(
+    listID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    endUserID uuid NOT NULL,
+    listName VARCHAR(50) NOT NULL,
+    CONSTRAINT fk_endUser
+        FOREIGN KEY(endUserID)
+            REFERENCES EndUser(endUserID)
+            ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS ShoppingListItemUnit
+(
+    unitID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    unitName VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS ShoppingListItem
+(
+    itemID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    listID uuid NOT NULL,
+    unitID uuid,
+    productName VARCHAR(50) NOT NULL,
+    barcode VARCHAR(50),
+    done BOOLEAN NOT NULL,
+    quantity REAL,
+    CONSTRAINT fk_unit
+        FOREIGN KEY(unitID)
+            REFERENCES ShoppingListItemUnit(unitID)
+            ON DELETE CASCADE
 );
