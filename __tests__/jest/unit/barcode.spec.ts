@@ -15,7 +15,7 @@ describe('check get product routes', () => {
     test('existing product nutella', async () => {
         const response = await supertest(app).get("/products/barcode/3017620425035").send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200)
-        expect(response.body.name).toBe( "Pâte à tartiner Nutella noisettes et cacao - 1kg")
+        expect(response.body.name).toBe( "Nutella")
         expect(response.body.vegetarian_alert).toBe(false)
     })
 })

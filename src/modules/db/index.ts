@@ -1,7 +1,7 @@
 import pg from 'pg';
 import * as dotenv from 'dotenv';
 import { createNewFeedback } from './feedback';
-import {createShoppingList, createShoppingListItem} from './shoppingList'
+import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem } from './shoppingList'
 import { deleteElementFromHistory, getElements, updateHistory } from './historyManagement';
 import { updatePassword } from './resetPassword';
 import { updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting } from './settingsManagement';
@@ -40,7 +40,12 @@ const end = async () => {
 const Database: DatabaseInterface = {
     ShoppingList: {
         createShoppingList,
-        createShoppingListItem
+        createShoppingListItem,
+        deleteShoppingList,
+        deleteShoppingListItem,
+        updateShoppingListItem,
+        getShoppingListItems,
+        getShoppingLists
     },
     Feedback: {
         createNewFeedback
