@@ -6,7 +6,8 @@
       "resolveJsonModule": true,
       "outDir": "./",
       "strict": true,
-      "noImplicitAny": true
+      "noImplicitAny": true,
+      "lib": ["ES2021.String"]
     },
     "include": ["./src/**/*", "./include/**/*.ts", "server_config.ts", "server.ts"],
     "exclude": ["node_modules", "**/__tests__/*", "**/*.spec.ts"]

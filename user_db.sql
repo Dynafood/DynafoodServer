@@ -166,12 +166,13 @@ CREATE TABLE IF NOT EXISTS Category
 CREATE TABLE IF NOT EXISTS Ingredient
 (
     ingredientID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    off_id VARCHAR(500) NOT NULL,
     eng_name VARCHAR(500) NOT NULL,
     frz_name VARCHAR(500) NOT NULL,
     ger_name VARCHAR(500) NOT NULL,
-    vegetarian BOOLEAN NOT NULL,
-    vegan BOOLEAN NOT NULL,
-    hallal BOOLEAN NOT NULL
+    vegetarian BOOLEAN,
+    vegan BOOLEAN,
+    palm_oil BOOLEAN NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Company

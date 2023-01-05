@@ -9,14 +9,19 @@
 //             INSERT INTO Feedback (reason, content, userhash)
 //             VALUES ('${checkInputBeforeSqlQuery(reason)}', '${checkInputBeforeSqlQuery(content)}', '${checkInputBeforeSqlQuery(Md5.hashStr(userid))}');
 //         `);
+const checkInputBeforeSqlQuery = (arg) => {
+    if (!arg) { return ''; }
+    arg = arg.replaceAll("'", "''");
 
+    return arg;
+};
 const ingredients = require("./ingredient_taxo.json")
 const de = require("./src/modules/translation/de.json")
 const en = require("./src/modules/translation/en.json")
 const fr = require("./src/modules/translation/fr.json")
 const it = require("./src/modules/translation/it.json")
-const axios = require("axios")
-
+const axios = require("axios");
+const fs = require("fs");
 const trans = {
     de: de.tags,
     en: en.tags,
@@ -25,34 +30,40 @@ const trans = {
 }
 
 const is_vegan = (id) => {
-    let vegan = "undefined";
-    let vegetarian = "undefined";
+    let vegan = null;
+    let vegetarian = null;
     let palm_oil = false
     const jsson = ingredients[id];
     if (id == "en:palm-oil") {
         palm_oil = true
     }
     if (jsson.vegetarian != undefined) {
-        vegetarian = jsson.vegetarian.en
+        vegetarian = false
+        if (jsson.vegetarian.en == "yes") {
+            vegetarian = true
+        }
     }
     if (jsson.vegan != undefined) {
-        vegan = jsson.vegan.en
+        vegan = false
+        if (jsson.vegan.en == "yes") {
+            vegan = true
+        }
     }
     if (jsson.parents != undefined) {
         for (let parent of jsson.parents) {
             let tmp = is_vegan(parent)
-            if (tmp.vegan == "yes" && vegan == "undefined") {
-                vegan = "yes"
+            if (tmp.vegan == true && vegan == null) {
+                vegan = true
             }
-            if (tmp.vegetarian == "yes" && vegetarian == "undefined") {
-                vegetarian = "yes"
+            if (tmp.vegetarian == true && vegetarian == null) {
+                vegetarian = true
             }
-            if (tmp.vegan == "no") {
-                vegan = "no"
-                vegetarian = "no"
+            if (tmp.vegan == false) {
+                vegan = false
+                vegetarian = false
             }
-            if (tmp.vegetarian == "no") {
-                vegetarian = "no"
+            if (tmp.vegetarian == false) {
+                vegetarian = false
             }
             if (tmp.palm_oil == true) {
                 palm_oil = true
@@ -63,16 +74,40 @@ const is_vegan = (id) => {
     return {vegan: vegan, vegetarian: vegetarian, palm_oil: palm_oil}
 }
 
-const get_trans = async (id) => {
-    const german = trans.de.find(item => { return item.id == id } ) || "none"
-    const frensh = trans.fr.find(item => { return item.id == id } ) || "none"
-    const italian = trans.it.find(item => { return item.id == id } ) || "none"
-    const english = trans.en.find(item => { return item.id == id } ) || "none"
-    const obj = ingredients[id]
-    console.log(id, obj.name.en, obj.name.de, obj.name.it, is_vegan(id))
+const db_script_single_ingredient = (off_id, eng_name, frz_name, ger_name, vegetarian, vegan, palm_oil) => {
+    return `
+(
+    '${checkInputBeforeSqlQuery(off_id)}',
+    '${checkInputBeforeSqlQuery(eng_name)}',
+    '${checkInputBeforeSqlQuery(frz_name)}',
+    '${checkInputBeforeSqlQuery(ger_name)}',
+    ${vegetarian},
+    ${vegan},
+    ${palm_oil}
+)`
+}
+
+const get_trans = (id) => {
+    const obj = ingredients[id].name
+    let tmp = is_vegan(id)
+    let one_ing = db_script_single_ingredient(id, obj.en, obj.fr, obj.de, tmp.vegetarian, tmp.vegan, tmp.palm_oil)
+    return one_ing
 }
 const keys = Object.keys(ingredients)
-for (let i = 0; i < 30; i++) {
-    get_trans(keys[i])
+let str = `
+INSERT INTO ingredient(
+	off_id, 
+    eng_name, 
+    frz_name, 
+    ger_name, 
+    vegetarian, 
+    vegan, 
+    palm_oil
+    
+)
+VALUES ${get_trans(keys[0])}`
+for (let i = 1; i < keys.length; i++) {
+    str += `, ${get_trans(keys[i])}`
 }
-get_trans("en:mixture-of-palm-oil-and-palm-superolein")
+str += ";"
+fs.writeFileSync("./ingredient.sql", str)
