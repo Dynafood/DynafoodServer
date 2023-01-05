@@ -1,0 +1,40070 @@
+
+INSERT INTO restriction(
+	off_id, 
+    eng_name, 
+    frz_name, 
+    ger_name    
+)
+VALUES 
+(
+    'en:milk',
+    'Milk',
+    'Lait',
+    'Milch'
+), 
+(
+    'en:gluten',
+    'Gluten',
+    'Gluten',
+    'Gluten'
+), 
+(
+    'en:soybeans',
+    'Soybeans',
+    'Soja',
+    'Soja'
+), 
+(
+    'en:eggs',
+    'Eggs',
+    'Œufs',
+    'Eier'
+), 
+(
+    'en:nuts',
+    'Nuts',
+    'Fruits à coque',
+    'Schalenfrüchte'
+), 
+(
+    'en:fish',
+    'Fish',
+    'Poisson',
+    'Fisch'
+), 
+(
+    'en:mustard',
+    'Mustard',
+    'Moutarde',
+    'Senf'
+), 
+(
+    'en:celery',
+    'Celery',
+    'Céleri',
+    'Sellerie'
+), 
+(
+    'en:peanuts',
+    'Peanuts',
+    'Arachides',
+    'Erdnüsse'
+), 
+(
+    'en:sulphur-dioxide-and-sulphites',
+    'Sulphur dioxide and sulphites',
+    'Anhydride sulfureux et sulfites',
+    'Schwefeldioxid und Sulfite'
+), 
+(
+    'en:sesame-seeds',
+    'Sesame seeds',
+    'Graines de sésame',
+    'Sesam'
+), 
+(
+    'en:crustaceans',
+    'Crustaceans',
+    'Crustacés',
+    'Krebstiere'
+), 
+(
+    'en:molluscs',
+    'Molluscs',
+    'Mollusques',
+    'Weichtiere'
+), 
+(
+    'en:none',
+    'None',
+    'Aucun',
+    'en:None'
+), 
+(
+    'fr:avoine',
+    '',
+    'avoine',
+    ''
+), 
+(
+    'en:lupin',
+    'Lupin',
+    'Lupin',
+    'Lupinen'
+), 
+(
+    'es:ausencia',
+    '',
+    '',
+    ''
+), 
+(
+    'es:avena',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:śmietanka',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:pszenicy',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizeneiweiß',
+    '',
+    '',
+    'weizeneiweiß'
+), 
+(
+    'es:lacticos',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ferments',
+    '',
+    'ferments',
+    ''
+), 
+(
+    'es:nata',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:thon-listao',
+    '',
+    'thon-listao',
+    ''
+), 
+(
+    'es:mantequilla',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milcheiweiss',
+    '',
+    '',
+    'milcheiweiss'
+), 
+(
+    'pl:sojowego',
+    '',
+    '',
+    ''
+), 
+(
+    'it:burro',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:masło',
+    '',
+    '',
+    ''
+), 
+(
+    'de:natriummetabisulfit',
+    '',
+    '',
+    'natriummetabisulfit'
+), 
+(
+    'es:metabisulfito-sodico',
+    '',
+    '',
+    ''
+), 
+(
+    'en:lait',
+    'lait',
+    '',
+    ''
+), 
+(
+    'fr:non-renseigne',
+    '',
+    'non-renseigne',
+    ''
+), 
+(
+    'en:coconut',
+    'coconut',
+    '',
+    ''
+), 
+(
+    'fr:citron',
+    '',
+    'citron',
+    ''
+), 
+(
+    'de:weizenprotein',
+    '',
+    '',
+    'weizenprotein'
+), 
+(
+    'pl:jęczmiennego',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:orzeszki-arachidowe',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:thon-albacore',
+    '',
+    'thon-albacore',
+    ''
+), 
+(
+    'de:crème-fraîche',
+    '',
+    '',
+    'crème-fraîche'
+), 
+(
+    'fr:ingredients',
+    '',
+    'ingredients',
+    ''
+), 
+(
+    'es:amarillo-5',
+    '',
+    '',
+    ''
+), 
+(
+    'en:ble',
+    'ble',
+    '',
+    ''
+), 
+(
+    'es:lactea',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:laktoza',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:śmietana',
+    '',
+    '',
+    ''
+), 
+(
+    'it:avena',
+    '',
+    '',
+    ''
+), 
+(
+    'es:gluten-de-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:farine',
+    '',
+    'farine',
+    ''
+), 
+(
+    'cs:pšeničná',
+    '',
+    '',
+    ''
+), 
+(
+    'en:weizenmehl',
+    'weizenmehl',
+    '',
+    ''
+), 
+(
+    'fr:proteines-lactiques',
+    '',
+    'proteines-lactiques',
+    ''
+), 
+(
+    'fr:chapelure',
+    '',
+    'chapelure',
+    ''
+), 
+(
+    'fr:malt-de-ble',
+    '',
+    'malt-de-ble',
+    ''
+), 
+(
+    'fr:disulfite-de-potassium',
+    '',
+    'disulfite-de-potassium',
+    ''
+), 
+(
+    'es:lecticina-de-soya',
+    '',
+    '',
+    ''
+), 
+(
+    'es:coco',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:neant',
+    '',
+    'neant',
+    ''
+), 
+(
+    'fr:gs1-t4078-bp',
+    '',
+    'gs1-t4078-bp',
+    ''
+), 
+(
+    'fr:lait-et-produits-laitiers-y-compris-lactose',
+    '',
+    'lait-et-produits-laitiers-y-compris-lactose',
+    ''
+), 
+(
+    'es:metabisulfito',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:nata',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:disulfite-de-sodium',
+    '',
+    'disulfite-de-sodium',
+    ''
+), 
+(
+    'en:metabisulphite',
+    'metabisulphite',
+    '',
+    ''
+), 
+(
+    'fr:ble-gluten',
+    '',
+    'ble-gluten',
+    ''
+), 
+(
+    'cs:smetana',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cajou',
+    '',
+    'cajou',
+    ''
+), 
+(
+    'pt:fermentos-lacteos',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:jajowa',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:mlijeko',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:orange',
+    '',
+    'orange',
+    ''
+), 
+(
+    'fr:sarrasin',
+    '',
+    'sarrasin',
+    ''
+), 
+(
+    'es:tartrazina',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:maasdam',
+    '',
+    'maasdam',
+    ''
+), 
+(
+    'en:wheat-gluten',
+    'wheat-gluten',
+    '',
+    ''
+), 
+(
+    'fr:rum',
+    '',
+    'rum',
+    ''
+), 
+(
+    'de:weizenkeime',
+    '',
+    '',
+    'weizenkeime'
+), 
+(
+    'fr:gs1-t4078-bo',
+    '',
+    'gs1-t4078-bo',
+    ''
+), 
+(
+    'fr:gs1-t4078-cn',
+    '',
+    'gs1-t4078-cn',
+    ''
+), 
+(
+    'de:weizeneiweiss',
+    '',
+    '',
+    'weizeneiweiss'
+), 
+(
+    'fr:cereales',
+    '',
+    'cereales',
+    ''
+), 
+(
+    'fr:yogourt',
+    '',
+    'yogourt',
+    ''
+), 
+(
+    'fr:lactique-laitier',
+    '',
+    'lactique-laitier',
+    ''
+), 
+(
+    'de:flüssiges-vollei',
+    '',
+    '',
+    'flüssiges-vollei'
+), 
+(
+    'fr:lait-ecreme-en-poudre',
+    '',
+    'lait-ecreme-en-poudre',
+    ''
+), 
+(
+    'pl:tuńczyk',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:jęczmienna',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:gs1-t4078-ge',
+    '',
+    'gs1-t4078-ge',
+    ''
+), 
+(
+    'fr:bisulfite-de-sodium',
+    '',
+    'bisulfite-de-sodium',
+    ''
+), 
+(
+    'fr:cacao',
+    '',
+    'cacao',
+    ''
+), 
+(
+    'fr:gs1-t4078-ba',
+    '',
+    'gs1-t4078-ba',
+    ''
+), 
+(
+    'fr:kamut-ou-toutes-souches-hybridees',
+    '',
+    'kamut-ou-toutes-souches-hybridees',
+    ''
+), 
+(
+    'fr:leche',
+    '',
+    'leche',
+    ''
+), 
+(
+    'es:trigo-gluten',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:gs1-t4078-ax',
+    '',
+    'gs1-t4078-ax',
+    ''
+), 
+(
+    'fr:gs1-t4078-hx',
+    '',
+    'gs1-t4078-hx',
+    ''
+), 
+(
+    'de:gerstenvollkornflocken',
+    '',
+    '',
+    'gerstenvollkornflocken'
+), 
+(
+    'fr:abricot',
+    '',
+    'abricot',
+    ''
+), 
+(
+    'pl:śledź',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojaproteinkonzentrat',
+    '',
+    '',
+    'sojaproteinkonzentrat'
+), 
+(
+    'cs:pšeničná-mouka',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:levain',
+    '',
+    'levain',
+    ''
+), 
+(
+    'fr:iait',
+    '',
+    'iait',
+    ''
+), 
+(
+    'it:panna',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:gs1-t4078-co',
+    '',
+    'gs1-t4078-co',
+    ''
+), 
+(
+    'sr:maslac',
+    '',
+    '',
+    ''
+), 
+(
+    'es:leite',
+    '',
+    '',
+    ''
+), 
+(
+    'de:garnelen',
+    '',
+    '',
+    'garnelen'
+), 
+(
+    'fr:rge',
+    '',
+    'rge',
+    ''
+), 
+(
+    'sv:senapsfrön',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hühnereitrockeneiweiss',
+    '',
+    '',
+    'hühnereitrockeneiweiss'
+), 
+(
+    'fr:vin',
+    '',
+    'vin',
+    ''
+), 
+(
+    'de:dinkelweizenmehl',
+    '',
+    '',
+    'dinkelweizenmehl'
+), 
+(
+    'pl:śledzia',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:non',
+    '',
+    'non',
+    ''
+), 
+(
+    'de:sulfit',
+    '',
+    '',
+    'sulfit'
+), 
+(
+    'fr:flocons-d-avoine',
+    '',
+    'flocons-d-avoine',
+    ''
+), 
+(
+    'pt:soro-de-leite',
+    '',
+    '',
+    ''
+), 
+(
+    'es:fenilalanina',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:merlu-blanc',
+    '',
+    'merlu-blanc',
+    ''
+), 
+(
+    'pl:żytni',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:amidon-de-ble',
+    '',
+    'amidon-de-ble',
+    ''
+), 
+(
+    'fr:gs1-t4078-ai',
+    '',
+    'gs1-t4078-ai',
+    ''
+), 
+(
+    'fr:saumon-atlantique',
+    '',
+    'saumon-atlantique',
+    ''
+), 
+(
+    'es:mani',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:weizenmehl',
+    '',
+    'weizenmehl',
+    ''
+), 
+(
+    'sr:mleka',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:orzechów-laskowych',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:dioxyde-de-soufre',
+    '',
+    'dioxyde-de-soufre',
+    ''
+), 
+(
+    'pl:maślanka',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromagere',
+    '',
+    'fromagere',
+    ''
+), 
+(
+    'sr:sir',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cashew-nuts',
+    'cashew-nuts',
+    '',
+    ''
+), 
+(
+    'fr:surimi',
+    '',
+    'surimi',
+    ''
+), 
+(
+    'en:oatmeal',
+    'oatmeal',
+    '',
+    ''
+), 
+(
+    'sv:natriumdisulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kaliummetabisulfit',
+    '',
+    '',
+    'kaliummetabisulfit'
+), 
+(
+    'pl:pirosiarczyn-sodu',
+    '',
+    '',
+    ''
+), 
+(
+    'en:barley-malt',
+    'barley-malt',
+    '',
+    ''
+), 
+(
+    'sv:kärnmjölkspulver',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:semoule-de-ble-dur',
+    '',
+    'semoule-de-ble-dur',
+    ''
+), 
+(
+    'fr:sulfureux',
+    '',
+    'sulfureux',
+    ''
+), 
+(
+    'fr:eglefin',
+    '',
+    'eglefin',
+    ''
+), 
+(
+    'nl:pinda-s',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lactic',
+    '',
+    'lactic',
+    ''
+), 
+(
+    'en:trigo',
+    'trigo',
+    '',
+    ''
+), 
+(
+    'de:walnuss',
+    '',
+    '',
+    'walnuss'
+), 
+(
+    'fr:sulﬁtes',
+    '',
+    'sulﬁtes',
+    ''
+), 
+(
+    'en:lemon',
+    'lemon',
+    '',
+    ''
+), 
+(
+    'fr:pates',
+    '',
+    'pates',
+    ''
+), 
+(
+    'en:leite',
+    'leite',
+    '',
+    ''
+), 
+(
+    'fr:thon-blanc',
+    '',
+    'thon-blanc',
+    ''
+), 
+(
+    'pl:żytnie',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:trigo',
+    '',
+    'trigo',
+    ''
+), 
+(
+    'pl:owsiana',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:transparence',
+    '',
+    'transparence',
+    ''
+), 
+(
+    'es:anchoa',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:tarwegluten',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:żyta',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:chevre',
+    '',
+    'chevre',
+    ''
+), 
+(
+    'fr:pecorino',
+    '',
+    'pecorino',
+    ''
+), 
+(
+    'pl:jęczmienia',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lait-entier-en-poudre',
+    '',
+    'lait-entier-en-poudre',
+    ''
+), 
+(
+    'fr:gs1-t4078-ct',
+    '',
+    'gs1-t4078-ct',
+    ''
+), 
+(
+    'fr:mais',
+    '',
+    'mais',
+    ''
+), 
+(
+    'fr:metabisulfite-de-sodium',
+    '',
+    'metabisulfite-de-sodium',
+    ''
+), 
+(
+    'de:sesamsaat',
+    '',
+    '',
+    'sesamsaat'
+), 
+(
+    'sr:ječmenog',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:tome',
+    '',
+    'tome',
+    ''
+), 
+(
+    'sv:veteprotein',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:szprot',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:gerstemout',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:matiere-grasse-laitiere',
+    '',
+    'matiere-grasse-laitiere',
+    ''
+), 
+(
+    'fr:salmo-salar',
+    '',
+    'salmo-salar',
+    ''
+), 
+(
+    'de:cashewnuss',
+    '',
+    '',
+    'cashewnuss'
+), 
+(
+    'sr:pavlaka',
+    '',
+    '',
+    ''
+), 
+(
+    'de:eierlikör',
+    '',
+    '',
+    'eierlikör'
+), 
+(
+    'sr:ovsene',
+    '',
+    '',
+    ''
+), 
+(
+    'en:phenylalanine',
+    'phenylalanine',
+    '',
+    ''
+), 
+(
+    'fr:butyrique',
+    '',
+    'butyrique',
+    ''
+), 
+(
+    'cs:máslo',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:skummetmelkpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:varškė',
+    '',
+    '',
+    ''
+), 
+(
+    'en:milkfat',
+    'milkfat',
+    '',
+    ''
+), 
+(
+    'sv:äggpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sodium-metabisulphite',
+    'sodium-metabisulphite',
+    '',
+    ''
+), 
+(
+    'cs:mléčná-bílkovina',
+    '',
+    '',
+    ''
+), 
+(
+    'en:corn',
+    'corn',
+    '',
+    ''
+), 
+(
+    'de:sardellen',
+    '',
+    '',
+    'sardellen'
+), 
+(
+    'pl:gorczyce',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:sójová',
+    '',
+    '',
+    ''
+), 
+(
+    'de:senföl',
+    '',
+    '',
+    'senföl'
+), 
+(
+    'fr:noix-de-coco',
+    '',
+    'noix-de-coco',
+    ''
+), 
+(
+    'lv:rudzu',
+    '',
+    '',
+    ''
+), 
+(
+    'ca:blat',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-d-epeautre',
+    '',
+    'ble-d-epeautre',
+    ''
+), 
+(
+    'fr:proteines',
+    '',
+    'proteines',
+    ''
+), 
+(
+    'fr:lespersonnes-qui-sont-allergiques-auxmollusques-et-crustaces-et-ou-auxacariens-peuvent-avoir-une-reactionallergique-a-la-consommationd-insectes',
+    '',
+    'lespersonnes-qui-sont-allergiques-auxmollusques-et-crustaces-et-ou-auxacariens-peuvent-avoir-une-reactionallergique-a-la-consommationd-insectes',
+    ''
+), 
+(
+    'nl:mosterdzaad',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:soje',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:gs1-t4078-bs',
+    '',
+    'gs1-t4078-bs',
+    ''
+), 
+(
+    'en:oeufs',
+    'oeufs',
+    '',
+    ''
+), 
+(
+    'fr:uf',
+    '',
+    'uf',
+    ''
+), 
+(
+    'it:formaggio',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:лецитин-соевый',
+    '',
+    '',
+    ''
+), 
+(
+    'en:beurre',
+    'beurre',
+    '',
+    ''
+), 
+(
+    'fr:lait-en-poudre',
+    '',
+    'lait-en-poudre',
+    ''
+), 
+(
+    'fr:sauce-soja-tamari',
+    '',
+    'sauce-soja-tamari',
+    ''
+), 
+(
+    'de:dinkelweizen',
+    '',
+    '',
+    'dinkelweizen'
+), 
+(
+    'sr:mlečna',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:metabissulfito',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:łosoś',
+    '',
+    '',
+    ''
+), 
+(
+    'de:jogurt',
+    '',
+    '',
+    'jogurt'
+), 
+(
+    'ca:llet',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:syrovátka',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:poudre-de-lait-entier',
+    '',
+    'poudre-de-lait-entier',
+    ''
+), 
+(
+    'de:haferspelzfaser',
+    '',
+    '',
+    'haferspelzfaser'
+), 
+(
+    'fr:e150d',
+    '',
+    'e150d',
+    ''
+), 
+(
+    'es:marisco',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:graines',
+    '',
+    'graines',
+    ''
+), 
+(
+    'fr:weizenstarke',
+    '',
+    'weizenstarke',
+    ''
+), 
+(
+    'en:avoine',
+    'avoine',
+    '',
+    ''
+), 
+(
+    'pl:makreli',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cebada',
+    '',
+    'cebada',
+    ''
+), 
+(
+    'de:milchbestandteile',
+    '',
+    '',
+    'milchbestandteile'
+), 
+(
+    'pl:jogurt',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:beaufort',
+    '',
+    'beaufort',
+    ''
+), 
+(
+    'it:tonno',
+    '',
+    '',
+    ''
+), 
+(
+    'en:mozzarella-cheese',
+    'mozzarella-cheese',
+    '',
+    ''
+), 
+(
+    'nl:eigeel',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:vetemaltmjöl',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:iactoserum',
+    '',
+    'iactoserum',
+    ''
+), 
+(
+    'fr:flocon-d-avoine',
+    '',
+    'flocon-d-avoine',
+    ''
+), 
+(
+    'sr:lešnik',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchproteine',
+    '',
+    '',
+    'milchproteine'
+), 
+(
+    'fr:leite',
+    '',
+    'leite',
+    ''
+), 
+(
+    'fr:tourteau',
+    '',
+    'tourteau',
+    ''
+), 
+(
+    'nl:roomboter',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:amendoa',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojasaucenpulver',
+    '',
+    '',
+    'sojasaucenpulver'
+), 
+(
+    'fr:filets-de-lieu',
+    '',
+    'filets-de-lieu',
+    ''
+), 
+(
+    'fr:bisulfites-de-sodium',
+    '',
+    'bisulfites-de-sodium',
+    ''
+), 
+(
+    'fr:pecorino-romano',
+    '',
+    'pecorino-romano',
+    ''
+), 
+(
+    'cs:ovesné',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:migdałów',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:reglisse',
+    '',
+    'reglisse',
+    ''
+), 
+(
+    'cs:sójový',
+    '',
+    '',
+    ''
+), 
+(
+    'th:แป้งสาลี',
+    '',
+    '',
+    ''
+), 
+(
+    'en:whole-milk-powder',
+    'whole-milk-powder',
+    '',
+    ''
+), 
+(
+    'fr:gluten-de-froment',
+    '',
+    'gluten-de-froment',
+    ''
+), 
+(
+    'en:milcheiweiss',
+    'milcheiweiss',
+    '',
+    ''
+), 
+(
+    'cs:sýr',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haferschrot',
+    '',
+    '',
+    'haferschrot'
+), 
+(
+    'fr:maquereaux-espagnols',
+    '',
+    'maquereaux-espagnols',
+    ''
+), 
+(
+    'lt:sviestas',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:pirosiarczyn',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:moules-du-pacifique',
+    '',
+    'moules-du-pacifique',
+    ''
+), 
+(
+    'en:milch',
+    'milch',
+    '',
+    ''
+), 
+(
+    'id:alergen',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:saint',
+    '',
+    'saint',
+    ''
+), 
+(
+    'fr:gras',
+    '',
+    'gras',
+    ''
+), 
+(
+    'en:skimmed-milk-powder',
+    'skimmed-milk-powder',
+    '',
+    ''
+), 
+(
+    'de:büffelmilch',
+    '',
+    '',
+    'büffelmilch'
+), 
+(
+    'ro:alune',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lait-et-produits-en-contenant-y-compris-le-lactose',
+    '',
+    'lait-et-produits-en-contenant-y-compris-le-lactose',
+    ''
+), 
+(
+    'fr:fruits-de-mer',
+    '',
+    'fruits-de-mer',
+    ''
+), 
+(
+    'en:haselnusse',
+    'haselnusse',
+    '',
+    ''
+), 
+(
+    'en:vollmilchpulver',
+    'vollmilchpulver',
+    '',
+    ''
+), 
+(
+    'de:heumilch',
+    '',
+    '',
+    'heumilch'
+), 
+(
+    'fr:cantal',
+    '',
+    'cantal',
+    ''
+), 
+(
+    'fr:weizeneiweiss',
+    '',
+    'weizeneiweiss',
+    ''
+), 
+(
+    'de:vollkorn-hartweizengrieß',
+    '',
+    '',
+    'vollkorn-hartweizengrieß'
+), 
+(
+    'fr:lacticos',
+    '',
+    'lacticos',
+    ''
+), 
+(
+    'pl:orkiszowe',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dinkelweizenvollkornmehl',
+    '',
+    '',
+    'dinkelweizenvollkornmehl'
+), 
+(
+    'nb:melkesyrekultur',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:pšeničné',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:jacques',
+    '',
+    'jacques',
+    ''
+), 
+(
+    'fr:pignons',
+    '',
+    'pignons',
+    ''
+), 
+(
+    'en:magermilchpulver',
+    'magermilchpulver',
+    '',
+    ''
+), 
+(
+    'hr:lješnjaci',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:leitelho',
+    '',
+    '',
+    ''
+), 
+(
+    'es:yogur',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:мука-пшеничная-хлебопекарная-высшего-сорта',
+    '',
+    '',
+    ''
+), 
+(
+    'es:disulfito-sodico',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:provolone',
+    '',
+    'provolone',
+    ''
+), 
+(
+    'fr:france',
+    '',
+    'france',
+    ''
+), 
+(
+    'de:hühnereitrockeneiweiß',
+    '',
+    '',
+    'hühnereitrockeneiweiß'
+), 
+(
+    'fr:son-d-avoine',
+    '',
+    'son-d-avoine',
+    ''
+), 
+(
+    'de:paniermehl',
+    '',
+    '',
+    'paniermehl'
+), 
+(
+    'it:anacardi',
+    '',
+    '',
+    ''
+), 
+(
+    'en:mozzarella',
+    'mozzarella',
+    '',
+    ''
+), 
+(
+    'de:roggenmalzmehl',
+    '',
+    '',
+    'roggenmalzmehl'
+), 
+(
+    'en:caffeine',
+    'caffeine',
+    '',
+    ''
+), 
+(
+    'hr:sojino',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:pszenicę',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:raie',
+    '',
+    'raie',
+    ''
+), 
+(
+    'de:schnittkäse',
+    '',
+    '',
+    'schnittkäse'
+), 
+(
+    'fr:bulots',
+    '',
+    'bulots',
+    ''
+), 
+(
+    'de:speisequarkzubereitung',
+    '',
+    '',
+    'speisequarkzubereitung'
+), 
+(
+    'de:mozzarella-käse',
+    '',
+    '',
+    'mozzarella-käse'
+), 
+(
+    'fr:lait-ecreme-reconstitue',
+    '',
+    'lait-ecreme-reconstitue',
+    ''
+), 
+(
+    'en:orge',
+    'orge',
+    '',
+    ''
+), 
+(
+    'fr:colza',
+    '',
+    'colza',
+    ''
+), 
+(
+    'fr:poudre-de-lait-ecreme',
+    '',
+    'poudre-de-lait-ecreme',
+    ''
+), 
+(
+    'fi:maitorahka',
+    '',
+    '',
+    ''
+), 
+(
+    'en:wholewheat',
+    'wholewheat',
+    '',
+    ''
+), 
+(
+    'en:creme',
+    'creme',
+    '',
+    ''
+), 
+(
+    'fr:sprats',
+    '',
+    'sprats',
+    ''
+), 
+(
+    'ru:соевый',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mulet',
+    '',
+    'mulet',
+    ''
+), 
+(
+    'fr:plie',
+    '',
+    'plie',
+    ''
+), 
+(
+    'fr:gs1-t4078-hy',
+    '',
+    'gs1-t4078-hy',
+    ''
+), 
+(
+    'fr:lompe',
+    '',
+    'lompe',
+    ''
+), 
+(
+    'pt:natas',
+    '',
+    '',
+    ''
+), 
+(
+    'en:senf',
+    'senf',
+    '',
+    ''
+), 
+(
+    'it:ble',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:ovsa',
+    '',
+    '',
+    ''
+), 
+(
+    'de:malzextrakt',
+    '',
+    '',
+    'malzextrakt'
+), 
+(
+    'en:oeuf',
+    'oeuf',
+    '',
+    ''
+), 
+(
+    'en:lactic',
+    'lactic',
+    '',
+    ''
+), 
+(
+    'fr:couscous',
+    '',
+    'couscous',
+    ''
+), 
+(
+    'nb:skummetmelk',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:nata',
+    '',
+    'nata',
+    ''
+), 
+(
+    'hr:maslac',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:camembert',
+    '',
+    'camembert',
+    ''
+), 
+(
+    'fr:esturgeon',
+    '',
+    'esturgeon',
+    ''
+), 
+(
+    'es:atun-claro',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizensirup',
+    '',
+    '',
+    'weizensirup'
+), 
+(
+    'fr:fromage-mozzarella',
+    '',
+    'fromage-mozzarella',
+    ''
+), 
+(
+    'fr:metton',
+    '',
+    'metton',
+    ''
+), 
+(
+    'fr:gs1-t4078-eg',
+    '',
+    'gs1-t4078-eg',
+    ''
+), 
+(
+    'es:lacteas',
+    '',
+    '',
+    ''
+), 
+(
+    'de:trockenmilcherzeugnis',
+    '',
+    '',
+    'trockenmilcherzeugnis'
+), 
+(
+    'nl:sojabloem',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:poudre-de-lactoserum',
+    '',
+    'poudre-de-lactoserum',
+    ''
+), 
+(
+    'fr:ble-malte',
+    '',
+    'ble-malte',
+    ''
+), 
+(
+    'it:nocciola',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenröstmalzmehl',
+    '',
+    '',
+    'weizenröstmalzmehl'
+), 
+(
+    'nl:havervlokken',
+    '',
+    '',
+    ''
+), 
+(
+    'es:merluza',
+    '',
+    '',
+    ''
+), 
+(
+    'it:lattici',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:oeufs-entiers',
+    '',
+    'oeufs-entiers',
+    ''
+), 
+(
+    'hr:mleko',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-tendre',
+    '',
+    'ble-tendre',
+    ''
+), 
+(
+    'de:roggenmalz',
+    '',
+    '',
+    'roggenmalz'
+), 
+(
+    'en:flour',
+    'flour',
+    '',
+    ''
+), 
+(
+    'pl:orzeszków-arachidowych',
+    '',
+    '',
+    ''
+), 
+(
+    'en:gerstenmalz',
+    'gerstenmalz',
+    '',
+    ''
+), 
+(
+    'fr:bonite',
+    '',
+    'bonite',
+    ''
+), 
+(
+    'sv:creme-fraiche',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenart',
+    '',
+    '',
+    'weizenart'
+), 
+(
+    'fr:malt-de-froment',
+    '',
+    'malt-de-froment',
+    ''
+), 
+(
+    'en:milk-fat',
+    'milk-fat',
+    '',
+    ''
+), 
+(
+    'fr:abricots',
+    '',
+    'abricots',
+    ''
+), 
+(
+    'de:hühnerei-eigelb',
+    '',
+    '',
+    'hühnerei-eigelb'
+), 
+(
+    'cs:vaječný',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sere',
+    '',
+    'sere',
+    ''
+), 
+(
+    'de:sahnekefir',
+    '',
+    '',
+    'sahnekefir'
+), 
+(
+    'de:entrahmte-milch',
+    '',
+    '',
+    'entrahmte-milch'
+), 
+(
+    'es:lactosuero',
+    '',
+    '',
+    ''
+), 
+(
+    'en:shell',
+    'shell',
+    '',
+    ''
+), 
+(
+    'es:pan-rallado',
+    '',
+    '',
+    ''
+), 
+(
+    'en:weizen',
+    'weizen',
+    '',
+    ''
+), 
+(
+    'de:fruits-à-coque',
+    '',
+    '',
+    'fruits-à-coque'
+), 
+(
+    'hr:pšenice',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:orzeszków-ziemnych',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:metabisulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:gadus-macrocephalus',
+    '',
+    'gadus-macrocephalus',
+    ''
+), 
+(
+    'fr:fruits-a-coques-amandes',
+    '',
+    'fruits-a-coques-amandes',
+    ''
+), 
+(
+    'en:weizenstarke',
+    'weizenstarke',
+    '',
+    ''
+), 
+(
+    'fr:anhydride',
+    '',
+    'anhydride',
+    ''
+), 
+(
+    'de:grünkern',
+    '',
+    '',
+    'grünkern'
+), 
+(
+    'nl:knolselderij',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lactosa',
+    '',
+    'lactosa',
+    ''
+), 
+(
+    'en:aveia',
+    'aveia',
+    '',
+    ''
+), 
+(
+    'fr:flocon-de-petit-epeautre',
+    '',
+    'flocon-de-petit-epeautre',
+    ''
+), 
+(
+    'es:cafeina',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:moutarde-de-dijon',
+    '',
+    'moutarde-de-dijon',
+    ''
+), 
+(
+    'fr:gs1-t4078-bb',
+    '',
+    'gs1-t4078-bb',
+    ''
+), 
+(
+    'fr:beurre-sale',
+    '',
+    'beurre-sale',
+    ''
+), 
+(
+    'fr:levure',
+    '',
+    'levure',
+    ''
+), 
+(
+    'fr:maroilles',
+    '',
+    'maroilles',
+    ''
+), 
+(
+    'fr:pollen',
+    '',
+    'pollen',
+    ''
+), 
+(
+    'fr:pois',
+    '',
+    'pois',
+    ''
+), 
+(
+    'fr:euf',
+    '',
+    'euf',
+    ''
+), 
+(
+    'fr:latte',
+    '',
+    'latte',
+    ''
+), 
+(
+    'pl:twaróg',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roggensauerteig',
+    '',
+    '',
+    'roggensauerteig'
+), 
+(
+    'de:mandelmehl',
+    '',
+    '',
+    'mandelmehl'
+), 
+(
+    'fr:encornet-geant',
+    '',
+    'encornet-geant',
+    ''
+), 
+(
+    'en:mleko',
+    'mleko',
+    '',
+    ''
+), 
+(
+    'fr:lai',
+    '',
+    'lai',
+    ''
+), 
+(
+    'fr:phenylalanine',
+    '',
+    'phenylalanine',
+    ''
+), 
+(
+    'fr:merlu-blanc-du-cap',
+    '',
+    'merlu-blanc-du-cap',
+    ''
+), 
+(
+    'sv:smörolja',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:same',
+    '',
+    'same',
+    ''
+), 
+(
+    'de:joghurtkulturen',
+    '',
+    '',
+    'joghurtkulturen'
+), 
+(
+    'fr:bleu-d-auvergne',
+    '',
+    'bleu-d-auvergne',
+    ''
+), 
+(
+    'es:trigo-espelta',
+    '',
+    '',
+    ''
+), 
+(
+    'en:soy-protein',
+    'soy-protein',
+    '',
+    ''
+), 
+(
+    'ru:молочный',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:kaurakuitu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pate',
+    '',
+    'pate',
+    ''
+), 
+(
+    'cs:ovesná',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:beurre-laitier',
+    '',
+    'beurre-laitier',
+    ''
+), 
+(
+    'en:durum-wheat-semolina',
+    'durum-wheat-semolina',
+    '',
+    ''
+), 
+(
+    'fr:ail',
+    '',
+    'ail',
+    ''
+), 
+(
+    'fr:lactoserum-en-poudre',
+    '',
+    'lactoserum-en-poudre',
+    ''
+), 
+(
+    'fr:boulghour',
+    '',
+    'boulghour',
+    ''
+), 
+(
+    'de:weizenquellstärke',
+    '',
+    '',
+    'weizenquellstärke'
+), 
+(
+    'pl:owsiany',
+    '',
+    '',
+    ''
+), 
+(
+    'es:metabisulfito-potasico',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:sója',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:gelatine-de-poisson',
+    '',
+    'gelatine-de-poisson',
+    ''
+), 
+(
+    'cs:tvaroh',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:salade-composee',
+    '',
+    'salade-composee',
+    ''
+), 
+(
+    'fr:sauce-nuoc-mam-20g',
+    '',
+    'sauce-nuoc-mam-20g',
+    ''
+), 
+(
+    'pl:jęczmienne',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:melkeiwitten',
+    '',
+    '',
+    ''
+), 
+(
+    'es:fermentos-lacticos',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:metabisulfite-de-potassium',
+    '',
+    'metabisulfite-de-potassium',
+    ''
+), 
+(
+    'en:mandeln',
+    'mandeln',
+    '',
+    ''
+), 
+(
+    'fr:magermilchpulver',
+    '',
+    'magermilchpulver',
+    ''
+), 
+(
+    'de:dinkelweizenflocken',
+    '',
+    '',
+    'dinkelweizenflocken'
+), 
+(
+    'fr:glutamate-monosodique',
+    '',
+    'glutamate-monosodique',
+    ''
+), 
+(
+    'hu:tejföl',
+    '',
+    '',
+    ''
+), 
+(
+    'es:harina',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:sezamowa',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:aromes',
+    '',
+    'aromes',
+    ''
+), 
+(
+    'de:weizenflakes',
+    '',
+    '',
+    'weizenflakes'
+), 
+(
+    'fr:congre',
+    '',
+    'congre',
+    ''
+), 
+(
+    'ru:молочная',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:malts-de-ble',
+    '',
+    'malts-de-ble',
+    ''
+), 
+(
+    'fr:alaska',
+    '',
+    'alaska',
+    ''
+), 
+(
+    'de:milchpermeat',
+    '',
+    '',
+    'milchpermeat'
+), 
+(
+    'fr:theragra-chalcogramma',
+    '',
+    'theragra-chalcogramma',
+    ''
+), 
+(
+    'nl:garnalenpoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:biscuit',
+    '',
+    'biscuit',
+    ''
+), 
+(
+    'fr:oeuf-entier',
+    '',
+    'oeuf-entier',
+    ''
+), 
+(
+    'fr:graines-de-tournesol',
+    '',
+    'graines-de-tournesol',
+    ''
+), 
+(
+    'fr:carpe',
+    '',
+    'carpe',
+    ''
+), 
+(
+    'de:dinkelweizenvollkornflocken',
+    '',
+    '',
+    'dinkelweizenvollkornflocken'
+), 
+(
+    'sl:zeleno',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:kviečių',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:unt',
+    '',
+    '',
+    ''
+), 
+(
+    'id:pengatur-keasaman',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sauermilcherzeugnis',
+    '',
+    '',
+    'sauermilcherzeugnis'
+), 
+(
+    'fr:cafeine',
+    '',
+    'cafeine',
+    ''
+), 
+(
+    'de:milchsäurebakterien',
+    '',
+    '',
+    'milchsäurebakterien'
+), 
+(
+    'fr:oeufs-de-lompe',
+    '',
+    'oeufs-de-lompe',
+    ''
+), 
+(
+    'sr:slačicu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fruits',
+    '',
+    'fruits',
+    ''
+), 
+(
+    'es:triticale',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchsäure',
+    '',
+    '',
+    'milchsäure'
+), 
+(
+    'sv:edamerost',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:serek',
+    '',
+    '',
+    ''
+), 
+(
+    'es:mozzarella',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:tournesol',
+    '',
+    'tournesol',
+    ''
+), 
+(
+    'es:frutos-de-casca-rija',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:hiivaleipävehnäjauho',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:sojalecitiner',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:proteine-de-ble',
+    '',
+    'proteine-de-ble',
+    ''
+), 
+(
+    'sv:sojaböns',
+    '',
+    '',
+    ''
+), 
+(
+    'de:molkeneiweißkonzentrat',
+    '',
+    '',
+    'molkeneiweißkonzentrat'
+), 
+(
+    'de:weizenvollkorn',
+    '',
+    '',
+    'weizenvollkorn'
+), 
+(
+    'cs:pšeničný-lepek',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:omelette',
+    '',
+    'omelette',
+    ''
+), 
+(
+    'en:lapte',
+    'lapte',
+    '',
+    ''
+), 
+(
+    'de:creme-fraiche',
+    '',
+    '',
+    'creme-fraiche'
+), 
+(
+    'es:rojo-40',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:anhydre-sulfureux',
+    '',
+    'anhydre-sulfureux',
+    ''
+), 
+(
+    'de:stärke',
+    '',
+    '',
+    'stärke'
+), 
+(
+    'fr:praline',
+    '',
+    'praline',
+    ''
+), 
+(
+    'en:sellerie',
+    'sellerie',
+    '',
+    ''
+), 
+(
+    'fr:alcool',
+    '',
+    'alcool',
+    ''
+), 
+(
+    'hr:jaja',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-bleu',
+    '',
+    'fromage-bleu',
+    ''
+), 
+(
+    'en:roggenmehl',
+    'roggenmehl',
+    '',
+    ''
+), 
+(
+    'fr:absence',
+    '',
+    'absence',
+    ''
+), 
+(
+    'de:joghurt-mild',
+    '',
+    '',
+    'joghurt-mild'
+), 
+(
+    'de:nicht-unverdünnt-verzehren',
+    '',
+    '',
+    'nicht-unverdünnt-verzehren'
+), 
+(
+    'sr:pšenična',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haferfasern',
+    '',
+    '',
+    'haferfasern'
+), 
+(
+    'fr:gadus-morhua',
+    '',
+    'gadus-morhua',
+    ''
+), 
+(
+    'nl:wei',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:noix-d-amazonie',
+    '',
+    'noix-d-amazonie',
+    ''
+), 
+(
+    'de:vollkornweizenflocken',
+    '',
+    '',
+    'vollkornweizenflocken'
+), 
+(
+    'lt:varškės',
+    '',
+    '',
+    ''
+), 
+(
+    'de:ziegenkäse',
+    '',
+    '',
+    'ziegenkäse'
+), 
+(
+    'de:hartweizenmehl',
+    '',
+    '',
+    'hartweizenmehl'
+), 
+(
+    'fr:haferflocken',
+    '',
+    'haferflocken',
+    ''
+), 
+(
+    'ro:lapte-praf-degresat',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:goudaost',
+    '',
+    '',
+    ''
+), 
+(
+    'en:milk-products',
+    'milk-products',
+    '',
+    ''
+), 
+(
+    'de:weizenfasern',
+    '',
+    '',
+    'weizenfasern'
+), 
+(
+    'de:braunsenfsaat',
+    '',
+    '',
+    'braunsenfsaat'
+), 
+(
+    'pt:solidos-lacteos',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vermicelles',
+    '',
+    'vermicelles',
+    ''
+), 
+(
+    'fr:milch',
+    '',
+    'milch',
+    ''
+), 
+(
+    'fr:palourdes',
+    '',
+    'palourdes',
+    ''
+), 
+(
+    'fr:mandarine',
+    '',
+    'mandarine',
+    ''
+), 
+(
+    'fr:semoule',
+    '',
+    'semoule',
+    ''
+), 
+(
+    'en:cashew-nut',
+    'cashew-nut',
+    '',
+    ''
+), 
+(
+    'es:malta',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollmichpulver',
+    '',
+    '',
+    'vollmichpulver'
+), 
+(
+    'en:weizengluten',
+    'weizengluten',
+    '',
+    ''
+), 
+(
+    'sv:sesamfrö',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:mozzarella-ost',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:orzecha-laskowego',
+    '',
+    '',
+    ''
+), 
+(
+    'de:süßrahmbutter',
+    '',
+    '',
+    'süßrahmbutter'
+), 
+(
+    'es:anhidrido-sulfuroso',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:vetesurdeg',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:soją',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:tarwezemelen',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:jogurt',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:demi-creme',
+    '',
+    'demi-creme',
+    ''
+), 
+(
+    'de:blé',
+    '',
+    '',
+    'blé'
+), 
+(
+    'sr:jogurt',
+    '',
+    '',
+    ''
+), 
+(
+    'en:moutarde',
+    'moutarde',
+    '',
+    ''
+), 
+(
+    'en:seigle',
+    'seigle',
+    '',
+    ''
+), 
+(
+    'fr:crevette-nordique',
+    '',
+    'crevette-nordique',
+    ''
+), 
+(
+    'en:wheat-starch',
+    'wheat-starch',
+    '',
+    ''
+), 
+(
+    'fr:muscade',
+    '',
+    'muscade',
+    ''
+), 
+(
+    'fr:fourme-d-ambert',
+    '',
+    'fourme-d-ambert',
+    ''
+), 
+(
+    'fr:parmigiano',
+    '',
+    'parmigiano',
+    ''
+), 
+(
+    'de:gerstenmalzsirup',
+    '',
+    '',
+    'gerstenmalzsirup'
+), 
+(
+    'en:honey',
+    'honey',
+    '',
+    ''
+), 
+(
+    'en:emmental-cheese',
+    'emmental-cheese',
+    '',
+    ''
+), 
+(
+    'cs:vaječné-žloutky',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weichweizengrieß',
+    '',
+    '',
+    'weichweizengrieß'
+), 
+(
+    'de:hefe',
+    '',
+    '',
+    'hefe'
+), 
+(
+    'de:roggenkörner',
+    '',
+    '',
+    'roggenkörner'
+), 
+(
+    'fr:brie',
+    '',
+    'brie',
+    ''
+), 
+(
+    'nl:koemelk',
+    '',
+    '',
+    ''
+), 
+(
+    'en:weizenmalzmehl',
+    'weizenmalzmehl',
+    '',
+    ''
+), 
+(
+    'fr:tomme',
+    '',
+    'tomme',
+    ''
+), 
+(
+    'pl:orzeszki-laskowe',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cerneaux-de-noix',
+    '',
+    'cerneaux-de-noix',
+    ''
+), 
+(
+    'de:œufs',
+    '',
+    '',
+    'œufs'
+), 
+(
+    'hu:sajtok',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:malte',
+    '',
+    'malte',
+    ''
+), 
+(
+    'en:lactoserum',
+    'lactoserum',
+    '',
+    ''
+), 
+(
+    'cs:sušené-mléko',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:drożdże',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:vrhnje',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:tarwegriesmeel',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lacteo',
+    '',
+    'lacteo',
+    ''
+), 
+(
+    'fr:saumon-rose-du-pacifique',
+    '',
+    'saumon-rose-du-pacifique',
+    ''
+), 
+(
+    'en:oat-flakes',
+    'oat-flakes',
+    '',
+    ''
+), 
+(
+    'en:cheddar',
+    'cheddar',
+    '',
+    ''
+), 
+(
+    'de:nusskernmischung',
+    '',
+    '',
+    'nusskernmischung'
+), 
+(
+    'es:glute',
+    '',
+    '',
+    ''
+), 
+(
+    'es:fresa',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:gluten-de-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:mléčné-kultury',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sellerieöl',
+    '',
+    '',
+    'sellerieöl'
+), 
+(
+    'de:milcheiweißhydrolysat',
+    '',
+    '',
+    'milcheiweißhydrolysat'
+), 
+(
+    'sv:mozzarella',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hühnerei-eigelbpulver',
+    '',
+    '',
+    'hühnerei-eigelbpulver'
+), 
+(
+    'de:dinkelgrieß',
+    '',
+    '',
+    'dinkelgrieß'
+), 
+(
+    'fr:amidon',
+    '',
+    'amidon',
+    ''
+), 
+(
+    'de:ammonsulfit-zuckerkulör',
+    '',
+    '',
+    'ammonsulfit-zuckerkulör'
+), 
+(
+    'de:gerstenröstmalz',
+    '',
+    '',
+    'gerstenröstmalz'
+), 
+(
+    'fr:milcheiweiss',
+    '',
+    'milcheiweiss',
+    ''
+), 
+(
+    'en:butterfat',
+    'butterfat',
+    '',
+    ''
+), 
+(
+    'fr:palme',
+    '',
+    'palme',
+    ''
+), 
+(
+    'sv:havrefiber',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fraiche',
+    '',
+    'fraiche',
+    ''
+), 
+(
+    'ca:civada',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:пшенично-брашно',
+    '',
+    '',
+    ''
+), 
+(
+    'en:potassium-metabisulphite',
+    'potassium-metabisulphite',
+    '',
+    ''
+), 
+(
+    'de:roggenvollkorn',
+    '',
+    '',
+    'roggenvollkorn'
+), 
+(
+    'fr:dorade',
+    '',
+    'dorade',
+    ''
+), 
+(
+    'en:wheat-malt',
+    'wheat-malt',
+    '',
+    ''
+), 
+(
+    'de:dinkelkleie',
+    '',
+    '',
+    'dinkelkleie'
+), 
+(
+    'de:1-teil-sirup-mit-7-teilen-wasser-mischen',
+    '',
+    '',
+    '1-teil-sirup-mit-7-teilen-wasser-mischen'
+), 
+(
+    'hr:mliječne',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:sojaboon',
+    '',
+    '',
+    ''
+), 
+(
+    'en:skimmed-milk',
+    'skimmed-milk',
+    '',
+    ''
+), 
+(
+    'fr:flocons-d-avoine-sans-gluten',
+    '',
+    'flocons-d-avoine-sans-gluten',
+    ''
+), 
+(
+    'sv:ströbröd',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fraise',
+    '',
+    'fraise',
+    ''
+), 
+(
+    'cs:jádra-mandlí',
+    '',
+    '',
+    ''
+), 
+(
+    'en:erdnusse',
+    'erdnusse',
+    '',
+    ''
+), 
+(
+    'sv:sötmandel',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:susama',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:margarine',
+    '',
+    'margarine',
+    ''
+), 
+(
+    'fr:limande-du-nord',
+    '',
+    'limande-du-nord',
+    ''
+), 
+(
+    'en:sesam',
+    'sesam',
+    '',
+    ''
+), 
+(
+    'es:queso-mozzarella',
+    '',
+    '',
+    ''
+), 
+(
+    'th:ถั่วเปลือกแข็ง',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:reggiano',
+    '',
+    'reggiano',
+    ''
+), 
+(
+    'en:melk',
+    'melk',
+    '',
+    ''
+), 
+(
+    'fr:vollmilchpulver',
+    '',
+    'vollmilchpulver',
+    ''
+), 
+(
+    'en:orange',
+    'orange',
+    '',
+    ''
+), 
+(
+    'en:amandes',
+    'amandes',
+    '',
+    ''
+), 
+(
+    'es:atun-listado',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:pšenični-gluten',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mandelmark',
+    '',
+    '',
+    'mandelmark'
+), 
+(
+    'de:weizenkörner',
+    '',
+    '',
+    'weizenkörner'
+), 
+(
+    'cs:pšeničný',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:slačice',
+    '',
+    '',
+    ''
+), 
+(
+    'en:butterreinfett',
+    'butterreinfett',
+    '',
+    ''
+), 
+(
+    'hu:juhtej',
+    '',
+    '',
+    ''
+), 
+(
+    'es:bulgur',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenschrot',
+    '',
+    '',
+    'weizenschrot'
+), 
+(
+    'sr:lešnika',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:smør',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fourrage',
+    '',
+    'fourrage',
+    ''
+), 
+(
+    'de:alkohol',
+    '',
+    '',
+    'alkohol'
+), 
+(
+    'de:vollkorn-roggenflocken',
+    '',
+    '',
+    'vollkorn-roggenflocken'
+), 
+(
+    'de:weichkäse',
+    '',
+    '',
+    'weichkäse'
+), 
+(
+    'de:kefir',
+    '',
+    '',
+    'kefir'
+), 
+(
+    'fr:citron-vert',
+    '',
+    'citron-vert',
+    ''
+), 
+(
+    'es:suero-de-leche',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:peche',
+    '',
+    'peche',
+    ''
+), 
+(
+    'sv:vasslepermeat',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gouda-käse',
+    '',
+    '',
+    'gouda-käse'
+), 
+(
+    'fr:d-avoine',
+    '',
+    'd-avoine',
+    ''
+), 
+(
+    'no:hvetemel',
+    '',
+    '',
+    ''
+), 
+(
+    'de:eiweißpulver',
+    '',
+    '',
+    'eiweißpulver'
+), 
+(
+    'de:mandelscheiben',
+    '',
+    '',
+    'mandelscheiben'
+), 
+(
+    'sr:soju',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gelbsenfsaat',
+    '',
+    '',
+    'gelbsenfsaat'
+), 
+(
+    'id:antioksidan-tokoferol',
+    '',
+    '',
+    ''
+), 
+(
+    'en:γάλα',
+    'γάλα',
+    '',
+    ''
+), 
+(
+    'de:vollkorn-gerstenflocken',
+    '',
+    '',
+    'vollkorn-gerstenflocken'
+), 
+(
+    'de:gerstenmalzextraktpulver',
+    '',
+    '',
+    'gerstenmalzextraktpulver'
+), 
+(
+    'de:haselnussstückchen',
+    '',
+    '',
+    'haselnussstückchen'
+), 
+(
+    'pl:sery',
+    '',
+    '',
+    ''
+), 
+(
+    'es:fenilcetonuricos',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hühnereieigelbpulver',
+    '',
+    '',
+    'hühnereieigelbpulver'
+), 
+(
+    'es:pescados-y-crustaceor',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:pšenična-moka',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hartweizenvollkornmehl',
+    '',
+    '',
+    'hartweizenvollkornmehl'
+), 
+(
+    'de:hafergrütze',
+    '',
+    '',
+    'hafergrütze'
+), 
+(
+    'de:heringsﬁlets',
+    '',
+    '',
+    'heringsﬁlets'
+), 
+(
+    'en:grau',
+    'grau',
+    '',
+    ''
+), 
+(
+    'no:fløte',
+    '',
+    '',
+    ''
+), 
+(
+    'de:schmelzkäsezubereitung',
+    '',
+    '',
+    'schmelzkäsezubereitung'
+), 
+(
+    'nl:glutenbevattende-granen',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vin-blanc',
+    '',
+    'vin-blanc',
+    ''
+), 
+(
+    'de:keine',
+    '',
+    '',
+    'keine'
+), 
+(
+    'sr:mlečne',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:disulﬁte',
+    '',
+    'disulﬁte',
+    ''
+), 
+(
+    'fr:pamplemousse',
+    '',
+    'pamplemousse',
+    ''
+), 
+(
+    'en:barley-malt-extract',
+    'barley-malt-extract',
+    '',
+    ''
+), 
+(
+    'fr:decors',
+    '',
+    'decors',
+    ''
+), 
+(
+    'de:feta',
+    '',
+    '',
+    'feta'
+), 
+(
+    'fr:sauce',
+    '',
+    'sauce',
+    ''
+), 
+(
+    'fr:noix-de-macadamia-et-produits-en-contenant',
+    '',
+    'noix-de-macadamia-et-produits-en-contenant',
+    ''
+), 
+(
+    'sv:sesamolja',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sel',
+    '',
+    'sel',
+    ''
+), 
+(
+    'en:eigelb',
+    'eigelb',
+    '',
+    ''
+), 
+(
+    'sv:präst-ost-ekologisk',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:porc',
+    '',
+    'porc',
+    ''
+), 
+(
+    'fr:gluten-d-avoine',
+    '',
+    'gluten-d-avoine',
+    ''
+), 
+(
+    'fr:frutos-de-casca-rija',
+    '',
+    'frutos-de-casca-rija',
+    ''
+), 
+(
+    'ru:продукты-яичные',
+    '',
+    '',
+    ''
+), 
+(
+    'en:malt-d-orge',
+    'malt-d-orge',
+    '',
+    ''
+), 
+(
+    'en:albumin',
+    'albumin',
+    '',
+    ''
+), 
+(
+    'de:milchmineralien',
+    '',
+    '',
+    'milchmineralien'
+), 
+(
+    'de:weizenstärkesirup',
+    '',
+    '',
+    'weizenstärkesirup'
+), 
+(
+    'cs:laktóza',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:ječmeni',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mehl',
+    '',
+    '',
+    'mehl'
+), 
+(
+    'fr:mantequilla',
+    '',
+    'mantequilla',
+    ''
+), 
+(
+    'de:vollkorngerstenflocken',
+    '',
+    '',
+    'vollkorngerstenflocken'
+), 
+(
+    'fr:pain',
+    '',
+    'pain',
+    ''
+), 
+(
+    'fr:curry',
+    '',
+    'curry',
+    ''
+), 
+(
+    'en:sahne',
+    'sahne',
+    '',
+    ''
+), 
+(
+    'sl:smetana',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hafervollkorn',
+    '',
+    '',
+    'hafervollkorn'
+), 
+(
+    'ru:пшеничная',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:amidon-de-froment',
+    '',
+    'amidon-de-froment',
+    ''
+), 
+(
+    'fr:huile-de-soja',
+    '',
+    'huile-de-soja',
+    ''
+), 
+(
+    'hr:pšenica',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchsäurebakterienkulturen',
+    '',
+    '',
+    'milchsäurebakterienkulturen'
+), 
+(
+    'de:weizenkeimmehl',
+    '',
+    '',
+    'weizenkeimmehl'
+), 
+(
+    'hr:pšenični-slad',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:creme-uht',
+    '',
+    'creme-uht',
+    ''
+), 
+(
+    'fr:pignons-de-pin',
+    '',
+    'pignons-de-pin',
+    ''
+), 
+(
+    'it:malto',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lotte',
+    '',
+    'lotte',
+    ''
+), 
+(
+    'sv:hasselnötsmassa',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollmilchjoghurt',
+    '',
+    '',
+    'vollmilchjoghurt'
+), 
+(
+    'fr:huile-d-arachide',
+    '',
+    'huile-d-arachide',
+    ''
+), 
+(
+    'fr:l',
+    '',
+    'l',
+    ''
+), 
+(
+    'en:emmental',
+    'emmental',
+    '',
+    ''
+), 
+(
+    'fr:tamari',
+    '',
+    'tamari',
+    ''
+), 
+(
+    'sv:sojabönsmjöl',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:avela',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sucre',
+    '',
+    'sucre',
+    ''
+), 
+(
+    'fr:garniture',
+    '',
+    'garniture',
+    ''
+), 
+(
+    'es:atun',
+    '',
+    '',
+    ''
+), 
+(
+    'es:edam',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:hoki',
+    '',
+    'hoki',
+    ''
+), 
+(
+    'fr:ait',
+    '',
+    'ait',
+    ''
+), 
+(
+    'de:sojastärke',
+    '',
+    '',
+    'sojastärke'
+), 
+(
+    'de:schmand',
+    '',
+    '',
+    'schmand'
+), 
+(
+    'en:octopus',
+    'octopus',
+    '',
+    ''
+), 
+(
+    'fr:e150b',
+    '',
+    'e150b',
+    ''
+), 
+(
+    'ca:ordi',
+    '',
+    '',
+    ''
+), 
+(
+    'en:huhnereieiweiss',
+    'huhnereieiweiss',
+    '',
+    ''
+), 
+(
+    'fr:fromage-emmental',
+    '',
+    'fromage-emmental',
+    ''
+), 
+(
+    'pl:orzech-laskowy',
+    '',
+    '',
+    ''
+), 
+(
+    'en:edam-cheese',
+    'edam-cheese',
+    '',
+    ''
+), 
+(
+    'fr:e621',
+    '',
+    'e621',
+    ''
+), 
+(
+    'fr:mandeln',
+    '',
+    'mandeln',
+    ''
+), 
+(
+    'cs:sezam',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:kananmunan-valkuainen',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lait-beurre',
+    '',
+    'lait-beurre',
+    ''
+), 
+(
+    'nl:tarwemoutmeel',
+    '',
+    '',
+    ''
+), 
+(
+    'de:molkenproteinisolat',
+    '',
+    '',
+    'molkenproteinisolat'
+), 
+(
+    'en:ovo',
+    'ovo',
+    '',
+    ''
+), 
+(
+    'pl:fenyloalaniny',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:pšeničná-bílkovina',
+    '',
+    '',
+    ''
+), 
+(
+    'el:λακτόζη',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:acide-lactique',
+    '',
+    'acide-lactique',
+    ''
+), 
+(
+    'el:σόγιας',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sodium-sulphite',
+    'sodium-sulphite',
+    '',
+    ''
+), 
+(
+    'fr:cacahuette',
+    '',
+    'cacahuette',
+    ''
+), 
+(
+    'es:canela',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:молоко-сухое-обезжиренное',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:pšeničný-škrob',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:śledziowe',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:sojin',
+    '',
+    '',
+    ''
+), 
+(
+    'de:schafskäse',
+    '',
+    '',
+    'schafskäse'
+), 
+(
+    'fr:oeufs-de-cabillaud',
+    '',
+    'oeufs-de-cabillaud',
+    ''
+), 
+(
+    'id:natrium-benzoat',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:soja-non-ogm',
+    '',
+    'soja-non-ogm',
+    ''
+), 
+(
+    'fr:sans-gluten',
+    '',
+    'sans-gluten',
+    ''
+), 
+(
+    'fr:lactoproteines',
+    '',
+    'lactoproteines',
+    ''
+), 
+(
+    'de:lait',
+    '',
+    '',
+    'lait'
+), 
+(
+    'sr:pšenične',
+    '',
+    '',
+    ''
+), 
+(
+    'en:contains-milk',
+    'contains-milk',
+    '',
+    ''
+), 
+(
+    'fr:gerstenmalzextrakt',
+    '',
+    'gerstenmalzextrakt',
+    ''
+), 
+(
+    'de:soy-beans',
+    '',
+    '',
+    'soy-beans'
+), 
+(
+    'de:hühnereivollei',
+    '',
+    '',
+    'hühnereivollei'
+), 
+(
+    'fr:emmenthal',
+    '',
+    'emmenthal',
+    ''
+), 
+(
+    'es:pan',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:son',
+    '',
+    'son',
+    ''
+), 
+(
+    'fr:nappage-chocolat-noir',
+    '',
+    'nappage-chocolat-noir',
+    ''
+), 
+(
+    'fr:moutardee',
+    '',
+    'moutardee',
+    ''
+), 
+(
+    'cs:sójová-mouka',
+    '',
+    '',
+    ''
+), 
+(
+    'de:bulgur',
+    '',
+    '',
+    'bulgur'
+), 
+(
+    'nb:fløtepulver',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:ječný',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:coque',
+    '',
+    'coque',
+    ''
+), 
+(
+    'it:mozzarella',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kulturen-bifidobacterium',
+    '',
+    '',
+    'kulturen-bifidobacterium'
+), 
+(
+    'de:fettarme-milch',
+    '',
+    '',
+    'fettarme-milch'
+), 
+(
+    'pl:orkiszowa',
+    '',
+    '',
+    ''
+), 
+(
+    'en:soybean-oil',
+    'soybean-oil',
+    '',
+    ''
+), 
+(
+    'de:obers',
+    '',
+    '',
+    'obers'
+), 
+(
+    'fr:presure',
+    '',
+    'presure',
+    ''
+), 
+(
+    'nl:havermeel',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:burro',
+    '',
+    'burro',
+    ''
+), 
+(
+    'de:hühnereiweiss',
+    '',
+    '',
+    'hühnereiweiss'
+), 
+(
+    'en:tomato',
+    'tomato',
+    '',
+    ''
+), 
+(
+    'lt:avižiniai',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:hořčici',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:bittermandel',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:sojini',
+    '',
+    '',
+    ''
+), 
+(
+    'en:leche',
+    'leche',
+    '',
+    ''
+), 
+(
+    'fr:coques',
+    '',
+    'coques',
+    ''
+), 
+(
+    'fr:edamer',
+    '',
+    'edamer',
+    ''
+), 
+(
+    'fr:gs1-t4078-ml',
+    '',
+    'gs1-t4078-ml',
+    ''
+), 
+(
+    'fr:mozarella',
+    '',
+    'mozarella',
+    ''
+), 
+(
+    'de:ziegenfrischkäse',
+    '',
+    '',
+    'ziegenfrischkäse'
+), 
+(
+    'hr:surutka',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenfaser',
+    '',
+    '',
+    'weizenfaser'
+), 
+(
+    'de:ricotta-käse',
+    '',
+    '',
+    'ricotta-käse'
+), 
+(
+    'en:yeast',
+    'yeast',
+    '',
+    ''
+), 
+(
+    'ro:secara',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:soja-eiwit',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:kaurapohja',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:žitná',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:huevo',
+    '',
+    'huevo',
+    ''
+), 
+(
+    'en:kuhmilch',
+    'kuhmilch',
+    '',
+    ''
+), 
+(
+    'fr:beurre-de-cacahuetes',
+    '',
+    'beurre-de-cacahuetes',
+    ''
+), 
+(
+    'nl:melkwei',
+    '',
+    '',
+    ''
+), 
+(
+    'de:tarwegluten',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sojaprotein',
+    '',
+    'sojaprotein',
+    ''
+), 
+(
+    'lt:išrūgų',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:vetefiber',
+    '',
+    '',
+    ''
+), 
+(
+    'en:soy-beans',
+    'soy-beans',
+    '',
+    ''
+), 
+(
+    'fr:puree-d-amandes',
+    '',
+    'puree-d-amandes',
+    ''
+), 
+(
+    'fr:weizengluten',
+    '',
+    '',
+    ''
+), 
+(
+    'de:frischkäse-doppelrahmstufe',
+    '',
+    '',
+    'frischkäse-doppelrahmstufe'
+), 
+(
+    'en:milk-protein-concentrate',
+    'milk-protein-concentrate',
+    '',
+    ''
+), 
+(
+    'en:sesame-oil',
+    'sesame-oil',
+    '',
+    ''
+), 
+(
+    'el:σίτου',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haselnusskrokant',
+    '',
+    '',
+    'haselnusskrokant'
+), 
+(
+    'fr:encornets-geants',
+    '',
+    'encornets-geants',
+    ''
+), 
+(
+    'fr:crabe-tourteau',
+    '',
+    'crabe-tourteau',
+    ''
+), 
+(
+    'fr:bie',
+    '',
+    'bie',
+    ''
+), 
+(
+    'fr:metabisulﬁte',
+    '',
+    'metabisulﬁte',
+    ''
+), 
+(
+    'cs:mléčná',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:молочный-белок',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:bar',
+    '',
+    'bar',
+    ''
+), 
+(
+    'en:hartweizengriess',
+    'hartweizengriess',
+    '',
+    ''
+), 
+(
+    'de:milchserumkonzentrat',
+    '',
+    '',
+    'milchserumkonzentrat'
+), 
+(
+    'en:sussmolkenpulver',
+    'sussmolkenpulver',
+    '',
+    ''
+), 
+(
+    'nb:soyaprotein',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:sumporni-dioksid',
+    '',
+    '',
+    ''
+), 
+(
+    'de:süßlupinensamen',
+    '',
+    '',
+    'süßlupinensamen'
+), 
+(
+    'es:sin-gluten',
+    '',
+    '',
+    ''
+), 
+(
+    'de:magerquarkpulver',
+    '',
+    '',
+    'magerquarkpulver'
+), 
+(
+    'en:sunflower',
+    'sunflower',
+    '',
+    ''
+), 
+(
+    'de:sojagranulat',
+    '',
+    '',
+    'sojagranulat'
+), 
+(
+    'fr:huile-de-beurre',
+    '',
+    'huile-de-beurre',
+    ''
+), 
+(
+    'fr:lactiqueset-d-affinage',
+    '',
+    'lactiqueset-d-affinage',
+    ''
+), 
+(
+    'de:alpenmilchschokolade',
+    '',
+    '',
+    'alpenmilchschokolade'
+), 
+(
+    'en:buttermilk-powder',
+    'buttermilk-powder',
+    '',
+    ''
+), 
+(
+    'es:cevada',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fruits-a-coquer',
+    '',
+    'fruits-a-coquer',
+    ''
+), 
+(
+    'hr:zob',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:kananmunaneste',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:mozzarella',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kuhrohmilch',
+    '',
+    '',
+    'kuhrohmilch'
+), 
+(
+    'en:soyabean',
+    'soyabean',
+    '',
+    ''
+), 
+(
+    'de:vollkorn-weizenmehl',
+    '',
+    '',
+    'vollkorn-weizenmehl'
+), 
+(
+    'fr:houblon',
+    '',
+    'houblon',
+    ''
+), 
+(
+    'fr:fibre-d-avoine-bio-et-sans-gluten',
+    '',
+    'fibre-d-avoine-bio-et-sans-gluten',
+    ''
+), 
+(
+    'de:haferpflanzenfaser',
+    '',
+    '',
+    'haferpflanzenfaser'
+), 
+(
+    'en:laktose',
+    'laktose',
+    '',
+    ''
+), 
+(
+    'nb:hvitost',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sauce-vinaigrette-30g',
+    '',
+    'sauce-vinaigrette-30g',
+    ''
+), 
+(
+    'de:rahmpulver',
+    '',
+    '',
+    'rahmpulver'
+), 
+(
+    'fr:fenilalanina',
+    '',
+    'fenilalanina',
+    ''
+), 
+(
+    'de:schmelzkäse',
+    '',
+    '',
+    'schmelzkäse'
+), 
+(
+    'ko:대두',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:e223',
+    '',
+    'e223',
+    ''
+), 
+(
+    'de:käsereikulturen',
+    '',
+    '',
+    'käsereikulturen'
+), 
+(
+    'fr:lattici',
+    '',
+    'lattici',
+    ''
+), 
+(
+    'ca:ou',
+    '',
+    '',
+    ''
+), 
+(
+    'ja:小麦',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hühnereieiweisspulver',
+    '',
+    '',
+    'hühnereieiweisspulver'
+), 
+(
+    'sr:tune',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:chataignes',
+    '',
+    'chataignes',
+    ''
+), 
+(
+    'de:sojabasis',
+    '',
+    '',
+    'sojabasis'
+), 
+(
+    'no:sennepsfrø',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:sójový-lecitin',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dinkelschrot',
+    '',
+    '',
+    'dinkelschrot'
+), 
+(
+    'sr:raži',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:weipoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'de:erdnussbutter',
+    '',
+    '',
+    'erdnussbutter'
+), 
+(
+    'de:schaf',
+    '',
+    '',
+    'schaf'
+), 
+(
+    'en:contains-wheat',
+    'contains-wheat',
+    '',
+    ''
+), 
+(
+    'de:sardinen',
+    '',
+    '',
+    'sardinen'
+), 
+(
+    'en:haferflocken',
+    'haferflocken',
+    '',
+    ''
+), 
+(
+    'de:mozarella',
+    '',
+    '',
+    'mozarella'
+), 
+(
+    'de:phenylalaninquelle',
+    '',
+    '',
+    'phenylalaninquelle'
+), 
+(
+    'fr:semoule-de-ble-gluten',
+    '',
+    'semoule-de-ble-gluten',
+    ''
+), 
+(
+    'fi:kaurauute',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:melk',
+    '',
+    'melk',
+    ''
+), 
+(
+    'fr:feves-de-soja',
+    '',
+    'feves-de-soja',
+    ''
+), 
+(
+    'hr:pšenično',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:pšenična',
+    '',
+    '',
+    ''
+), 
+(
+    'en:contains-sulfites',
+    'contains-sulfites',
+    '',
+    ''
+), 
+(
+    'de:calciumcaseinat',
+    '',
+    '',
+    'calciumcaseinat'
+), 
+(
+    'es:suero-lacteo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:tes',
+    '',
+    'tes',
+    ''
+), 
+(
+    'pl:owsa',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:yoghurtpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:grana-padano-aop',
+    '',
+    'grana-padano-aop',
+    ''
+), 
+(
+    'fr:farro',
+    '',
+    'farro',
+    ''
+), 
+(
+    'fr:fromage-grana-padano',
+    '',
+    'fromage-grana-padano',
+    ''
+), 
+(
+    'cs:mléka',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fabrique-dans-un-atelier',
+    '',
+    'fabrique-dans-un-atelier',
+    ''
+), 
+(
+    'fr:farine-de-seigle-maltee',
+    '',
+    'farine-de-seigle-maltee',
+    ''
+), 
+(
+    'fr:ferments-lactiques-et-d-affinage',
+    '',
+    'ferments-lactiques-et-d-affinage',
+    ''
+), 
+(
+    'de:sojaeiweiss',
+    '',
+    '',
+    'sojaeiweiss'
+), 
+(
+    'en:mjolk',
+    'mjolk',
+    '',
+    ''
+), 
+(
+    'de:bergbauernmilch',
+    '',
+    '',
+    'bergbauernmilch'
+), 
+(
+    'es:sardina',
+    '',
+    '',
+    ''
+), 
+(
+    'de:ziegensahne',
+    '',
+    '',
+    'ziegensahne'
+), 
+(
+    'en:gerstenmalzextrakt',
+    'gerstenmalzextrakt',
+    '',
+    ''
+), 
+(
+    'fr:sojalecithine',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dinkelmalzmehl',
+    '',
+    '',
+    'dinkelmalzmehl'
+), 
+(
+    'fr:scargots',
+    '',
+    'scargots',
+    ''
+), 
+(
+    'fr:fourme',
+    '',
+    'fourme',
+    ''
+), 
+(
+    'en:tarwe',
+    'tarwe',
+    '',
+    ''
+), 
+(
+    'pl:mąka-pszenna',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:alit',
+    '',
+    'alit',
+    ''
+), 
+(
+    'fr:graisse-butyrique',
+    '',
+    'graisse-butyrique',
+    ''
+), 
+(
+    'fr:sere-maigre',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:hasselpähkinämassa',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:ječné',
+    '',
+    '',
+    ''
+), 
+(
+    'de:walnussstückchen',
+    '',
+    '',
+    'walnussstückchen'
+), 
+(
+    'en:roasted-peanuts',
+    'roasted-peanuts',
+    '',
+    ''
+), 
+(
+    'en:skim-milk',
+    'skim-milk',
+    '',
+    ''
+), 
+(
+    'sr:pšenično-brašno',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:vehnätaikinanjuuri',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mayonnaise',
+    '',
+    'mayonnaise',
+    ''
+), 
+(
+    'ru:сухая-молочная-сыворотка',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fruits-a-coques-noix',
+    '',
+    'fruits-a-coques-noix',
+    ''
+), 
+(
+    'sv:kornmaltsvinäger',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:loddarom',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:pšenice',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:contient-du-gluten-avoine',
+    '',
+    'contient-du-gluten-avoine',
+    ''
+), 
+(
+    'hr:orašasto-voće',
+    '',
+    '',
+    ''
+), 
+(
+    'es:glutamato-monosodico',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milch-und-daraus-gewonnene-erzeugnisse',
+    '',
+    '',
+    'milch-und-daraus-gewonnene-erzeugnisse'
+), 
+(
+    'fr:grondin',
+    '',
+    'grondin',
+    ''
+), 
+(
+    'fr:peautre',
+    '',
+    'peautre',
+    ''
+), 
+(
+    'de:molkenproteinkonzentrat',
+    '',
+    '',
+    'molkenproteinkonzentrat'
+), 
+(
+    'en:malt',
+    'malt',
+    '',
+    ''
+), 
+(
+    'hr:mliječna',
+    '',
+    '',
+    ''
+), 
+(
+    'de:frischkäsezubereitung',
+    '',
+    '',
+    'frischkäsezubereitung'
+), 
+(
+    'en:sojabohnen',
+    'sojabohnen',
+    '',
+    ''
+), 
+(
+    'hu:árpagyöngy',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:vetekross',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:făină-de-grâu',
+    '',
+    '',
+    ''
+), 
+(
+    'de:pekannüsse',
+    '',
+    '',
+    'pekannüsse'
+), 
+(
+    'id:mononatrium-glutamat',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:colin-lieu',
+    '',
+    'colin-lieu',
+    ''
+), 
+(
+    'de:gerstenflakes',
+    '',
+    '',
+    'gerstenflakes'
+), 
+(
+    'fr:vinaigrette-au-vinaigre-balsamique',
+    '',
+    'vinaigrette-au-vinaigre-balsamique',
+    ''
+), 
+(
+    'it:latte-scremato',
+    '',
+    '',
+    ''
+), 
+(
+    'de:parmesan',
+    '',
+    '',
+    'parmesan'
+), 
+(
+    'de:schlagobers',
+    '',
+    '',
+    'schlagobers'
+), 
+(
+    'en:garlic',
+    'garlic',
+    '',
+    ''
+), 
+(
+    'pl:edamski',
+    '',
+    '',
+    ''
+), 
+(
+    'en:anchovy',
+    'anchovy',
+    '',
+    ''
+), 
+(
+    'hr:sirutka',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:blanc',
+    '',
+    'blanc',
+    ''
+), 
+(
+    'fr:ecreme',
+    '',
+    'ecreme',
+    ''
+), 
+(
+    'fr:farine-d-avoine',
+    '',
+    'farine-d-avoine',
+    ''
+), 
+(
+    'fr:ceufs',
+    '',
+    'ceufs',
+    ''
+), 
+(
+    'de:trockeneigelb',
+    '',
+    '',
+    'trockeneigelb'
+), 
+(
+    'en:mustard-seeds',
+    'mustard-seeds',
+    '',
+    ''
+), 
+(
+    'de:sojaeiweißerzeugnis',
+    '',
+    '',
+    'sojaeiweißerzeugnis'
+), 
+(
+    'pl:orzech-włoski',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sachet-de-batonnets-de-pain-special',
+    '',
+    'sachet-de-batonnets-de-pain-special',
+    ''
+), 
+(
+    'de:forelle',
+    '',
+    '',
+    'forelle'
+), 
+(
+    'en:milk-solids',
+    'milk-solids',
+    '',
+    ''
+), 
+(
+    'fr:gerstenmalzmehl',
+    '',
+    'gerstenmalzmehl',
+    ''
+), 
+(
+    'pt:trigo-duro',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-a-pate-dure',
+    '',
+    'fromage-a-pate-dure',
+    ''
+), 
+(
+    'fr:champignons',
+    '',
+    'champignons',
+    ''
+), 
+(
+    'pl:mąka-żytnia',
+    '',
+    '',
+    ''
+), 
+(
+    'en:whole-milk',
+    'whole-milk',
+    '',
+    ''
+), 
+(
+    'fr:orge-maltee',
+    '',
+    'orge-maltee',
+    ''
+), 
+(
+    'fr:palourde',
+    '',
+    'palourde',
+    ''
+), 
+(
+    'es:ausencia-de-alergenos',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:ražano',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:ovaz',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:dextrose',
+    '',
+    'dextrose',
+    ''
+), 
+(
+    'fr:cumin',
+    '',
+    'cumin',
+    ''
+), 
+(
+    'fr:lysozyme',
+    '',
+    'lysozyme',
+    ''
+), 
+(
+    'fr:grano',
+    '',
+    'grano',
+    ''
+), 
+(
+    'hr:metabisulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:rågkross',
+    '',
+    '',
+    ''
+), 
+(
+    'id:pengemulsi-lesitin-kedelai',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollkorngerste',
+    '',
+    '',
+    'vollkorngerste'
+), 
+(
+    'en:cevada',
+    'cevada',
+    '',
+    ''
+), 
+(
+    'ro:telina',
+    '',
+    '',
+    ''
+), 
+(
+    'en:weizenvollkornmehl',
+    'weizenvollkornmehl',
+    '',
+    ''
+), 
+(
+    'pl:pszennego',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:proteine-de-soja',
+    '',
+    'proteine-de-soja',
+    ''
+), 
+(
+    'de:dinkelvollkornsauerteig',
+    '',
+    '',
+    'dinkelvollkornsauerteig'
+), 
+(
+    'fr:ingredients-de-la-preparation-instantanee',
+    '',
+    'ingredients-de-la-preparation-instantanee',
+    ''
+), 
+(
+    'es:lait',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:narancs',
+    '',
+    '',
+    ''
+), 
+(
+    'es:guten',
+    '',
+    '',
+    ''
+), 
+(
+    'de:anchovis',
+    '',
+    '',
+    'anchovis'
+), 
+(
+    'pl:mozzarella',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenhalmfaser',
+    '',
+    '',
+    'weizenhalmfaser'
+), 
+(
+    'fr:derives',
+    '',
+    'derives',
+    ''
+), 
+(
+    'es:boqueron',
+    '',
+    '',
+    ''
+), 
+(
+    'de:frischeier',
+    '',
+    '',
+    'frischeier'
+), 
+(
+    'es:sericas',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lait-artificiel',
+    '',
+    '',
+    ''
+), 
+(
+    'en:froment',
+    'froment',
+    '',
+    ''
+), 
+(
+    'hu:kálium-metabiszulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'de:schafkäse',
+    '',
+    '',
+    'schafkäse'
+), 
+(
+    'fr:arches',
+    '',
+    'arches',
+    ''
+), 
+(
+    'nl:botervet',
+    '',
+    '',
+    ''
+), 
+(
+    'vi:không',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:grau',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mandelblättchen',
+    '',
+    '',
+    'mandelblättchen'
+), 
+(
+    'de:seelachs-filet',
+    '',
+    '',
+    'seelachs-filet'
+), 
+(
+    'lt:grietinėlė',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:blé',
+    '',
+    'blé',
+    ''
+), 
+(
+    'de:wheyproteinkonzentrat',
+    '',
+    '',
+    'wheyproteinkonzentrat'
+), 
+(
+    'id:perisa-sintetik',
+    '',
+    '',
+    ''
+), 
+(
+    'en:wholemeal',
+    'wholemeal',
+    '',
+    ''
+), 
+(
+    'sv:jordnötssmör',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:proteinas-do-leite',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchsäurekulturen',
+    '',
+    '',
+    'milchsäurekulturen'
+), 
+(
+    'fr:emmental-rape',
+    '',
+    'emmental-rape',
+    ''
+), 
+(
+    'de:hartweizengries',
+    '',
+    '',
+    'hartweizengries'
+), 
+(
+    'fr:coriandre',
+    '',
+    'coriandre',
+    ''
+), 
+(
+    'es:miel',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:amandes-douces',
+    '',
+    'amandes-douces',
+    ''
+), 
+(
+    'fr:maltodextrine',
+    '',
+    'maltodextrine',
+    ''
+), 
+(
+    'de:selleriepulver',
+    '',
+    '',
+    'selleriepulver'
+), 
+(
+    'ro:mustar',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizen-vollkornmehl',
+    '',
+    '',
+    'weizen-vollkornmehl'
+), 
+(
+    'nl:sojameel',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:roggebloem',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:clementine',
+    '',
+    'clementine',
+    ''
+), 
+(
+    'de:räucherlachs',
+    '',
+    '',
+    'räucherlachs'
+), 
+(
+    'de:mich',
+    '',
+    '',
+    'mich'
+), 
+(
+    'de:frischkäsepulver',
+    '',
+    '',
+    'frischkäsepulver'
+), 
+(
+    'fr:molkenerzeugnis',
+    '',
+    'molkenerzeugnis',
+    ''
+), 
+(
+    'lv:sviests',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:mléčná-syrovátka',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:pastöroitu-maito',
+    '',
+    '',
+    ''
+), 
+(
+    'en:noisettes',
+    'noisettes',
+    '',
+    ''
+), 
+(
+    'fr:creme-entiere',
+    '',
+    'creme-entiere',
+    ''
+), 
+(
+    'ro:zer',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:milchzucker',
+    '',
+    'milchzucker',
+    ''
+), 
+(
+    'es:ovo',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:mantelirouhe',
+    '',
+    '',
+    ''
+), 
+(
+    'de:crème',
+    '',
+    '',
+    'crème'
+), 
+(
+    'fr:usa',
+    '',
+    'usa',
+    ''
+), 
+(
+    'cs:sojová',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:grana',
+    '',
+    'grana',
+    ''
+), 
+(
+    'nl:geitenmelk',
+    '',
+    '',
+    ''
+), 
+(
+    'de:malz',
+    '',
+    '',
+    'malz'
+), 
+(
+    'it:fenilalanina',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-maltes',
+    '',
+    'ble-maltes',
+    ''
+), 
+(
+    'en:schalenfruchte',
+    'schalenfruchte',
+    '',
+    ''
+), 
+(
+    'hr:jajčani',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:búzaglutén',
+    '',
+    '',
+    ''
+), 
+(
+    'en:farine-de-ble',
+    'farine-de-ble',
+    '',
+    ''
+), 
+(
+    'fr:cerfeuil',
+    '',
+    'cerfeuil',
+    ''
+), 
+(
+    'fr:soufre',
+    '',
+    'soufre',
+    ''
+), 
+(
+    'fr:extraite',
+    '',
+    'extraite',
+    ''
+), 
+(
+    'fr:rouget-barbet',
+    '',
+    'rouget-barbet',
+    ''
+), 
+(
+    'fr:scamorza',
+    '',
+    'scamorza',
+    ''
+), 
+(
+    'pl:pirosiarczyn-potasu',
+    '',
+    '',
+    ''
+), 
+(
+    'en:coconut-oil',
+    'coconut-oil',
+    '',
+    ''
+), 
+(
+    'de:marzipan',
+    '',
+    '',
+    'marzipan'
+), 
+(
+    'de:mandelmasse',
+    '',
+    '',
+    'mandelmasse'
+), 
+(
+    'id:pengental-nabati',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:boeuf',
+    '',
+    'boeuf',
+    ''
+), 
+(
+    'hr:ječmeni',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:sojabönslecitin',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:garnalen',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:búzaglutin',
+    '',
+    '',
+    ''
+), 
+(
+    'en:eier',
+    'eier',
+    '',
+    ''
+), 
+(
+    'de:butterkeks',
+    '',
+    '',
+    'butterkeks'
+), 
+(
+    'de:sesammus',
+    '',
+    '',
+    'sesammus'
+), 
+(
+    'de:pekannusskerne',
+    '',
+    '',
+    'pekannusskerne'
+), 
+(
+    'ru:меланж-яичный',
+    '',
+    '',
+    ''
+), 
+(
+    'de:wildlachs',
+    '',
+    '',
+    'wildlachs'
+), 
+(
+    'ro:muştar',
+    '',
+    '',
+    ''
+), 
+(
+    'es:aveia',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:matieres-grasses-laitieres',
+    '',
+    'matieres-grasses-laitieres',
+    ''
+), 
+(
+    'es:blat',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:sezamová-pasta',
+    '',
+    '',
+    ''
+), 
+(
+    'es:leche-descremada-en-polvo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mandelmus',
+    '',
+    '',
+    'mandelmus'
+), 
+(
+    'fr:langoustes-blanches',
+    '',
+    'langoustes-blanches',
+    ''
+), 
+(
+    'fr:chinchard',
+    '',
+    'chinchard',
+    ''
+), 
+(
+    'no:havregryn',
+    '',
+    '',
+    ''
+), 
+(
+    'en:fruits-a-coque',
+    'fruits-a-coque',
+    '',
+    ''
+), 
+(
+    'fr:lait-de-brebis-pasteurise',
+    '',
+    'lait-de-brebis-pasteurise',
+    ''
+), 
+(
+    'nl:tarwegries',
+    '',
+    '',
+    ''
+), 
+(
+    'de:miesmuschelfleisch',
+    '',
+    '',
+    'miesmuschelfleisch'
+), 
+(
+    'de:wheyprotein',
+    '',
+    '',
+    'wheyprotein'
+), 
+(
+    'de:garnelenpaste',
+    '',
+    '',
+    'garnelenpaste'
+), 
+(
+    'fr:creme-liquide',
+    '',
+    'creme-liquide',
+    ''
+), 
+(
+    'fr:presence-crustace',
+    '',
+    'presence-crustace',
+    ''
+), 
+(
+    'de:fett',
+    '',
+    '',
+    'fett'
+), 
+(
+    'hr:sojine',
+    '',
+    '',
+    ''
+), 
+(
+    'de:parmesankäse',
+    '',
+    '',
+    'parmesankäse'
+), 
+(
+    'de:provolone',
+    '',
+    '',
+    'provolone'
+), 
+(
+    'en:prepared-in-fryer-used-for-product-containing-wheat',
+    'prepared-in-fryer-used-for-product-containing-wheat',
+    '',
+    ''
+), 
+(
+    'pl:mlekowego',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:durumbúzadara',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:яичные-продукты',
+    '',
+    '',
+    ''
+), 
+(
+    'en:tomatoes',
+    'tomatoes',
+    '',
+    ''
+), 
+(
+    'es:leche-y-amarillo-5',
+    '',
+    '',
+    ''
+), 
+(
+    'en:product-has-been-fried-in-rapeseed-oil',
+    'product-has-been-fried-in-rapeseed-oil',
+    '',
+    ''
+), 
+(
+    'nb:melkesukker',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:сыворотка-молочная-сухая',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:lešnici',
+    '',
+    '',
+    ''
+), 
+(
+    'en:shellfish',
+    'shellfish',
+    '',
+    ''
+), 
+(
+    'es:ble',
+    '',
+    '',
+    ''
+), 
+(
+    'de:schwefeldioxyd',
+    '',
+    '',
+    'schwefeldioxyd'
+), 
+(
+    'fr:eperlans',
+    '',
+    'eperlans',
+    ''
+), 
+(
+    'de:sauermolkenpulver',
+    '',
+    '',
+    'sauermolkenpulver'
+), 
+(
+    'nl:havermout',
+    '',
+    '',
+    ''
+), 
+(
+    'de:molkeneiweißisolat',
+    '',
+    '',
+    'molkeneiweißisolat'
+), 
+(
+    'fr:houblons',
+    '',
+    'houblons',
+    ''
+), 
+(
+    'sr:sireva',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:laktoza',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:kuoritut-soijapavut',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:cheddar',
+    '',
+    '',
+    ''
+), 
+(
+    'de:für-kinder-und-schwangere-oder-stillende-frauen-nicht-empfohlen',
+    '',
+    '',
+    'für-kinder-und-schwangere-oder-stillende-frauen-nicht-empfohlen'
+), 
+(
+    'fr:grana-padano-dop',
+    '',
+    'grana-padano-dop',
+    ''
+), 
+(
+    'ru:хлопья-овсяные',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:latte',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:butterreinfett',
+    '',
+    'butterreinfett',
+    ''
+), 
+(
+    'pt:lacticos',
+    '',
+    '',
+    ''
+), 
+(
+    'is:sojalesitin',
+    '',
+    '',
+    ''
+), 
+(
+    'de:1-teil-sirup-mit-6-teilen-wasser-mischen',
+    '',
+    '',
+    '1-teil-sirup-mit-6-teilen-wasser-mischen'
+), 
+(
+    'en:msg',
+    'msg',
+    '',
+    ''
+), 
+(
+    'pl:orzechów-ziemnych',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:făină-albă-de-grâu-650',
+    '',
+    '',
+    ''
+), 
+(
+    'de:natriumcyclamat',
+    '',
+    '',
+    'natriumcyclamat'
+), 
+(
+    'fr:vache',
+    '',
+    'vache',
+    ''
+), 
+(
+    'de:vollkorn-dinkelflocken',
+    '',
+    '',
+    'vollkorn-dinkelflocken'
+), 
+(
+    'en:centeio',
+    'centeio',
+    '',
+    ''
+), 
+(
+    'ro:brânză',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cocoa-butter',
+    'cocoa-butter',
+    '',
+    ''
+), 
+(
+    'es:tarwebloem',
+    '',
+    '',
+    ''
+), 
+(
+    'de:matjesfilets',
+    '',
+    '',
+    'matjesfilets'
+), 
+(
+    'fr:bien-agiter-avant-de-servir-boire-tres-frais-doit-etre-conserve-a-6-c-maximum-a-consommer-rapidement-apres-ouverture',
+    '',
+    'bien-agiter-avant-de-servir-boire-tres-frais-doit-etre-conserve-a-6-c-maximum-a-consommer-rapidement-apres-ouverture',
+    ''
+), 
+(
+    'de:milchzuckererzeugnis',
+    '',
+    '',
+    'milchzuckererzeugnis'
+), 
+(
+    'de:senfpulver',
+    '',
+    '',
+    'senfpulver'
+), 
+(
+    'hr:mliječni',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mleko',
+    '',
+    'mleko',
+    ''
+), 
+(
+    'cs:vaječná-bílkovina',
+    '',
+    '',
+    ''
+), 
+(
+    'de:ammonsulfit',
+    '',
+    '',
+    'ammonsulfit'
+), 
+(
+    'da:sennepsmel',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:surimi',
+    '',
+    '',
+    ''
+), 
+(
+    'en:whey-protein-concentrate',
+    'whey-protein-concentrate',
+    '',
+    ''
+), 
+(
+    'en:celeri',
+    'celeri',
+    '',
+    ''
+), 
+(
+    'nb:sulfitt',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:gräddfil',
+    '',
+    '',
+    ''
+), 
+(
+    'tr:buğday-unu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sepia',
+    '',
+    'sepia',
+    ''
+), 
+(
+    'fr:dorade-sebaste',
+    '',
+    'dorade-sebaste',
+    ''
+), 
+(
+    'id:antioksidan-tbhq',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gerstenmalz-extrakt',
+    '',
+    '',
+    'gerstenmalz-extrakt'
+), 
+(
+    'fr:ble-khorasan-kamut',
+    '',
+    'ble-khorasan-kamut',
+    ''
+), 
+(
+    'de:saure-sahne',
+    '',
+    '',
+    'saure-sahne'
+), 
+(
+    'fr:amandes-toastees',
+    '',
+    'amandes-toastees',
+    ''
+), 
+(
+    'en:whey-protein-isolate',
+    'whey-protein-isolate',
+    '',
+    ''
+), 
+(
+    'fr:schalenfruchte',
+    '',
+    'schalenfruchte',
+    ''
+), 
+(
+    'en:sojalecithine',
+    'sojalecithine',
+    '',
+    ''
+), 
+(
+    'de:molkenpermeatpulver',
+    '',
+    '',
+    'molkenpermeatpulver'
+), 
+(
+    'pl:pszeniczny',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:peanøttolje',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:poudre-de-petit-lait',
+    '',
+    'poudre-de-petit-lait',
+    ''
+), 
+(
+    'id:pati-gandum',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:kiwi',
+    '',
+    'kiwi',
+    ''
+), 
+(
+    'fr:lactase',
+    '',
+    'lactase',
+    ''
+), 
+(
+    'de:milchsäurekultur',
+    '',
+    '',
+    'milchsäurekultur'
+), 
+(
+    'sr:mlečni-protein',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:suflites',
+    '',
+    'suflites',
+    ''
+), 
+(
+    'fr:pignon-de-pin',
+    '',
+    'pignon-de-pin',
+    ''
+), 
+(
+    'fr:noix-de-muscade',
+    '',
+    'noix-de-muscade',
+    ''
+), 
+(
+    'fr:lactee',
+    '',
+    'lactee',
+    ''
+), 
+(
+    'fi:voirasva',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-en-poudre',
+    '',
+    'fromage-en-poudre',
+    ''
+), 
+(
+    'da:æggeblommepulver',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:blåmögelost',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:selera',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchcreme',
+    '',
+    '',
+    'milchcreme'
+), 
+(
+    'en:emulsifier',
+    'emulsifier',
+    '',
+    ''
+), 
+(
+    'nb:reker',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:proteinas-lacteas',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:surutka-u-prahu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:grillons',
+    '',
+    'grillons',
+    ''
+), 
+(
+    'de:leinsamen',
+    '',
+    '',
+    'leinsamen'
+), 
+(
+    'hu:kecsketej',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:crevettes-nordiques',
+    '',
+    'crevettes-nordiques',
+    ''
+), 
+(
+    'en:jaja',
+    'jaja',
+    '',
+    ''
+), 
+(
+    'de:seelachs',
+    '',
+    '',
+    'seelachs'
+), 
+(
+    'fr:quenelle',
+    '',
+    'quenelle',
+    ''
+), 
+(
+    'en:peanut-oil',
+    'peanut-oil',
+    '',
+    ''
+), 
+(
+    'es:maiz',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:pšenični',
+    '',
+    '',
+    ''
+), 
+(
+    'de:macadamianusskerne',
+    '',
+    '',
+    'macadamianusskerne'
+), 
+(
+    'es:avoine',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:venus',
+    '',
+    'venus',
+    ''
+), 
+(
+    'fr:emb',
+    '',
+    'emb',
+    ''
+), 
+(
+    'sl:sojin',
+    '',
+    '',
+    ''
+), 
+(
+    'en:nusse',
+    'nusse',
+    '',
+    ''
+), 
+(
+    'fr:kuhmilch',
+    '',
+    'kuhmilch',
+    ''
+), 
+(
+    'nb:smørfett',
+    '',
+    '',
+    ''
+), 
+(
+    'it:arachide',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mandellikör',
+    '',
+    '',
+    'mandellikör'
+), 
+(
+    'de:roggengrießkleie',
+    '',
+    '',
+    'roggengrießkleie'
+), 
+(
+    'sv:modifierad-vetestärkelse',
+    '',
+    '',
+    ''
+), 
+(
+    'de:chester',
+    '',
+    '',
+    'chester'
+), 
+(
+    'en:derivados-de-soja',
+    'derivados-de-soja',
+    '',
+    ''
+), 
+(
+    'fr:isolat-de-proteine-de-soja',
+    '',
+    'isolat-de-proteine-de-soja',
+    ''
+), 
+(
+    'cs:sýry',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:millet',
+    '',
+    'millet',
+    ''
+), 
+(
+    'de:milcheiweißisolat',
+    '',
+    '',
+    'milcheiweißisolat'
+), 
+(
+    'es:linaza',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:fenylalanin',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:melksuiker',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cheddar-cheese',
+    'cheddar-cheese',
+    '',
+    ''
+), 
+(
+    'es:arandano',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lactico',
+    '',
+    'lactico',
+    ''
+), 
+(
+    'de:milchschokoladenstreusel',
+    '',
+    '',
+    'milchschokoladenstreusel'
+), 
+(
+    'fr:cerises',
+    '',
+    'cerises',
+    ''
+), 
+(
+    'fr:farine-de-ble-tendre',
+    '',
+    'farine-de-ble-tendre',
+    ''
+), 
+(
+    'de:hartweizenerzeugnis',
+    '',
+    '',
+    'hartweizenerzeugnis'
+), 
+(
+    'cs:ječmenný',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:makrela',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenvollkornmalzmehl',
+    '',
+    '',
+    'weizenvollkornmalzmehl'
+), 
+(
+    'fr:wasabi',
+    '',
+    'wasabi',
+    ''
+), 
+(
+    'ru:молочные-продукты',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lactate',
+    '',
+    'lactate',
+    ''
+), 
+(
+    'fr:tenebrions',
+    '',
+    'tenebrions',
+    ''
+), 
+(
+    'de:couscous',
+    '',
+    '',
+    'couscous'
+), 
+(
+    'es:proteina-de-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'it:vino-bianco',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:malte-d-orge',
+    '',
+    'malte-d-orge',
+    ''
+), 
+(
+    'cs:ječná',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haferﬂocken',
+    '',
+    '',
+    'haferﬂocken'
+), 
+(
+    'fr:flocons-de-ble',
+    '',
+    'flocons-de-ble',
+    ''
+), 
+(
+    'fr:e220',
+    '',
+    'e220',
+    ''
+), 
+(
+    'de:phenylalanin',
+    '',
+    '',
+    'phenylalanin'
+), 
+(
+    'de:molkenerzeugnisse',
+    '',
+    '',
+    'molkenerzeugnisse'
+), 
+(
+    'fr:chocolat',
+    '',
+    'chocolat',
+    ''
+), 
+(
+    'en:hvetemel',
+    'hvetemel',
+    '',
+    ''
+), 
+(
+    'sl:mlečne',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:tourteaux',
+    '',
+    'tourteaux',
+    ''
+), 
+(
+    'de:cereals-contaning-gluten',
+    '',
+    '',
+    'cereals-contaning-gluten'
+), 
+(
+    'fr:coco',
+    '',
+    'coco',
+    ''
+), 
+(
+    'sv:rågsurdeg',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:plnotučné-mléko',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ovo',
+    '',
+    'ovo',
+    ''
+), 
+(
+    'es:proteina-de-soya',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:kikiriki',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenkleingebäck',
+    '',
+    '',
+    'weizenkleingebäck'
+), 
+(
+    'fr:lecithine',
+    '',
+    'lecithine',
+    ''
+), 
+(
+    'de:mascarpone',
+    '',
+    '',
+    'mascarpone'
+), 
+(
+    'ru:мука-пшеничная-высшего-сорта',
+    '',
+    '',
+    ''
+), 
+(
+    'es:no-aplica',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:espadon',
+    '',
+    'espadon',
+    ''
+), 
+(
+    'en:pea-protein',
+    'pea-protein',
+    '',
+    ''
+), 
+(
+    'de:weizenmalzschrot',
+    '',
+    '',
+    'weizenmalzschrot'
+), 
+(
+    'de:macadamianuss',
+    '',
+    '',
+    'macadamianuss'
+), 
+(
+    'el:γάλακτος',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:gerstenmalz',
+    '',
+    'gerstenmalz',
+    ''
+), 
+(
+    'es:productos-y-subproductos-lacteos',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:solidos-lacteos',
+    '',
+    'solidos-lacteos',
+    ''
+), 
+(
+    'el:οχι',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hühnerei-trockeneiweiss',
+    '',
+    '',
+    'hühnerei-trockeneiweiss'
+), 
+(
+    'de:soja-lecithin',
+    '',
+    '',
+    'soja-lecithin'
+), 
+(
+    'fr:germes-de-ble',
+    '',
+    'germes-de-ble',
+    ''
+), 
+(
+    'lt:sviestu',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dinkelweizenkleie',
+    '',
+    '',
+    'dinkelweizenkleie'
+), 
+(
+    'en:sulfitos',
+    'sulfitos',
+    '',
+    ''
+), 
+(
+    'fr:filetage',
+    '',
+    'filetage',
+    ''
+), 
+(
+    'lv:vājpiens',
+    '',
+    '',
+    ''
+), 
+(
+    'de:nicht-unverdünnt-konsumieren',
+    '',
+    '',
+    'nicht-unverdünnt-konsumieren'
+), 
+(
+    'cs:hořčičné-semeno',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:hvetefiber',
+    '',
+    '',
+    ''
+), 
+(
+    'en:herring',
+    'herring',
+    '',
+    ''
+), 
+(
+    'en:oat-wheat',
+    'oat-wheat',
+    '',
+    ''
+), 
+(
+    'sr:hlebne-mrvice',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:gs1-t4078-ca',
+    '',
+    'gs1-t4078-ca',
+    ''
+), 
+(
+    'cs:pšeničné-vločky',
+    '',
+    '',
+    ''
+), 
+(
+    'de:topfen',
+    '',
+    '',
+    'topfen'
+), 
+(
+    'es:ajo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sojalecithin',
+    'sojalecithin',
+    '',
+    ''
+), 
+(
+    'de:sardellenpaste',
+    '',
+    '',
+    'sardellenpaste'
+), 
+(
+    'sv:kaliumdisulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'de:halbhartkäse',
+    '',
+    '',
+    'halbhartkäse'
+), 
+(
+    'sr:sira',
+    '',
+    '',
+    ''
+), 
+(
+    'it:salmone',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:sejrom',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-parmesan',
+    '',
+    'fromage-parmesan',
+    ''
+), 
+(
+    'de:seelachsfilet',
+    '',
+    '',
+    'seelachsfilet'
+), 
+(
+    'sr:ječma',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:paprika',
+    '',
+    'paprika',
+    ''
+), 
+(
+    'fr:proteines-de-ble',
+    '',
+    'proteines-de-ble',
+    ''
+), 
+(
+    'fr:persil',
+    '',
+    'persil',
+    ''
+), 
+(
+    'en:coconuts',
+    'coconuts',
+    '',
+    ''
+), 
+(
+    'nb:laks',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:alaska-pollock-filé',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:okara',
+    '',
+    'okara',
+    ''
+), 
+(
+    'de:kasein',
+    '',
+    '',
+    'kasein'
+), 
+(
+    'en:margarine',
+    'margarine',
+    '',
+    ''
+), 
+(
+    'el:σιταριού',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roomboter',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:ovesné-vločky',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:obiloviny',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:kaseiini',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:ruginiai',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:lososa',
+    '',
+    '',
+    ''
+), 
+(
+    'en:wheatgerm',
+    'wheatgerm',
+    '',
+    ''
+), 
+(
+    'fr:arome-naturel',
+    '',
+    'arome-naturel',
+    ''
+), 
+(
+    'hr:zobene',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:epautre',
+    '',
+    'epautre',
+    ''
+), 
+(
+    'fr:sulfiltes',
+    '',
+    'sulfiltes',
+    ''
+), 
+(
+    'en:blueberries',
+    'blueberries',
+    '',
+    ''
+), 
+(
+    'en:curd',
+    'curd',
+    '',
+    ''
+), 
+(
+    'it:metabisolfito-di-potassio',
+    '',
+    '',
+    ''
+), 
+(
+    'tr:soya-lesitini',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mais',
+    '',
+    '',
+    'mais'
+), 
+(
+    'fr:souffles-sales',
+    '',
+    'souffles-sales',
+    ''
+), 
+(
+    'en:graines-de-moutarde',
+    'graines-de-moutarde',
+    '',
+    ''
+), 
+(
+    'de:mandelprotein',
+    '',
+    '',
+    'mandelprotein'
+), 
+(
+    'en:wheat-protein',
+    'wheat-protein',
+    '',
+    ''
+), 
+(
+    'ru:молоко-сухое-цельное',
+    '',
+    '',
+    ''
+), 
+(
+    'en:triticale',
+    'triticale',
+    '',
+    ''
+), 
+(
+    'fr:souffles-a-la-cacahuete',
+    '',
+    'souffles-a-la-cacahuete',
+    ''
+), 
+(
+    'fr:lalt',
+    '',
+    'lalt',
+    ''
+), 
+(
+    'fr:apio',
+    '',
+    'apio',
+    ''
+), 
+(
+    'fr:soya-et-ble-gluten',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roggenganzkorn',
+    '',
+    '',
+    'roggenganzkorn'
+), 
+(
+    'en:derivados-de-trigo',
+    'derivados-de-trigo',
+    '',
+    ''
+), 
+(
+    'fr:sachet-d-assaisonnement',
+    '',
+    'sachet-d-assaisonnement',
+    ''
+), 
+(
+    'pl:tunczyk',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:pšenice-špalda',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:natriumvätesulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:ruginis',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:huile-de-noix',
+    '',
+    'huile-de-noix',
+    ''
+), 
+(
+    'de:roggenvollkornsauerteig',
+    '',
+    '',
+    'roggenvollkornsauerteig'
+), 
+(
+    'de:hafer-knusper-flocken',
+    '',
+    '',
+    'hafer-knusper-flocken'
+), 
+(
+    'it:lait',
+    '',
+    '',
+    ''
+), 
+(
+    'de:el',
+    '',
+    '',
+    'el'
+), 
+(
+    'de:weizengrütze',
+    '',
+    '',
+    'weizengrütze'
+), 
+(
+    'sv:rågkärnor',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:acide-citrique',
+    '',
+    'acide-citrique',
+    ''
+), 
+(
+    'it:ricotta',
+    '',
+    '',
+    ''
+), 
+(
+    'en:joghurt',
+    'joghurt',
+    '',
+    ''
+), 
+(
+    'no:melk',
+    '',
+    '',
+    ''
+), 
+(
+    'id:natrium-metabisulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ufs',
+    '',
+    'ufs',
+    ''
+), 
+(
+    'pt:trigo-espelta',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mandelgrieß',
+    '',
+    '',
+    'mandelgrieß'
+), 
+(
+    'en:cereals-contaning-gluten',
+    'cereals-contaning-gluten',
+    '',
+    ''
+), 
+(
+    'pl:selerem',
+    '',
+    '',
+    ''
+), 
+(
+    'de:jogurt-mild',
+    '',
+    '',
+    'jogurt-mild'
+), 
+(
+    'de:paranuss',
+    '',
+    '',
+    'paranuss'
+), 
+(
+    'de:sojaproteincrispies',
+    '',
+    '',
+    'sojaproteincrispies'
+), 
+(
+    'pt:cavala',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mascarpone-frischkäse',
+    '',
+    '',
+    'mascarpone-frischkäse'
+), 
+(
+    'sr:ječam',
+    '',
+    '',
+    ''
+), 
+(
+    'es:jmaf',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:ечемичен-малц',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:sojos',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojabloem',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:zobeno',
+    '',
+    '',
+    ''
+), 
+(
+    'en:oat-flour',
+    'oat-flour',
+    '',
+    ''
+), 
+(
+    'en:mani',
+    'mani',
+    '',
+    ''
+), 
+(
+    'fr:amandes-effilees',
+    '',
+    'amandes-effilees',
+    ''
+), 
+(
+    'nb:fullkornsrugmel',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vinaigre',
+    '',
+    'vinaigre',
+    ''
+), 
+(
+    'de:hartweizengriessteigwaren',
+    '',
+    '',
+    'hartweizengriessteigwaren'
+), 
+(
+    'es:contiene-trigo-gluten',
+    '',
+    '',
+    ''
+), 
+(
+    'de:lactobacillus-acidophilus',
+    '',
+    '',
+    'lactobacillus-acidophilus'
+), 
+(
+    'fr:cevada',
+    '',
+    'cevada',
+    ''
+), 
+(
+    'ro:metabisulfit-de-sodiu',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sußmolkenpulver',
+    '',
+    '',
+    'sußmolkenpulver'
+), 
+(
+    'en:laktoza',
+    'laktoza',
+    '',
+    ''
+), 
+(
+    'de:volimilchpulver',
+    '',
+    '',
+    'volimilchpulver'
+), 
+(
+    'fi:seiti',
+    '',
+    '',
+    ''
+), 
+(
+    'ko:밀',
+    '',
+    '',
+    ''
+), 
+(
+    'en:rolled-oats',
+    'rolled-oats',
+    '',
+    ''
+), 
+(
+    'fr:fruits-a-coques-noisettes',
+    '',
+    'fruits-a-coques-noisettes',
+    ''
+), 
+(
+    'de:cerealien',
+    '',
+    '',
+    'cerealien'
+), 
+(
+    'fr:sodium',
+    '',
+    'sodium',
+    ''
+), 
+(
+    'fr:weizen',
+    '',
+    'weizen',
+    ''
+), 
+(
+    'en:selderij',
+    'selderij',
+    '',
+    ''
+), 
+(
+    'de:milcheiweißpulver',
+    '',
+    '',
+    'milcheiweißpulver'
+), 
+(
+    'en:strawberries',
+    'strawberries',
+    '',
+    ''
+), 
+(
+    'en:casein',
+    'casein',
+    '',
+    ''
+), 
+(
+    'fr:e224',
+    '',
+    'e224',
+    ''
+), 
+(
+    'fr:amendoins',
+    '',
+    'amendoins',
+    ''
+), 
+(
+    'fr:serum-de-lait',
+    '',
+    'serum-de-lait',
+    ''
+), 
+(
+    'de:butterstreusel',
+    '',
+    '',
+    'butterstreusel'
+), 
+(
+    'nl:ble',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollkornroggen',
+    '',
+    '',
+    'vollkornroggen'
+), 
+(
+    'fr:dreche',
+    '',
+    'dreche',
+    ''
+), 
+(
+    'hr:mliječne-bjelančevine',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:susan',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:oeuf-moutarde',
+    '',
+    'oeuf-moutarde',
+    ''
+), 
+(
+    'es:leche-de-vaca',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:gult-senapsfrö',
+    '',
+    '',
+    ''
+), 
+(
+    'de:brie',
+    '',
+    '',
+    'brie'
+), 
+(
+    'pl:pszenicą',
+    '',
+    '',
+    ''
+), 
+(
+    'en:milk-protein-isolate',
+    'milk-protein-isolate',
+    '',
+    ''
+), 
+(
+    'hr:orašastih-plodova',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:amandons',
+    '',
+    'amandons',
+    ''
+), 
+(
+    'fr:matiere-grasse-laitiere-anhydre',
+    '',
+    'matiere-grasse-laitiere-anhydre',
+    ''
+), 
+(
+    'pt:caju',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:serum',
+    '',
+    'serum',
+    ''
+), 
+(
+    'nl:pindakaas',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mandelpaste',
+    '',
+    '',
+    'mandelpaste'
+), 
+(
+    'it:pistacchio',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:froid',
+    '',
+    'froid',
+    ''
+), 
+(
+    'de:selleriesaat',
+    '',
+    '',
+    'selleriesaat'
+), 
+(
+    'de:sojadrink',
+    '',
+    '',
+    'sojadrink'
+), 
+(
+    'it:trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:varške',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:miel',
+    '',
+    'miel',
+    ''
+), 
+(
+    'en:sementes-de-sesamo',
+    'sementes-de-sesamo',
+    '',
+    ''
+), 
+(
+    'fr:semoule-de-ble',
+    '',
+    'semoule-de-ble',
+    ''
+), 
+(
+    'fr:natriummetabisulfit',
+    '',
+    'natriummetabisulfit',
+    ''
+), 
+(
+    'hr:ječmeni-slad',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haferkerne',
+    '',
+    '',
+    'haferkerne'
+), 
+(
+    'fr:glucose',
+    '',
+    'glucose',
+    ''
+), 
+(
+    'fr:vollmilch',
+    '',
+    'vollmilch',
+    ''
+), 
+(
+    'fr:ales',
+    '',
+    'ales',
+    ''
+), 
+(
+    'he:שעורה',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:oignons',
+    '',
+    'oignons',
+    ''
+), 
+(
+    'fr:gluten-vital-de-ble',
+    '',
+    'gluten-vital-de-ble',
+    ''
+), 
+(
+    'de:maltodextrin',
+    '',
+    '',
+    'maltodextrin'
+), 
+(
+    'de:reis-gerstenmalz-sirup',
+    '',
+    '',
+    'reis-gerstenmalz-sirup'
+), 
+(
+    'fr:saumonette',
+    '',
+    'saumonette',
+    ''
+), 
+(
+    'de:weizendextrin',
+    '',
+    '',
+    'weizendextrin'
+), 
+(
+    'fr:sojaol',
+    '',
+    'sojaol',
+    ''
+), 
+(
+    'en:bran',
+    'bran',
+    '',
+    ''
+), 
+(
+    'es:disulito-sodico',
+    '',
+    '',
+    ''
+), 
+(
+    'es:queso-cheddar',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:kjernemelkpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:salieblad',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:búzával',
+    '',
+    '',
+    ''
+), 
+(
+    'es:tartazina',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:kárminsav',
+    '',
+    '',
+    ''
+), 
+(
+    'es:gluten-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:roggemeel',
+    '',
+    '',
+    ''
+), 
+(
+    'en:haver',
+    'haver',
+    '',
+    ''
+), 
+(
+    'fr:cephalopodes',
+    '',
+    'cephalopodes',
+    ''
+), 
+(
+    'fr:ble-beurre',
+    '',
+    'ble-beurre',
+    ''
+), 
+(
+    'fr:fromage-tomme',
+    '',
+    'fromage-tomme',
+    ''
+), 
+(
+    'ca:anxova',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:pastöriserad-skummjölk',
+    '',
+    '',
+    ''
+), 
+(
+    'en:almond-flour',
+    'almond-flour',
+    '',
+    ''
+), 
+(
+    'fr:lait1',
+    '',
+    'lait1',
+    ''
+), 
+(
+    'fr:vinaigre-d-alcool',
+    '',
+    'vinaigre-d-alcool',
+    ''
+), 
+(
+    'es:tomate',
+    '',
+    '',
+    ''
+), 
+(
+    'id:kedelai',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenvolkornmehl',
+    '',
+    '',
+    'weizenvolkornmehl'
+), 
+(
+    'de:dinkelvollkornspaghetti',
+    '',
+    '',
+    'dinkelvollkornspaghetti'
+), 
+(
+    'no:rug',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kuhmilchmolke',
+    '',
+    '',
+    'kuhmilchmolke'
+), 
+(
+    'fr:huile-de-tournesol',
+    '',
+    'huile-de-tournesol',
+    ''
+), 
+(
+    'en:chocolate',
+    'chocolate',
+    '',
+    ''
+), 
+(
+    'sv:pastöriserad-mjölk',
+    '',
+    '',
+    ''
+), 
+(
+    'en:mosterd',
+    'mosterd',
+    '',
+    ''
+), 
+(
+    'no:peanøtter',
+    '',
+    '',
+    ''
+), 
+(
+    'de:fisch-filet',
+    '',
+    '',
+    'fisch-filet'
+), 
+(
+    'de:milchflocken',
+    '',
+    '',
+    'milchflocken'
+), 
+(
+    'cs:vaječné',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sola',
+    '',
+    'sola',
+    ''
+), 
+(
+    'de:grünkerngrütze',
+    '',
+    '',
+    'grünkerngrütze'
+), 
+(
+    'pt:vaca',
+    '',
+    '',
+    ''
+), 
+(
+    'de:getreide',
+    '',
+    '',
+    'getreide'
+), 
+(
+    'cs:kondenzované-mléko',
+    '',
+    '',
+    ''
+), 
+(
+    'en:γλουτένη',
+    'γλουτένη',
+    '',
+    ''
+), 
+(
+    'cs:žloutek',
+    '',
+    '',
+    ''
+), 
+(
+    'ca:anxoves',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:szójaszósz',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:goberge',
+    '',
+    '',
+    ''
+), 
+(
+    'en:yolk',
+    'yolk',
+    '',
+    ''
+), 
+(
+    'fr:vinaigre-de-vin-blanc',
+    '',
+    'vinaigre-de-vin-blanc',
+    ''
+), 
+(
+    'fr:ble-noir',
+    '',
+    'ble-noir',
+    ''
+), 
+(
+    'en:סויה',
+    'סויה',
+    '',
+    ''
+), 
+(
+    'pl:z-mleka',
+    '',
+    '',
+    ''
+), 
+(
+    'it:metabisolfito',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenvollkommehl',
+    '',
+    '',
+    'weizenvollkommehl'
+), 
+(
+    'fr:nchois',
+    '',
+    'nchois',
+    ''
+), 
+(
+    'hr:pira',
+    '',
+    '',
+    ''
+), 
+(
+    'ca:avellanes',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:farine-de-seigle-complet',
+    '',
+    'farine-de-seigle-complet',
+    ''
+), 
+(
+    'fr:lait-ecreme-rehydrate-eau-sirop-de-glucose-sucre-graisse-de-coprah-cacao-maigre-en-poudre-lactose',
+    '',
+    'lait-ecreme-rehydrate-eau-sirop-de-glucose-sucre-graisse-de-coprah-cacao-maigre-en-poudre-lactose',
+    ''
+), 
+(
+    'fi:soijapohja',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:siřičitý',
+    '',
+    '',
+    ''
+), 
+(
+    'es:huevos-de-lupino',
+    '',
+    '',
+    ''
+), 
+(
+    'es:crevettes',
+    '',
+    '',
+    ''
+), 
+(
+    'es:pescadilla',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sauce-aigre-douce-20g-12',
+    '',
+    'sauce-aigre-douce-20g-12',
+    ''
+), 
+(
+    'de:hafermalz',
+    '',
+    '',
+    'hafermalz'
+), 
+(
+    'de:maisstärke',
+    '',
+    '',
+    'maisstärke'
+), 
+(
+    'sr:mlečni-proteini',
+    '',
+    '',
+    ''
+), 
+(
+    'no:nøtter',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:creme-sterilisee',
+    '',
+    'creme-sterilisee',
+    ''
+), 
+(
+    'de:sesamepaste',
+    '',
+    '',
+    'sesamepaste'
+), 
+(
+    'de:dinkel-vollkornmehl',
+    '',
+    '',
+    'dinkel-vollkornmehl'
+), 
+(
+    'nl:tarwezetmelen',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sahne',
+    '',
+    'sahne',
+    ''
+), 
+(
+    'de:pecorino-hartkäse',
+    '',
+    '',
+    'pecorino-hartkäse'
+), 
+(
+    'sv:torskfilé',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:daurade',
+    '',
+    'daurade',
+    ''
+), 
+(
+    'hr:žumanjci',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milcheiweis',
+    '',
+    '',
+    'milcheiweis'
+), 
+(
+    'de:roggenvollkornmeh',
+    '',
+    '',
+    'roggenvollkornmeh'
+), 
+(
+    'cs:losos-obecný',
+    '',
+    '',
+    ''
+), 
+(
+    'de:speisesalz',
+    '',
+    '',
+    'speisesalz'
+), 
+(
+    'hu:zellergyökér',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:crepe',
+    '',
+    'crepe',
+    ''
+), 
+(
+    'da:smørolie',
+    '',
+    '',
+    ''
+), 
+(
+    'es:solidos-lacteos',
+    '',
+    '',
+    ''
+), 
+(
+    'en:pine-nuts',
+    'pine-nuts',
+    '',
+    ''
+), 
+(
+    'fr:non-precise',
+    '',
+    'non-precise',
+    ''
+), 
+(
+    'fr:antioxydants-acide-ascorbique',
+    '',
+    'antioxydants-acide-ascorbique',
+    ''
+), 
+(
+    'es:aroma',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cinnamon',
+    'cinnamon',
+    '',
+    ''
+), 
+(
+    'en:amande',
+    'amande',
+    '',
+    ''
+), 
+(
+    'de:weizenpflanzenfaser',
+    '',
+    '',
+    'weizenpflanzenfaser'
+), 
+(
+    'fr:nitrite-de-sodium',
+    '',
+    'nitrite-de-sodium',
+    ''
+), 
+(
+    'cs:žitné',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:contient-ble-seigle-triticale-orge-avoine',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:créme-fraiche',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:zola',
+    '',
+    'zola',
+    ''
+), 
+(
+    'fr:preparation-fromagere',
+    '',
+    'preparation-fromagere',
+    ''
+), 
+(
+    'ru:мука-пшеничная-хлебопекарная-второго-сорта',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:saint-marcellin',
+    '',
+    'saint-marcellin',
+    ''
+), 
+(
+    'hr:sir',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vii',
+    '',
+    'vii',
+    ''
+), 
+(
+    'hu:tojásból',
+    '',
+    '',
+    ''
+), 
+(
+    'it:formaggio-edam',
+    '',
+    '',
+    ''
+), 
+(
+    'en:canola',
+    'canola',
+    '',
+    ''
+), 
+(
+    'ru:твердой-пшеницы',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:majonéza',
+    '',
+    '',
+    ''
+), 
+(
+    'de:alpenmilchschokoladestückchen',
+    '',
+    '',
+    'alpenmilchschokoladestückchen'
+), 
+(
+    'fr:crustacees',
+    '',
+    'crustacees',
+    ''
+), 
+(
+    'es:lactico',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:soyabønne',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haselmussmasse',
+    '',
+    '',
+    'haselmussmasse'
+), 
+(
+    'hr:frumento',
+    '',
+    '',
+    ''
+), 
+(
+    'es:jarabe-de-maiz-de-alta-fructosa',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:menthol',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:пророщенное-зерно-овса-голозёрного',
+    '',
+    '',
+    ''
+), 
+(
+    'en:derivados-de-cevada',
+    'derivados-de-cevada',
+    '',
+    ''
+), 
+(
+    'en:paprika',
+    'paprika',
+    '',
+    ''
+), 
+(
+    'cs:pšeničný-kvas',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:pšeničnog',
+    '',
+    '',
+    ''
+), 
+(
+    'th:แป้งสาลี-ไข่ไก่-นม-และถั่วเหลือง',
+    '',
+    '',
+    ''
+), 
+(
+    'el:σταριού',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:camarao-inteiro',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:e500',
+    '',
+    'e500',
+    ''
+), 
+(
+    'fr:ble-oeufs',
+    '',
+    'ble-oeufs',
+    ''
+), 
+(
+    'sl:zelena',
+    '',
+    '',
+    ''
+), 
+(
+    'id:pewarna-alami-karamel-iv',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:laktoza',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kondesmilch',
+    '',
+    '',
+    'kondesmilch'
+), 
+(
+    'sr:pšenični-skrob',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ascorbate-de-sodium',
+    '',
+    'ascorbate-de-sodium',
+    ''
+), 
+(
+    'de:magemilchpulver',
+    '',
+    '',
+    'magemilchpulver'
+), 
+(
+    'de:gerstengraupen',
+    '',
+    '',
+    'gerstengraupen'
+), 
+(
+    'fr:poires',
+    '',
+    'poires',
+    ''
+), 
+(
+    'cs:vajecné-žloutky',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:соевый-лецитин',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:edamjuusto',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pulpe-d-oignon',
+    '',
+    'pulpe-d-oignon',
+    ''
+), 
+(
+    'es:almandras',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:eiwit',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:queues-de-langoustes-blanches',
+    '',
+    'queues-de-langoustes-blanches',
+    ''
+), 
+(
+    'fr:gs1-t4078-al',
+    '',
+    'gs1-t4078-al',
+    ''
+), 
+(
+    'es:proteina-de-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cream-powder',
+    'cream-powder',
+    '',
+    ''
+), 
+(
+    'fr:parmigiano-regiano',
+    '',
+    'parmigiano-regiano',
+    ''
+), 
+(
+    'es:metabisulfito-de-sodio',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:sirutka-u-prahu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:farine-complete',
+    '',
+    'farine-complete',
+    ''
+), 
+(
+    'fr:celeri-deshydrate',
+    '',
+    'celeri-deshydrate',
+    ''
+), 
+(
+    'da:fåremælk',
+    '',
+    '',
+    ''
+), 
+(
+    'en:disulfite',
+    'disulfite',
+    '',
+    ''
+), 
+(
+    'sv:mjölkdryck',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sussmolkenpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:mléčné',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:arachidowych',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:kalanliha',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lingue',
+    '',
+    'lingue',
+    ''
+), 
+(
+    'fr:orzo',
+    '',
+    'orzo',
+    ''
+), 
+(
+    'fr:lactose-poudre-de-lait',
+    '',
+    'lactose-poudre-de-lait',
+    ''
+), 
+(
+    'fr:gs1-t4078-st',
+    '',
+    'gs1-t4078-st',
+    ''
+), 
+(
+    'el:σίκαλης',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:мука-полбяная-цельнозерновая',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ovos',
+    '',
+    'ovos',
+    ''
+), 
+(
+    'sv:fiskkött',
+    '',
+    '',
+    ''
+), 
+(
+    'es:suero-de-leche-en-polvo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ogm',
+    '',
+    'ogm',
+    ''
+), 
+(
+    'de:erdnusspaste',
+    '',
+    '',
+    'erdnusspaste'
+), 
+(
+    'en:baking-soda',
+    'baking-soda',
+    '',
+    ''
+), 
+(
+    'fr:acide',
+    '',
+    'acide',
+    ''
+), 
+(
+    'pl:proszku',
+    '',
+    '',
+    ''
+), 
+(
+    'en:pasteurized-milk',
+    'pasteurized-milk',
+    '',
+    ''
+), 
+(
+    'fr:fromage-frais-saveur-framboise-lait',
+    '',
+    'fromage-frais-saveur-framboise-lait',
+    ''
+), 
+(
+    'nb:kremfløte',
+    '',
+    '',
+    ''
+), 
+(
+    'de:flüssiges',
+    '',
+    '',
+    'flüssiges'
+), 
+(
+    'nl:tĳm',
+    '',
+    '',
+    ''
+), 
+(
+    'en:salt',
+    'salt',
+    '',
+    ''
+), 
+(
+    'cs:sójová-bílkovina',
+    '',
+    '',
+    ''
+), 
+(
+    'de:créme-fraîche',
+    '',
+    '',
+    'créme-fraîche'
+), 
+(
+    'sv:majs',
+    '',
+    '',
+    ''
+), 
+(
+    'en:braunsenfsaat',
+    'braunsenfsaat',
+    '',
+    ''
+), 
+(
+    'bg:сирене',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:chair-de-poisson',
+    '',
+    'chair-de-poisson',
+    ''
+), 
+(
+    'de:doppelrahmfrischkäse',
+    '',
+    '',
+    'doppelrahmfrischkäse'
+), 
+(
+    'fr:epices-carottes',
+    '',
+    'epices-carottes',
+    ''
+), 
+(
+    'nl:speltmeel',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:creme-dessert-au-chocolat',
+    '',
+    'creme-dessert-au-chocolat',
+    ''
+), 
+(
+    'fr:batonnets-de-sorbet-a-l-orange',
+    '',
+    'batonnets-de-sorbet-a-l-orange',
+    ''
+), 
+(
+    'es:arandanos',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:hering',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:malts-d-orge-avoine',
+    '',
+    'malts-d-orge-avoine',
+    ''
+), 
+(
+    'fr:creme-pasteurisee',
+    '',
+    'creme-pasteurisee',
+    ''
+), 
+(
+    'fr:weizenkleber',
+    '',
+    'weizenkleber',
+    ''
+), 
+(
+    'fr:rosacees-fraises',
+    '',
+    'rosacees-fraises',
+    ''
+), 
+(
+    'es:lehce-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mini-tartelette-quiche-lardon-cuit-fume-26',
+    '',
+    'mini-tartelette-quiche-lardon-cuit-fume-26',
+    ''
+), 
+(
+    'fr:farine-d-epeautre-complet',
+    '',
+    'farine-d-epeautre-complet',
+    ''
+), 
+(
+    'hr:sulfiti',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:pšenična-durum-krupica',
+    '',
+    '',
+    ''
+), 
+(
+    'en:crustacea',
+    'crustacea',
+    '',
+    ''
+), 
+(
+    'es:caballa',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:aggvita',
+    '',
+    'aggvita',
+    ''
+), 
+(
+    'de:erdnussaroma',
+    '',
+    '',
+    'erdnussaroma'
+), 
+(
+    'en:lactic-acid-bacteria',
+    'lactic-acid-bacteria',
+    '',
+    ''
+), 
+(
+    'de:aufgrund-des-erhöhten-koffeingehaltes-bitte-nur-in-begrenzten-mengen-verzehren',
+    '',
+    '',
+    'aufgrund-des-erhöhten-koffeingehaltes-bitte-nur-in-begrenzten-mengen-verzehren'
+), 
+(
+    'sr:pšenična-krupica',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:maslo',
+    '',
+    '',
+    ''
+), 
+(
+    'es:praline',
+    '',
+    '',
+    ''
+), 
+(
+    'en:organic-wheat-flour',
+    'organic-wheat-flour',
+    '',
+    ''
+), 
+(
+    'it:avoine',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:legumes',
+    '',
+    'legumes',
+    ''
+), 
+(
+    'fr:faisselle',
+    '',
+    'faisselle',
+    ''
+), 
+(
+    'en:crickets',
+    'crickets',
+    '',
+    ''
+), 
+(
+    'en:vegan',
+    'vegan',
+    '',
+    ''
+), 
+(
+    'pt:sapateira',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:druivensuiker',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cheddar-rouge',
+    '',
+    'cheddar-rouge',
+    ''
+), 
+(
+    'nl:goudbloembloesem',
+    '',
+    '',
+    ''
+), 
+(
+    'en:huhnereiweiss',
+    'huhnereiweiss',
+    '',
+    ''
+), 
+(
+    'nl:gerstemoutbloem',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:razowa',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:filet-de-cabillaud',
+    '',
+    'filet-de-cabillaud',
+    ''
+), 
+(
+    'nl:sojaolie',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:emmental-francais',
+    '',
+    'emmental-francais',
+    ''
+), 
+(
+    'es:centeno-tostado',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:piment',
+    '',
+    'piment',
+    ''
+), 
+(
+    'de:weizenvollkorngrieß',
+    '',
+    '',
+    'weizenvollkorngrieß'
+), 
+(
+    'ro:agenți-de-afânare',
+    '',
+    '',
+    ''
+), 
+(
+    'de:bio-joghurt',
+    '',
+    '',
+    'bio-joghurt'
+), 
+(
+    'fr:fabrication-garantie-sans-allergenes',
+    '',
+    'fabrication-garantie-sans-allergenes',
+    ''
+), 
+(
+    'sl:jajčni',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:sóju',
+    '',
+    '',
+    ''
+), 
+(
+    'en:roggen',
+    'roggen',
+    '',
+    ''
+), 
+(
+    'de:seigle',
+    '',
+    '',
+    'seigle'
+), 
+(
+    'fr:poudre-d-oeufs',
+    '',
+    'poudre-d-oeufs',
+    ''
+), 
+(
+    'fr:crevette-tropicale',
+    '',
+    'crevette-tropicale',
+    ''
+), 
+(
+    'en:sesami',
+    'sesami',
+    '',
+    ''
+), 
+(
+    'fr:aneth',
+    '',
+    'aneth',
+    ''
+), 
+(
+    'de:erdnussmus',
+    '',
+    '',
+    'erdnussmus'
+), 
+(
+    'en:fat-free-milk',
+    'fat-free-milk',
+    '',
+    ''
+), 
+(
+    'fr:amandes-5',
+    '',
+    'amandes-5',
+    ''
+), 
+(
+    'ro:tarama',
+    '',
+    '',
+    ''
+), 
+(
+    'it:milch',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollkornroggenmehl',
+    '',
+    '',
+    'vollkornroggenmehl'
+), 
+(
+    'lt:kvietinis',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:noix-de-pistache',
+    '',
+    'noix-de-pistache',
+    ''
+), 
+(
+    'en:ovos',
+    'ovos',
+    '',
+    ''
+), 
+(
+    'fr:encre-de-seiche',
+    '',
+    'encre-de-seiche',
+    ''
+), 
+(
+    'sr:ječmeno',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ingredients-de-la-soupe-deshydratee',
+    '',
+    'ingredients-de-la-soupe-deshydratee',
+    ''
+), 
+(
+    'es:soja-cacahuetes',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:laktozu',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:karamel',
+    '',
+    '',
+    ''
+), 
+(
+    'es:sin-alergenos',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:pirovo',
+    '',
+    '',
+    ''
+), 
+(
+    'ca:sulfits',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:vlierbloesem',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haselnuss-nougat',
+    '',
+    '',
+    'haselnuss-nougat'
+), 
+(
+    'nb:edamerost',
+    '',
+    '',
+    ''
+), 
+(
+    'es:pota',
+    '',
+    '',
+    ''
+), 
+(
+    'de:erbseneiweiss',
+    '',
+    '',
+    'erbseneiweiss'
+), 
+(
+    'fr:matiere-grasse-butyrique',
+    '',
+    'matiere-grasse-butyrique',
+    ''
+), 
+(
+    'fr:filet-de-colin-d-alaska',
+    '',
+    'filet-de-colin-d-alaska',
+    ''
+), 
+(
+    'ru:белки-молока',
+    '',
+    '',
+    ''
+), 
+(
+    'lv:krējums',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:räk',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:ostronsås',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sulphit',
+    '',
+    '',
+    'sulphit'
+), 
+(
+    'de:erdnussmark',
+    '',
+    '',
+    'erdnussmark'
+), 
+(
+    'id:gom-xanthan',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:fullkornshavregryn',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kap-seehechtfilet',
+    '',
+    '',
+    'kap-seehechtfilet'
+), 
+(
+    'de:kabeljau',
+    '',
+    '',
+    'kabeljau'
+), 
+(
+    'fr:asc',
+    '',
+    'asc',
+    ''
+), 
+(
+    'fr:poudre-d-amande',
+    '',
+    'poudre-d-amande',
+    ''
+), 
+(
+    'es:nueces-pecanas',
+    '',
+    '',
+    ''
+), 
+(
+    'en:fresh-cream',
+    'fresh-cream',
+    '',
+    ''
+), 
+(
+    'sr:lecitin',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sauce-aigre-douce',
+    '',
+    'sauce-aigre-douce',
+    ''
+), 
+(
+    'fr:mini-tartelette-saumon-oseille-24',
+    '',
+    'mini-tartelette-saumon-oseille-24',
+    ''
+), 
+(
+    'en:weizeneiweiss',
+    'weizeneiweiss',
+    '',
+    ''
+), 
+(
+    'de:dinkelvollkorngrieß',
+    '',
+    '',
+    'dinkelvollkorngrieß'
+), 
+(
+    'en:sulfur-dioxide',
+    'sulfur-dioxide',
+    '',
+    ''
+), 
+(
+    'es:nueces-de-arbol',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cow-s-milk',
+    'cow-s-milk',
+    '',
+    ''
+), 
+(
+    'lt:pienarūgščių',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mande',
+    '',
+    'mande',
+    ''
+), 
+(
+    'de:vollmilchpuver',
+    '',
+    '',
+    'vollmilchpuver'
+), 
+(
+    'fr:haselnussmark',
+    '',
+    'haselnussmark',
+    ''
+), 
+(
+    'en:tapioca',
+    'tapioca',
+    '',
+    ''
+), 
+(
+    'fr:anis',
+    '',
+    'anis',
+    ''
+), 
+(
+    'it:platessa',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:żytniego',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:jordnötsbitar',
+    '',
+    '',
+    ''
+), 
+(
+    'de:pistazie',
+    '',
+    '',
+    'pistazie'
+), 
+(
+    'ru:пиросульфит',
+    '',
+    '',
+    ''
+), 
+(
+    'en:pink-pepper',
+    'pink-pepper',
+    '',
+    ''
+), 
+(
+    'sl:laktoza',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:vetekärnor',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:legumineuses-lentilles',
+    '',
+    'legumineuses-lentilles',
+    ''
+), 
+(
+    'de:hartweizenfeingrieß',
+    '',
+    '',
+    'hartweizenfeingrieß'
+), 
+(
+    'fr:lait-entier-creme',
+    '',
+    'lait-entier-creme',
+    ''
+), 
+(
+    'ru:солод-ржаной-ферментированный',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollmilchschokoladenplättchen',
+    '',
+    '',
+    'vollmilchschokoladenplättchen'
+), 
+(
+    'fr:sauce-samourai-80g-ingredients',
+    '',
+    'sauce-samourai-80g-ingredients',
+    ''
+), 
+(
+    'fr:eufs',
+    '',
+    'eufs',
+    ''
+), 
+(
+    'id:kalium-sorbat',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:ječné-slady',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:kornmaltmjöl',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:muntblad',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gerstenmalzessig',
+    '',
+    '',
+    'gerstenmalzessig'
+), 
+(
+    'sr:soja-lecitin',
+    '',
+    '',
+    ''
+), 
+(
+    'en:kase',
+    'kase',
+    '',
+    ''
+), 
+(
+    'en:wheaten',
+    'wheaten',
+    '',
+    ''
+), 
+(
+    'es:crema',
+    '',
+    '',
+    ''
+), 
+(
+    'lv:saldais-krējums',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:творог',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:räka',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dinkelflakes',
+    '',
+    '',
+    'dinkelflakes'
+), 
+(
+    'fr:hartweizengriess',
+    '',
+    'hartweizengriess',
+    ''
+), 
+(
+    'nl:braamblad',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lait-en-poudre-ecreme',
+    '',
+    'lait-en-poudre-ecreme',
+    ''
+), 
+(
+    'fi:ghee',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollkornhartweizengrieß',
+    '',
+    '',
+    'vollkornhartweizengrieß'
+), 
+(
+    'en:whea',
+    'whea',
+    '',
+    ''
+), 
+(
+    'es:fresa-y-coco',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ananas-intense',
+    '',
+    'ananas-intense',
+    ''
+), 
+(
+    'sr:natrijum-kazeinat',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:obrano-mleko-u-prahu',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:toortsbloesem',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:zellerlevél',
+    '',
+    '',
+    ''
+), 
+(
+    'es:salvado-de-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ghee',
+    '',
+    'ghee',
+    ''
+), 
+(
+    'en:nonfat-dry-milk',
+    'nonfat-dry-milk',
+    '',
+    ''
+), 
+(
+    'de:weizenproteinhaltige-mischung',
+    '',
+    '',
+    'weizenproteinhaltige-mischung'
+), 
+(
+    'en:surimi',
+    'surimi',
+    '',
+    ''
+), 
+(
+    'fr:frumento',
+    '',
+    'frumento',
+    ''
+), 
+(
+    'fr:carraghenanes',
+    '',
+    'carraghenanes',
+    ''
+), 
+(
+    'fr:beuure-10',
+    '',
+    'beuure-10',
+    ''
+), 
+(
+    'de:sojaschnetzel',
+    '',
+    '',
+    'sojaschnetzel'
+), 
+(
+    'hr:ječma',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-rape',
+    '',
+    'fromage-rape',
+    ''
+), 
+(
+    'lv:makreles',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:burrata',
+    '',
+    'burrata',
+    ''
+), 
+(
+    'ro:extract-de-țelină',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:консервант-кислота-сорбиновая',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:búzadextrin',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sulphide',
+    'sulphide',
+    '',
+    ''
+), 
+(
+    'fr:sesamo',
+    '',
+    'sesamo',
+    ''
+), 
+(
+    'fr:molusco',
+    '',
+    'molusco',
+    ''
+), 
+(
+    'sv:dijonsenap',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weichkäse-mit-blauschimmel',
+    '',
+    '',
+    'weichkäse-mit-blauschimmel'
+), 
+(
+    'pt:castanha-de-caju',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:aroma',
+    '',
+    'aroma',
+    ''
+), 
+(
+    'fr:croutons',
+    '',
+    'croutons',
+    ''
+), 
+(
+    'fr:e471',
+    '',
+    'e471',
+    ''
+), 
+(
+    'es:e-220',
+    '',
+    '',
+    ''
+), 
+(
+    'en:walnusse',
+    'walnusse',
+    '',
+    ''
+), 
+(
+    'fr:parmiggiano-reggiano',
+    '',
+    'parmiggiano-reggiano',
+    ''
+), 
+(
+    'fr:sauce-aigre-douce-20g',
+    '',
+    'sauce-aigre-douce-20g',
+    ''
+), 
+(
+    'fi:goudajuustoa',
+    '',
+    '',
+    ''
+), 
+(
+    'de:garnelenfleisch',
+    '',
+    '',
+    'garnelenfleisch'
+), 
+(
+    'id:guanilat',
+    '',
+    '',
+    ''
+), 
+(
+    'de:1-teil-sirup-mit-24-teilen-wasser-mischen',
+    '',
+    '',
+    '1-teil-sirup-mit-24-teilen-wasser-mischen'
+), 
+(
+    'fr:lait-de-soja',
+    '',
+    'lait-de-soja',
+    ''
+), 
+(
+    'es:so2',
+    '',
+    '',
+    ''
+), 
+(
+    'en:erdnusskerne',
+    'erdnusskerne',
+    '',
+    ''
+), 
+(
+    'id:penstabil-nabati',
+    '',
+    '',
+    ''
+), 
+(
+    'es:azufre',
+    '',
+    '',
+    ''
+), 
+(
+    'en:amandel',
+    'amandel',
+    '',
+    ''
+), 
+(
+    'ru:мука-ржаная-обдирная',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:hořčičná-semena',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dinkelvollkorn',
+    '',
+    '',
+    'dinkelvollkorn'
+), 
+(
+    'hr:pšenicu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:samossa-aux-legumes-6x25g-88',
+    '',
+    'samossa-aux-legumes-6x25g-88',
+    ''
+), 
+(
+    'it:noci-di-anacardo',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:kakkumuruja',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:blé',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roggenmalzkeime',
+    '',
+    '',
+    'roggenmalzkeime'
+), 
+(
+    'de:gruyere',
+    '',
+    '',
+    'gruyere'
+), 
+(
+    'fr:flocons-d-orge',
+    '',
+    'flocons-d-orge',
+    ''
+), 
+(
+    'de:erdnussstücke',
+    '',
+    '',
+    'erdnussstücke'
+), 
+(
+    'en:mleka',
+    'mleka',
+    '',
+    ''
+), 
+(
+    'nl:rietsuiker',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:laktose',
+    '',
+    'laktose',
+    ''
+), 
+(
+    'fr:levure-de-biere',
+    '',
+    'levure-de-biere',
+    ''
+), 
+(
+    'hr:zobene-pahuljice',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenmahlerzeugnis',
+    '',
+    '',
+    'weizenmahlerzeugnis'
+), 
+(
+    'fr:creme-glacee-fraise',
+    '',
+    'creme-glacee-fraise',
+    ''
+), 
+(
+    'de:weizeneiweißerzeugnis',
+    '',
+    '',
+    'weizeneiweißerzeugnis'
+), 
+(
+    'de:erbsen',
+    '',
+    '',
+    'erbsen'
+), 
+(
+    'fr:fruits-a-coques-moulus',
+    '',
+    'fruits-a-coques-moulus',
+    ''
+), 
+(
+    'is:hveiti',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:psenična-moka',
+    '',
+    '',
+    ''
+), 
+(
+    'en:havregryn',
+    'havregryn',
+    '',
+    ''
+), 
+(
+    'cs:jádra-lískových-ořechů',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:ris',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:kecsketúró',
+    '',
+    '',
+    ''
+), 
+(
+    'en:gouda-cheese',
+    'gouda-cheese',
+    '',
+    ''
+), 
+(
+    'en:soy-celery',
+    'soy-celery',
+    '',
+    ''
+), 
+(
+    'fr:creme-glacee-vanille',
+    '',
+    'creme-glacee-vanille',
+    ''
+), 
+(
+    'hu:vitális-búzaglutén',
+    '',
+    '',
+    ''
+), 
+(
+    'en:ถั่วเหลือง',
+    'ถั่วเหลือง',
+    '',
+    ''
+), 
+(
+    'fi:hasselpähkinävoi',
+    '',
+    '',
+    ''
+), 
+(
+    'en:skim-milk-powder',
+    'skim-milk-powder',
+    '',
+    ''
+), 
+(
+    'nl:eucalyptus',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:poudre-delaitecreme',
+    '',
+    'poudre-delaitecreme',
+    ''
+), 
+(
+    'nb:havrefiber',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:noic-du-bresil',
+    '',
+    'noic-du-bresil',
+    ''
+), 
+(
+    'en:pecannoot',
+    'pecannoot',
+    '',
+    ''
+), 
+(
+    'es:cacahute',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sardellenextrakt',
+    '',
+    '',
+    'sardellenextrakt'
+), 
+(
+    'no:havrekli',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hühnertrockeneigelb',
+    '',
+    '',
+    'hühnertrockeneigelb'
+), 
+(
+    'de:enthält-eine-phenylalaninquelle',
+    '',
+    '',
+    'enthält-eine-phenylalaninquelle'
+), 
+(
+    'nl:gerstegrutten',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:tofu',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:mostermeel',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:acide-ascorbique',
+    '',
+    'acide-ascorbique',
+    ''
+), 
+(
+    'de:glutenhaltiges-getreide',
+    '',
+    '',
+    'glutenhaltiges-getreide'
+), 
+(
+    'nb:helmelkepulver',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:ječmená',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenpaniermehl',
+    '',
+    '',
+    'weizenpaniermehl'
+), 
+(
+    'fr:dosettes-de-cafe',
+    '',
+    'dosettes-de-cafe',
+    ''
+), 
+(
+    'fi:keltuaisjauhe',
+    '',
+    '',
+    ''
+), 
+(
+    'de:käsearoma',
+    '',
+    '',
+    'käsearoma'
+), 
+(
+    'de:hitzebehandeltes-weizenmehl',
+    '',
+    '',
+    'hitzebehandeltes-weizenmehl'
+), 
+(
+    'fr:framboise',
+    '',
+    'framboise',
+    ''
+), 
+(
+    'fr:poissons-blancs',
+    '',
+    'poissons-blancs',
+    ''
+), 
+(
+    'de:muscheln',
+    '',
+    '',
+    'muscheln'
+), 
+(
+    'sv:äggblandning',
+    '',
+    '',
+    ''
+), 
+(
+    'es:mollusques',
+    '',
+    '',
+    ''
+), 
+(
+    'de:knollenselleriepulver',
+    '',
+    '',
+    'knollenselleriepulver'
+), 
+(
+    'fr:tuber-aestivum',
+    '',
+    'tuber-aestivum',
+    ''
+), 
+(
+    'en:bonito',
+    'bonito',
+    '',
+    ''
+), 
+(
+    'de:céleri',
+    '',
+    '',
+    'céleri'
+), 
+(
+    'id:penguat-rasa',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gerstenschrot',
+    '',
+    '',
+    'gerstenschrot'
+), 
+(
+    'de:alaska-seelachsfilets',
+    '',
+    '',
+    'alaska-seelachsfilets'
+), 
+(
+    'fr:amande-crue',
+    '',
+    'amande-crue',
+    ''
+), 
+(
+    'nl:klaproos',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:orzechowo',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:крем-на-растительных-маслах',
+    '',
+    '',
+    ''
+), 
+(
+    'de:tarwebloem',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:flocons-d-epautre-complet',
+    '',
+    'flocons-d-epautre-complet',
+    ''
+), 
+(
+    'de:speisequark-magerstufe',
+    '',
+    '',
+    'speisequark-magerstufe'
+), 
+(
+    'de:grünkernschrot',
+    '',
+    '',
+    'grünkernschrot'
+), 
+(
+    'en:vollei',
+    'vollei',
+    '',
+    ''
+), 
+(
+    'fr:filets-de-sole-tropicale',
+    '',
+    'filets-de-sole-tropicale',
+    ''
+), 
+(
+    'fr:lait-de-vache-pasteurise',
+    '',
+    'lait-de-vache-pasteurise',
+    ''
+), 
+(
+    'de:tofu',
+    '',
+    '',
+    'tofu'
+), 
+(
+    'en:unbleached-wheat-flour',
+    'unbleached-wheat-flour',
+    '',
+    ''
+), 
+(
+    'es:semillas',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:e223',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sugar',
+    'sugar',
+    '',
+    ''
+), 
+(
+    'en:peanut-butter',
+    'peanut-butter',
+    '',
+    ''
+), 
+(
+    'fr:ingredients-issus-de-l-agriculture-biologique',
+    '',
+    'ingredients-issus-de-l-agriculture-biologique',
+    ''
+), 
+(
+    'en:ei',
+    'ei',
+    '',
+    ''
+), 
+(
+    'en:cereals',
+    'cereals',
+    '',
+    ''
+), 
+(
+    'sv:pastöriserad-komjölk',
+    '',
+    '',
+    ''
+), 
+(
+    'it:crusca',
+    '',
+    '',
+    ''
+), 
+(
+    'es:pipas-de-girasol',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:kazein',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojalecitine',
+    '',
+    '',
+    'sojalecitine'
+), 
+(
+    'fr:mousse-de-canard-au-porto',
+    '',
+    'mousse-de-canard-au-porto',
+    ''
+), 
+(
+    'it:oeuf',
+    '',
+    '',
+    ''
+), 
+(
+    'de:natriumsulfit',
+    '',
+    '',
+    'natriumsulfit'
+), 
+(
+    'el:ξηρούς-καρπούς',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fermentslactiques',
+    '',
+    'fermentslactiques',
+    ''
+), 
+(
+    'en:flavour-enhancer-e621',
+    'flavour-enhancer-e621',
+    '',
+    ''
+), 
+(
+    'es:sin-gluten-sin-huevo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:fortified-wheat-flour',
+    'fortified-wheat-flour',
+    '',
+    ''
+), 
+(
+    'de:molkeerzeugnis',
+    '',
+    '',
+    'molkeerzeugnis'
+), 
+(
+    'no:lettmelk',
+    '',
+    '',
+    ''
+), 
+(
+    'el:σιταρι',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:parmesan-reggiano',
+    '',
+    'parmesan-reggiano',
+    ''
+), 
+(
+    'de:beurre',
+    '',
+    '',
+    'beurre'
+), 
+(
+    'pl:ser-twarogowy',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:dioxyde-de-sulfure',
+    '',
+    'dioxyde-de-sulfure',
+    ''
+), 
+(
+    'id:maltodekstrin',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:белок-молока',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:arome',
+    '',
+    'arome',
+    ''
+), 
+(
+    'en:นม',
+    'นม',
+    '',
+    ''
+), 
+(
+    'de:weizemehl',
+    '',
+    '',
+    'weizemehl'
+), 
+(
+    'es:api',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-frais-saveur-abricot-lait',
+    '',
+    'fromage-frais-saveur-abricot-lait',
+    ''
+), 
+(
+    'fr:orge-malte',
+    '',
+    'orge-malte',
+    ''
+), 
+(
+    'fr:gerstenflocken',
+    '',
+    'gerstenflocken',
+    ''
+), 
+(
+    'de:gerstemout',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:rozsdara',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:gerstemoutextract',
+    '',
+    '',
+    ''
+), 
+(
+    'en:weizensauerteig',
+    'weizensauerteig',
+    '',
+    ''
+), 
+(
+    'sv:stenbit',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:vapaan-kanan-munia',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-lactose',
+    '',
+    'ble-lactose',
+    ''
+), 
+(
+    'fr:farine-bise-de-ble',
+    '',
+    'farine-bise-de-ble',
+    ''
+), 
+(
+    'fr:lotte-du-cap',
+    '',
+    'lotte-du-cap',
+    ''
+), 
+(
+    'de:forellenfilets',
+    '',
+    '',
+    'forellenfilets'
+), 
+(
+    'en:pork',
+    'pork',
+    '',
+    ''
+), 
+(
+    'sl:sir',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sweetened-condensed-milk',
+    'sweetened-condensed-milk',
+    '',
+    ''
+), 
+(
+    'es:e220',
+    '',
+    '',
+    ''
+), 
+(
+    'en:room',
+    'room',
+    '',
+    ''
+), 
+(
+    'hu:oltókultra',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:lyzosym',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cows-milk',
+    'cows-milk',
+    '',
+    ''
+), 
+(
+    'fr:anacardes',
+    '',
+    'anacardes',
+    ''
+), 
+(
+    'en:λεκιθίνη-σόγιας',
+    'λεκιθίνη-σόγιας',
+    '',
+    ''
+), 
+(
+    'en:almendras',
+    'almendras',
+    '',
+    ''
+), 
+(
+    'fr:bl',
+    '',
+    'bl',
+    ''
+), 
+(
+    'fr:mozzarelle',
+    '',
+    'mozzarelle',
+    ''
+), 
+(
+    'fr:fibres-d-avoine',
+    '',
+    'fibres-d-avoine',
+    ''
+), 
+(
+    'fr:mini-tartelette-olive-tomate-fromages-27',
+    '',
+    'mini-tartelette-olive-tomate-fromages-27',
+    ''
+), 
+(
+    'en:lactiques',
+    'lactiques',
+    '',
+    ''
+), 
+(
+    'fr:apricot',
+    '',
+    'apricot',
+    ''
+), 
+(
+    'fr:sojalecithin',
+    '',
+    'sojalecithin',
+    ''
+), 
+(
+    'de:süßmoikenpulver',
+    '',
+    '',
+    'süßmoikenpulver'
+), 
+(
+    'en:epeautre',
+    'epeautre',
+    '',
+    ''
+), 
+(
+    'fr:creme-dessert-aromatisee-saveur-vanille',
+    '',
+    'creme-dessert-aromatisee-saveur-vanille',
+    ''
+), 
+(
+    'es:tarwe',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:farine-complete-de-ble',
+    '',
+    'farine-complete-de-ble',
+    ''
+), 
+(
+    'de:roggenerzeugnisse',
+    '',
+    '',
+    'roggenerzeugnisse'
+), 
+(
+    'fr:jaune',
+    '',
+    'jaune',
+    ''
+), 
+(
+    'fr:erdnusse',
+    '',
+    'erdnusse',
+    ''
+), 
+(
+    'de:erhöhter-koffeingehalt',
+    '',
+    '',
+    'erhöhter-koffeingehalt'
+), 
+(
+    'en:orz',
+    'orz',
+    '',
+    ''
+), 
+(
+    'sr:raženo',
+    '',
+    '',
+    ''
+), 
+(
+    'ca:mantega',
+    '',
+    '',
+    ''
+), 
+(
+    'es:fruits-de-mer',
+    '',
+    '',
+    ''
+), 
+(
+    'tr:yağsız-süt-tozu',
+    '',
+    '',
+    ''
+), 
+(
+    'de:1-teil-geträngesirup-mit-23-teilen-wasser-mischen',
+    '',
+    '',
+    '1-teil-geträngesirup-mit-23-teilen-wasser-mischen'
+), 
+(
+    'hu:zeller-levél',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:truite-arc-en-ciel',
+    '',
+    'truite-arc-en-ciel',
+    ''
+), 
+(
+    'es:leche-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'de:molkereierzeugnis',
+    '',
+    '',
+    'molkereierzeugnis'
+), 
+(
+    'ru:сухое-цельное-молоко',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:disufite',
+    '',
+    'disufite',
+    ''
+), 
+(
+    'pt:figado-de-bacalhau',
+    '',
+    '',
+    ''
+), 
+(
+    'de:walnussblätter',
+    '',
+    '',
+    'walnussblätter'
+), 
+(
+    'it:malto-d-orzo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:carvi',
+    '',
+    'carvi',
+    ''
+), 
+(
+    'cs:mlékařské',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:lysotsyymi-kananmunasta',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:enrobage-au-cacao-maigre',
+    '',
+    'enrobage-au-cacao-maigre',
+    ''
+), 
+(
+    'de:weizenvollkornpaniermehl',
+    '',
+    '',
+    'weizenvollkornpaniermehl'
+), 
+(
+    'en:white-chocolate',
+    'white-chocolate',
+    '',
+    ''
+), 
+(
+    'ro:lactoza',
+    '',
+    '',
+    ''
+), 
+(
+    'th:ฟินิลอลานีน',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:glutenvrije-tarwe',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sulfite-de-sodium',
+    '',
+    'sulfite-de-sodium',
+    ''
+), 
+(
+    'de:cashewkernstücke',
+    '',
+    '',
+    'cashewkernstücke'
+), 
+(
+    'nl:zoethoutwortel',
+    '',
+    '',
+    ''
+), 
+(
+    'de:klebreismehl',
+    '',
+    '',
+    'klebreismehl'
+), 
+(
+    'it:tonnetto',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lapte',
+    '',
+    'lapte',
+    ''
+), 
+(
+    'fr:lạit',
+    '',
+    'lạit',
+    ''
+), 
+(
+    'es:gouda',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roggengrütze',
+    '',
+    '',
+    'roggengrütze'
+), 
+(
+    'es:centeio',
+    '',
+    '',
+    ''
+), 
+(
+    'es:poton-del-pacifico',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milcherzeugnis',
+    '',
+    '',
+    'milcherzeugnis'
+), 
+(
+    'no:eggeplomme',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:orzechów',
+    '',
+    '',
+    ''
+), 
+(
+    'es:caballa-del-sur',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:noisettes-toastees',
+    '',
+    'noisettes-toastees',
+    ''
+), 
+(
+    'es:nata-liquida',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:beurre-frais',
+    '',
+    'beurre-frais',
+    ''
+), 
+(
+    'fr:ble-avoine',
+    '',
+    'ble-avoine',
+    ''
+), 
+(
+    'fr:sauce-vinaigrette-au-vinaigre-balsamique',
+    '',
+    'sauce-vinaigrette-au-vinaigre-balsamique',
+    ''
+), 
+(
+    'fr:weizenvollkornmehl',
+    '',
+    'weizenvollkornmehl',
+    ''
+), 
+(
+    'es:fresas',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:siarczany',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:żółtko-jaja',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:miolo-de-camarao',
+    '',
+    '',
+    ''
+), 
+(
+    'en:lysed-soya-protein',
+    'lysed-soya-protein',
+    '',
+    ''
+), 
+(
+    'de:tomaten',
+    '',
+    '',
+    'tomaten'
+), 
+(
+    'sv:mandelkrokant',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pleoticus-muelleri-et-ou-pleoticus-robustus',
+    '',
+    'pleoticus-muelleri-et-ou-pleoticus-robustus',
+    ''
+), 
+(
+    'fr:huile-de-sesame',
+    '',
+    'huile-de-sesame',
+    ''
+), 
+(
+    'en:tree-nut-almond',
+    'tree-nut-almond',
+    '',
+    ''
+), 
+(
+    'fr:germe-de-ble',
+    '',
+    'germe-de-ble',
+    ''
+), 
+(
+    'en:lait-et-produits-laitiers-y-compris-lactose',
+    'lait-et-produits-laitiers-y-compris-lactose',
+    '',
+    ''
+), 
+(
+    'es:altramuces-y-sulﬁtos',
+    '',
+    '',
+    ''
+), 
+(
+    'de:lachsforelle',
+    '',
+    '',
+    'lachsforelle'
+), 
+(
+    'fr:cochenilles',
+    '',
+    'cochenilles',
+    ''
+), 
+(
+    'fr:chocolat-blanc',
+    '',
+    'chocolat-blanc',
+    ''
+), 
+(
+    'nl:karnemelkpoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'it:formaggi',
+    '',
+    '',
+    ''
+), 
+(
+    'de:in-zusammenhang-mit-dem-genuss-von-alkoholischen-getränken-oder-intensiver-sportlicher-betätigung-wird-vom-verzehr-abgeraten',
+    '',
+    '',
+    'in-zusammenhang-mit-dem-genuss-von-alkoholischen-getränken-oder-intensiver-sportlicher-betätigung-wird-vom-verzehr-abgeraten'
+), 
+(
+    'nl:sesamolie',
+    '',
+    '',
+    ''
+), 
+(
+    'ca:trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'es:beurre',
+    '',
+    '',
+    ''
+), 
+(
+    'en:derivados-de-leite',
+    'derivados-de-leite',
+    '',
+    ''
+), 
+(
+    'ro:lapte-praf-integral',
+    '',
+    '',
+    ''
+), 
+(
+    'en:gorczyca',
+    'gorczyca',
+    '',
+    ''
+), 
+(
+    'sv:veteskåļning',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:orzeszki',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lat',
+    '',
+    'lat',
+    ''
+), 
+(
+    'tr:tam-yağlı-süttozu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:x000d',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:z-mléka',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:молочного-белка',
+    '',
+    '',
+    ''
+), 
+(
+    'en:barely-malt',
+    'barely-malt',
+    '',
+    ''
+), 
+(
+    'ru:мука-пшеничная-в-с',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:sojalecithin',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sesame-complet',
+    '',
+    'sesame-complet',
+    ''
+), 
+(
+    'cs:žitná-mouka',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:gerstemoutmeel',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:nehomogenizované-plnotučné-mléko',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:hvetegłuten',
+    '',
+    '',
+    ''
+), 
+(
+    'es:escana',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:oeuf-de-truite',
+    '',
+    'oeuf-de-truite',
+    ''
+), 
+(
+    'fr:sulﬂtes',
+    '',
+    'sulﬂtes',
+    ''
+), 
+(
+    'de:molkenproteinhydrolysat',
+    '',
+    '',
+    'molkenproteinhydrolysat'
+), 
+(
+    'es:dioxido-de-sulfuro',
+    '',
+    '',
+    ''
+), 
+(
+    'de:tamari',
+    '',
+    '',
+    'tamari'
+), 
+(
+    'es:chocolate',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:comte-aop',
+    '',
+    'comte-aop',
+    ''
+), 
+(
+    'nb:speltmel',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-frais-saveur-fraise-lait',
+    '',
+    'fromage-frais-saveur-fraise-lait',
+    ''
+), 
+(
+    'fr:ble-gluten-et-soya',
+    '',
+    '',
+    ''
+), 
+(
+    'es:triqo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:shrimpsoße',
+    '',
+    '',
+    'shrimpsoße'
+), 
+(
+    'fr:pate-de-sesame',
+    '',
+    'pate-de-sesame',
+    ''
+), 
+(
+    'de:haselnuss-aroma',
+    '',
+    '',
+    'haselnuss-aroma'
+), 
+(
+    'nl:weegbreeblad',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:jogurtová-kultura',
+    '',
+    '',
+    ''
+), 
+(
+    'de:pistazienmark',
+    '',
+    '',
+    'pistazienmark'
+), 
+(
+    'ru:пророщенное-зерно-ржи',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fletan-du-groenland',
+    '',
+    'fletan-du-groenland',
+    ''
+), 
+(
+    'it:noci-di-anacardi',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:noix-de-coco-rapee',
+    '',
+    'noix-de-coco-rapee',
+    ''
+), 
+(
+    'fr:fromage-de-chevre-20',
+    '',
+    'fromage-de-chevre-20',
+    ''
+), 
+(
+    'sr:punomasno-mleko-u-prahu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:eouf',
+    '',
+    'eouf',
+    ''
+), 
+(
+    'en:milk-protein-powder',
+    'milk-protein-powder',
+    '',
+    ''
+), 
+(
+    'fr:graines-de-sesame-et-produits-en-contenant',
+    '',
+    'graines-de-sesame-et-produits-en-contenant',
+    ''
+), 
+(
+    'en:weizenflocken',
+    'weizenflocken',
+    '',
+    ''
+), 
+(
+    'nl:tarwedextrine',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:pšenicu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:emmental-fondu',
+    '',
+    'emmental-fondu',
+    ''
+), 
+(
+    'cs:ječmenná',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hühnereieiweiss',
+    '',
+    '',
+    'hühnereieiweiss'
+), 
+(
+    'nl:steranĳs',
+    '',
+    '',
+    ''
+), 
+(
+    'es:sulfito-de-sodio',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ingredients-du-bouillon-deshydrate',
+    '',
+    'ingredients-du-bouillon-deshydrate',
+    ''
+), 
+(
+    'pl:kuskus',
+    '',
+    '',
+    ''
+), 
+(
+    'it:orge',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:kiaušinių',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:creeme',
+    '',
+    'creeme',
+    ''
+), 
+(
+    'fr:moulage-de-chocolat-au-lait-extra-fin',
+    '',
+    'moulage-de-chocolat-au-lait-extra-fin',
+    ''
+), 
+(
+    'de:rahmquarkpulver',
+    '',
+    '',
+    'rahmquarkpulver'
+), 
+(
+    'sv:selleriextrakt',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:солод-ячменный',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:brânzeturi',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:riz',
+    '',
+    'riz',
+    ''
+), 
+(
+    'de:glukosesirup',
+    '',
+    '',
+    'glukosesirup'
+), 
+(
+    'en:weizenkleber',
+    'weizenkleber',
+    '',
+    ''
+), 
+(
+    'en:wheat-floor',
+    'wheat-floor',
+    '',
+    ''
+), 
+(
+    'nl:gerste',
+    '',
+    '',
+    ''
+), 
+(
+    'en:lactic-culture',
+    'lactic-culture',
+    '',
+    ''
+), 
+(
+    'ru:сухое-обезжиренное-молоко',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:lecitine-din-soia-e322',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:petit-lait-en-poudre',
+    '',
+    'petit-lait-en-poudre',
+    ''
+), 
+(
+    'fr:so2',
+    '',
+    'so2',
+    ''
+), 
+(
+    'es:no-indica',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hühnerei-eipulver',
+    '',
+    '',
+    'hühnerei-eipulver'
+), 
+(
+    'hr:senf',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:contre-indique-en-cas-de-grossesse',
+    '',
+    'contre-indique-en-cas-de-grossesse',
+    ''
+), 
+(
+    'nl:scharreleieren',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lemon',
+    '',
+    'lemon',
+    ''
+), 
+(
+    'sv:hummerkött',
+    '',
+    '',
+    ''
+), 
+(
+    'en:manteiga',
+    'manteiga',
+    '',
+    ''
+), 
+(
+    'fr:petit-lait-doux',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:концентрат-солодовый-ржаной',
+    '',
+    '',
+    ''
+), 
+(
+    'es:melk',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:лактозу',
+    '',
+    '',
+    ''
+), 
+(
+    'en:ječne',
+    'ječne',
+    '',
+    ''
+), 
+(
+    'fr:flocons-de-froment',
+    '',
+    'flocons-de-froment',
+    ''
+), 
+(
+    'fr:basilic',
+    '',
+    'basilic',
+    ''
+), 
+(
+    'de:glutenfreie-weizenstärke',
+    '',
+    '',
+    'glutenfreie-weizenstärke'
+), 
+(
+    'fr:amande-blanche',
+    '',
+    'amande-blanche',
+    ''
+), 
+(
+    'es:sementes-de-sesamo',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:byggmel',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dinkelweizenmalzflocken',
+    '',
+    '',
+    'dinkelweizenmalzflocken'
+), 
+(
+    'en:frutos-de-casca-rija',
+    'frutos-de-casca-rija',
+    '',
+    ''
+), 
+(
+    'en:arachides',
+    'arachides',
+    '',
+    ''
+), 
+(
+    'fr:marlin',
+    '',
+    'marlin',
+    ''
+), 
+(
+    'es:chispas-de-yogurt',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sahnepulver',
+    '',
+    'sahnepulver',
+    ''
+), 
+(
+    'de:büffelmolke',
+    '',
+    '',
+    'büffelmolke'
+), 
+(
+    'fr:beurre-de-cacao',
+    '',
+    'beurre-de-cacao',
+    ''
+), 
+(
+    'nl:eipoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:mandarin',
+    '',
+    '',
+    ''
+), 
+(
+    'en:huevo',
+    'huevo',
+    '',
+    ''
+), 
+(
+    'pl:jeczmienne',
+    '',
+    '',
+    ''
+), 
+(
+    'en:surutka',
+    'surutka',
+    '',
+    ''
+), 
+(
+    'en:contains-gluten',
+    'contains-gluten',
+    '',
+    ''
+), 
+(
+    'fr:sauce-nuoc-mam-20-g',
+    '',
+    'sauce-nuoc-mam-20-g',
+    ''
+), 
+(
+    'fr:noix-de-macadamia-et-produitsen-contenant',
+    '',
+    'noix-de-macadamia-et-produitsen-contenant',
+    ''
+), 
+(
+    'fr:mini-tartelette-aux-2-fromages-23',
+    '',
+    'mini-tartelette-aux-2-fromages-23',
+    ''
+), 
+(
+    'ru:пророщенное-зерно-пшеницы',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gelbsenfmehl',
+    '',
+    '',
+    'gelbsenfmehl'
+), 
+(
+    'en:milchschokolade',
+    'milchschokolade',
+    '',
+    ''
+), 
+(
+    'de:sojaproteinhaltige',
+    '',
+    '',
+    'sojaproteinhaltige'
+), 
+(
+    'en:γλουτένη-σιτηρά',
+    'γλουτένη-σιτηρά',
+    '',
+    ''
+), 
+(
+    'ro:proteină-vegetală-din-soia',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:flocos-de-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:eau',
+    '',
+    'eau',
+    ''
+), 
+(
+    'fr:4',
+    '',
+    '4',
+    ''
+), 
+(
+    'bg:соев',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:päronjuice',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:torskfilè',
+    '',
+    '',
+    ''
+), 
+(
+    'es:gluten-almendra-avena',
+    '',
+    '',
+    ''
+), 
+(
+    'en:baking-powder',
+    'baking-powder',
+    '',
+    ''
+), 
+(
+    'fr:baratte',
+    '',
+    'baratte',
+    ''
+), 
+(
+    'fr:oeufs-de-truite',
+    '',
+    'oeufs-de-truite',
+    ''
+), 
+(
+    'en:wheat-bran',
+    'wheat-bran',
+    '',
+    ''
+), 
+(
+    'el:φουντουκόπαστα',
+    '',
+    '',
+    ''
+), 
+(
+    'en:soy-bean',
+    'soy-bean',
+    '',
+    ''
+), 
+(
+    'fr:arachide-grillee',
+    '',
+    'arachide-grillee',
+    ''
+), 
+(
+    'nb:rugkli',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pangasius',
+    '',
+    'pangasius',
+    ''
+), 
+(
+    'de:roggenkleie',
+    '',
+    '',
+    'roggenkleie'
+), 
+(
+    'nl:duizendbladbloesem',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lait-d-origine-france',
+    '',
+    'lait-d-origine-france',
+    ''
+), 
+(
+    'el:γλουτένη-σίτου',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pate-de-soja',
+    '',
+    'pate-de-soja',
+    ''
+), 
+(
+    'de:frischkase',
+    '',
+    '',
+    'frischkase'
+), 
+(
+    'hr:ovsene',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:migdał',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:haselnusse',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:lešnik',
+    '',
+    '',
+    ''
+), 
+(
+    'es:almendra-y-avena',
+    '',
+    '',
+    ''
+), 
+(
+    'en:gluten-wheat',
+    'gluten-wheat',
+    '',
+    ''
+), 
+(
+    'fr:lactore-et-produits-a-base-de-lait',
+    '',
+    'lactore-et-produits-a-base-de-lait',
+    ''
+), 
+(
+    'de:weizenstarke',
+    '',
+    '',
+    'weizenstarke'
+), 
+(
+    'es:crustace',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:sötmjölkspulver',
+    '',
+    '',
+    ''
+), 
+(
+    'en:demineralized-whey',
+    'demineralized-whey',
+    '',
+    ''
+), 
+(
+    'de:walnussmark',
+    '',
+    '',
+    'walnussmark'
+), 
+(
+    'fr:tomate',
+    '',
+    'tomate',
+    ''
+), 
+(
+    'de:pecorino-romano',
+    '',
+    '',
+    'pecorino-romano'
+), 
+(
+    'es:gluten-leche',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:szulfitokat',
+    '',
+    '',
+    ''
+), 
+(
+    'es:manteiga',
+    '',
+    '',
+    ''
+), 
+(
+    'en:paranoot',
+    'paranoot',
+    '',
+    ''
+), 
+(
+    'ru:какао-порошок',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:cheddarostfyllning',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:продукты-яичные-сухие',
+    '',
+    '',
+    ''
+), 
+(
+    'de:butterschmalz',
+    '',
+    '',
+    'butterschmalz'
+), 
+(
+    'de:sellerieknollen',
+    '',
+    '',
+    'sellerieknollen'
+), 
+(
+    'de:bulgurweizen',
+    '',
+    '',
+    'bulgurweizen'
+), 
+(
+    'sv:ädelost',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:siegle',
+    '',
+    'siegle',
+    ''
+), 
+(
+    'es:surimi',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:filets-de-maquereaux',
+    '',
+    'filets-de-maquereaux',
+    ''
+), 
+(
+    'fr:sojalecitin',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:peif',
+    '',
+    'peif',
+    ''
+), 
+(
+    'fr:oeufs-et-produits-en-contenant',
+    '',
+    'oeufs-et-produits-en-contenant',
+    ''
+), 
+(
+    'sv:sojaproteinisolat',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:penaeus-monodon',
+    '',
+    'penaeus-monodon',
+    ''
+), 
+(
+    'cs:bio-pšeničná-mouka-hladká',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:mjölkproteinkoncentrat',
+    '',
+    '',
+    ''
+), 
+(
+    'de:muskatnuss',
+    '',
+    '',
+    'muskatnuss'
+), 
+(
+    'en:hoki',
+    'hoki',
+    '',
+    ''
+), 
+(
+    'fr:ovoproduits',
+    '',
+    'ovoproduits',
+    ''
+), 
+(
+    'th:ข้าวโอ๊ต',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fenouil',
+    '',
+    'fenouil',
+    ''
+), 
+(
+    'nl:lindebloesem',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollkornmehl',
+    '',
+    '',
+    'vollkornmehl'
+), 
+(
+    'fr:en-gras',
+    '',
+    'en-gras',
+    ''
+), 
+(
+    'en:alcohol',
+    'alcohol',
+    '',
+    ''
+), 
+(
+    'fr:oufs',
+    '',
+    'oufs',
+    ''
+), 
+(
+    'pl:pomarańcze',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cynoglossus-bilineatus',
+    '',
+    'cynoglossus-bilineatus',
+    ''
+), 
+(
+    'es:quinoa',
+    '',
+    '',
+    ''
+), 
+(
+    'no:hvete',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:gluten-ble-lait-oeuf',
+    '',
+    'gluten-ble-lait-oeuf',
+    ''
+), 
+(
+    'de:würze',
+    '',
+    '',
+    'würze'
+), 
+(
+    'de:sojabohnenkerne',
+    '',
+    '',
+    'sojabohnenkerne'
+), 
+(
+    'hr:uova',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:amandes-grillees',
+    '',
+    'amandes-grillees',
+    ''
+), 
+(
+    'hu:tejsavókészítmény',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:sojinih',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pieuvres',
+    '',
+    'pieuvres',
+    ''
+), 
+(
+    'es:pasta-de-sesamo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:bio-hartweizengrieß',
+    '',
+    '',
+    'bio-hartweizengrieß'
+), 
+(
+    'de:vollmichschokolade',
+    '',
+    '',
+    'vollmichschokolade'
+), 
+(
+    'fr:teguments',
+    '',
+    'teguments',
+    ''
+), 
+(
+    'hr:pavlaka',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:zară',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:ryba',
+    '',
+    '',
+    ''
+), 
+(
+    'de:koffeingehalt-erhöht-32mg-100-ml-fertiggetränk',
+    '',
+    '',
+    'koffeingehalt-erhöht-32mg-100-ml-fertiggetränk'
+), 
+(
+    'fr:tarwebloem',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:bulot',
+    '',
+    'bulot',
+    ''
+), 
+(
+    'lt:kvietiniai-miltai',
+    '',
+    '',
+    ''
+), 
+(
+    'en:contains-cereals-containing-gluten',
+    'contains-cereals-containing-gluten',
+    '',
+    ''
+), 
+(
+    'de:hühnereivolleipulver',
+    '',
+    '',
+    'hühnereivolleipulver'
+), 
+(
+    'nl:amandelschaafsel',
+    '',
+    '',
+    ''
+), 
+(
+    'en:edamer',
+    'edamer',
+    '',
+    ''
+), 
+(
+    'de:weizenbestandteile',
+    '',
+    '',
+    'weizenbestandteile'
+), 
+(
+    'en:tarwebloem',
+    'tarwebloem',
+    '',
+    ''
+), 
+(
+    'de:melk',
+    '',
+    '',
+    ''
+), 
+(
+    'es:sal',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:acido-lactico',
+    '',
+    '',
+    ''
+), 
+(
+    'it:acqua',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:chatrou',
+    '',
+    'chatrou',
+    ''
+), 
+(
+    'fr:jus-de-citron',
+    '',
+    'jus-de-citron',
+    ''
+), 
+(
+    'de:thunfischfleisch',
+    '',
+    '',
+    'thunfischfleisch'
+), 
+(
+    'ru:сахар-песок',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchprodukten',
+    '',
+    '',
+    'milchprodukten'
+), 
+(
+    'cs:oxid',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:obilných',
+    '',
+    '',
+    ''
+), 
+(
+    'de:buchweizen',
+    '',
+    '',
+    'buchweizen'
+), 
+(
+    'fr:pavot',
+    '',
+    'pavot',
+    ''
+), 
+(
+    'fr:foie-de-morue',
+    '',
+    'foie-de-morue',
+    ''
+), 
+(
+    'pl:jeczmienny',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:voine',
+    '',
+    'voine',
+    ''
+), 
+(
+    'fr:filets-de-harengs',
+    '',
+    'filets-de-harengs',
+    ''
+), 
+(
+    'en:glutenbevattende-granen',
+    'glutenbevattende-granen',
+    '',
+    ''
+), 
+(
+    'fr:sojabohnen',
+    '',
+    'sojabohnen',
+    ''
+), 
+(
+    'sk:smotana',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:пиросульфит-натрия',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pescado',
+    '',
+    'pescado',
+    ''
+), 
+(
+    'de:hülsenfrüchte',
+    '',
+    '',
+    'hülsenfrüchte'
+), 
+(
+    'fr:sesam',
+    '',
+    'sesam',
+    ''
+), 
+(
+    'de:weichkäsewürfel',
+    '',
+    '',
+    'weichkäsewürfel'
+), 
+(
+    'it:weizenmehl',
+    '',
+    '',
+    ''
+), 
+(
+    'es:ninguno',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:soja-noir',
+    '',
+    'soja-noir',
+    ''
+), 
+(
+    'xx:weizenmehl',
+    '',
+    '',
+    ''
+), 
+(
+    'sk:pšenična',
+    '',
+    '',
+    ''
+), 
+(
+    'en:fromage',
+    'fromage',
+    '',
+    ''
+), 
+(
+    'nb:soyasauspulver',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:skalldyr',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cashewmilk',
+    'cashewmilk',
+    '',
+    ''
+), 
+(
+    'pl:sojowym',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:солод-ржаной',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:kaasjeskruidbloesem',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:5',
+    '',
+    '5',
+    ''
+), 
+(
+    'fr:gruyere-aop',
+    '',
+    'gruyere-aop',
+    ''
+), 
+(
+    'it:weizen',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:mleka',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-de-petit-epeautre',
+    '',
+    'ble-de-petit-epeautre',
+    ''
+), 
+(
+    'de:garnelenpulver',
+    '',
+    '',
+    'garnelenpulver'
+), 
+(
+    'fr:tofu-fume',
+    '',
+    'tofu-fume',
+    ''
+), 
+(
+    'lt:migdolais',
+    '',
+    '',
+    ''
+), 
+(
+    'de:molkenproteincrispies',
+    '',
+    '',
+    'molkenproteincrispies'
+), 
+(
+    'hr:jogurt',
+    '',
+    '',
+    ''
+), 
+(
+    'de:teilentrahmte-milch',
+    '',
+    '',
+    'teilentrahmte-milch'
+), 
+(
+    'de:palmfett',
+    '',
+    '',
+    'palmfett'
+), 
+(
+    'pt:ameijoa-dourada',
+    '',
+    '',
+    ''
+), 
+(
+    'en:laitier',
+    'laitier',
+    '',
+    ''
+), 
+(
+    'fr:dissulfite',
+    '',
+    'dissulfite',
+    ''
+), 
+(
+    'de:h-vollmilch',
+    '',
+    '',
+    'h-vollmilch'
+), 
+(
+    'de:pasteurisierte-kuhmilch',
+    '',
+    '',
+    'pasteurisierte-kuhmilch'
+), 
+(
+    'fr:ingredients-de-la-preparation-deshydratee',
+    '',
+    'ingredients-de-la-preparation-deshydratee',
+    ''
+), 
+(
+    'sk:ovsena',
+    '',
+    '',
+    ''
+), 
+(
+    'es:lenguado',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-monde-precuit',
+    '',
+    'ble-monde-precuit',
+    ''
+), 
+(
+    'fr:anhydridesulfureux',
+    '',
+    'anhydridesulfureux',
+    ''
+), 
+(
+    'es:fenilanina',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:grietinė',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:bleekselderij',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:rhum',
+    '',
+    'rhum',
+    ''
+), 
+(
+    'it:farina-tipo-0',
+    '',
+    '',
+    ''
+), 
+(
+    'en:แป้งสาลี',
+    'แป้งสาลี',
+    '',
+    ''
+), 
+(
+    'cs:kvásek',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:sezama',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:torskfiléer',
+    '',
+    '',
+    ''
+), 
+(
+    'de:molkeneiweisskäse',
+    '',
+    '',
+    'molkeneiweisskäse'
+), 
+(
+    'fr:loup-d-atlantique',
+    '',
+    'loup-d-atlantique',
+    ''
+), 
+(
+    'de:schlagrahm',
+    '',
+    '',
+    'schlagrahm'
+), 
+(
+    'fr:ble-khorasan',
+    '',
+    'ble-khorasan',
+    ''
+), 
+(
+    'lv:reņģes',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pommes',
+    '',
+    'pommes',
+    ''
+), 
+(
+    'fr:pecorino-romano-dop',
+    '',
+    'pecorino-romano-dop',
+    ''
+), 
+(
+    'pl:gorczyca-mielona',
+    '',
+    '',
+    ''
+), 
+(
+    'el:ξηροί-καρποί',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pangas',
+    '',
+    'pangas',
+    ''
+), 
+(
+    'en:farine',
+    'farine',
+    '',
+    ''
+), 
+(
+    'fr:acariens',
+    '',
+    'acariens',
+    ''
+), 
+(
+    'es:etilvainillina',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:pšenični-durum-zdrob',
+    '',
+    '',
+    ''
+), 
+(
+    'id:antioksidan-asam-askorbat',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizendinkel',
+    '',
+    '',
+    'weizendinkel'
+), 
+(
+    'nb:lettmelk',
+    '',
+    '',
+    ''
+), 
+(
+    'es:calmars',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cynoglossus-robustus',
+    '',
+    'cynoglossus-robustus',
+    ''
+), 
+(
+    'el:θειώδη-ενώσεις',
+    '',
+    '',
+    ''
+), 
+(
+    'en:verpakt-in-een-bedrijf-waar-ook-pinda-en-sesamzaad-worden-verwerkt',
+    'verpakt-in-een-bedrijf-waar-ook-pinda-en-sesamzaad-worden-verwerkt',
+    '',
+    ''
+), 
+(
+    'de:trockeneiweiss',
+    '',
+    '',
+    'trockeneiweiss'
+), 
+(
+    'es:slesamo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:houblon',
+    'houblon',
+    '',
+    ''
+), 
+(
+    'en:gelbsenfsaat',
+    'gelbsenfsaat',
+    '',
+    ''
+), 
+(
+    'sr:aromatični-preparati',
+    '',
+    '',
+    ''
+), 
+(
+    'it:merluzzo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:wheatmeal',
+    'wheatmeal',
+    '',
+    ''
+), 
+(
+    'de:teebutter',
+    '',
+    '',
+    'teebutter'
+), 
+(
+    'de:pazifischer-polar-dorsch',
+    '',
+    '',
+    'pazifischer-polar-dorsch'
+), 
+(
+    'fr:mandel',
+    '',
+    'mandel',
+    ''
+), 
+(
+    'fr:albumine-de-lait',
+    '',
+    'albumine-de-lait',
+    ''
+), 
+(
+    'fr:cohana',
+    '',
+    'cohana',
+    ''
+), 
+(
+    'fr:grondin-rouge',
+    '',
+    'grondin-rouge',
+    ''
+), 
+(
+    'hu:citrus',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:puree-d-arachide',
+    '',
+    'puree-d-arachide',
+    ''
+), 
+(
+    'fr:noisettes-grillees',
+    '',
+    'noisettes-grillees',
+    ''
+), 
+(
+    'nl:korenbloembloesem',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:moule-du-pacifique',
+    '',
+    'moule-du-pacifique',
+    ''
+), 
+(
+    'fr:pšenično',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:iactose',
+    '',
+    'iactose',
+    ''
+), 
+(
+    'sv:ostronspad',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:zer-dulce-sub-formă-de-pulbere',
+    '',
+    '',
+    ''
+), 
+(
+    'es:mazada',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:emmentalost',
+    '',
+    '',
+    ''
+), 
+(
+    'en:whole-grain-spelt-flour',
+    'whole-grain-spelt-flour',
+    '',
+    ''
+), 
+(
+    'en:malted-wheat',
+    'malted-wheat',
+    '',
+    ''
+), 
+(
+    'nl:mageremelkpoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'it:grana-padano-dop',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:orzechowa',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:moutarde-a-l-ancienne',
+    '',
+    'moutarde-a-l-ancienne',
+    ''
+), 
+(
+    'sr:sir-u-prahu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:substance-laitiere',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:bresil',
+    '',
+    'bresil',
+    ''
+), 
+(
+    'es:moules',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haseinüsse',
+    '',
+    '',
+    'haseinüsse'
+), 
+(
+    'de:lupineneiweiß',
+    '',
+    '',
+    'lupineneiweiß'
+), 
+(
+    'es:magnesio',
+    '',
+    '',
+    ''
+), 
+(
+    'es:queso-edam',
+    '',
+    '',
+    ''
+), 
+(
+    'de:süßmplkenpulver',
+    '',
+    '',
+    'süßmplkenpulver'
+), 
+(
+    'nl:tarwe-eiwit',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:gălbenuş-de-ou',
+    '',
+    '',
+    ''
+), 
+(
+    'he:אגוזי-לוז',
+    '',
+    '',
+    ''
+), 
+(
+    'de:pistazienpaste',
+    '',
+    '',
+    'pistazienpaste'
+), 
+(
+    'de:vollmilch-schokolade',
+    '',
+    '',
+    'vollmilch-schokolade'
+), 
+(
+    'en:whole-wheat-flour',
+    'whole-wheat-flour',
+    '',
+    ''
+), 
+(
+    'fr:malt-froment',
+    '',
+    'malt-froment',
+    ''
+), 
+(
+    'ro:extract-de-drojdie',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:zabpehelyliszt',
+    '',
+    '',
+    ''
+), 
+(
+    'id:lesitin-kedelai',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:sojino-zrno',
+    '',
+    '',
+    ''
+), 
+(
+    'de:garnele',
+    '',
+    '',
+    'garnele'
+), 
+(
+    'en:senfsaat',
+    'senfsaat',
+    '',
+    ''
+), 
+(
+    'en:ξηρούς-καρπούς',
+    'ξηρούς-καρπούς',
+    '',
+    ''
+), 
+(
+    'fr:ble-gluten-de-ble',
+    '',
+    'ble-gluten-de-ble',
+    ''
+), 
+(
+    'hu:kecskesajt',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:från-korn',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:creme-crue',
+    '',
+    'creme-crue',
+    ''
+), 
+(
+    'fr:perles-de-ble-gluten',
+    '',
+    'perles-de-ble-gluten',
+    ''
+), 
+(
+    'en:almondmilk',
+    'almondmilk',
+    '',
+    ''
+), 
+(
+    'en:ceuf',
+    'ceuf',
+    '',
+    ''
+), 
+(
+    'it:sola',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:пшеничено',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:glace-parfum-vanille-78-lactose',
+    '',
+    'glace-parfum-vanille-78-lactose',
+    ''
+), 
+(
+    'ru:пророщенное-зерно-ячменя-продовольственного',
+    '',
+    '',
+    ''
+), 
+(
+    'en:wholemilk',
+    'wholemilk',
+    '',
+    ''
+), 
+(
+    'pl:jeczmień',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:oatmeal',
+    '',
+    'oatmeal',
+    ''
+), 
+(
+    'cs:sojový',
+    '',
+    '',
+    ''
+), 
+(
+    'de:lysozym',
+    '',
+    '',
+    'lysozym'
+), 
+(
+    'sv:matvete',
+    '',
+    '',
+    ''
+), 
+(
+    'en:hazelnoot',
+    'hazelnoot',
+    '',
+    ''
+), 
+(
+    'hu:tehénsajt',
+    '',
+    '',
+    ''
+), 
+(
+    'el:κιτρικό',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:pšeničná-sladová-mouka',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:sulfitter',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:calmar-geant',
+    '',
+    'calmar-geant',
+    ''
+), 
+(
+    'de:dinkelmalz',
+    '',
+    '',
+    'dinkelmalz'
+), 
+(
+    'sv:mjölksyrakultur',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:amendoa',
+    '',
+    'amendoa',
+    ''
+), 
+(
+    'en:sojabonor',
+    'sojabonor',
+    '',
+    ''
+), 
+(
+    'de:honig',
+    '',
+    '',
+    'honig'
+), 
+(
+    'hu:sovány-tejpor',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:samoussas-boeuf-4x25g-4-triangles-de-galette-de-ble-34-farcis-a-la-viande-boeuf',
+    '',
+    'samoussas-boeuf-4x25g-4-triangles-de-galette-de-ble-34-farcis-a-la-viande-boeuf',
+    ''
+), 
+(
+    'fr:preparation-lactee',
+    '',
+    'preparation-lactee',
+    ''
+), 
+(
+    'fr:lactoresum',
+    '',
+    'lactoresum',
+    ''
+), 
+(
+    'sv:mjölkbeståndsdelar',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:saltad-loddarom',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-huile-de-sesame',
+    '',
+    'ble-huile-de-sesame',
+    ''
+), 
+(
+    'de:konzentrat-nicht-zum-direkten-verzehr-bestimmt',
+    '',
+    '',
+    'konzentrat-nicht-zum-direkten-verzehr-bestimmt'
+), 
+(
+    'cs:zakysaná-smetana',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:hasselnøtmasse',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:petit-lait-doux-en-poudre',
+    '',
+    '',
+    ''
+), 
+(
+    'de:shrimppulver',
+    '',
+    '',
+    'shrimppulver'
+), 
+(
+    'sr:raž',
+    '',
+    '',
+    ''
+), 
+(
+    'es:centeno89',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-de-khorasan',
+    '',
+    'ble-de-khorasan',
+    ''
+), 
+(
+    'fr:cynoglossus-oligolepis',
+    '',
+    'cynoglossus-oligolepis',
+    ''
+), 
+(
+    'nl:vrije-uitloop-ei',
+    '',
+    '',
+    ''
+), 
+(
+    'lv:skumbrijas',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cynoglossus-itinus',
+    '',
+    'cynoglossus-itinus',
+    ''
+), 
+(
+    'sv:senaps',
+    '',
+    '',
+    ''
+), 
+(
+    'en:hafer',
+    'hafer',
+    '',
+    ''
+), 
+(
+    'en:butter-oil',
+    'butter-oil',
+    '',
+    ''
+), 
+(
+    'sv:hummer',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:nitrate-de-potassium',
+    '',
+    'nitrate-de-potassium',
+    ''
+), 
+(
+    'en:volleipulver',
+    'volleipulver',
+    '',
+    ''
+), 
+(
+    'nl:sesamzaadjes',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kuh-rohmilch',
+    '',
+    '',
+    'kuh-rohmilch'
+), 
+(
+    'fr:amidon-modifie',
+    '',
+    'amidon-modifie',
+    ''
+), 
+(
+    'fr:couscous-gluten',
+    '',
+    'couscous-gluten',
+    ''
+), 
+(
+    'en:cashewkerne',
+    'cashewkerne',
+    '',
+    ''
+), 
+(
+    'en:weizenprotein',
+    'weizenprotein',
+    '',
+    ''
+), 
+(
+    'xx:blé',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:zer-pudră',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lait-dont-chevre',
+    '',
+    'lait-dont-chevre',
+    ''
+), 
+(
+    'en:cocoa',
+    'cocoa',
+    '',
+    ''
+), 
+(
+    'en:blue-cheese',
+    'blue-cheese',
+    '',
+    ''
+), 
+(
+    'fr:icc',
+    '',
+    'icc',
+    ''
+), 
+(
+    'fr:dessert-lacte-aromatise-saveur-vanille',
+    '',
+    'dessert-lacte-aromatise-saveur-vanille',
+    ''
+), 
+(
+    'es:disulfito-de-sodio',
+    '',
+    '',
+    ''
+), 
+(
+    'de:pecannuss',
+    '',
+    '',
+    'pecannuss'
+), 
+(
+    'ru:эмульгатор-соевый-лецитин',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:volkorenhavermeel',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gerstemalzextrakt',
+    '',
+    '',
+    'gerstemalzextrakt'
+), 
+(
+    'pt:noz',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:couteaux',
+    '',
+    'couteaux',
+    ''
+), 
+(
+    'fr:saumon-salmo-salar',
+    '',
+    'saumon-salmo-salar',
+    ''
+), 
+(
+    'de:regenbogenforellen',
+    '',
+    '',
+    'regenbogenforellen'
+), 
+(
+    'fr:noisettes-torrefiees',
+    '',
+    'noisettes-torrefiees',
+    ''
+), 
+(
+    'de:dinkelquellmehl',
+    '',
+    '',
+    'dinkelquellmehl'
+), 
+(
+    'fr:poudre',
+    '',
+    'poudre',
+    ''
+), 
+(
+    'fr:fruits-a-coques-et-oeufs-et-autres-gluten',
+    '',
+    'fruits-a-coques-et-oeufs-et-autres-gluten',
+    ''
+), 
+(
+    'nl:tarwevezels',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kakaobutter',
+    '',
+    '',
+    'kakaobutter'
+), 
+(
+    'nl:sojasaus',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:grau-spelta',
+    '',
+    '',
+    ''
+), 
+(
+    'de:butteröl',
+    '',
+    '',
+    'butteröl'
+), 
+(
+    'fr:farce',
+    '',
+    'farce',
+    ''
+), 
+(
+    'sv:kornmaltsirap',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:malt-d-avoine',
+    '',
+    'malt-d-avoine',
+    ''
+), 
+(
+    'pt:lacteas',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:garstyčių',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fibre-de-soja',
+    '',
+    'fibre-de-soja',
+    ''
+), 
+(
+    'hu:tehéntúró',
+    '',
+    '',
+    ''
+), 
+(
+    'es:poisson',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lactose-de-lait',
+    '',
+    'lactose-de-lait',
+    ''
+), 
+(
+    'es:proteina-de-suero',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:kikirikija',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:a',
+    '',
+    'a',
+    ''
+), 
+(
+    'de:erdnuss-aroma',
+    '',
+    '',
+    'erdnuss-aroma'
+), 
+(
+    'th:ข้าวบาร์เลย์',
+    '',
+    '',
+    ''
+), 
+(
+    'es:nuez-pecana',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:maslaca',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:jordnötsmassa',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:framboises',
+    '',
+    'framboises',
+    ''
+), 
+(
+    'sv:laktospulver',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:maasdam-rape',
+    '',
+    'maasdam-rape',
+    ''
+), 
+(
+    'de:schollenfilet',
+    '',
+    '',
+    'schollenfilet'
+), 
+(
+    'fr:truite-fumee',
+    '',
+    'truite-fumee',
+    ''
+), 
+(
+    'fr:eier',
+    '',
+    'eier',
+    ''
+), 
+(
+    'de:für-koffeinempfindliche-personen-nicht-geeignet',
+    '',
+    '',
+    'für-koffeinempfindliche-personen-nicht-geeignet'
+), 
+(
+    'pt:leite-de-cabra',
+    '',
+    '',
+    ''
+), 
+(
+    'en:soy-sauce',
+    'soy-sauce',
+    '',
+    ''
+), 
+(
+    'es:pectina',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pate-d-anchois',
+    '',
+    'pate-d-anchois',
+    ''
+), 
+(
+    'fr:viande-de-boeuf-preparee-en-salaison-precuite',
+    '',
+    'viande-de-boeuf-preparee-en-salaison-precuite',
+    ''
+), 
+(
+    'de:speisequarkpulver',
+    '',
+    '',
+    'speisequarkpulver'
+), 
+(
+    'fr:salicoque-rouge-d-argentine',
+    '',
+    'salicoque-rouge-d-argentine',
+    ''
+), 
+(
+    'sv:senapsfrö-skal',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:unt-concentrat',
+    '',
+    '',
+    ''
+), 
+(
+    'en:egg-white-powder',
+    'egg-white-powder',
+    '',
+    ''
+), 
+(
+    'fr:puree-d-amande',
+    '',
+    '',
+    ''
+), 
+(
+    'en:free-range-pasteurised-whole-egg',
+    'free-range-pasteurised-whole-egg',
+    '',
+    ''
+), 
+(
+    'de:austernextrakt',
+    '',
+    '',
+    'austernextrakt'
+), 
+(
+    'en:whipping-cream',
+    'whipping-cream',
+    '',
+    ''
+), 
+(
+    'sv:äggule',
+    '',
+    '',
+    ''
+), 
+(
+    'ko:우유',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-cheddar',
+    '',
+    'fromage-cheddar',
+    ''
+), 
+(
+    'en:aspartame',
+    'aspartame',
+    '',
+    ''
+), 
+(
+    'ru:сои',
+    '',
+    '',
+    ''
+), 
+(
+    'da:råmælk',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:creme-glacee-chocolat',
+    '',
+    'creme-glacee-chocolat',
+    ''
+), 
+(
+    'nl:vrije-uitloop-eigeel',
+    '',
+    '',
+    ''
+), 
+(
+    'en:fenilalanina',
+    'fenilalanina',
+    '',
+    ''
+), 
+(
+    'sv:e223-sulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:salade-composee-88',
+    '',
+    'salade-composee-88',
+    ''
+), 
+(
+    'fr:mousse-de-foie',
+    '',
+    'mousse-de-foie',
+    ''
+), 
+(
+    'nl:munt',
+    '',
+    '',
+    ''
+), 
+(
+    'de:butter-aroma',
+    '',
+    '',
+    'butter-aroma'
+), 
+(
+    'cs:lískových-ořechů',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:tarwemoutbloem',
+    '',
+    '',
+    ''
+), 
+(
+    'de:erdnussstückchen',
+    '',
+    '',
+    'erdnussstückchen'
+), 
+(
+    'en:palm-oil',
+    'palm-oil',
+    '',
+    ''
+), 
+(
+    'en:trigo-duro',
+    'trigo-duro',
+    '',
+    ''
+), 
+(
+    'fr:seitan',
+    '',
+    'seitan',
+    ''
+), 
+(
+    'de:getreidemahlerzeugnisse',
+    '',
+    '',
+    'getreidemahlerzeugnisse'
+), 
+(
+    'ro:smântână',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:heemst',
+    '',
+    '',
+    ''
+), 
+(
+    'de:emmermalz',
+    '',
+    '',
+    'emmermalz'
+), 
+(
+    'fr:lactea',
+    '',
+    'lactea',
+    ''
+), 
+(
+    'de:vollkorndinkel',
+    '',
+    '',
+    'vollkorndinkel'
+), 
+(
+    'id:dinatrium-inosinat',
+    '',
+    '',
+    ''
+), 
+(
+    'id:natrium-askorbat',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:roggenmehl',
+    '',
+    'roggenmehl',
+    ''
+), 
+(
+    'fr:fromage-de-savoie',
+    '',
+    'fromage-de-savoie',
+    ''
+), 
+(
+    'fr:petit',
+    '',
+    'petit',
+    ''
+), 
+(
+    'fr:prunes',
+    '',
+    'prunes',
+    ''
+), 
+(
+    'es:levhe',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:laskowe',
+    '',
+    '',
+    ''
+), 
+(
+    'da:sojasauce',
+    '',
+    '',
+    ''
+), 
+(
+    'de:wildlachs-filet',
+    '',
+    '',
+    'wildlachs-filet'
+), 
+(
+    'de:speisetopfen',
+    '',
+    '',
+    'speisetopfen'
+), 
+(
+    'de:sojalezithin',
+    '',
+    '',
+    'sojalezithin'
+), 
+(
+    'de:pekannusskernstücke',
+    '',
+    '',
+    'pekannusskernstücke'
+), 
+(
+    'de:barley-malt-extract',
+    '',
+    '',
+    'barley-malt-extract'
+), 
+(
+    'fr:decor-de-confiserie-colore',
+    '',
+    'decor-de-confiserie-colore',
+    ''
+), 
+(
+    'fr:sojin',
+    '',
+    '',
+    ''
+), 
+(
+    'en:alaska-pollock',
+    'alaska-pollock',
+    '',
+    ''
+), 
+(
+    'en:senfmehl',
+    'senfmehl',
+    '',
+    ''
+), 
+(
+    'de:nicht-unverdünnt-verwenden',
+    '',
+    '',
+    ''
+), 
+(
+    'es:sin',
+    '',
+    '',
+    ''
+), 
+(
+    'en:frutta-a-guscio',
+    'frutta-a-guscio',
+    '',
+    ''
+), 
+(
+    'el:θυμάρι',
+    '',
+    '',
+    ''
+), 
+(
+    'it:frișcă',
+    '',
+    '',
+    ''
+), 
+(
+    'de:naatriummetabisulfit',
+    '',
+    '',
+    'naatriummetabisulfit'
+), 
+(
+    'fr:inates',
+    '',
+    'inates',
+    ''
+), 
+(
+    'fr:amandes-mondees',
+    '',
+    'amandes-mondees',
+    ''
+), 
+(
+    'de:hafr-vollkornmehl',
+    '',
+    '',
+    'hafr-vollkornmehl'
+), 
+(
+    'de:butterfettpulver',
+    '',
+    '',
+    'butterfettpulver'
+), 
+(
+    'en:milcheiweissisolat',
+    'milcheiweissisolat',
+    '',
+    ''
+), 
+(
+    'fr:vetemjol',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:passion',
+    '',
+    'passion',
+    ''
+), 
+(
+    'th:recombined-partly-skimmed-milk',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:oregonräka',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vitamin-a',
+    '',
+    '',
+    'vitamin-a'
+), 
+(
+    'fr:mandes',
+    '',
+    'mandes',
+    ''
+), 
+(
+    'de:glutenbevattende-granen',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:hco',
+    '',
+    'hco',
+    ''
+), 
+(
+    'de:freilandei',
+    '',
+    '',
+    'freilandei'
+), 
+(
+    'fr:viande',
+    '',
+    'viande',
+    ''
+), 
+(
+    'fr:gelifiant-carraghenanes-pourcentages-exprimes-sur-le-produit-fini-certains-ingredients-de-ce-produit-ne-proviennent-pas-de-france',
+    '',
+    'gelifiant-carraghenanes-pourcentages-exprimes-sur-le-produit-fini-certains-ingredients-de-ce-produit-ne-proviennent-pas-de-france',
+    ''
+), 
+(
+    'en:soybean-extract',
+    'soybean-extract',
+    '',
+    ''
+), 
+(
+    'ar:يمنع-للأمراض-المزمنه-و-الحوامل-و-المرضعات-و-من-دون-18-عام-إلا-بإشراف-طبيب',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:супена-основа',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:the-darjeeling',
+    '',
+    'the-darjeeling',
+    ''
+), 
+(
+    'id:vitamin-d3',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:tonijn',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:kananmunan-lysotsyymi',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-blanc-fondu',
+    '',
+    'fromage-blanc-fondu',
+    ''
+), 
+(
+    'no:skummetmelkpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roggenvollkornschrot-53',
+    '',
+    '',
+    'roggenvollkornschrot-53'
+), 
+(
+    'ru:жир-молочный',
+    '',
+    '',
+    ''
+), 
+(
+    'th:หอย',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hasselnussmasse',
+    '',
+    '',
+    'hasselnussmasse'
+), 
+(
+    'nl:geroosterde-sesamolie',
+    '',
+    '',
+    ''
+), 
+(
+    'it:cozze',
+    '',
+    '',
+    ''
+), 
+(
+    'de:senfzubereitung',
+    '',
+    '',
+    'senfzubereitung'
+), 
+(
+    'de:hartweizengrießteigwaren',
+    '',
+    '',
+    'hartweizengrießteigwaren'
+), 
+(
+    'ru:овсяные',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:mijeko',
+    '',
+    '',
+    ''
+), 
+(
+    'en:popcorn',
+    'popcorn',
+    '',
+    ''
+), 
+(
+    'en:obers',
+    'obers',
+    '',
+    ''
+), 
+(
+    'pt:ovo-liquido-integral',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:beurre-extra-fin',
+    '',
+    'beurre-extra-fin',
+    ''
+), 
+(
+    'de:molkenerzeugnispulver',
+    '',
+    '',
+    'molkenerzeugnispulver'
+), 
+(
+    'fr:jamais',
+    '',
+    'jamais',
+    ''
+), 
+(
+    'fr:creme-de-lactoserum',
+    '',
+    'creme-de-lactoserum',
+    ''
+), 
+(
+    'fr:milchmineralien',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:rape',
+    '',
+    'rape',
+    ''
+), 
+(
+    'ro:ţelină',
+    '',
+    '',
+    ''
+), 
+(
+    'it:haselnusse',
+    '',
+    '',
+    ''
+), 
+(
+    'de:graved-lachs',
+    '',
+    '',
+    'graved-lachs'
+), 
+(
+    'en:lecithine-de-soja',
+    'lecithine-de-soja',
+    '',
+    ''
+), 
+(
+    'en:pea-protein-isolate',
+    'pea-protein-isolate',
+    '',
+    ''
+), 
+(
+    'is:undanrennuduft',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:farine-de-froment-complet',
+    '',
+    '',
+    ''
+), 
+(
+    'es:haselnusse',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:lískové-ořechy',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sulfites-10mg-kg-ou-10-mg-l',
+    '',
+    'sulfites-10mg-kg-ou-10-mg-l',
+    ''
+), 
+(
+    'de:j0ghurt',
+    '',
+    '',
+    'j0ghurt'
+), 
+(
+    'es:bacalla',
+    '',
+    '',
+    ''
+), 
+(
+    'en:αραχίδες-φυστίκια',
+    'αραχίδες-φυστίκια',
+    '',
+    ''
+), 
+(
+    'fr:liquide-de-couverture',
+    '',
+    'liquide-de-couverture',
+    ''
+), 
+(
+    'hu:nátrium-metabiszulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchsäurebakteriekulturen',
+    '',
+    '',
+    'milchsäurebakteriekulturen'
+), 
+(
+    'fr:sauce-tomato-ketchup',
+    '',
+    'sauce-tomato-ketchup',
+    ''
+), 
+(
+    'fr:feta-aop',
+    '',
+    'feta-aop',
+    ''
+), 
+(
+    'fr:vollkornhafer',
+    '',
+    'vollkornhafer',
+    ''
+), 
+(
+    'es:leche-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:barley-malt-vinegar',
+    'barley-malt-vinegar',
+    '',
+    ''
+), 
+(
+    'de:trockeneiweiß',
+    '',
+    '',
+    'trockeneiweiß'
+), 
+(
+    'ca:avellana',
+    '',
+    '',
+    ''
+), 
+(
+    'en:mais',
+    'mais',
+    '',
+    ''
+), 
+(
+    'de:slagsahne',
+    '',
+    '',
+    'slagsahne'
+), 
+(
+    'de:haselnüss',
+    '',
+    '',
+    'haselnüss'
+), 
+(
+    'en:medium-fat-hard-cheese',
+    'medium-fat-hard-cheese',
+    '',
+    ''
+), 
+(
+    'de:10-4ml-konzentrat-mit-239-6ml-wasser-mischen-ergibt-eine-portion',
+    '',
+    '',
+    '10-4ml-konzentrat-mit-239-6ml-wasser-mischen-ergibt-eine-portion'
+), 
+(
+    'lv:sezams',
+    '',
+    '',
+    ''
+), 
+(
+    'en:farine-de-soja',
+    'farine-de-soja',
+    '',
+    ''
+), 
+(
+    'de:milch-einschließlich-laktose',
+    '',
+    '',
+    'milch-einschließlich-laktose'
+), 
+(
+    'en:fromages',
+    'fromages',
+    '',
+    ''
+), 
+(
+    'no:svoveldioksid',
+    '',
+    '',
+    ''
+), 
+(
+    'de:rahmjogurt',
+    '',
+    '',
+    'rahmjogurt'
+), 
+(
+    'de:könnte-bei-allergikern-unverträglichkeiten-auslösen',
+    '',
+    '',
+    ''
+), 
+(
+    'en:trigo-sarraceno',
+    'trigo-sarraceno',
+    '',
+    ''
+), 
+(
+    'de:voilmilchpulver',
+    '',
+    '',
+    'voilmilchpulver'
+), 
+(
+    'fr:blě',
+    '',
+    'blě',
+    ''
+), 
+(
+    'es:soya-texturizada',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weiznmalzmehl',
+    '',
+    '',
+    'weiznmalzmehl'
+), 
+(
+    'fr:emmentaler-aop',
+    '',
+    'emmentaler-aop',
+    ''
+), 
+(
+    'hr:natrijev-metabisulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'es:abadejo',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:syrovátkový',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-poisson-lait-oeuf-moutarde',
+    '',
+    'ble-poisson-lait-oeuf-moutarde',
+    ''
+), 
+(
+    'pl:kluski-ryżowe',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dinkelvollkornnudeln',
+    '',
+    '',
+    'dinkelvollkornnudeln'
+), 
+(
+    'fr:eigeel',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:vehnäjauno',
+    '',
+    '',
+    ''
+), 
+(
+    'de:erdnussmehl',
+    '',
+    '',
+    'erdnussmehl'
+), 
+(
+    'de:roggen-vollkornmehl',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:cashew-nut-butter',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:начинка-молокосодержащая-гель-белый',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:contient-des-sulfites-soit-60-de-sauce-cremeuse-au-vin-blanc-et-a-la-laitue-de-mer-dans-le-produit-certains-ingredients-de-ce-produit-ne-proviennent-pas-de-france',
+    '',
+    'contient-des-sulfites-soit-60-de-sauce-cremeuse-au-vin-blanc-et-a-la-laitue-de-mer-dans-le-produit-certains-ingredients-de-ce-produit-ne-proviennent-pas-de-france',
+    ''
+), 
+(
+    'fr:farine-de-ble-57',
+    '',
+    'farine-de-ble-57',
+    ''
+), 
+(
+    'da:edam',
+    '',
+    '',
+    ''
+), 
+(
+    'es:cous-cous',
+    '',
+    '',
+    ''
+), 
+(
+    'es:nuez-moscada',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:tărâțe-de-grâu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fume-au-bois-de-conifere-de-la-foret-noire',
+    '',
+    'fume-au-bois-de-conifere-de-la-foret-noire',
+    ''
+), 
+(
+    'fr:conservateur-chimique-possibilite-de-troubles-digestifs',
+    '',
+    'conservateur-chimique-possibilite-de-troubles-digestifs',
+    ''
+), 
+(
+    'pl:krewetki',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hühner-volleipulver',
+    '',
+    '',
+    ''
+), 
+(
+    'de:käsereinmilch',
+    '',
+    '',
+    'käsereinmilch'
+), 
+(
+    'cs:oxid-siřičity',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mollusques-huitres',
+    '',
+    '',
+    ''
+), 
+(
+    'en:noisette',
+    'noisette',
+    '',
+    ''
+), 
+(
+    'fr:chair-de-crevette',
+    '',
+    'chair-de-crevette',
+    ''
+), 
+(
+    'en:poisson',
+    'poisson',
+    '',
+    ''
+), 
+(
+    'fr:dilsulfite',
+    '',
+    'dilsulfite',
+    ''
+), 
+(
+    'tr:milk-powder-with-fat',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:poudre-de-babeurre',
+    '',
+    'poudre-de-babeurre',
+    ''
+), 
+(
+    'fr:graisse-vegetale-de-copr',
+    '',
+    'graisse-vegetale-de-copr',
+    ''
+), 
+(
+    'fr:milchbestandteile',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:молочный-продукт',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:concentre-de-proteines-de-serum',
+    '',
+    'concentre-de-proteines-de-serum',
+    ''
+), 
+(
+    'fr:crevettes-tigrees',
+    '',
+    'crevettes-tigrees',
+    ''
+), 
+(
+    'fr:s-jacques',
+    '',
+    's-jacques',
+    ''
+), 
+(
+    'en:blancs-d-oeufs',
+    'blancs-d-oeufs',
+    '',
+    ''
+), 
+(
+    'fr:nosiettes',
+    '',
+    'nosiettes',
+    ''
+), 
+(
+    'fr:thazard',
+    '',
+    'thazard',
+    ''
+), 
+(
+    'en:amendoim-e-coco',
+    'amendoim-e-coco',
+    '',
+    ''
+), 
+(
+    'de:suflit',
+    '',
+    '',
+    'suflit'
+), 
+(
+    'fr:puree-de-sesame',
+    '',
+    'puree-de-sesame',
+    ''
+), 
+(
+    'nb:sammalt-hvete',
+    '',
+    '',
+    ''
+), 
+(
+    'id:sulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:fermentos-lacticos',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:maslo',
+    '',
+    'maslo',
+    ''
+), 
+(
+    'en:mascarpone',
+    'mascarpone',
+    '',
+    ''
+), 
+(
+    'en:speisetopfen',
+    'speisetopfen',
+    '',
+    ''
+), 
+(
+    'de:khorasan-weizen',
+    '',
+    '',
+    'khorasan-weizen'
+), 
+(
+    'es:avellana-nuez-y-pistacho',
+    '',
+    '',
+    ''
+), 
+(
+    'de:frisehkäse',
+    '',
+    '',
+    'frisehkäse'
+), 
+(
+    'de:gluten-aus-weizen',
+    '',
+    '',
+    'gluten-aus-weizen'
+), 
+(
+    'fr:eiern',
+    '',
+    'eiern',
+    ''
+), 
+(
+    'de:trockenvolleipulver',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:мука-пшеничная',
+    '',
+    '',
+    ''
+), 
+(
+    'es:trigo-gluten-y-huevo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:egg-powder',
+    'egg-powder',
+    '',
+    ''
+), 
+(
+    'fr:fromage-pecorino',
+    '',
+    'fromage-pecorino',
+    ''
+), 
+(
+    'fr:oursin',
+    '',
+    'oursin',
+    ''
+), 
+(
+    'fr:2-purees-de-pommes-poires',
+    '',
+    '2-purees-de-pommes-poires',
+    ''
+), 
+(
+    'en:대두',
+    '대두',
+    '',
+    ''
+), 
+(
+    'es:carragenina',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:levures',
+    '',
+    'levures',
+    ''
+), 
+(
+    'es:clara-de-huevo',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:soja-structuur',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:senapspulver-sennepulver',
+    '',
+    '',
+    ''
+), 
+(
+    'en:hard-boiled-egg',
+    'hard-boiled-egg',
+    '',
+    ''
+), 
+(
+    'es:la-mayoria',
+    '',
+    '',
+    ''
+), 
+(
+    'it:farina-di-grano-tenero',
+    '',
+    '',
+    ''
+), 
+(
+    'ko:굴',
+    '',
+    '',
+    ''
+), 
+(
+    'en:makrillfile',
+    'makrillfile',
+    '',
+    ''
+), 
+(
+    'fr:fonte',
+    '',
+    'fonte',
+    ''
+), 
+(
+    'de:sojalcecithin',
+    '',
+    '',
+    'sojalcecithin'
+), 
+(
+    'de:gerstenmehlextrakt',
+    '',
+    '',
+    'gerstenmehlextrakt'
+), 
+(
+    'sr:katsuwonus-pelamis',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:extrait-de-paprika',
+    '',
+    '',
+    ''
+), 
+(
+    'id:vitamin-b1',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:ser',
+    '',
+    '',
+    ''
+), 
+(
+    'de:comté-käse',
+    '',
+    '',
+    'comté-käse'
+), 
+(
+    'fr:mozzarella-au-lait-de-bufflone',
+    '',
+    'mozzarella-au-lait-de-bufflone',
+    ''
+), 
+(
+    'de:dinkelweizen-vollkornmehl',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sheep-milk',
+    'sheep-milk',
+    '',
+    ''
+), 
+(
+    'de:fettarme-h-milch',
+    '',
+    '',
+    'fettarme-h-milch'
+), 
+(
+    'id:pewarna-alami-karamel-i',
+    '',
+    '',
+    ''
+), 
+(
+    'en:kakao',
+    'kakao',
+    '',
+    ''
+), 
+(
+    'de:senfsauce',
+    '',
+    '',
+    'senfsauce'
+), 
+(
+    'fr:gluen',
+    '',
+    'gluen',
+    ''
+), 
+(
+    'fr:o-alites-gustatives',
+    '',
+    'o-alites-gustatives',
+    ''
+), 
+(
+    'en:nocciola',
+    'nocciola',
+    '',
+    ''
+), 
+(
+    'de:dessert',
+    '',
+    '',
+    'dessert'
+), 
+(
+    'en:fibre',
+    'fibre',
+    '',
+    ''
+), 
+(
+    'de:aspartam-enthält-phenylalaninquelle',
+    '',
+    '',
+    'aspartam-enthält-phenylalaninquelle'
+), 
+(
+    'pt:fenilalanina',
+    '',
+    '',
+    ''
+), 
+(
+    'es:cacahuate-y-coco-v1',
+    '',
+    '',
+    ''
+), 
+(
+    'de:magermilch-85',
+    '',
+    '',
+    'magermilch-85'
+), 
+(
+    'fr:amande-blanchie',
+    '',
+    'amande-blanchie',
+    ''
+), 
+(
+    'hu:tönkölykorpa',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cricket-powder',
+    'cricket-powder',
+    '',
+    ''
+), 
+(
+    'en:pistazien',
+    'pistazien',
+    '',
+    ''
+), 
+(
+    'fi:pastöroitu-kerma',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cephalopode',
+    '',
+    'cephalopode',
+    ''
+), 
+(
+    'de:milchserum',
+    '',
+    '',
+    'milchserum'
+), 
+(
+    'fr:amidons-modifies-de-mais-et-de-pomme-de-terre-huile-de-tournesol',
+    '',
+    'amidons-modifies-de-mais-et-de-pomme-de-terre-huile-de-tournesol',
+    ''
+), 
+(
+    'fr:specialite-fromagere-fondue-a-l-emmental',
+    '',
+    'specialite-fromagere-fondue-a-l-emmental',
+    ''
+), 
+(
+    'es:lentejas',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fibre-d-avoine',
+    '',
+    'fibre-d-avoine',
+    ''
+), 
+(
+    'en:people-who-tend-to-be-allergic-to-fish-ingredients',
+    'people-who-tend-to-be-allergic-to-fish-ingredients',
+    '',
+    ''
+), 
+(
+    'ko:소백분',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:пшеничная-мука',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-de-lait-de-vache-pasteurise',
+    '',
+    'fromage-de-lait-de-vache-pasteurise',
+    ''
+), 
+(
+    'sr:dekstroza',
+    '',
+    '',
+    ''
+), 
+(
+    'de:thunfich',
+    '',
+    '',
+    'thunfich'
+), 
+(
+    'fi:kananmuna-valkuainen',
+    '',
+    '',
+    ''
+), 
+(
+    'es:cloruro-de-calcio',
+    '',
+    '',
+    ''
+), 
+(
+    'id:mengandung-pewarna-karamel-kelas-iv',
+    '',
+    '',
+    ''
+), 
+(
+    'it:noix-de-pecan',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:0euf',
+    '',
+    '0euf',
+    ''
+), 
+(
+    'fr:origine-perou-ap-ou-chili-ac',
+    '',
+    'origine-perou-ap-ou-chili-ac',
+    ''
+), 
+(
+    'en:noix-de-cajou',
+    'noix-de-cajou',
+    '',
+    ''
+), 
+(
+    'es:gms',
+    '',
+    '',
+    ''
+), 
+(
+    'de:soja-eiweiß',
+    '',
+    '',
+    'soja-eiweiß'
+), 
+(
+    'de:eier-und-daraus-gewonnene-erzeugnisse',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lail',
+    '',
+    'lail',
+    ''
+), 
+(
+    'es:pepinillo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lactorse',
+    '',
+    'lactorse',
+    ''
+), 
+(
+    'fr:eminces-au-poulet-en-sauce',
+    '',
+    'eminces-au-poulet-en-sauce',
+    ''
+), 
+(
+    'en:cheddarjuusto',
+    'cheddarjuusto',
+    '',
+    ''
+), 
+(
+    'de:weizenvollkornflakes',
+    '',
+    '',
+    'weizenvollkornflakes'
+), 
+(
+    'ru:диоксид-серы',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-poudre-deshydratee',
+    '',
+    'fromage-poudre-deshydratee',
+    ''
+), 
+(
+    'tr:yulaf-ezmesi',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cabiliaud',
+    '',
+    'cabiliaud',
+    ''
+), 
+(
+    'fr:semoule-de-ble-dur-de-qualite-superieure',
+    '',
+    'semoule-de-ble-dur-de-qualite-superieure',
+    ''
+), 
+(
+    'en:sempfmehl',
+    'sempfmehl',
+    '',
+    ''
+), 
+(
+    'fr:vermouth',
+    '',
+    'vermouth',
+    ''
+), 
+(
+    'en:which-is-known-to-the-state-of-california-to-cause-birth-defects-or-other-reproductive-issues',
+    'which-is-known-to-the-state-of-california-to-cause-birth-defects-or-other-reproductive-issues',
+    '',
+    ''
+), 
+(
+    'cs:lískooříšková',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lait-cru-entier-de-chevre-bio',
+    '',
+    'lait-cru-entier-de-chevre-bio',
+    ''
+), 
+(
+    'xx:süßmolkenpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fecule',
+    '',
+    'fecule',
+    ''
+), 
+(
+    'it:beurre',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:ovesné-vločky',
+    '',
+    '',
+    ''
+), 
+(
+    'de:amaretto',
+    '',
+    '',
+    'amaretto'
+), 
+(
+    'de:caseinat',
+    '',
+    '',
+    'caseinat'
+), 
+(
+    'nb:meierismør',
+    '',
+    '',
+    ''
+), 
+(
+    'it:eier',
+    '',
+    '',
+    ''
+), 
+(
+    'en:for-allergies-see-ingredients-in-bold',
+    'for-allergies-see-ingredients-in-bold',
+    '',
+    ''
+), 
+(
+    'fr:tomme-de-savoie',
+    '',
+    'tomme-de-savoie',
+    ''
+), 
+(
+    'fr:risotto-poulet-aux-herbes-260g',
+    '',
+    'risotto-poulet-aux-herbes-260g',
+    ''
+), 
+(
+    'fr:creme-laitiere',
+    '',
+    'creme-laitiere',
+    ''
+), 
+(
+    'fr:perche',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:substances-laitieres-modifiees',
+    '',
+    'substances-laitieres-modifiees',
+    ''
+), 
+(
+    'de:rollgerste',
+    '',
+    '',
+    'rollgerste'
+), 
+(
+    'de:lecithine',
+    '',
+    '',
+    'lecithine'
+), 
+(
+    'hr:sirevi',
+    '',
+    '',
+    ''
+), 
+(
+    'de:bergbauernjoghurt',
+    '',
+    '',
+    'bergbauernjoghurt'
+), 
+(
+    'pt:proteina-de-leite-de-cabra',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:молоко-нормализованное',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:haricot-mungo',
+    '',
+    'haricot-mungo',
+    ''
+), 
+(
+    'fr:epeautre-de-tartarie',
+    '',
+    'epeautre-de-tartarie',
+    ''
+), 
+(
+    'fr:cashewnoten',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:chaource',
+    '',
+    'chaource',
+    ''
+), 
+(
+    'et:nisuhelbed',
+    '',
+    '',
+    ''
+), 
+(
+    'no:mandel',
+    '',
+    '',
+    ''
+), 
+(
+    'es:semillas-de-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'en:vehnalese',
+    'vehnalese',
+    '',
+    ''
+), 
+(
+    'nl:pindanoten',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:soyalesitin',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:crevettes-d-elevage',
+    '',
+    'crevettes-d-elevage',
+    ''
+), 
+(
+    'et:kaerahelbed',
+    '',
+    '',
+    ''
+), 
+(
+    'en:υπερβολική-κατανάλωση-μπορεί-να-προκαλέσει-υπακτική-δράση',
+    'υπερβολική-κατανάλωση-μπορεί-να-προκαλέσει-υπακτική-δράση',
+    '',
+    ''
+), 
+(
+    'eu:gerstenmalzextrakt',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lactose-et-gluten-vu-ingredients',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sésame',
+    '',
+    '',
+    'sésame'
+), 
+(
+    'fr:soja-fruits-a-coques-celeri-moutarde-sulfites-gluten-lait-sesame',
+    '',
+    'soja-fruits-a-coques-celeri-moutarde-sulfites-gluten-lait-sesame',
+    ''
+), 
+(
+    'en:malt-din-grau',
+    'malt-din-grau',
+    '',
+    ''
+), 
+(
+    'es:yema-de-huevo-confitada',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojabohnen-und-daraus-gewonnene-erzeugnisse',
+    '',
+    '',
+    'sojabohnen-und-daraus-gewonnene-erzeugnisse'
+), 
+(
+    'da:kærnemælkspulver',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:слънчогледово-олио',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:muştar',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ceuf',
+    '',
+    'ceuf',
+    ''
+), 
+(
+    'pt:queijo-maturado',
+    '',
+    '',
+    ''
+), 
+(
+    'en:hazelnuts-contains',
+    'hazelnuts-contains',
+    '',
+    ''
+), 
+(
+    'it:potrebbe-contenere-lattepotrebbe-contenere-soiacontiene-grano-frumento',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:podmáslí',
+    '',
+    '',
+    ''
+), 
+(
+    'it:ou',
+    '',
+    '',
+    ''
+), 
+(
+    'it:oeufs',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:tirgo',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:juhe',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:compote-de-pommes-bananes-allegees-en-sucres',
+    '',
+    'compote-de-pommes-bananes-allegees-en-sucres',
+    ''
+), 
+(
+    'es:leche-huevo',
+    '',
+    '',
+    ''
+), 
+(
+    'da:hønseæg',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:dioxyde-soufre',
+    '',
+    'dioxyde-soufre',
+    ''
+), 
+(
+    'sr:ječmena',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:huile-de-coco',
+    '',
+    'huile-de-coco',
+    ''
+), 
+(
+    'de:magermilchjogurtpulver',
+    '',
+    '',
+    'magermilchjogurtpulver'
+), 
+(
+    'sv:vannameiräkor',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:malta-de-cebada',
+    '',
+    'malta-de-cebada',
+    ''
+), 
+(
+    'de:dorschleber',
+    '',
+    '',
+    ''
+), 
+(
+    'de:thunfischfilets',
+    '',
+    '',
+    'thunfischfilets'
+), 
+(
+    'en:noix',
+    'noix',
+    '',
+    ''
+), 
+(
+    'en:gluten-de-trigo',
+    'gluten-de-trigo',
+    '',
+    ''
+), 
+(
+    'de:almendras',
+    '',
+    '',
+    'almendras'
+), 
+(
+    'en:vollmilch',
+    'vollmilch',
+    '',
+    ''
+), 
+(
+    'sv:mandelmassa',
+    '',
+    '',
+    ''
+), 
+(
+    'en:kase-sahne-sauce',
+    'kase-sahne-sauce',
+    '',
+    ''
+), 
+(
+    'fr:ble-khorazan',
+    '',
+    'ble-khorazan',
+    ''
+), 
+(
+    'en:brown-rice-syrup',
+    'brown-rice-syrup',
+    '',
+    ''
+), 
+(
+    'fr:saccharose',
+    '',
+    'saccharose',
+    ''
+), 
+(
+    'en:mageremelkpoeder',
+    'mageremelkpoeder',
+    '',
+    ''
+), 
+(
+    'en:ble-dur',
+    'ble-dur',
+    '',
+    ''
+), 
+(
+    'xx:milcherzeugnisse',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sorbate-de-potassium',
+    '',
+    'sorbate-de-potassium',
+    ''
+), 
+(
+    'nl:sojabonensap',
+    '',
+    '',
+    ''
+), 
+(
+    'en:scomber-japonicus',
+    'scomber-japonicus',
+    '',
+    ''
+), 
+(
+    'fr:avellanas',
+    '',
+    '',
+    ''
+), 
+(
+    'de:waldstaudenroggenflocken',
+    '',
+    '',
+    ''
+), 
+(
+    'es:cacahutes-y-frutos-de-cascara',
+    '',
+    '',
+    ''
+), 
+(
+    'en:peixe',
+    'peixe',
+    '',
+    ''
+), 
+(
+    'de:eiweißangereichertes-molkenpulver',
+    '',
+    '',
+    'eiweißangereichertes-molkenpulver'
+), 
+(
+    'bs:mlečni',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:pasterované-mléko',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromages-rapes',
+    '',
+    'fromages-rapes',
+    ''
+), 
+(
+    'fr:gluten-ble-lait-oeuf-poisson',
+    '',
+    'gluten-ble-lait-oeuf-poisson',
+    ''
+), 
+(
+    'es:pina-coco-leche',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:grådde',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollkorndinkelflocken',
+    '',
+    '',
+    ''
+), 
+(
+    'es:soya-y-trigo-gluten',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizen-crispys',
+    '',
+    '',
+    'weizen-crispys'
+), 
+(
+    'en:condensed-whey',
+    'condensed-whey',
+    '',
+    ''
+), 
+(
+    'sv:sojalectin',
+    '',
+    '',
+    ''
+), 
+(
+    'en:aspartam',
+    'aspartam',
+    '',
+    ''
+), 
+(
+    'fr:a-eviter-d-apres-c-gouget',
+    '',
+    'a-eviter-d-apres-c-gouget',
+    ''
+), 
+(
+    'he:שיבולת-שועל-גלוטן',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sodium-metabisulfites',
+    'sodium-metabisulfites',
+    '',
+    ''
+), 
+(
+    'fr:yaourt-brasse-sucre-sur-lit-a-la-mure',
+    '',
+    'yaourt-brasse-sucre-sur-lit-a-la-mure',
+    ''
+), 
+(
+    'de:mascarpone-käsepulver',
+    '',
+    '',
+    'mascarpone-käsepulver'
+), 
+(
+    'cs:ovčí-mléko',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:emmental',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:céleri',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:epeaute',
+    '',
+    'epeaute',
+    ''
+), 
+(
+    'fr:lait-de-chevre-pasteurise',
+    '',
+    'lait-de-chevre-pasteurise',
+    ''
+), 
+(
+    'fr:lair',
+    '',
+    'lair',
+    ''
+), 
+(
+    'en:nata',
+    'nata',
+    '',
+    ''
+), 
+(
+    'de:sesammasse',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haseinussmark',
+    '',
+    '',
+    'haseinussmark'
+), 
+(
+    'de:matjesfilets-nach-nordischer-art',
+    '',
+    '',
+    'matjesfilets-nach-nordischer-art'
+), 
+(
+    'de:kurkuma',
+    '',
+    '',
+    'kurkuma'
+), 
+(
+    'fr:cafeines',
+    '',
+    'cafeines',
+    ''
+), 
+(
+    'es:pescado-salmon',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:chair-de-thon',
+    '',
+    'chair-de-thon',
+    ''
+), 
+(
+    'fr:milkwort',
+    '',
+    'milkwort',
+    ''
+), 
+(
+    'es:saya-y-sulfitos',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mostaza',
+    '',
+    '',
+    ''
+), 
+(
+    'en:brown-rice-syrup-water',
+    'brown-rice-syrup-water',
+    '',
+    ''
+), 
+(
+    'es:volkorentarwemeel',
+    '',
+    '',
+    ''
+), 
+(
+    'lv:lasis',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:закваска',
+    '',
+    '',
+    ''
+), 
+(
+    'de:reismehl',
+    '',
+    '',
+    'reismehl'
+), 
+(
+    'fr:skummjolkspulver',
+    '',
+    '',
+    ''
+), 
+(
+    'de:nordseekrabbenfleisch',
+    '',
+    '',
+    'nordseekrabbenfleisch'
+), 
+(
+    'en:any-product-contain-in-this-product',
+    'any-product-contain-in-this-product',
+    '',
+    ''
+), 
+(
+    'en:dinkelweizen',
+    'dinkelweizen',
+    '',
+    ''
+), 
+(
+    'es:selderij',
+    '',
+    '',
+    ''
+), 
+(
+    'de:4',
+    '',
+    '',
+    '4'
+), 
+(
+    'en:tofu-noodles',
+    'tofu-noodles',
+    '',
+    ''
+), 
+(
+    'fr:fromage-parmigiano-reggiano',
+    '',
+    'fromage-parmigiano-reggiano',
+    ''
+), 
+(
+    'it:spelta',
+    '',
+    '',
+    ''
+), 
+(
+    'de:meersalz',
+    '',
+    '',
+    'meersalz'
+), 
+(
+    'en:gorgonzola',
+    'gorgonzola',
+    '',
+    ''
+), 
+(
+    'id:tepung-terigu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:e270',
+    '',
+    'e270',
+    ''
+), 
+(
+    'de:hühnervolleikonzentrat',
+    '',
+    '',
+    'hühnervolleikonzentrat'
+), 
+(
+    'no:sennepmel',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gerstenmalz-essigextrakt',
+    '',
+    '',
+    'gerstenmalz-essigextrakt'
+), 
+(
+    'fr:merlan-bleu',
+    '',
+    'merlan-bleu',
+    ''
+), 
+(
+    'sv:ostepulver',
+    '',
+    '',
+    ''
+), 
+(
+    'de:wειζενμehl',
+    '',
+    '',
+    'wειζενμehl'
+), 
+(
+    'de:jodsalz',
+    '',
+    '',
+    'jodsalz'
+), 
+(
+    'id:alegen',
+    '',
+    '',
+    ''
+), 
+(
+    'en:bulot',
+    'bulot',
+    '',
+    ''
+), 
+(
+    'bg:сметана-на-прах',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:creme-de-coco',
+    '',
+    'creme-de-coco',
+    ''
+), 
+(
+    'sr:pecorino-romano-dop',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sauce-poivre-85g-ingredients',
+    '',
+    'sauce-poivre-85g-ingredients',
+    ''
+), 
+(
+    'es:gluten-crustaceos',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mini-feuillete-fromage-de-chevre',
+    '',
+    'mini-feuillete-fromage-de-chevre',
+    ''
+), 
+(
+    'sv:rågskållning',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ovas',
+    '',
+    '',
+    ''
+), 
+(
+    'de:cheddar-käse',
+    '',
+    '',
+    'cheddar-käse'
+), 
+(
+    'fr:e202',
+    '',
+    'e202',
+    ''
+), 
+(
+    'sv:speltvete',
+    '',
+    '',
+    ''
+), 
+(
+    'en:panna',
+    'panna',
+    '',
+    ''
+), 
+(
+    'sl:sirotka',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:мука-пшеничная-хлеболекарная-высшего-сорта',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:weizensirup',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:blé-complet',
+    '',
+    '',
+    ''
+), 
+(
+    'de:selleriesamenöl',
+    '',
+    '',
+    'selleriesamenöl'
+), 
+(
+    'en:huhnereieiweisspulver',
+    'huhnereieiweisspulver',
+    '',
+    ''
+), 
+(
+    'de:weizenkelme',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizen-reis-balls',
+    '',
+    '',
+    'weizen-reis-balls'
+), 
+(
+    'en:grapefruit',
+    'grapefruit',
+    '',
+    ''
+), 
+(
+    'it:noix-de-macadamia',
+    '',
+    '',
+    ''
+), 
+(
+    'da:smør',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hühnerei-eweißpulver',
+    '',
+    '',
+    'hühnerei-eweißpulver'
+), 
+(
+    'de:white-tiger-garnelen',
+    '',
+    '',
+    'white-tiger-garnelen'
+), 
+(
+    'nl:scharreleiwit',
+    '',
+    '',
+    ''
+), 
+(
+    'de:laktosereduzierte-schlagsahne',
+    '',
+    '',
+    'laktosereduzierte-schlagsahne'
+), 
+(
+    'de:glut',
+    '',
+    '',
+    'glut'
+), 
+(
+    'fr:specialite-de-pommes-peches',
+    '',
+    'specialite-de-pommes-peches',
+    ''
+), 
+(
+    'no:sesamfro',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:presence-de-ble',
+    '',
+    'presence-de-ble',
+    ''
+), 
+(
+    'fr:bouglour',
+    '',
+    'bouglour',
+    ''
+), 
+(
+    'nl:palm',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sojaflocken',
+    '',
+    'sojaflocken',
+    ''
+), 
+(
+    'fr:beurre-fondu',
+    '',
+    'beurre-fondu',
+    ''
+), 
+(
+    'de:butterrinfett',
+    '',
+    '',
+    'butterrinfett'
+), 
+(
+    'de:soijabohnen',
+    '',
+    '',
+    'soijabohnen'
+), 
+(
+    'en:tapioca-flour',
+    'tapioca-flour',
+    '',
+    ''
+), 
+(
+    'de:magerjoghurt',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:arome-de-fromage',
+    '',
+    'arome-de-fromage',
+    ''
+), 
+(
+    'en:cacao',
+    'cacao',
+    '',
+    ''
+), 
+(
+    'lv:siera',
+    '',
+    '',
+    ''
+), 
+(
+    'en:milk-soya-glucose',
+    'milk-soya-glucose',
+    '',
+    ''
+), 
+(
+    'de:kuchmilch',
+    '',
+    '',
+    'kuchmilch'
+), 
+(
+    'fr:farine-vrac',
+    '',
+    'farine-vrac',
+    ''
+), 
+(
+    'fr:plus-connu-sous-le-nom-de-silicone',
+    '',
+    '',
+    ''
+), 
+(
+    'de:pecorinokäse',
+    '',
+    '',
+    'pecorinokäse'
+), 
+(
+    'en:contains-egg',
+    'contains-egg',
+    '',
+    ''
+), 
+(
+    'ru:пищевые-красители',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mono-und-diglyceride',
+    '',
+    '',
+    'mono-und-diglyceride'
+), 
+(
+    'fr:ameliorant',
+    '',
+    'ameliorant',
+    ''
+), 
+(
+    'fr:e407',
+    '',
+    'e407',
+    ''
+), 
+(
+    'de:cahewkerne',
+    '',
+    '',
+    'cahewkerne'
+), 
+(
+    'de:vollmilch-joghurt',
+    '',
+    '',
+    'vollmilch-joghurt'
+), 
+(
+    'en:product',
+    'product',
+    '',
+    ''
+), 
+(
+    'hr:bademova',
+    '',
+    '',
+    ''
+), 
+(
+    'el:σησάμι',
+    '',
+    '',
+    ''
+), 
+(
+    'id:dha',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:condense',
+    '',
+    'condense',
+    ''
+), 
+(
+    'en:pasteurised-free-range-egg',
+    'pasteurised-free-range-egg',
+    '',
+    ''
+), 
+(
+    'no:eggehvitepulver',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:morceaux-de-poulet-cuit-assaisonnės',
+    '',
+    '',
+    ''
+), 
+(
+    'it:lievito-naturale',
+    '',
+    '',
+    ''
+), 
+(
+    'de:inhaltsstoffe-in-großbuchstaben',
+    '',
+    '',
+    'inhaltsstoffe-in-großbuchstaben'
+), 
+(
+    'en:fish-tuna',
+    'fish-tuna',
+    '',
+    ''
+), 
+(
+    'de:magermllchpulver',
+    '',
+    '',
+    'magermllchpulver'
+), 
+(
+    'de:emmentaller',
+    '',
+    '',
+    'emmentaller'
+), 
+(
+    'en:calciumcaseinat',
+    'calciumcaseinat',
+    '',
+    ''
+), 
+(
+    'de:ricotta-molkeneiweißkäse',
+    '',
+    '',
+    'ricotta-molkeneiweißkäse'
+), 
+(
+    'fr:senapspulver',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:sulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:crevettes-au-sesame-noir-crevette',
+    '',
+    'crevettes-au-sesame-noir-crevette',
+    ''
+), 
+(
+    'fr:lačtoserum',
+    '',
+    'lačtoserum',
+    ''
+), 
+(
+    'fr:noix-de-macadamia-et-p',
+    '',
+    'noix-de-macadamia-et-p',
+    ''
+), 
+(
+    'en:dried-mushrooms',
+    'dried-mushrooms',
+    '',
+    ''
+), 
+(
+    'nb:sesamfro',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:pšeniće',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:ječmeni-stad',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:melkeprodukt',
+    '',
+    '',
+    ''
+), 
+(
+    'de:süßmlkenpulver',
+    '',
+    '',
+    'süßmlkenpulver'
+), 
+(
+    'fr:caroube',
+    '',
+    'caroube',
+    ''
+), 
+(
+    'en:e445',
+    'e445',
+    '',
+    ''
+), 
+(
+    'en:graines-de-soja',
+    'graines-de-soja',
+    '',
+    ''
+), 
+(
+    'fr:souffles-aromatises-gout-pizza',
+    '',
+    'souffles-aromatises-gout-pizza',
+    ''
+), 
+(
+    'de:dinkelweizenvoll-kornflocken',
+    '',
+    '',
+    'dinkelweizenvoll-kornflocken'
+), 
+(
+    'de:büffelmozzarella',
+    '',
+    '',
+    'büffelmozzarella'
+), 
+(
+    'fr:01g-100g',
+    '',
+    '01g-100g',
+    ''
+), 
+(
+    'de:einkornflocken',
+    '',
+    '',
+    'einkornflocken'
+), 
+(
+    'es:inosinato',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:anjovisextrakt',
+    '',
+    '',
+    ''
+), 
+(
+    'xx:hühnereieiweißpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:de-cacao',
+    '',
+    'de-cacao',
+    ''
+), 
+(
+    'fr:farine-de-froment-roussie',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:kokošije',
+    '',
+    '',
+    ''
+), 
+(
+    'en:maize',
+    'maize',
+    '',
+    ''
+), 
+(
+    'fr:pancetta-34-4-tranches',
+    '',
+    'pancetta-34-4-tranches',
+    ''
+), 
+(
+    'fr:gluten-d-orge',
+    '',
+    'gluten-d-orge',
+    ''
+), 
+(
+    'hr:stablo-celera',
+    '',
+    '',
+    ''
+), 
+(
+    'en:wehat',
+    'wehat',
+    '',
+    ''
+), 
+(
+    'fi:merilohi',
+    '',
+    '',
+    ''
+), 
+(
+    'de:black-tiger-garnelen',
+    '',
+    '',
+    'black-tiger-garnelen'
+), 
+(
+    'es:arroz',
+    '',
+    '',
+    ''
+), 
+(
+    'de:einkornschrot',
+    '',
+    '',
+    'einkornschrot'
+), 
+(
+    'de:vollkorn-dinkel',
+    '',
+    '',
+    'vollkorn-dinkel'
+), 
+(
+    'ar:فلتر',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sulphite-ut-honths-from-packaging',
+    'sulphite-ut-honths-from-packaging',
+    '',
+    ''
+), 
+(
+    'fr:nems-au-porc-8-x-65g',
+    '',
+    'nems-au-porc-8-x-65g',
+    ''
+), 
+(
+    'de:sojabohnenzubereitung',
+    '',
+    '',
+    'sojabohnenzubereitung'
+), 
+(
+    'fr:kornmaltsextrakt',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:jaja-u-prahu-1',
+    '',
+    '',
+    ''
+), 
+(
+    'es:atencion-producto-con-uso-fraudulento-de-certificado-sin-gluten-ni-la-empresa-ni-sus-productos-estan-certificados-y-usa-un-logotipo-propiedad-de-acelmex',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:vollkornhartweizengrieß',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:scomber-scombrus',
+    '',
+    '',
+    ''
+), 
+(
+    'de:nuss',
+    '',
+    '',
+    'nuss'
+), 
+(
+    'cs:lískooříšková-pasta',
+    '',
+    '',
+    ''
+), 
+(
+    'en:e322',
+    'e322',
+    '',
+    ''
+), 
+(
+    'en:חיטה',
+    'חיטה',
+    '',
+    ''
+), 
+(
+    'pt:culturas-de-arranque',
+    '',
+    '',
+    ''
+), 
+(
+    'es:pescado-aleta-amarilla',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:leite̟',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mandelstifte',
+    '',
+    '',
+    'mandelstifte'
+), 
+(
+    'fr:lacte',
+    '',
+    'lacte',
+    ''
+), 
+(
+    'de:maismehl',
+    '',
+    '',
+    'maismehl'
+), 
+(
+    'de:riesenkalmare',
+    '',
+    '',
+    'riesenkalmare'
+), 
+(
+    'fr:crevette-rouge-d-argentine',
+    '',
+    'crevette-rouge-d-argentine',
+    ''
+), 
+(
+    'en:potassium-sorbate',
+    'potassium-sorbate',
+    '',
+    ''
+), 
+(
+    'fr:andere-schalenfruchte',
+    '',
+    '',
+    ''
+), 
+(
+    'xx:erdnüssen',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:glace-vanille-fraise',
+    '',
+    'glace-vanille-fraise',
+    ''
+), 
+(
+    'en:corn-oil-is-a-refined-vegetable-oil-widely-used-in-cooking-and-especially-deep-frying',
+    'corn-oil-is-a-refined-vegetable-oil-widely-used-in-cooking-and-especially-deep-frying',
+    '',
+    ''
+), 
+(
+    'en:creme-fraiche',
+    'creme-fraiche',
+    '',
+    ''
+), 
+(
+    'de:sojafettpulver',
+    '',
+    '',
+    'sojafettpulver'
+), 
+(
+    'pl:mięso-ryb-białych',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lieu-d-alaska',
+    '',
+    'lieu-d-alaska',
+    ''
+), 
+(
+    'es:tremoco',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:mleká',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:sojina-moka',
+    '',
+    '',
+    ''
+), 
+(
+    'es:nuevo',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:ricotta',
+    '',
+    '',
+    ''
+), 
+(
+    'es:harina-de-malta',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:mliječne-bjelancevine',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:caseintates',
+    '',
+    'caseintates',
+    ''
+), 
+(
+    'lt:gliuteno',
+    '',
+    '',
+    ''
+), 
+(
+    'es:huevo-deshidratado',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:azyme',
+    '',
+    'azyme',
+    ''
+), 
+(
+    'sv:musslor',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:сухая-молочная-смесь',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:chocolat-noir-5-pate-de-cacao',
+    '',
+    'chocolat-noir-5-pate-de-cacao',
+    ''
+), 
+(
+    'hu:étkezési-savópor',
+    '',
+    '',
+    ''
+), 
+(
+    'es:cabra',
+    '',
+    '',
+    ''
+), 
+(
+    'lv:olu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:dluo',
+    '',
+    'dluo',
+    ''
+), 
+(
+    'de:molkeneweißkonzentrat',
+    '',
+    '',
+    'molkeneweißkonzentrat'
+), 
+(
+    'de:7-mandeln',
+    '',
+    '',
+    '7-mandeln'
+), 
+(
+    'fr:pates-alimentaires',
+    '',
+    'pates-alimentaires',
+    ''
+), 
+(
+    'de:magermiichpuiver',
+    '',
+    '',
+    'magermiichpuiver'
+), 
+(
+    'fr:sucre-vanille',
+    '',
+    'sucre-vanille',
+    ''
+), 
+(
+    'es:azul-1',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:solfiti',
+    '',
+    'solfiti',
+    ''
+), 
+(
+    'nb:grahamsmel',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:caramel-cu-sulfit-de-amoniu',
+    '',
+    '',
+    ''
+), 
+(
+    'en:senfkorner',
+    'senfkorner',
+    '',
+    ''
+), 
+(
+    'it:semola-di-grano-duro',
+    '',
+    '',
+    ''
+), 
+(
+    'en:allergens-contains-sesame-seeds-and-sesame-oil',
+    'allergens-contains-sesame-seeds-and-sesame-oil',
+    '',
+    ''
+), 
+(
+    'de:hefeextraktpulver',
+    '',
+    '',
+    'hefeextraktpulver'
+), 
+(
+    'fr:e330',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:süßmolkenpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:pšenično-sladno',
+    '',
+    '',
+    ''
+), 
+(
+    'es:gluten-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:consumeing-this-product-can-expose-you-to-chemicals-including-bisphernol-a-bpa',
+    'consumeing-this-product-can-expose-you-to-chemicals-including-bisphernol-a-bpa',
+    '',
+    ''
+), 
+(
+    'it:maizena',
+    '',
+    '',
+    ''
+), 
+(
+    'en:karnemelk',
+    'karnemelk',
+    '',
+    ''
+), 
+(
+    'fr:romatique',
+    '',
+    'romatique',
+    ''
+), 
+(
+    'fr:noişettes',
+    '',
+    'noişettes',
+    ''
+), 
+(
+    'it:amido',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:seminte-de-susan',
+    '',
+    '',
+    ''
+), 
+(
+    'de:butterreinrett',
+    '',
+    '',
+    'butterreinrett'
+), 
+(
+    'fr:fromage-pecorino-romano-aop',
+    '',
+    'fromage-pecorino-romano-aop',
+    ''
+), 
+(
+    'id:vitamin-b2',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:haferschrot',
+    '',
+    'haferschrot',
+    ''
+), 
+(
+    'en:cheese-powder',
+    'cheese-powder',
+    '',
+    ''
+), 
+(
+    'de:milchproteinpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'de:citronensäure',
+    '',
+    '',
+    'citronensäure'
+), 
+(
+    'hr:gluten-oz-pira-i-zobo',
+    '',
+    '',
+    ''
+), 
+(
+    'ja:ゼラチン',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mozzorella',
+    '',
+    '',
+    'mozzorella'
+), 
+(
+    'sv:gouda',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dinkelvolkornmehl',
+    '',
+    '',
+    'dinkelvolkornmehl'
+), 
+(
+    'sv:mjölkpluver',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:gluteeniton-kaurahiutale',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:panure',
+    '',
+    'panure',
+    ''
+), 
+(
+    'fr:sulfites-et-so2-10ppm',
+    '',
+    'sulfites-et-so2-10ppm',
+    ''
+), 
+(
+    'de:sprühsahnepulver',
+    '',
+    '',
+    'sprühsahnepulver'
+), 
+(
+    'fr:crackers-aromatises-gout-bacon',
+    '',
+    'crackers-aromatises-gout-bacon',
+    ''
+), 
+(
+    'fr:fromage-pecorino-romano',
+    '',
+    'fromage-pecorino-romano',
+    ''
+), 
+(
+    'sv:havresirap',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kakaomasse',
+    '',
+    '',
+    'kakaomasse'
+), 
+(
+    'id:pewarna-karamel-kelas-iii',
+    '',
+    '',
+    ''
+), 
+(
+    'en:nucă',
+    'nucă',
+    '',
+    ''
+), 
+(
+    'fr:e-471-agentde-traitementde-la-rond-briochetoasrbrono',
+    '',
+    'e-471-agentde-traitementde-la-rond-briochetoasrbrono',
+    ''
+), 
+(
+    'fr:skim-milk',
+    '',
+    'skim-milk',
+    ''
+), 
+(
+    'en:milchfettpulver',
+    'milchfettpulver',
+    '',
+    ''
+), 
+(
+    'ru:молоко-пастеризованное',
+    '',
+    '',
+    ''
+), 
+(
+    'en:milk-chocolate-chips',
+    'milk-chocolate-chips',
+    '',
+    ''
+), 
+(
+    'de:weidemilch',
+    '',
+    '',
+    'weidemilch'
+), 
+(
+    'fr:poudre-d-oeuf-entier',
+    '',
+    'poudre-d-oeuf-entier',
+    ''
+), 
+(
+    'de:raclette-käse',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:poudre-de-moutarde',
+    '',
+    'poudre-de-moutarde',
+    ''
+), 
+(
+    'en:hunereieigelb',
+    'hunereieigelb',
+    '',
+    ''
+), 
+(
+    'de:shrimpssosse',
+    '',
+    '',
+    'shrimpssosse'
+), 
+(
+    'id:tvp',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:inćuna',
+    '',
+    '',
+    ''
+), 
+(
+    'de:frisckäse',
+    '',
+    '',
+    'frisckäse'
+), 
+(
+    'fr:vollkornweizenmehl',
+    '',
+    'vollkornweizenmehl',
+    ''
+), 
+(
+    'hr:lapte',
+    '',
+    '',
+    ''
+), 
+(
+    'de:erdnüsse-und-daraus-gewonnene-erzeugnisse',
+    '',
+    '',
+    'erdnüsse-und-daraus-gewonnene-erzeugnisse'
+), 
+(
+    'en:butter-contains-wheat',
+    'butter-contains-wheat',
+    '',
+    ''
+), 
+(
+    'es:contiene-gluten-y-huevo-puede-contener-sesamo',
+    '',
+    '',
+    ''
+), 
+(
+    'es:potassium-metabisulphite',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:leite-em-po-desnatado',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:buttermilch',
+    '',
+    'buttermilch',
+    ''
+), 
+(
+    'da:mozzarella',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:koemelkpoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'en:teljes-tejpor',
+    'teljes-tejpor',
+    '',
+    ''
+), 
+(
+    'fr:hafervollkorn-flocken',
+    '',
+    'hafervollkorn-flocken',
+    ''
+), 
+(
+    'hr:grožđe',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pate-fermentee',
+    '',
+    'pate-fermentee',
+    ''
+), 
+(
+    'pt:cobertura-de-chocolate-negro',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:skållat-rågmjöl',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:ruissihtijauho',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gérstenmalz',
+    '',
+    '',
+    'gérstenmalz'
+), 
+(
+    'fr:trigo-gluten',
+    '',
+    'trigo-gluten',
+    ''
+), 
+(
+    'de:eler',
+    '',
+    '',
+    'eler'
+), 
+(
+    'ru:солод-пивоваренный-ячменный',
+    '',
+    '',
+    ''
+), 
+(
+    'it:lactoserum',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:melkvet',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:pistacije',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:vört',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:cachewnoot',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:maltodextrine-de-ble',
+    '',
+    'maltodextrine-de-ble',
+    ''
+), 
+(
+    'tr:yulaf-unu',
+    '',
+    '',
+    ''
+), 
+(
+    'it:totano-atlantico',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:jajca-v-prahu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:soja-complet',
+    '',
+    'soja-complet',
+    ''
+), 
+(
+    'es:acidulantes',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:får-och-getmjölk',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cashew-nuts',
+    '',
+    'cashew-nuts',
+    ''
+), 
+(
+    'fr:ps',
+    '',
+    '',
+    ''
+), 
+(
+    'de:trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:caille',
+    '',
+    'caille',
+    ''
+), 
+(
+    'fr:soja-precuit',
+    '',
+    'soja-precuit',
+    ''
+), 
+(
+    'pt:carapau',
+    '',
+    '',
+    ''
+), 
+(
+    'de:emmerflocken',
+    '',
+    '',
+    'emmerflocken'
+), 
+(
+    'en:chia-seeds',
+    'chia-seeds',
+    '',
+    ''
+), 
+(
+    'nb:soyalecithin',
+    '',
+    '',
+    ''
+), 
+(
+    'de:yaourt',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lait-frais-entier-pasteurise',
+    '',
+    'lait-frais-entier-pasteurise',
+    ''
+), 
+(
+    'ru:colin',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:surutka',
+    '',
+    'surutka',
+    ''
+), 
+(
+    'en:huhnertrockeneieiweiss',
+    'huhnertrockeneieiweiss',
+    '',
+    ''
+), 
+(
+    'es:grasa-vegetal',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:flocos-de-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:bio-walnuts',
+    'bio-walnuts',
+    '',
+    ''
+), 
+(
+    'it:seigle',
+    '',
+    '',
+    ''
+), 
+(
+    'la:blé',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:concentre',
+    '',
+    'concentre',
+    ''
+), 
+(
+    'fr:chocolat-noir',
+    '',
+    'chocolat-noir',
+    ''
+), 
+(
+    'fr:amidon-de',
+    '',
+    'amidon-de',
+    ''
+), 
+(
+    'es:mantequilla-anhidra',
+    '',
+    '',
+    ''
+), 
+(
+    'en:candlenut',
+    'candlenut',
+    '',
+    ''
+), 
+(
+    'sr:lešnikom',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:roggenvollkornschrot',
+    '',
+    '',
+    ''
+), 
+(
+    'es:productos-y-subproductos-lacteos-se-procesa-en-equipos-donde-se-elaboran-productos-que-contienen-soya',
+    '',
+    '',
+    ''
+), 
+(
+    'lv:pilnpiens',
+    '',
+    '',
+    ''
+), 
+(
+    'it:prodotto-in-una-fabbrica-che-utilizza-glutine',
+    '',
+    '',
+    ''
+), 
+(
+    'no:tørrmelk',
+    '',
+    '',
+    ''
+), 
+(
+    'el:μαστιχέλαιο',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:melko',
+    '',
+    '',
+    ''
+), 
+(
+    'es:vainillina',
+    '',
+    '',
+    ''
+), 
+(
+    'en:pectin',
+    'pectin',
+    '',
+    ''
+), 
+(
+    'hr:krupica-durum-pšenice',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:bjelanjak-jajeta-u-prahu',
+    '',
+    '',
+    ''
+), 
+(
+    'no:melkesyrekultur',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sojaproteinisolat',
+    '',
+    '',
+    ''
+), 
+(
+    'ch:blé',
+    '',
+    '',
+    ''
+), 
+(
+    'es:suero-lactico',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:anhydrides-sulfureux-et-sulftes',
+    '',
+    'anhydrides-sulfureux-et-sulftes',
+    ''
+), 
+(
+    'fr:puree-de-fraise-4',
+    '',
+    'puree-de-fraise-4',
+    ''
+), 
+(
+    'de:tahin',
+    '',
+    '',
+    'tahin'
+), 
+(
+    'de:weizen-kakao-extrudat',
+    '',
+    '',
+    'weizen-kakao-extrudat'
+), 
+(
+    'it:noyaux-d-abricots',
+    '',
+    '',
+    ''
+), 
+(
+    'xx:vollmilchpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:sare',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:sojini-proteini',
+    '',
+    '',
+    ''
+), 
+(
+    'es:papa',
+    '',
+    '',
+    ''
+), 
+(
+    'en:double-cream',
+    'double-cream',
+    '',
+    ''
+), 
+(
+    'fr:sirop-de-glucose-fructose',
+    '',
+    'sirop-de-glucose-fructose',
+    ''
+), 
+(
+    'tr:peniraltı-suyu-tozu',
+    '',
+    '',
+    ''
+), 
+(
+    'es:salsa-sabor-chocolate-16',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:composition',
+    '',
+    'composition',
+    ''
+), 
+(
+    'es:crustaceos-leche',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:contient-des-ingredients-de-l-orge',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromet',
+    '',
+    'fromet',
+    ''
+), 
+(
+    'en:confectioner-s-glaze',
+    'confectioner-s-glaze',
+    '',
+    ''
+), 
+(
+    'fr:4-brochettes-de-dinde',
+    '',
+    '4-brochettes-de-dinde',
+    ''
+), 
+(
+    'fr:creme-de-brie',
+    '',
+    'creme-de-brie',
+    ''
+), 
+(
+    'it:pinoli',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kefir-mild',
+    '',
+    '',
+    'kefir-mild'
+), 
+(
+    'es:etanol',
+    '',
+    '',
+    ''
+), 
+(
+    'de:bio-buttermilch',
+    '',
+    '',
+    'bio-buttermilch'
+), 
+(
+    'ca:cebada',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:протеин',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cacahuetes-grillees',
+    '',
+    'cacahuetes-grillees',
+    ''
+), 
+(
+    'es:sulfitico',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenspiesekleie',
+    '',
+    '',
+    'weizenspiesekleie'
+), 
+(
+    'en:cashews-nuts',
+    'cashews-nuts',
+    '',
+    ''
+), 
+(
+    'sl:zelene',
+    '',
+    '',
+    ''
+), 
+(
+    'de:rohmmilch',
+    '',
+    '',
+    'rohmmilch'
+), 
+(
+    'it:farina',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:senfbestandteile',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:levains-lactiques',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:joghurt',
+    '',
+    'joghurt',
+    ''
+), 
+(
+    'lv:sviests-saldkrējuma',
+    '',
+    '',
+    ''
+), 
+(
+    'en:pineapple-juice',
+    'pineapple-juice',
+    '',
+    ''
+), 
+(
+    'nl:zuurdesempoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'en:pasteurized-ultra-filtered-nonfat-milk',
+    'pasteurized-ultra-filtered-nonfat-milk',
+    '',
+    ''
+), 
+(
+    'nl:sojabonenpoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'es:vollmilchschokolade',
+    '',
+    '',
+    ''
+), 
+(
+    'en:tomme',
+    'tomme',
+    '',
+    ''
+), 
+(
+    'de:gerstenmalzessigpulver',
+    '',
+    '',
+    'gerstenmalzessigpulver'
+), 
+(
+    'es:huvo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:gouters-fourres-ronds-vanille-ble',
+    '',
+    'gouters-fourres-ronds-vanille-ble',
+    ''
+), 
+(
+    'fr:mlieko',
+    '',
+    'mlieko',
+    ''
+), 
+(
+    'es:colorantes-y-conservantes',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kabeljau-filet',
+    '',
+    '',
+    'kabeljau-filet'
+), 
+(
+    'fr:correcteur-d-acidite-acide-citrique',
+    '',
+    'correcteur-d-acidite-acide-citrique',
+    ''
+), 
+(
+    'de:miicheiwelss',
+    '',
+    '',
+    'miicheiwelss'
+), 
+(
+    'en:soybean-wheat',
+    'soybean-wheat',
+    '',
+    ''
+), 
+(
+    'de:berstenmalz',
+    '',
+    '',
+    'berstenmalz'
+), 
+(
+    'de:weizermehl',
+    '',
+    '',
+    'weizermehl'
+), 
+(
+    'sv:hasselnötspasta',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:anacardier',
+    '',
+    'anacardier',
+    ''
+), 
+(
+    'de:vollkorn-purpurweizenflocken',
+    '',
+    '',
+    'vollkorn-purpurweizenflocken'
+), 
+(
+    'de:magermilchjoghurt-erdbeer-creme',
+    '',
+    '',
+    'magermilchjoghurt-erdbeer-creme'
+), 
+(
+    'is:úr-hveiti',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollmilchschokoladenüberzug',
+    '',
+    '',
+    'vollmilchschokoladenüberzug'
+), 
+(
+    'fr:gerstemout',
+    '',
+    'gerstemout',
+    ''
+), 
+(
+    'de:sojabohnen-55',
+    '',
+    '',
+    'sojabohnen-55'
+), 
+(
+    'cs:ječmene',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:сметана',
+    '',
+    '',
+    ''
+), 
+(
+    'xx:lait',
+    '',
+    '',
+    ''
+), 
+(
+    'is:mjólkurfita',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:oeufs-de-lompe-rouges',
+    '',
+    'oeufs-de-lompe-rouges',
+    ''
+), 
+(
+    'ca:ous',
+    '',
+    '',
+    ''
+), 
+(
+    'de:volkornhafer',
+    '',
+    '',
+    'volkornhafer'
+), 
+(
+    'de:haselnűsse',
+    '',
+    '',
+    'haselnűsse'
+), 
+(
+    'fr:possibilites-d-irritation-du-tube-digestif',
+    '',
+    'possibilites-d-irritation-du-tube-digestif',
+    ''
+), 
+(
+    'it:prodotti-a-base-di-soia',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mini-feuillete-champignons',
+    '',
+    'mini-feuillete-champignons',
+    ''
+), 
+(
+    'fr:calamars-poulpes',
+    '',
+    'calamars-poulpes',
+    ''
+), 
+(
+    'pl:pstrąg',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fibre-de-tige-de-ble',
+    '',
+    '',
+    ''
+), 
+(
+    'es:contiene-una-fuente-de-fenilalamina',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:7',
+    '',
+    '7',
+    ''
+), 
+(
+    'sv:ishavsräkor',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:guten',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pate-a-pizza',
+    '',
+    'pate-a-pizza',
+    ''
+), 
+(
+    'en:wallnuts',
+    'wallnuts',
+    '',
+    ''
+), 
+(
+    'en:wheat-soy',
+    'wheat-soy',
+    '',
+    ''
+), 
+(
+    'pt:cebada',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cobertura-de-cacao',
+    'cobertura-de-cacao',
+    '',
+    ''
+), 
+(
+    'th:เม็ดมะม่วงหิมะพานต์',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:sirutke',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:mjőlk',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:acerola-rhev-b-6-01-croise-a-l-allergie-au-latex',
+    '',
+    'acerola-rhev-b-6-01-croise-a-l-allergie-au-latex',
+    ''
+), 
+(
+    'de:pinda-s',
+    '',
+    '',
+    ''
+), 
+(
+    'de:1-teil-sirup-mit-24-teilen-wasser-verdünnen',
+    '',
+    '',
+    '1-teil-sirup-mit-24-teilen-wasser-verdünnen'
+), 
+(
+    'fr:moutard',
+    '',
+    'moutard',
+    ''
+), 
+(
+    'de:pisatazien',
+    '',
+    '',
+    'pisatazien'
+), 
+(
+    'fr:gluten-oeuf-lactose',
+    '',
+    'gluten-oeuf-lactose',
+    ''
+), 
+(
+    'pt:detivados-da-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lin-brun',
+    '',
+    'lin-brun',
+    ''
+), 
+(
+    'de:eiöl',
+    '',
+    '',
+    'eiöl'
+), 
+(
+    'tr:tam-buğday-unu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:verdickungsmittel',
+    '',
+    'verdickungsmittel',
+    ''
+), 
+(
+    'fr:roomkaas',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:moulage-de-chocolat-au-lait',
+    '',
+    'moulage-de-chocolat-au-lait',
+    ''
+), 
+(
+    'de:selleriesalz',
+    '',
+    '',
+    'selleriesalz'
+), 
+(
+    'en:lecithin',
+    'lecithin',
+    '',
+    ''
+), 
+(
+    'de:weizeneiweib',
+    '',
+    '',
+    'weizeneiweib'
+), 
+(
+    'it:uονα',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromages-affines',
+    '',
+    'fromages-affines',
+    ''
+), 
+(
+    'de:süßmolkenpuver',
+    '',
+    '',
+    'süßmolkenpuver'
+), 
+(
+    'fr:celerey',
+    '',
+    '',
+    ''
+), 
+(
+    'en:milchzucker',
+    'milchzucker',
+    '',
+    ''
+), 
+(
+    'en:tarwegriesmeel',
+    'tarwegriesmeel',
+    '',
+    ''
+), 
+(
+    'sv:kräftarom',
+    '',
+    '',
+    ''
+), 
+(
+    'en:llet',
+    'llet',
+    '',
+    ''
+), 
+(
+    'fi:vehnähiivaleipäjauho',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:dur',
+    '',
+    'dur',
+    ''
+), 
+(
+    'en:eiweisspulver',
+    'eiweisspulver',
+    '',
+    ''
+), 
+(
+    'de:sardellensauce',
+    '',
+    '',
+    ''
+), 
+(
+    'en:allergen-information-contains-almonds-and-soy-may-contain-tree-nuts-and-sesame-seeds',
+    'allergen-information-contains-almonds-and-soy-may-contain-tree-nuts-and-sesame-seeds',
+    '',
+    ''
+), 
+(
+    'lt:lazdynų-riešutai',
+    '',
+    '',
+    ''
+), 
+(
+    'da:tørrmelk',
+    '',
+    '',
+    ''
+), 
+(
+    'en:γάλα-γλουτένη',
+    'γάλα-γλουτένη',
+    '',
+    ''
+), 
+(
+    'ro:țelină-frunze',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:масло-соевое',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:saumon-argente-du-pacifique-9',
+    '',
+    'saumon-argente-du-pacifique-9',
+    ''
+), 
+(
+    'it:farina-di-grano-duro',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sulfittes',
+    '',
+    'sulfittes',
+    ''
+), 
+(
+    'es:e-223',
+    '',
+    '',
+    ''
+), 
+(
+    'es:estabilizadores-e263',
+    '',
+    '',
+    ''
+), 
+(
+    'en:pinda',
+    'pinda',
+    '',
+    ''
+), 
+(
+    'fr:farine-fleur',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:raugai',
+    '',
+    '',
+    ''
+), 
+(
+    'de:voilei',
+    '',
+    '',
+    'voilei'
+), 
+(
+    'fr:arome-naturel-de-fromage',
+    '',
+    'arome-naturel-de-fromage',
+    ''
+), 
+(
+    'en:tojassargaja-por',
+    'tojassargaja-por',
+    '',
+    ''
+), 
+(
+    'en:huile-de-beurre',
+    'huile-de-beurre',
+    '',
+    ''
+), 
+(
+    'it:fromage-a-pate-dure',
+    '',
+    '',
+    ''
+), 
+(
+    'no:skummetmelk',
+    '',
+    '',
+    ''
+), 
+(
+    'ko:게',
+    '',
+    '',
+    ''
+), 
+(
+    'en:melkeprotein',
+    'melkeprotein',
+    '',
+    ''
+), 
+(
+    'fr:dinkelweizenvollkornmehl',
+    '',
+    'dinkelweizenvollkornmehl',
+    ''
+), 
+(
+    'es:14-acesulfame-k-donde-se-nuez',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pesto',
+    '',
+    'pesto',
+    ''
+), 
+(
+    'es:trigo-gluten-leche-y-soya',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:täysjyväkaura-hiutale',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:levure-fraiche',
+    '',
+    'levure-fraiche',
+    ''
+), 
+(
+    'de:hühnereipulver',
+    '',
+    '',
+    'hühnereipulver'
+), 
+(
+    'fr:traite-contre-la-germination',
+    '',
+    'traite-contre-la-germination',
+    ''
+), 
+(
+    'fr:5-canapes-au-fromage-de-chevre',
+    '',
+    '5-canapes-au-fromage-de-chevre',
+    ''
+), 
+(
+    'xx:natriummetabisulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'es:amarillo-6',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:aggula',
+    '',
+    'aggula',
+    ''
+), 
+(
+    'de:milchkäse',
+    '',
+    '',
+    'milchkäse'
+), 
+(
+    'en:lacotse',
+    'lacotse',
+    '',
+    ''
+), 
+(
+    'fr:purepeautre',
+    '',
+    '',
+    ''
+), 
+(
+    'en:soy-celery-cod-shrimp-crab',
+    'soy-celery-cod-shrimp-crab',
+    '',
+    ''
+), 
+(
+    'de:sahre',
+    '',
+    '',
+    'sahre'
+), 
+(
+    'es:pipas-de-calabaza',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:făină-integrală-de-secară',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:alune',
+    '',
+    'alune',
+    ''
+), 
+(
+    'es:apio-y-mostaza-moluscos',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:bladselderij',
+    '',
+    '',
+    ''
+), 
+(
+    'en:eiwit',
+    'eiwit',
+    '',
+    ''
+), 
+(
+    'de:mandelkries',
+    '',
+    '',
+    'mandelkries'
+), 
+(
+    'fr:noisettes-bio',
+    '',
+    'noisettes-bio',
+    ''
+), 
+(
+    'hr:kazein',
+    '',
+    '',
+    ''
+), 
+(
+    'de:lupino',
+    '',
+    '',
+    'lupino'
+), 
+(
+    'en:all-natural-egg-substitute',
+    'all-natural-egg-substitute',
+    '',
+    ''
+), 
+(
+    'nb:alcohol',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:lait',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:viande-de-poulet-origine-ue',
+    '',
+    'viande-de-poulet-origine-ue',
+    ''
+), 
+(
+    'de:gersten-malzextrakt',
+    '',
+    '',
+    'gersten-malzextrakt'
+), 
+(
+    'fr:metabisulfito',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sulfiet',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:disufite-de-sodium',
+    '',
+    'disufite-de-sodium',
+    ''
+), 
+(
+    'it:seppie',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:citroenzuur',
+    '',
+    '',
+    ''
+), 
+(
+    'en:anchovies',
+    'anchovies',
+    '',
+    ''
+), 
+(
+    'eu:milchzucker',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:täysjyväspelttivehnähiutale',
+    '',
+    '',
+    ''
+), 
+(
+    'en:schafsmilch',
+    'schafsmilch',
+    '',
+    ''
+), 
+(
+    'fr:aipo',
+    '',
+    'aipo',
+    ''
+), 
+(
+    'nb:mozzarellaost',
+    '',
+    '',
+    ''
+), 
+(
+    'it:farina-di-soia',
+    '',
+    '',
+    ''
+), 
+(
+    'lv:soju',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:thon-albacore-45',
+    '',
+    'thon-albacore-45',
+    ''
+), 
+(
+    'de:butterreinfet',
+    '',
+    '',
+    'butterreinfet'
+), 
+(
+    'fr:mini-feuillete-fromage-jambon',
+    '',
+    'mini-feuillete-fromage-jambon',
+    ''
+), 
+(
+    'fr:pressure',
+    '',
+    'pressure',
+    ''
+), 
+(
+    'fr:moulage-de-chocolat-noir',
+    '',
+    'moulage-de-chocolat-noir',
+    ''
+), 
+(
+    'de:dinkelvollkornquellmehl',
+    '',
+    '',
+    'dinkelvollkornquellmehl'
+), 
+(
+    'de:natur-sauerteig',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:sulfitico',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vinaigrette-allegee-en-matieres-grasses',
+    '',
+    'vinaigrette-allegee-en-matieres-grasses',
+    ''
+), 
+(
+    'fr:disulﬁte-de-sodium',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:figue',
+    '',
+    'figue',
+    ''
+), 
+(
+    'es:metabissulfito',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:contrarie-la-fixation-de-la-vitamine-b1',
+    '',
+    'contrarie-la-fixation-de-la-vitamine-b1',
+    ''
+), 
+(
+    'hu:teljes-tejpor',
+    '',
+    '',
+    ''
+), 
+(
+    'en:contains-eggs',
+    'contains-eggs',
+    '',
+    ''
+), 
+(
+    'en:eggs-and-their-derivatives',
+    'eggs-and-their-derivatives',
+    '',
+    ''
+), 
+(
+    'en:φυστίκια',
+    'φυστίκια',
+    '',
+    ''
+), 
+(
+    'fr:esturgeons',
+    '',
+    'esturgeons',
+    ''
+), 
+(
+    'en:preservative-sodium-sulphite',
+    'preservative-sodium-sulphite',
+    '',
+    ''
+), 
+(
+    'pl:kefir',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenmalzvollkornmehl',
+    '',
+    '',
+    'weizenmalzvollkornmehl'
+), 
+(
+    'de:käse-sahne-sauce',
+    '',
+    '',
+    'käse-sahne-sauce'
+), 
+(
+    'pl:zawiera-lukrecję',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lešnici',
+    '',
+    'lešnici',
+    ''
+), 
+(
+    'it:proteine-del-latte',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:šprotai',
+    '',
+    '',
+    ''
+), 
+(
+    'de:pecirino',
+    '',
+    '',
+    'pecirino'
+), 
+(
+    'de:vollmilchpuler',
+    '',
+    '',
+    'vollmilchpuler'
+), 
+(
+    'ca:formatge',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ascorbate',
+    '',
+    'ascorbate',
+    ''
+), 
+(
+    'en:butter-fat',
+    'butter-fat',
+    '',
+    ''
+), 
+(
+    'fr:jaunes-d-oeufs-en-poudre',
+    '',
+    'jaunes-d-oeufs-en-poudre',
+    ''
+), 
+(
+    'en:malt-barley',
+    'malt-barley',
+    '',
+    ''
+), 
+(
+    'fr:laịt',
+    '',
+    'laịt',
+    ''
+), 
+(
+    'fr:farine-complete-de-seigle',
+    '',
+    'farine-complete-de-seigle',
+    ''
+), 
+(
+    'en:weizengriess',
+    'weizengriess',
+    '',
+    ''
+), 
+(
+    'en:cow-milk',
+    'cow-milk',
+    '',
+    ''
+), 
+(
+    'th:ข้าวไรย์',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:parmesanost',
+    '',
+    '',
+    ''
+), 
+(
+    'en:none-specified',
+    'none-specified',
+    '',
+    ''
+), 
+(
+    'fr:syr',
+    '',
+    'syr',
+    ''
+), 
+(
+    'nb:e-220',
+    '',
+    '',
+    ''
+), 
+(
+    'de:senfcreme',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:calmars-du-cap',
+    '',
+    'calmars-du-cap',
+    ''
+), 
+(
+    'zh:coco-jumira-product-100-natural-charcoal-of-coconut-shells',
+    '',
+    '',
+    ''
+), 
+(
+    'en:produced-in-a-facility-which-also-handles-milk',
+    'produced-in-a-facility-which-also-handles-milk',
+    '',
+    ''
+), 
+(
+    'sr:spelte',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fraise-banane-lait',
+    '',
+    'fraise-banane-lait',
+    ''
+), 
+(
+    'fr:gersten-malzextrakt',
+    '',
+    'gersten-malzextrakt',
+    ''
+), 
+(
+    'lv:siers',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:pastoroitu-maito',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollkornroggenflocken',
+    '',
+    '',
+    'vollkornroggenflocken'
+), 
+(
+    'it:tonnetto-striato',
+    '',
+    '',
+    ''
+), 
+(
+    'de:senfkörmer-geschroten',
+    '',
+    '',
+    'senfkörmer-geschroten'
+), 
+(
+    'es:gelificantes',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:vassla',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:levain-du-ble',
+    '',
+    'levain-du-ble',
+    ''
+), 
+(
+    'en:zola',
+    'zola',
+    '',
+    ''
+), 
+(
+    'de:schafsmilchkäse',
+    '',
+    '',
+    'schafsmilchkäse'
+), 
+(
+    'en:nuci',
+    'nuci',
+    '',
+    ''
+), 
+(
+    'es:todos-los-compuestos-liberados-en-la-combustion-son-altamente-nocivos',
+    '',
+    '',
+    ''
+), 
+(
+    'es:guanilato-disodicos',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:etilnim-alkoholom',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sulfates',
+    '',
+    'sulfates',
+    ''
+), 
+(
+    'fr:oeufs',
+    '',
+    'oeufs',
+    ''
+), 
+(
+    'en:insects',
+    'insects',
+    '',
+    ''
+), 
+(
+    'de:butterkeksgranulat',
+    '',
+    '',
+    'butterkeksgranulat'
+), 
+(
+    'fr:avoine-ble',
+    '',
+    'avoine-ble',
+    ''
+), 
+(
+    'de:roggenmeht',
+    '',
+    '',
+    'roggenmeht'
+), 
+(
+    'ru:ядро-ореха-миндаля-тёртое-и-дроблёное',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:tunjevina',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:celeri-beurre',
+    '',
+    'celeri-beurre',
+    ''
+), 
+(
+    'de:regenbogenforelle',
+    '',
+    '',
+    'regenbogenforelle'
+), 
+(
+    'de:butterfraktionen',
+    '',
+    '',
+    ''
+), 
+(
+    'en:molkenpermeat',
+    'molkenpermeat',
+    '',
+    ''
+), 
+(
+    'de:soja-flocken',
+    '',
+    '',
+    'soja-flocken'
+), 
+(
+    'en:σόγια',
+    'σόγια',
+    '',
+    ''
+), 
+(
+    'de:sojaproteine',
+    '',
+    '',
+    'sojaproteine'
+), 
+(
+    'es:tartrazinas',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:chataignier',
+    '',
+    'chataignier',
+    ''
+), 
+(
+    'de:sprotten',
+    '',
+    '',
+    'sprotten'
+), 
+(
+    'cs:kuskus',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:1-coupelle-de-semoule-de-ble',
+    '',
+    '1-coupelle-de-semoule-de-ble',
+    ''
+), 
+(
+    'fr:plantes-aromatiques',
+    '',
+    'plantes-aromatiques',
+    ''
+), 
+(
+    'fr:fromage-italien',
+    '',
+    'fromage-italien',
+    ''
+), 
+(
+    'fr:mjolkprotein',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:faina-de-grâu',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:žitarice',
+    '',
+    '',
+    ''
+), 
+(
+    'en:contains-wheat-and-their-derivatives',
+    'contains-wheat-and-their-derivatives',
+    '',
+    ''
+), 
+(
+    'fr:specialite-pommes-90g',
+    '',
+    'specialite-pommes-90g',
+    ''
+), 
+(
+    'es:vollmilchpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:edamer',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sole-tropicale',
+    '',
+    'sole-tropicale',
+    ''
+), 
+(
+    'sl:pšenični',
+    '',
+    '',
+    ''
+), 
+(
+    'lv:seleriju',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roggen-mehl',
+    '',
+    '',
+    'roggen-mehl'
+), 
+(
+    'cs:pšeničné-otruby',
+    '',
+    '',
+    ''
+), 
+(
+    'it:noix',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:sūris',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:feves',
+    '',
+    'feves',
+    ''
+), 
+(
+    'hr:pir',
+    '',
+    '',
+    ''
+), 
+(
+    'de:süßlupinen',
+    '',
+    '',
+    'süßlupinen'
+), 
+(
+    'de:gestenmalzextrakt',
+    '',
+    '',
+    'gestenmalzextrakt'
+), 
+(
+    'de:grünkernflocken',
+    '',
+    '',
+    'grünkernflocken'
+), 
+(
+    'fr:entiers',
+    '',
+    'entiers',
+    ''
+), 
+(
+    'no:brisling',
+    '',
+    '',
+    ''
+), 
+(
+    'es:proteina-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:túró',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-grana-padano-aop',
+    '',
+    'fromage-grana-padano-aop',
+    ''
+), 
+(
+    'it:lattoderivati',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:koncentrirano-obrano-mlijeko',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:marisco',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:hvedemel',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cornflakes',
+    '',
+    'cornflakes',
+    ''
+), 
+(
+    'es:aaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    '',
+    '',
+    ''
+), 
+(
+    'id:penstabil-fosfat',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kichererbsenmehl',
+    '',
+    '',
+    'kichererbsenmehl'
+), 
+(
+    'fr:nems-au-porc-4x65g',
+    '',
+    'nems-au-porc-4x65g',
+    ''
+), 
+(
+    'fr:weizenhalmfaser',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milcherweißerzeugnis',
+    '',
+    '',
+    'milcherweißerzeugnis'
+), 
+(
+    'it:anacardio',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dìnkelmehl',
+    '',
+    '',
+    'dìnkelmehl'
+), 
+(
+    'it:farina-di-spelta',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizen-mehl',
+    '',
+    '',
+    'weizen-mehl'
+), 
+(
+    'de:pasteurisierte-milch',
+    '',
+    '',
+    'pasteurisierte-milch'
+), 
+(
+    'de:milcheiweishydrolysat',
+    '',
+    '',
+    'milcheiweishydrolysat'
+), 
+(
+    'id:pengembang-natrium-bikarbonat',
+    '',
+    '',
+    ''
+), 
+(
+    'es:sucralosa',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:pistaschnötter',
+    '',
+    '',
+    ''
+), 
+(
+    'el:νάτριο',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:queijo-fresco',
+    '',
+    '',
+    ''
+), 
+(
+    'th:กะทิ',
+    '',
+    '',
+    ''
+), 
+(
+    'el:αλεύρι-σίτου',
+    '',
+    '',
+    ''
+), 
+(
+    'it:glutine-pesce-latte',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:reblochon-aop',
+    '',
+    'reblochon-aop',
+    ''
+), 
+(
+    'fr:huevos',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:bonito-del-norte',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:arroz',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:blé',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:e102',
+    '',
+    'e102',
+    ''
+), 
+(
+    'fr:crevettes-a-la-noix-de-coco',
+    '',
+    'crevettes-a-la-noix-de-coco',
+    ''
+), 
+(
+    'de:cashewkeme',
+    '',
+    '',
+    'cashewkeme'
+), 
+(
+    'pl:mąka-razowa',
+    '',
+    '',
+    ''
+), 
+(
+    'xx:hühnervollei',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:samoussas-au-porc-galettes-de-ble-32',
+    '',
+    'samoussas-au-porc-galettes-de-ble-32',
+    ''
+), 
+(
+    'fr:lait-entier-fermente',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:selleriarom',
+    '',
+    '',
+    ''
+), 
+(
+    'en:weizenvollkornpaniermehl',
+    'weizenvollkornpaniermehl',
+    '',
+    ''
+), 
+(
+    'de:weizencerealien',
+    '',
+    '',
+    'weizencerealien'
+), 
+(
+    'fr:ferments-actiques',
+    '',
+    'ferments-actiques',
+    ''
+), 
+(
+    'en:kasepulver',
+    'kasepulver',
+    '',
+    ''
+), 
+(
+    'en:pasteurized-sweet-cream',
+    'pasteurized-sweet-cream',
+    '',
+    ''
+), 
+(
+    'bg:обезмаслено-мляко-на-прах',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vinaigre-de-vin',
+    '',
+    'vinaigre-de-vin',
+    ''
+), 
+(
+    'fr:canne',
+    '',
+    'canne',
+    ''
+), 
+(
+    'de:haselnusssauce',
+    '',
+    '',
+    'haselnusssauce'
+), 
+(
+    'de:laktosereduziertes-trockenmilcherzeugnis',
+    '',
+    '',
+    'laktosereduziertes-trockenmilcherzeugnis'
+), 
+(
+    'fr:chocolat-noisette',
+    '',
+    'chocolat-noisette',
+    ''
+), 
+(
+    'sr:mononatrijum-glutaminat',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:makadamiju',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pourcentage-de-matieres-grasses-inferieur-a-20-rapport-collagene-sur-proteines-de-viande-inferieur-a-15',
+    '',
+    'pourcentage-de-matieres-grasses-inferieur-a-20-rapport-collagene-sur-proteines-de-viande-inferieur-a-15',
+    ''
+), 
+(
+    'de:süßstoff',
+    '',
+    '',
+    'süßstoff'
+), 
+(
+    'fr:tomme-de-chevre',
+    '',
+    'tomme-de-chevre',
+    ''
+), 
+(
+    'de:croutons',
+    '',
+    '',
+    'croutons'
+), 
+(
+    'fr:dioxyde-de-sodium',
+    '',
+    'dioxyde-de-sodium',
+    ''
+), 
+(
+    'fr:lait-cannelle',
+    '',
+    'lait-cannelle',
+    ''
+), 
+(
+    'sv:mannagryn-av-vete',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:яичный-порошок',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:moutarde',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollmlichpulver',
+    '',
+    '',
+    'vollmlichpulver'
+), 
+(
+    'de:pistaziengrieß',
+    '',
+    '',
+    'pistaziengrieß'
+), 
+(
+    'fr:roppenmalzextrakt',
+    '',
+    'roppenmalzextrakt',
+    ''
+), 
+(
+    'en:etkezesi-savopor',
+    'etkezesi-savopor',
+    '',
+    ''
+), 
+(
+    'de:pistazie-pistacia-vera',
+    '',
+    '',
+    'pistazie-pistacia-vera'
+), 
+(
+    'en:wezenpaniermehl',
+    'wezenpaniermehl',
+    '',
+    ''
+), 
+(
+    'en:soyabeans',
+    'soyabeans',
+    '',
+    ''
+), 
+(
+    'de:weizenvollkommehi',
+    '',
+    '',
+    'weizenvollkommehi'
+), 
+(
+    'fr:reglisse-eviter-toute-consommation-excessive-en-cas-d-hypertension',
+    '',
+    'reglisse-eviter-toute-consommation-excessive-en-cas-d-hypertension',
+    ''
+), 
+(
+    'fr:creme-caillee',
+    '',
+    'creme-caillee',
+    ''
+), 
+(
+    'no:sennep',
+    '',
+    '',
+    ''
+), 
+(
+    'es:burro',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:quinine',
+    '',
+    'quinine',
+    ''
+), 
+(
+    'sr:heljde',
+    '',
+    '',
+    ''
+), 
+(
+    'en:pszenicy',
+    'pszenicy',
+    '',
+    ''
+), 
+(
+    'en:cevada-e-aveia',
+    'cevada-e-aveia',
+    '',
+    ''
+), 
+(
+    'fr:gousse-de-vanille-epuisee-0',
+    '',
+    'gousse-de-vanille-epuisee-0',
+    ''
+), 
+(
+    'en:warning',
+    'warning',
+    '',
+    ''
+), 
+(
+    'ru:нормализованные-сливки',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sepia',
+    '',
+    '',
+    'sepia'
+), 
+(
+    'es:eritritol',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:roggenflocken',
+    '',
+    'roggenflocken',
+    ''
+), 
+(
+    'sk:smotanova',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizen-eiweiß',
+    '',
+    '',
+    'weizen-eiweiß'
+), 
+(
+    'ru:дрожжи-хлебопекарные',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:maltekstrakt-av-rug',
+    '',
+    '',
+    ''
+), 
+(
+    'de:forellenfilet',
+    '',
+    '',
+    'forellenfilet'
+), 
+(
+    'nl:roompoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-presure',
+    '',
+    'fromage-presure',
+    ''
+), 
+(
+    'no:kruskakli',
+    '',
+    '',
+    ''
+), 
+(
+    'en:farro',
+    'farro',
+    '',
+    ''
+), 
+(
+    'fr:poire',
+    '',
+    'poire',
+    ''
+), 
+(
+    'es:castana-de-caju',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cultured-pasteurized-milk',
+    'cultured-pasteurized-milk',
+    '',
+    ''
+), 
+(
+    'sv:makrillfilé',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:eclats-d-amandes',
+    '',
+    'eclats-d-amandes',
+    ''
+), 
+(
+    'nb:mozzarella',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vollkornweizen',
+    '',
+    'vollkornweizen',
+    ''
+), 
+(
+    'id:gom-xantha',
+    '',
+    '',
+    ''
+), 
+(
+    'en:whole-grain-rye-flour',
+    'whole-grain-rye-flour',
+    '',
+    ''
+), 
+(
+    'es:granos',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:tojássárgája-por',
+    '',
+    '',
+    ''
+), 
+(
+    'it:glutine-di-frumento',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:fiskeskinn',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:suifites',
+    '',
+    'suifites',
+    ''
+), 
+(
+    'fr:nems-au-porc-8-x-30-g',
+    '',
+    'nems-au-porc-8-x-30-g',
+    ''
+), 
+(
+    'eu:sojalecithin',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:babeurre-en-poudre',
+    '',
+    'babeurre-en-poudre',
+    ''
+), 
+(
+    'fr:torskrom',
+    '',
+    'torskrom',
+    ''
+), 
+(
+    'fr:beignet-de-crevette-prefrit-30-crevette',
+    '',
+    'beignet-de-crevette-prefrit-30-crevette',
+    ''
+), 
+(
+    'ca:lactosa',
+    '',
+    '',
+    ''
+), 
+(
+    'es:oblea',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:glacage-au-chocolat-20',
+    '',
+    'glacage-au-chocolat-20',
+    ''
+), 
+(
+    'de:mineralstoffonzentrat-aus-molke',
+    '',
+    '',
+    'mineralstoffonzentrat-aus-molke'
+), 
+(
+    'th:มีถั่วเหลืองเป็นส่วนประกอบ',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pas-d-intolerance-connue',
+    '',
+    'pas-d-intolerance-connue',
+    ''
+), 
+(
+    'el:βυνη-κριθαριου',
+    '',
+    '',
+    ''
+), 
+(
+    'de:beaufort-käse',
+    '',
+    '',
+    'beaufort-käse'
+), 
+(
+    'el:σικάλι',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vers-de-farine-comestibles-deshydrates',
+    '',
+    'vers-de-farine-comestibles-deshydrates',
+    ''
+), 
+(
+    'en:seeds',
+    'seeds',
+    '',
+    ''
+), 
+(
+    'zh:乳化劑',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cultured-nonfat-milk',
+    'cultured-nonfat-milk',
+    '',
+    ''
+), 
+(
+    'it:solforosa',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lactosuero',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-oeufs-beurre',
+    '',
+    'ble-oeufs-beurre',
+    ''
+), 
+(
+    'fr:lieu-de-l-alaska',
+    '',
+    'lieu-de-l-alaska',
+    ''
+), 
+(
+    'fr:oeufs-lait',
+    '',
+    'oeufs-lait',
+    ''
+), 
+(
+    'sv:ricotta-käse',
+    '',
+    '',
+    ''
+), 
+(
+    'es:este-producto',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pollachius-virens',
+    '',
+    'pollachius-virens',
+    ''
+), 
+(
+    'en:almond-butter',
+    'almond-butter',
+    '',
+    ''
+), 
+(
+    'de:sojageschnetzel',
+    '',
+    '',
+    'sojageschnetzel'
+), 
+(
+    'fr:parfum-passion',
+    '',
+    'parfum-passion',
+    ''
+), 
+(
+    'hr:ječmene',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchschokoladenpulver',
+    '',
+    '',
+    'milchschokoladenpulver'
+), 
+(
+    'fr:imazalil',
+    '',
+    'imazalil',
+    ''
+), 
+(
+    'ko:쇠고기',
+    '',
+    '',
+    ''
+), 
+(
+    'zh:white-sesame',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:avoines',
+    '',
+    'avoines',
+    ''
+), 
+(
+    'fr:cacao-en-poudre',
+    '',
+    'cacao-en-poudre',
+    ''
+), 
+(
+    'fr:huhnervollei',
+    '',
+    'huhnervollei',
+    ''
+), 
+(
+    'fr:biere',
+    '',
+    'biere',
+    ''
+), 
+(
+    'en:dried-egg',
+    'dried-egg',
+    '',
+    ''
+), 
+(
+    'fr:salade-composee-90-pates',
+    '',
+    'salade-composee-90-pates',
+    ''
+), 
+(
+    'lv:biezpiens',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:fullkornsspeltmjöl',
+    '',
+    '',
+    ''
+), 
+(
+    'de:molkeneiweiß-crispies',
+    '',
+    '',
+    'molkeneiweiß-crispies'
+), 
+(
+    'bg:суроватка-на-прах',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:aveia',
+    '',
+    'aveia',
+    ''
+), 
+(
+    'hr:mlječna',
+    '',
+    '',
+    ''
+), 
+(
+    'en:outros-frutos-de-casca-rija',
+    'outros-frutos-de-casca-rija',
+    '',
+    ''
+), 
+(
+    'en:soya-and-sulphites-10ontact-itc-cares',
+    'soya-and-sulphites-10ontact-itc-cares',
+    '',
+    ''
+), 
+(
+    'da:æggepulver',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:gerste',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:viande-issues-de-bovins-abattus-selon-le-rite-halal-par-un-sacrificateur-professionnel-la-tracabilite-des-viandes-entrant-dans-la-composition-de-ce-produit-est-verifiee-par-un-organisme-de-controle-independant',
+    '',
+    'viande-issues-de-bovins-abattus-selon-le-rite-halal-par-un-sacrificateur-professionnel-la-tracabilite-des-viandes-entrant-dans-la-composition-de-ce-produit-est-verifiee-par-un-organisme-de-controle-independant',
+    ''
+), 
+(
+    'th:ทรสา',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:calamares',
+    '',
+    'calamares',
+    ''
+), 
+(
+    'en:nordseekrabbenfleisch',
+    'nordseekrabbenfleisch',
+    '',
+    ''
+), 
+(
+    'en:walnut-halves',
+    'walnut-halves',
+    '',
+    ''
+), 
+(
+    'fr:tome-fraiche',
+    '',
+    'tome-fraiche',
+    ''
+), 
+(
+    'de:bio-ziegenmilch',
+    '',
+    '',
+    'bio-ziegenmilch'
+), 
+(
+    'it:lecitina-a',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:blé',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:accras-a-la-morue',
+    '',
+    'accras-a-la-morue',
+    ''
+), 
+(
+    'fr:pepins-de-pin',
+    '',
+    'pepins-de-pin',
+    ''
+), 
+(
+    'cs:sladový-extrakt-z-ječmene',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:noisettes-entieres',
+    '',
+    'noisettes-entieres',
+    ''
+), 
+(
+    'fr:semoule-de-ble-dure',
+    '',
+    'semoule-de-ble-dure',
+    ''
+), 
+(
+    'fr:mlečne-kultury',
+    '',
+    '',
+    ''
+), 
+(
+    'en:caramel',
+    'caramel',
+    '',
+    ''
+), 
+(
+    'fr:romano',
+    '',
+    'romano',
+    ''
+), 
+(
+    'pl:masa-jajowa',
+    '',
+    '',
+    ''
+), 
+(
+    'de:süßmolkenpuler',
+    '',
+    '',
+    'süßmolkenpuler'
+), 
+(
+    'de:zander',
+    '',
+    '',
+    'zander'
+), 
+(
+    'en:atlantic-cod',
+    'atlantic-cod',
+    '',
+    ''
+), 
+(
+    'hr:quark-sir',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:metabisulfito-de-sodio',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:emrobage-a-base-de-cire-de-carnauba-et-shellac',
+    '',
+    'emrobage-a-base-de-cire-de-carnauba-et-shellac',
+    ''
+), 
+(
+    'fr:حليب',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:4-purees-de-pommes-poires',
+    '',
+    '4-purees-de-pommes-poires',
+    ''
+), 
+(
+    'de:sojaprotein-isolat',
+    '',
+    '',
+    'sojaprotein-isolat'
+), 
+(
+    'de:sojastücke',
+    '',
+    '',
+    'sojastücke'
+), 
+(
+    'de:sultaninen',
+    '',
+    '',
+    'sultaninen'
+), 
+(
+    'fr:thunnus-albacares',
+    '',
+    'thunnus-albacares',
+    ''
+), 
+(
+    'fr:eminces-en-gelee-au-poulet',
+    '',
+    'eminces-en-gelee-au-poulet',
+    ''
+), 
+(
+    'it:sciroppo-di-glucosio',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:epeautre-complet',
+    '',
+    'epeautre-complet',
+    ''
+), 
+(
+    'fr:nems-au-porc-8x30g',
+    '',
+    'nems-au-porc-8x30g',
+    ''
+), 
+(
+    'lv:koncentrēts-sviests',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:herapermeaatti',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hasselnussmark',
+    '',
+    '',
+    'hasselnussmark'
+), 
+(
+    'en:contem-tracos-de-leite-ou-derivados',
+    'contem-tracos-de-leite-ou-derivados',
+    '',
+    ''
+), 
+(
+    'da:ostepulver',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sucralose',
+    'sucralose',
+    '',
+    ''
+), 
+(
+    'fr:amidon-de-tapioca',
+    '',
+    'amidon-de-tapioca',
+    ''
+), 
+(
+    'en:wheatex',
+    'wheatex',
+    '',
+    ''
+), 
+(
+    'de:sesamweizenbrötchen',
+    '',
+    '',
+    'sesamweizenbrötchen'
+), 
+(
+    'bg:млечнокисели-култури',
+    '',
+    '',
+    ''
+), 
+(
+    'es:almendra-e-ingredientes-de-soya',
+    '',
+    '',
+    ''
+), 
+(
+    'de:muschelfleisch',
+    '',
+    '',
+    'muschelfleisch'
+), 
+(
+    'es:trigo-gluten-y-soya',
+    '',
+    '',
+    ''
+), 
+(
+    'en:e223',
+    'e223',
+    '',
+    ''
+), 
+(
+    'de:grillenpulver',
+    '',
+    '',
+    'grillenpulver'
+), 
+(
+    'fr:fenugrec',
+    '',
+    'fenugrec',
+    ''
+), 
+(
+    'xx:milcheiweiss',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-dur-precuit',
+    '',
+    'ble-dur-precuit',
+    ''
+), 
+(
+    'nl:schapemelk',
+    '',
+    '',
+    ''
+), 
+(
+    'en:monosodium-glutamate',
+    'monosodium-glutamate',
+    '',
+    ''
+), 
+(
+    'fr:ferments-tactiques',
+    '',
+    'ferments-tactiques',
+    ''
+), 
+(
+    'fr:thunnus-alalunga',
+    '',
+    'thunnus-alalunga',
+    ''
+), 
+(
+    'sv:durumhvede',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:specialite-fromagere',
+    '',
+    'specialite-fromagere',
+    ''
+), 
+(
+    'de:lachsrogen',
+    '',
+    '',
+    'lachsrogen'
+), 
+(
+    'de:schnittselerie',
+    '',
+    '',
+    'schnittselerie'
+), 
+(
+    'fr:courgette-prefrite-5-courgette-4',
+    '',
+    'courgette-prefrite-5-courgette-4',
+    ''
+), 
+(
+    'fr:sementes-de-sesamo',
+    '',
+    'sementes-de-sesamo',
+    ''
+), 
+(
+    'nl:speltbloemtarwe',
+    '',
+    '',
+    ''
+), 
+(
+    'es:pesaco',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:sera',
+    '',
+    '',
+    ''
+), 
+(
+    'en:smoked-formed-ham',
+    'smoked-formed-ham',
+    '',
+    ''
+), 
+(
+    'de:käserei-fermente',
+    '',
+    '',
+    'käserei-fermente'
+), 
+(
+    'fr:creme-a-30-de-matiere-grasse',
+    '',
+    'creme-a-30-de-matiere-grasse',
+    ''
+), 
+(
+    'de:vollkorn-gerstenmehl',
+    '',
+    '',
+    'vollkorn-gerstenmehl'
+), 
+(
+    'hr:ekstrakt-ječmenog-slada',
+    '',
+    '',
+    ''
+), 
+(
+    'lv:garneles',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:choco',
+    '',
+    'choco',
+    ''
+), 
+(
+    'es:llet',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:amandes-d-abricot',
+    '',
+    'amandes-d-abricot',
+    ''
+), 
+(
+    'hr:srdela',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:pode-conter-vestigios-de-ovos-e-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'de:koriander',
+    '',
+    '',
+    'koriander'
+), 
+(
+    'fr:vers',
+    '',
+    'vers',
+    ''
+), 
+(
+    'de:kaffeesahne',
+    '',
+    '',
+    'kaffeesahne'
+), 
+(
+    'de:bio-cashewmus',
+    '',
+    '',
+    'bio-cashewmus'
+), 
+(
+    'en:semolina',
+    'semolina',
+    '',
+    ''
+), 
+(
+    'fi:mantelisose',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:mantelitahna',
+    '',
+    '',
+    ''
+), 
+(
+    'es:ovos',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cajou',
+    'cajou',
+    '',
+    ''
+), 
+(
+    'en:contains-coconuts-and-their-derivatives',
+    'contains-coconuts-and-their-derivatives',
+    '',
+    ''
+), 
+(
+    'en:soybean-powder',
+    'soybean-powder',
+    '',
+    ''
+), 
+(
+    'de:laktase',
+    '',
+    '',
+    'laktase'
+), 
+(
+    'en:condensed-milk',
+    'condensed-milk',
+    '',
+    ''
+), 
+(
+    'hr:lješnjaka',
+    '',
+    '',
+    ''
+), 
+(
+    'de:21-vollmilchpulver',
+    '',
+    '',
+    '21-vollmilchpulver'
+), 
+(
+    'de:bio-gerstenmalz',
+    '',
+    '',
+    'bio-gerstenmalz'
+), 
+(
+    'fr:flocons-d-epeautre-complet',
+    '',
+    'flocons-d-epeautre-complet',
+    ''
+), 
+(
+    'hu:juhtúró',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:oat-flakes',
+    '',
+    '',
+    ''
+), 
+(
+    'es:sin-gluten-sin-tacc',
+    '',
+    '',
+    ''
+), 
+(
+    'it:cocco',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:dextrose',
+    '',
+    '',
+    ''
+), 
+(
+    'de:ziegenmolke',
+    '',
+    '',
+    'ziegenmolke'
+), 
+(
+    'fr:huile-butyrique',
+    '',
+    'huile-butyrique',
+    ''
+), 
+(
+    'en:lacteos',
+    'lacteos',
+    '',
+    ''
+), 
+(
+    'es:centano',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:graines-de-coriandre',
+    '',
+    'graines-de-coriandre',
+    ''
+), 
+(
+    'fr:erdnusskerne',
+    '',
+    'erdnusskerne',
+    ''
+), 
+(
+    'sr:fenilalanina',
+    '',
+    '',
+    ''
+), 
+(
+    'de:magermilchquarkpulver',
+    '',
+    '',
+    'magermilchquarkpulver'
+), 
+(
+    'en:sojasaucenpulver',
+    'sojasaucenpulver',
+    '',
+    ''
+), 
+(
+    'de:zimt',
+    '',
+    '',
+    'zimt'
+), 
+(
+    'hr:ječmeni-i-pšenični-slad',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromages-au-lait',
+    '',
+    'fromages-au-lait',
+    ''
+), 
+(
+    'fr:lait-ecreme-de-chevre',
+    '',
+    'lait-ecreme-de-chevre',
+    ''
+), 
+(
+    'en:frumento',
+    'frumento',
+    '',
+    ''
+), 
+(
+    'fi:vehnänalkio',
+    '',
+    '',
+    ''
+), 
+(
+    'it:vollmilchpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenmaizmehl',
+    '',
+    '',
+    'weizenmaizmehl'
+), 
+(
+    'fr:bonite-sechee',
+    '',
+    'bonite-sechee',
+    ''
+), 
+(
+    'de:welsfilet',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:maltaat',
+    '',
+    '',
+    ''
+), 
+(
+    'da:hvedeprotein',
+    '',
+    '',
+    ''
+), 
+(
+    'en:nut-tree',
+    'nut-tree',
+    '',
+    ''
+), 
+(
+    'de:roggenmalzquell',
+    '',
+    '',
+    ''
+), 
+(
+    'es:tarwezetmeel',
+    '',
+    '',
+    ''
+), 
+(
+    'en:contains-gluten-containing-cereals-and-soy-as-indicated-in-bold-type',
+    'contains-gluten-containing-cereals-and-soy-as-indicated-in-bold-type',
+    '',
+    ''
+), 
+(
+    'fi:kananmunankeltunainen',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:34',
+    '',
+    '34',
+    ''
+), 
+(
+    'de:eigelbgulver',
+    '',
+    '',
+    'eigelbgulver'
+), 
+(
+    'en:soybean-and-its-derivatives',
+    'soybean-and-its-derivatives',
+    '',
+    ''
+), 
+(
+    'fr:acidifiant-e575',
+    '',
+    'acidifiant-e575',
+    ''
+), 
+(
+    'cs:sójový-nápoj',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:gerstemoutpoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:hafervollkornmehl',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:johannisbrotkernmehl',
+    '',
+    'johannisbrotkernmehl',
+    ''
+), 
+(
+    'de:gersten-vollkornmehl',
+    '',
+    '',
+    ''
+), 
+(
+    'en:barley-malt-gluten',
+    'barley-malt-gluten',
+    '',
+    ''
+), 
+(
+    'fr:flour',
+    '',
+    'flour',
+    ''
+), 
+(
+    'de:gersienmalz',
+    '',
+    '',
+    'gersienmalz'
+), 
+(
+    'hr:sladni',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pecorino-romano-aop',
+    '',
+    'pecorino-romano-aop',
+    ''
+), 
+(
+    'fr:specialite-de-fruits-pomme-fraise-myrtille-90g',
+    '',
+    'specialite-de-fruits-pomme-fraise-myrtille-90g',
+    ''
+), 
+(
+    'de:magermilch-joghurt',
+    '',
+    '',
+    'magermilch-joghurt'
+), 
+(
+    'fr:poivron-rouge-4',
+    '',
+    'poivron-rouge-4',
+    ''
+), 
+(
+    'fr:amidon-de-mais',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:valnötskärnor',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:canelle',
+    '',
+    'canelle',
+    ''
+), 
+(
+    'es:grasa-de-la-leche',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:sójová-omáčka',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:graines-de-sesame-etproduits-en-contenant',
+    '',
+    'graines-de-sesame-etproduits-en-contenant',
+    ''
+), 
+(
+    'hr:raži',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:urticaire',
+    '',
+    'urticaire',
+    ''
+), 
+(
+    'en:dried-cream',
+    'dried-cream',
+    '',
+    ''
+), 
+(
+    'es:pescado-anchoa-y-glutamato-monosodico',
+    '',
+    '',
+    ''
+), 
+(
+    'de:zitrone',
+    '',
+    '',
+    'zitrone'
+), 
+(
+    'de:weizenvollkornfeinschrot',
+    '',
+    '',
+    'weizenvollkornfeinschrot'
+), 
+(
+    'de:vollmilchbutter',
+    '',
+    '',
+    'vollmilchbutter'
+), 
+(
+    'pl:żytmia',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:3-tartelettes-aux-poivrons-20',
+    '',
+    '3-tartelettes-aux-poivrons-20',
+    ''
+), 
+(
+    'fr:ble-epeautre',
+    '',
+    '',
+    ''
+), 
+(
+    'id:penstabil-natrium-asam-pirofosfat',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchl',
+    '',
+    '',
+    'milchl'
+), 
+(
+    'it:cereali',
+    '',
+    '',
+    ''
+), 
+(
+    'en:σίτου',
+    'σίτου',
+    '',
+    ''
+), 
+(
+    'en:ไข่',
+    'ไข่',
+    '',
+    ''
+), 
+(
+    'lt:riešutų',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:žemės-riešūtų',
+    '',
+    '',
+    ''
+), 
+(
+    'ca:sesam',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenmehl-type-350',
+    '',
+    '',
+    'weizenmehl-type-350'
+), 
+(
+    'fr:dioxyde',
+    '',
+    'dioxyde',
+    ''
+), 
+(
+    'fr:weizenmalz',
+    '',
+    'weizenmalz',
+    ''
+), 
+(
+    'es:pasta-de-avellana',
+    '',
+    '',
+    ''
+), 
+(
+    'es:ajonjali',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:grapefruit',
+    '',
+    'grapefruit',
+    ''
+), 
+(
+    'de:enthält-glutenhaltiges-getreide-und-milch',
+    '',
+    '',
+    'enthält-glutenhaltiges-getreide-und-milch'
+), 
+(
+    'it:petit-lait',
+    '',
+    '',
+    ''
+), 
+(
+    'en:skummetmelk',
+    'skummetmelk',
+    '',
+    ''
+), 
+(
+    'en:milk-solids-minimum-24-milk',
+    'milk-solids-minimum-24-milk',
+    '',
+    ''
+), 
+(
+    'de:getreidebasis',
+    '',
+    '',
+    'getreidebasis'
+), 
+(
+    'en:gerstenmehlextrakt',
+    'gerstenmehlextrakt',
+    '',
+    ''
+), 
+(
+    'en:puffed-millet',
+    'puffed-millet',
+    '',
+    ''
+), 
+(
+    'de:hafervollkornschrot',
+    '',
+    '',
+    'hafervollkornschrot'
+), 
+(
+    'fr:indiquer',
+    '',
+    'indiquer',
+    ''
+), 
+(
+    'de:edelpilzkäse',
+    '',
+    '',
+    'edelpilzkäse'
+), 
+(
+    'en:erdnuss',
+    'erdnuss',
+    '',
+    ''
+), 
+(
+    'de:roggenvollkornmeht',
+    '',
+    '',
+    'roggenvollkornmeht'
+), 
+(
+    'fr:ble-gluten-et-lait',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:proteinas-de-leite',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:högpastöriserad-mjölk',
+    '',
+    '',
+    ''
+), 
+(
+    'de:walnussstücke',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:d-epautre',
+    '',
+    'd-epautre',
+    ''
+), 
+(
+    'es:farinha-de-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenmahlmehl',
+    '',
+    '',
+    'weizenmahlmehl'
+), 
+(
+    'it:pistaches',
+    '',
+    '',
+    ''
+), 
+(
+    'en:contains-gluten-containing-ingredients',
+    'contains-gluten-containing-ingredients',
+    '',
+    ''
+), 
+(
+    'en:son-de-soja',
+    'son-de-soja',
+    '',
+    ''
+), 
+(
+    'pt:recheio',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lactoseum',
+    '',
+    'lactoseum',
+    ''
+), 
+(
+    'fr:sauce-bourguignonne-85g-ingredients',
+    '',
+    'sauce-bourguignonne-85g-ingredients',
+    ''
+), 
+(
+    'fi:kananmunanvalkoaisjauhe',
+    '',
+    '',
+    ''
+), 
+(
+    'en:milk-and-its-derivatives',
+    'milk-and-its-derivatives',
+    '',
+    ''
+), 
+(
+    'fr:roggenkorner',
+    '',
+    'roggenkorner',
+    ''
+), 
+(
+    'en:sojaschrot',
+    'sojaschrot',
+    '',
+    ''
+), 
+(
+    'fr:pproteines-de-lait',
+    '',
+    'pproteines-de-lait',
+    ''
+), 
+(
+    'en:γλουτένη-σίτος',
+    'γλουτένη-σίτος',
+    '',
+    ''
+), 
+(
+    'sr:prezle',
+    '',
+    '',
+    ''
+), 
+(
+    'de:schnittsellerie',
+    '',
+    '',
+    'schnittsellerie'
+), 
+(
+    'fr:huhnerei-trockeneiweiss',
+    '',
+    'huhnerei-trockeneiweiss',
+    ''
+), 
+(
+    'de:haselnussstucke',
+    '',
+    '',
+    ''
+), 
+(
+    'de:selleriearoma',
+    '',
+    '',
+    'selleriearoma'
+), 
+(
+    'de:eierstich',
+    '',
+    '',
+    'eierstich'
+), 
+(
+    'de:dinkelkörner',
+    '',
+    '',
+    'dinkelkörner'
+), 
+(
+    'de:avellanas',
+    '',
+    '',
+    'avellanas'
+), 
+(
+    'sv:löpe',
+    '',
+    '',
+    ''
+), 
+(
+    'en:queijos',
+    'queijos',
+    '',
+    ''
+), 
+(
+    'fr:pommes-de-terre-prefrites-54',
+    '',
+    'pommes-de-terre-prefrites-54',
+    ''
+), 
+(
+    'de:gehackte-mandeln',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:orge-monde-precuit-gluten',
+    '',
+    'orge-monde-precuit-gluten',
+    ''
+), 
+(
+    'pl:jęcznienny',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:weizen',
+    '',
+    '',
+    ''
+), 
+(
+    'en:owies',
+    'owies',
+    '',
+    ''
+), 
+(
+    'fr:weizenflocken',
+    '',
+    'weizenflocken',
+    ''
+), 
+(
+    'hr:buraki',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:śmietanki',
+    '',
+    '',
+    ''
+), 
+(
+    'es:llavors-de-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hartweißengrieß',
+    '',
+    '',
+    'hartweißengrieß'
+), 
+(
+    'fr:arome-naturel-de-vanille',
+    '',
+    'arome-naturel-de-vanille',
+    ''
+), 
+(
+    'en:mustard-oil',
+    'mustard-oil',
+    '',
+    ''
+), 
+(
+    'en:hvitost',
+    'hvitost',
+    '',
+    ''
+), 
+(
+    'fr:jus-de-citron-0',
+    '',
+    'jus-de-citron-0',
+    ''
+), 
+(
+    'fr:fruis-a-coque',
+    '',
+    'fruis-a-coque',
+    ''
+), 
+(
+    'de:pazifische-scholle',
+    '',
+    '',
+    'pazifische-scholle'
+), 
+(
+    'de:eiernudeln',
+    '',
+    '',
+    'eiernudeln'
+), 
+(
+    'en:protein',
+    'protein',
+    '',
+    ''
+), 
+(
+    'en:egg-yellow',
+    'egg-yellow',
+    '',
+    ''
+), 
+(
+    'de:hühner-eiweißpulver',
+    '',
+    '',
+    'hühner-eiweißpulver'
+), 
+(
+    'en:contains-tree-nuts',
+    'contains-tree-nuts',
+    '',
+    ''
+), 
+(
+    'en:gluten-free-rolled-oats',
+    'gluten-free-rolled-oats',
+    '',
+    ''
+), 
+(
+    'fr:farine-de-cereales-maltees',
+    '',
+    'farine-de-cereales-maltees',
+    ''
+), 
+(
+    'de:lupinenerzeugnis',
+    '',
+    '',
+    'lupinenerzeugnis'
+), 
+(
+    'de:senfextrakt',
+    '',
+    '',
+    'senfextrakt'
+), 
+(
+    'fr:oranges',
+    '',
+    'oranges',
+    ''
+), 
+(
+    'fr:allergene-poisson',
+    '',
+    'allergene-poisson',
+    ''
+), 
+(
+    'lt:grietinėlės',
+    '',
+    '',
+    ''
+), 
+(
+    'da:minimælk',
+    '',
+    '',
+    ''
+), 
+(
+    'en:mollusque',
+    'mollusque',
+    '',
+    ''
+), 
+(
+    'fr:chair-de-homard-americain',
+    '',
+    'chair-de-homard-americain',
+    ''
+), 
+(
+    'de:eipur',
+    '',
+    '',
+    'eipur'
+), 
+(
+    'ca:api',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:eiwitpoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenvollkernmehl',
+    '',
+    '',
+    'weizenvollkernmehl'
+), 
+(
+    'fr:langouste-caraibe',
+    '',
+    'langouste-caraibe',
+    ''
+), 
+(
+    'sv:natriumkaseinat',
+    '',
+    '',
+    ''
+), 
+(
+    'ko:돼지고기',
+    '',
+    '',
+    ''
+), 
+(
+    'it:lapte',
+    '',
+    '',
+    ''
+), 
+(
+    'es:fresa-platano-leche',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:hvitfisk',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:арахис-обжаренный',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:indijski-oraščič',
+    '',
+    '',
+    ''
+), 
+(
+    'it:merluzzo-nordico',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:лецитин',
+    '',
+    '',
+    ''
+), 
+(
+    'no:yoghurtkultur',
+    '',
+    '',
+    ''
+), 
+(
+    'es:edulcorante',
+    '',
+    '',
+    ''
+), 
+(
+    'en:free-range-egg',
+    'free-range-egg',
+    '',
+    ''
+), 
+(
+    'en:maito',
+    'maito',
+    '',
+    ''
+), 
+(
+    'pl:gliten',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fts',
+    '',
+    'fts',
+    ''
+), 
+(
+    'el:όξινο',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:paloco-do-pacifico',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lacteos',
+    '',
+    'lacteos',
+    ''
+), 
+(
+    'hr:sjemenke-gorušice',
+    '',
+    '',
+    ''
+), 
+(
+    'el:πρωτεϊνη-γάλακτος',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:maslac',
+    '',
+    'maslac',
+    ''
+), 
+(
+    'sv:ricottaost',
+    '',
+    '',
+    ''
+), 
+(
+    'el:κριθαριού',
+    '',
+    '',
+    ''
+), 
+(
+    'de:crème-fraîche-pulver',
+    '',
+    '',
+    'crème-fraîche-pulver'
+), 
+(
+    'fr:farine-de-ble-noir',
+    '',
+    'farine-de-ble-noir',
+    ''
+), 
+(
+    'sv:kräftstjärtar',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:högpastöriserad-grädde',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hummerbrühe',
+    '',
+    '',
+    'hummerbrühe'
+), 
+(
+    'ro:brânză-emmental',
+    '',
+    '',
+    ''
+), 
+(
+    'de:süßmolkenpolver',
+    '',
+    '',
+    'süßmolkenpolver'
+), 
+(
+    'en:flax-seed',
+    'flax-seed',
+    '',
+    ''
+), 
+(
+    'fr:rahm',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:farine-de-anacarde',
+    '',
+    'farine-de-anacarde',
+    ''
+), 
+(
+    'en:dried-skimmed-milk',
+    'dried-skimmed-milk',
+    '',
+    ''
+), 
+(
+    'en:vanilla',
+    'vanilla',
+    '',
+    ''
+), 
+(
+    'fr:s-allyl-cysteine',
+    '',
+    's-allyl-cysteine',
+    ''
+), 
+(
+    'en:weizenstarkesirup',
+    'weizenstarkesirup',
+    '',
+    ''
+), 
+(
+    'de:wezenpaniermehl',
+    '',
+    '',
+    'wezenpaniermehl'
+), 
+(
+    'de:kabeljaurückenfilet',
+    '',
+    '',
+    'kabeljaurückenfilet'
+), 
+(
+    'fr:lieu-noir',
+    '',
+    'lieu-noir',
+    ''
+), 
+(
+    'de:süßmolkenplver',
+    '',
+    '',
+    'süßmolkenplver'
+), 
+(
+    'sv:torskfärs',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:buttermilk-powder',
+    '',
+    '',
+    ''
+), 
+(
+    'es:hartweizengriess',
+    '',
+    '',
+    ''
+), 
+(
+    'es:nato',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hühnereiweip',
+    '',
+    '',
+    'hühnereiweip'
+), 
+(
+    'en:gluten-crustaces-oeuf-soja-les-fruits-a-coque-celeri-moutarde-graines-de-sesame-mollusque',
+    'gluten-crustaces-oeuf-soja-les-fruits-a-coque-celeri-moutarde-graines-de-sesame-mollusque',
+    '',
+    ''
+), 
+(
+    'de:fischsauce',
+    '',
+    '',
+    'fischsauce'
+), 
+(
+    'id:zat-besi',
+    '',
+    '',
+    ''
+), 
+(
+    'xx:weizen',
+    '',
+    '',
+    ''
+), 
+(
+    'de:soja-vollmehl',
+    '',
+    '',
+    'soja-vollmehl'
+), 
+(
+    'pt:e951',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ail-en-puree',
+    '',
+    'ail-en-puree',
+    ''
+), 
+(
+    'de:wezenmehl',
+    '',
+    '',
+    'wezenmehl'
+), 
+(
+    'en:agg',
+    'agg',
+    '',
+    ''
+), 
+(
+    'fr:nueces-y-semillas',
+    '',
+    '',
+    ''
+), 
+(
+    'ca:lactis',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:padano',
+    '',
+    'padano',
+    ''
+), 
+(
+    'de:haferdrink',
+    '',
+    '',
+    'haferdrink'
+), 
+(
+    'th:มีผลิตภัณฑ์จากั้วหลือง-ผลิตภัณฑ์จากปกลเตน-จากข้าวสาลี-และอาจมีสัตว์น้ำที่มีเปลือกแข็ง-ไป่-ปลา-ถั่วลิสงกั่วที่มีเปลือกแข็ง-ซัลไฟต์',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:bouillons',
+    '',
+    'bouillons',
+    ''
+), 
+(
+    'de:dinkelquellstärke',
+    '',
+    '',
+    'dinkelquellstärke'
+), 
+(
+    'de:1-teil-konzentrat-mit-23-teilen-wasser-anrühren',
+    '',
+    '',
+    '1-teil-konzentrat-mit-23-teilen-wasser-anrühren'
+), 
+(
+    'sr:seme-slačice',
+    '',
+    '',
+    ''
+), 
+(
+    'en:limande-du-nord',
+    'limande-du-nord',
+    '',
+    ''
+), 
+(
+    'fr:sojalesitin',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:laktozu',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haselnüse',
+    '',
+    '',
+    'haselnüse'
+), 
+(
+    'gs:laxante',
+    '',
+    '',
+    ''
+), 
+(
+    'en:goats-milk',
+    'goats-milk',
+    '',
+    ''
+), 
+(
+    'de:vollmilchschokodrops',
+    '',
+    '',
+    'vollmilchschokodrops'
+), 
+(
+    'es:huevo-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'en:frutos-casca-rija',
+    'frutos-casca-rija',
+    '',
+    ''
+), 
+(
+    'en:seesaminsiementahna',
+    'seesaminsiementahna',
+    '',
+    ''
+), 
+(
+    'xx:sesam',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:fullkornsmjöl-av-dinkel',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:huile-de-sesame-vierge',
+    '',
+    'huile-de-sesame-vierge',
+    ''
+), 
+(
+    'de:weizenqellmehl',
+    '',
+    '',
+    'weizenqellmehl'
+), 
+(
+    'de:micheiweiß',
+    '',
+    '',
+    'micheiweiß'
+), 
+(
+    'fr:amandesmoulues',
+    '',
+    'amandesmoulues',
+    ''
+), 
+(
+    'en:orzechy',
+    'orzechy',
+    '',
+    ''
+), 
+(
+    'pl:mąka-owsiana-pełnoziarnista',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:productos-de-suero-de-leche',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:caille-de-chevre',
+    '',
+    'caille-de-chevre',
+    ''
+), 
+(
+    'es:almedra',
+    '',
+    '',
+    ''
+), 
+(
+    'th:ไข่ขาว',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:smetana',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollkorndinkelweizenflocken',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:gluteeniton-kaura',
+    '',
+    '',
+    ''
+), 
+(
+    'en:rahm',
+    'rahm',
+    '',
+    ''
+), 
+(
+    'de:sauce',
+    '',
+    '',
+    'sauce'
+), 
+(
+    'de:macadamianusskeren',
+    '',
+    '',
+    'macadamianusskeren'
+), 
+(
+    'ru:ядро-ореха-фундука-дробленое',
+    '',
+    '',
+    ''
+), 
+(
+    'th:กลูเตน',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mehlschwitze',
+    '',
+    '',
+    'mehlschwitze'
+), 
+(
+    'en:ground-mustard',
+    'ground-mustard',
+    '',
+    ''
+), 
+(
+    'en:whole-wheat',
+    'whole-wheat',
+    '',
+    ''
+), 
+(
+    'fr:creme-lactoserum',
+    '',
+    'creme-lactoserum',
+    ''
+), 
+(
+    'es:harina-de-trigo-enriquecida',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:scharrelei-eigeel',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:d-avoine',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mjolktrdufl',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:acoupa-aiguille',
+    '',
+    'acoupa-aiguille',
+    ''
+), 
+(
+    'fr:sucre-de-canne',
+    '',
+    'sucre-de-canne',
+    ''
+), 
+(
+    'de:gerstenmalz-mehl',
+    '',
+    '',
+    'gerstenmalz-mehl'
+), 
+(
+    'it:glutine-di-grano',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:smak-zielone-jabłko',
+    '',
+    '',
+    ''
+), 
+(
+    'en:genetically-modified',
+    'genetically-modified',
+    '',
+    ''
+), 
+(
+    'de:bio-soja',
+    '',
+    '',
+    'bio-soja'
+), 
+(
+    'es:sulfatos',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lecithine-de-soia',
+    '',
+    'lecithine-de-soia',
+    ''
+), 
+(
+    'es:oeufs',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:kemiri-noten',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:milk-fat',
+    '',
+    'milk-fat',
+    ''
+), 
+(
+    'ca:espelta',
+    '',
+    '',
+    ''
+), 
+(
+    'en:buttermilchpulver',
+    'buttermilchpulver',
+    '',
+    ''
+), 
+(
+    'de:bio-weizenmehl',
+    '',
+    '',
+    'bio-weizenmehl'
+), 
+(
+    'pl:jajka-w-proszku',
+    '',
+    '',
+    ''
+), 
+(
+    'de:seefischen',
+    '',
+    '',
+    'seefischen'
+), 
+(
+    'hr:si̇rutka',
+    '',
+    '',
+    ''
+), 
+(
+    'en:hazelnut-flavouring',
+    'hazelnut-flavouring',
+    '',
+    ''
+), 
+(
+    'fr:cepage',
+    '',
+    'cepage',
+    ''
+), 
+(
+    'fr:lait-maigre-en-poudre',
+    '',
+    '',
+    ''
+), 
+(
+    'tr:tarwegries',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:proteines-de-froment',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:weizenmalzmehl',
+    '',
+    'weizenmalzmehl',
+    ''
+), 
+(
+    'en:healthy-drink',
+    'healthy-drink',
+    '',
+    ''
+), 
+(
+    'es:mosterd',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dinkelfocken',
+    '',
+    '',
+    'dinkelfocken'
+), 
+(
+    'fr:recongeler',
+    '',
+    'recongeler',
+    ''
+), 
+(
+    'es:queso-azul',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:nble',
+    '',
+    'nble',
+    ''
+), 
+(
+    'en:leite-e-derivados',
+    'leite-e-derivados',
+    '',
+    ''
+), 
+(
+    'en:grutos-de-cascara',
+    'grutos-de-cascara',
+    '',
+    ''
+), 
+(
+    'de:hühnervollel',
+    '',
+    '',
+    'hühnervollel'
+), 
+(
+    'hr:unt',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:serwatka-w-proszku',
+    '',
+    '',
+    ''
+), 
+(
+    'es:celeri',
+    '',
+    '',
+    ''
+), 
+(
+    'de:welchweizenmehl',
+    '',
+    '',
+    'welchweizenmehl'
+), 
+(
+    'fw:céleri',
+    '',
+    '',
+    ''
+), 
+(
+    'en:שעורה-גלוטן',
+    'שעורה-גלוטן',
+    '',
+    ''
+), 
+(
+    'id:susu',
+    '',
+    '',
+    ''
+), 
+(
+    'en:lupinenerzeugnissen',
+    'lupinenerzeugnissen',
+    '',
+    ''
+), 
+(
+    'fr:farine-d-epeautre-complet-bio',
+    '',
+    'farine-d-epeautre-complet-bio',
+    ''
+), 
+(
+    'sv:vetestråfiber',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:hazelnootstukjes',
+    '',
+    '',
+    ''
+), 
+(
+    'ko:난류',
+    '',
+    '',
+    ''
+), 
+(
+    'de:provolone-käse',
+    '',
+    '',
+    'provolone-käse'
+), 
+(
+    'ro:gluten-din-grâu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:salyciles',
+    '',
+    'salyciles',
+    ''
+), 
+(
+    'cs:žitný',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:pšenično',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:täysiävehnäjauho',
+    '',
+    '',
+    ''
+), 
+(
+    'en:coriander',
+    'coriander',
+    '',
+    ''
+), 
+(
+    'en:pasteurised-milk',
+    'pasteurised-milk',
+    '',
+    ''
+), 
+(
+    'fr:cashewnusse',
+    '',
+    'cashewnusse',
+    ''
+), 
+(
+    'en:reduced-fat-milk',
+    'reduced-fat-milk',
+    '',
+    ''
+), 
+(
+    'de:vollmilchkonzentrat',
+    '',
+    '',
+    'vollmilchkonzentrat'
+), 
+(
+    'en:mollusques',
+    'mollusques',
+    '',
+    ''
+), 
+(
+    'th:ปลาหมึก',
+    '',
+    '',
+    ''
+), 
+(
+    'es:sin-azucares-anadidos',
+    '',
+    '',
+    ''
+), 
+(
+    'en:apple',
+    'apple',
+    '',
+    ''
+), 
+(
+    'de:gerstenröstmalzmehl',
+    '',
+    '',
+    'gerstenröstmalzmehl'
+), 
+(
+    'de:süßmolkenerzeugnis',
+    '',
+    '',
+    'süßmolkenerzeugnis'
+), 
+(
+    'fr:outros-frutos-de-casca-rija',
+    '',
+    'outros-frutos-de-casca-rija',
+    ''
+), 
+(
+    'fr:caenbert',
+    '',
+    'caenbert',
+    ''
+), 
+(
+    'en:fromagere',
+    'fromagere',
+    '',
+    ''
+), 
+(
+    'de:weißwein',
+    '',
+    '',
+    'weißwein'
+), 
+(
+    'de:weozenmehl',
+    '',
+    '',
+    'weozenmehl'
+), 
+(
+    'fr:farine-de-tenebrions-meuniers',
+    '',
+    'farine-de-tenebrions-meuniers',
+    ''
+), 
+(
+    'fr:spaghetti',
+    '',
+    'spaghetti',
+    ''
+), 
+(
+    'en:e331',
+    'e331',
+    '',
+    ''
+), 
+(
+    'en:weichkase',
+    'weichkase',
+    '',
+    ''
+), 
+(
+    'fr:poissons-de-roche',
+    '',
+    'poissons-de-roche',
+    ''
+), 
+(
+    'fr:ble-soja',
+    '',
+    'ble-soja',
+    ''
+), 
+(
+    'fr:proteine-lactique',
+    '',
+    'proteine-lactique',
+    ''
+), 
+(
+    'fr:beignets-de-crevette-82-crevette',
+    '',
+    'beignets-de-crevette-82-crevette',
+    ''
+), 
+(
+    'de:magerlichpulver',
+    '',
+    '',
+    'magerlichpulver'
+), 
+(
+    'en:glutenhaltiges-weizen',
+    'glutenhaltiges-weizen',
+    '',
+    ''
+), 
+(
+    'no:mandler',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:beurre-0-9',
+    '',
+    'beurre-0-9',
+    ''
+), 
+(
+    'nl:zonder-kunstmatige-kleurstoffen-of-smaakstoffen-zonder-conserveringsmiddelen-zonder-zetmeel-zonder-melk-zonder-lactose-zonder-soja-zonder-gluten-zonder-tarwe-zonder-gist-zonder-visproducten-zonder-varkensproducten',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:khorasan',
+    '',
+    'khorasan',
+    ''
+), 
+(
+    'fr:poulet-aux-saveurs-marocaines-250g',
+    '',
+    'poulet-aux-saveurs-marocaines-250g',
+    ''
+), 
+(
+    'de:roggennatursauerteig',
+    '',
+    '',
+    'roggennatursauerteig'
+), 
+(
+    'fr:sauce-nuoc-mam-2-x-20g',
+    '',
+    'sauce-nuoc-mam-2-x-20g',
+    ''
+), 
+(
+    'th:anhydous-milk-fat',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sahnejoghurt-mild',
+    '',
+    '',
+    'sahnejoghurt-mild'
+), 
+(
+    'en:milchfetterzeugnis',
+    'milchfetterzeugnis',
+    '',
+    ''
+), 
+(
+    'fw:œufs',
+    '',
+    '',
+    ''
+), 
+(
+    'en:mature-cheddar-cheese',
+    'mature-cheddar-cheese',
+    '',
+    ''
+), 
+(
+    'de:sojyproteinhydrolysat',
+    '',
+    '',
+    'sojyproteinhydrolysat'
+), 
+(
+    'nl:gerstemoutaroma',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:et-derives',
+    '',
+    'et-derives',
+    ''
+), 
+(
+    'pt:leites',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:rien',
+    '',
+    'rien',
+    ''
+), 
+(
+    'nb:scampi',
+    '',
+    '',
+    ''
+), 
+(
+    'de:khorasan-welzenflocken',
+    '',
+    '',
+    ''
+), 
+(
+    'en:גלוטן-חיטה',
+    'גלוטן-חיטה',
+    '',
+    ''
+), 
+(
+    'en:cricket-protein-powder',
+    'cricket-protein-powder',
+    '',
+    ''
+), 
+(
+    'de:kalmare',
+    '',
+    '',
+    'kalmare'
+), 
+(
+    'fr:lalt-ecreme-en-poudre',
+    '',
+    '',
+    ''
+), 
+(
+    'es:sesamo-y-cachuete',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-parmigiano-reggiano-aop',
+    '',
+    'fromage-parmigiano-reggiano-aop',
+    ''
+), 
+(
+    'en:starch',
+    'starch',
+    '',
+    ''
+), 
+(
+    'fr:ce-produit-est-fait-a-base-de-fruits-ayant-ete-traites-avec-des-substances-phytosanitaires-information-recu-de-la-part-de-lidl-fr',
+    '',
+    'ce-produit-est-fait-a-base-de-fruits-ayant-ete-traites-avec-des-substances-phytosanitaires-information-recu-de-la-part-de-lidl-fr',
+    ''
+), 
+(
+    'fr:gluten-de-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:xanthan',
+    'xanthan',
+    '',
+    ''
+), 
+(
+    'es:poton',
+    '',
+    '',
+    ''
+), 
+(
+    'el:αραβικό',
+    '',
+    '',
+    ''
+), 
+(
+    'en:wheat-derivatives',
+    'wheat-derivatives',
+    '',
+    ''
+), 
+(
+    'it:mandorla',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:vaječné-bílky',
+    '',
+    '',
+    ''
+), 
+(
+    'en:melkeiwitten',
+    'melkeiwitten',
+    '',
+    ''
+), 
+(
+    'fr:the-vert-aromatise-saveur-fruits-exotiques',
+    '',
+    'the-vert-aromatise-saveur-fruits-exotiques',
+    ''
+), 
+(
+    'fr:fourres-ronds-gout-tout-chocolat-lactose',
+    '',
+    'fourres-ronds-gout-tout-chocolat-lactose',
+    ''
+), 
+(
+    'nb:floyte',
+    '',
+    '',
+    ''
+), 
+(
+    'de:tagliatelle-nudeln',
+    '',
+    '',
+    'tagliatelle-nudeln'
+), 
+(
+    'xx:magermilchpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:sadrži-mleko',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:camenbert',
+    '',
+    'camenbert',
+    ''
+), 
+(
+    'fr:penaeus-vannamei',
+    '',
+    'penaeus-vannamei',
+    ''
+), 
+(
+    'it:albume',
+    '',
+    '',
+    ''
+), 
+(
+    'id:kalsium',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hartweißengriess',
+    '',
+    '',
+    'hartweißengriess'
+), 
+(
+    'de:makrelenpulver',
+    '',
+    '',
+    'makrelenpulver'
+), 
+(
+    'fr:mostarda',
+    '',
+    'mostarda',
+    ''
+), 
+(
+    'hu:barack',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vacherin',
+    '',
+    'vacherin',
+    ''
+), 
+(
+    'da:sesampuré',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fuit-a-coque',
+    '',
+    'fuit-a-coque',
+    ''
+), 
+(
+    'fr:maquereaux-moutarde-disulfite-sulfites',
+    '',
+    'maquereaux-moutarde-disulfite-sulfites',
+    ''
+), 
+(
+    'fr:huhnerei-eiweisspulver',
+    '',
+    'huhnerei-eiweisspulver',
+    ''
+), 
+(
+    'de:schaffrischkäse',
+    '',
+    '',
+    'schaffrischkäse'
+), 
+(
+    'fr:sauce-au-vinaigre-balsamique',
+    '',
+    'sauce-au-vinaigre-balsamique',
+    ''
+), 
+(
+    'es:soja-y-derivados-de-los-mismos',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sauce-burger-85g-ingredients',
+    '',
+    'sauce-burger-85g-ingredients',
+    ''
+), 
+(
+    'de:raggenmehl',
+    '',
+    '',
+    'raggenmehl'
+), 
+(
+    'es:gluten-frutos-de-cascara',
+    '',
+    '',
+    ''
+), 
+(
+    'is:nýmjólkurduft',
+    '',
+    '',
+    ''
+), 
+(
+    'it:malto-di-frumento',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:blė',
+    '',
+    'blė',
+    ''
+), 
+(
+    'fr:samoussas-poulet-4x25g-4-triangles-de-galette-de-ble-34-farcis-a-la-viande-de-poulet',
+    '',
+    'samoussas-poulet-4x25g-4-triangles-de-galette-de-ble-34-farcis-a-la-viande-de-poulet',
+    ''
+), 
+(
+    'fr:souffles-a-la-tomate',
+    '',
+    'souffles-a-la-tomate',
+    ''
+), 
+(
+    'es:cocoa',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:listno-zeleno',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:noyaux-d-abricots',
+    '',
+    'noyaux-d-abricots',
+    ''
+), 
+(
+    'de:garnelenmehl',
+    '',
+    '',
+    'garnelenmehl'
+), 
+(
+    'fr:vollei',
+    '',
+    '',
+    ''
+), 
+(
+    'en:flussiges-vollei',
+    'flussiges-vollei',
+    '',
+    ''
+), 
+(
+    'fr:vollkorngerste',
+    '',
+    'vollkorngerste',
+    ''
+), 
+(
+    'hu:mustárliszt',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sojabonen',
+    '',
+    '',
+    ''
+), 
+(
+    'es:hojas-de-apio',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:les-personnes-qui-sont-allergiques-aux-mollusques-et-crustaces-et-ou-auxacariens-peuvent-avoir-une-reactionallergique-a-la-consommationd-insectes',
+    '',
+    'les-personnes-qui-sont-allergiques-aux-mollusques-et-crustaces-et-ou-auxacariens-peuvent-avoir-une-reactionallergique-a-la-consommationd-insectes',
+    ''
+), 
+(
+    'de:flusskrebsfleisch',
+    '',
+    '',
+    'flusskrebsfleisch'
+), 
+(
+    'de:nährkaseinat',
+    '',
+    '',
+    'nährkaseinat'
+), 
+(
+    'pt:leite-semidesnatado',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizengrießkleie',
+    '',
+    '',
+    'weizengrießkleie'
+), 
+(
+    'fr:colin-d-aiaska',
+    '',
+    'colin-d-aiaska',
+    ''
+), 
+(
+    'de:käsepulver-cheddar',
+    '',
+    '',
+    'käsepulver-cheddar'
+), 
+(
+    'de:makrelenﬁlets',
+    '',
+    '',
+    'makrelenﬁlets'
+), 
+(
+    'de:weizen-vollkorngrieß',
+    '',
+    '',
+    'weizen-vollkorngrieß'
+), 
+(
+    'fr:proteines-vegetales-texturees',
+    '',
+    'proteines-vegetales-texturees',
+    ''
+), 
+(
+    'fr:weizenprotein',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:proteines-de-lactoserum-du-lait-de-brebis',
+    '',
+    'proteines-de-lactoserum-du-lait-de-brebis',
+    ''
+), 
+(
+    'de:hohnerei-eiweißpulver',
+    '',
+    '',
+    'hohnerei-eiweißpulver'
+), 
+(
+    'el:σέλακ',
+    '',
+    '',
+    ''
+), 
+(
+    'en:nutmeg',
+    'nutmeg',
+    '',
+    ''
+), 
+(
+    'fr:morceaux-de-caramel',
+    '',
+    'morceaux-de-caramel',
+    ''
+), 
+(
+    'es:nuez-trigo-gluten',
+    '',
+    '',
+    ''
+), 
+(
+    'da:fedtfattig-ostemasse',
+    '',
+    '',
+    ''
+), 
+(
+    'de:protéine-de-lait-concentrée',
+    '',
+    '',
+    ''
+), 
+(
+    'en:moutarde-a-l-ancienne',
+    'moutarde-a-l-ancienne',
+    '',
+    ''
+), 
+(
+    'id:ikan-roa',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:coquillages',
+    '',
+    'coquillages',
+    ''
+), 
+(
+    'de:tarvebloem',
+    '',
+    '',
+    ''
+), 
+(
+    'de:tarwezemelen',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mini-feuillete-tomate-basilic',
+    '',
+    'mini-feuillete-tomate-basilic',
+    ''
+), 
+(
+    'fr:amidonnier',
+    '',
+    '',
+    ''
+), 
+(
+    'en:žemės-riešutai',
+    'žemės-riešutai',
+    '',
+    ''
+), 
+(
+    'ru:молоко-коровье-цельное',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:speltbloem',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:contient-des-legumineuses',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:proteină-vegetală-de-soia',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ambert',
+    '',
+    'ambert',
+    ''
+), 
+(
+    'fr:gluten-de-ble-beurre',
+    '',
+    'gluten-de-ble-beurre',
+    ''
+), 
+(
+    'fr:fera',
+    '',
+    'fera',
+    ''
+), 
+(
+    'he:חיטה-גלוטן',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:lješnjacíma',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:barley-malt',
+    '',
+    'barley-malt',
+    ''
+), 
+(
+    'id:sorbitan-monostearate-e491',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gauda',
+    '',
+    '',
+    'gauda'
+), 
+(
+    'nl:targwegries',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pau',
+    '',
+    'pau',
+    ''
+), 
+(
+    'fr:panga',
+    '',
+    'panga',
+    ''
+), 
+(
+    'en:erdnussol',
+    'erdnussol',
+    '',
+    ''
+), 
+(
+    'en:milk-derivates',
+    'milk-derivates',
+    '',
+    ''
+), 
+(
+    'da:sojamel',
+    '',
+    '',
+    ''
+), 
+(
+    'en:melkpoeder',
+    'melkpoeder',
+    '',
+    ''
+), 
+(
+    'fr:noixdepecan',
+    '',
+    'noixdepecan',
+    ''
+), 
+(
+    'es:ingredientes-de-soya',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:decor-chocolat-noir',
+    '',
+    'decor-chocolat-noir',
+    ''
+), 
+(
+    'pt:calcio',
+    '',
+    '',
+    ''
+), 
+(
+    'de:alkohol-5-vol',
+    '',
+    '',
+    'alkohol-5-vol'
+), 
+(
+    'en:može-obsahovať-arašidy-a-ine-orechy',
+    'može-obsahovať-arašidy-a-ine-orechy',
+    '',
+    ''
+), 
+(
+    'es:cebada-de-malta',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:pšenične',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:aromes-naturels',
+    '',
+    'aromes-naturels',
+    ''
+), 
+(
+    'de:quellmehl',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:glace-a-la-vanille-en-decor-35',
+    '',
+    'glace-a-la-vanille-en-decor-35',
+    ''
+), 
+(
+    'fr:pralines-aux-amandes',
+    '',
+    'pralines-aux-amandes',
+    ''
+), 
+(
+    'fr:lješnjaci',
+    '',
+    '',
+    ''
+), 
+(
+    'en:malt-din-orz',
+    'malt-din-orz',
+    '',
+    ''
+), 
+(
+    'fr:creme-de-lait-en-poudre',
+    '',
+    'creme-de-lait-en-poudre',
+    ''
+), 
+(
+    'en:lactic-acid',
+    'lactic-acid',
+    '',
+    ''
+), 
+(
+    'ch:œuf',
+    '',
+    '',
+    ''
+), 
+(
+    'en:noix-de-coco',
+    'noix-de-coco',
+    '',
+    ''
+), 
+(
+    'pl:mlekiem',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sahnesauce',
+    '',
+    '',
+    'sahnesauce'
+), 
+(
+    'en:celeri-branche',
+    'celeri-branche',
+    '',
+    ''
+), 
+(
+    'de:gewürze',
+    '',
+    '',
+    'gewürze'
+), 
+(
+    'nl:tarwevezel',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizn',
+    '',
+    '',
+    'weizn'
+), 
+(
+    'sv:regnbågslax',
+    '',
+    '',
+    ''
+), 
+(
+    'en:emulsifiers',
+    'emulsifiers',
+    '',
+    ''
+), 
+(
+    'fr:lait-de-savoie',
+    '',
+    'lait-de-savoie',
+    ''
+), 
+(
+    'de:margermilchpulver',
+    '',
+    '',
+    'margermilchpulver'
+), 
+(
+    'fr:mini-colosse-vanille-caramel',
+    '',
+    'mini-colosse-vanille-caramel',
+    ''
+), 
+(
+    'de:1-part-syrup-to-124-parts-water',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:прах-от-суроватка',
+    '',
+    '',
+    ''
+), 
+(
+    'en:oat-malt',
+    'oat-malt',
+    '',
+    ''
+), 
+(
+    'es:contiene-soya-y-o-sus-derivados',
+    '',
+    '',
+    ''
+), 
+(
+    'it:non-ce-ne-sono',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:ražano',
+    '',
+    '',
+    ''
+), 
+(
+    'th:สัตว์น้ำเปลือกแข็ง',
+    '',
+    '',
+    ''
+), 
+(
+    'es:productos-a-base-de-huevo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:8-tortillas-de-ble-ingredients',
+    '',
+    '8-tortillas-de-ble-ingredients',
+    ''
+), 
+(
+    'en:jajka',
+    'jajka',
+    '',
+    ''
+), 
+(
+    'id:protein-kedelai-terhidrolisa',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cuisses-de-grenouilles',
+    '',
+    'cuisses-de-grenouilles',
+    ''
+), 
+(
+    'fr:butterfat',
+    '',
+    'butterfat',
+    ''
+), 
+(
+    'fr:entier-en-poudre',
+    '',
+    'entier-en-poudre',
+    ''
+), 
+(
+    'de:crème-fraiche',
+    '',
+    '',
+    'crème-fraiche'
+), 
+(
+    'xx:ei',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:maitosuklaa',
+    '',
+    '',
+    ''
+), 
+(
+    'de:schweizer-ruchmehl',
+    '',
+    '',
+    'schweizer-ruchmehl'
+), 
+(
+    'de:aspartam-mit-phenylalaninquelle',
+    '',
+    '',
+    'aspartam-mit-phenylalaninquelle'
+), 
+(
+    'en:organic-soybeans',
+    'organic-soybeans',
+    '',
+    ''
+), 
+(
+    'pt:almendra',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sohne',
+    '',
+    '',
+    'sohne'
+), 
+(
+    'fr:lait-uht',
+    '',
+    'lait-uht',
+    ''
+), 
+(
+    'en:weat',
+    'weat',
+    '',
+    ''
+), 
+(
+    'fr:decongele',
+    '',
+    'decongele',
+    ''
+), 
+(
+    'el:λεκιθίνη',
+    '',
+    '',
+    ''
+), 
+(
+    'en:seler',
+    'seler',
+    '',
+    ''
+), 
+(
+    'es:fresa-platano',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:kukuruza',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:tvrdé-pšenice',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:twarogowe',
+    '',
+    '',
+    ''
+), 
+(
+    'es:geluten',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:suiﬂtes',
+    '',
+    'suiﬂtes',
+    ''
+), 
+(
+    'fr:creme-liquide-pasteurisee',
+    '',
+    'creme-liquide-pasteurisee',
+    ''
+), 
+(
+    'fr:beurre-de-noix-de-cajou',
+    '',
+    'beurre-de-noix-de-cajou',
+    ''
+), 
+(
+    'de:sardellensoße',
+    '',
+    '',
+    'sardellensoße'
+), 
+(
+    'de:sussmolkenpulver',
+    '',
+    '',
+    'sussmolkenpulver'
+), 
+(
+    'en:rugkli',
+    'rugkli',
+    '',
+    ''
+), 
+(
+    'fr:chemisage-et-decor-au-cacao-maigre-11',
+    '',
+    'chemisage-et-decor-au-cacao-maigre-11',
+    ''
+), 
+(
+    'sv:bygmalt',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:noisette-crue',
+    '',
+    'noisette-crue',
+    ''
+), 
+(
+    'nl:paneermeel',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:chataigne',
+    '',
+    'chataigne',
+    ''
+), 
+(
+    'es:amendoins',
+    '',
+    '',
+    ''
+), 
+(
+    'de:briekäse',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:celeri-en-poudre',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gerstenmal',
+    '',
+    '',
+    'gerstenmal'
+), 
+(
+    'de:œuf',
+    '',
+    '',
+    'œuf'
+), 
+(
+    'de:gorgonzola-schmelzkäsezubereitung',
+    '',
+    '',
+    'gorgonzola-schmelzkäsezubereitung'
+), 
+(
+    'fr:poisson-anchois-et-sulfites',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:extrait-de-carthame',
+    '',
+    'extrait-de-carthame',
+    ''
+), 
+(
+    'fr:noir-de-seiche',
+    '',
+    'noir-de-seiche',
+    ''
+), 
+(
+    'fr:2-purees-de-pommes-peches',
+    '',
+    '2-purees-de-pommes-peches',
+    ''
+), 
+(
+    'en:ječmenov',
+    'ječmenov',
+    '',
+    ''
+), 
+(
+    'fr:mandorle',
+    '',
+    'mandorle',
+    ''
+), 
+(
+    'en:melkproteinen',
+    'melkproteinen',
+    '',
+    ''
+), 
+(
+    'fr:sel-de-chlorure-d-ammonium',
+    '',
+    'sel-de-chlorure-d-ammonium',
+    ''
+), 
+(
+    'de:sufit',
+    '',
+    '',
+    'sufit'
+), 
+(
+    'ru:меланж',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vinaigre-de-vin-rouge',
+    '',
+    'vinaigre-de-vin-rouge',
+    ''
+), 
+(
+    'en:hydrolysed-soya-protein',
+    'hydrolysed-soya-protein',
+    '',
+    ''
+), 
+(
+    'en:milk-derivatives-and-soy',
+    'milk-derivatives-and-soy',
+    '',
+    ''
+), 
+(
+    'fr:lait-ecreme-concentre',
+    '',
+    'lait-ecreme-concentre',
+    ''
+), 
+(
+    'en:organic-cultured-pasteurized-milk',
+    'organic-cultured-pasteurized-milk',
+    '',
+    ''
+), 
+(
+    'fr:ah',
+    '',
+    'ah',
+    ''
+), 
+(
+    'bg:натриев-метабисулфит',
+    '',
+    '',
+    ''
+), 
+(
+    'es:contenido-elevado-de-cafeina-no-recomendado-para-ninos-ni-mujeres-embarazadas-o-en-periodo-de-lactancia',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:kokosflakes',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:buchette',
+    '',
+    'buchette',
+    ''
+), 
+(
+    'fr:cornish-clotted-cream',
+    '',
+    'cornish-clotted-cream',
+    ''
+), 
+(
+    'nl:weizenmehl',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:noisettes-10',
+    '',
+    'noisettes-10',
+    ''
+), 
+(
+    'sr:mlečne-belančevine',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vin-rouge',
+    '',
+    'vin-rouge',
+    ''
+), 
+(
+    'el:γιαούρτι',
+    '',
+    '',
+    ''
+), 
+(
+    'de:eidotter',
+    '',
+    '',
+    'eidotter'
+), 
+(
+    'fr:contenant',
+    '',
+    'contenant',
+    ''
+), 
+(
+    'de:haselnussmus',
+    '',
+    '',
+    'haselnussmus'
+), 
+(
+    'fr:farine-d-orge-maltee',
+    '',
+    'farine-d-orge-maltee',
+    ''
+), 
+(
+    'fr:extrait-de-poivre',
+    '',
+    'extrait-de-poivre',
+    ''
+), 
+(
+    'fr:quenelles',
+    '',
+    'quenelles',
+    ''
+), 
+(
+    'hr:višnje',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-entier',
+    '',
+    'ble-entier',
+    ''
+), 
+(
+    'fr:melange-boise',
+    '',
+    'melange-boise',
+    ''
+), 
+(
+    'fr:tarwegluten',
+    '',
+    'tarwegluten',
+    ''
+), 
+(
+    'ru:мука-овсяная',
+    '',
+    '',
+    ''
+), 
+(
+    'es:amendoim',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollkorndinkelweizen',
+    '',
+    '',
+    'vollkorndinkelweizen'
+), 
+(
+    'de:molkeneiweißwäse',
+    '',
+    '',
+    'molkeneiweißwäse'
+), 
+(
+    'ro:cașcaval',
+    '',
+    '',
+    ''
+), 
+(
+    'en:rye-flakes',
+    'rye-flakes',
+    '',
+    ''
+), 
+(
+    'hr:mliječnih',
+    '',
+    '',
+    ''
+), 
+(
+    'no:hveteflak',
+    '',
+    '',
+    ''
+), 
+(
+    'de:senfsaamen',
+    '',
+    '',
+    'senfsaamen'
+), 
+(
+    'fr:extrait-de-crabe-vert',
+    '',
+    'extrait-de-crabe-vert',
+    ''
+), 
+(
+    'es:sulfits',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:so2',
+    '',
+    '',
+    ''
+), 
+(
+    'es:tratrazina',
+    '',
+    '',
+    ''
+), 
+(
+    'en:haselnut',
+    'haselnut',
+    '',
+    ''
+), 
+(
+    'de:haferspelzfasern',
+    '',
+    '',
+    'haferspelzfasern'
+), 
+(
+    'sl:surovo-maslo',
+    '',
+    '',
+    ''
+), 
+(
+    'es:maracuya',
+    '',
+    '',
+    ''
+), 
+(
+    'de:bio-butter',
+    '',
+    '',
+    'bio-butter'
+), 
+(
+    'fr:specialite-de-fruits-peche-abricot-90g',
+    '',
+    'specialite-de-fruits-peche-abricot-90g',
+    ''
+), 
+(
+    'de:hünerei-eiweiß',
+    '',
+    '',
+    'hünerei-eiweiß'
+), 
+(
+    'sv:konserveringsmedel-e-220',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:celeri-lait',
+    '',
+    'celeri-lait',
+    ''
+), 
+(
+    'fr:proteines-de-lait-de-chevre',
+    '',
+    'proteines-de-lait-de-chevre',
+    ''
+), 
+(
+    'fr:fanne-de-froment',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:hasselnötspuré',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roggen-vollkorn',
+    '',
+    '',
+    'roggen-vollkorn'
+), 
+(
+    'fr:pates-de-cheveux-d-ange-cuits-avec-basilic',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenmalzkeie',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:babeure',
+    '',
+    'babeure',
+    ''
+), 
+(
+    'fr:malt-de-seigle-en-poudre',
+    '',
+    'malt-de-seigle-en-poudre',
+    ''
+), 
+(
+    'tr:yumurta',
+    '',
+    '',
+    ''
+), 
+(
+    'en:plum-stones',
+    'plum-stones',
+    '',
+    ''
+), 
+(
+    'de:sardellenfilets',
+    '',
+    '',
+    'sardellenfilets'
+), 
+(
+    'is:sellerí',
+    '',
+    '',
+    ''
+), 
+(
+    'en:weizenvollkorn',
+    'weizenvollkorn',
+    '',
+    ''
+), 
+(
+    'nl:seigle',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:salierų',
+    '',
+    '',
+    ''
+), 
+(
+    'es:weizenstarke',
+    '',
+    '',
+    ''
+), 
+(
+    'en:raspberries',
+    'raspberries',
+    '',
+    ''
+), 
+(
+    'es:sardinas',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:tejport',
+    '',
+    '',
+    ''
+), 
+(
+    'en:calcium-salts-maybe-allergant',
+    'calcium-salts-maybe-allergant',
+    '',
+    ''
+), 
+(
+    'ru:пшеничные',
+    '',
+    '',
+    ''
+), 
+(
+    'ja:小麦粉',
+    '',
+    '',
+    ''
+), 
+(
+    'en:puede-contener-trazas-de-soja',
+    'puede-contener-trazas-de-soja',
+    '',
+    ''
+), 
+(
+    'en:manufactured-on-equiment-that-processes-products-containing-gluten',
+    'manufactured-on-equiment-that-processes-products-containing-gluten',
+    '',
+    ''
+), 
+(
+    'en:yellow-croaker',
+    'yellow-croaker',
+    '',
+    ''
+), 
+(
+    'en:monterey-jack',
+    'monterey-jack',
+    '',
+    ''
+), 
+(
+    'fr:trigo-duro',
+    '',
+    'trigo-duro',
+    ''
+), 
+(
+    'hr:krušne-mrvice',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:amandon',
+    '',
+    'amandon',
+    ''
+), 
+(
+    'fr:1-boite-de-garniture-de-800g',
+    '',
+    '1-boite-de-garniture-de-800g',
+    ''
+), 
+(
+    'nl:havergluten',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:atun',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sardelle',
+    '',
+    '',
+    'sardelle'
+), 
+(
+    'fi:luomutäysjyväkaura',
+    '',
+    '',
+    ''
+), 
+(
+    'el:γαλακτοκομικά-προιόντα',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:gorgonzole-aop',
+    '',
+    'gorgonzole-aop',
+    ''
+), 
+(
+    'en:skimmed',
+    'skimmed',
+    '',
+    ''
+), 
+(
+    'de:nicht-mit-alkohol-mischen',
+    '',
+    '',
+    'nicht-mit-alkohol-mischen'
+), 
+(
+    'de:sesamkerne',
+    '',
+    '',
+    'sesamkerne'
+), 
+(
+    'fr:sesame-2',
+    '',
+    'sesame-2',
+    ''
+), 
+(
+    'bg:сирене-на-прах',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:poivron-rouge',
+    '',
+    'poivron-rouge',
+    ''
+), 
+(
+    'es:sementes-de-chia',
+    '',
+    '',
+    ''
+), 
+(
+    'en:tree-nuts-and-soy-as-indicated-in-bold-type',
+    'tree-nuts-and-soy-as-indicated-in-bold-type',
+    '',
+    ''
+), 
+(
+    'fr:sans-conservateur',
+    '',
+    'sans-conservateur',
+    ''
+), 
+(
+    'fr:nausees',
+    '',
+    'nausees',
+    ''
+), 
+(
+    'pl:jęcmienny',
+    '',
+    '',
+    ''
+), 
+(
+    'de:molkoenerzeugnis',
+    '',
+    '',
+    'molkoenerzeugnis'
+), 
+(
+    'de:butterfetterzeugnis',
+    '',
+    '',
+    'butterfetterzeugnis'
+), 
+(
+    'ro:dioxid-de-sulf',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:kokomunajauhe',
+    '',
+    '',
+    ''
+), 
+(
+    'es:cacahutes',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:tune',
+    '',
+    '',
+    ''
+), 
+(
+    'es:gluten-de-blat',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:normalised-cream',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:ostalo-orašasto-voće',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:contient-des-fruits-a-coque-et-du-lait-parmesan',
+    '',
+    'contient-des-fruits-a-coque-et-du-lait-parmesan',
+    ''
+), 
+(
+    'fr:crevettes-au-curry-thai-vert',
+    '',
+    'crevettes-au-curry-thai-vert',
+    ''
+), 
+(
+    'de:eigeldpulver',
+    '',
+    '',
+    'eigeldpulver'
+), 
+(
+    'fr:dattes',
+    '',
+    'dattes',
+    ''
+), 
+(
+    'en:red-40',
+    'red-40',
+    '',
+    ''
+), 
+(
+    'lv:ieraugs',
+    '',
+    '',
+    ''
+), 
+(
+    'de:magertopfen',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:amande-complete',
+    '',
+    'amande-complete',
+    ''
+), 
+(
+    'en:e220',
+    'e220',
+    '',
+    ''
+), 
+(
+    'de:senf-dill-sauce',
+    '',
+    '',
+    'senf-dill-sauce'
+), 
+(
+    'de:selleriekonzentrat',
+    '',
+    '',
+    'selleriekonzentrat'
+), 
+(
+    'en:fresh-roasted-peanuts',
+    'fresh-roasted-peanuts',
+    '',
+    ''
+), 
+(
+    'en:lactosoro',
+    'lactosoro',
+    '',
+    ''
+), 
+(
+    'fr:cesame',
+    '',
+    'cesame',
+    ''
+), 
+(
+    'wo:lapte',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizendunst',
+    '',
+    '',
+    'weizendunst'
+), 
+(
+    'id:pewarna-sintetik-tartazin-ci-19140',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sulfite-caustique',
+    '',
+    'sulfite-caustique',
+    ''
+), 
+(
+    'ru:молока',
+    '',
+    '',
+    ''
+), 
+(
+    'en:nay-contain-other-tree-nuts',
+    'nay-contain-other-tree-nuts',
+    '',
+    ''
+), 
+(
+    'fr:creme-fraiche-de-normandie',
+    '',
+    'creme-fraiche-de-normandie',
+    ''
+), 
+(
+    'fr:negatif',
+    '',
+    'negatif',
+    ''
+), 
+(
+    'nl:melkbestanddelen',
+    '',
+    '',
+    ''
+), 
+(
+    'es:lehe',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roggenmahlerzeugnis',
+    '',
+    '',
+    'roggenmahlerzeugnis'
+), 
+(
+    'fr:blanc-d-euf-de-poule',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hatweizengrieß',
+    '',
+    '',
+    'hatweizengrieß'
+), 
+(
+    'en:tejzsir',
+    'tejzsir',
+    '',
+    ''
+), 
+(
+    'fr:4-saucisses-de-volaille',
+    '',
+    '4-saucisses-de-volaille',
+    ''
+), 
+(
+    'id:vitamin-a',
+    '',
+    '',
+    ''
+), 
+(
+    'en:huhnervollei',
+    'huhnervollei',
+    '',
+    ''
+), 
+(
+    'fr:bolets',
+    '',
+    'bolets',
+    ''
+), 
+(
+    'hu:piskóta',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:moka-pšeničnega',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:zobene',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:орехов',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:arachlde',
+    '',
+    'arachlde',
+    ''
+), 
+(
+    'de:msc-shrimps',
+    '',
+    '',
+    'msc-shrimps'
+), 
+(
+    'fr:extraits-de-plantes-et-de-fruits-concentre-de-patate-douce-concentre-de-pomme-concentre-de-radis-concentre-de-cerise-extrait-de-carthame-concentre-de-spiruline-les-ingredients-de-ce-produit-ne-proviennent-pas-de-france',
+    '',
+    'extraits-de-plantes-et-de-fruits-concentre-de-patate-douce-concentre-de-pomme-concentre-de-radis-concentre-de-cerise-extrait-de-carthame-concentre-de-spiruline-les-ingredients-de-ce-produit-ne-proviennent-pas-de-france',
+    ''
+), 
+(
+    'fr:pates-conchiglies-au-saumon-210g',
+    '',
+    'pates-conchiglies-au-saumon-210g',
+    ''
+), 
+(
+    'es:azucares-glucosos',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weisswein',
+    '',
+    '',
+    'weisswein'
+), 
+(
+    'ro:somon',
+    '',
+    '',
+    ''
+), 
+(
+    'en:ryba',
+    'ryba',
+    '',
+    ''
+), 
+(
+    'de:créme-fraîche-pulver',
+    '',
+    '',
+    'créme-fraîche-pulver'
+), 
+(
+    'fr:dimethylpolysiloxane-e900',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mini-colosse-chocolat',
+    '',
+    'mini-colosse-chocolat',
+    ''
+), 
+(
+    'de:volleinkonzentrat',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:orge-torrefiee',
+    '',
+    'orge-torrefiee',
+    ''
+), 
+(
+    'id:vitamin-b3',
+    '',
+    '',
+    ''
+), 
+(
+    'en:milk-soy',
+    'milk-soy',
+    '',
+    ''
+), 
+(
+    'it:noisettes',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:aroma-s',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:4-purees-de-pommes-🍎🍏',
+    '',
+    '4-purees-de-pommes-🍎🍏',
+    ''
+), 
+(
+    'de:kakaopulver',
+    '',
+    '',
+    'kakaopulver'
+), 
+(
+    'de:senferzeugnisse',
+    '',
+    '',
+    'senferzeugnisse'
+), 
+(
+    'de:ziegen-milch',
+    '',
+    '',
+    'ziegen-milch'
+), 
+(
+    'ca:llet-en-pols',
+    '',
+    '',
+    ''
+), 
+(
+    'it:non-contiene-glutine',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:additifs',
+    '',
+    'additifs',
+    ''
+), 
+(
+    'hu:tehétúró',
+    '',
+    '',
+    ''
+), 
+(
+    'de:michzucker',
+    '',
+    '',
+    'michzucker'
+), 
+(
+    'de:magermilchzeugnis',
+    '',
+    '',
+    'magermilchzeugnis'
+), 
+(
+    'es:lehce',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:laxfärs',
+    '',
+    '',
+    ''
+), 
+(
+    'en:gluten-containing-cereals',
+    'gluten-containing-cereals',
+    '',
+    ''
+), 
+(
+    'en:szojabab',
+    'szojabab',
+    '',
+    ''
+), 
+(
+    'es:lisado-de-pescado',
+    '',
+    '',
+    ''
+), 
+(
+    'de:tintenfischringe',
+    '',
+    '',
+    'tintenfischringe'
+), 
+(
+    'fr:weizengriess',
+    '',
+    '',
+    ''
+), 
+(
+    'en:organic-whole-oats',
+    'organic-whole-oats',
+    '',
+    ''
+), 
+(
+    'es:yema-de-huevo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:dinkelflocken',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenklebeber',
+    '',
+    '',
+    'weizenklebeber'
+), 
+(
+    'es:abadejo-de-alaska',
+    '',
+    '',
+    ''
+), 
+(
+    'es:trigo-y-soya',
+    '',
+    '',
+    ''
+), 
+(
+    'da:mælkeprotein',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:argopecten-purpuratus',
+    '',
+    'argopecten-purpuratus',
+    ''
+), 
+(
+    'eu:vollmilchpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:natrijum-hidrogensulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'de:trockenei',
+    '',
+    '',
+    'trockenei'
+), 
+(
+    'de:vollmilchschokoladenstückchen',
+    '',
+    '',
+    'vollmilchschokoladenstückchen'
+), 
+(
+    'fr:ravioli-aux-3-fromages',
+    '',
+    'ravioli-aux-3-fromages',
+    ''
+), 
+(
+    'fr:nocciola',
+    '',
+    'nocciola',
+    ''
+), 
+(
+    'id:pengawet-kalium-sorbat',
+    '',
+    '',
+    ''
+), 
+(
+    'en:orange-juice',
+    'orange-juice',
+    '',
+    ''
+), 
+(
+    'fr:gluten-orge',
+    '',
+    '',
+    ''
+), 
+(
+    'en:pineapple',
+    'pineapple',
+    '',
+    ''
+), 
+(
+    'fr:amandes-moulues',
+    '',
+    'amandes-moulues',
+    ''
+), 
+(
+    'nl:melkproteinen',
+    '',
+    '',
+    ''
+), 
+(
+    'da:nøtter',
+    '',
+    '',
+    ''
+), 
+(
+    'it:pšenice',
+    '',
+    '',
+    ''
+), 
+(
+    'en:grosery',
+    'grosery',
+    '',
+    ''
+), 
+(
+    'fr:eminces-au-thon',
+    '',
+    'eminces-au-thon',
+    ''
+), 
+(
+    'en:interesterified-polyols-may-have-laxative-effects-not-to-be-sold-loose',
+    'interesterified-polyols-may-have-laxative-effects-not-to-be-sold-loose',
+    '',
+    ''
+), 
+(
+    'en:sweet-cream',
+    'sweet-cream',
+    '',
+    ''
+), 
+(
+    'de:büffelmilchmozzarella',
+    '',
+    '',
+    'büffelmilchmozzarella'
+), 
+(
+    'de:eierspätzle',
+    '',
+    '',
+    'eierspätzle'
+), 
+(
+    'fr:frais',
+    '',
+    'frais',
+    ''
+), 
+(
+    'it:noci-di-anacardio',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kokosnuss',
+    '',
+    '',
+    'kokosnuss'
+), 
+(
+    'es:sulphate',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:yoghourt',
+    '',
+    '',
+    ''
+), 
+(
+    'en:bold',
+    'bold',
+    '',
+    ''
+), 
+(
+    'fr:grau',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:caseinate-de-sodium',
+    '',
+    'caseinate-de-sodium',
+    ''
+), 
+(
+    'es:3',
+    '',
+    '',
+    ''
+), 
+(
+    'en:wheat-soy-oat-barley',
+    'wheat-soy-oat-barley',
+    '',
+    ''
+), 
+(
+    'nb:soyakonsentrat',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:glace-parfum-vanille-73-lactose',
+    '',
+    '',
+    ''
+), 
+(
+    'id:sekuestran',
+    '',
+    '',
+    ''
+), 
+(
+    'en:pumpkin-seeds',
+    'pumpkin-seeds',
+    '',
+    ''
+), 
+(
+    'de:weichweizen-grieß',
+    '',
+    '',
+    'weichweizen-grieß'
+), 
+(
+    'ko:소맥분',
+    '',
+    '',
+    ''
+), 
+(
+    'en:mandorle',
+    'mandorle',
+    '',
+    ''
+), 
+(
+    'pt:flocos-de-aveia',
+    '',
+    '',
+    ''
+), 
+(
+    'tr:hazelnut-puree',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:natrijum-metabisulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sojabonen',
+    'sojabonen',
+    '',
+    ''
+), 
+(
+    'de:rindersalami',
+    '',
+    '',
+    'rindersalami'
+), 
+(
+    'fr:huile-de-moutarde',
+    '',
+    'huile-de-moutarde',
+    ''
+), 
+(
+    'it:latte-di-pecora',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:rugsur',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kaschunuss-anacardium-occidentale',
+    '',
+    '',
+    'kaschunuss-anacardium-occidentale'
+), 
+(
+    'fr:pet',
+    '',
+    'pet',
+    ''
+), 
+(
+    'hr:barley-malt',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sonnenblume',
+    '',
+    '',
+    'sonnenblume'
+), 
+(
+    'fr:fromage-edam',
+    '',
+    'fromage-edam',
+    ''
+), 
+(
+    'it:noix-de-cajou',
+    '',
+    '',
+    ''
+), 
+(
+    'de:magermiichpulver',
+    '',
+    '',
+    'magermiichpulver'
+), 
+(
+    'th:ธัญพืช',
+    '',
+    '',
+    ''
+), 
+(
+    'en:contains-wheat-gluten',
+    'contains-wheat-gluten',
+    '',
+    ''
+), 
+(
+    'cs:mandlová-pasta',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:conservateur-sorbate-de-potassium',
+    '',
+    'conservateur-sorbate-de-potassium',
+    ''
+), 
+(
+    'fr:fruits-a-coque-soja-lait-oeuf-sesame',
+    '',
+    'fruits-a-coque-soja-lait-oeuf-sesame',
+    ''
+), 
+(
+    'fr:sardinelles',
+    '',
+    'sardinelles',
+    ''
+), 
+(
+    'fr:lambi',
+    '',
+    'lambi',
+    ''
+), 
+(
+    'de:magermilchzusatz',
+    '',
+    '',
+    'magermilchzusatz'
+), 
+(
+    'en:kondensmagermilch',
+    'kondensmagermilch',
+    '',
+    ''
+), 
+(
+    'it:chiaro-d-uovo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:manden',
+    '',
+    '',
+    'manden'
+), 
+(
+    'pl:mintaj',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:legumes-origine-france',
+    '',
+    'legumes-origine-france',
+    ''
+), 
+(
+    'es:contiene-avena',
+    '',
+    '',
+    ''
+), 
+(
+    'ca:gluten-de-blat',
+    '',
+    '',
+    ''
+), 
+(
+    'he:קוקוס',
+    '',
+    '',
+    ''
+), 
+(
+    'es:maltosa',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:petit-epautre',
+    '',
+    'petit-epautre',
+    ''
+), 
+(
+    'fr:test-sur-animaux-endommagement-des-chromosomes-etc',
+    '',
+    'test-sur-animaux-endommagement-des-chromosomes-etc',
+    ''
+), 
+(
+    'fr:specialite-de-pommes-poires',
+    '',
+    'specialite-de-pommes-poires',
+    ''
+), 
+(
+    'en:contains-peanut',
+    'contains-peanut',
+    '',
+    ''
+), 
+(
+    'de:geste',
+    '',
+    '',
+    'geste'
+), 
+(
+    'de:sonnenblumenöl',
+    '',
+    '',
+    'sonnenblumenöl'
+), 
+(
+    'sv:präst',
+    '',
+    '',
+    ''
+), 
+(
+    'de:nordseegarnelen',
+    '',
+    '',
+    'nordseegarnelen'
+), 
+(
+    'fr:lait-lait-ecreme-creme',
+    '',
+    'lait-lait-ecreme-creme',
+    ''
+), 
+(
+    'en:hazelnut-praline-centre-27',
+    'hazelnut-praline-centre-27',
+    '',
+    ''
+), 
+(
+    'es:lecithin',
+    '',
+    '',
+    ''
+), 
+(
+    'en:senfsaaten',
+    'senfsaaten',
+    '',
+    ''
+), 
+(
+    'fi:hasselpähkinäpasta-ja-rouhe',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:sojine',
+    '',
+    '',
+    ''
+), 
+(
+    'de:regenbogenforellenfilets',
+    '',
+    '',
+    'regenbogenforellenfilets'
+), 
+(
+    'en:lait-demi-ecreme',
+    'lait-demi-ecreme',
+    '',
+    ''
+), 
+(
+    'fi:silakkafilee',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:roomkaaspoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:houmous',
+    '',
+    'houmous',
+    ''
+), 
+(
+    'fr:pescadilla',
+    '',
+    'pescadilla',
+    ''
+), 
+(
+    'de:sojaproteinsolat',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cremet',
+    '',
+    'cremet',
+    ''
+), 
+(
+    'de:kernsplitter',
+    '',
+    '',
+    'kernsplitter'
+), 
+(
+    'pt:malte-de-cevada',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:hvetemaltmel',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:farine-de-froment-de-gonflement',
+    '',
+    '',
+    ''
+), 
+(
+    'en:wheatflakes',
+    'wheatflakes',
+    '',
+    ''
+), 
+(
+    'fr:asperge-verte-4',
+    '',
+    'asperge-verte-4',
+    ''
+), 
+(
+    'fr:conservateur-acide-sorbique',
+    '',
+    'conservateur-acide-sorbique',
+    ''
+), 
+(
+    'de:roggenvollkornmischbrot',
+    '',
+    '',
+    'roggenvollkornmischbrot'
+), 
+(
+    'de:voiiei',
+    '',
+    '',
+    'voiiei'
+), 
+(
+    'fr:preparation-pour-boisson-instantanee-a-base-de-poudre-de-lait-ecreme-en-sticks-individuels-lait',
+    '',
+    'preparation-pour-boisson-instantanee-a-base-de-poudre-de-lait-ecreme-en-sticks-individuels-lait',
+    ''
+), 
+(
+    'de:getreideessig',
+    '',
+    '',
+    'getreideessig'
+), 
+(
+    'de:papier',
+    '',
+    '',
+    'papier'
+), 
+(
+    'fr:sauce-caesar',
+    '',
+    'sauce-caesar',
+    ''
+), 
+(
+    'de:flüssiges-hühnereieiweiß',
+    '',
+    '',
+    'flüssiges-hühnereieiweiß'
+), 
+(
+    'de:schokoladen-haselnuss-füllung',
+    '',
+    '',
+    'schokoladen-haselnuss-füllung'
+), 
+(
+    'de:mikrobielles-lab',
+    '',
+    '',
+    'mikrobielles-lab'
+), 
+(
+    'he:שעורה-גלוטן',
+    '',
+    '',
+    ''
+), 
+(
+    'is:mjólktrdufl',
+    '',
+    '',
+    ''
+), 
+(
+    'en:low-moisture-part-skim-mozzarella-cheese',
+    'low-moisture-part-skim-mozzarella-cheese',
+    '',
+    ''
+), 
+(
+    'de:sojaeiweißisloat',
+    '',
+    '',
+    'sojaeiweißisloat'
+), 
+(
+    'it:grano-tenero-tipo-00',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lait-des-alpes',
+    '',
+    'lait-des-alpes',
+    ''
+), 
+(
+    'fr:sigle',
+    '',
+    'sigle',
+    ''
+), 
+(
+    'fr:maguereau',
+    '',
+    'maguereau',
+    ''
+), 
+(
+    'ca:faves-de-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'de:knoblauch',
+    '',
+    '',
+    'knoblauch'
+), 
+(
+    'fr:pates-rouges',
+    '',
+    'pates-rouges',
+    ''
+), 
+(
+    'fr:mini-feuillete-jambon',
+    '',
+    'mini-feuillete-jambon',
+    ''
+), 
+(
+    'nl:sezamzaad',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:deserte',
+    '',
+    '',
+    ''
+), 
+(
+    'en:and-sesame-white-sesame-seeds',
+    'and-sesame-white-sesame-seeds',
+    '',
+    ''
+), 
+(
+    'fr:proteines-de-petit-lait',
+    '',
+    'proteines-de-petit-lait',
+    ''
+), 
+(
+    'sr:soja-iecitin',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:limande-du-nord-msc',
+    '',
+    'limande-du-nord-msc',
+    ''
+), 
+(
+    'fr:cashewkerne',
+    '',
+    'cashewkerne',
+    ''
+), 
+(
+    'fr:ingredient',
+    '',
+    'ingredient',
+    ''
+), 
+(
+    'sr:lešnikova',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sauerrahmbutter',
+    '',
+    '',
+    ''
+), 
+(
+    'de:heringe',
+    '',
+    '',
+    ''
+), 
+(
+    'de:10-ml-mit-240-ml-wasser-verdünnen',
+    '',
+    '',
+    '10-ml-mit-240-ml-wasser-verdünnen'
+), 
+(
+    'fr:graisses-vegetales',
+    '',
+    'graisses-vegetales',
+    ''
+), 
+(
+    'en:butterol',
+    'butterol',
+    '',
+    ''
+), 
+(
+    'fr:feuilletee',
+    '',
+    'feuilletee',
+    ''
+), 
+(
+    'de:müffelmilch',
+    '',
+    '',
+    'müffelmilch'
+), 
+(
+    'en:小麦',
+    '小麦',
+    '',
+    ''
+), 
+(
+    'en:sauermilchquark',
+    'sauermilchquark',
+    '',
+    ''
+), 
+(
+    'de:himbeerpulver',
+    '',
+    '',
+    'himbeerpulver'
+), 
+(
+    'de:mascarponekäse',
+    '',
+    '',
+    'mascarponekäse'
+), 
+(
+    'sv:sésame',
+    '',
+    '',
+    ''
+), 
+(
+    'en:gmo-free-soya-lecithin',
+    'gmo-free-soya-lecithin',
+    '',
+    ''
+), 
+(
+    'de:phenylaninquelle',
+    '',
+    '',
+    'phenylaninquelle'
+), 
+(
+    'sr:skrobni',
+    '',
+    '',
+    ''
+), 
+(
+    'no:havremel',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:räkextrakt',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:haselnuss',
+    '',
+    'haselnuss',
+    ''
+), 
+(
+    'pl:kumin',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:whole-grain-rye-flour',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:poivron-jaune-4',
+    '',
+    'poivron-jaune-4',
+    ''
+), 
+(
+    'fr:exocet',
+    '',
+    'exocet',
+    ''
+), 
+(
+    'en:mlečne-kultury',
+    'mlečne-kultury',
+    '',
+    ''
+), 
+(
+    'de:hühnereiwürfel',
+    '',
+    '',
+    'hühnereiwürfel'
+), 
+(
+    'de:tarwemout',
+    '',
+    '',
+    ''
+), 
+(
+    'de:46-erdnusskerne',
+    '',
+    '',
+    '46-erdnusskerne'
+), 
+(
+    'fr:chips-saveur-bolognaise',
+    '',
+    'chips-saveur-bolognaise',
+    ''
+), 
+(
+    'lv:zemesriekstu',
+    '',
+    '',
+    ''
+), 
+(
+    'de:natürliches-aroma',
+    '',
+    '',
+    'natürliches-aroma'
+), 
+(
+    'sv:pasta',
+    '',
+    '',
+    ''
+), 
+(
+    'en:weiteneiweiss',
+    'weiteneiweiss',
+    '',
+    ''
+), 
+(
+    'fr:aspartame',
+    '',
+    'aspartame',
+    ''
+), 
+(
+    'sv:cachenötter',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:ječam',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:traces',
+    '',
+    'traces',
+    ''
+), 
+(
+    'en:אגוזים-פיסטוק',
+    'אגוזים-פיסטוק',
+    '',
+    ''
+), 
+(
+    'de:milchelweiß',
+    '',
+    '',
+    'milchelweiß'
+), 
+(
+    'hu:polivinilpirrolidon',
+    '',
+    '',
+    ''
+), 
+(
+    'en:magermilch',
+    'magermilch',
+    '',
+    ''
+), 
+(
+    'fr:bonito',
+    '',
+    'bonito',
+    ''
+), 
+(
+    'en:mandler',
+    'mandler',
+    '',
+    ''
+), 
+(
+    'de:hasellnüsse',
+    '',
+    '',
+    'hasellnüsse'
+), 
+(
+    'fr:fruit-a-coque-oeuf',
+    '',
+    'fruit-a-coque-oeuf',
+    ''
+), 
+(
+    'fr:de-proteines-de-serum',
+    '',
+    'de-proteines-de-serum',
+    ''
+), 
+(
+    'en:skin-and-bones',
+    'skin-and-bones',
+    '',
+    ''
+), 
+(
+    'fr:anhydride-sulfureux-e220',
+    '',
+    'anhydride-sulfureux-e220',
+    ''
+), 
+(
+    'fr:thon-fume',
+    '',
+    'thon-fume',
+    ''
+), 
+(
+    'es:almendra-avena',
+    '',
+    '',
+    ''
+), 
+(
+    'de:markklößchen',
+    '',
+    '',
+    'markklößchen'
+), 
+(
+    'sl:œuf',
+    '',
+    '',
+    ''
+), 
+(
+    'es:acido-lactico',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:yaourt-brasse-sucre-sur-lit-a-la-framboise',
+    '',
+    'yaourt-brasse-sucre-sur-lit-a-la-framboise',
+    ''
+), 
+(
+    'fr:allergenes-lait-et-produits-a-base-de-lait-y-compris-de-lactose',
+    '',
+    'allergenes-lait-et-produits-a-base-de-lait-y-compris-de-lactose',
+    ''
+), 
+(
+    'fr:ne-contient-pas-d-allergenes',
+    '',
+    'ne-contient-pas-d-allergenes',
+    ''
+), 
+(
+    'nb:tørmelk',
+    '',
+    '',
+    ''
+), 
+(
+    'en:b12',
+    'b12',
+    '',
+    ''
+), 
+(
+    'fr:leche-entera-en-polvo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:oeufs-de-brochet',
+    '',
+    'oeufs-de-brochet',
+    ''
+), 
+(
+    'fr:allumette-poireaux-saumon',
+    '',
+    'allumette-poireaux-saumon',
+    ''
+), 
+(
+    'en:seasoning-powder',
+    'seasoning-powder',
+    '',
+    ''
+), 
+(
+    'en:sarasin',
+    'sarasin',
+    '',
+    ''
+), 
+(
+    'bg:сух-глутен',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hafervollkormflocken',
+    '',
+    '',
+    'hafervollkormflocken'
+), 
+(
+    'de:sojaeiweißpulver',
+    '',
+    '',
+    'sojaeiweißpulver'
+), 
+(
+    'nl:zout',
+    '',
+    '',
+    ''
+), 
+(
+    'en:huevos',
+    'huevos',
+    '',
+    ''
+), 
+(
+    'de:gertse',
+    '',
+    '',
+    'gertse'
+), 
+(
+    'hr:lapte-de-vaca-pasteurizat',
+    '',
+    '',
+    ''
+), 
+(
+    'en:crevettes-tigrees',
+    'crevettes-tigrees',
+    '',
+    ''
+), 
+(
+    'ca:massa-mare',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:jambon-cuit-standard',
+    '',
+    'jambon-cuit-standard',
+    ''
+), 
+(
+    'es:nueces-y-mariscos',
+    '',
+    '',
+    ''
+), 
+(
+    'de:makrelen',
+    '',
+    '',
+    'makrelen'
+), 
+(
+    'fr:gasoil',
+    '',
+    'gasoil',
+    ''
+), 
+(
+    'fr:vollkornhaferflocken',
+    '',
+    'vollkornhaferflocken',
+    ''
+), 
+(
+    'fr:oeufs-de-lompe-noirs',
+    '',
+    'oeufs-de-lompe-noirs',
+    ''
+), 
+(
+    'fr:liskove-ořechy-a-mandle',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mliečne',
+    '',
+    'mliečne',
+    ''
+), 
+(
+    'fr:noisettes-decortiquees',
+    '',
+    'noisettes-decortiquees',
+    ''
+), 
+(
+    'sr:speltino',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-lait-emmental-mozzarella-fromage',
+    '',
+    'ble-lait-emmental-mozzarella-fromage',
+    ''
+), 
+(
+    'de:kokosraspel',
+    '',
+    '',
+    'kokosraspel'
+), 
+(
+    'sv:fetaost',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:homard-canadien',
+    '',
+    'homard-canadien',
+    ''
+), 
+(
+    'nl:lait',
+    '',
+    '',
+    ''
+), 
+(
+    'de:reisflocken',
+    '',
+    '',
+    'reisflocken'
+), 
+(
+    'es:caseina',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollkorn-hartweizen-grieß',
+    '',
+    '',
+    'vollkorn-hartweizen-grieß'
+), 
+(
+    'fr:ne-pas-associer-au-e621-excitotoxines-car-il-rend-encore-plus-dangereux-son-ingestion',
+    '',
+    'ne-pas-associer-au-e621-excitotoxines-car-il-rend-encore-plus-dangereux-son-ingestion',
+    ''
+), 
+(
+    'sv:vete-stärkelse',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sardines-75',
+    '',
+    'sardines-75',
+    ''
+), 
+(
+    'it:leche',
+    '',
+    '',
+    ''
+), 
+(
+    'de:isolat-de-protéine-de-lait',
+    '',
+    '',
+    ''
+), 
+(
+    'en:latex',
+    'latex',
+    '',
+    ''
+), 
+(
+    'en:tree-nuts-almonds',
+    'tree-nuts-almonds',
+    '',
+    ''
+), 
+(
+    'fr:noisettes-hachees',
+    '',
+    'noisettes-hachees',
+    ''
+), 
+(
+    'cs:mléčný-tuk',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:avoine',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:flocons-d-avoine-crus-germes',
+    '',
+    'flocons-d-avoine-crus-germes',
+    ''
+), 
+(
+    'de:natriumhydrogensulfit',
+    '',
+    '',
+    'natriumhydrogensulfit'
+), 
+(
+    'fi:luomumaito',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:poudre-de',
+    '',
+    'poudre-de',
+    ''
+), 
+(
+    'sv:vete-och-râg',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:pasta-lešnika',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milcherzeuenisse',
+    '',
+    '',
+    'milcherzeuenisse'
+), 
+(
+    'pt:avelās',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:clupea-harengus',
+    '',
+    'clupea-harengus',
+    ''
+), 
+(
+    'hr:badem',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haselnussaroma',
+    '',
+    '',
+    ''
+), 
+(
+    'es:bonito-del-norte',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:crem',
+    '',
+    'crem',
+    ''
+), 
+(
+    'pt:pode-conter-vestigios-de-frutos-de-casca-rija',
+    '',
+    '',
+    ''
+), 
+(
+    'de:joghurt-aus-wärmebehandelter-milch',
+    '',
+    '',
+    'joghurt-aus-wärmebehandelter-milch'
+), 
+(
+    'nl:brie',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:maquerau',
+    '',
+    '',
+    ''
+), 
+(
+    'es:conservante-so2',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:natą',
+    '',
+    '',
+    ''
+), 
+(
+    'th:มีแป้งสาลี-ไข่-นม-และผลิตภัณฑ์จากนม-ผลิตภัณฑ์จากถั่วเหลือง-และอาจมีธัญพืชที่มีกลูเตน-ถั่วที่มีเปลือกแข็ง-ถั่วลิสง',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:kananmunan-keltuainen',
+    '',
+    '',
+    ''
+), 
+(
+    'en:hasselnøtter',
+    'hasselnøtter',
+    '',
+    ''
+), 
+(
+    'de:ei-gelb',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:loco',
+    '',
+    'loco',
+    ''
+), 
+(
+    'en:noodles',
+    'noodles',
+    '',
+    ''
+), 
+(
+    'de:tafelsenf',
+    '',
+    '',
+    'tafelsenf'
+), 
+(
+    'sv:sojafärs',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:pastöroitu-kirnupiimä',
+    '',
+    '',
+    ''
+), 
+(
+    'eu:magermilchpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'th:ถั่วหลือง',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cow-milk',
+    '',
+    '',
+    ''
+), 
+(
+    'it:butterreinfett',
+    '',
+    '',
+    ''
+), 
+(
+    'de:froment',
+    '',
+    '',
+    'froment'
+), 
+(
+    'fr:sorbitol',
+    '',
+    'sorbitol',
+    ''
+), 
+(
+    'it:latticello',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:koffein',
+    '',
+    '',
+    ''
+), 
+(
+    'es:leche-desnatada-en-polvo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:braunhirse',
+    '',
+    '',
+    'braunhirse'
+), 
+(
+    'de:hartweizengireß',
+    '',
+    '',
+    'hartweizengireß'
+), 
+(
+    'de:metabisulfito-sódico',
+    '',
+    '',
+    'metabisulfito-sódico'
+), 
+(
+    'en:fluorides',
+    'fluorides',
+    '',
+    ''
+), 
+(
+    'de:buterreinfett',
+    '',
+    '',
+    'buterreinfett'
+), 
+(
+    'nb:natriumsulfitt',
+    '',
+    '',
+    ''
+), 
+(
+    'en:mozzarella-kase',
+    'mozzarella-kase',
+    '',
+    ''
+), 
+(
+    'en:metabilsulfito-sodico',
+    'metabilsulfito-sodico',
+    '',
+    ''
+), 
+(
+    'fr:eminces-au-saumon-en-sauce',
+    '',
+    'eminces-au-saumon-en-sauce',
+    ''
+), 
+(
+    'en:sulfiting-agents',
+    'sulfiting-agents',
+    '',
+    ''
+), 
+(
+    'de:pecorino-käase',
+    '',
+    '',
+    'pecorino-käase'
+), 
+(
+    'en:sojowe',
+    'sojowe',
+    '',
+    ''
+), 
+(
+    'fr:creme-de-soja',
+    '',
+    'creme-de-soja',
+    ''
+), 
+(
+    'fr:ce-produit-ne-contient-pas-d-allergenes',
+    '',
+    'ce-produit-ne-contient-pas-d-allergenes',
+    ''
+), 
+(
+    'fr:dreches-d-orge',
+    '',
+    '',
+    ''
+), 
+(
+    'ca:cacahuetes',
+    '',
+    '',
+    ''
+), 
+(
+    'de:seehasen',
+    '',
+    '',
+    ''
+), 
+(
+    'no:bygg',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:sárgájapor',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lait-de-ferme',
+    '',
+    'lait-de-ferme',
+    ''
+), 
+(
+    'hr:kalijev-metabisulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'it:lievito',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sojovy',
+    'sojovy',
+    '',
+    ''
+), 
+(
+    'en:durum',
+    'durum',
+    '',
+    ''
+), 
+(
+    'en:milcheiweisserzeugnis',
+    'milcheiweisserzeugnis',
+    '',
+    ''
+), 
+(
+    'es:melocoton',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weichweizen',
+    '',
+    '',
+    'weichweizen'
+), 
+(
+    'nl:gluten-bevattende-granen',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hartweizegrieß',
+    '',
+    '',
+    'hartweizegrieß'
+), 
+(
+    'de:butterzubereitung',
+    '',
+    '',
+    'butterzubereitung'
+), 
+(
+    'de:sojapuiver',
+    '',
+    '',
+    'sojapuiver'
+), 
+(
+    'fr:e451-triphosphates',
+    '',
+    'e451-triphosphates',
+    ''
+), 
+(
+    'fr:proteines-vegetales',
+    '',
+    'proteines-vegetales',
+    ''
+), 
+(
+    'hu:zellerzöld',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haselnusstückchen',
+    '',
+    '',
+    'haselnusstückchen'
+), 
+(
+    'fr:crevettes-a-la-noix-de-coco-crevette',
+    '',
+    'crevettes-a-la-noix-de-coco-crevette',
+    ''
+), 
+(
+    'de:austernsauce',
+    '',
+    '',
+    'austernsauce'
+), 
+(
+    'fr:serum-de-iait',
+    '',
+    'serum-de-iait',
+    ''
+), 
+(
+    'fr:nature',
+    '',
+    'nature',
+    ''
+), 
+(
+    'it:fromage',
+    '',
+    '',
+    ''
+), 
+(
+    'en:weizemehl',
+    'weizemehl',
+    '',
+    ''
+), 
+(
+    'pl:soje',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lait-concentre',
+    '',
+    'lait-concentre',
+    ''
+), 
+(
+    'fr:poudre-a-lever',
+    '',
+    'poudre-a-lever',
+    ''
+), 
+(
+    'es:gluten-avena',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:jogurtova-kultura',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:roggenmehl',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:e950',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:buttermilchpulver',
+    '',
+    'buttermilchpulver',
+    ''
+), 
+(
+    'fr:curcuma',
+    '',
+    'curcuma',
+    ''
+), 
+(
+    'fr:ogre',
+    '',
+    'ogre',
+    ''
+), 
+(
+    'fr:mini-croissant',
+    '',
+    'mini-croissant',
+    ''
+), 
+(
+    'en:pistache',
+    'pistache',
+    '',
+    ''
+), 
+(
+    'fr:dinkelweizenflocken',
+    '',
+    'dinkelweizenflocken',
+    ''
+), 
+(
+    'sv:mælkeprotein',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:oleagineux',
+    '',
+    'oleagineux',
+    ''
+), 
+(
+    'en:soy-nut',
+    'soy-nut',
+    '',
+    ''
+), 
+(
+    'hr:žitná',
+    '',
+    '',
+    ''
+), 
+(
+    'es:alambiques-de-cobre-elaborados-por-artesanos-granadinos',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:crustaceo',
+    '',
+    '',
+    ''
+), 
+(
+    'it:blossido-di-zolfo',
+    '',
+    '',
+    ''
+), 
+(
+    'es:queso-pasteurizado',
+    '',
+    '',
+    ''
+), 
+(
+    'es:fenillalanina',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:crustraces',
+    '',
+    'crustraces',
+    ''
+), 
+(
+    'fr:lacteroserum',
+    '',
+    'lacteroserum',
+    ''
+), 
+(
+    'fr:sauce-aigre-douce-18',
+    '',
+    'sauce-aigre-douce-18',
+    ''
+), 
+(
+    'fr:orz',
+    '',
+    'orz',
+    ''
+), 
+(
+    'de:soyabohnen',
+    '',
+    '',
+    'soyabohnen'
+), 
+(
+    'fr:weizenkeime',
+    '',
+    'weizenkeime',
+    ''
+), 
+(
+    'es:puede-cotener-trazas-de-huevos-y-apio',
+    '',
+    '',
+    ''
+), 
+(
+    'id:protein-nabati-terhidrolisa',
+    '',
+    '',
+    ''
+), 
+(
+    'en:fenilanina',
+    'fenilanina',
+    '',
+    ''
+), 
+(
+    'en:chickpea',
+    'chickpea',
+    '',
+    ''
+), 
+(
+    'bg:краве-мляко',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:senape',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pesticides',
+    '',
+    'pesticides',
+    ''
+), 
+(
+    'en:isolated-soy-protein-product',
+    'isolated-soy-protein-product',
+    '',
+    ''
+), 
+(
+    'de:sauerteig',
+    '',
+    '',
+    'sauerteig'
+), 
+(
+    'fr:echalotes',
+    '',
+    'echalotes',
+    ''
+), 
+(
+    'pl:kolendra',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:crabe-des-sables',
+    '',
+    'crabe-des-sables',
+    ''
+), 
+(
+    'de:sesam-öl',
+    '',
+    '',
+    'sesam-öl'
+), 
+(
+    'es:cereais-que-contem-gluten',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:heläggspulver',
+    '',
+    '',
+    ''
+), 
+(
+    'es:pasta-cocida-fusilli',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:graine-de-coriandre',
+    '',
+    'graine-de-coriandre',
+    ''
+), 
+(
+    'fr:amandes-18',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollkorn-haferbrei',
+    '',
+    '',
+    'vollkorn-haferbrei'
+), 
+(
+    'fr:farine-mi-blanche-de-ble',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sirop-de-glucose',
+    '',
+    'sirop-de-glucose',
+    ''
+), 
+(
+    'fr:mozzarela',
+    '',
+    'mozzarela',
+    ''
+), 
+(
+    'fr:conservateur-e250-certains-ingredients-de-ce-produit-ne-proviennent-pas-de-france',
+    '',
+    'conservateur-e250-certains-ingredients-de-ce-produit-ne-proviennent-pas-de-france',
+    ''
+), 
+(
+    'fr:sauce-moutarde-a-l-ancienne-12',
+    '',
+    'sauce-moutarde-a-l-ancienne-12',
+    ''
+), 
+(
+    'sr:sardela',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollmlchpulver',
+    '',
+    '',
+    'vollmlchpulver'
+), 
+(
+    'de:gersten­malz',
+    '',
+    '',
+    'gersten­malz'
+), 
+(
+    'en:soy-ingredients',
+    'soy-ingredients',
+    '',
+    ''
+), 
+(
+    'nl:tarwekiemen',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenbällchen',
+    '',
+    '',
+    'weizenbällchen'
+), 
+(
+    'sv:mjölks',
+    '',
+    '',
+    ''
+), 
+(
+    'de:h-sahne',
+    '',
+    '',
+    'h-sahne'
+), 
+(
+    'sr:susamova',
+    '',
+    '',
+    ''
+), 
+(
+    'id:asam-folat',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sulfite-acide-de-sodium',
+    '',
+    'sulfite-acide-de-sodium',
+    ''
+), 
+(
+    'en:organic-cheddar-cheese',
+    'organic-cheddar-cheese',
+    '',
+    ''
+), 
+(
+    'fr:soj',
+    '',
+    'soj',
+    ''
+), 
+(
+    'fr:cacahete',
+    '',
+    'cacahete',
+    ''
+), 
+(
+    'fr:auvergne',
+    '',
+    'auvergne',
+    ''
+), 
+(
+    'en:fractionated-coconut-oil',
+    'fractionated-coconut-oil',
+    '',
+    ''
+), 
+(
+    'hr:lupinu',
+    '',
+    '',
+    ''
+), 
+(
+    'el:έλαιο',
+    '',
+    '',
+    ''
+), 
+(
+    'es:pasta-de-cacahuete',
+    '',
+    '',
+    ''
+), 
+(
+    'en:contenant',
+    'contenant',
+    '',
+    ''
+), 
+(
+    'hr:erdnusskerne',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mini-nem-poulet-aubergines-aromatise-prefrit-30',
+    '',
+    'mini-nem-poulet-aubergines-aromatise-prefrit-30',
+    ''
+), 
+(
+    'fr:malts-bio',
+    '',
+    'malts-bio',
+    ''
+), 
+(
+    'en:contains-milk-protein-and-residual-lactose',
+    'contains-milk-protein-and-residual-lactose',
+    '',
+    ''
+), 
+(
+    'it:allergenicontiene-lattenon-contiene-glutine',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:bechamel',
+    '',
+    'bechamel',
+    ''
+), 
+(
+    'de:kräuterbutter',
+    '',
+    '',
+    'kräuterbutter'
+), 
+(
+    'fr:fms',
+    '',
+    'fms',
+    ''
+), 
+(
+    'de:ganze-getrocknete-mehlwürmer',
+    '',
+    '',
+    'ganze-getrocknete-mehlwürmer'
+), 
+(
+    'it:anidride-solforosa-e-derivati',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:bille-de-mozzarella',
+    '',
+    'bille-de-mozzarella',
+    ''
+), 
+(
+    'fr:avela',
+    '',
+    'avela',
+    ''
+), 
+(
+    'en:alaska-seelachsfilet',
+    'alaska-seelachsfilet',
+    '',
+    ''
+), 
+(
+    'sv:äggviteprotein',
+    '',
+    '',
+    ''
+), 
+(
+    'es:gorgonzola',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:raugas',
+    '',
+    '',
+    ''
+), 
+(
+    'es:sorbitol',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojacrispies',
+    '',
+    '',
+    'sojacrispies'
+), 
+(
+    'sl:ječmeni',
+    '',
+    '',
+    ''
+), 
+(
+    'en:asc-certified-mussels',
+    'asc-certified-mussels',
+    '',
+    ''
+), 
+(
+    'hr:sirutkas',
+    '',
+    '',
+    ''
+), 
+(
+    'en:flocons-d-avoine',
+    'flocons-d-avoine',
+    '',
+    ''
+), 
+(
+    'de:shrimpspulver',
+    '',
+    '',
+    'shrimpspulver'
+), 
+(
+    'en:fullkornsrugmel',
+    'fullkornsrugmel',
+    '',
+    ''
+), 
+(
+    'de:milheiweiß',
+    '',
+    '',
+    'milheiweiß'
+), 
+(
+    'fi:maitoproteiinivalmiste',
+    '',
+    '',
+    ''
+), 
+(
+    'de:emmen-taler',
+    '',
+    '',
+    'emmen-taler'
+), 
+(
+    'de:bio-schnittkäse',
+    '',
+    '',
+    'bio-schnittkäse'
+), 
+(
+    'en:pasteurized-egg-yolk',
+    'pasteurized-egg-yolk',
+    '',
+    ''
+), 
+(
+    'en:mostaza',
+    'mostaza',
+    '',
+    ''
+), 
+(
+    'fr:sauce-mornay',
+    '',
+    'sauce-mornay',
+    ''
+), 
+(
+    'sr:jagoda',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:antioxidant',
+    '',
+    '',
+    ''
+), 
+(
+    'de:tarwezetmeel',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mandelsplitter',
+    '',
+    '',
+    'mandelsplitter'
+), 
+(
+    'fr:crerme',
+    '',
+    'crerme',
+    ''
+), 
+(
+    'lv:mannas',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:суроватъчен',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:mąka-owsiana',
+    '',
+    '',
+    ''
+), 
+(
+    'de:rahmaroma',
+    '',
+    '',
+    'rahmaroma'
+), 
+(
+    'es:matalahuga',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:sennepsmel',
+    '',
+    '',
+    ''
+), 
+(
+    'es:azul1',
+    '',
+    '',
+    ''
+), 
+(
+    'en:noix-de-pecan',
+    'noix-de-pecan',
+    '',
+    ''
+), 
+(
+    'fr:recubrimiento-de-chocolate-con-leche-26',
+    '',
+    'recubrimiento-de-chocolate-con-leche-26',
+    ''
+), 
+(
+    'de:hummer',
+    '',
+    '',
+    'hummer'
+), 
+(
+    'de:lachsöl',
+    '',
+    '',
+    'lachsöl'
+), 
+(
+    'de:biolachs',
+    '',
+    '',
+    'biolachs'
+), 
+(
+    'en:gersten',
+    'gersten',
+    '',
+    ''
+), 
+(
+    'fr:lait-cru-de-brebis',
+    '',
+    'lait-cru-de-brebis',
+    ''
+), 
+(
+    'fr:the-vert-au-jasmin',
+    '',
+    'the-vert-au-jasmin',
+    ''
+), 
+(
+    'id:asam-askorbat',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:gruau',
+    '',
+    'gruau',
+    ''
+), 
+(
+    'en:schlagrahm',
+    'schlagrahm',
+    '',
+    ''
+), 
+(
+    'it:surimi',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-a-pate-mi-dure',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:pšenicni',
+    '',
+    '',
+    ''
+), 
+(
+    'en:grain',
+    'grain',
+    '',
+    ''
+), 
+(
+    'sv:sellerismakämne',
+    '',
+    '',
+    ''
+), 
+(
+    'en:tejsavopor',
+    'tejsavopor',
+    '',
+    ''
+), 
+(
+    'id:perisa-alami-asap',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:senf',
+    '',
+    'senf',
+    ''
+), 
+(
+    'fr:amandes-completes',
+    '',
+    'amandes-completes',
+    ''
+), 
+(
+    'fr:mozzarrella',
+    '',
+    'mozzarrella',
+    ''
+), 
+(
+    'fr:alc-2-vol',
+    '',
+    'alc-2-vol',
+    ''
+), 
+(
+    'de:sojabohen',
+    '',
+    '',
+    'sojabohen'
+), 
+(
+    'nb:svoveldioksid',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenballaststoffe',
+    '',
+    '',
+    'weizenballaststoffe'
+), 
+(
+    'en:produse-derivate',
+    'produse-derivate',
+    '',
+    ''
+), 
+(
+    'pl:joghurt-mild',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchkrem',
+    '',
+    '',
+    'milchkrem'
+), 
+(
+    'fr:celeri-branche',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:derivados-do-leite',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizensärke',
+    '',
+    '',
+    'weizensärke'
+), 
+(
+    'sr:ovčije-mleko',
+    '',
+    '',
+    ''
+), 
+(
+    'en:ricotta-frischkase',
+    'ricotta-frischkase',
+    '',
+    ''
+), 
+(
+    'fr:corn',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vanille',
+    '',
+    'vanille',
+    ''
+), 
+(
+    'fr:lactic-ferments',
+    '',
+    'lactic-ferments',
+    ''
+), 
+(
+    'fr:sureau',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:intolerance-a-l-arachide',
+    '',
+    'intolerance-a-l-arachide',
+    ''
+), 
+(
+    'de:cornflakes',
+    '',
+    '',
+    'cornflakes'
+), 
+(
+    'hu:szójalecitn',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:leite-integral-em-po',
+    '',
+    '',
+    ''
+), 
+(
+    'de:avoine',
+    '',
+    '',
+    'avoine'
+), 
+(
+    'he:סוכר',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchproteinisolat',
+    '',
+    '',
+    'milchproteinisolat'
+), 
+(
+    'es:mijo',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:pšenićno',
+    '',
+    '',
+    ''
+), 
+(
+    'en:ไข่ไก่',
+    'ไข่ไก่',
+    '',
+    ''
+), 
+(
+    'lv:siera-sūkalas',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojapulver',
+    '',
+    '',
+    'sojapulver'
+), 
+(
+    'fr:fruits-rouges-vanille',
+    '',
+    'fruits-rouges-vanille',
+    ''
+), 
+(
+    'es:contiene-sulfitos-puede-contener-trazas-de-cacahuete',
+    '',
+    '',
+    ''
+), 
+(
+    'en:tartrazina',
+    'tartrazina',
+    '',
+    ''
+), 
+(
+    'pt:avelā',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:tejsav',
+    '',
+    '',
+    ''
+), 
+(
+    'de:lactobacilus-acidophilus',
+    '',
+    '',
+    'lactobacilus-acidophilus'
+), 
+(
+    'hr:tragove-badema',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sellerie',
+    '',
+    '',
+    ''
+), 
+(
+    'de:speisetopen',
+    '',
+    '',
+    'speisetopen'
+), 
+(
+    'en:dry-roasted-peanuts',
+    'dry-roasted-peanuts',
+    '',
+    ''
+), 
+(
+    'cs:ječmenná-mouka',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lait-soja-moutarde-celeri-oeuf',
+    '',
+    'lait-soja-moutarde-celeri-oeuf',
+    ''
+), 
+(
+    'de:gertenmalzextrakt',
+    '',
+    '',
+    'gertenmalzextrakt'
+), 
+(
+    'de:havervlokken',
+    '',
+    '',
+    'havervlokken'
+), 
+(
+    'fr:mini-feuillete-saint-jacques',
+    '',
+    'mini-feuillete-saint-jacques',
+    ''
+), 
+(
+    'de:schnittkäse-maasdemer',
+    '',
+    '',
+    'schnittkäse-maasdemer'
+), 
+(
+    'cs:grâu',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:cwutlenek-siarki',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:dried-whole-milk',
+    '',
+    '',
+    ''
+), 
+(
+    'en:contains-milk-and-egg',
+    'contains-milk-and-egg',
+    '',
+    ''
+), 
+(
+    'de:weizenvollkormmehl',
+    '',
+    '',
+    'weizenvollkormmehl'
+), 
+(
+    'fr:aggvitepulver',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:raclette-aux-poivres',
+    '',
+    'raclette-aux-poivres',
+    ''
+), 
+(
+    'fr:sucre-et-cacao-equitables',
+    '',
+    'sucre-et-cacao-equitables',
+    ''
+), 
+(
+    'fr:olives',
+    '',
+    'olives',
+    ''
+), 
+(
+    'de:schmelzkäsepulver',
+    '',
+    '',
+    'schmelzkäsepulver'
+), 
+(
+    'en:milchfermente',
+    'milchfermente',
+    '',
+    ''
+), 
+(
+    'de:ammoniumsulfit-zuckerkulör',
+    '',
+    '',
+    'ammoniumsulfit-zuckerkulör'
+), 
+(
+    'lt:sūrio',
+    '',
+    '',
+    ''
+), 
+(
+    'is:mysuduft',
+    '',
+    '',
+    ''
+), 
+(
+    'de:getreidevollkornflocken',
+    '',
+    '',
+    'getreidevollkornflocken'
+), 
+(
+    'en:kondensmikh',
+    'kondensmikh',
+    '',
+    ''
+), 
+(
+    'pl:hafer',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gerstenmalzmeh',
+    '',
+    '',
+    'gerstenmalzmeh'
+), 
+(
+    'en:tree-nut-coconut',
+    'tree-nut-coconut',
+    '',
+    ''
+), 
+(
+    'de:weizeneiweißtexturat',
+    '',
+    '',
+    'weizeneiweißtexturat'
+), 
+(
+    'sr:ovas',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sauce-pomme-frite-85g-ingredients',
+    '',
+    'sauce-pomme-frite-85g-ingredients',
+    ''
+), 
+(
+    'fr:agaricus-bisporus',
+    '',
+    'agaricus-bisporus',
+    ''
+), 
+(
+    'sl:mlečne-beljakovine',
+    '',
+    '',
+    ''
+), 
+(
+    'en:siero-di-latte',
+    'siero-di-latte',
+    '',
+    ''
+), 
+(
+    'et:juust',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kuhmikch',
+    '',
+    '',
+    'kuhmikch'
+), 
+(
+    'fr:saint-pierre-du-cap',
+    '',
+    'saint-pierre-du-cap',
+    ''
+), 
+(
+    'it:mollusco',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:roggenmalzmehi',
+    '',
+    '',
+    ''
+), 
+(
+    'es:levadura-de-cerveza',
+    '',
+    '',
+    ''
+), 
+(
+    'da:mælkesyrekultur',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hühner-vollei',
+    '',
+    '',
+    'hühner-vollei'
+), 
+(
+    'hu:halászlé',
+    '',
+    '',
+    ''
+), 
+(
+    'de:rotlachsfilets',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:kokosflingor',
+    '',
+    '',
+    ''
+), 
+(
+    'en:ξηροί-καρποί',
+    'ξηροί-καρποί',
+    '',
+    ''
+), 
+(
+    'fr:stg',
+    '',
+    'stg',
+    ''
+), 
+(
+    'en:huhnereigelb',
+    'huhnereigelb',
+    '',
+    ''
+), 
+(
+    'en:getreide',
+    'getreide',
+    '',
+    ''
+), 
+(
+    'en:smoke-flavor',
+    'smoke-flavor',
+    '',
+    ''
+), 
+(
+    'ru:сыворотка',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:congres',
+    '',
+    'congres',
+    ''
+), 
+(
+    'fr:beurre-laitier-concentre',
+    '',
+    'beurre-laitier-concentre',
+    ''
+), 
+(
+    'en:contains-soy',
+    'contains-soy',
+    '',
+    ''
+), 
+(
+    'en:grain-malt',
+    'grain-malt',
+    '',
+    ''
+), 
+(
+    'id:tanpa-pengawet',
+    '',
+    '',
+    ''
+), 
+(
+    'de:lupinenprotein',
+    '',
+    '',
+    'lupinenprotein'
+), 
+(
+    'de:vollilchpulver',
+    '',
+    '',
+    'vollilchpulver'
+), 
+(
+    'en:onion',
+    'onion',
+    '',
+    ''
+), 
+(
+    'en:trigo-espelta',
+    'trigo-espelta',
+    '',
+    ''
+), 
+(
+    'fi:kananmunan-keltuaisjauhe',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:amandes-entieres-blanchies',
+    '',
+    'amandes-entieres-blanchies',
+    ''
+), 
+(
+    'fr:soyabean',
+    '',
+    'soyabean',
+    ''
+), 
+(
+    'de:molkenprotein-isolat',
+    '',
+    '',
+    'molkenprotein-isolat'
+), 
+(
+    'en:sojaeiweiss',
+    'sojaeiweiss',
+    '',
+    ''
+), 
+(
+    'pl:mąka-z-pszenicy',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:so2',
+    '',
+    '',
+    ''
+), 
+(
+    'ko:조개류',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:maltekstrakt',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:l-ait',
+    '',
+    'l-ait',
+    ''
+), 
+(
+    'sv:vitost',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:parfum-peche',
+    '',
+    'parfum-peche',
+    ''
+), 
+(
+    'fr:salmo-salar-superieur',
+    '',
+    'salmo-salar-superieur',
+    ''
+), 
+(
+    'ro:făină-de-secară-integrală',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:creme-de-lait-pasteurisee',
+    '',
+    'creme-de-lait-pasteurisee',
+    ''
+), 
+(
+    'de:27-vollmilch',
+    '',
+    '',
+    '27-vollmilch'
+), 
+(
+    'is:sinnep',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:meta-bisulfite-de-sodium',
+    '',
+    'meta-bisulfite-de-sodium',
+    ''
+), 
+(
+    'fi:laktoositon-tuorejuusto',
+    '',
+    '',
+    ''
+), 
+(
+    'de:zuckerrübensirup',
+    '',
+    '',
+    'zuckerrübensirup'
+), 
+(
+    'de:baumnüsse',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:ton',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:4-merguez-de-volaille',
+    '',
+    '4-merguez-de-volaille',
+    ''
+), 
+(
+    'hr:indijski-oraščići',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:saucisson-sec-superieur-au-cantal',
+    '',
+    'saucisson-sec-superieur-au-cantal',
+    ''
+), 
+(
+    'fr:proteines-lactique',
+    '',
+    'proteines-lactique',
+    ''
+), 
+(
+    'en:ечемичен-малц',
+    'ечемичен-малц',
+    '',
+    ''
+), 
+(
+    'it:potrebbe-contenere-frutta-a-guscio',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-dur-semi-complete-d-epeautre',
+    '',
+    'ble-dur-semi-complete-d-epeautre',
+    ''
+), 
+(
+    'sv:mozzarella-käse',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sojagriess',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:lešnike',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:poisson-anchois',
+    '',
+    '',
+    ''
+), 
+(
+    'en:abalone',
+    'abalone',
+    '',
+    ''
+), 
+(
+    'fr:allergenes-presents-poissons',
+    '',
+    'allergenes-presents-poissons',
+    ''
+), 
+(
+    'de:hartwelzengrieß',
+    '',
+    '',
+    'hartwelzengrieß'
+), 
+(
+    'en:grana-padano-medium-fat-hard-cheese',
+    'grana-padano-medium-fat-hard-cheese',
+    '',
+    ''
+), 
+(
+    'en:cantal',
+    'cantal',
+    '',
+    ''
+), 
+(
+    'es:queso-curado',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:hlebne',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizencrispies',
+    '',
+    '',
+    'weizencrispies'
+), 
+(
+    'en:maltee',
+    'maltee',
+    '',
+    ''
+), 
+(
+    'nl:orge',
+    '',
+    '',
+    ''
+), 
+(
+    'it:rosmarino',
+    '',
+    '',
+    ''
+), 
+(
+    'en:wholemeal-flour',
+    'wholemeal-flour',
+    '',
+    ''
+), 
+(
+    'en:erdnussern',
+    'erdnussern',
+    '',
+    ''
+), 
+(
+    'nl:melkeiweitten',
+    '',
+    '',
+    ''
+), 
+(
+    'en:breadcrumbs',
+    'breadcrumbs',
+    '',
+    ''
+), 
+(
+    'sk:srvatka',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizen-protein',
+    '',
+    '',
+    'weizen-protein'
+), 
+(
+    'en:yer-fıstığı',
+    'yer-fıstığı',
+    '',
+    ''
+), 
+(
+    'fr:sauce-nuoc-mam-2-x-20-g',
+    '',
+    'sauce-nuoc-mam-2-x-20-g',
+    ''
+), 
+(
+    'sv:edamer',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:3-tartelettes-facon-quiche-lorraine-20',
+    '',
+    '3-tartelettes-facon-quiche-lorraine-20',
+    ''
+), 
+(
+    'fr:biscuits-sales-a-l-emmental',
+    '',
+    'biscuits-sales-a-l-emmental',
+    ''
+), 
+(
+    'fr:aubergine-prefrite-5-aubergine-4',
+    '',
+    'aubergine-prefrite-5-aubergine-4',
+    ''
+), 
+(
+    'de:getreideerzeugnisse',
+    '',
+    '',
+    ''
+), 
+(
+    'en:smetana',
+    'smetana',
+    '',
+    ''
+), 
+(
+    'fr:eminces-au-saumon',
+    '',
+    'eminces-au-saumon',
+    ''
+), 
+(
+    'fr:blẻ',
+    '',
+    'blẻ',
+    ''
+), 
+(
+    'de:mehlwurm',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:roggegluten',
+    '',
+    'roggegluten',
+    ''
+), 
+(
+    'nl:yoghurtfermenten',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:saltat-karamelliserat-smör',
+    '',
+    '',
+    ''
+), 
+(
+    'de:cacahuetes',
+    '',
+    '',
+    'cacahuetes'
+), 
+(
+    'de:glutenhaltige-getreide',
+    '',
+    '',
+    'glutenhaltige-getreide'
+), 
+(
+    'no:helmelk',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:flocons-d-engrain',
+    '',
+    '',
+    ''
+), 
+(
+    'es:harina-integral-de-espelta',
+    '',
+    '',
+    ''
+), 
+(
+    'en:fındık',
+    'fındık',
+    '',
+    ''
+), 
+(
+    'th:blé',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:poudre-de-lait-melange',
+    '',
+    'poudre-de-lait-melange',
+    ''
+), 
+(
+    'es:sorgo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:butteraroma',
+    '',
+    '',
+    'butteraroma'
+), 
+(
+    'cs:mléčný',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:ostpulver-parmesan',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:son-de-froment',
+    '',
+    '',
+    ''
+), 
+(
+    'de:alpenmilch',
+    '',
+    '',
+    'alpenmilch'
+), 
+(
+    'fr:thon-germon',
+    '',
+    'thon-germon',
+    ''
+), 
+(
+    'pt:farinha-de-trigo-20',
+    '',
+    '',
+    ''
+), 
+(
+    'de:volimilchschokolade',
+    '',
+    '',
+    'volimilchschokolade'
+), 
+(
+    'en:vollkorn-haferflocken',
+    'vollkorn-haferflocken',
+    '',
+    ''
+), 
+(
+    'de:eisen',
+    '',
+    '',
+    'eisen'
+), 
+(
+    'en:cashew-nut-butter',
+    'cashew-nut-butter',
+    '',
+    ''
+), 
+(
+    'hr:pistacija',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kaliumdisulfit',
+    '',
+    '',
+    'kaliumdisulfit'
+), 
+(
+    'nl:sojaletichine',
+    '',
+    '',
+    ''
+), 
+(
+    'xx:sojaeiweiß',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hünereieigelb',
+    '',
+    '',
+    'hünereieigelb'
+), 
+(
+    'sv:helmjölkpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:presence-possible-de-poisson-et-de-proteines-de-lait',
+    '',
+    'presence-possible-de-poisson-et-de-proteines-de-lait',
+    ''
+), 
+(
+    'sl:pšenično',
+    '',
+    '',
+    ''
+), 
+(
+    'es:amarillo-5-tartrazina-y-coco',
+    '',
+    '',
+    ''
+), 
+(
+    'es:cacahuate-y-amarillo-5',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:raženo-sladno',
+    '',
+    '',
+    ''
+), 
+(
+    'en:milk-sugar',
+    'milk-sugar',
+    '',
+    ''
+), 
+(
+    'fr:volleipulver',
+    '',
+    'volleipulver',
+    ''
+), 
+(
+    'de:milcheiweißhydrolat',
+    '',
+    '',
+    'milcheiweißhydrolat'
+), 
+(
+    'is:maltextrín',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:sušené-odtučněně-mléko',
+    '',
+    '',
+    ''
+), 
+(
+    'en:ιχνη-από-γάλα-ή-καρπούς-με-κέλυφος',
+    'ιχνη-από-γάλα-ή-καρπούς-με-κέλυφος',
+    '',
+    ''
+), 
+(
+    'de:d-h-mandel-amygdalus-communis-l',
+    '',
+    '',
+    'd-h-mandel-amygdalus-communis-l'
+), 
+(
+    'es:lctosa',
+    '',
+    '',
+    ''
+), 
+(
+    'de:natriumbenzoat',
+    '',
+    '',
+    'natriumbenzoat'
+), 
+(
+    'en:sodium-metabisulfite',
+    'sodium-metabisulfite',
+    '',
+    ''
+), 
+(
+    'pt:creme-de-leite',
+    '',
+    '',
+    ''
+), 
+(
+    'xx:schalenfrüchten',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizemalzmehl',
+    '',
+    '',
+    'weizemalzmehl'
+), 
+(
+    'id:protein-nabati-tvp',
+    '',
+    '',
+    ''
+), 
+(
+    'en:fromage-en-poudre',
+    'fromage-en-poudre',
+    '',
+    ''
+), 
+(
+    'fr:lešnik',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:tropicale',
+    '',
+    'tropicale',
+    ''
+), 
+(
+    'de:gerstenmalzpuder',
+    '',
+    '',
+    'gerstenmalzpuder'
+), 
+(
+    'hr:albuş',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:crevettes-epices-thai-vert-crevette',
+    '',
+    'crevettes-epices-thai-vert-crevette',
+    ''
+), 
+(
+    'fr:e223-troubles-digestifs-nausees-contrarie-la-vitamine-b-mutagene',
+    '',
+    'e223-troubles-digestifs-nausees-contrarie-la-vitamine-b-mutagene',
+    ''
+), 
+(
+    'en:lactic-cultures',
+    'lactic-cultures',
+    '',
+    ''
+), 
+(
+    'fr:creme-a-l-oeuf',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:farine-de-lupin-doux',
+    '',
+    'farine-de-lupin-doux',
+    ''
+), 
+(
+    'de:goudapulver',
+    '',
+    '',
+    'goudapulver'
+), 
+(
+    'es:cachuete-soja-y-frutos-de-cascara',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:base-culinaire-aromatisee-maltodextrine',
+    '',
+    'base-culinaire-aromatisee-maltodextrine',
+    ''
+), 
+(
+    'fr:courge',
+    '',
+    'courge',
+    ''
+), 
+(
+    'en:gelatina',
+    'gelatina',
+    '',
+    ''
+), 
+(
+    'de:eiweisspulver',
+    '',
+    '',
+    ''
+), 
+(
+    'it:grano-frumentopuo-contenere-grano',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:buffelmozzarella',
+    '',
+    '',
+    ''
+), 
+(
+    'en:no-milk',
+    'no-milk',
+    '',
+    ''
+), 
+(
+    'fr:rapesan',
+    '',
+    'rapesan',
+    ''
+), 
+(
+    'fr:mozzarella-cheese',
+    '',
+    'mozzarella-cheese',
+    ''
+), 
+(
+    'it:lattosiosenza-lattosiosenza-glutine',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sofabohnen',
+    '',
+    '',
+    'sofabohnen'
+), 
+(
+    'de:heringsﬁlet',
+    '',
+    '',
+    'heringsﬁlet'
+), 
+(
+    'de:sojalizithin',
+    '',
+    '',
+    'sojalizithin'
+), 
+(
+    'es:este-producto-contiene-ingredientes-alergenos-leche-descremada-en-polvo-este-producto-no-contiene-ogm-o-proviene-de-0gm-o-fue-producido-de-ogm',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:huhnereieiweisspulver',
+    '',
+    'huhnereieiweisspulver',
+    ''
+), 
+(
+    'fr:oeuf-de-poule',
+    '',
+    'oeuf-de-poule',
+    ''
+), 
+(
+    'de:vollmilchpulvre',
+    '',
+    '',
+    'vollmilchpulvre'
+), 
+(
+    'de:hafersirup',
+    '',
+    '',
+    'hafersirup'
+), 
+(
+    'fr:schabziger',
+    '',
+    '',
+    ''
+), 
+(
+    'en:durum-wheat',
+    'durum-wheat',
+    '',
+    ''
+), 
+(
+    'en:proteine-de-ble',
+    'proteine-de-ble',
+    '',
+    ''
+), 
+(
+    'de:buchweizenmehl',
+    '',
+    '',
+    'buchweizenmehl'
+), 
+(
+    'it:glutini',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:smältost',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pate-de-cacao',
+    '',
+    'pate-de-cacao',
+    ''
+), 
+(
+    'fr:panulirus-argus',
+    '',
+    'panulirus-argus',
+    ''
+), 
+(
+    'fr:preparation-de-raisins-maceres-au-rhum',
+    '',
+    'preparation-de-raisins-maceres-au-rhum',
+    ''
+), 
+(
+    'el:φιστίκι',
+    '',
+    '',
+    ''
+), 
+(
+    'de:paranuss-bertholletia-excelsa',
+    '',
+    '',
+    'paranuss-bertholletia-excelsa'
+), 
+(
+    'de:weizemmehl',
+    '',
+    '',
+    'weizemmehl'
+), 
+(
+    'en:calcium-caseinate',
+    'calcium-caseinate',
+    '',
+    ''
+), 
+(
+    'de:kuhmlich',
+    '',
+    '',
+    'kuhmlich'
+), 
+(
+    'fr:mllk',
+    '',
+    'mllk',
+    ''
+), 
+(
+    'de:sardinenﬁlets',
+    '',
+    '',
+    'sardinenﬁlets'
+), 
+(
+    'fr:lait-cacahu-te',
+    '',
+    'lait-cacahu-te',
+    ''
+), 
+(
+    'fr:lait-beurre-et-lait',
+    '',
+    'lait-beurre-et-lait',
+    ''
+), 
+(
+    'de:emmentaler-käse',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:iactate',
+    '',
+    'iactate',
+    ''
+), 
+(
+    'fr:actose',
+    '',
+    'actose',
+    ''
+), 
+(
+    'es:almidon-de-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weize',
+    '',
+    '',
+    'weize'
+), 
+(
+    'cs:krupice-z-tvrdé-pšenice',
+    '',
+    '',
+    ''
+), 
+(
+    'he:שיבולת-שועל',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:maltee',
+    '',
+    'maltee',
+    ''
+), 
+(
+    'fr:bisulfite-de-potassium',
+    '',
+    'bisulfite-de-potassium',
+    ''
+), 
+(
+    'es:leche-almendra',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:kalkkunanliha',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:amendes',
+    '',
+    'amendes',
+    ''
+), 
+(
+    'de:enthält-schafsmilch',
+    '',
+    '',
+    'enthält-schafsmilch'
+), 
+(
+    'fr:e452',
+    '',
+    '',
+    ''
+), 
+(
+    'de:trockenmilcherzeugnisse',
+    '',
+    '',
+    'trockenmilcherzeugnisse'
+), 
+(
+    'en:pasteurized-grade-a-cultured-low-fat-milk',
+    'pasteurized-grade-a-cultured-low-fat-milk',
+    '',
+    ''
+), 
+(
+    'en:noten',
+    'noten',
+    '',
+    ''
+), 
+(
+    'fr:certicar',
+    '',
+    'certicar',
+    ''
+), 
+(
+    'en:milk-derivatives',
+    'milk-derivatives',
+    '',
+    ''
+), 
+(
+    'es:harina-de-trigo-con-gluten',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mou',
+    '',
+    'mou',
+    ''
+), 
+(
+    'de:magermilchpuler',
+    '',
+    '',
+    'magermilchpuler'
+), 
+(
+    'en:whey-fat',
+    'whey-fat',
+    '',
+    ''
+), 
+(
+    'pl:arachidowy',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:specialite-de-fruits-pommes-poires-90g',
+    '',
+    'specialite-de-fruits-pommes-poires-90g',
+    ''
+), 
+(
+    'fr:fromage-frais-au-lait-de-chevre',
+    '',
+    'fromage-frais-au-lait-de-chevre',
+    ''
+), 
+(
+    'de:pistazienkerne',
+    '',
+    '',
+    'pistazienkerne'
+), 
+(
+    'hu:búza-liszt',
+    '',
+    '',
+    ''
+), 
+(
+    'de:schwefeldixoid',
+    '',
+    '',
+    'schwefeldixoid'
+), 
+(
+    'fr:smantană',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weiżen',
+    '',
+    '',
+    'weiżen'
+), 
+(
+    'de:milchetweiß',
+    '',
+    '',
+    'milchetweiß'
+), 
+(
+    'fr:pates-vertes',
+    '',
+    'pates-vertes',
+    ''
+), 
+(
+    'fr:4-purees-de-pommes🍏🍎-poires🍐',
+    '',
+    '4-purees-de-pommes🍏🍎-poires🍐',
+    ''
+), 
+(
+    'fr:feve',
+    '',
+    'feve',
+    ''
+), 
+(
+    'th:มีแป้งสาลี',
+    '',
+    '',
+    ''
+), 
+(
+    'en:oatbran',
+    'oatbran',
+    '',
+    ''
+), 
+(
+    'en:glutenhaltiges-getreide',
+    'glutenhaltiges-getreide',
+    '',
+    ''
+), 
+(
+    'de:alaska-seeiachsfiiet',
+    '',
+    '',
+    'alaska-seeiachsfiiet'
+), 
+(
+    'fr:caramel-e150d',
+    '',
+    'caramel-e150d',
+    ''
+), 
+(
+    'id:mononatruim-glutamat',
+    '',
+    '',
+    ''
+), 
+(
+    'en:alergeny-su-vyznačene-v-zloženi-hrubšim-pismom',
+    'alergeny-su-vyznačene-v-zloženi-hrubšim-pismom',
+    '',
+    ''
+), 
+(
+    'de:weizenproteinkonzentrat',
+    '',
+    '',
+    'weizenproteinkonzentrat'
+), 
+(
+    'en:hvetegluten',
+    'hvetegluten',
+    '',
+    ''
+), 
+(
+    'sv:cashew-nötter',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dinkeleiweiß',
+    '',
+    '',
+    'dinkeleiweiß'
+), 
+(
+    'fr:technophobia',
+    '',
+    'technophobia',
+    ''
+), 
+(
+    'fr:proteines-de-lactoserum-du-lait-de-vache',
+    '',
+    'proteines-de-lactoserum-du-lait-de-vache',
+    ''
+), 
+(
+    'it:noix-du-bresil',
+    '',
+    '',
+    ''
+), 
+(
+    'de:käse-sahnesauce',
+    '',
+    '',
+    'käse-sahnesauce'
+), 
+(
+    'hr:sjeme-sezama',
+    '',
+    '',
+    ''
+), 
+(
+    'en:vinho',
+    'vinho',
+    '',
+    ''
+), 
+(
+    'hr:sulfitno',
+    '',
+    '',
+    ''
+), 
+(
+    'en:amidon-de-ble',
+    'amidon-de-ble',
+    '',
+    ''
+), 
+(
+    'de:alpenvollmilch',
+    '',
+    '',
+    'alpenvollmilch'
+), 
+(
+    'fr:machoiran-blanc',
+    '',
+    'machoiran-blanc',
+    ''
+), 
+(
+    'fr:suero-lacteo',
+    '',
+    'suero-lacteo',
+    ''
+), 
+(
+    'fr:sulﬁte',
+    '',
+    'sulﬁte',
+    ''
+), 
+(
+    'fi:lestyruisjauho',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:tarwemout',
+    '',
+    '',
+    ''
+), 
+(
+    'es:chocolate-blanco',
+    '',
+    '',
+    ''
+), 
+(
+    'en:nuts-no-peanuts',
+    'nuts-no-peanuts',
+    '',
+    ''
+), 
+(
+    'bg:сусам',
+    '',
+    '',
+    ''
+), 
+(
+    'en:mozzarella-pearls',
+    'mozzarella-pearls',
+    '',
+    ''
+), 
+(
+    'bs:maslac',
+    '',
+    '',
+    ''
+), 
+(
+    'en:e-frutos-de-cascara',
+    'e-frutos-de-cascara',
+    '',
+    ''
+), 
+(
+    'en:mustard-flour',
+    'mustard-flour',
+    '',
+    ''
+), 
+(
+    'it:magermilchpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dinkeldunst',
+    '',
+    '',
+    'dinkeldunst'
+), 
+(
+    'es:lecitina',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sauce-aigre-douce-10',
+    '',
+    'sauce-aigre-douce-10',
+    ''
+), 
+(
+    'es:ajonkoli',
+    '',
+    '',
+    ''
+), 
+(
+    'it:mostarda',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:avitaminose-en-vitamine-b12',
+    '',
+    'avitaminose-en-vitamine-b12',
+    ''
+), 
+(
+    'es:gluten-y-tartrazina',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:byggmaltpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sussholz',
+    'sussholz',
+    '',
+    ''
+), 
+(
+    'fr:molusques',
+    '',
+    'molusques',
+    ''
+), 
+(
+    'de:sojaleathin',
+    '',
+    '',
+    'sojaleathin'
+), 
+(
+    'id:krustasea',
+    '',
+    '',
+    ''
+), 
+(
+    'en:malt-extract',
+    'malt-extract',
+    '',
+    ''
+), 
+(
+    'lt:pienu',
+    '',
+    '',
+    ''
+), 
+(
+    'en:light-brown-sugar',
+    'light-brown-sugar',
+    '',
+    ''
+), 
+(
+    'de:cashew-apfelpüree',
+    '',
+    '',
+    'cashew-apfelpüree'
+), 
+(
+    'fr:poudre-de-lait-ecreme-de-nouvelle-zelande',
+    '',
+    'poudre-de-lait-ecreme-de-nouvelle-zelande',
+    ''
+), 
+(
+    'en:amendoins',
+    'amendoins',
+    '',
+    ''
+), 
+(
+    'fi:rehydroitu-kananmunan-valkuainen',
+    '',
+    '',
+    ''
+), 
+(
+    'en:gelatin',
+    'gelatin',
+    '',
+    ''
+), 
+(
+    'es:cereais-com-gluten',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:solrosolja',
+    '',
+    '',
+    ''
+), 
+(
+    'de:selleriederivate',
+    '',
+    '',
+    'selleriederivate'
+), 
+(
+    'de:magermilchpuiver',
+    '',
+    '',
+    'magermilchpuiver'
+), 
+(
+    'de:thunfisch-filet',
+    '',
+    '',
+    'thunfisch-filet'
+), 
+(
+    'es:alergenos-contiene-gluten-de-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:vaječná',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:koffein',
+    '',
+    '',
+    ''
+), 
+(
+    'de:pistazienaroma',
+    '',
+    '',
+    'pistazienaroma'
+), 
+(
+    'fr:the-vert-aromatise-saveur-agrumes',
+    '',
+    'the-vert-aromatise-saveur-agrumes',
+    ''
+), 
+(
+    'de:macadamianuss-und-queenslandnuss-macadamia-ternifolia-sowie-daraus-hergestellte-erzeugnisse',
+    '',
+    '',
+    'macadamianuss-und-queenslandnuss-macadamia-ternifolia-sowie-daraus-hergestellte-erzeugnisse'
+), 
+(
+    'fr:epeautre-complet-egruge',
+    '',
+    'epeautre-complet-egruge',
+    ''
+), 
+(
+    'de:säuerungskulturen',
+    '',
+    '',
+    'säuerungskulturen'
+), 
+(
+    'fr:pulpe',
+    '',
+    'pulpe',
+    ''
+), 
+(
+    'es:e-frutos-de-cascara',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gluten-de-blé',
+    '',
+    '',
+    'gluten-de-blé'
+), 
+(
+    'fr:fibre-d-avoine-bio-sans-gluten',
+    '',
+    'fibre-d-avoine-bio-sans-gluten',
+    ''
+), 
+(
+    'en:corn-and-its-derivatives',
+    'corn-and-its-derivatives',
+    '',
+    ''
+), 
+(
+    'en:du',
+    'du',
+    '',
+    ''
+), 
+(
+    'fr:epeautr',
+    '',
+    'epeautr',
+    ''
+), 
+(
+    'fr:e224-sulfites',
+    '',
+    'e224-sulfites',
+    ''
+), 
+(
+    'es:alergenos',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:ovseno',
+    '',
+    '',
+    ''
+), 
+(
+    'bs:sir',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:кашкавал',
+    '',
+    '',
+    ''
+), 
+(
+    'en:goat-s-milk',
+    'goat-s-milk',
+    '',
+    ''
+), 
+(
+    'fr:crustaceens',
+    '',
+    'crustaceens',
+    ''
+), 
+(
+    'fr:1-boite-de-garniture',
+    '',
+    '1-boite-de-garniture',
+    ''
+), 
+(
+    'sv:mælk',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:bløtdyr',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:sir-gana',
+    '',
+    '',
+    ''
+), 
+(
+    'es:suero-de-leche-deshidratado',
+    '',
+    '',
+    ''
+), 
+(
+    'es:el-producto-contiene-gluten-y-huevo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchdrink',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:belančevinasti-proizvodi-od-soje',
+    '',
+    '',
+    ''
+), 
+(
+    'de:percorino-käse',
+    '',
+    '',
+    'percorino-käse'
+), 
+(
+    'de:ricotta-frischkäse',
+    '',
+    '',
+    'ricotta-frischkäse'
+), 
+(
+    'de:roggenvollkorn-sauerteigpulver',
+    '',
+    '',
+    'roggenvollkorn-sauerteigpulver'
+), 
+(
+    'fr:mutagenes',
+    '',
+    'mutagenes',
+    ''
+), 
+(
+    'fr:amidon-transforme-de-riz-ou-de-mais',
+    '',
+    'amidon-transforme-de-riz-ou-de-mais',
+    ''
+), 
+(
+    'sv:mältat-vete',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:topljeni-sir',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fontina',
+    '',
+    'fontina',
+    ''
+), 
+(
+    'en:malts-d-orge',
+    'malts-d-orge',
+    '',
+    ''
+), 
+(
+    'es:marisco-y-crustaceos',
+    '',
+    '',
+    ''
+), 
+(
+    'ca:grans-de-sesam',
+    '',
+    '',
+    ''
+), 
+(
+    'en:pistaches',
+    'pistaches',
+    '',
+    ''
+), 
+(
+    'ru:ферментированный-соевый-соус',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:halat',
+    '',
+    '',
+    ''
+), 
+(
+    'de:wallnuss',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojabohnenfruchtfleisch',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:kräftor',
+    '',
+    '',
+    ''
+), 
+(
+    'id:natruim-kaseinat',
+    '',
+    '',
+    ''
+), 
+(
+    'ja:大豆',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:твърдо-сирене-моцарела',
+    '',
+    '',
+    ''
+), 
+(
+    'de:98-miesmuschelfleisch',
+    '',
+    '',
+    '98-miesmuschelfleisch'
+), 
+(
+    'fr:transglutaminase',
+    '',
+    'transglutaminase',
+    ''
+), 
+(
+    'hr:celer',
+    '',
+    '',
+    ''
+), 
+(
+    'es:pasteurized-milk',
+    '',
+    '',
+    ''
+), 
+(
+    'de:nusskerne',
+    '',
+    '',
+    'nusskerne'
+), 
+(
+    'fr:sulfate',
+    '',
+    'sulfate',
+    ''
+), 
+(
+    'hu:tejfehérje-koncentrátum',
+    '',
+    '',
+    ''
+), 
+(
+    'en:caffeina',
+    'caffeina',
+    '',
+    ''
+), 
+(
+    'en:thon',
+    'thon',
+    '',
+    ''
+), 
+(
+    'hu:mogyorópaszta',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:oignon-rouge-5',
+    '',
+    'oignon-rouge-5',
+    ''
+), 
+(
+    'de:molkenpermeat',
+    '',
+    '',
+    'molkenpermeat'
+), 
+(
+    'el:αλεύρι-σίτου-γλουτένη',
+    '',
+    '',
+    ''
+), 
+(
+    'de:lupinenzubereitung',
+    '',
+    '',
+    'lupinenzubereitung'
+), 
+(
+    'en:γάλα-και-προϊόντα-του',
+    'γάλα-και-προϊόντα-του',
+    '',
+    ''
+), 
+(
+    'hr:riblji',
+    '',
+    '',
+    ''
+), 
+(
+    'ca:sulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:creme-en-poudre',
+    '',
+    'creme-en-poudre',
+    ''
+), 
+(
+    'fr:noixdecajou',
+    '',
+    'noixdecajou',
+    ''
+), 
+(
+    'en:pasteurized-part-skim-milk',
+    'pasteurized-part-skim-milk',
+    '',
+    ''
+), 
+(
+    'nb:eggepulver',
+    '',
+    '',
+    ''
+), 
+(
+    'es:avena-y-amarillo-5-tartrazina',
+    '',
+    '',
+    ''
+), 
+(
+    'xx:erdnusskerne',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:edami',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milcheiweiße',
+    '',
+    '',
+    'milcheiweiße'
+), 
+(
+    'en:soy-proein',
+    'soy-proein',
+    '',
+    ''
+), 
+(
+    'fr:beurre-lait-creme',
+    '',
+    'beurre-lait-creme',
+    ''
+), 
+(
+    'es:harina-de-trigo-y-salvado-de-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojalecitin',
+    '',
+    '',
+    'sojalecitin'
+), 
+(
+    'lv:atantijas-siļķes',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sellerieknollenpulver',
+    'sellerieknollenpulver',
+    '',
+    ''
+), 
+(
+    'de:zichorienfasern',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:farine-de-ble-tendre-type-0',
+    '',
+    'farine-de-ble-tendre-type-0',
+    ''
+), 
+(
+    'fr:proteines-solubles',
+    '',
+    'proteines-solubles',
+    ''
+), 
+(
+    'de:haferocken',
+    '',
+    '',
+    'haferocken'
+), 
+(
+    'en:caramelised-white-chocolate-53',
+    'caramelised-white-chocolate-53',
+    '',
+    ''
+), 
+(
+    'de:milch-eiweiß',
+    '',
+    '',
+    'milch-eiweiß'
+), 
+(
+    'hr:mliješnjaka',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:graines-de-sesame-grillees',
+    '',
+    'graines-de-sesame-grillees',
+    ''
+), 
+(
+    'es:mostassa',
+    '',
+    '',
+    ''
+), 
+(
+    'id:dinatrium-inosinat-guanilat',
+    '',
+    '',
+    ''
+), 
+(
+    'en:flocons-d-engrain',
+    'flocons-d-engrain',
+    '',
+    ''
+), 
+(
+    'es:avenia',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:room',
+    '',
+    '',
+    ''
+), 
+(
+    'en:soy-meal',
+    'soy-meal',
+    '',
+    ''
+), 
+(
+    'nb:melkesyre',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weiżenmehl',
+    '',
+    '',
+    'weiżenmehl'
+), 
+(
+    'fr:specialite-de-fruits-pommes-framboises-90g',
+    '',
+    'specialite-de-fruits-pommes-framboises-90g',
+    ''
+), 
+(
+    'de:bio-kuhmilch',
+    '',
+    '',
+    'bio-kuhmilch'
+), 
+(
+    'de:aiaska-seelachsschnitzel',
+    '',
+    '',
+    'aiaska-seelachsschnitzel'
+), 
+(
+    'it:emulsionante',
+    '',
+    '',
+    ''
+), 
+(
+    'de:bio-haferflocken',
+    '',
+    '',
+    'bio-haferflocken'
+), 
+(
+    'en:fresa',
+    'fresa',
+    '',
+    ''
+), 
+(
+    'de:schafmilchjoghurt',
+    '',
+    '',
+    'schafmilchjoghurt'
+), 
+(
+    'es:oveja',
+    '',
+    '',
+    ''
+), 
+(
+    'en:weizenfasern',
+    'weizenfasern',
+    '',
+    ''
+), 
+(
+    'nb:rapsolje',
+    '',
+    '',
+    ''
+), 
+(
+    'en:пивоварен-ечемик',
+    'пивоварен-ечемик',
+    '',
+    ''
+), 
+(
+    'de:eiererzeugnisse',
+    '',
+    '',
+    'eiererzeugnisse'
+), 
+(
+    'no:selleri',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:молоко-обезжиренное',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:mleko-v-prahu',
+    '',
+    '',
+    ''
+), 
+(
+    'it:potrebbe-contenere-arachidi',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hydrolysiertes-milcheiweiß',
+    '',
+    '',
+    'hydrolysiertes-milcheiweiß'
+), 
+(
+    'sv:griskött',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roggenvollkkornmehl',
+    '',
+    '',
+    'roggenvollkkornmehl'
+), 
+(
+    'fr:e250-nitrite-de-sodium',
+    '',
+    'e250-nitrite-de-sodium',
+    ''
+), 
+(
+    'th:dairy-product-soy',
+    '',
+    '',
+    ''
+), 
+(
+    'id:perisa-alami',
+    '',
+    '',
+    ''
+), 
+(
+    'xx:frischkäse',
+    '',
+    '',
+    ''
+), 
+(
+    'en:skummjolks-pulver',
+    'skummjolks-pulver',
+    '',
+    ''
+), 
+(
+    'pt:ervilhas',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kuh',
+    '',
+    '',
+    'kuh'
+), 
+(
+    'fr:bigorneaux',
+    '',
+    'bigorneaux',
+    ''
+), 
+(
+    'fr:antioxydants-e300-e301',
+    '',
+    'antioxydants-e300-e301',
+    ''
+), 
+(
+    'fr:fait',
+    '',
+    'fait',
+    ''
+), 
+(
+    'sr:retentat',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizengries',
+    '',
+    '',
+    'weizengries'
+), 
+(
+    'fr:porto-modifie',
+    '',
+    'porto-modifie',
+    ''
+), 
+(
+    'de:gezuckerte-kondensmilch',
+    '',
+    '',
+    'gezuckerte-kondensmilch'
+), 
+(
+    'en:havrekli',
+    'havrekli',
+    '',
+    ''
+), 
+(
+    'en:hazlenuts',
+    'hazlenuts',
+    '',
+    ''
+), 
+(
+    'id:perisa-sintetik-sapi',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:e440',
+    '',
+    'e440',
+    ''
+), 
+(
+    'fr:grains-de-sesame',
+    '',
+    'grains-de-sesame',
+    ''
+), 
+(
+    'sv:vetesurdegspulver',
+    '',
+    '',
+    ''
+), 
+(
+    'en:contains-added-flavours-artificial-flavouring-substance-vanilla',
+    'contains-added-flavours-artificial-flavouring-substance-vanilla',
+    '',
+    ''
+), 
+(
+    'en:contains-peanuts',
+    'contains-peanuts',
+    '',
+    ''
+), 
+(
+    'sv:mjölksyra',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:tome-fraiche-de-l-aubrac',
+    '',
+    'tome-fraiche-de-l-aubrac',
+    ''
+), 
+(
+    'fr:melange-d-epices',
+    '',
+    'melange-d-epices',
+    ''
+), 
+(
+    'fr:sauce-moutarde',
+    '',
+    'sauce-moutarde',
+    ''
+), 
+(
+    'fr:e150b-caramel-de-synthese',
+    '',
+    'e150b-caramel-de-synthese',
+    ''
+), 
+(
+    'en:organic-nonfat-dry-milk',
+    'organic-nonfat-dry-milk',
+    '',
+    ''
+), 
+(
+    'fr:sirutka',
+    '',
+    '',
+    ''
+), 
+(
+    'de:wildlachsfilet',
+    '',
+    '',
+    'wildlachsfilet'
+), 
+(
+    'sv:seigle',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:молоко-цельное',
+    '',
+    '',
+    ''
+), 
+(
+    'en:salted-caramel-filling',
+    'salted-caramel-filling',
+    '',
+    ''
+), 
+(
+    'en:orzo',
+    'orzo',
+    '',
+    ''
+), 
+(
+    'de:sellerieknollenpulver',
+    '',
+    '',
+    'sellerieknollenpulver'
+), 
+(
+    'de:kann-glutenhaltige-getreide-und-schalenfrüchte-enthalten',
+    '',
+    '',
+    'kann-glutenhaltige-getreide-und-schalenfrüchte-enthalten'
+), 
+(
+    'es:caseinato-de-sodio',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenpoffies',
+    '',
+    '',
+    'weizenpoffies'
+), 
+(
+    'en:latte',
+    'latte',
+    '',
+    ''
+), 
+(
+    'de:hüherei-eiweißpulver',
+    '',
+    '',
+    'hüherei-eiweißpulver'
+), 
+(
+    'de:joghurt-aus-magermilch',
+    '',
+    '',
+    'joghurt-aus-magermilch'
+), 
+(
+    'de:sojawürze',
+    '',
+    '',
+    'sojawürze'
+), 
+(
+    'en:molkeneiweisskonzentrat',
+    'molkeneiweisskonzentrat',
+    '',
+    ''
+), 
+(
+    'de:calciumlactat',
+    '',
+    '',
+    ''
+), 
+(
+    'es:este-producto-contiene-gluten-de-cereales-y-derivados-de-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:granapadano',
+    '',
+    'granapadano',
+    ''
+), 
+(
+    'fr:almidon-de-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:wheat-malt-flour',
+    '',
+    'wheat-malt-flour',
+    ''
+), 
+(
+    'de:thunﬁsch',
+    '',
+    '',
+    'thunﬁsch'
+), 
+(
+    'en:huhnerei-eiweiss',
+    'huhnerei-eiweiss',
+    '',
+    ''
+), 
+(
+    'ru:сыворотка-сухая-молочная',
+    '',
+    '',
+    ''
+), 
+(
+    'de:fischmuskeleiweiss',
+    '',
+    '',
+    'fischmuskeleiweiss'
+), 
+(
+    'id:telur',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vers-de-farine-entiers-deshydrates',
+    '',
+    'vers-de-farine-entiers-deshydrates',
+    ''
+), 
+(
+    'de:sentsaaten',
+    '',
+    '',
+    'sentsaaten'
+), 
+(
+    'en:tree-nuts-coconut',
+    'tree-nuts-coconut',
+    '',
+    ''
+), 
+(
+    'fr:gs1-t4078-bn',
+    '',
+    'gs1-t4078-bn',
+    ''
+), 
+(
+    'id:isomalto-oligosakarida',
+    '',
+    '',
+    ''
+), 
+(
+    'es:contiene-gluten-de-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'it:grau',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haselnüsse-8',
+    '',
+    '',
+    'haselnüsse-8'
+), 
+(
+    'nb:rugsigte',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:продуктов-яичных',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:orzechów-arachidowych',
+    '',
+    '',
+    ''
+), 
+(
+    'en:pasteurized-cow-s-milk',
+    'pasteurized-cow-s-milk',
+    '',
+    ''
+), 
+(
+    'de:eine-weizenart',
+    '',
+    '',
+    'eine-weizenart'
+), 
+(
+    'pt:fermentos-lacteos-e-seleccionados',
+    '',
+    '',
+    ''
+), 
+(
+    'en:may-contain-crustaceans',
+    'may-contain-crustaceans',
+    '',
+    ''
+), 
+(
+    'fr:lait-creme',
+    '',
+    'lait-creme',
+    ''
+), 
+(
+    'de:soja-lécithine',
+    '',
+    '',
+    ''
+), 
+(
+    'es:saborizantes',
+    '',
+    '',
+    ''
+), 
+(
+    'es:amarillo-5-trigo-fructosa',
+    '',
+    '',
+    ''
+), 
+(
+    'en:a',
+    'a',
+    '',
+    ''
+), 
+(
+    'de:heringshappen',
+    '',
+    '',
+    'heringshappen'
+), 
+(
+    'hr:oraha',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:smak-cala',
+    '',
+    '',
+    ''
+), 
+(
+    'id:pengemulsi-nabati',
+    '',
+    '',
+    ''
+), 
+(
+    'es:estabilizadores-e450',
+    '',
+    '',
+    ''
+), 
+(
+    'id:tanpa-pemanis-buatan',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:gorušice',
+    '',
+    '',
+    ''
+), 
+(
+    'en:tarwegluten',
+    'tarwegluten',
+    '',
+    ''
+), 
+(
+    'en:flavours',
+    'flavours',
+    '',
+    ''
+), 
+(
+    'fr:fromage-mascarpone',
+    '',
+    'fromage-mascarpone',
+    ''
+), 
+(
+    'en:pistazienkerne',
+    'pistazienkerne',
+    '',
+    ''
+), 
+(
+    'de:vollmilchkuvertüre',
+    '',
+    '',
+    'vollmilchkuvertüre'
+), 
+(
+    'fr:e331',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:karamellmaláta',
+    '',
+    '',
+    ''
+), 
+(
+    'es:cacahuate-coco',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:цельное-молоко',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dinkel-vollkorn-grieß',
+    '',
+    '',
+    'dinkel-vollkorn-grieß'
+), 
+(
+    'en:habas-de-soja',
+    'habas-de-soja',
+    '',
+    ''
+), 
+(
+    'xx:mostaza',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milch-aroma',
+    '',
+    '',
+    'milch-aroma'
+), 
+(
+    'en:vehnagluteeni',
+    'vehnagluteeni',
+    '',
+    ''
+), 
+(
+    'de:weizennatursauerteig',
+    '',
+    '',
+    'weizennatursauerteig'
+), 
+(
+    'en:eigeel',
+    'eigeel',
+    '',
+    ''
+), 
+(
+    'id:kalsium-karbonat-pewarna-karamel-kelas-iii-e-150-c',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sans-huile-de-palme',
+    '',
+    'sans-huile-de-palme',
+    ''
+), 
+(
+    'hr:krupnik',
+    '',
+    '',
+    ''
+), 
+(
+    'no:cashewnøtter',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gekochtes-ei',
+    '',
+    '',
+    'gekochtes-ei'
+), 
+(
+    'it:gluten-de-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'is:mjólkurduftslíki',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:białka-mleka',
+    '',
+    '',
+    ''
+), 
+(
+    'en:apio',
+    'apio',
+    '',
+    ''
+), 
+(
+    'id:saccharomyces-cerevisiæ',
+    '',
+    '',
+    ''
+), 
+(
+    'de:fischeiweiss',
+    '',
+    '',
+    ''
+), 
+(
+    'en:weizenkleie',
+    'weizenkleie',
+    '',
+    ''
+), 
+(
+    'en:soybean-products',
+    'soybean-products',
+    '',
+    ''
+), 
+(
+    'sv:ricotta',
+    '',
+    '',
+    ''
+), 
+(
+    'en:isolated-soy-protein',
+    'isolated-soy-protein',
+    '',
+    ''
+), 
+(
+    'de:rohmildhschnittkäse',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sulfitlaugen',
+    '',
+    '',
+    'sulfitlaugen'
+), 
+(
+    'ro:şprot',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:e226',
+    '',
+    'e226',
+    ''
+), 
+(
+    'fr:bi-sulfites',
+    '',
+    'bi-sulfites',
+    ''
+), 
+(
+    'de:kaliumsorbat',
+    '',
+    '',
+    'kaliumsorbat'
+), 
+(
+    'id:pengatur-keasaman-asam-sitrat',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:råg-och-korn',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:sójová-bilkovina',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:propionate-de-calcium',
+    '',
+    'propionate-de-calcium',
+    ''
+), 
+(
+    'fr:şoja',
+    '',
+    'şoja',
+    ''
+), 
+(
+    'en:wheat-soy-flakes',
+    'wheat-soy-flakes',
+    '',
+    ''
+), 
+(
+    'th:นมผง',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haselnusse',
+    '',
+    '',
+    'haselnusse'
+), 
+(
+    'de:hühner-ei-eiweiß',
+    '',
+    '',
+    'hühner-ei-eiweiß'
+), 
+(
+    'de:glutenhaltiges-getreide-und-daraus-hergestellte-erzeugnisse',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gerstenkaramellmalz',
+    '',
+    '',
+    ''
+), 
+(
+    'el:αραχίδας-αράπικα-φιστίκια',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:glute',
+    '',
+    'glute',
+    ''
+), 
+(
+    'hr:lupinu-u-tragovima',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:roggen',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:siktat-rågmjöl',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:accra-de-morue-prefrit-30-morue',
+    '',
+    'accra-de-morue-prefrit-30-morue',
+    ''
+), 
+(
+    'hr:ječný',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:traces-de-gluten-moutarde-oeuf-celeri',
+    '',
+    'traces-de-gluten-moutarde-oeuf-celeri',
+    ''
+), 
+(
+    'de:milchzucher',
+    '',
+    '',
+    'milchzucher'
+), 
+(
+    'en:caseinate',
+    'caseinate',
+    '',
+    ''
+), 
+(
+    'de:hühnereiergelbpulver',
+    '',
+    '',
+    'hühnereiergelbpulver'
+), 
+(
+    'fr:milcheiweisserzeugnis',
+    '',
+    'milcheiweisserzeugnis',
+    ''
+), 
+(
+    'fr:produits-issus-de-l-huile-de-palme',
+    '',
+    'produits-issus-de-l-huile-de-palme',
+    ''
+), 
+(
+    'it:merluzzo-d-alaska',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:tejsavbaktériumok',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ble-beurre-oeufs',
+    '',
+    'ble-beurre-oeufs',
+    ''
+), 
+(
+    'de:milcheiweiserzeugnis',
+    '',
+    '',
+    'milcheiweiserzeugnis'
+), 
+(
+    'ro:grāu',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:sežamų',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:kaaspoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:malt-din-orz',
+    '',
+    '',
+    ''
+), 
+(
+    'en:narancs',
+    'narancs',
+    '',
+    ''
+), 
+(
+    'pt:queijo-fresco-de-cabra',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:torskfiskar',
+    '',
+    '',
+    ''
+), 
+(
+    'en:amarillo-crepusculo',
+    'amarillo-crepusculo',
+    '',
+    ''
+), 
+(
+    'de:garnelelen',
+    '',
+    '',
+    'garnelelen'
+), 
+(
+    'sl:sojo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:biscuits-sales-gout-bacon',
+    '',
+    'biscuits-sales-gout-bacon',
+    ''
+), 
+(
+    'fr:proteine-de-pois-legumineuses',
+    '',
+    'proteine-de-pois-legumineuses',
+    ''
+), 
+(
+    'de:welzenmalz',
+    '',
+    '',
+    'welzenmalz'
+), 
+(
+    'pl:pszenice',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:noisette-blanchie',
+    '',
+    'noisette-blanchie',
+    ''
+), 
+(
+    'sv:fiskrom',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:kešu',
+    '',
+    '',
+    ''
+), 
+(
+    'es:fenilalanina-polioles',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:aun',
+    '',
+    'aun',
+    ''
+), 
+(
+    'fr:beurre-de-baratte',
+    '',
+    'beurre-de-baratte',
+    ''
+), 
+(
+    'de:weizenröstmalz',
+    '',
+    '',
+    'weizenröstmalz'
+), 
+(
+    'fr:creme-aigre',
+    '',
+    'creme-aigre',
+    ''
+), 
+(
+    'fr:e223-metabisulfite-de-sodium-ou-bisulfite-de-sodium',
+    '',
+    'e223-metabisulfite-de-sodium-ou-bisulfite-de-sodium',
+    ''
+), 
+(
+    'en:chinese-mushroom',
+    'chinese-mushroom',
+    '',
+    ''
+), 
+(
+    'no:speltkli',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:zalm',
+    '',
+    '',
+    ''
+), 
+(
+    'en:enriched-wheat-flour',
+    'enriched-wheat-flour',
+    '',
+    ''
+), 
+(
+    'el:καρβοξύ',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:ječná',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenstartgut',
+    '',
+    '',
+    'weizenstartgut'
+), 
+(
+    'fr:alha',
+    '',
+    'alha',
+    ''
+), 
+(
+    'th:ไม่มี',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:lješnjak',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:leche-y-gluten',
+    '',
+    'leche-y-gluten',
+    ''
+), 
+(
+    'nb:sellerirot',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:parmigiano-reggiano-aop',
+    '',
+    'parmigiano-reggiano-aop',
+    ''
+), 
+(
+    'nl:sojalecithinen',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:noix-de-cajou-crues',
+    '',
+    'noix-de-cajou-crues',
+    ''
+), 
+(
+    'fi:gluteeniton-kaurajauho',
+    '',
+    '',
+    ''
+), 
+(
+    'de:süßmolken-pulver',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hühnereieiklarpulver',
+    '',
+    '',
+    'hühnereieiklarpulver'
+), 
+(
+    'fr:surutke',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:centeno',
+    '',
+    'centeno',
+    ''
+), 
+(
+    'fr:cantharellus-cibarius',
+    '',
+    'cantharellus-cibarius',
+    ''
+), 
+(
+    'de:hafervollkornﬂocken',
+    '',
+    '',
+    'hafervollkornﬂocken'
+), 
+(
+    'nb:kuttet-rug',
+    '',
+    '',
+    ''
+), 
+(
+    'tr:milk-powder-without-fat-3-8',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:seitan-de-ble',
+    '',
+    'seitan-de-ble',
+    ''
+), 
+(
+    'fr:cereales-chocolatees-avec-un-fourrage-gout-chocolat',
+    '',
+    'cereales-chocolatees-avec-un-fourrage-gout-chocolat',
+    ''
+), 
+(
+    'de:kaliummetabisulfil',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:parmigianoreggiano',
+    '',
+    'parmigianoreggiano',
+    ''
+), 
+(
+    'fr:allumette-fromages',
+    '',
+    'allumette-fromages',
+    ''
+), 
+(
+    'fr:capelan',
+    '',
+    'capelan',
+    ''
+), 
+(
+    'fr:farine-de-seigle-complete',
+    '',
+    'farine-de-seigle-complete',
+    ''
+), 
+(
+    'es:frutos-de-cascara-almendra',
+    '',
+    '',
+    ''
+), 
+(
+    'lt:raugas',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cellery',
+    'cellery',
+    '',
+    ''
+), 
+(
+    'fr:sulphate',
+    '',
+    'sulphate',
+    ''
+), 
+(
+    'en:sovany-tejpor',
+    'sovany-tejpor',
+    '',
+    ''
+), 
+(
+    'fr:morceaux-de-tentacule',
+    '',
+    'morceaux-de-tentacule',
+    ''
+), 
+(
+    'en:milk-pulp',
+    'milk-pulp',
+    '',
+    ''
+), 
+(
+    'ru:сливочное-масло',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:farine-de-froment-85',
+    '',
+    'farine-de-froment-85',
+    ''
+), 
+(
+    'sr:žumance-jaja',
+    '',
+    '',
+    ''
+), 
+(
+    'en:cacahuetes',
+    'cacahuetes',
+    '',
+    ''
+), 
+(
+    'fr:phil-germe-de-froment',
+    '',
+    'phil-germe-de-froment',
+    ''
+), 
+(
+    'fr:loup-de-mer',
+    '',
+    'loup-de-mer',
+    ''
+), 
+(
+    'lt:pieninis',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:beurre-demi-sel',
+    '',
+    'beurre-demi-sel',
+    ''
+), 
+(
+    'en:coque',
+    'coque',
+    '',
+    ''
+), 
+(
+    'de:gerstenmalzessigextrakt',
+    '',
+    '',
+    'gerstenmalzessigextrakt'
+), 
+(
+    'hu:kéndioxid',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mozzerella',
+    '',
+    '',
+    'mozzerella'
+), 
+(
+    'hu:busa',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kürbiskerne',
+    '',
+    '',
+    'kürbiskerne'
+), 
+(
+    'es:glueten',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sesamsamen',
+    '',
+    'sesamsamen',
+    ''
+), 
+(
+    'de:weizenextrakt',
+    '',
+    '',
+    'weizenextrakt'
+), 
+(
+    'de:mgermilchpulver',
+    '',
+    '',
+    'mgermilchpulver'
+), 
+(
+    'fr:celer',
+    '',
+    'celer',
+    ''
+), 
+(
+    'sr:kalijum-metabisulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:extrait-de-malte-d-orge',
+    '',
+    'extrait-de-malte-d-orge',
+    ''
+), 
+(
+    'fr:citrus',
+    '',
+    'citrus',
+    ''
+), 
+(
+    'fr:nappage-chocolat-blanc',
+    '',
+    'nappage-chocolat-blanc',
+    ''
+), 
+(
+    'en:maltodextrin',
+    'maltodextrin',
+    '',
+    ''
+), 
+(
+    'fr:cacahuetes-crues',
+    '',
+    'cacahuetes-crues',
+    ''
+), 
+(
+    'hr:obrano-mlijeko-u-prahu',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roggenvollkorn-schrot',
+    '',
+    '',
+    'roggenvollkorn-schrot'
+), 
+(
+    'es:28',
+    '',
+    '',
+    ''
+), 
+(
+    'de:goudakäse',
+    '',
+    '',
+    'goudakäse'
+), 
+(
+    'pl:z-soi',
+    '',
+    '',
+    ''
+), 
+(
+    'en:bisulphite',
+    'bisulphite',
+    '',
+    ''
+), 
+(
+    'he:לוז',
+    '',
+    '',
+    ''
+), 
+(
+    'en:metabisulfite',
+    'metabisulfite',
+    '',
+    ''
+), 
+(
+    'en:narancsle',
+    'narancsle',
+    '',
+    ''
+), 
+(
+    'en:coffee',
+    'coffee',
+    '',
+    ''
+), 
+(
+    'de:s0ja',
+    '',
+    '',
+    's0ja'
+), 
+(
+    'en:corn-starch',
+    'corn-starch',
+    '',
+    ''
+), 
+(
+    'en:crusttaceans',
+    'crusttaceans',
+    '',
+    ''
+), 
+(
+    'en:huhnerei-eiweisspulver',
+    'huhnerei-eiweisspulver',
+    '',
+    ''
+), 
+(
+    'nl:kipheelei',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:foie-de-lotte',
+    '',
+    'foie-de-lotte',
+    ''
+), 
+(
+    'pl:łososia',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenmehi',
+    '',
+    '',
+    'weizenmehi'
+), 
+(
+    'en:bamboo-shoot',
+    'bamboo-shoot',
+    '',
+    ''
+), 
+(
+    'el:σπόρους-σησαμιού-και-προϊόντα-αυτών',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:levain-de-ble',
+    '',
+    'levain-de-ble',
+    ''
+), 
+(
+    'fr:antioxydant-ascorbate-de-sodium-certains-ingredients-de-ce-produit-ne-proviennent-pas-d-espagne',
+    '',
+    'antioxydant-ascorbate-de-sodium-certains-ingredients-de-ce-produit-ne-proviennent-pas-d-espagne',
+    ''
+), 
+(
+    'it:crema',
+    '',
+    '',
+    ''
+), 
+(
+    'de:avena',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ječam',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollmilchulver',
+    '',
+    '',
+    'vollmilchulver'
+), 
+(
+    'de:sahneerzeugnis',
+    '',
+    '',
+    'sahneerzeugnis'
+), 
+(
+    'sv:svensk-pastöriserad-mjölk',
+    '',
+    '',
+    ''
+), 
+(
+    'it:farina-di-frumento-maltato',
+    '',
+    '',
+    ''
+), 
+(
+    'it:rehydrated-skimmed-milk',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:coconut-water',
+    '',
+    'coconut-water',
+    ''
+), 
+(
+    'fr:e133-colorant-de-synthese',
+    '',
+    'e133-colorant-de-synthese',
+    ''
+), 
+(
+    'de:natriumdisulfit',
+    '',
+    '',
+    'natriumdisulfit'
+), 
+(
+    'fr:starke',
+    '',
+    'starke',
+    ''
+), 
+(
+    'fr:carrelet',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:nata-de-vaca',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenbackschrot',
+    '',
+    '',
+    'weizenbackschrot'
+), 
+(
+    'nl:zure-room',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:dioxyde-de-souffre',
+    '',
+    'dioxyde-de-souffre',
+    ''
+), 
+(
+    'de:1-teil-sirup-mit-5-teilen-wasser-mischen',
+    '',
+    '',
+    '1-teil-sirup-mit-5-teilen-wasser-mischen'
+), 
+(
+    'fr:the-noir-aromatise-saveur-fruits-rouges',
+    '',
+    'the-noir-aromatise-saveur-fruits-rouges',
+    ''
+), 
+(
+    'en:grains-de-moutarde',
+    'grains-de-moutarde',
+    '',
+    ''
+), 
+(
+    'de:verarbeitungs-büffelmolke',
+    '',
+    '',
+    'verarbeitungs-büffelmolke'
+), 
+(
+    'de:wallnusskerne',
+    '',
+    '',
+    'wallnusskerne'
+), 
+(
+    'en:cebada',
+    'cebada',
+    '',
+    ''
+), 
+(
+    'fr:c',
+    '',
+    'c',
+    ''
+), 
+(
+    'de:weinzenmehl',
+    '',
+    '',
+    'weinzenmehl'
+), 
+(
+    'fr:crevettes-epices-thai-rouge-crevette',
+    '',
+    'crevettes-epices-thai-rouge-crevette',
+    ''
+), 
+(
+    'fi:soijaproteiinivalmiste',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:tarwekiemzuurdeeg',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:soja-eiwit-concentraat',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:sójová-směs',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:weizenrostmalz',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:soia-bönor',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vermicelle',
+    '',
+    'vermicelle',
+    ''
+), 
+(
+    'en:black-walnuts',
+    'black-walnuts',
+    '',
+    ''
+), 
+(
+    'fi:mantelitäyte',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ou-dioxyde-de-soufre',
+    '',
+    'ou-dioxyde-de-soufre',
+    ''
+), 
+(
+    'sv:pecorino-ost',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizen-soja-flakes',
+    '',
+    '',
+    'weizen-soja-flakes'
+), 
+(
+    'es:contiene-leche-y-o-sus-derivados',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:e954',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:cоев',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sellere',
+    '',
+    '',
+    'sellere'
+), 
+(
+    'de:roggensauerteug',
+    '',
+    '',
+    'roggensauerteug'
+), 
+(
+    'es:atun-aleta-amarilla',
+    '',
+    '',
+    ''
+), 
+(
+    'en:ffsh',
+    'ffsh',
+    '',
+    ''
+), 
+(
+    'fr:eminces-riche-en-poulet',
+    '',
+    'eminces-riche-en-poulet',
+    ''
+), 
+(
+    'ja:生乳',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:prirodni-aromatični-preparati',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:e951',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:oeuf-d-esturgeon',
+    '',
+    'oeuf-d-esturgeon',
+    ''
+), 
+(
+    'fr:italian-style-cheese-paste',
+    '',
+    'italian-style-cheese-paste',
+    ''
+), 
+(
+    'sv:get',
+    '',
+    '',
+    ''
+), 
+(
+    'en:whiting',
+    'whiting',
+    '',
+    ''
+), 
+(
+    'fr:gs1-t4078-be',
+    '',
+    'gs1-t4078-be',
+    ''
+), 
+(
+    'fr:4-purees-de-pommes',
+    '',
+    '4-purees-de-pommes',
+    ''
+), 
+(
+    'de:sllerie',
+    '',
+    '',
+    'sllerie'
+), 
+(
+    'nb:skummetmelkspulver',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:ječmenovega',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:grana-padano-dop',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:tejszármazékokat',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenmaltodextrin',
+    '',
+    '',
+    'weizenmaltodextrin'
+), 
+(
+    'es:leche-y-sus-derivados-queso',
+    '',
+    '',
+    ''
+), 
+(
+    'es:gluen',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:grău',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:avocat',
+    '',
+    'avocat',
+    ''
+), 
+(
+    'fr:cabecou',
+    '',
+    'cabecou',
+    ''
+), 
+(
+    'fr:blancs',
+    '',
+    'blancs',
+    ''
+), 
+(
+    'sv:vassleproteinkoncentrat',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:algue',
+    '',
+    'algue',
+    ''
+), 
+(
+    'de:weizemstärke',
+    '',
+    '',
+    'weizemstärke'
+), 
+(
+    'fr:reticulatus',
+    '',
+    'reticulatus',
+    ''
+), 
+(
+    'de:blütenhonig',
+    '',
+    '',
+    'blütenhonig'
+), 
+(
+    'fr:sirop',
+    '',
+    'sirop',
+    ''
+), 
+(
+    'ru:меланж-сухой-яичный',
+    '',
+    '',
+    ''
+), 
+(
+    'de:trockenhühnereieiweiß',
+    '',
+    '',
+    'trockenhühnereieiweiß'
+), 
+(
+    'et:kondenspiim',
+    '',
+    '',
+    ''
+), 
+(
+    'en:tree-nuts-and-their-derivatives',
+    'tree-nuts-and-their-derivatives',
+    '',
+    ''
+), 
+(
+    'it:potrebbe-contenere-uova',
+    '',
+    '',
+    ''
+), 
+(
+    'de:teilentrahmtes-milchpulver',
+    '',
+    '',
+    'teilentrahmtes-milchpulver'
+), 
+(
+    'fr:pois-chiche',
+    '',
+    'pois-chiche',
+    ''
+), 
+(
+    'en:alpenmilchschokolade',
+    'alpenmilchschokolade',
+    '',
+    ''
+), 
+(
+    'th:cacahuètes',
+    '',
+    '',
+    ''
+), 
+(
+    'en:arabica-coffee',
+    'arabica-coffee',
+    '',
+    ''
+), 
+(
+    'nl:volle-melk',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sahne-aroma',
+    '',
+    '',
+    'sahne-aroma'
+), 
+(
+    'de:milchbestandteilen',
+    '',
+    '',
+    'milchbestandteilen'
+), 
+(
+    'el:κρίθαριού',
+    '',
+    '',
+    ''
+), 
+(
+    'de:palmöl',
+    '',
+    '',
+    'palmöl'
+), 
+(
+    'xx:käsepulver',
+    '',
+    '',
+    ''
+), 
+(
+    'it:grano-tenero',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollkornreisflocken',
+    '',
+    '',
+    'vollkornreisflocken'
+), 
+(
+    'fr:entier',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:масло-сливочное',
+    '',
+    '',
+    ''
+), 
+(
+    'de:magermilchpuliver',
+    '',
+    '',
+    'magermilchpuliver'
+), 
+(
+    'fr:metabisulphite-de-sodium',
+    '',
+    'metabisulphite-de-sodium',
+    ''
+), 
+(
+    'fr:anit',
+    '',
+    'anit',
+    ''
+), 
+(
+    'pt:mani',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haselnuss-corylus-avellana',
+    '',
+    '',
+    'haselnuss-corylus-avellana'
+), 
+(
+    'fr:biscuits-sales-gout-pizza',
+    '',
+    'biscuits-sales-gout-pizza',
+    ''
+), 
+(
+    'de:gelatine',
+    '',
+    '',
+    'gelatine'
+), 
+(
+    'nb:speltflak',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:jambon-sec-40-4-tranches',
+    '',
+    'jambon-sec-40-4-tranches',
+    ''
+), 
+(
+    'fr:contient-des-ingredients-de-l-avoine',
+    '',
+    '',
+    ''
+), 
+(
+    'es:solidos-laticos',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:eclats-de-noisettes',
+    '',
+    'eclats-de-noisettes',
+    ''
+), 
+(
+    'de:verdickungsmittel',
+    '',
+    '',
+    'verdickungsmittel'
+), 
+(
+    'fr:emulsifiant-lecithine-de-soja',
+    '',
+    'emulsifiant-lecithine-de-soja',
+    ''
+), 
+(
+    'de:teppichmuschelfleisch',
+    '',
+    '',
+    'teppichmuschelfleisch'
+), 
+(
+    'nl:gerstenmalzextrakt',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:avoine',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchweiweiß',
+    '',
+    '',
+    'milchweiweiß'
+), 
+(
+    'de:flocken',
+    '',
+    '',
+    ''
+), 
+(
+    'en:natriummetabisulfit',
+    'natriummetabisulfit',
+    '',
+    ''
+), 
+(
+    'en:garstyčios',
+    'garstyčios',
+    '',
+    ''
+), 
+(
+    'pl:białko-pszenne',
+    '',
+    '',
+    ''
+), 
+(
+    'en:miel-de-abeja',
+    'miel-de-abeja',
+    '',
+    ''
+), 
+(
+    'de:mandeleiweis',
+    '',
+    '',
+    'mandeleiweis'
+), 
+(
+    'de:pecannuss-carya-illinoies-wangenh-k-koch',
+    '',
+    '',
+    'pecannuss-carya-illinoies-wangenh-k-koch'
+), 
+(
+    'fr:brazils',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:xiv',
+    '',
+    'xiv',
+    ''
+), 
+(
+    'de:agermilchpulver',
+    '',
+    '',
+    'agermilchpulver'
+), 
+(
+    'fr:souffles-aromatises-gout-bacon',
+    '',
+    'souffles-aromatises-gout-bacon',
+    ''
+), 
+(
+    'sv:chilinötter',
+    '',
+    '',
+    ''
+), 
+(
+    'en:monterey-jack-cheese',
+    'monterey-jack-cheese',
+    '',
+    ''
+), 
+(
+    'fr:eminces-riche-en-canard',
+    '',
+    'eminces-riche-en-canard',
+    ''
+), 
+(
+    'de:heringsfliets',
+    '',
+    '',
+    'heringsfliets'
+), 
+(
+    'es:avellana-tostada',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:skuša',
+    '',
+    '',
+    ''
+), 
+(
+    'es:amariilo-5',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:maux-de-tete',
+    '',
+    'maux-de-tete',
+    ''
+), 
+(
+    'ru:соевого-лецитина',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:soja-et-produits-en-contenant',
+    '',
+    'soja-et-produits-en-contenant',
+    ''
+), 
+(
+    'fr:harang',
+    '',
+    'harang',
+    ''
+), 
+(
+    'en:avena',
+    'avena',
+    '',
+    ''
+), 
+(
+    'de:weizenerzeugnisse',
+    '',
+    '',
+    'weizenerzeugnisse'
+), 
+(
+    'de:semmelbrösel',
+    '',
+    '',
+    'semmelbrösel'
+), 
+(
+    'fr:nordhavsrakor',
+    '',
+    'nordhavsrakor',
+    ''
+), 
+(
+    'de:roggenmalz-extrakt',
+    '',
+    '',
+    'roggenmalz-extrakt'
+), 
+(
+    'en:kokosnussmilchpulver',
+    'kokosnussmilchpulver',
+    '',
+    ''
+), 
+(
+    'fr:creme-acidulee',
+    '',
+    'creme-acidulee',
+    ''
+), 
+(
+    'en:contains-permitted-classii-preservative',
+    'contains-permitted-classii-preservative',
+    '',
+    ''
+), 
+(
+    'en:king-prawns',
+    'king-prawns',
+    '',
+    ''
+), 
+(
+    'en:expired-cocaine',
+    'expired-cocaine',
+    '',
+    ''
+), 
+(
+    'fr:compote-de-pommes-allegees-en-sucres',
+    '',
+    'compote-de-pommes-allegees-en-sucres',
+    ''
+), 
+(
+    'es:no-tiene',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ei',
+    '',
+    '',
+    ''
+), 
+(
+    'en:aipo',
+    'aipo',
+    '',
+    ''
+), 
+(
+    'en:emmentaler',
+    'emmentaler',
+    '',
+    ''
+), 
+(
+    'de:sojafasern',
+    '',
+    '',
+    'sojafasern'
+), 
+(
+    'fr:glace-vanille-chocolat-au-lait',
+    '',
+    'glace-vanille-chocolat-au-lait',
+    ''
+), 
+(
+    'ro:făină-de-de-malț-prăjit',
+    '',
+    '',
+    ''
+), 
+(
+    'de:natriumsaccharin',
+    '',
+    '',
+    'natriumsaccharin'
+), 
+(
+    'es:solidos-de-leche',
+    '',
+    '',
+    ''
+), 
+(
+    'en:schalenfruchten',
+    'schalenfruchten',
+    '',
+    ''
+), 
+(
+    'es:alcohol',
+    '',
+    '',
+    ''
+), 
+(
+    'en:seminte-de-susan',
+    'seminte-de-susan',
+    '',
+    ''
+), 
+(
+    'fr:etg',
+    '',
+    'etg',
+    ''
+), 
+(
+    'de:sojy',
+    '',
+    '',
+    'sojy'
+), 
+(
+    'en:sojaprotein',
+    'sojaprotein',
+    '',
+    ''
+), 
+(
+    'fr:ingredientes',
+    '',
+    'ingredientes',
+    ''
+), 
+(
+    'hr:oraščići',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:vaječný-bílek',
+    '',
+    '',
+    ''
+), 
+(
+    'uk:молоко',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ines',
+    '',
+    'ines',
+    ''
+), 
+(
+    'de:dinkelvollkornflakes',
+    '',
+    '',
+    'dinkelvollkornflakes'
+), 
+(
+    'en:jaune-d-oeuf',
+    'jaune-d-oeuf',
+    '',
+    ''
+), 
+(
+    'en:mycoprotein',
+    'mycoprotein',
+    '',
+    ''
+), 
+(
+    'en:e621',
+    'e621',
+    '',
+    ''
+), 
+(
+    'sk:maslo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:בוטנים',
+    'בוטנים',
+    '',
+    ''
+), 
+(
+    'es:anhidrido-sulfuroso-y-sulfitos',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:vaječný-þílek',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojacrisipies',
+    '',
+    '',
+    'sojacrisipies'
+), 
+(
+    'en:milk-solids-29-milk-chocolate-contains-cocoa-solids-27',
+    'milk-solids-29-milk-chocolate-contains-cocoa-solids-27',
+    '',
+    ''
+), 
+(
+    'de:sojalectithine',
+    '',
+    '',
+    'sojalectithine'
+), 
+(
+    'de:volleit',
+    '',
+    '',
+    'volleit'
+), 
+(
+    'nl:natriumdísulfiet',
+    '',
+    '',
+    ''
+), 
+(
+    'es:fresasulfitos',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:arahide-și-fructe-cu-coajă-lemnoasă',
+    '',
+    '',
+    ''
+), 
+(
+    'en:and-other-sources-of-gluten',
+    'and-other-sources-of-gluten',
+    '',
+    ''
+), 
+(
+    'en:ou',
+    'ou',
+    '',
+    ''
+), 
+(
+    'de:milkenerzeugnis',
+    '',
+    '',
+    'milkenerzeugnis'
+), 
+(
+    'cs:pšeničná-moukaa',
+    '',
+    '',
+    ''
+), 
+(
+    'de:cottage-cheese',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenbrotchen',
+    '',
+    '',
+    'weizenbrotchen'
+), 
+(
+    'de:italienischer-hartkäse',
+    '',
+    '',
+    'italienischer-hartkäse'
+), 
+(
+    'fr:ananas-coco-lait',
+    '',
+    'ananas-coco-lait',
+    ''
+), 
+(
+    'fr:lactoza',
+    '',
+    '',
+    ''
+), 
+(
+    'de:ammoniumsulfit',
+    '',
+    '',
+    'ammoniumsulfit'
+), 
+(
+    'zh:白芝麻',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:natriummetabisulfiet',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:triticale',
+    '',
+    'triticale',
+    ''
+), 
+(
+    'gs:frutos-de-cáscara',
+    '',
+    '',
+    ''
+), 
+(
+    'de:kuhmilchkäse',
+    '',
+    '',
+    'kuhmilchkäse'
+), 
+(
+    'es:proteinas-lacteas',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:produit-garanti-sans-gluten',
+    '',
+    'produit-garanti-sans-gluten',
+    ''
+), 
+(
+    'en:sardellen',
+    'sardellen',
+    '',
+    ''
+), 
+(
+    'de:milchspezialität',
+    '',
+    '',
+    'milchspezialität'
+), 
+(
+    'en:glutine',
+    'glutine',
+    '',
+    ''
+), 
+(
+    'sl:sojino-olje',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:anhydride-sulfureaux',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:migdaly',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:sinapin-siemenet',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:semoule-ble-dur',
+    '',
+    'semoule-ble-dur',
+    ''
+), 
+(
+    'de:gerstemalzeatrakt',
+    '',
+    '',
+    'gerstemalzeatrakt'
+), 
+(
+    'es:harina-de-trigo-000',
+    '',
+    '',
+    ''
+), 
+(
+    'en:full-cream-milk-powder',
+    'full-cream-milk-powder',
+    '',
+    ''
+), 
+(
+    'fr:antioxydant-e304',
+    '',
+    'antioxydant-e304',
+    ''
+), 
+(
+    'fr:manteca-pura',
+    '',
+    '',
+    ''
+), 
+(
+    'en:milkwhey',
+    'milkwhey',
+    '',
+    ''
+), 
+(
+    'de:orangensaft',
+    '',
+    '',
+    'orangensaft'
+), 
+(
+    'en:fish-extract',
+    'fish-extract',
+    '',
+    ''
+), 
+(
+    'fr:saint-nectaire',
+    '',
+    'saint-nectaire',
+    ''
+), 
+(
+    'en:pollen',
+    'pollen',
+    '',
+    ''
+), 
+(
+    'de:hähnchenfleisch',
+    '',
+    '',
+    'hähnchenfleisch'
+), 
+(
+    'fr:pirovo',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:sirarske',
+    '',
+    '',
+    ''
+), 
+(
+    'es:peix',
+    '',
+    '',
+    ''
+), 
+(
+    'da:sojalecithiner',
+    '',
+    '',
+    ''
+), 
+(
+    'es:huevoy-frutos-de-cascara',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenmehl-type-550',
+    '',
+    '',
+    'weizenmehl-type-550'
+), 
+(
+    'fi:paahdettu-hasselpähkinä',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:rouget-barbet-cinnabare',
+    '',
+    'rouget-barbet-cinnabare',
+    ''
+), 
+(
+    'de:sojabohnen-mix',
+    '',
+    '',
+    'sojabohnen-mix'
+), 
+(
+    'de:hopfen',
+    '',
+    '',
+    'hopfen'
+), 
+(
+    'de:gorgonzola-g-u',
+    '',
+    '',
+    'gorgonzola-g-u'
+), 
+(
+    'fr:beurre-lactose',
+    '',
+    'beurre-lactose',
+    ''
+), 
+(
+    'hr:mleka',
+    '',
+    '',
+    ''
+), 
+(
+    'en:skipjack-tuna',
+    'skipjack-tuna',
+    '',
+    ''
+), 
+(
+    'sr:e322',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:laktózu',
+    '',
+    '',
+    ''
+), 
+(
+    'en:oleo-margarina',
+    'oleo-margarina',
+    '',
+    ''
+), 
+(
+    'fr:fruit-de-la-passion',
+    '',
+    'fruit-de-la-passion',
+    ''
+), 
+(
+    'cs:pšeničná-krupice',
+    '',
+    '',
+    ''
+), 
+(
+    'lv:ķirbju-sēklas',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:arašidy',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojaprotein-hydrolysat',
+    '',
+    '',
+    'sojaprotein-hydrolysat'
+), 
+(
+    'fr:5-canapes-a-la-tomate-sechee-marinee',
+    '',
+    '5-canapes-a-la-tomate-sechee-marinee',
+    ''
+), 
+(
+    'fr:lait-de-montagne',
+    '',
+    'lait-de-montagne',
+    ''
+), 
+(
+    'es:lechesesamo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mandeln-blanchiert',
+    '',
+    '',
+    'mandeln-blanchiert'
+), 
+(
+    'fi:tomaatti',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gerstemalz',
+    '',
+    '',
+    'gerstemalz'
+), 
+(
+    'nb:cheddarostpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sellerieamenpulver',
+    '',
+    '',
+    'sellerieamenpulver'
+), 
+(
+    'et:rõõsk-koor',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sesamfrø',
+    'sesamfrø',
+    '',
+    ''
+), 
+(
+    'fr:lin',
+    '',
+    'lin',
+    ''
+), 
+(
+    'fr:oeuf',
+    '',
+    'oeuf',
+    ''
+), 
+(
+    'fr:marisco',
+    '',
+    'marisco',
+    ''
+), 
+(
+    'fr:frischkase',
+    '',
+    'frischkase',
+    ''
+), 
+(
+    'de:voliei',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sulphor-dioxide',
+    'sulphor-dioxide',
+    '',
+    ''
+), 
+(
+    'en:crustacean-shellfish-shrimp',
+    'crustacean-shellfish-shrimp',
+    '',
+    ''
+), 
+(
+    'fr:mure',
+    '',
+    'mure',
+    ''
+), 
+(
+    'es:sufitos',
+    '',
+    '',
+    ''
+), 
+(
+    'it:gamberetto-boreale',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ormeau',
+    '',
+    'ormeau',
+    ''
+), 
+(
+    'es:cereal-inflado',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:elimine-le-calcium',
+    '',
+    'elimine-le-calcium',
+    ''
+), 
+(
+    'es:semilla-de-calabaza',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:grains-de-seigle-complet',
+    '',
+    'grains-de-seigle-complet',
+    ''
+), 
+(
+    'de:tintenfisch',
+    '',
+    '',
+    'tintenfisch'
+), 
+(
+    'sv:rågvete',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:bigorneau',
+    '',
+    'bigorneau',
+    ''
+), 
+(
+    'en:dogs',
+    'dogs',
+    '',
+    ''
+), 
+(
+    'fr:cheese-powder',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:tofu-soyeux',
+    '',
+    'tofu-soyeux',
+    ''
+), 
+(
+    'th:เซเลอรี',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollkorndinkelmehl',
+    '',
+    '',
+    'vollkorndinkelmehl'
+), 
+(
+    'en:nozes',
+    'nozes',
+    '',
+    ''
+), 
+(
+    'it:aloe',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:natriumdisulfitt',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:selderiezaad',
+    '',
+    '',
+    ''
+), 
+(
+    'de:wizenmehl',
+    '',
+    '',
+    'wizenmehl'
+), 
+(
+    'en:nature-identical-flavouring-substances-contains-wheat',
+    'nature-identical-flavouring-substances-contains-wheat',
+    '',
+    ''
+), 
+(
+    'ru:фундук',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:echalote',
+    '',
+    'echalote',
+    ''
+), 
+(
+    'en:butterfett',
+    'butterfett',
+    '',
+    ''
+), 
+(
+    'en:ovăz',
+    'ovăz',
+    '',
+    ''
+), 
+(
+    'en:ninguna',
+    'ninguna',
+    '',
+    ''
+), 
+(
+    'en:contains-cashews',
+    'contains-cashews',
+    '',
+    ''
+), 
+(
+    'lt:miežinis',
+    '',
+    '',
+    ''
+), 
+(
+    'en:no-known-allergens',
+    'no-known-allergens',
+    '',
+    ''
+), 
+(
+    'fr:sauce-barbecue-95g-ingredients',
+    '',
+    'sauce-barbecue-95g-ingredients',
+    ''
+), 
+(
+    'hr:glutena',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:magere-kaas',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:celeri-3',
+    '',
+    'celeri-3',
+    ''
+), 
+(
+    'fr:amende',
+    '',
+    'amende',
+    ''
+), 
+(
+    'sv:mjölkchokoladsmak',
+    '',
+    '',
+    ''
+), 
+(
+    'de:erdnussstücke-geröstet',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:fulkornsvete',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haselnussnougat',
+    '',
+    '',
+    'haselnussnougat'
+), 
+(
+    'de:hafervollkornflockenlf',
+    '',
+    '',
+    ''
+), 
+(
+    'en:soro-de-leite',
+    'soro-de-leite',
+    '',
+    ''
+), 
+(
+    'cs:gouda',
+    '',
+    '',
+    ''
+), 
+(
+    'de:walnuss-juglans-regia',
+    '',
+    '',
+    'walnuss-juglans-regia'
+), 
+(
+    'fr:oja',
+    '',
+    'oja',
+    ''
+), 
+(
+    'nl:scharrel-eiwit',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:albumine-d-oeuf',
+    '',
+    'albumine-d-oeuf',
+    ''
+), 
+(
+    'ru:яичный-белок',
+    '',
+    '',
+    ''
+), 
+(
+    'el:β',
+    '',
+    '',
+    ''
+), 
+(
+    'de:anacardos',
+    '',
+    '',
+    'anacardos'
+), 
+(
+    'de:milc',
+    '',
+    '',
+    'milc'
+), 
+(
+    'sv:sesampasta',
+    '',
+    '',
+    ''
+), 
+(
+    'es:contiene-fresa-y-amarillo-5-tartrazina',
+    '',
+    '',
+    ''
+), 
+(
+    'id:pemanis-buatan-sukralosa',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:figues',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchsäurebakterienkultur',
+    '',
+    '',
+    'milchsäurebakterienkultur'
+), 
+(
+    'es:leche-entera-en-polvo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hünereieiweiß',
+    '',
+    '',
+    'hünereieiweiß'
+), 
+(
+    'nl:lactise',
+    '',
+    '',
+    ''
+), 
+(
+    'id:pewarna-sintetik-biru-berlian-fcf-ci-42090',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchmineralstoffe',
+    '',
+    '',
+    ''
+), 
+(
+    'es:pina-coco',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:ječmenog',
+    '',
+    '',
+    ''
+), 
+(
+    'en:hering',
+    'hering',
+    '',
+    ''
+), 
+(
+    'fr:can',
+    '',
+    'can',
+    ''
+), 
+(
+    'fr:cheddar-kase',
+    '',
+    'cheddar-kase',
+    ''
+), 
+(
+    'fr:whole-milk-powder',
+    '',
+    '',
+    ''
+), 
+(
+    'id:pemanis-alami-glikosida-steviol',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:alaska-pollock',
+    '',
+    '',
+    ''
+), 
+(
+    'de:crescenzakäse',
+    '',
+    '',
+    'crescenzakäse'
+), 
+(
+    'fr:erdnusspaste',
+    '',
+    'erdnusspaste',
+    ''
+), 
+(
+    'fr:pain-au-sesame',
+    '',
+    'pain-au-sesame',
+    ''
+), 
+(
+    'hr:pekan-orasi',
+    '',
+    '',
+    ''
+), 
+(
+    'de:forellenroggen',
+    '',
+    '',
+    'forellenroggen'
+), 
+(
+    'fr:nems-au-porc-8-x-65-g',
+    '',
+    'nems-au-porc-8-x-65-g',
+    ''
+), 
+(
+    'en:suplhites',
+    'suplhites',
+    '',
+    ''
+), 
+(
+    'en:almo',
+    'almo',
+    '',
+    ''
+), 
+(
+    'en:pate',
+    'pate',
+    '',
+    ''
+), 
+(
+    'fr:souffles-aromatises-emmental',
+    '',
+    'souffles-aromatises-emmental',
+    ''
+), 
+(
+    'fr:prot',
+    '',
+    'prot',
+    ''
+), 
+(
+    'fr:thym',
+    '',
+    'thym',
+    ''
+), 
+(
+    'th:soy-bean',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:sjemenke-soje',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:масло',
+    '',
+    '',
+    ''
+), 
+(
+    'es:weizenmehl',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:tojásfehérjét',
+    '',
+    '',
+    ''
+), 
+(
+    'de:capelinfisch',
+    '',
+    '',
+    'capelinfisch'
+), 
+(
+    'fr:moutarde-de-diion',
+    '',
+    'moutarde-de-diion',
+    ''
+), 
+(
+    'pt:culturas-lacteas',
+    '',
+    '',
+    ''
+), 
+(
+    'id:dekstrosa',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:proteines-de-lactoserum-du-lait',
+    '',
+    'proteines-de-lactoserum-du-lait',
+    ''
+), 
+(
+    'en:contains-wheta-and-milk',
+    'contains-wheta-and-milk',
+    '',
+    ''
+), 
+(
+    'fr:e322',
+    '',
+    'e322',
+    ''
+), 
+(
+    'fr:cassis',
+    '',
+    'cassis',
+    ''
+), 
+(
+    'de:rogenvollkornmehl',
+    '',
+    '',
+    'rogenvollkornmehl'
+), 
+(
+    'en:allergen-information-contains-wheat-gluten',
+    'allergen-information-contains-wheat-gluten',
+    '',
+    ''
+), 
+(
+    'de:rogen',
+    '',
+    '',
+    'rogen'
+), 
+(
+    'hr:bjelančevina',
+    '',
+    '',
+    ''
+), 
+(
+    'de:pecorino-käse',
+    '',
+    '',
+    'pecorino-käse'
+), 
+(
+    'fr:farine-de-ble-malte',
+    '',
+    'farine-de-ble-malte',
+    ''
+), 
+(
+    'hr:mlaćenica',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hühnertrockneneieiweiß',
+    '',
+    '',
+    'hühnertrockneneieiweiß'
+), 
+(
+    'es:tortilla',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:gerstebloem',
+    '',
+    '',
+    ''
+), 
+(
+    'xx:huevo',
+    '',
+    '',
+    ''
+), 
+(
+    'es:clara-de-huevo-en-polmo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:allergen-information-contains-almonds-and-soy',
+    'allergen-information-contains-almonds-and-soy',
+    '',
+    ''
+), 
+(
+    'nb:pekannøtter',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:potassium',
+    '',
+    'potassium',
+    ''
+), 
+(
+    'de:weizenvollkorn-flocken',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hasselnüsse',
+    '',
+    '',
+    'hasselnüsse'
+), 
+(
+    'es:molkenpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'en:siarczyny',
+    'siarczyny',
+    '',
+    ''
+), 
+(
+    'de:buttergebäck',
+    '',
+    '',
+    'buttergebäck'
+), 
+(
+    'de:alaska-seelachsschnitzel',
+    '',
+    '',
+    'alaska-seelachsschnitzel'
+), 
+(
+    'de:edamame',
+    '',
+    '',
+    'edamame'
+), 
+(
+    'fr:eclats-denoisettes',
+    '',
+    'eclats-denoisettes',
+    ''
+), 
+(
+    'de:hühnervolleipluver',
+    '',
+    '',
+    'hühnervolleipluver'
+), 
+(
+    'de:weizenqueilmehl',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:haselnussmasse',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:produit',
+    '',
+    'produit',
+    ''
+), 
+(
+    'tr:buğday-kepeği',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:crystace',
+    '',
+    'crystace',
+    ''
+), 
+(
+    'hu:tejsavpor',
+    '',
+    '',
+    ''
+), 
+(
+    'de:süßkartoffelpulver',
+    '',
+    '',
+    'süßkartoffelpulver'
+), 
+(
+    'de:süßholz',
+    '',
+    '',
+    'süßholz'
+), 
+(
+    'fr:ble-germe',
+    '',
+    'ble-germe',
+    ''
+), 
+(
+    'pt:latex-natural',
+    '',
+    '',
+    ''
+), 
+(
+    'en:flocos-de-trigo',
+    'flocos-de-trigo',
+    '',
+    ''
+), 
+(
+    'en:heringsfilets',
+    'heringsfilets',
+    '',
+    ''
+), 
+(
+    'th:นมวัว',
+    '',
+    '',
+    ''
+), 
+(
+    'id:natrium-bikarbonat',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:noix-de-pin',
+    '',
+    'noix-de-pin',
+    ''
+), 
+(
+    'it:sesampaste',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:proteina-lactea',
+    '',
+    '',
+    ''
+), 
+(
+    'en:gluten-free-oat-flour',
+    'gluten-free-oat-flour',
+    '',
+    ''
+), 
+(
+    'de:lupinenschrot',
+    '',
+    '',
+    'lupinenschrot'
+), 
+(
+    'fr:oeufs-d-esturgeon',
+    '',
+    'oeufs-d-esturgeon',
+    ''
+), 
+(
+    'en:free-range-egg-white',
+    'free-range-egg-white',
+    '',
+    ''
+), 
+(
+    'fr:biscuits-sales-aux-graines-de-sesame',
+    '',
+    'biscuits-sales-aux-graines-de-sesame',
+    ''
+), 
+(
+    'hu:vajaroma',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollmilchschoklade',
+    '',
+    '',
+    'vollmilchschoklade'
+), 
+(
+    'fr:iait-entier',
+    '',
+    'iait-entier',
+    ''
+), 
+(
+    'pt:contem-gluten-alergicos-contem-castanha-do-para',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:пшеничен-грис',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sere-maigre',
+    'sere-maigre',
+    '',
+    ''
+), 
+(
+    'en:alminds',
+    'alminds',
+    '',
+    ''
+), 
+(
+    'es:pepino',
+    '',
+    '',
+    ''
+), 
+(
+    'es:huevo-molusco',
+    '',
+    '',
+    ''
+), 
+(
+    'en:smelt',
+    'smelt',
+    '',
+    ''
+), 
+(
+    'de:meerspeisesalz',
+    '',
+    '',
+    'meerspeisesalz'
+), 
+(
+    'de:sojafaser',
+    '',
+    '',
+    'sojafaser'
+), 
+(
+    'th:และอาจมีถัวลิสง',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:parmiagiano',
+    '',
+    'parmiagiano',
+    ''
+), 
+(
+    'en:buzaliszt',
+    'buzaliszt',
+    '',
+    ''
+), 
+(
+    'de:hühnereieigelb-pulver',
+    '',
+    '',
+    'hühnereieigelb-pulver'
+), 
+(
+    'en:whole-grain-oats',
+    'whole-grain-oats',
+    '',
+    ''
+), 
+(
+    'fr:proteines-de-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'es:soya-y-amarillo-5',
+    '',
+    '',
+    ''
+), 
+(
+    'de:magerjoghurtpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:genoise-et-garniture',
+    '',
+    'genoise-et-garniture',
+    ''
+), 
+(
+    'pt:gergelim-2',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fiskprotein',
+    '',
+    'fiskprotein',
+    ''
+), 
+(
+    'es:goma-de-algarrobo',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:valnøttkjerner',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:mais',
+    '',
+    '',
+    ''
+), 
+(
+    'ko:난류-계란-가금류-알류',
+    '',
+    '',
+    ''
+), 
+(
+    'de:käsekulturen',
+    '',
+    '',
+    'käsekulturen'
+), 
+(
+    'es:metabisulfito-potasicos',
+    '',
+    '',
+    ''
+), 
+(
+    'de:dorschroggen',
+    '',
+    '',
+    'dorschroggen'
+), 
+(
+    'fr:etrilles',
+    '',
+    'etrilles',
+    ''
+), 
+(
+    'cs:sojová-bílkovina',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:kabeljauwpoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'id:antioksidan-a-tokoferol',
+    '',
+    '',
+    ''
+), 
+(
+    'de:aspartam',
+    '',
+    '',
+    'aspartam'
+), 
+(
+    'fr:vinaigre-balsamique',
+    '',
+    'vinaigre-balsamique',
+    ''
+), 
+(
+    'de:welzenstärke',
+    '',
+    '',
+    'welzenstärke'
+), 
+(
+    'en:semolina-flour',
+    'semolina-flour',
+    '',
+    ''
+), 
+(
+    'ca:cacahuet',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:anneaux-de-calamars',
+    '',
+    'anneaux-de-calamars',
+    ''
+), 
+(
+    'fr:elimination-du-calcium',
+    '',
+    'elimination-du-calcium',
+    ''
+), 
+(
+    'de:soja-bohnen',
+    '',
+    '',
+    'soja-bohnen'
+), 
+(
+    'pt:e952',
+    '',
+    '',
+    ''
+), 
+(
+    'da:sojaprotein',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:pešnično',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:selerifrö',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:romarin',
+    '',
+    'romarin',
+    ''
+), 
+(
+    'de:ziegen',
+    '',
+    '',
+    'ziegen'
+), 
+(
+    'fr:cuisine-en-france',
+    '',
+    'cuisine-en-france',
+    ''
+), 
+(
+    'fr:specialite-de-fruits-pomme-mangue-ananas-90g',
+    '',
+    'specialite-de-fruits-pomme-mangue-ananas-90g',
+    ''
+), 
+(
+    'en:pates',
+    'pates',
+    '',
+    ''
+), 
+(
+    'nb:yoghurtkultur',
+    '',
+    '',
+    ''
+), 
+(
+    'de:megermilchpulver',
+    '',
+    '',
+    'megermilchpulver'
+), 
+(
+    'de:erdnuss-öl',
+    '',
+    '',
+    'erdnuss-öl'
+), 
+(
+    'de:weißkäse',
+    '',
+    '',
+    'weißkäse'
+), 
+(
+    'es:chocolate-con-leche',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:durum',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haselnusssplitter',
+    '',
+    '',
+    'haselnusssplitter'
+), 
+(
+    'fr:emmerflocken',
+    '',
+    'emmerflocken',
+    ''
+), 
+(
+    'fr:loddarom',
+    '',
+    'loddarom',
+    ''
+), 
+(
+    'fr:lait-gluten-soja-moutarde-celeri-oeuf',
+    '',
+    'lait-gluten-soja-moutarde-celeri-oeuf',
+    ''
+), 
+(
+    'he:sesame-oil',
+    '',
+    '',
+    ''
+), 
+(
+    'es:altramuces-ysulfitos',
+    '',
+    '',
+    ''
+), 
+(
+    'uk:глютен',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:nucă',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:beurre-d-amande',
+    '',
+    'beurre-d-amande',
+    ''
+), 
+(
+    'de:mjölk',
+    '',
+    '',
+    'mjölk'
+), 
+(
+    'fr:arome-vanille',
+    '',
+    'arome-vanille',
+    ''
+), 
+(
+    'de:vollkorn-weizenmalzmehl',
+    '',
+    '',
+    'vollkorn-weizenmalzmehl'
+), 
+(
+    'de:mozzarellapulver',
+    '',
+    '',
+    'mozzarellapulver'
+), 
+(
+    'en:schmelzkase',
+    'schmelzkase',
+    '',
+    ''
+), 
+(
+    'de:joghurtzubereitung',
+    '',
+    '',
+    'joghurtzubereitung'
+), 
+(
+    'de:senfkärner',
+    '',
+    '',
+    'senfkärner'
+), 
+(
+    'sv:soyalecithin',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sojasauce',
+    'sojasauce',
+    '',
+    ''
+), 
+(
+    'de:gerstenmalzetrakt',
+    '',
+    '',
+    'gerstenmalzetrakt'
+), 
+(
+    'es:contiene-amarillo-no-6',
+    '',
+    '',
+    ''
+), 
+(
+    'cs:celeru',
+    '',
+    '',
+    ''
+), 
+(
+    'ca:lecitina-de-soja',
+    '',
+    '',
+    ''
+), 
+(
+    'de:magermitchpulver',
+    '',
+    '',
+    'magermitchpulver'
+), 
+(
+    'fr:salade-composee-88-pates',
+    '',
+    'salade-composee-88-pates',
+    ''
+), 
+(
+    'en:bonito-fish',
+    'bonito-fish',
+    '',
+    ''
+), 
+(
+    'hr:gorušica',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sardellenextrakt',
+    '',
+    'sardellenextrakt',
+    ''
+), 
+(
+    'en:ข้อมูลสำหรับผู้แพ้อาหาร-มีข้าวสาลี-อัลมอนด์-ผลิตภัณฑ์จากนม-ผลิตภัณฑ-จากถั่วเหลือง-และอาจมี-ไข่-ถั่วลิสง',
+    'ข้อมูลสำหรับผู้แพ้อาหาร-มีข้าวสาลี-อัลมอนด์-ผลิตภัณฑ์จากนม-ผลิตภัณฑ-จากถั่วเหลือง-และอาจมี-ไข่-ถั่วลิสง',
+    '',
+    ''
+), 
+(
+    'hr:pšenične-pahuljice',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojabolmen',
+    '',
+    '',
+    'sojabolmen'
+), 
+(
+    'es:harina-de-trigo-y-salvado',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenpoppies',
+    '',
+    '',
+    'weizenpoppies'
+), 
+(
+    'th:wheat-floor',
+    '',
+    '',
+    ''
+), 
+(
+    'de:glutenhaltiges-getreide-weizen-wie-dinkel-und-khorasan-weizen',
+    '',
+    '',
+    'glutenhaltiges-getreide-weizen-wie-dinkel-und-khorasan-weizen'
+), 
+(
+    'fr:porto',
+    '',
+    'porto',
+    ''
+), 
+(
+    'es:sulfltos',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:programme',
+    '',
+    'programme',
+    ''
+), 
+(
+    'pt:queuo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:vinaigres-d-alcool-et-de-vin',
+    '',
+    'vinaigres-d-alcool-et-de-vin',
+    ''
+), 
+(
+    'fr:flocons-d-avoine-complete',
+    '',
+    'flocons-d-avoine-complete',
+    ''
+), 
+(
+    'es:puede-contener-trazas-de-otros-arecos',
+    '',
+    '',
+    ''
+), 
+(
+    'en:κριθάρι',
+    'κριθάρι',
+    '',
+    ''
+), 
+(
+    'id:penstabil-gliserin',
+    '',
+    '',
+    ''
+), 
+(
+    'en:חיטה-גלוטן',
+    'חיטה-גלוטן',
+    '',
+    ''
+), 
+(
+    'de:cellery',
+    '',
+    '',
+    'cellery'
+), 
+(
+    'en:all-naturel-egg-substitute',
+    'all-naturel-egg-substitute',
+    '',
+    ''
+), 
+(
+    'fr:criquets',
+    '',
+    'criquets',
+    ''
+), 
+(
+    'sr:pirinča',
+    '',
+    '',
+    ''
+), 
+(
+    'el:αβγό',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hafervolkornflocken',
+    '',
+    '',
+    'hafervolkornflocken'
+), 
+(
+    'fr:sauce-a-la-moutarde-a-l-ancienne-12',
+    '',
+    'sauce-a-la-moutarde-a-l-ancienne-12',
+    ''
+), 
+(
+    'en:acahuetes',
+    'acahuetes',
+    '',
+    ''
+), 
+(
+    'fr:schalenfruchten',
+    '',
+    'schalenfruchten',
+    ''
+), 
+(
+    'de:moklenerzeugnis',
+    '',
+    '',
+    'moklenerzeugnis'
+), 
+(
+    'en:wheat-fibre',
+    'wheat-fibre',
+    '',
+    ''
+), 
+(
+    'sv:mandelpasta',
+    '',
+    '',
+    ''
+), 
+(
+    'de:miicheiweiß',
+    '',
+    '',
+    'miicheiweiß'
+), 
+(
+    'en:wheat-flour-cereals-containing-gluten',
+    'wheat-flour-cereals-containing-gluten',
+    '',
+    ''
+), 
+(
+    'en:sesamo-e-tremoco',
+    'sesamo-e-tremoco',
+    '',
+    ''
+), 
+(
+    'fr:e385-interdit-en-australie-dangereux-pour-les-jeunes-enfants-troubles-de-la-coagulation-du-sang-vomissement-diarrhees-crampes-abdominales-ou-musculaires-etc',
+    '',
+    'e385-interdit-en-australie-dangereux-pour-les-jeunes-enfants-troubles-de-la-coagulation-du-sang-vomissement-diarrhees-crampes-abdominales-ou-musculaires-etc',
+    ''
+), 
+(
+    'de:modifizierte-stärke',
+    '',
+    '',
+    'modifizierte-stärke'
+), 
+(
+    'en:αυγά',
+    'αυγά',
+    '',
+    ''
+), 
+(
+    'fr:crackers-gout-pizza',
+    '',
+    'crackers-gout-pizza',
+    ''
+), 
+(
+    'de:cashew-kerne',
+    '',
+    '',
+    'cashew-kerne'
+), 
+(
+    'fr:mlečna',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:beurre-doux',
+    '',
+    'beurre-doux',
+    ''
+), 
+(
+    'lt:graikinių-riešutų',
+    '',
+    '',
+    ''
+), 
+(
+    'de:ravioli',
+    '',
+    '',
+    'ravioli'
+), 
+(
+    'sv:torkad-äggvita',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:bl2',
+    '',
+    'bl2',
+    ''
+), 
+(
+    'en:egg-sulfate',
+    'egg-sulfate',
+    '',
+    ''
+), 
+(
+    'de:curry',
+    '',
+    '',
+    'curry'
+), 
+(
+    'el:βρώμης',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:beurre',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gerstensirup',
+    '',
+    '',
+    'gerstensirup'
+), 
+(
+    'de:weißer-thun',
+    '',
+    '',
+    'weißer-thun'
+), 
+(
+    'de:1-teil-sirup-mit-6-teile-wasser-mischen',
+    '',
+    '',
+    '1-teil-sirup-mit-6-teile-wasser-mischen'
+), 
+(
+    'fr:grondins',
+    '',
+    'grondins',
+    ''
+), 
+(
+    'de:senfkörner-20',
+    '',
+    '',
+    'senfkörner-20'
+), 
+(
+    'da:jordnøddder',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:пшеничный',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:vetekorn',
+    '',
+    '',
+    ''
+), 
+(
+    'de:ziegenmilchanteil',
+    '',
+    '',
+    'ziegenmilchanteil'
+), 
+(
+    'en:orge-gluten',
+    'orge-gluten',
+    '',
+    ''
+), 
+(
+    'es:saborizante-artificial',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:creme-d-anchois',
+    '',
+    'creme-d-anchois',
+    ''
+), 
+(
+    'sr:slad',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hartzeizengrieß',
+    '',
+    '',
+    'hartzeizengrieß'
+), 
+(
+    'ro:făină-neagră-de-grâu',
+    '',
+    '',
+    ''
+), 
+(
+    'de:molkeneiweisisolat',
+    '',
+    '',
+    'molkeneiweisisolat'
+), 
+(
+    'hr:miliječno',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:oatmeal',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:insomnies-hyperactivite',
+    '',
+    'insomnies-hyperactivite',
+    ''
+), 
+(
+    'hr:bademi',
+    '',
+    '',
+    ''
+), 
+(
+    'de:natriumnitrit',
+    '',
+    '',
+    'natriumnitrit'
+), 
+(
+    'ro:susan-negru',
+    '',
+    '',
+    ''
+), 
+(
+    'de:räucherlachshappen',
+    '',
+    '',
+    'räucherlachshappen'
+), 
+(
+    'sv:skummjölkpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'de:tarwevezel',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:certisud',
+    '',
+    'certisud',
+    ''
+), 
+(
+    'de:lecithin',
+    '',
+    '',
+    'lecithin'
+), 
+(
+    'fr:soja-ble',
+    '',
+    'soja-ble',
+    ''
+), 
+(
+    'en:sea-bass',
+    'sea-bass',
+    '',
+    ''
+), 
+(
+    'pt:lacteo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchprodukte',
+    '',
+    '',
+    'milchprodukte'
+), 
+(
+    'de:roggenmhel',
+    '',
+    '',
+    'roggenmhel'
+), 
+(
+    'hu:tejszin',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:e330',
+    '',
+    '',
+    ''
+), 
+(
+    'de:tigernusspulver',
+    '',
+    '',
+    'tigernusspulver'
+), 
+(
+    'fr:mlijeko',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:uovo',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:flødepulver',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:vehnäjauhojauho',
+    '',
+    '',
+    ''
+), 
+(
+    'en:whole-durum-wheat-semolina',
+    'whole-durum-wheat-semolina',
+    '',
+    ''
+), 
+(
+    'fr:serum-d-ensemencement',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:harina-de-trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:pšenični-gluten',
+    '',
+    '',
+    ''
+), 
+(
+    'es:aipo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:zxs',
+    'zxs',
+    '',
+    ''
+), 
+(
+    'en:λακτόζη',
+    'λακτόζη',
+    '',
+    ''
+), 
+(
+    'hu:halszeletek',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:byggflak',
+    '',
+    '',
+    ''
+), 
+(
+    'es:vinagre-de-vino',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:9-lait-ecreme-reconstitue',
+    '',
+    '9-lait-ecreme-reconstitue',
+    ''
+), 
+(
+    'en:milk-chocolate',
+    'milk-chocolate',
+    '',
+    ''
+), 
+(
+    'de:röstmalz',
+    '',
+    '',
+    'röstmalz'
+), 
+(
+    'en:ječmen',
+    'ječmen',
+    '',
+    ''
+), 
+(
+    'xx:butterreinfett',
+    '',
+    '',
+    ''
+), 
+(
+    'en:whey-powder',
+    'whey-powder',
+    '',
+    ''
+), 
+(
+    'de:parmigiano',
+    '',
+    '',
+    'parmigiano'
+), 
+(
+    'de:scampiextrakt',
+    '',
+    '',
+    'scampiextrakt'
+), 
+(
+    'de:tintenfischring-zubereitung',
+    '',
+    '',
+    'tintenfischring-zubereitung'
+), 
+(
+    'da:skummjölkspulver',
+    '',
+    '',
+    ''
+), 
+(
+    'en:e414',
+    'e414',
+    '',
+    ''
+), 
+(
+    'fr:soja-e322',
+    '',
+    'soja-e322',
+    ''
+), 
+(
+    'no:soyalecitin',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollmllchpulver',
+    '',
+    '',
+    'vollmllchpulver'
+), 
+(
+    'de:soja-protein',
+    '',
+    '',
+    'soja-protein'
+), 
+(
+    'de:haselnuskern',
+    '',
+    '',
+    ''
+), 
+(
+    'en:milk-chocolate-18-white-chocolate-contains-cocoa-solids-23',
+    'milk-chocolate-18-white-chocolate-contains-cocoa-solids-23',
+    '',
+    ''
+), 
+(
+    'de:gerstenmalzextrajt',
+    '',
+    '',
+    'gerstenmalzextrajt'
+), 
+(
+    'fr:cas',
+    '',
+    'cas',
+    ''
+), 
+(
+    'nl:roggegluten',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:farine-de-ble-complete',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:homard-bleu',
+    '',
+    'homard-bleu',
+    ''
+), 
+(
+    'de:speisegelatine',
+    '',
+    '',
+    'speisegelatine'
+), 
+(
+    'fr:asiago',
+    '',
+    'asiago',
+    ''
+), 
+(
+    'fr:milcheiweisse',
+    '',
+    '',
+    ''
+), 
+(
+    'en:hvete',
+    'hvete',
+    '',
+    ''
+), 
+(
+    'hr:maslo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gerstenmslz',
+    '',
+    '',
+    'gerstenmslz'
+), 
+(
+    'fr:biologique',
+    '',
+    'biologique',
+    ''
+), 
+(
+    'de:nussmix',
+    '',
+    '',
+    'nussmix'
+), 
+(
+    'ro:faina',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fourrage-au-chocolat-60',
+    '',
+    'fourrage-au-chocolat-60',
+    ''
+), 
+(
+    'fr:beure',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:мука-пшеничная-хлебопекарная-первого-сорта',
+    '',
+    '',
+    ''
+), 
+(
+    'en:soya-egg-tree-nuts-cows-milk',
+    'soya-egg-tree-nuts-cows-milk',
+    '',
+    ''
+), 
+(
+    'fr:durumvete',
+    '',
+    '',
+    ''
+), 
+(
+    'es:sin-aceite-de-palma',
+    '',
+    '',
+    ''
+), 
+(
+    'tr:laktoz',
+    '',
+    '',
+    ''
+), 
+(
+    'de:hasel-nüsse',
+    '',
+    '',
+    'hasel-nüsse'
+), 
+(
+    'de:weizènmehl',
+    '',
+    '',
+    'weizènmehl'
+), 
+(
+    'de:cachewkerne',
+    '',
+    '',
+    'cachewkerne'
+), 
+(
+    'de:kuhrohmllch',
+    '',
+    '',
+    'kuhrohmllch'
+), 
+(
+    'fr:levure-maltee',
+    '',
+    'levure-maltee',
+    ''
+), 
+(
+    'en:thiamine',
+    'thiamine',
+    '',
+    ''
+), 
+(
+    'xx:trigo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:moutande',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:caviar',
+    '',
+    'caviar',
+    ''
+), 
+(
+    'de:product-may-contain-traces-of-milk',
+    '',
+    '',
+    'product-may-contain-traces-of-milk'
+), 
+(
+    'it:creme-fraiche',
+    '',
+    '',
+    ''
+), 
+(
+    'en:chilli',
+    'chilli',
+    '',
+    ''
+), 
+(
+    'en:sans-gluten',
+    'sans-gluten',
+    '',
+    ''
+), 
+(
+    'ru:арахиса',
+    '',
+    '',
+    ''
+), 
+(
+    'is:eggjarauður',
+    '',
+    '',
+    ''
+), 
+(
+    'en:αμύγδαλο',
+    'αμύγδαλο',
+    '',
+    ''
+), 
+(
+    'fr:la-reglisse-est-deconseillee-aux-presonnes-souffrant-d-hypertension',
+    '',
+    'la-reglisse-est-deconseillee-aux-presonnes-souffrant-d-hypertension',
+    ''
+), 
+(
+    'fr:1-coupelle',
+    '',
+    '1-coupelle',
+    ''
+), 
+(
+    'de:sulfide',
+    '',
+    '',
+    'sulfide'
+), 
+(
+    'ro:metabisulfit',
+    '',
+    '',
+    ''
+), 
+(
+    'es:alergenos-avellanas-y-leche-producto-elaberado-en-equipos-donde-se-procesan-alimentos-que-contienen-gluten',
+    '',
+    '',
+    ''
+), 
+(
+    'en:susan',
+    'susan',
+    '',
+    ''
+), 
+(
+    'en:smor',
+    'smor',
+    '',
+    ''
+), 
+(
+    'fr:avena',
+    '',
+    'avena',
+    ''
+), 
+(
+    'nl:granen',
+    '',
+    '',
+    ''
+), 
+(
+    'it:mais',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:pindastukjes',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:glace-a-la-vanille-en-garniture-35',
+    '',
+    'glace-a-la-vanille-en-garniture-35',
+    ''
+), 
+(
+    'hr:formaggio',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cajous',
+    '',
+    'cajous',
+    ''
+), 
+(
+    'de:backpulver',
+    '',
+    '',
+    'backpulver'
+), 
+(
+    'en:tree-nuts-coconuts',
+    'tree-nuts-coconuts',
+    '',
+    ''
+), 
+(
+    'fr:gelifiants-e401',
+    '',
+    'gelifiants-e401',
+    ''
+), 
+(
+    'en:sunflower-seeds',
+    'sunflower-seeds',
+    '',
+    ''
+), 
+(
+    'de:molkeprotein',
+    '',
+    '',
+    'molkeprotein'
+), 
+(
+    'fr:weizenvollkornschrot',
+    '',
+    'weizenvollkornschrot',
+    ''
+), 
+(
+    'fr:amandel',
+    '',
+    '',
+    ''
+), 
+(
+    'en:unbleached-wheatflour',
+    'unbleached-wheatflour',
+    '',
+    ''
+), 
+(
+    'es:leche-ytrigo',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ječmeno',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:sezam-kikiriki',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:proteinas-do-leite-em-po',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:rženi-otrobi',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:lizozim',
+    '',
+    '',
+    ''
+), 
+(
+    'en:arandanos',
+    'arandanos',
+    '',
+    ''
+), 
+(
+    'de:hüttenkäse',
+    '',
+    '',
+    ''
+), 
+(
+    'id:seng',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:kipheeleipoeder',
+    '',
+    '',
+    ''
+), 
+(
+    'es:oja',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchfetterzeugnis',
+    '',
+    '',
+    'milchfetterzeugnis'
+), 
+(
+    'fr:plomb',
+    '',
+    'plomb',
+    ''
+), 
+(
+    'hr:froment',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenvollkornmehl-62',
+    '',
+    '',
+    'weizenvollkornmehl-62'
+), 
+(
+    'en:soybean-milk',
+    'soybean-milk',
+    '',
+    ''
+), 
+(
+    'de:sojal',
+    '',
+    '',
+    'sojal'
+), 
+(
+    'el:ανθόγαλα',
+    '',
+    '',
+    ''
+), 
+(
+    'es:cachuete',
+    '',
+    '',
+    ''
+), 
+(
+    'it:zer',
+    '',
+    '',
+    ''
+), 
+(
+    'en:mascarpone-cheese',
+    'mascarpone-cheese',
+    '',
+    ''
+), 
+(
+    'es:emmental',
+    '',
+    '',
+    ''
+), 
+(
+    'en:weizenmalz',
+    'weizenmalz',
+    '',
+    ''
+), 
+(
+    'pt:pota',
+    '',
+    '',
+    ''
+), 
+(
+    'es:productos-lacteos-frutos-de-cascara',
+    '',
+    '',
+    ''
+), 
+(
+    'de:lupineneiweiss',
+    '',
+    '',
+    'lupineneiweiss'
+), 
+(
+    'fr:raclette-aux-trois-poivres-lait',
+    '',
+    'raclette-aux-trois-poivres-lait',
+    ''
+), 
+(
+    'de:bittermandeln',
+    '',
+    '',
+    'bittermandeln'
+), 
+(
+    'en:magermilchjoghurt',
+    'magermilchjoghurt',
+    '',
+    ''
+), 
+(
+    'en:sol',
+    'sol',
+    '',
+    ''
+), 
+(
+    'es:ou',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:natriumvetysulfiitti',
+    '',
+    '',
+    ''
+), 
+(
+    'en:σίκαλης',
+    'σίκαλης',
+    '',
+    ''
+), 
+(
+    'hr:bjelanjak',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:peşte',
+    '',
+    '',
+    ''
+), 
+(
+    'es:saborizante',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:saumon-sauvage',
+    '',
+    '',
+    ''
+), 
+(
+    'en:chestnut',
+    'chestnut',
+    '',
+    ''
+), 
+(
+    'de:vollkorn-roggenmehl',
+    '',
+    '',
+    'vollkorn-roggenmehl'
+), 
+(
+    'de:wahlnusskerne',
+    '',
+    '',
+    'wahlnusskerne'
+), 
+(
+    'de:heilbutt',
+    '',
+    '',
+    'heilbutt'
+), 
+(
+    'ru:соевый-соус',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lait-pasteurise',
+    '',
+    'lait-pasteurise',
+    ''
+), 
+(
+    'fr:mollusques-indication-non-requise-sur-l-etiquetage-conformement-a-l-article-21-1-b-du-reglement-ce-1169-2011',
+    '',
+    'mollusques-indication-non-requise-sur-l-etiquetage-conformement-a-l-article-21-1-b-du-reglement-ce-1169-2011',
+    ''
+), 
+(
+    'de:zucker',
+    '',
+    '',
+    'zucker'
+), 
+(
+    'de:hühnereigeib',
+    '',
+    '',
+    'hühnereigeib'
+), 
+(
+    'fr:noisettes-20',
+    '',
+    'noisettes-20',
+    ''
+), 
+(
+    'en:licorice',
+    'licorice',
+    '',
+    ''
+), 
+(
+    'fr:raclette-de-savoie',
+    '',
+    'raclette-de-savoie',
+    ''
+), 
+(
+    'hr:pšeničnog',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sulfure',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:vattenfritt-mjölkfett',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roggenvolkornschrot',
+    '',
+    '',
+    'roggenvolkornschrot'
+), 
+(
+    'en:vete',
+    'vete',
+    '',
+    ''
+), 
+(
+    'de:weizenhalmfasern',
+    '',
+    '',
+    'weizenhalmfasern'
+), 
+(
+    'en:avellana',
+    'avellana',
+    '',
+    ''
+), 
+(
+    'hr:pšenična',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:tejalvadék',
+    '',
+    '',
+    ''
+), 
+(
+    'ru:крупа-из-твёрдых-сортов-пшеницы',
+    '',
+    '',
+    ''
+), 
+(
+    'es:leche-y-productos-lacteos',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:viii',
+    '',
+    'viii',
+    ''
+), 
+(
+    'nl:gerstemouteextract',
+    '',
+    '',
+    ''
+), 
+(
+    'es:solidoslacteos',
+    '',
+    '',
+    ''
+), 
+(
+    'en:yogourt',
+    'yogourt',
+    '',
+    ''
+), 
+(
+    'en:unhomogenised-pasteurised-whole-milk',
+    'unhomogenised-pasteurised-whole-milk',
+    '',
+    ''
+), 
+(
+    'hu:mozzarella',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:colin-d-alaska-30',
+    '',
+    'colin-d-alaska-30',
+    ''
+), 
+(
+    'fr:traitement-antigerminatif',
+    '',
+    'traitement-antigerminatif',
+    ''
+), 
+(
+    'de:römer-haselnusskerne',
+    '',
+    '',
+    'römer-haselnusskerne'
+), 
+(
+    'fr:croissant',
+    '',
+    'croissant',
+    ''
+), 
+(
+    'de:haffer',
+    '',
+    '',
+    'haffer'
+), 
+(
+    'fr:lait-de-vache-cru',
+    '',
+    'lait-de-vache-cru',
+    ''
+), 
+(
+    'fr:glutamate',
+    '',
+    'glutamate',
+    ''
+), 
+(
+    'sv:mandelpuré',
+    '',
+    '',
+    ''
+), 
+(
+    'da:a',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:gruaux-complets-de-seigle',
+    '',
+    'gruaux-complets-de-seigle',
+    ''
+), 
+(
+    'de:lab',
+    '',
+    '',
+    'lab'
+), 
+(
+    'en:breadcrumb',
+    'breadcrumb',
+    '',
+    ''
+), 
+(
+    'pl:czarniak',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:scharrelei-eiwit',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:noisettes-italiennes',
+    '',
+    'noisettes-italiennes',
+    ''
+), 
+(
+    'nb:fermentert-hvetemel',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:joghurtpulver',
+    '',
+    'joghurtpulver',
+    ''
+), 
+(
+    'de:thungisch',
+    '',
+    '',
+    'thungisch'
+), 
+(
+    'sk:sojove-boby',
+    '',
+    '',
+    ''
+), 
+(
+    'en:dioxyde-de-soufre',
+    'dioxyde-de-soufre',
+    '',
+    ''
+), 
+(
+    'fr:samon',
+    '',
+    'samon',
+    ''
+), 
+(
+    'de:kuhsahne',
+    '',
+    '',
+    'kuhsahne'
+), 
+(
+    'fr:amande-10',
+    '',
+    'amande-10',
+    ''
+), 
+(
+    'de:buttermllch',
+    '',
+    '',
+    'buttermllch'
+), 
+(
+    'pl:essa',
+    '',
+    '',
+    ''
+), 
+(
+    'en:gluten-free',
+    'gluten-free',
+    '',
+    ''
+), 
+(
+    'sr:ovsena',
+    '',
+    '',
+    ''
+), 
+(
+    'pt:farinha-de-triticale-8-5',
+    '',
+    '',
+    ''
+), 
+(
+    'xx:weizenstärke',
+    '',
+    '',
+    ''
+), 
+(
+    'it:alici',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:silfites',
+    '',
+    'silfites',
+    ''
+), 
+(
+    'it:aipo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:organic-coconut',
+    'organic-coconut',
+    '',
+    ''
+), 
+(
+    'fr:hydrolysat-de-proteines-de-soja',
+    '',
+    'hydrolysat-de-proteines-de-soja',
+    ''
+), 
+(
+    'fr:tomate-3',
+    '',
+    'tomate-3',
+    ''
+), 
+(
+    'en:nutmilk',
+    'nutmilk',
+    '',
+    ''
+), 
+(
+    'de:sojaextrakt',
+    '',
+    '',
+    ''
+), 
+(
+    'en:molkepulver',
+    'molkepulver',
+    '',
+    ''
+), 
+(
+    'de:geriebener-hartkäse',
+    '',
+    '',
+    'geriebener-hartkäse'
+), 
+(
+    'sv:smältostpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'id:creamer',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:eminces-en-gelee-au-boeuf',
+    '',
+    'eminces-en-gelee-au-boeuf',
+    ''
+), 
+(
+    'de:stärke-enthält-weizen',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:serum-de-lait-de-vache',
+    '',
+    'serum-de-lait-de-vache',
+    ''
+), 
+(
+    'fr:polyphosphates',
+    '',
+    'polyphosphates',
+    ''
+), 
+(
+    'en:wheat-fibres',
+    'wheat-fibres',
+    '',
+    ''
+), 
+(
+    'nl:gerstgluten',
+    '',
+    '',
+    ''
+), 
+(
+    'de:molkeneiweiß-isolat',
+    '',
+    '',
+    'molkeneiweiß-isolat'
+), 
+(
+    'it:prodotti-a-base-di-latte',
+    '',
+    '',
+    ''
+), 
+(
+    'de:crunchy',
+    '',
+    '',
+    'crunchy'
+), 
+(
+    'en:lacto',
+    'lacto',
+    '',
+    ''
+), 
+(
+    'de:kaliummetabisulit',
+    '',
+    '',
+    'kaliummetabisulit'
+), 
+(
+    'sr:mlečna-mast',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:kruskakli',
+    '',
+    '',
+    ''
+), 
+(
+    'es:cacahuate-y-coco-v2',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:v',
+    '',
+    'v',
+    ''
+), 
+(
+    'it:grano-duro',
+    '',
+    '',
+    ''
+), 
+(
+    'es:requeson',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:mlečni',
+    '',
+    '',
+    ''
+), 
+(
+    'en:other-gluten-containing-grain-and-gluten-containing-grain-products',
+    'other-gluten-containing-grain-and-gluten-containing-grain-products',
+    '',
+    ''
+), 
+(
+    'de:hinterschinken',
+    '',
+    '',
+    'hinterschinken'
+), 
+(
+    'fr:nems-au-poulet-4x65g',
+    '',
+    'nems-au-poulet-4x65g',
+    ''
+), 
+(
+    'cs:liskové-ořechy',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:org',
+    '',
+    'org',
+    ''
+), 
+(
+    'de:mit-zuckern-und-süßungsmitteln',
+    '',
+    '',
+    'mit-zuckern-und-süßungsmitteln'
+), 
+(
+    'it:kuhmilch',
+    '',
+    '',
+    ''
+), 
+(
+    'en:swiss-cheese',
+    'swiss-cheese',
+    '',
+    ''
+), 
+(
+    'fr:guarkernmehl',
+    '',
+    'guarkernmehl',
+    ''
+), 
+(
+    'de:natriumcaseinate',
+    '',
+    '',
+    'natriumcaseinate'
+), 
+(
+    'fr:extrait-d-acerola',
+    '',
+    'extrait-d-acerola',
+    ''
+), 
+(
+    'pt:castanha-do-para',
+    '',
+    '',
+    ''
+), 
+(
+    'de:natriumkaseinat',
+    '',
+    '',
+    'natriumkaseinat'
+), 
+(
+    'fr:pate-froment',
+    '',
+    'pate-froment',
+    ''
+), 
+(
+    'hr:starter-kultura',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojabohnen-keimlinge',
+    '',
+    '',
+    'sojabohnen-keimlinge'
+), 
+(
+    'en:dioxido-de-enxofre-sulfitos',
+    'dioxido-de-enxofre-sulfitos',
+    '',
+    ''
+), 
+(
+    'pt:leite-de-vaca',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:ce-produit-contient-des-noisettes-fruits-a-coque-et-du-lait',
+    '',
+    'ce-produit-contient-des-noisettes-fruits-a-coque-et-du-lait',
+    ''
+), 
+(
+    'de:roggenvollkornmehl-95',
+    '',
+    '',
+    'roggenvollkornmehl-95'
+), 
+(
+    'cs:pšeničná-celozrnná-mouka',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mjolkpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'de:heringsrogen',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:mozzarella',
+    '',
+    '',
+    ''
+), 
+(
+    'en:contains-nuts',
+    'contains-nuts',
+    '',
+    ''
+), 
+(
+    'fr:iait-ecreme',
+    '',
+    'iait-ecreme',
+    ''
+), 
+(
+    'fr:lactoresum-en-poudre',
+    '',
+    'lactoresum-en-poudre',
+    ''
+), 
+(
+    'cs:mouka',
+    '',
+    '',
+    ''
+), 
+(
+    'de:paprika',
+    '',
+    '',
+    'paprika'
+), 
+(
+    'pl:smak-borówkowy',
+    '',
+    '',
+    ''
+), 
+(
+    'en:crustaces',
+    'crustaces',
+    '',
+    ''
+), 
+(
+    'fr:lactose-inf-a-0',
+    '',
+    'lactose-inf-a-0',
+    ''
+), 
+(
+    'fr:milchserumkonzentrat',
+    '',
+    'milchserumkonzentrat',
+    ''
+), 
+(
+    'fr:crackers-a-l-emmental',
+    '',
+    'crackers-a-l-emmental',
+    ''
+), 
+(
+    'hr:salate',
+    '',
+    '',
+    ''
+), 
+(
+    'en:uova',
+    'uova',
+    '',
+    ''
+), 
+(
+    'sv:fullkornsrågmöl',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenvollkornquellmehl',
+    '',
+    '',
+    'weizenvollkornquellmehl'
+), 
+(
+    'cs:kešu-ořechů',
+    '',
+    '',
+    ''
+), 
+(
+    'en:wheatﬂour',
+    'wheatﬂour',
+    '',
+    ''
+), 
+(
+    'fr:lacriques',
+    '',
+    'lacriques',
+    ''
+), 
+(
+    'en:chicken-egg',
+    'chicken-egg',
+    '',
+    ''
+), 
+(
+    'fr:tarmari',
+    '',
+    'tarmari',
+    ''
+), 
+(
+    'de:2',
+    '',
+    '',
+    '2'
+), 
+(
+    'fr:orge-de-perle',
+    '',
+    'orge-de-perle',
+    ''
+), 
+(
+    'es:amarillo-5-tartrazina',
+    '',
+    '',
+    ''
+), 
+(
+    'de:käsezubereitung',
+    '',
+    '',
+    'käsezubereitung'
+), 
+(
+    'th:มะพร้าว',
+    '',
+    '',
+    ''
+), 
+(
+    'tr:i̇ç-yer-fistığı',
+    '',
+    '',
+    ''
+), 
+(
+    'de:grüner-hafer',
+    '',
+    '',
+    'grüner-hafer'
+), 
+(
+    'de:sahne-pulver',
+    '',
+    '',
+    'sahne-pulver'
+), 
+(
+    'de:sonnenblumenlecithine',
+    '',
+    '',
+    'sonnenblumenlecithine'
+), 
+(
+    'fr:lactoserique',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:lalt-de-chevre',
+    '',
+    'lalt-de-chevre',
+    ''
+), 
+(
+    'it:magnolai-sinesis',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:salami-italien-34-5-tranches',
+    '',
+    'salami-italien-34-5-tranches',
+    ''
+), 
+(
+    'fr:guten',
+    '',
+    'guten',
+    ''
+), 
+(
+    'th:sesami',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:colorant-beta-carotene-glace-parfum-fraise',
+    '',
+    'colorant-beta-carotene-glace-parfum-fraise',
+    ''
+), 
+(
+    'de:andere-noten',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sulpher-dioxide',
+    'sulpher-dioxide',
+    '',
+    ''
+), 
+(
+    'en:bulgur',
+    'bulgur',
+    '',
+    ''
+), 
+(
+    'en:emmenthal',
+    'emmenthal',
+    '',
+    ''
+), 
+(
+    'nl:sojalecitine',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weizenkleiber',
+    '',
+    '',
+    'weizenkleiber'
+), 
+(
+    'en:lacticos',
+    'lacticos',
+    '',
+    ''
+), 
+(
+    'fr:berlingot',
+    '',
+    'berlingot',
+    ''
+), 
+(
+    'de:schokoballs',
+    '',
+    '',
+    'schokoballs'
+), 
+(
+    'de:geröstete-mandelsplitter',
+    '',
+    '',
+    'geröstete-mandelsplitter'
+), 
+(
+    'de:röstmalzbier',
+    '',
+    '',
+    'röstmalzbier'
+), 
+(
+    'fr:fruit-a-coque-moulus',
+    '',
+    'fruit-a-coque-moulus',
+    ''
+), 
+(
+    'fr:eigle',
+    '',
+    'eigle',
+    ''
+), 
+(
+    'fr:mourtarde',
+    '',
+    'mourtarde',
+    ''
+), 
+(
+    'fr:nems-au-poulet-8x30g',
+    '',
+    'nems-au-poulet-8x30g',
+    ''
+), 
+(
+    'de:hartweizengirew',
+    '',
+    '',
+    'hartweizengirew'
+), 
+(
+    'fr:beurr',
+    '',
+    'beurr',
+    ''
+), 
+(
+    'hu:vajzsír',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:mosterdzaad',
+    '',
+    'mosterdzaad',
+    ''
+), 
+(
+    'fr:erdnussbutter',
+    '',
+    'erdnussbutter',
+    ''
+), 
+(
+    'de:cashewstücke',
+    '',
+    '',
+    'cashewstücke'
+), 
+(
+    'ja:乳',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:indijski-oraščić',
+    '',
+    '',
+    ''
+), 
+(
+    'de:eiermasse',
+    '',
+    '',
+    'eiermasse'
+), 
+(
+    'fr:krill',
+    '',
+    'krill',
+    ''
+), 
+(
+    'ru:яичный',
+    '',
+    '',
+    ''
+), 
+(
+    'en:lactea',
+    'lactea',
+    '',
+    ''
+), 
+(
+    'de:venusmuschelfleisch',
+    '',
+    '',
+    'venusmuschelfleisch'
+), 
+(
+    'de:labaustauschstoff',
+    '',
+    '',
+    'labaustauschstoff'
+), 
+(
+    'fr:raženo',
+    '',
+    '',
+    ''
+), 
+(
+    'en:contains-small-edible-bones',
+    'contains-small-edible-bones',
+    '',
+    ''
+), 
+(
+    'en:lime',
+    'lime',
+    '',
+    ''
+), 
+(
+    'de:ziegenmilcheiweiß',
+    '',
+    '',
+    'ziegenmilcheiweiß'
+), 
+(
+    'hr:badema',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:conservateur-chimique',
+    '',
+    'conservateur-chimique',
+    ''
+), 
+(
+    'en:eieren',
+    'eieren',
+    '',
+    ''
+), 
+(
+    'ro:albuş-de-ou',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:saucisson-sec-superieur-aux-noix',
+    '',
+    'saucisson-sec-superieur-aux-noix',
+    ''
+), 
+(
+    'fr:couscous-de-ble-dur',
+    '',
+    'couscous-de-ble-dur',
+    ''
+), 
+(
+    'fr:sauce-au-basilic-12',
+    '',
+    'sauce-au-basilic-12',
+    ''
+), 
+(
+    'hr:ječmena',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:lactos',
+    '',
+    '',
+    ''
+), 
+(
+    'en:puffed-spelled',
+    'puffed-spelled',
+    '',
+    ''
+), 
+(
+    'fr:ossau-traty',
+    '',
+    'ossau-traty',
+    ''
+), 
+(
+    'es:soya-y-es-procesado-en-equipos-donde-se-elaboran-productos-que-contienen-nueces',
+    '',
+    '',
+    ''
+), 
+(
+    'en:sojaflocken',
+    'sojaflocken',
+    '',
+    ''
+), 
+(
+    'nl:mosterdmeel',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:kabeljau',
+    '',
+    'kabeljau',
+    ''
+), 
+(
+    'de:hydrolisiertes-sojaeiweiß',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:pienas',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:oeufs-entiers-en-poudre',
+    '',
+    'oeufs-entiers-en-poudre',
+    ''
+), 
+(
+    'xx:lactosérum',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:noix-de-pecn',
+    '',
+    'noix-de-pecn',
+    ''
+), 
+(
+    'nl:boterolie',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:kulturmelkpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'en:lactosa',
+    'lactosa',
+    '',
+    ''
+), 
+(
+    'de:enthält-glutenhaltiges-getreide',
+    '',
+    '',
+    'enthält-glutenhaltiges-getreide'
+), 
+(
+    'fr:hostie',
+    '',
+    'hostie',
+    ''
+), 
+(
+    'cs:sýr-ementál',
+    '',
+    '',
+    ''
+), 
+(
+    'de:aspartam-enthält-eine-phenylalaninquelle',
+    '',
+    '',
+    'aspartam-enthält-eine-phenylalaninquelle'
+), 
+(
+    'en:l',
+    'l',
+    '',
+    ''
+), 
+(
+    'wo:ouă',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:culturi-lactice',
+    '',
+    '',
+    ''
+), 
+(
+    'sl:mlečne-beljiakovine',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sauerrahmerzeugnis',
+    '',
+    '',
+    'sauerrahmerzeugnis'
+), 
+(
+    'de:haermehl',
+    '',
+    '',
+    'haermehl'
+), 
+(
+    'fi:täysjyväluomukaura',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:grana-panado',
+    '',
+    'grana-panado',
+    ''
+), 
+(
+    'pt:creme',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:komjölksprotein',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:atun',
+    '',
+    '',
+    ''
+), 
+(
+    'de:weitenkleie',
+    '',
+    '',
+    'weitenkleie'
+), 
+(
+    'hu:vajolaj',
+    '',
+    '',
+    ''
+), 
+(
+    'en:light-soya-sauce',
+    'light-soya-sauce',
+    '',
+    ''
+), 
+(
+    'sr:pirinač',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:speltgluten',
+    '',
+    '',
+    ''
+), 
+(
+    'de:vollkornweizen-butterkekse',
+    '',
+    '',
+    'vollkornweizen-butterkekse'
+), 
+(
+    'pl:ricotta',
+    '',
+    '',
+    ''
+), 
+(
+    'en:wine',
+    'wine',
+    '',
+    ''
+), 
+(
+    'en:potassium-metabisulphate',
+    'potassium-metabisulphate',
+    '',
+    ''
+), 
+(
+    'fr:lecithine-de-soja-e322',
+    '',
+    'lecithine-de-soja-e322',
+    ''
+), 
+(
+    'de:sojaproteinhaltige-mischung',
+    '',
+    '',
+    'sojaproteinhaltige-mischung'
+), 
+(
+    'fr:presence-crustace-et-lait',
+    '',
+    'presence-crustace-et-lait',
+    ''
+), 
+(
+    'hr:pšeničná',
+    '',
+    '',
+    ''
+), 
+(
+    'de:schalentiere',
+    '',
+    '',
+    'schalentiere'
+), 
+(
+    'fr:poudre-de-proteines-de-poulet',
+    '',
+    'poudre-de-proteines-de-poulet',
+    ''
+), 
+(
+    'pl:storni',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roggenmalzextrakt',
+    '',
+    '',
+    'roggenmalzextrakt'
+), 
+(
+    'es:trucha',
+    '',
+    '',
+    ''
+), 
+(
+    'no:hasselnøttkjerner',
+    '',
+    '',
+    ''
+), 
+(
+    'de:natriummetabilsulfit',
+    '',
+    '',
+    'natriummetabilsulfit'
+), 
+(
+    'fr:creme-glacee-saveur-creme-fouettee-32-lait',
+    '',
+    'creme-glacee-saveur-creme-fouettee-32-lait',
+    ''
+), 
+(
+    'de:weizenmalzextrakt',
+    '',
+    '',
+    'weizenmalzextrakt'
+), 
+(
+    'en:غلوكوز',
+    'غلوكوز',
+    '',
+    ''
+), 
+(
+    'es:cacahuates-y-nueces-de-arbol',
+    '',
+    '',
+    ''
+), 
+(
+    'de:moike',
+    '',
+    '',
+    'moike'
+), 
+(
+    'pl:morszczuk-chilijski',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sardellensosse',
+    '',
+    '',
+    'sardellensosse'
+), 
+(
+    'fr:noix-de-macademia',
+    '',
+    'noix-de-macademia',
+    ''
+), 
+(
+    'hu:tejfehérjék',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:morchella-esculenta-conica-vulgaris-costata',
+    '',
+    'morchella-esculenta-conica-vulgaris-costata',
+    ''
+), 
+(
+    'fr:the-noir-aromatise-saveur-bergamote',
+    '',
+    'the-noir-aromatise-saveur-bergamote',
+    ''
+), 
+(
+    'de:kaliummetabisolfit',
+    '',
+    '',
+    'kaliummetabisolfit'
+), 
+(
+    'ja:パン粉',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:sardynka',
+    '',
+    '',
+    ''
+), 
+(
+    'hu:szójával',
+    '',
+    '',
+    ''
+), 
+(
+    'en:arahide',
+    'arahide',
+    '',
+    ''
+), 
+(
+    'tr:yağsız-süttozu',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sonnenblumenlecithin',
+    '',
+    '',
+    'sonnenblumenlecithin'
+), 
+(
+    'ca:ilet',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojalethine',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:bacon',
+    '',
+    '',
+    ''
+), 
+(
+    'es:caseinato',
+    '',
+    '',
+    ''
+), 
+(
+    'sr:slatka-pavlaka-u-prahu',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:nouilles',
+    '',
+    'nouilles',
+    ''
+), 
+(
+    'de:hafer-knuspermüsli',
+    '',
+    '',
+    'hafer-knuspermüsli'
+), 
+(
+    'de:margermilch',
+    '',
+    '',
+    'margermilch'
+), 
+(
+    'en:peach',
+    'peach',
+    '',
+    ''
+), 
+(
+    'en:ground-almond',
+    'ground-almond',
+    '',
+    ''
+), 
+(
+    'xx:roggen',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:rave',
+    '',
+    'rave',
+    ''
+), 
+(
+    'fr:biscuit-speculoos',
+    '',
+    'biscuit-speculoos',
+    ''
+), 
+(
+    'fr:lait-et-rpodutis-a-base-de-lait',
+    '',
+    '',
+    ''
+), 
+(
+    'de:gerstenvollkorn',
+    '',
+    '',
+    ''
+), 
+(
+    'de:sojaeiweissisolat',
+    '',
+    '',
+    'sojaeiweissisolat'
+), 
+(
+    'fr:filets-de-colin-d-alaska',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:thym-certains-ingredients-de-ce-produit-ne-proviennent-pas-de-france',
+    '',
+    'thym-certains-ingredients-de-ce-produit-ne-proviennent-pas-de-france',
+    ''
+), 
+(
+    'de:sauermilchtopfen',
+    '',
+    '',
+    'sauermilchtopfen'
+), 
+(
+    'de:süßmokenpulver',
+    '',
+    '',
+    'süßmokenpulver'
+), 
+(
+    'nb:palmefett',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:utilise-aussi-dans-la-restauration-rapide-contiendrait-des-nanoparticules-v-gouget-a-eviter',
+    '',
+    '',
+    ''
+), 
+(
+    'de:molkenmischerzeugnis',
+    '',
+    '',
+    'molkenmischerzeugnis'
+), 
+(
+    'fr:sojaproteinkonzentrat',
+    '',
+    '',
+    ''
+), 
+(
+    'en:beurre-sale',
+    'beurre-sale',
+    '',
+    ''
+), 
+(
+    'pl:teksturowane-białko-pszenicy',
+    '',
+    '',
+    ''
+), 
+(
+    'nb:surdeig-av-hvete',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:sfl',
+    '',
+    'sfl',
+    ''
+), 
+(
+    'de:haferbasis',
+    '',
+    '',
+    'haferbasis'
+), 
+(
+    'en:pasteurized-grade-a-nonfat-milk',
+    'pasteurized-grade-a-nonfat-milk',
+    '',
+    ''
+), 
+(
+    'en:contains-oats',
+    'contains-oats',
+    '',
+    ''
+), 
+(
+    'fr:lin-jaune',
+    '',
+    'lin-jaune',
+    ''
+), 
+(
+    'fr:laktoza',
+    '',
+    'laktoza',
+    ''
+), 
+(
+    'fr:anhydrides',
+    '',
+    'anhydrides',
+    ''
+), 
+(
+    'de:dinkelbrötchen',
+    '',
+    '',
+    'dinkelbrötchen'
+), 
+(
+    'fr:sesam-seed',
+    '',
+    'sesam-seed',
+    ''
+), 
+(
+    'de:emulgator',
+    '',
+    '',
+    'emulgator'
+), 
+(
+    'pt:caramelo-sulfitico-de-amonia',
+    '',
+    '',
+    ''
+), 
+(
+    'en:malt-de-ble',
+    'malt-de-ble',
+    '',
+    ''
+), 
+(
+    'fr:saint-pierre',
+    '',
+    'saint-pierre',
+    ''
+), 
+(
+    'fr:peit-lait',
+    '',
+    'peit-lait',
+    ''
+), 
+(
+    'fr:eperlan',
+    '',
+    'eperlan',
+    ''
+), 
+(
+    'sv:gräddost',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:courgettes',
+    '',
+    'courgettes',
+    ''
+), 
+(
+    'no:havre',
+    '',
+    '',
+    ''
+), 
+(
+    'en:secară',
+    'secară',
+    '',
+    ''
+), 
+(
+    'fr:cacahuetes-grillees-moulues',
+    '',
+    'cacahuetes-grillees-moulues',
+    ''
+), 
+(
+    'en:full-fat-soft-cheese',
+    'full-fat-soft-cheese',
+    '',
+    ''
+), 
+(
+    'de:roggenmalzflocken',
+    '',
+    '',
+    'roggenmalzflocken'
+), 
+(
+    'en:creamer',
+    'creamer',
+    '',
+    ''
+), 
+(
+    'de:haselnuß',
+    '',
+    '',
+    'haselnuß'
+), 
+(
+    'lt:salierais',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:souffles-gout-bacon',
+    '',
+    'souffles-gout-bacon',
+    ''
+), 
+(
+    'fr:mjolkproteiner',
+    '',
+    '',
+    ''
+), 
+(
+    'nl:edammer',
+    '',
+    '',
+    ''
+), 
+(
+    'es:declaracion-de-alergenos-puede-contener-trazas-de-gluten',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:nusse',
+    '',
+    'nusse',
+    ''
+), 
+(
+    'sr:hidrolizovani-biljni-proteini',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:poudre-de-yaourt-faible-en-matiere-grasse',
+    '',
+    'poudre-de-yaourt-faible-en-matiere-grasse',
+    ''
+), 
+(
+    'sr:maslo',
+    '',
+    '',
+    ''
+), 
+(
+    'es:amaranto',
+    '',
+    '',
+    ''
+), 
+(
+    'de:senfpulver-würzmittel',
+    '',
+    '',
+    'senfpulver-würzmittel'
+), 
+(
+    'en:лактоза',
+    'лактоза',
+    '',
+    ''
+), 
+(
+    'es:maiz-transgenico',
+    '',
+    '',
+    ''
+), 
+(
+    'ro:macrou',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roggenmahlerzeugnisse',
+    '',
+    '',
+    'roggenmahlerzeugnisse'
+), 
+(
+    'es:sussmolkenpulver',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:nems-au-porc-4-x-65-g',
+    '',
+    'nems-au-porc-4-x-65-g',
+    ''
+), 
+(
+    'de:cashew-nüsse',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:žumance',
+    '',
+    '',
+    ''
+), 
+(
+    'pl:jęczmleń',
+    '',
+    '',
+    ''
+), 
+(
+    'bg:сирене-едам',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:emmenatl',
+    '',
+    'emmenatl',
+    ''
+), 
+(
+    'fr:beuure',
+    '',
+    'beuure',
+    ''
+), 
+(
+    'en:spelt-flour',
+    'spelt-flour',
+    '',
+    ''
+), 
+(
+    'fr:noisettes-16',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:3-sauce-au-chocolat-2x50g-eau',
+    '',
+    '3-sauce-au-chocolat-2x50g-eau',
+    ''
+), 
+(
+    'pl:migdałowe',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milcheiweiß-joghurtkulturen',
+    '',
+    '',
+    'milcheiweiß-joghurtkulturen'
+), 
+(
+    'es:melkeiwit',
+    '',
+    '',
+    ''
+), 
+(
+    'de:fischmuskeleiweiß',
+    '',
+    '',
+    'fischmuskeleiweiß'
+), 
+(
+    'fr:seigle-complet-egruge',
+    '',
+    'seigle-complet-egruge',
+    ''
+), 
+(
+    'de:trockenvollei',
+    '',
+    '',
+    'trockenvollei'
+), 
+(
+    'de:farbmalzextrakt',
+    '',
+    '',
+    'farbmalzextrakt'
+), 
+(
+    'es:mozarella',
+    '',
+    '',
+    ''
+), 
+(
+    'is:sinnepsduft',
+    '',
+    '',
+    ''
+), 
+(
+    'de:mokenerzeugnis',
+    '',
+    '',
+    'mokenerzeugnis'
+), 
+(
+    'fr:lime',
+    '',
+    'lime',
+    ''
+), 
+(
+    'fr:thon-blanc-germon',
+    '',
+    'thon-blanc-germon',
+    ''
+), 
+(
+    'de:erdnusse',
+    '',
+    '',
+    'erdnusse'
+), 
+(
+    'de:labnährkasein',
+    '',
+    '',
+    'labnährkasein'
+), 
+(
+    'cs:pšeničná-vláknina',
+    '',
+    '',
+    ''
+), 
+(
+    'fi:herne',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:anchois-lactique-laitier',
+    '',
+    'anchois-lactique-laitier',
+    ''
+), 
+(
+    'fr:jambon-sec-superieur-italien-32-3-tranches',
+    '',
+    'jambon-sec-superieur-italien-32-3-tranches',
+    ''
+), 
+(
+    'de:schweffeldioxid',
+    '',
+    '',
+    'schweffeldioxid'
+), 
+(
+    'de:ziegemlich',
+    '',
+    '',
+    'ziegemlich'
+), 
+(
+    'fr:banane',
+    '',
+    'banane',
+    ''
+), 
+(
+    'de:weizenvollmehl',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:diacetate-de-sodium',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:fromage-frais-a-la-creme',
+    '',
+    'fromage-frais-a-la-creme',
+    ''
+), 
+(
+    'en:guarana-extract',
+    'guarana-extract',
+    '',
+    ''
+), 
+(
+    'es:pecanas',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:dessert',
+    '',
+    '',
+    ''
+), 
+(
+    'en:fis',
+    'fis',
+    '',
+    ''
+), 
+(
+    'en:skrobia',
+    'skrobia',
+    '',
+    ''
+), 
+(
+    'fr:pilsen-bio',
+    '',
+    'pilsen-bio',
+    ''
+), 
+(
+    'id:dinatrium-5-inosinat',
+    '',
+    '',
+    ''
+), 
+(
+    'de:selleriewürfel',
+    '',
+    '',
+    'selleriewürfel'
+), 
+(
+    'bg:kikiriki',
+    '',
+    '',
+    ''
+), 
+(
+    'it:grano-frumento',
+    '',
+    '',
+    ''
+), 
+(
+    'it:d-orzo',
+    '',
+    '',
+    ''
+), 
+(
+    'de:macadamia-nüsse',
+    '',
+    '',
+    'macadamia-nüsse'
+), 
+(
+    'de:ziegenmilchjoghurt',
+    '',
+    '',
+    'ziegenmilchjoghurt'
+), 
+(
+    'el:άλλους-καρπούς-με-κέλυφος',
+    '',
+    '',
+    ''
+), 
+(
+    'es:azucar-de-cana',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milcheiweß',
+    '',
+    '',
+    'milcheiweß'
+), 
+(
+    'de:brimsen',
+    '',
+    '',
+    'brimsen'
+), 
+(
+    'fr:preparation-de-fromage-fondu',
+    '',
+    'preparation-de-fromage-fondu',
+    ''
+), 
+(
+    'sv:maltextrakt-från-korn',
+    '',
+    '',
+    ''
+), 
+(
+    'de:roggenmalzschrot',
+    '',
+    '',
+    'roggenmalzschrot'
+), 
+(
+    'fr:lithothanium-calcareum',
+    '',
+    'lithothanium-calcareum',
+    ''
+), 
+(
+    'da:flødepulver',
+    '',
+    '',
+    ''
+), 
+(
+    'hr:mliječne-tvari',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:cremeuse',
+    '',
+    '',
+    ''
+), 
+(
+    'sv:sötad-kondenserad-mjölk',
+    '',
+    '',
+    ''
+), 
+(
+    'de:haferílocken',
+    '',
+    '',
+    'haferílocken'
+), 
+(
+    'cs:ovsa',
+    '',
+    '',
+    ''
+), 
+(
+    'de:milchmineralkonzentrat',
+    '',
+    '',
+    'milchmineralkonzentrat'
+), 
+(
+    'fr:lait-et-produits-en-contenant-y-compris-le-lactose-et-oeufs',
+    '',
+    'lait-et-produits-en-contenant-y-compris-le-lactose-et-oeufs',
+    ''
+), 
+(
+    'pt:ameijoa-vietnamita',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:wholemeal-wheat-flour',
+    '',
+    '',
+    ''
+), 
+(
+    'fr:dont-lait',
+    '',
+    'dont-lait',
+    ''
+), 
+(
+    'it:granturco',
+    '',
+    '',
+    ''
+), 
+(
+    'en:melkeiwit',
+    'melkeiwit',
+    '',
+    ''
+), 
+(
+    'en:buzagluten',
+    'buzagluten',
+    '',
+    ''
+), 
+(
+    'de:vitamin-k',
+    '',
+    '',
+    'vitamin-k'
+), 
+(
+    'es:hongo-shiitake',
+    '',
+    '',
+    ''
+);

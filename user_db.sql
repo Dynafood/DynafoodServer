@@ -77,12 +77,15 @@ CREATE TABLE IF NOT EXISTS Addresses
 CREATE TABLE IF NOT EXISTS Restriction
 (
     restrictionID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-    restrictionName VARCHAR(50) NOT NULL
+    eng_name VARCHAR(500) NOT NULL,
+    ger_name VARCHAR(500) NOT NULL,
+    frz_name VARCHAR(500) NOT NULL,
+    off_id VARCHAR(500) NOT NULL
 );
 
-INSERT INTO Restriction (restrictionID, restrictionName) VALUES ('f1dc1c61-ec72-41d2-968b-946ef9ef22b3', 'nutz');
-INSERT INTO Restriction (restrictionID, restrictionName) VALUES ('f2dc1c61-ec72-41d2-968b-946ef9ef22b3', 'deez');
-INSERT INTO Restriction (restrictionID, restrictionName) VALUES ('f3dc1c61-ec72-41d2-968b-946ef9ef22b3', 'peanut');
+INSERT INTO Restriction (restrictionID, eng_name) VALUES ('f1dc1c61-ec72-41d2-968b-946ef9ef22b3', 'nutz');
+INSERT INTO Restriction (restrictionID, eng_name) VALUES ('f2dc1c61-ec72-41d2-968b-946ef9ef22b3', 'deez');
+INSERT INTO Restriction (restrictionID, eng_name) VALUES ('f3dc1c61-ec72-41d2-968b-946ef9ef22b3', 'peanut');
 
 CREATE TABLE IF NOT EXISTS EndUser_Restriction
 (

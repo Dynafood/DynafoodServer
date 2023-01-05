@@ -15,7 +15,6 @@ export const checkUserExists = async (user: UserInterface): Promise<boolean> => 
 export const secureRouteMiddleware = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const token: string | null | undefined = req.cookies.token;
     let header_token: string | undefined | null = req.headers.authorization;
-    console.log("test1")
     if (typeof token !== 'undefined' && token != null) {
         try {
             const user: UserInterface = JWT.validate(token);

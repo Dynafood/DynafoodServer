@@ -6,7 +6,7 @@ export const getRestrictionIdByName = async (restrictionName: string) : Promise<
     const restrictionID : QueryResult = await db_adm_conn.query(`
         SELECT restrictionID
         FROM Restriction
-        WHERE restrictionName = '${checkInputBeforeSqlQuery(restrictionName)}'
+        WHERE eng_name = '${checkInputBeforeSqlQuery(restrictionName)}'
     `);
     if (restrictionID.rowCount === 0) { return null; }
     return restrictionID.rows[0].restrictionid;
@@ -23,7 +23,7 @@ export const userHasRestriction = async (userid: string, restrictionid: string) 
 
 export const getAlertSettings = async (userid: string) : Promise<Array<QueryResultRow>> => {
     const result: QueryResult = await db_adm_conn.query(`
-    SELECT R.restrictionName, ER.alertActivation
+    SELECT R.eng_name as restrictionName, ER.alertActivation
     FROM Restriction R
     LEFT JOIN EndUser_Restriction ER ON ER.restrictionID = R.restrictionID
     WHERE ER.endUserID = '${checkInputBeforeSqlQuery(userid)}';`);

@@ -1,14 +1,3 @@
-// import Database, { db_adm_conn } from './src/modules/db';
-// import { app, database, init_db, init_jwt, init_mail, JWT } from './server_config'
-// import ingredients from "./ingredients.json"
-// init_db(Database)
-// database.connect()
-
-
-// await db_adm_conn.query(`
-//             INSERT INTO Feedback (reason, content, userhash)
-//             VALUES ('${checkInputBeforeSqlQuery(reason)}', '${checkInputBeforeSqlQuery(content)}', '${checkInputBeforeSqlQuery(Md5.hashStr(userid))}');
-//         `);
 const checkInputBeforeSqlQuery = (arg) => {
     if (!arg) { return ''; }
     arg = arg.replaceAll("'", "''");
@@ -16,18 +5,7 @@ const checkInputBeforeSqlQuery = (arg) => {
     return arg;
 };
 const ingredients = require("./ingredient_taxo.json")
-const de = require("./src/modules/translation/de.json")
-const en = require("./src/modules/translation/en.json")
-const fr = require("./src/modules/translation/fr.json")
-const it = require("./src/modules/translation/it.json")
-const axios = require("axios");
 const fs = require("fs");
-const trans = {
-    de: de.tags,
-    en: en.tags,
-    fr: fr.tags,
-    it: it.tags
-}
 
 const is_vegan = (id) => {
     let vegan = null;
