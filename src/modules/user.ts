@@ -28,8 +28,8 @@ const parseGetUserResponse = (rows: Array<QueryResultRow>) : UserObj => {
         restriction: []
     };
     for (const row of rows) {
-        if (!row.restrictionname) { continue; }
-        if (row.restrictionname.length !== 0) { userObj.restriction.push({ alertactivation: row.alertactivation, restrictionName: row.restrictionname }); }
+        if (!row.eng_name) { continue; }
+        if (row.eng_name.length !== 0) { userObj.restriction.push({ alertactivation: row.alertactivation, restrictionName: row.eng_name }); }
     }
     return userObj;
 };
