@@ -9,6 +9,7 @@ type RestrictionObj = {
     alertactivation: boolean,
     restrictionName: string
 }
+
 type UserObj = {
     firstName : string,
     lastName : string,
@@ -16,6 +17,16 @@ type UserObj = {
     email : string,
     phoneNumber : string,
     restriction: Array<RestrictionObj>
+}
+
+export type OAuthUserObj = {
+    firstName : string,
+    lastName : string,
+    displayName: string,
+    id : string,
+    email : string,
+    imageLink: string,
+    cc: string,
 }
 
 const parseGetUserResponse = (rows: Array<QueryResultRow>) : UserObj => {
@@ -28,8 +39,8 @@ const parseGetUserResponse = (rows: Array<QueryResultRow>) : UserObj => {
         restriction: []
     };
     for (const row of rows) {
-        if (!row.restrictionname) { continue; }
-        if (row.restrictionname.length !== 0) { userObj.restriction.push({ alertactivation: row.alertactivation, restrictionName: row.restrictionname }); }
+        if (!row.eng_name) { continue; }
+        if (row.eng_name.length !== 0) { userObj.restriction.push({ alertactivation: row.alertactivation, restrictionName: row.eng_name }); }
     }
     return userObj;
 };
@@ -63,6 +74,29 @@ export const createUser = async (req: Request, res: Response) => {
     } catch (error: any) {
         res.status(400).send({ Error: 'Unable to create new User.', Details: `${error.stack}` });
     }
+};
+
+export const createUserOAuth = async (userdata: OAuthUserObj): Promise<string> => {
+    try {
+        // create the user in the normal enduser table
+        const created: QueryResultRow = await database.User.createUser(userdata.firstName, userdata.lastName, userdata.displayName, userdata.email, "00", userdata.cc);
+        const userid: string = created.enduserid;
+
+        const google_provider_id = await database.OAuth.getProviderByName('google');
+
+        const createOAuth: QueryResultRow = await database.User.createUserOAuth(userid, google_provider_id.oauthproviderid, userdata.displayName, userdata.imageLink, userdata.email, "");
+
+        const token: string = JWT.create(userid);
+        //res.cookie('token', token, {
+            //httpOnly: true
+        //});
+        //res.status(200).json(token);
+        return token;
+    } catch (error: any) {
+        return error.stack;
+        //res.status(400).send({ Error: 'Unable to create new User.', Details: `${error.stack}` });
+    }
+    return "";
 };
 
 export const getUser = async (req: Request, res: Response) : Promise<void> => {

@@ -5,9 +5,10 @@ import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteS
 import { deleteElementFromHistory, getElements, updateHistory } from './historyManagement';
 import { updatePassword } from './resetPassword';
 import { updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting } from './settingsManagement';
-import { createUser, deleteUser, getUser, getPasswordResetToken, setPasswordResetToken } from './userManagement';
+import { createUser, createUserOAuth, deleteUser, getUser, getPasswordResetToken, setPasswordResetToken } from './userManagement';
 import { insert, getTrendingLocal, getTrendingGlobal, getCountryCode } from './trendingProducts';
 import { DatabaseInterface } from '../../../server_config';
+import { getProviderByName } from './oauth';
 
 dotenv.config();
 
@@ -56,6 +57,7 @@ const Database: DatabaseInterface = {
     },
     User: {
         createUser,
+        createUserOAuth,
         deleteUser,
         getUser,
         getPasswordResetToken,
@@ -82,6 +84,9 @@ const Database: DatabaseInterface = {
         getTrendingLocal,
         insert,
         getCountryCode,
+    },
+    OAuth: {
+        getProviderByName,
     },
     connect,
     end

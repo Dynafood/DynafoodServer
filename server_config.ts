@@ -1,3 +1,5 @@
+import session from "express-session";
+import passport from "passport";
 import express, { Express } from 'express';
 import logger from './src/middleware/logger';
 import swaggerUI, { JsonObject } from 'swagger-ui-express';
@@ -13,6 +15,7 @@ import feedbackRouter from './src/routes/feedbackRoutes'
 import searchRouter from './src/routes/searchRoutes'
 import trendingRouter from './src/routes/trendingProducts'
 import shoppingListRouter from './src/routes/shoppingListRoutes';
+import oauthRouter from './src/routes/oauthRoutes';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { QueryResultRow } from 'pg';
@@ -41,6 +44,7 @@ export interface DatabaseInterface {
     }
     User: {
         createUser: (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string, cc: string) => Promise<QueryResultRow>
+        createUserOAuth: (userid: string, provider_id: string, userName: string, pictureLink: string, email: string, userProviderId: string) => Promise<QueryResultRow>
         getUser: (userid: string | null, email: string | null) => Promise<Array<QueryResultRow>>
         deleteUser: (userid: string) => Promise<QueryResultRow>
         getPasswordResetToken: (userid: string) => Promise<QueryResultRow>
@@ -62,6 +66,9 @@ export interface DatabaseInterface {
         getTrendingLocal: (count: number, country_code: string) => Promise<Array<QueryResultRow>>
         insert: (userID: string, barcode: string, productName: string, imageLink: string) => Promise<void>
         getCountryCode: (userID: string) => Promise<string>
+    },
+    OAuth: {
+        getProviderByName: (name: string) => Promise<QueryResultRow>
     },
     connect: () => Promise<void>
     end: () => Promise<void>
@@ -129,3 +136,13 @@ app.use(searchRouter)
 app.use(trendingRouter)
 app.use(shoppingListRouter)
 app.use(logger);
+app.use(
+    session({
+      resave: false,
+      saveUninitialized: true,
+      secret: process.env.JWT_SECRET || "kdjfiej2839jf",
+    })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(oauthRouter);
