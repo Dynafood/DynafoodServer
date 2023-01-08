@@ -7,15 +7,17 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 const google = {
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:8081/user/login/google/callback",
+    //callbackURL: "http://localhost:8081/user/login/google/callback",
+    callbackURL: "http://x2024dynafood545437452001.westeurope.cloudapp.azure.com:8081/user/login/google/callback",
 }
 const facebook = {
-  clientID: process.env.FB_APP_ID,
-  clientSecret: process.env.FB_APP_SECRET,
-  //todo: based on env, change url to localhost, dev or prod
-  callbackURL: "http://localhost:8081/user/login/facebook/callback",
-  enableProof: true, //to enable secret proof
-  profileFields: ['id', 'emails', 'name'] //scope of fields
+    clientID: process.env.FB_APP_ID,
+    clientSecret: process.env.FB_APP_SECRET,
+    //todo: based on env, change url to localhost, dev or prod
+    //callbackURL: "http://localhost:8081/user/login/facebook/callback",
+    callbackURL: "http://x2024dynafood545437452001.westeurope.cloudapp.azure.com:8081/user/login/facebook/callback",
+    enableProof: true, //to enable secret proof
+    profileFields: ['id', 'emails', 'name'] //scope of fields
 };
 
 passport.use(
