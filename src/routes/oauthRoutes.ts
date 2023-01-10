@@ -3,6 +3,9 @@ import passport from "passport";
 import { createUserOAuth, OAuthUserObj } from '../modules/user';
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const google = {
     clientID: process.env.GOOGLE_CLIENT_ID,

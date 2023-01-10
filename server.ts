@@ -1,14 +1,19 @@
-import http from 'http';
+import https from "https"
 import jwt from 'jsonwebtoken';
 import { UserInterface } from './include/userInterface';
 import { app, database, init_db, init_jwt, init_mail, JWT } from './server_config'
 import Database, { db_adm_conn } from './src/modules/db';
 import mail_1 from '@sendgrid/mail';
 import schedule from 'node-schedule'
-
+import fs from "fs";
+const options_https = {
+    key: fs.readFileSync("https_server.key"),
+    cert: fs.readFileSync("https_server.cert"),
+  };
 const PORT: string | undefined = process.env.PORT;
 
-const server: http.Server = new http.Server(app);
+// const server: http.Server = new http.Server(app);
+const server: https.Server = new https.Server(options_https, app);
 
 const jwt_obj: JWT = {
     create: (userid: string) : string => {
