@@ -1,5 +1,4 @@
 import pg from 'pg';
-import * as dotenv from 'dotenv';
 import { createNewFeedback } from './feedback';
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem } from './shoppingList'
 import { deleteElementFromHistory, getElements, updateHistory } from './historyManagement';
@@ -10,7 +9,6 @@ import { insert, getTrendingLocal, getTrendingGlobal, getCountryCode } from './t
 import { DatabaseInterface } from '../../../server_config';
 import { getProviderByName } from './oauth';
 
-dotenv.config();
 
 console.log('this is db_vars:', process.env.NODE_ENV, process.env.DB_USER, process.env.PG_PASSWORD, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
 

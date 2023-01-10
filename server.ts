@@ -6,6 +6,9 @@ import Database, { db_adm_conn } from './src/modules/db';
 import mail_1 from '@sendgrid/mail';
 import schedule from 'node-schedule'
 import fs from "fs";
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 const options_https = {
     key: fs.readFileSync("https_server.key"),
     cert: fs.readFileSync("https_server.cert"),
