@@ -10,7 +10,7 @@ export const createUser = async (firstName: string, lastName: string, userName: 
                 '${checkInputBeforeSqlQuery(firstName)}',
                 '${checkInputBeforeSqlQuery(lastName)}',
                 '${checkInputBeforeSqlQuery(userName)}',
-                '${checkInputBeforeSqlQuery(email)}',
+                lower('${checkInputBeforeSqlQuery(email)}'),
                 '${checkInputBeforeSqlQuery(phoneNumber)}',
                 '${checkInputBeforeSqlQuery(password)}',
                 true,
@@ -27,7 +27,7 @@ export const createUserOAuth = async (userid: string, provider_id: string, userN
             '${checkInputBeforeSqlQuery(provider_id)}',
             '${checkInputBeforeSqlQuery(userName)}',
             '${checkInputBeforeSqlQuery(pictureLink)}',
-            '${checkInputBeforeSqlQuery(email)}',
+            lower('${checkInputBeforeSqlQuery(email)}'),
             '${checkInputBeforeSqlQuery(userProviderId)}'
         ) RETURNING *;
     `);
@@ -50,7 +50,7 @@ export const getUser = async (userid: string | null = null, email: string | null
     LEFT JOIN EndUser_Restriction ER ON ER.endUserID = EU.endUserID
     LEFT JOIN Restriction R ON R.restrictionID = ER.restrictionID
     `;
-    if (userid != null) { query += `WHERE EU.endUserID = '${checkInputBeforeSqlQuery(userid)}';`; } else if (email != null) { query += `WHERE EU.email = '${checkInputBeforeSqlQuery(email)}';`; } else { throw Error('one argument must be provided'); }
+    if (userid != null) { query += `WHERE EU.endUserID = '${checkInputBeforeSqlQuery(userid)}';`; } else if (email != null) { query += `WHERE EU.email = lower('${checkInputBeforeSqlQuery(email)}');`; } else { throw Error('one argument must be provided'); }
     const newUser : QueryResult = await db_adm_conn.query(query);
     return newUser.rows;
 };
@@ -58,7 +58,7 @@ export const getUser = async (userid: string | null = null, email: string | null
 export const getPasswordResetToken = async (email: string) : Promise<QueryResultRow> => {
     const query: string = `
     SELECT password_reset_token FROM EndUser
-    WHERE email = '${checkInputBeforeSqlQuery(email)}';
+    WHERE email = lower('${checkInputBeforeSqlQuery(email)}');
     `;
     const result: QueryResult = await db_adm_conn.query(query);
     return result.rows[0];

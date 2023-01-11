@@ -5,3 +5,5 @@ lib/
 coverage/
 dist/
 build/
+https_server.cert
+https_server.key

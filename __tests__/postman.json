@@ -3736,7 +3736,7 @@
 		},
 		{
 			"key": "base_url",
-			"value": "http://localhost:8081",
+			"value": "https://localhost:8081",
 			"type": "string",
 			"disabled": true
 		},

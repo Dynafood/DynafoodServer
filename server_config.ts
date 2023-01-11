@@ -20,6 +20,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { QueryResultRow } from 'pg';
 import { UserInterface } from './include/userInterface';
+import bodyParser from "body-parser";
 
 export interface DatabaseInterface {
     ShoppingList: {
@@ -117,7 +118,11 @@ const options : object = {
     }
 };
 
+
 const specs: object = swaggerJSDoc(options);
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use(cors());
 app.use(express.json({ limit: '200kb' }));
