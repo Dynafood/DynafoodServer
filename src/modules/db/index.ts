@@ -19,7 +19,6 @@ const connect = async () => {
         console.log('connect by using', connectionString);
         db_adm_conn = new pg.Client({
             connectionString: connectionString,
-            query_timeout: 50000
         });
     } else {
         console.log('connect by using', process.env.DATABASE_URL);
