@@ -6,7 +6,7 @@ export const createShoppingList = async (req: Request, res: Response) => {
     const name : string = req.body.name;
 
     if (!name || name.length === 0) {
-        res.status(400).send({ Error: 'No name provided', Details: 'Name is not provided or empty!' });
+        res.status(400).send({ Error: 'No name provided', Details: 'name is not provided or empty!' });
         return;
     }
     try {
@@ -22,7 +22,7 @@ export const deleteShoppingList = async (req: Request, res: Response) => {
     const id : string = req.body.listid;
 
     if (!id || id.length === 0) {
-        res.status(400).send({ Error: 'No listid provided', Details: 'Listid is not provided or empty!' });
+        res.status(400).send({ Error: 'No listId provided', Details: 'listId is not provided or empty!' });
         return;
     }
     try {
@@ -45,7 +45,7 @@ export const createShoppingListItem = async (req: Request, res: Response) => {
         return;
     }
     if (!listid || listid.length === 0) {
-        res.status(400).send({ Error: 'No listid provided', Details: 'listid is not provided or empty!' });
+        res.status(400).send({ Error: 'No listId provided', Details: 'listId is not provided or empty!' });
         return;
     }
     try {
@@ -61,7 +61,7 @@ export const deleteShoppingListItem = async (req: Request, res: Response) => {
     const id : string = req.body.itemid;
 
     if (!id || id.length === 0) {
-        res.status(400).send({ Error: 'No itemid provided', Details: 'Itemid is not provided or empty!' });
+        res.status(400).send({ Error: 'No itemId provided', Details: 'itemId is not provided or empty!' });
         return;
     }
     try {
@@ -78,7 +78,7 @@ export const updateShoppingListItem = async (req: Request, res: Response) => {
     const check : boolean = req.body.check;
 
     if (!id || id.length === 0) {
-        res.status(400).send({ Error: 'No itemid provided', Details: 'Itemid is not provided or empty!' });
+        res.status(400).send({ Error: 'No itemId provided', Details: 'itemId is not provided or empty!' });
         return;
     }
     try {
@@ -92,9 +92,8 @@ export const updateShoppingListItem = async (req: Request, res: Response) => {
 
 export const getShoppingListItems = async (req: Request, res: Response) => {
     const listid : string = <string> req.query.listid;
-    console.log(listid)
     if (!listid || listid.length === 0) {
-        res.status(400).send({ Error: 'No listid provided', Details: 'Listid is not provided or empty!' });
+        res.status(400).send({ Error: 'No listId provided', Details: 'listId is not provided or empty!' });
         return;
     }
     try {

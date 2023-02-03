@@ -157,6 +157,10 @@ CREATE TABLE IF NOT EXISTS ShoppingListItem
     CONSTRAINT fk_unit
         FOREIGN KEY(unitID)
             REFERENCES ShoppingListItemUnit(unitID)
+            ON DELETE CASCADE,
+    CONSTRAINT fk_listid
+        FOREIGN KEY(listID)
+            REFERENCES ShoppingList(listID)
             ON DELETE CASCADE
 );
 
