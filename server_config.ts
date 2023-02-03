@@ -48,7 +48,7 @@ export interface DatabaseInterface {
         createUserOAuth: (userid: string, provider_id: string, userName: string, pictureLink: string, email: string, userProviderId: string) => Promise<QueryResultRow>
         getUser: (userid: string | null, email: string | null) => Promise<Array<QueryResultRow>>
         deleteUser: (userid: string) => Promise<QueryResultRow>
-        getPasswordResetToken: (userid: string) => Promise<QueryResultRow>
+        getPasswordResetToken: (userid: string) => Promise<QueryResultRow | undefined>
         setPasswordResetToken: (userid: string, token: string) => Promise<QueryResultRow>
     }
     Settings: {
@@ -74,10 +74,10 @@ export interface DatabaseInterface {
     connect: () => Promise<void>
     end: () => Promise<void>
 }
-export const init_db = (db: JsonObject) => {
+export const init_db = (db: DatabaseInterface) => {
     database = db
 }
-export var database: JsonObject
+export let database: DatabaseInterface
 
 export interface JWT {
     create: (userid: string) => string
@@ -86,7 +86,7 @@ export interface JWT {
 export const init_jwt = (jwt_obj: JWT) => {
     JWT = jwt_obj
 }
-export var JWT: JWT;
+export let JWT: JWT;
 
 
 export interface EmailSender {
@@ -95,7 +95,7 @@ export interface EmailSender {
 export const init_mail = (mail: JsonObject) => {
     mail_sender = mail
 }
-export var mail_sender: JsonObject
+export let mail_sender: JsonObject
 
 export const app: Express = express();
 

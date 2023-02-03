@@ -60,7 +60,7 @@ export const setPasswordResetToken = async (userid: string, token: string) : Pro
     });
 }
 
-export const getPasswordResetToken = async (userid: string) : Promise<QueryResultRow> => {
+export const getPasswordResetToken = async (userid: string) : Promise<QueryResultRow | undefined> => {
     return {}
 }
 

@@ -1,24 +1,45 @@
-import { init_db } from "../../../../server_config"
+import { DatabaseInterface, init_db } from "../../../../server_config"
 import { JsonObject } from "swagger-ui-express";
-import { createUser, deleteUser, getUser } from "./mock_user";
+import { createUser, deleteUser, getUser, createUserOAuth, getPasswordResetToken, setPasswordResetToken } from "./mock_user";
 import { createNewFeedback } from "./mock_feedback";
 import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, updateSettings, userHasRestriction } from "./mock_settings";
 import { deleteElementFromHistory, getElements, updateHistory } from "./mock_history";
+import { QueryResultRow } from "pg";
+import { updatePassword } from "./mock_password";
+import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem } from "./mock_shoppinglist";
+import { getTrendingGlobal, getCountryCode, getTrendingLocal, insert } from "./mock_trending";
 
 
 
 
-const mock_db: JsonObject = {
+const mock_db: DatabaseInterface = {
+    ShoppingList: {
+        createShoppingList: createShoppingList,
+        createShoppingListItem: createShoppingListItem,
+        deleteShoppingList: deleteShoppingList,
+        deleteShoppingListItem: deleteShoppingListItem,
+        updateShoppingListItem: updateShoppingListItem,
+        getShoppingListItems: getShoppingListItems,
+        getShoppingLists: getShoppingLists
+    },
     Feedback: {
         createNewFeedback: createNewFeedback
     },
     History: {
         deleteElementFromHistory: deleteElementFromHistory,
         getElements: getElements,
-        updateHistory: updateHistory,
+        updateHistory: updateHistory
     },
     Password: {
-        updatePassword: null
+        updatePassword: updatePassword
+    },
+    User: {
+        createUser: createUser,
+        createUserOAuth: createUserOAuth,
+        getUser: getUser,
+        deleteUser: deleteUser,
+        getPasswordResetToken: getPasswordResetToken,
+        setPasswordResetToken: setPasswordResetToken
     },
     Settings: {
         createSetting: createSettings,
@@ -28,13 +49,17 @@ const mock_db: JsonObject = {
         updateAlertSetting: updateSettings,
         userHasRestriction: userHasRestriction
     },
-    User: {
-        createUser: createUser,
-        deleteUser: deleteUser,
-        getUser: getUser
-    },
     ResetPassword: {
-        updatePassword: null
+        updatePassword: updatePassword
+    },
+    TrendingProducts: {
+        getTrendingGlobal: getTrendingGlobal,
+        getTrendingLocal: getTrendingLocal,
+        insert: insert,
+        getCountryCode: getCountryCode
+    },
+    OAuth: {
+        getProviderByName: async (name: string) : Promise<QueryResultRow> => {throw "ErrorMock"}
     },
     connect: async () => {throw "ErrorMock"},
     end: async () => {throw "ErrorMock"}

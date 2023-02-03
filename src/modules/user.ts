@@ -79,7 +79,7 @@ export const createUser = async (req: Request, res: Response) => {
 export const createUserOAuth = async (userdata: OAuthUserObj): Promise<string> => {
     try {
         // create the user in the normal enduser table
-        const created: QueryResultRow = await database.User.createUser(userdata.firstName, userdata.lastName, userdata.displayName, userdata.email, "00", userdata.cc);
+        const created: QueryResultRow = await database.User.createUser(userdata.firstName, userdata.lastName, userdata.displayName, userdata.email, "00", "null", userdata.cc);
         const userid: string = created.enduserid;
 
         const google_provider_id = await database.OAuth.getProviderByName('google');

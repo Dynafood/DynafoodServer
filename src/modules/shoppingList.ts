@@ -37,7 +37,7 @@ export const deleteShoppingList = async (req: Request, res: Response) => {
 export const createShoppingListItem = async (req: Request, res: Response) => {
     const itemName : string = req.body.name;
     const listid : string = req.body.shoppingList;
-    const quantity : string | null = req.body.quantity || null;
+    const quantity : number | null = Number(req.body.quantity) || null;
     const barcode : string | null = req.body.barcode || null;
 
     if (!itemName || itemName.length === 0) {
