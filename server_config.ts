@@ -56,7 +56,7 @@ export interface DatabaseInterface {
         userHasRestriction: (userid: string, restrictionid: string) => Promise<boolean>
         getAlertSettings: (userid: string) => Promise<Array<QueryResultRow>>
         updateAlertSetting: (userid: string, alertActivation: string, restrictionID: string) => Promise<void>
-        deleteAlertSetting: (userid: string, restrictionID: string) => Promise<QueryResultRow>
+        deleteAlertSetting: (userid: string, restrictionID: string) => Promise<void>
         createSetting: (alertactivation: string, userid: string, restrictionid: string) => Promise<void>
     },
     ResetPassword: {

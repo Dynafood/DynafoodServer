@@ -33,7 +33,7 @@ export const userHasRestriction = async (userid: string, restrictionID: string) 
     return new Promise((resolve, reject) => {
         resolve(restrictionID == "real")
     })
-}
+};
 
 export const deleteSettings = async (userid: string, restrictionid: string) : Promise<void> => {
-}
+};

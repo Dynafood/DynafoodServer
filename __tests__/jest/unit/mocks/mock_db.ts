@@ -1,4 +1,4 @@
-import { init_db } from "../../../../server_config"
+import { DatabaseInterface, init_db } from "../../../../server_config"
 import { JsonObject } from "swagger-ui-express";
 import { createUser, deleteUser, getUser, setPasswordResetToken } from "./mock_user";
 import { createNewFeedback } from "./mock_feedback";
@@ -19,7 +19,7 @@ const mock_db: JsonObject = {
         updateHistory: updateHistory,
     },
     Password: {
-        updatePassword: null
+        updatePassword: async (userid: string, newPassword: string) => {}
     },
     Settings: {
         createSetting: createSettings,
