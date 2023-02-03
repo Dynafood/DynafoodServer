@@ -1925,7 +1925,7 @@
 							"",
 							"pm.test(\"Respnse contains correct name\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.name).to.eql(\"Mineralwasser still  Jana\");",
+							"    pm.expect(jsonData.name).to.eql(\"Mineralwasser still Saskia\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -3736,7 +3736,7 @@
 		},
 		{
 			"key": "base_url",
-			"value": "https://localhost:8081",
+			"value": "http://localhost:8081",
 			"type": "string",
 			"disabled": true
 		},
