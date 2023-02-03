@@ -1,4 +1,4 @@
 
-export const updatePassword = async (userid: string, newPassword: string) => {
+export const updatePassword = async (userid: string, newPassword: string) : Promise<void>=> {
    
 }

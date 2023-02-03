@@ -5,21 +5,22 @@ import { createNewFeedback } from "./mock_feedback";
 import { updateHistory, getElements, deleteElementFromHistory } from "./mock_history";
 import { insert, getCountryCode, getTrendingGlobal, getTrendingLocal} from "./mock_trendingProduct"
 import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, updateSettings, userHasRestriction } from "./mock_settings";
-import {updatePassword} from "./mock_password"
+import { updatePassword } from "./mock_password"
+import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem } from "./mock_shoppinglist"
 import { QueryResultRow } from "pg";
 
 
 
-const mock_db: JsonObject = { //DatabaseInterface
-    // ShoppingList: {
-    //     createShoppingList: (name: string, userid: string) => Promise<void>
-    //     createShoppingListItem: (itemName: string, listID: string, barcode: string | null, quantity: number | null) => Promise<void>
-    //     deleteShoppingList: (listid: string, userid: string) => Promise<void>
-    //     deleteShoppingListItem: (itemid: string, userid: string) => Promise<void>
-    //     updateShoppingListItem: (check: boolean, itemid: string) => Promise<void>
-    //     getShoppingListItems: (listid: string, userid: string) => Promise<Array<QueryResultRow>>
-    //     getShoppingLists: (userid: string) => Promise<Array<QueryResultRow>>
-    // },
+const mock_db: DatabaseInterface = {
+    ShoppingList: {
+        createShoppingList: createShoppingList,
+        createShoppingListItem: createShoppingListItem,
+        deleteShoppingList: deleteShoppingList,
+        deleteShoppingListItem: deleteShoppingListItem,
+        updateShoppingListItem: updateShoppingListItem,
+        getShoppingListItems: getShoppingListItems,
+        getShoppingLists: getShoppingLists
+    },
     Feedback: {
         createNewFeedback: createNewFeedback
     },
@@ -56,11 +57,11 @@ const mock_db: JsonObject = { //DatabaseInterface
         insert: insert,
         getCountryCode: getCountryCode
     },
-    // OAuth: {
-    //     getProviderByName: (name: string) => Promise<QueryResultRow>
-    // },
-    connect: async () => {},
-    end: async () => {}
+    OAuth: {
+        getProviderByName: async (name: string) : Promise<QueryResultRow> => {return{}}
+    },
+    connect: async () : Promise<void> => {},
+    end: async () : Promise<void> => {}
 }
 
 const init = () => {
