@@ -3,14 +3,23 @@ import { JsonObject } from "swagger-ui-express";
 import { createUser, deleteUser, getUser, setPasswordResetToken, createUserOAuth, getPasswordResetToken } from "./mock_user";
 import { createNewFeedback } from "./mock_feedback";
 import { updateHistory, getElements, deleteElementFromHistory } from "./mock_history";
-import {insert} from "./mock_trendingProduct"
+import { insert, getCountryCode, getTrendingGlobal, getTrendingLocal} from "./mock_trendingProduct"
 import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, updateSettings, userHasRestriction } from "./mock_settings";
 import {updatePassword} from "./mock_password"
 import { QueryResultRow } from "pg";
 
 
 
-const mock_db: JsonObject = {
+const mock_db: JsonObject = { //DatabaseInterface
+    // ShoppingList: {
+    //     createShoppingList: (name: string, userid: string) => Promise<void>
+    //     createShoppingListItem: (itemName: string, listID: string, barcode: string | null, quantity: number | null) => Promise<void>
+    //     deleteShoppingList: (listid: string, userid: string) => Promise<void>
+    //     deleteShoppingListItem: (itemid: string, userid: string) => Promise<void>
+    //     updateShoppingListItem: (check: boolean, itemid: string) => Promise<void>
+    //     getShoppingListItems: (listid: string, userid: string) => Promise<Array<QueryResultRow>>
+    //     getShoppingLists: (userid: string) => Promise<Array<QueryResultRow>>
+    // },
     Feedback: {
         createNewFeedback: createNewFeedback
     },
@@ -42,8 +51,14 @@ const mock_db: JsonObject = {
         updatePassword: updatePassword
     },
     TrendingProducts: {
-        insert: insert
+        getTrendingGlobal: getTrendingGlobal,
+        getTrendingLocal: getTrendingLocal,
+        insert: insert,
+        getCountryCode: getCountryCode
     },
+    // OAuth: {
+    //     getProviderByName: (name: string) => Promise<QueryResultRow>
+    // },
     connect: async () => {},
     end: async () => {}
 }
