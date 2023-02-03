@@ -1,11 +1,12 @@
 import { DatabaseInterface, init_db } from "../../../../server_config"
 import { JsonObject } from "swagger-ui-express";
-import { createUser, deleteUser, getUser, setPasswordResetToken } from "./mock_user";
+import { createUser, deleteUser, getUser, setPasswordResetToken, createUserOAuth, getPasswordResetToken } from "./mock_user";
 import { createNewFeedback } from "./mock_feedback";
 import { updateHistory, getElements, deleteElementFromHistory } from "./mock_history";
 import {insert} from "./mock_trendingProduct"
 import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, updateSettings, userHasRestriction } from "./mock_settings";
 import {updatePassword} from "./mock_password"
+import { QueryResultRow } from "pg";
 
 
 
@@ -16,10 +17,18 @@ const mock_db: JsonObject = {
     History: {
         deleteElementFromHistory: deleteElementFromHistory,
         getElements: getElements,
-        updateHistory: updateHistory,
+        updateHistory: updateHistory
     },
     Password: {
-        updatePassword: async (userid: string, newPassword: string) => {}
+        updatePassword: updatePassword
+    },
+    User: {
+        createUser: createUser,
+        createUserOAuth: createUserOAuth,
+        getUser: getUser,
+        deleteUser: deleteUser,
+        getPasswordResetToken: getPasswordResetToken,
+        setPasswordResetToken: setPasswordResetToken
     },
     Settings: {
         createSetting: createSettings,
@@ -28,12 +37,6 @@ const mock_db: JsonObject = {
         getRestrictionIdByName: getRestrictionIdByName,
         updateAlertSetting: updateSettings,
         userHasRestriction: userHasRestriction
-    },
-    User: {
-        createUser: createUser,
-        deleteUser: deleteUser,
-        getUser: getUser,
-        setPasswordResetToken: setPasswordResetToken,
     },
     ResetPassword: {
         updatePassword: updatePassword
