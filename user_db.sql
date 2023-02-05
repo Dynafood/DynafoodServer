@@ -245,3 +245,5 @@ CREATE TABLE IF NOT EXISTS ProductRestriction
             REFERENCES Product(productID)
             ON DELETE CASCADE
 );
+
+CREATE EXTENSION pg_trgm;
