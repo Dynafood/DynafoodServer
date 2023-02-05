@@ -8,6 +8,7 @@ import { createSettings, deleteSettings, getSettings, getRestrictionIdByName, up
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, updateShoppingListItem, getShoppingListItems, getShoppingLists } from "./mock_shoppinglist";
 import { getTrendingGlobal, getTrendingLocal, insert, getCountryCode } from "./mock_trending";
 import { createUser, createUserOAuth, deleteUser, getPasswordResetToken, setPasswordResetToken } from "./mock_user";
+import { getAllergenbyName } from "./mock_search";
 
 export const getUser = async (userid: string | null = null, email: string | null = null) : Promise<Array<QueryResultRow>> => {
     throw new Error("ErrorMock")
@@ -62,6 +63,9 @@ const mock_db: DatabaseInterface = {
     },
     OAuth: {
         getProviderByName: async (name: string) : Promise<QueryResultRow> => {throw "ErrorMock"}
+    },
+    Search: {
+        getAllergenbyName: getAllergenbyName
     },
     connect: async () => {throw "ErrorMock"},
     end: async () => {throw "ErrorMock"}

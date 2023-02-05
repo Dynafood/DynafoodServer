@@ -71,6 +71,9 @@ export interface DatabaseInterface {
     OAuth: {
         getProviderByName: (name: string) => Promise<QueryResultRow>
     },
+    Search: {
+        getAllergenbyName: (name: string, language: string) => Promise<Array<string>>
+    }
     connect: () => Promise<void>
     end: () => Promise<void>
 }

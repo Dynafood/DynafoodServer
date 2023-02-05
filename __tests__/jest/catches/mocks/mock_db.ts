@@ -8,6 +8,7 @@ import { QueryResultRow } from "pg";
 import { updatePassword } from "./mock_password";
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem } from "./mock_shoppinglist";
 import { getTrendingGlobal, getCountryCode, getTrendingLocal, insert } from "./mock_trending";
+import { getAllergenbyName } from "./mock_search";
 
 
 
@@ -60,6 +61,9 @@ const mock_db: DatabaseInterface = {
     },
     OAuth: {
         getProviderByName: async (name: string) : Promise<QueryResultRow> => {throw "ErrorMock"}
+    },
+    Search: {
+        getAllergenbyName: getAllergenbyName
     },
     connect: async () => {throw "ErrorMock"},
     end: async () => {throw "ErrorMock"}
