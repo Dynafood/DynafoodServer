@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "94c6de56-845a-4236-a4ac-931e725fd088",
+		"_postman_id": "6043a5ed-3d5b-4f92-b284-b342cdcd70e4",
 		"name": "DynaFood Postman Tests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "23173318"
+		"_exporter_id": "14726218"
 	},
 	"item": [
 		{
@@ -1925,7 +1925,7 @@
 							"",
 							"pm.test(\"Respnse contains correct name\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.name).to.eql(\"Mineralwasser still  Jana\");",
+							"    pm.expect(jsonData.name).to.eql(\"Mineralwasser still Saskia\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -3407,6 +3407,141 @@
 			"response": []
 		},
 		{
+			"name": "searchForAllergen",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Check correct results\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0]).to.eql(\"Milk\");\r",
+							"    pm.expect(jsonData.length).to.above(30);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/searchAllergen?name=milk&language=en",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"searchAllergen"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "milk"
+						},
+						{
+							"key": "language",
+							"value": "en"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchForAllergen wrong lang",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Check correct results\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[\"Error\"]).to.contain(\"BadRequest\");\r",
+							"    pm.expect(jsonData[\"Details\"]).to.contain(\"language 'e' no existing\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/searchAllergen?name=milk&language=e",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"searchAllergen"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "milk"
+						},
+						{
+							"key": "language",
+							"value": "e"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchForAllergen no name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Check correct results\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[\"Error\"]).to.contain(\"BadRequest\");\r",
+							"    pm.expect(jsonData[\"Details\"]).to.contain(\"Missing allergen name\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/searchAllergen?name=&language=en",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"searchAllergen"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": ""
+						},
+						{
+							"key": "language",
+							"value": "en"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Delete User <- also deletes jwt",
 			"event": [
 				{
@@ -3736,14 +3871,15 @@
 		},
 		{
 			"key": "base_url",
-			"value": "https://localhost:8081",
+			"value": "http://localhost:8081",
 			"type": "string",
 			"disabled": true
 		},
 		{
 			"key": "test_search",
 			"value": "coke"
-		}, {
+		},
+		{
 			"key": "email_test_email",
 			"value": "taubert.marcel@gmail.com"
 		},

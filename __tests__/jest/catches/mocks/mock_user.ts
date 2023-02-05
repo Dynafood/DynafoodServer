@@ -31,3 +31,16 @@ export const createUser = async (firstName: string, lastName: string, userName: 
 export const deleteUser = async (userid: string) : Promise<QueryResultRow> => {
     throw new Error("ErrorMock")
 }
+
+
+export const setPasswordResetToken = async (userid: string, token: string) : Promise<QueryResultRow> => {
+    throw new Error("ErrorMock")
+}
+
+export const getPasswordResetToken = async (userid: string) : Promise<QueryResultRow | undefined> => {
+    throw new Error("ErrorMock")
+}
+
+export const createUserOAuth = async (userid: string, provider_id: string, userName: string, pictureLink: string, email: string, userProviderId: string) : Promise<QueryResultRow> => {
+    throw new Error("ErrorMock")
+};

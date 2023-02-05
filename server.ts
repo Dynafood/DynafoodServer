@@ -10,7 +10,6 @@ dotenv.config();
 
 const PORT: string | undefined = process.env.PORT;
 
-// const server: http.Server = new http.Server(app);
 const server: http.Server = new http.Server(app);
 
 const jwt_obj: JWT = {

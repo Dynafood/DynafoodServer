@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { searchProduct } from '../modules/search';
+import { searchProduct, searchAllergen } from '../modules/search';
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
 
 const router : Router = Router();
@@ -51,4 +51,7 @@ const router : Router = Router();
  */
 
 router.get('/searchProduct', secureRouteMiddleware, searchProduct);
+
+router.get('/searchAllergen', secureRouteMiddleware, searchAllergen);
+
 export default router;

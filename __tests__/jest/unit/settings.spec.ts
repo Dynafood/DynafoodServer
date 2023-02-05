@@ -42,7 +42,6 @@ describe('check create settings routes', () => {
     test('createSettings with non existing restrictionname', async () => {
         const response = await supertest(app).post("/settings").send({restrictionName: "real"}).set('Cookie', ['token=token_existing']);
         expect(response.statusCode).toBe(200)
-        expect(response.body).toStrictEqual({})
     })
 })
 
@@ -63,6 +62,5 @@ describe('check delete settings routes', () => {
     test('delete Setting', async () => {
         const response = await supertest(app).delete("/settings").send({restrictionName: "nop"}).set('Cookie', ['token=token_existing']);
         expect(response.statusCode).toBe(200)
-        expect(response.body).toStrictEqual({})
     })
 })

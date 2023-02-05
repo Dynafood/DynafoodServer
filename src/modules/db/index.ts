@@ -8,6 +8,7 @@ import { createUser, createUserOAuth, deleteUser, getUser, getPasswordResetToken
 import { insert, getTrendingLocal, getTrendingGlobal, getCountryCode } from './trendingProducts';
 import { DatabaseInterface } from '../../../server_config';
 import { getProviderByName } from './oauth';
+import { getAllergenbyName } from './search';
 
 
 console.log('this is db_vars:', process.env.NODE_ENV, process.env.DB_USER, process.env.PG_PASSWORD, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
@@ -85,6 +86,9 @@ const Database: DatabaseInterface = {
     },
     OAuth: {
         getProviderByName,
+    },
+    Search: {
+        getAllergenbyName,
     },
     connect,
     end

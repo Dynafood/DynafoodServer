@@ -71,8 +71,8 @@ export const patchSettings = async (req: Request, res: Response): Promise<void> 
 
 export const deleteSettings = async (req: Request, res: Response) : Promise<void> => {
     try {
-        const deleted: QueryResultRow = await database.Settings.deleteAlertSetting(res.locals.user.userid, res.locals.restrictionID);
-        res.status(200).send(deleted);
+        await database.Settings.deleteAlertSetting(res.locals.user.userid, res.locals.restrictionID);
+        res.status(200).send();
     } catch (err: any) {
         console.log(err);
         res.status(500).send({ Error: err, Details: err.stack });

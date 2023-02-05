@@ -1,4 +1,4 @@
 
-export const createNewFeedback = async (reason: string, content: string, userid: string) => {
+export const createNewFeedback = async (reason: string, content: string, userid: string) : Promise<void> => {
     
 }

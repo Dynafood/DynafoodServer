@@ -37,3 +37,77 @@ describe('check search products route', () => {
         );
     })
 })
+
+describe('check search route for allergens', () => {
+    test ('valid milk search ge', async () => {
+        const response = await supertest(app).get("/searchAllergen")
+            .query({
+                name: 'milk',
+                language: 'ge'
+            }).send().set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(200)
+        expect(response.body).toStrictEqual(["I milk your mom"]);
+    });
+    test ('valid milk search en', async () => {
+        const response = await supertest(app).get("/searchAllergen")
+            .query({
+                name: 'milk',
+                language: 'en'
+            }).send().set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(200)
+        expect(response.body).toStrictEqual(["I milk your mom"]);
+    });
+    test ('valid milk search fr', async () => {
+        const response = await supertest(app).get("/searchAllergen")
+            .query({
+                name: 'milk',
+                language: 'fr'
+            }).send().set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(200)
+        expect(response.body).toStrictEqual(["I milk your mom"]);
+    });
+    test ('invalid milk search no name', async () => {
+        const response = await supertest(app).get("/searchAllergen")
+            .query({
+                language: 'en'
+            }).send().set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(400)
+        expect(response.body).toStrictEqual({"Error" : "BadRequest", Details: "Missing allergen name"});
+    });
+    test ('invalid milk search no language', async () => {
+        const response = await supertest(app).get("/searchAllergen")
+            .query({
+                name: 'milk',
+            }).send().set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(400)
+        expect(response.body).toStrictEqual({"Error" : "BadRequest", Details: "Missing language"});
+    });
+    test ('invalid milk search empty name', async () => {
+        const response = await supertest(app).get("/searchAllergen")
+            .query({
+                language: 'fr',
+                name: ''
+            }).send().set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(400)
+        expect(response.body).toStrictEqual({"Error" : "BadRequest", Details: "Missing allergen name"});
+    });
+    test ('invalid milk search empty language', async () => {
+        const response = await supertest(app).get("/searchAllergen")
+            .query({
+                language: '',
+                name: 'milk',
+            }).send().set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(400)
+        expect(response.body).toStrictEqual({"Error" : "BadRequest", Details: "Missing language"});
+    });
+    test ('invalid milk search wrong language', async () => {
+        const response = await supertest(app).get("/searchAllergen")
+            .query({
+                language: 'f',
+                name: 'milk',
+            }).send().set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(400)
+        expect(response.body).toStrictEqual({"Error" : "BadRequest", Details: "language 'f' no existing"});
+    });
+    
+})

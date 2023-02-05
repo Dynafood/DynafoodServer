@@ -55,7 +55,7 @@ export const getUser = async (userid: string | null = null, email: string | null
     return newUser.rows;
 };
 
-export const getPasswordResetToken = async (email: string) : Promise<QueryResultRow> => {
+export const getPasswordResetToken = async (email: string) : Promise<QueryResultRow | undefined>  => {
     const query: string = `
     SELECT password_reset_token FROM EndUser
     WHERE email = lower('${checkInputBeforeSqlQuery(email)}');

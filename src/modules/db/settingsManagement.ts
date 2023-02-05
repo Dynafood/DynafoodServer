@@ -52,11 +52,10 @@ export const updateAlertSetting = async (userid: string, alertActivation: string
         `);
 };
 
-export const deleteAlertSetting = async (userid: string, restrictionID: string) : Promise<QueryResultRow> => {
-    const deleted : QueryResult = await db_adm_conn.query(`
+export const deleteAlertSetting = async (userid: string, restrictionID: string) : Promise<void> => {
+    await db_adm_conn.query(`
             DELETE FROM EndUser_Restriction
             WHERE restrictionID = '${checkInputBeforeSqlQuery(restrictionID)}'
             AND endUserID = '${checkInputBeforeSqlQuery(userid)}';
         `);
-    return deleted.rows[0];
 };
