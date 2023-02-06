@@ -1,4 +1,4 @@
-import session from "express-session";
+import session from "cookie-session";
 import passport from "passport";
 import express, { Express } from 'express';
 import logger from './src/middleware/logger';
@@ -146,8 +146,7 @@ app.use(shoppingListRouter)
 app.use(logger);
 app.use(
     session({
-      resave: false,
-      saveUninitialized: true,
+      overwrite: false,
       secret: process.env.JWT_SECRET || "kdjfiej2839jf",
     })
 );
