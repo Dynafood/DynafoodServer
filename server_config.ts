@@ -16,6 +16,7 @@ import searchRouter from './src/routes/searchRoutes'
 import trendingRouter from './src/routes/trendingProducts'
 import shoppingListRouter from './src/routes/shoppingListRoutes';
 import oauthRouter from './src/routes/oauthRoutes';
+import downloadRouter from './src/routes/download';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { QueryResultRow } from 'pg';
@@ -143,6 +144,8 @@ app.use(feedbackRouter)
 app.use(searchRouter)
 app.use(trendingRouter)
 app.use(shoppingListRouter)
+app.use(downloadRouter)
+
 app.use(logger);
 app.use(
     session({
