@@ -5,7 +5,7 @@ import { createNewFeedback } from "./mock_feedback";
 import { deleteElementFromHistory, getElements, updateHistory } from "./mock_history";
 import { updatePassword } from "./mock_password";
 import { createSettings, deleteSettings, getSettings, getRestrictionIdByName, updateSettings, userHasRestriction } from "./mock_settings";
-import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, updateShoppingListItem, getShoppingListItems, getShoppingLists } from "./mock_shoppinglist";
+import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, updateShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingList } from "./mock_shoppinglist";
 import { getTrendingGlobal, getTrendingLocal, insert, getCountryCode } from "./mock_trending";
 import { createUser, createUserOAuth, deleteUser, getPasswordResetToken, setPasswordResetToken } from "./mock_user";
 import { getAllergenbyName } from "./mock_search";
@@ -22,6 +22,7 @@ const mock_db: DatabaseInterface = {
         deleteShoppingList: deleteShoppingList,
         deleteShoppingListItem: deleteShoppingListItem,
         updateShoppingListItem: updateShoppingListItem,
+        updateShoppingList: updateShoppingList,
         getShoppingListItems: getShoppingListItems,
         getShoppingLists: getShoppingLists
     },
