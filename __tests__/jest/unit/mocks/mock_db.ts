@@ -6,7 +6,7 @@ import { updateHistory, getElements, deleteElementFromHistory } from "./mock_his
 import { insert, getCountryCode, getTrendingGlobal, getTrendingLocal} from "./mock_trendingProduct"
 import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, updateSettings, userHasRestriction } from "./mock_settings";
 import { updatePassword } from "./mock_password"
-import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem } from "./mock_shoppinglist"
+import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingList, updateShoppingListItem } from "./mock_shoppinglist"
 import { QueryResultRow } from "pg";
 
 
@@ -18,6 +18,7 @@ const mock_db: DatabaseInterface = {
         deleteShoppingList: deleteShoppingList,
         deleteShoppingListItem: deleteShoppingListItem,
         updateShoppingListItem: updateShoppingListItem,
+        updateShoppingList: updateShoppingList,
         getShoppingListItems: getShoppingListItems,
         getShoppingLists: getShoppingLists
     },

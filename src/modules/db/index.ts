@@ -1,6 +1,6 @@
 import pg from 'pg';
 import { createNewFeedback } from './feedback';
-import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem } from './shoppingList'
+import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem, updateShoppingList } from './shoppingList'
 import { deleteElementFromHistory, getElements, updateHistory } from './historyManagement';
 import { updatePassword } from './resetPassword';
 import { updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting } from './settingsManagement';
@@ -40,6 +40,7 @@ const end = async () => {
 const Database: DatabaseInterface = {
     ShoppingList: {
         createShoppingList,
+        updateShoppingList,
         createShoppingListItem,
         deleteShoppingList,
         deleteShoppingListItem,

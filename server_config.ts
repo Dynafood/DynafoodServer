@@ -25,10 +25,11 @@ import bodyParser from "body-parser";
 export interface DatabaseInterface {
     ShoppingList: {
         createShoppingList: (name: string, userid: string) => Promise<void>
+        updateShoppingList: (name: string, listID: string, userid: string) => Promise<void>
         createShoppingListItem: (itemName: string, listID: string, barcode: string | null, quantity: number | null) => Promise<void>
         deleteShoppingList: (listid: string, userid: string) => Promise<void>
         deleteShoppingListItem: (itemid: string, userid: string) => Promise<void>
-        updateShoppingListItem: (check: boolean, itemid: string) => Promise<void>
+        updateShoppingListItem: (itemName: string | null, barcode: string | null, quantity: number | null, check: boolean | null, itemid: string) => Promise<void>
         getShoppingListItems: (listid: string, userid: string) => Promise<Array<QueryResultRow>>
         getShoppingLists: (userid: string) => Promise<Array<QueryResultRow>>
     }
