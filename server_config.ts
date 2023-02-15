@@ -1,4 +1,4 @@
-import session from "express-session";
+import session from "cookie-session";
 import passport from "passport";
 import express, { Express } from 'express';
 import logger from './src/middleware/logger';
@@ -25,10 +25,11 @@ import bodyParser from "body-parser";
 export interface DatabaseInterface {
     ShoppingList: {
         createShoppingList: (name: string, userid: string) => Promise<void>
+        updateShoppingList: (name: string, listID: string, userid: string) => Promise<void>
         createShoppingListItem: (itemName: string, listID: string, barcode: string | null, quantity: number | null) => Promise<void>
         deleteShoppingList: (listid: string, userid: string) => Promise<void>
         deleteShoppingListItem: (itemid: string, userid: string) => Promise<void>
-        updateShoppingListItem: (check: boolean, itemid: string) => Promise<void>
+        updateShoppingListItem: (itemName: string | null, barcode: string | null, quantity: number | null, check: boolean | null, itemid: string) => Promise<void>
         getShoppingListItems: (listid: string, userid: string) => Promise<Array<QueryResultRow>>
         getShoppingLists: (userid: string) => Promise<Array<QueryResultRow>>
     }
@@ -146,8 +147,7 @@ app.use(shoppingListRouter)
 app.use(logger);
 app.use(
     session({
-      resave: false,
-      saveUninitialized: true,
+      overwrite: false,
       secret: process.env.JWT_SECRET || "kdjfiej2839jf",
     })
 );
