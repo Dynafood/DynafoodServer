@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
 import { createShoppingListItem, createShoppingList, deleteShoppingList, 
     deleteShoppingListItem, updateShoppingListItem, 
-    getShoppingListItems, getShoppingLists } from '../modules/shoppingList';
+    getShoppingListItems, getShoppingLists, updateShoppingList } from '../modules/shoppingList';
 
 const router : Router = Router();
 
@@ -14,5 +14,6 @@ router.patch('/shoppingList/item', secureRouteMiddleware, updateShoppingListItem
 router.get('/shoppingList/', secureRouteMiddleware, getShoppingLists);
 router.post('/shoppingList/', secureRouteMiddleware, createShoppingList);
 router.delete('/shoppingList/', secureRouteMiddleware, deleteShoppingList);
+router.patch('/shoppingList/', secureRouteMiddleware, updateShoppingList);
 
 export default router;
