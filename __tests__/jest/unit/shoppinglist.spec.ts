@@ -50,7 +50,7 @@ describe('check get Shopping list routes', () => {
 
 describe('check delete Shopping list routes', () => {
     test('delete valid shoppinglists', async () => {
-        const response = await supertest(app).delete("/shoppingList").send({"listid": "1234"}).set('authorization', 'Bearer token_existing');
+        const response = await supertest(app).delete("/shoppingList").send().query({"listid": "1234"}).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200);
     });
     test('delete invalid shoppinglists', async () => {

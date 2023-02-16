@@ -96,10 +96,10 @@ export const getShoppingLists = async (userid: string) => {
     return response.rows
 };
 
-export const updateShoppingList = async (userid: string, listid: string, name: string) => {
+export const updateShoppingList = async (name: string, listid: string, userid: string) => {
     const response : QueryResult = await db_adm_conn.query(`
     UPDATE ShoppingList
-    SET listname = ${name}
+    SET listname = '${name}'
     WHERE listID = '${checkInputBeforeSqlQuery(listid)}'
         AND enduserId = '${checkInputBeforeSqlQuery(userid)}';`);
 }
