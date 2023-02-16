@@ -21,6 +21,25 @@ export const sendResetPasswordEmail = async (name: string, email: string, token:
     console.log(`email was sent to ${email}`);
 };
 
+export const sendVerificationEmail = async (name: string, email: string) => {
+    const new_email = `http://localhost:8081/verifyEmail?email=${email}`
+    await mail_sender.send({
+        from: {
+            email: sender_email,
+            name: 'DynaFood'
+        },
+        to: {
+            email: email,
+            name: name
+        },
+        templateId: reset_password_template_id, // @todo change this to the other template
+        dynamicTemplateData: {
+            token: new_email
+        }
+    });
+    console.log(`verification email was sent to ${email}`);
+}
+
 // export const sendVerifyEmail = async (name: string, email: string) => {
 //     mail_sender.send({
 //         from: {

@@ -2,7 +2,7 @@ import { db_adm_conn } from './index';
 import { QueryResult, QueryResultRow } from 'pg';
 import { checkInputBeforeSqlQuery } from './scripts';
 
-export const createUser = async (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string, cc: string) : Promise<QueryResultRow> => {
+export const createUser = async (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string, email_confimed: boolean, cc: string) : Promise<QueryResultRow> => {
     const user : QueryResult = await db_adm_conn.query(`
         INSERT INTO EndUser (firstName, lastName, userName, email, phoneNumber, passcode, emailConfirmed, country_code)
         VALUES
@@ -13,7 +13,7 @@ export const createUser = async (firstName: string, lastName: string, userName: 
                 lower('${checkInputBeforeSqlQuery(email)}'),
                 '${checkInputBeforeSqlQuery(phoneNumber)}',
                 '${checkInputBeforeSqlQuery(password)}',
-                true,
+                ${email_confimed},
                 '${checkInputBeforeSqlQuery(cc)}'
             ) RETURNING *;`);
     return user.rows[0];
@@ -80,3 +80,28 @@ export const deleteUser = async (userid: string) : Promise<QueryResultRow> => {
         WHERE endUserID = '${checkInputBeforeSqlQuery(userid)}' RETURNING *;`);
     return response.rows[0];
 };
+
+export const setEmailConfirmed = async (email: string) : Promise<QueryResultRow> => {
+    const response: QueryResult = await db_adm_conn.query(`
+        UPDATE enduser
+        SET emailConfirmed = true
+        WHERE email = '${checkInputBeforeSqlQuery(email)}'
+    `);
+    return response.rows[0];
+}
+
+export const getEmailConfirmed = async (email: string) : Promise<QueryResultRow> => {
+    const response: QueryResult = await db_adm_conn.query(`
+        SELECT emailConfirmed FROM enduser
+        WHERE email = '${checkInputBeforeSqlQuery(email)}'
+    `);
+    return response.rows[0];
+}
+
+
+
+
+
+
+
+

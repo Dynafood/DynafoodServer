@@ -44,12 +44,14 @@ export interface DatabaseInterface {
         updatePassword: (userid: string, newPassword: string) => Promise<void>
     }
     User: {
-        createUser: (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string, cc: string) => Promise<QueryResultRow>
+        createUser: (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string, email_confimed: boolean, cc: string) => Promise<QueryResultRow>
         createUserOAuth: (userid: string, provider_id: string, userName: string, pictureLink: string, email: string, userProviderId: string) => Promise<QueryResultRow>
         getUser: (userid: string | null, email: string | null) => Promise<Array<QueryResultRow>>
         deleteUser: (userid: string) => Promise<QueryResultRow>
         getPasswordResetToken: (userid: string) => Promise<QueryResultRow | undefined>
         setPasswordResetToken: (userid: string, token: string) => Promise<QueryResultRow>
+        setEmailConfirmed: (email: string) => Promise<QueryResultRow>
+        getEmailConfirmed: (email: string) => Promise<QueryResultRow>
     }
     Settings: {
         getRestrictionIdByName: (restrictionName: string) => Promise<string | null>
