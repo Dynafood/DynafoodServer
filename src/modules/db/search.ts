@@ -8,7 +8,7 @@ export const getAllergenbyName = async (name: string, language: string) : Promis
         SELECT ${language}, SIMILARITY(${language}, '${escaped_search}') as Similarity
         FROM restriction
         WHERE 
-            SIMILARITY(${language}, '${escaped_search}') > 0.3 
+            SIMILARITY(${language}, '${escaped_search}') > (SELECT value FROM global_variables WHERE key = 'search_precision')::DECIMAL
             OR ${language} LIKE '${escaped_search}%'
         ORDER BY Similarity DESC`
     );
