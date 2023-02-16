@@ -246,4 +246,12 @@ CREATE TABLE IF NOT EXISTS ProductRestriction
             ON DELETE CASCADE
 );
 
+CREATE TABLE global_variables (
+  key VARCHAR(50) PRIMARY KEY,
+  value VARCHAR(2048)
+);
+
+INSERT INTO global_variables (key, value) 
+VALUES ('search_precision', '0.24');
+
 CREATE EXTENSION pg_trgm;
