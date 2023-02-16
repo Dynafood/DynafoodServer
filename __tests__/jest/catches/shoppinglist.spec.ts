@@ -24,7 +24,7 @@ describe('check post shoppinglist routes', () => {
 
 describe('check delete shoppinglist routes', () => {
     test('delete list with throw', async () => {
-        const response = await supertest(app).delete("/shoppingList").send({"listid": "1234"}).set('Cookie', ['token=token_existing']);
+        const response = await supertest(app).delete("/shoppingList").send().query({"listid": "1234"}).set('Cookie', ['token=token_existing']);
         expect(response.statusCode).toBe(500)
     })
 })

@@ -19,9 +19,9 @@ export const createShoppingList = async (req: Request, res: Response) => {
 };
 
 export const deleteShoppingList = async (req: Request, res: Response) => {
-    const id : string = req.body.listid;
+    const id : string = <string>(req.query.listid || null);
 
-    if (!id || id.length === 0) {
+    if (!id || id.length === 0 ||id == null) {
         res.status(400).send({ Error: 'No listId provided', Details: 'listId is not provided or empty!' });
         return;
     }
