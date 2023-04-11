@@ -74,7 +74,6 @@ export const updateShoppingListItem = async (itemName: string | null, barcode: s
     }
     query += (counter > 1 ? ") " : "" ) + `
     WHERE itemID = '${checkInputBeforeSqlQuery(itemid)}'`
-    console.log(query)
     await db_adm_conn.query(query);
 };
 
