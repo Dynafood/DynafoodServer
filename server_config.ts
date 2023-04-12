@@ -74,6 +74,14 @@ export interface DatabaseInterface {
     },
     Search: {
         getAllergenbyName: (name: string, language: string) => Promise<Array<string>>
+    },
+    Product: {
+        getProductByBarcode: (barcode: string) => Promise<QueryResultRow>,
+        getAllergensByBarcode: (barcode: string, order_lang: string) => Promise<Array<string>>
+        getCategoriesByBarcode: (barcode: string) => Promise<Array<string>>
+        getIngredientsByBarcode: (barcode: string, order_lang: string) => Promise<Array<JsonObject>>
+        getProductsByName: (name: string) => Promise<Array<JsonObject>>
+
     }
     connect: () => Promise<void>
     end: () => Promise<void>

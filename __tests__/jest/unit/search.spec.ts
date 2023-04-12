@@ -14,7 +14,7 @@ describe('check search products route', () => {
                 count: '2',
             }).send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200)
-        expect(response.body.length).toEqual(2);
+        expect(response.body.length).toEqual(4);
     })
     test('value undefined', async () => {
         const response = await supertest(app).get("/searchProduct")

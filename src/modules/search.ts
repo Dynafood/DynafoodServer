@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import axios, { AxiosResponse } from 'axios';
 import { database } from '../../server_config';
+import { object } from 'joi';
 
 export const searchProduct = async (req: Request, res: Response) => {
     try {
@@ -33,6 +34,12 @@ export const searchProduct = async (req: Request, res: Response) => {
             };
             products.push(newProduct);
         }
+        (await database.Product.getProductsByName(<string>value)).forEach(object => {
+            products.push({
+            name: object.product_name,
+            imageLink: object.image_front_url,
+            barcode: object.code,
+        })})
         res.status(200).send(products);
     } catch (error: any) {
         res.status(400).send({ Error: 'Unable to get product', Details: `${error.stack}` });

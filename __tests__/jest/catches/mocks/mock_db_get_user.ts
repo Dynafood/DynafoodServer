@@ -9,6 +9,7 @@ import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteS
 import { getTrendingGlobal, getTrendingLocal, insert, getCountryCode } from "./mock_trending";
 import { createUser, createUserOAuth, deleteUser, getPasswordResetToken, setPasswordResetToken } from "./mock_user";
 import { getAllergenbyName } from "./mock_search";
+import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from "./mock_product";
 
 export const getUser = async (userid: string | null = null, email: string | null = null) : Promise<Array<QueryResultRow>> => {
     throw new Error("ErrorMock")
@@ -67,6 +68,13 @@ const mock_db: DatabaseInterface = {
     },
     Search: {
         getAllergenbyName: getAllergenbyName
+    },
+    Product: {
+        getProductByBarcode,
+        getAllergensByBarcode,
+        getCategoriesByBarcode,
+        getIngredientsByBarcode,
+        getProductsByName
     },
     connect: async () => {throw "ErrorMock"},
     end: async () => {throw "ErrorMock"}

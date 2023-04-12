@@ -9,6 +9,7 @@ import { insert, getTrendingLocal, getTrendingGlobal, getCountryCode } from './t
 import { DatabaseInterface } from '../../../server_config';
 import { getProviderByName } from './oauth';
 import { getAllergenbyName } from './search';
+import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from './product';
 
 
 console.log('this is db_vars:', process.env.NODE_ENV, process.env.DB_USER, process.env.PG_PASSWORD, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
@@ -90,6 +91,13 @@ const Database: DatabaseInterface = {
     },
     Search: {
         getAllergenbyName,
+    },
+    Product: {
+        getProductByBarcode,
+        getAllergensByBarcode,
+        getCategoriesByBarcode,
+        getIngredientsByBarcode,
+        getProductsByName
     },
     connect,
     end

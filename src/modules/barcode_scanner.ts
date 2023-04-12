@@ -3,6 +3,9 @@ import { Request, Response } from 'express';
 import { JsonObject } from 'swagger-ui-express';
 import { database } from '../../server_config';
 import { translate_ingredient, translate_nutriment } from './translation/translation';
+import { db_adm_conn } from './db';
+import { checkInputBeforeSqlQuery } from './db/scripts';
+import { object } from 'joi';
 
 const getInnerIngredients = (ingredient: JsonObject, language: string): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
     const inner : Array<object> = [];
@@ -152,6 +155,91 @@ const getEcoScore = (data: JsonObject): EcoScoreInterface => {
 //     return false;
 // };
 
+const parseProductFromOFF = (product: AxiosResponse, response: JsonObject, userID: string, language: string) => {
+    if (typeof product === 'object' && product.data && product.data.product) {
+        const data = product.data.product;
+        response.keywords = data._keywords;
+        response.allergens = getAllAllergenes(data.allergens_hierarchy);
+        response.categories = data.categories ? data.categories.split(',') : [];
+        response.qualities = data.data_quality_tags;
+        response.warings = data.data_quality_warnings_tags;
+        response.ecoscoreData = getEcoScore(data);
+        response.packing = data.packaging;
+        response.name = product.data.product.product_name;
+        if (typeof data.image_front_url === 'undefined' || data.image_front_url == null) { response.images = null; } else { response.images = data.image_small_url; }
+        if (product.data.product) {
+            response.ingredients = getInnerIngredients(product.data.product, language);
+        }
+        if (product.data.product && product.data.product.nutriments) {
+            response.nutriments_g_pro_100g = getNutriments(product.data.product.nutriments, language);
+        }    
+        response.nutriments_scores = getNutrimentsScore(product.data.product);
+                        // response.vegetarian_alert = await checkAlertVegetarian(userID, response)
+    }
+}
+
+const parseProductFromDB = async (barcode: string, response: JsonObject, userID: string, language: string) => {
+    let order_lang: string = ""
+    if (language == "en") {
+        order_lang = "eng_name"
+    } else if (language == "ge") {
+        order_lang = "ger_name"
+    } else if (language == "fr") {
+        order_lang = "frz_name"
+    }
+    if (order_lang == "") {
+        return;
+    }
+    const product = await database.Product.getProductByBarcode(barcode)
+    if (product== null || product == undefined || JSON.stringify(product) == JSON.stringify({})) return
+    
+    const allergens = await database.Product.getAllergensByBarcode(barcode, order_lang)
+    const categories =  await database.Product.getCategoriesByBarcode(barcode)
+    const ingredients = await database.Product.getIngredientsByBarcode(barcode, order_lang)
+
+    response.name = product.productname
+    response.allergenes = allergens
+    response.categories = categories
+    response.ecoscoreData = {}
+    response.images = product.picturelink
+    response.ingredients = ingredients.map((object) => object.name)
+
+    let vegan = true
+    let vegetarian = true
+
+    ingredients.forEach(element => {
+        if (!element.vegan) {
+            vegan = false
+            vegetarian = false
+        }
+        if (!element.vegetarian) {
+            vegetarian = false
+        }
+    });
+    response.vegetarian_alert = vegetarian
+
+    response.nutriments_g_pro_100g =  {
+        calcium: { name: translate_nutriment('calcium', language), score: product.calcium },
+        carbohydrates: { name: translate_nutriment('carbohydrates', language), score: product.carbohydrats },
+        cholesterol: { name: translate_nutriment('cholesterol', language), score: product.cholesterol },
+        kcal: { name: translate_nutriment('kcal', language), score: product.kcal },
+        fat: { name: translate_nutriment('fat', language), score: product.fat },
+        fiber: { name: translate_nutriment('fiber', language), score: product.fiber },
+        iron: { name: translate_nutriment('iron', language), score: product.iron },
+        proteins: { name: translate_nutriment('proteins', language), score: product.proteins },
+        salt: { name: translate_nutriment('salt', language), score: product.salt },
+        'saturated fat': { name: translate_nutriment('saturated fat', language), score: product.saturated_fat }, 
+        sodium: { name: translate_nutriment('sodium', language), score: product.sodium },
+        sugars: { name: translate_nutriment('sugars', language), score: product.sugars },
+        'trans fat': { name: translate_nutriment('trans fat', language), score: product.trans_fat },
+        'vitamin A': { name: translate_nutriment('vitamin A', language), score: product.vitamin_a },
+        'vitamin B': { name: translate_nutriment('vitamin B', language), score: product.vitamin_b },
+        'vitamin C': { name: translate_nutriment('vitamin C', language), score: product.vitamin_c },
+        'vitamin D': { name: translate_nutriment('vitamin D', language), score: product.vitamin_d },
+        'vitamin E': { name: translate_nutriment('vitamin E', language), score: product.vitamin_e }
+    };
+}
+
 export const getProduct = async (req: Request, res: Response) : Promise<void> => {
     try {
         const userID: string = res.locals.user.userid;
@@ -179,33 +267,17 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             res.status(500).send({ error: 'undefined response from OpenFoodFacts Api' });
         }
 
-        if (product.data.status !== 1) {
-            res.status(204).send({ response: 'Product not found' });
-            return;
-        }
-
-                if (typeof product === 'object' && product.data && product.data.product) {
-                const data = product.data.product;
-                response.keywords = data._keywords;
-                response.allergens = getAllAllergenes(data.allergens_hierarchy);
-                response.categories = data.categories ? data.categories.split(',') : [];
-                response.qualities = data.data_quality_tags;
-                response.warings = data.data_quality_warnings_tags;
-                response.ecoscoreData = getEcoScore(data);
-                response.packing = data.packaging;
-                response.name = product.data.product.product_name;
-                if (typeof data.image_front_url === 'undefined' || data.image_front_url == null) { response.images = null; } else { response.images = data.image_small_url; }
-                if (product.data.product) {
-                    response.ingredients = getInnerIngredients(product.data.product, language);
-                }
-                if (product.data.product && product.data.product.nutriments) {
-                    response.nutriments_g_pro_100g = getNutriments(product.data.product.nutriments, language);
-                }
-                    await database.History.updateHistory(userID, req.params.barcode, response);
-                        await database.TrendingProducts.insert(userID, req.params.barcode, response.name, response.images[0]);
-                            response.nutriments_scores = getNutrimentsScore(product.data.product);
-                                // response.vegetarian_alert = await checkAlertVegetarian(userID, response)
+        if (product.data.status == 1) {
+            parseProductFromOFF(product, response, userID, language);
+        } else {
+            await parseProductFromDB(req.params.barcode, response, userID, language);
+            if (response.name == null) {
+                res.status(204).send({ response: 'Product not found' });
+                return;
             }
+        }
+        await database.History.updateHistory(userID, req.params.barcode, response);
+        await database.TrendingProducts.insert(userID, req.params.barcode, response.name, response.images[0]);
         res.status(200).send(response);
     }
     catch (error) {

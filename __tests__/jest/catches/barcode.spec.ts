@@ -7,9 +7,9 @@ jwt.init()
 db.init()
 
 describe('check get product routes catch', () => {
-    test('get non existing product but no catch', async () => {
+    test('get non existing product but catch from db', async () => {
         const response = await supertest(app).get("/products/barcode/123").send().set('authorization', 'Bearer token_existing');
-        expect(response.statusCode).toBe(204)
+        expect(response.statusCode).toBe(500)
     })
     test('existing product nutella catch', async () => {
         const response = await supertest(app).get("/products/barcode/3017620425035").send().set('authorization', 'Bearer token_existing');
