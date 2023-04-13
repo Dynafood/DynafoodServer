@@ -37,8 +37,17 @@ schedule.scheduleJob('0 0 * * *', async () => {
     `);
 })
 
+const reconnect = async () => {
+    try {
+        await database.end()
+        await database.connect()
+        console.log("reconnect")
+    } catch (err) {
+        console.log(err);
+        await reconnect();
+    }
+}
+
 schedule.scheduleJob('*/2 * * * *', async () => {
-    await database.end()
-    await database.connect()
-    console.log("reconnect")
+    await reconnect();
 })
