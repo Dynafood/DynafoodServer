@@ -27,6 +27,7 @@ export const searchProduct = async (req: Request, res: Response) => {
 
         for (let i = 0; i < +count; i++) {
             const product = response.data.products[i];
+            if (product == undefined) break;
             let newProduct = {
                 name: product.product_name,
                 imageLink: product.image_front_url,
