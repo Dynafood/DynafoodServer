@@ -141,6 +141,8 @@ app.use(express.json({ limit: '200kb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs));
+app.use(logger.logger);
+app.use(logger.outgoingLogger);
 
 app.use(mainRouter);
 app.use(userRouter);
@@ -152,7 +154,6 @@ app.use(feedbackRouter)
 app.use(searchRouter)
 app.use(trendingRouter)
 app.use(shoppingListRouter)
-app.use(logger);
 app.use(
     session({
       overwrite: false,

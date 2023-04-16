@@ -6,7 +6,6 @@ const router: Router = Router();
 router.use(json({ limit: '200kb' }));
 router.use(urlencoded({ extended: true }));
 router.use(cookieParser());
-router.use(logger);
 
 router.get('/welcome', (req: Request, res: Response) => {
     res.status(200).send({ message: 'Welcome 🙌' });
