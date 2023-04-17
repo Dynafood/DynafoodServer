@@ -68,7 +68,7 @@ export const setPasswordResetToken = async (email: string, token: string) : Prom
     const query: string = `
     UPDATE EndUser
     SET password_reset_token = '${token}'
-    WHERE email = '${checkInputBeforeSqlQuery(email)}';`;
+    WHERE lower(email) = lower('${checkInputBeforeSqlQuery(email)}');`;
 
     const result: QueryResult = await db_adm_conn.query(query);
     return result.rows[0];
