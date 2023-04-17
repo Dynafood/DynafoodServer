@@ -36,7 +36,6 @@ export const verifyCode = async (req: Request, res: Response) => {
             return;
         }
 
-        await database.User.setPasswordResetToken(email, "");
         res.status(200).send({ status: 'OK' });
     } catch (err: any) {
         console.log(err);
@@ -87,9 +86,19 @@ export const triggerResetPasswordEmail = async (req: Request, res: Response) => 
 export const resetPassword = async (req: Request, res: Response) => {
     try {
         let newPassword: string | null = req.body.password;
+        let email: string | null = req.body.email || null;
+        let code: string | null = req.body.code || null;
 
         if (newPassword === null || typeof newPassword === 'undefined') {
             res.status(400).send({ Error: 'No password provided', Details: 'No password provided' });
+            return;
+        }
+        if (email == null) {
+            res.status(400).send({Error: 'No email provided', Details: 'No email provided in body'})
+            return;
+        }
+        if (code == null) {
+            res.status(400).send({Error: 'No Verfifier code provided', Details: 'No property "code" in body provided'})
             return;
         }
 
@@ -100,8 +109,13 @@ export const resetPassword = async (req: Request, res: Response) => {
             return;
         }
         newPassword = await bcrypt.hash(newPassword, 10);
-        await database.ResetPassword.updatePassword(res.locals.user.userid, newPassword);
-        res.status(200).send({ status: 'OK' });
+        let response : string = await database.ResetPassword.updatePassword(email, newPassword, code);
+        if (response.length == 0) {
+            res.status(200).send({ status: 'OK' });
+        }
+        else {
+            res.status(400).send({Error: response, Details: response})
+        }
     } catch (err: any) {
         console.log(err.stack);
         res.status(500).send({ Error: err, Details: err.stack });

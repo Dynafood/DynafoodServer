@@ -42,7 +42,7 @@ export interface DatabaseInterface {
         updateHistory: (userID: string, barcode: string, product: JsonObject) => Promise<void>
     }
     Password: {
-        updatePassword: (userid: string, newPassword: string) => Promise<void>
+        updatePassword: (email: string, newPassword: string, code: string) => Promise<string>
     }
     User: {
         createUser: (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string, cc: string) => Promise<QueryResultRow>
@@ -61,7 +61,7 @@ export interface DatabaseInterface {
         createSetting: (alertactivation: string, userid: string, restrictionid: string) => Promise<void>
     },
     ResetPassword: {
-        updatePassword: (userid: string, newPassword: string) => Promise<void>
+        updatePassword: (email: string, newPassword: string, code: string) => Promise<string>
     },
     TrendingProducts: {
         getTrendingGlobal: (count: number) => Promise<Array<QueryResultRow>>
