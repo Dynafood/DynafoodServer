@@ -96,7 +96,7 @@ router.get('/resetPassword', triggerResetPasswordEmail);
  *               items:
  *                 $ref: '#/components/schemas/Error'
  */
-router.post('/resetPassword', secureRouteMiddleware, resetPassword);
+router.post('/resetPassword', resetPassword);
 
 /**
  * @swagger

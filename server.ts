@@ -48,6 +48,6 @@ const reconnect = async () => {
     }
 }
 
-schedule.scheduleJob('*/2 * * * *', async () => {
-    await reconnect();
-})
+// schedule.scheduleJob('*/2 * * * *', async () => {
+//     await reconnect();
+// })

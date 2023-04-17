@@ -42,7 +42,7 @@ export interface DatabaseInterface {
         updateHistory: (userID: string, barcode: string, product: JsonObject) => Promise<void>
     }
     Password: {
-        updatePassword: (userid: string, newPassword: string) => Promise<void>
+        updatePassword: (email: string, newPassword: string, code: string) => Promise<string>
     }
     User: {
         createUser: (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string, cc: string) => Promise<QueryResultRow>
@@ -61,7 +61,7 @@ export interface DatabaseInterface {
         createSetting: (alertactivation: string, userid: string, restrictionid: string) => Promise<void>
     },
     ResetPassword: {
-        updatePassword: (userid: string, newPassword: string) => Promise<void>
+        updatePassword: (email: string, newPassword: string, code: string) => Promise<string>
     },
     TrendingProducts: {
         getTrendingGlobal: (count: number) => Promise<Array<QueryResultRow>>
@@ -74,6 +74,14 @@ export interface DatabaseInterface {
     },
     Search: {
         getAllergenbyName: (name: string, language: string) => Promise<Array<string>>
+    },
+    Product: {
+        getProductByBarcode: (barcode: string) => Promise<QueryResultRow>,
+        getAllergensByBarcode: (barcode: string, order_lang: string) => Promise<Array<string>>
+        getCategoriesByBarcode: (barcode: string) => Promise<Array<string>>
+        getIngredientsByBarcode: (barcode: string, order_lang: string) => Promise<Array<JsonObject>>
+        getProductsByName: (name: string) => Promise<Array<JsonObject>>
+
     }
     connect: () => Promise<void>
     end: () => Promise<void>
@@ -133,6 +141,8 @@ app.use(express.json({ limit: '200kb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs));
+app.use(logger.logger);
+app.use(logger.outgoingLogger);
 
 app.use(mainRouter);
 app.use(userRouter);
@@ -144,7 +154,6 @@ app.use(feedbackRouter)
 app.use(searchRouter)
 app.use(trendingRouter)
 app.use(shoppingListRouter)
-app.use(logger);
 app.use(
     session({
       overwrite: false,

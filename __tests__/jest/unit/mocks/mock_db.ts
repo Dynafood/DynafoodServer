@@ -9,6 +9,7 @@ import { updatePassword } from "./mock_password"
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingList, updateShoppingListItem } from "./mock_shoppinglist"
 import { QueryResultRow } from "pg";
 import {getAllergenbyName} from "./mock_search";
+import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from "./mock_product";
 
 
 
@@ -63,7 +64,14 @@ const mock_db: DatabaseInterface = {
         getProviderByName: async (name: string) : Promise<QueryResultRow> => {return{}}
     },
     Search: {
-        getAllergenbyName: getAllergenbyName
+        getAllergenbyName: getAllergenbyName,
+    },
+    Product : {
+        getProductByBarcode,
+        getAllergensByBarcode,
+        getCategoriesByBarcode,
+        getIngredientsByBarcode,
+        getProductsByName
     },
     connect: async () : Promise<void> => {},
     end: async () : Promise<void> => {}
