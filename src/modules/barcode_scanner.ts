@@ -6,6 +6,7 @@ import { translate_ingredient, translate_nutriment } from './translation/transla
 import { db_adm_conn } from './db';
 import { checkInputBeforeSqlQuery } from './db/scripts';
 import { object } from 'joi';
+import { EcoScoreInterface } from './algorithm';
 
 const getInnerIngredients = (ingredient: JsonObject, language: string): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
     const inner : Array<object> = [];
@@ -110,15 +111,6 @@ const getNutrimentsScore = (data: JsonObject): {
         total_score: null
     };
 };
-
-type EcoScoreInterface = {
-    eco_grade : null | string | number,
-    eco_score : null | string | number,
-    epi_score : null | string | number,
-    transportation_scores : JsonObject | null, // subdivided in countries // mostly empty
-    packaging : JsonObject | null, // information about packaging, // mostly empty
-    agribalyse : JsonObject | null,
-}
 
 const getEcoScore = (data: JsonObject): EcoScoreInterface => {
     const ret : EcoScoreInterface = {
