@@ -10,22 +10,34 @@ import { EcoScoreInterface } from './algorithm';
 
 const getInnerIngredients = (ingredient: JsonObject, language: string): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
     const inner : Array<object> = [];
-    let vegan : boolean = true;
-    let vegetarian : boolean = true;
+    let vegan : boolean | null = true;
+    let vegetarian : boolean | null = true;
     if (typeof ingredient.ingredients !== 'undefined' && ingredient.ingredients !== null) {
         for (let i = 0; i < ingredient.ingredients.length; i++) {
             const name = translate_ingredient(ingredient.ingredients[i].id, language);
             const tmp = {
                 name: name || ingredient.ingredients[i].text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match: string) => match.toUpperCase()),
-                vegan: ingredient.ingredients[i].vegan,
-                vegetarian: ingredient.ingredients[i].vegetarian,
+                vegan: ingredient.ingredients[i].vegan == "yes" ? true : ingredient.ingredients[i].vegan,
+                vegetarian: ingredient.ingredients[i].vegetarian == "yes" ? true : ingredient.ingredients[i].vegetarian,
                 ingredients: getInnerIngredients(ingredient.ingredients[i], language)
             };
-            if (tmp.vegan) {
-                vegan = true;
+            if (tmp.vegan == false || tmp.vegan == "no") {
+                vegan = false;
+                tmp.vegan = false
             }
-            if (tmp.vegetarian) {
-                vegetarian = true;
+            if (tmp.vegetarian == false || tmp.vegetarian == "no") {
+                vegetarian = false;
+                tmp.vegetarian = false
+            }
+
+            if (vegan && tmp.vegan == "maybe") {
+                vegan = null
+                tmp.vegan = null
+            }
+            if (vegetarian && tmp.vegetarian == "maybe") {
+                vegetarian = null
+                tmp.vegetarian = null
+
             }
             inner.push(tmp);
         }
