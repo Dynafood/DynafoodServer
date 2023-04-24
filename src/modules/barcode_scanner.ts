@@ -3,9 +3,6 @@ import { Request, Response } from 'express';
 import { JsonObject } from 'swagger-ui-express';
 import { database } from '../../server_config';
 import { translate_ingredient, translate_nutriment } from './translation/translation';
-import { db_adm_conn } from './db';
-import { checkInputBeforeSqlQuery } from './db/scripts';
-import { object } from 'joi';
 import { EcoScoreInterface } from './algorithm';
 
 const getInnerIngredients = (ingredient: JsonObject, language: string): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
@@ -202,11 +199,16 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
     const ingredients = await database.Product.getIngredientsByBarcode(barcode, order_lang)
 
     response.name = product.productname
-    response.allergenes = allergens
+    response.allergens = allergens
     response.categories = categories
     response.ecoscoreData = {}
     response.images = product.picturelink
-    response.ingredients = ingredients.map((object) => object.name)
+    response.ingredients = {vegan : true, vegetarian: true, ingredients: []}
+    ingredients.forEach((ingredient) => {response.ingredients.ingredients.push({vegan: ingredient.vegan, vegetarian: ingredient.vegetarian, name: ingredient.name, ingredients: [{
+        "vegan": null,
+        "vegetarian": null,
+        "ingredients": []
+    }]})})
 
     let vegan = true
     let vegetarian = true
@@ -214,13 +216,14 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
     ingredients.forEach(element => {
         if (!element.vegan) {
             vegan = false
-            vegetarian = false
         }
         if (!element.vegetarian) {
             vegetarian = false
         }
     });
     response.vegetarian_alert = vegetarian
+    response.ingredients.vegan = vegan
+    response.ingredients.vegetarian = vegetarian
 
     response.nutriments_g_pro_100g =  {
         calcium: { name: translate_nutriment('calcium', language), score: product.calcium },
