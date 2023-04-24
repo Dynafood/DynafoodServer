@@ -33,7 +33,8 @@ export const searchProduct = async (req: Request, res: Response) => {
                 imageLink: product.image_front_url,
                 barcode: product.code,
             };
-            products.push(newProduct);
+            if (newProduct.name && newProduct.name.length != 0)
+                products.push(newProduct);
         }
         (await database.Product.getProductsByName(<string>value)).forEach(object => {
             products.push({

@@ -3,28 +3,38 @@ import { Request, Response } from 'express';
 import { JsonObject } from 'swagger-ui-express';
 import { database } from '../../server_config';
 import { translate_ingredient, translate_nutriment } from './translation/translation';
-import { db_adm_conn } from './db';
-import { checkInputBeforeSqlQuery } from './db/scripts';
-import { object } from 'joi';
+import { EcoScoreInterface } from './algorithm';
 
 const getInnerIngredients = (ingredient: JsonObject, language: string): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
     const inner : Array<object> = [];
-    let vegan : boolean = true;
-    let vegetarian : boolean = true;
+    let vegan : boolean | null = true;
+    let vegetarian : boolean | null = true;
     if (typeof ingredient.ingredients !== 'undefined' && ingredient.ingredients !== null) {
         for (let i = 0; i < ingredient.ingredients.length; i++) {
             const name = translate_ingredient(ingredient.ingredients[i].id, language);
             const tmp = {
                 name: name || ingredient.ingredients[i].text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match: string) => match.toUpperCase()),
-                vegan: ingredient.ingredients[i].vegan,
-                vegetarian: ingredient.ingredients[i].vegetarian,
+                vegan: ingredient.ingredients[i].vegan == "yes" ? true : ingredient.ingredients[i].vegan,
+                vegetarian: ingredient.ingredients[i].vegetarian == "yes" ? true : ingredient.ingredients[i].vegetarian,
                 ingredients: getInnerIngredients(ingredient.ingredients[i], language)
             };
-            if (tmp.vegan) {
-                vegan = true;
+            if (tmp.vegan == false || tmp.vegan == "no") {
+                vegan = false;
+                tmp.vegan = false
             }
-            if (tmp.vegetarian) {
-                vegetarian = true;
+            if (tmp.vegetarian == false || tmp.vegetarian == "no") {
+                vegetarian = false;
+                tmp.vegetarian = false
+            }
+
+            if (vegan && tmp.vegan == "maybe") {
+                vegan = null
+                tmp.vegan = null
+            }
+            if (vegetarian && tmp.vegetarian == "maybe") {
+                vegetarian = null
+                tmp.vegetarian = null
+
             }
             inner.push(tmp);
         }
@@ -111,15 +121,6 @@ const getNutrimentsScore = (data: JsonObject): {
     };
 };
 
-type EcoScoreInterface = {
-    eco_grade : null | string | number,
-    eco_score : null | string | number,
-    epi_score : null | string | number,
-    transportation_scores : JsonObject | null, // subdivided in countries // mostly empty
-    packaging : JsonObject | null, // information about packaging, // mostly empty
-    agribalyse : JsonObject | null,
-}
-
 const getEcoScore = (data: JsonObject): EcoScoreInterface => {
     const ret : EcoScoreInterface = {
         eco_grade: null,
@@ -198,11 +199,16 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
     const ingredients = await database.Product.getIngredientsByBarcode(barcode, order_lang)
 
     response.name = product.productname
-    response.allergenes = allergens
+    response.allergens = allergens
     response.categories = categories
     response.ecoscoreData = {}
     response.images = product.picturelink
-    response.ingredients = ingredients.map((object) => object.name)
+    response.ingredients = {vegan : true, vegetarian: true, ingredients: []}
+    ingredients.forEach((ingredient) => {response.ingredients.ingredients.push({vegan: ingredient.vegan, vegetarian: ingredient.vegetarian, name: ingredient.name, ingredients: [{
+        "vegan": null,
+        "vegetarian": null,
+        "ingredients": []
+    }]})})
 
     let vegan = true
     let vegetarian = true
@@ -210,13 +216,14 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
     ingredients.forEach(element => {
         if (!element.vegan) {
             vegan = false
-            vegetarian = false
         }
         if (!element.vegetarian) {
             vegetarian = false
         }
     });
     response.vegetarian_alert = vegetarian
+    response.ingredients.vegan = vegan
+    response.ingredients.vegetarian = vegetarian
 
     response.nutriments_g_pro_100g =  {
         calcium: { name: translate_nutriment('calcium', language), score: product.calcium },
