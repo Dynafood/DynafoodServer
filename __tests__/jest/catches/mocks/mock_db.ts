@@ -6,9 +6,10 @@ import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, up
 import { deleteElementFromHistory, getElements, updateHistory } from "./mock_history";
 import { QueryResultRow } from "pg";
 import { updatePassword } from "./mock_password";
-import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem } from "./mock_shoppinglist";
+import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingList, updateShoppingListItem } from "./mock_shoppinglist";
 import { getTrendingGlobal, getCountryCode, getTrendingLocal, insert } from "./mock_trending";
 import { getAllergenbyName } from "./mock_search";
+import { getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductByBarcode, getProductsByName } from "./mock_product";
 
 
 
@@ -20,6 +21,7 @@ const mock_db: DatabaseInterface = {
         deleteShoppingList: deleteShoppingList,
         deleteShoppingListItem: deleteShoppingListItem,
         updateShoppingListItem: updateShoppingListItem,
+        updateShoppingList: updateShoppingList,
         getShoppingListItems: getShoppingListItems,
         getShoppingLists: getShoppingLists
     },
@@ -64,6 +66,13 @@ const mock_db: DatabaseInterface = {
     },
     Search: {
         getAllergenbyName: getAllergenbyName
+    },
+    Product: {
+        getProductByBarcode,
+        getAllergensByBarcode,
+        getCategoriesByBarcode,
+        getIngredientsByBarcode,
+        getProductsByName
     },
     connect: async () => {throw "ErrorMock"},
     end: async () => {throw "ErrorMock"}

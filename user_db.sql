@@ -197,10 +197,12 @@ CREATE TABLE IF NOT EXISTS Product
     nutriScore VARCHAR(20),
     ecoScore VARCHAR(20),
     pictureLink VARCHAR(1024),
+    calcium VARCHAR(20),
     carbohydrats VARCHAR(20),
     cholesterol VARCHAR(20),
     kcal VARCHAR(20),
-    far VARCHAR(20),
+    fat VARCHAR(20),
+    saturated_fat VARCHAR(20),
     fiber VARCHAR(20),
     iron VARCHAR(20),
     proteins VARCHAR(20),
@@ -245,5 +247,30 @@ CREATE TABLE IF NOT EXISTS ProductRestriction
             REFERENCES Product(productID)
             ON DELETE CASCADE
 );
+
+CREATE TABLE global_variables (
+  key VARCHAR(50) PRIMARY KEY,
+  value VARCHAR(2048)
+);
+
+INSERT INTO global_variables (key, value) 
+VALUES ('search_precision', '0.24');
+
+
+CREATE TABLE IF NOT EXISTS ProductIngredient
+(
+    productIngredientID uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    ingredientID uuid NOT NULL,
+    productID uuid NOT NULL,
+    CONSTRAINT fk_ingredient
+        FOREIGN KEY(ingredientID)
+            REFERENCES ingredient(ingredientID)
+            ON DELETE CASCADE,
+    CONSTRAINT fk_product
+        FOREIGN KEY(productID)
+            REFERENCES Product(productID)
+            ON DELETE CASCADE
+);
+
 
 CREATE EXTENSION pg_trgm;

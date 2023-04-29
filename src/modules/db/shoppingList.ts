@@ -12,8 +12,11 @@ export const createShoppingList = async (name: string, userid: string) => {
 //later create units which can be used
 export const createShoppingListItem = async (itemName: string, listID: string, barcode: string | null, quantity: number | null) => {
     await db_adm_conn.query(`
-            INSERT INTO ShoppingListItem (listID, productName, barcode, quantity, done)
-            VALUES ('${checkInputBeforeSqlQuery(listID)}', '${checkInputBeforeSqlQuery(itemName)}', '${checkInputBeforeSqlQuery(barcode)}', '${quantity}', false);
+            INSERT INTO ShoppingListItem (listID, productName, ${barcode != null ? "barcode, " : ""}${quantity != null ? "quantity, " : ""}done)
+            VALUES ('${checkInputBeforeSqlQuery(listID)}', 
+            '${checkInputBeforeSqlQuery(itemName)}', 
+            ${barcode != null ? `'${checkInputBeforeSqlQuery(barcode)}', ` : ""}
+            ${quantity != null ? `'${quantity}', `: ""}false);
         `);
     
 };
@@ -45,11 +48,33 @@ export const deleteShoppingListItem = async (itemID: string, userid: string) => 
     WHERE sli.itemID = '${checkInputBeforeSqlQuery(itemID)}'`);
 };
 
-export const updateShoppingListItem = async (check: boolean, itemid: string) => {
-    await db_adm_conn.query(`
+export const updateShoppingListItem = async (itemName: string | null, barcode: string | null, quantity: number | null, check: boolean | null, itemid: string) => {
+    const possible = [["done", check], ["productname", itemName], ["barcode", barcode], ["quantity", quantity]]
+    let counter = 0;
+    possible.forEach(item => {if (item[1] != null) counter++})
+    let query = `
     UPDATE ShoppingListItem
-    SET done = ${check}
-    WHERE itemID = '${checkInputBeforeSqlQuery(itemid)}'`);
+    SET ` + (counter > 1 ? "( " : "" ) ;
+    for (let p = 0; p < possible.length; p++) {
+        if (possible[p][1] != null) {
+            if (p != 0) {
+                query += ", " 
+            }
+            query += `${possible[p][0]}`
+        }
+    }
+    query += counter > 1 ? ") = (" : " = "
+    for (let p = 0; p < possible.length; p++) {
+        if (possible[p][1] != null) {
+            if (p != 0) {
+                query += ", " 
+            }
+            query += `'${possible[p][1]}'`
+        }
+    }
+    query += (counter > 1 ? ") " : "" ) + `
+    WHERE itemID = '${checkInputBeforeSqlQuery(itemid)}'`
+    await db_adm_conn.query(query);
 };
 
 export const getShoppingListItems = async (listID: string, userid: string) => {
@@ -69,3 +94,11 @@ export const getShoppingLists = async (userid: string) => {
     WHERE enduserId = '${checkInputBeforeSqlQuery(userid)}';`);
     return response.rows
 };
+
+export const updateShoppingList = async (name: string, listid: string, userid: string) => {
+    const response : QueryResult = await db_adm_conn.query(`
+    UPDATE ShoppingList
+    SET listname = '${name}'
+    WHERE listID = '${checkInputBeforeSqlQuery(listid)}'
+        AND enduserId = '${checkInputBeforeSqlQuery(userid)}';`);
+}

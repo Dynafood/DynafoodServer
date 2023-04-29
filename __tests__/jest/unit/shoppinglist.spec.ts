@@ -50,7 +50,7 @@ describe('check get Shopping list routes', () => {
 
 describe('check delete Shopping list routes', () => {
     test('delete valid shoppinglists', async () => {
-        const response = await supertest(app).delete("/shoppingList").send({"listid": "1234"}).set('authorization', 'Bearer token_existing');
+        const response = await supertest(app).delete("/shoppingList").send().query({"listid": "1234"}).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200);
     });
     test('delete invalid shoppinglists', async () => {
@@ -145,6 +145,14 @@ describe('check update Shopping list item routes', () => {
         const response = await supertest(app).patch("/shoppingList/Item").send({"itemid": "1234"}).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200);
     });
+    test('update valid shoppinglist item', async () => {
+        const response = await supertest(app).patch("/shoppingList/Item").send({"itemid": "1234", "check": true}).set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(200);
+    });
+    test('update valid shoppinglist item', async () => {
+        const response = await supertest(app).patch("/shoppingList/Item").send({"itemid": "1234", "check": true, "itemname" : "ka ching"}).set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(200);
+    });
     test('update invalid shoppinglist item id missing', async () => {
         const response = await supertest(app).patch("/shoppingList/Item").send({"itemid": ""}).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(400);
@@ -154,6 +162,32 @@ describe('check update Shopping list item routes', () => {
         const response = await supertest(app).patch("/shoppingList/Item").send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(400);
         expect(response.body).toStrictEqual({ Error: 'No itemId provided', Details: 'itemId is not provided or empty!' })
+    });
+});
+describe('check update Shopping list routes', () => {
+    test('update valid shoppinglist', async () => {
+        const response = await supertest(app).patch("/shoppingList").send({"listid": "1234", "name": "new name"}).set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(200);
+    });
+    test('update invalid shoppinglist list id missing', async () => {
+        const response = await supertest(app).patch("/shoppingList").send({"listid": ""}).set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(400);
+        expect(response.body).toStrictEqual({ Error: 'No listId provided', Details: 'listId is not provided or empty!' })
+    });
+    test('update invalid shoppinglists list id missing 2', async () => {
+        const response = await supertest(app).patch("/shoppingList").send().set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(400);
+        expect(response.body).toStrictEqual({ Error: 'No listId provided', Details: 'listId is not provided or empty!' })
+    });
+    test('update invalid shoppinglist name missing', async () => {
+        const response = await supertest(app).patch("/shoppingList").send({"listid": "1234", "name": ""}).set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(400);
+        expect(response.body).toStrictEqual({ Error: 'No name provided', Details: 'name is not provided or empty!' })
+    });
+    test('update invalid shoppinglist name missing 2', async () => {
+        const response = await supertest(app).patch("/shoppingList").send({"listid": "1234"}).set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(400);
+        expect(response.body).toStrictEqual({ Error: 'No name provided', Details: 'name is not provided or empty!' })
     });
 });
 

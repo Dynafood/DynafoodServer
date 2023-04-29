@@ -36,3 +36,18 @@ schedule.scheduleJob('0 0 * * *', async () => {
         WHERE dtime < now()-'7 day'::interval;
     `);
 })
+
+const reconnect = async () => {
+    try {
+        await database.end()
+        await database.connect()
+        console.log("reconnect")
+    } catch (err) {
+        console.log(err);
+        await reconnect();
+    }
+}
+
+// schedule.scheduleJob('*/2 * * * *', async () => {
+//     await reconnect();
+// })

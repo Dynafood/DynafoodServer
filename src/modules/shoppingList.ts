@@ -19,9 +19,9 @@ export const createShoppingList = async (req: Request, res: Response) => {
 };
 
 export const deleteShoppingList = async (req: Request, res: Response) => {
-    const id : string = req.body.listid;
+    const id : string = <string>(req.query.listid || null);
 
-    if (!id || id.length === 0) {
+    if (!id || id.length === 0 ||id == null) {
         res.status(400).send({ Error: 'No listId provided', Details: 'listId is not provided or empty!' });
         return;
     }
@@ -33,6 +33,27 @@ export const deleteShoppingList = async (req: Request, res: Response) => {
         res.status(500).send({ Error: err, Details: err.stack });
     }
 };
+
+export const updateShoppingList = async (req: Request, res: Response) => {
+    const id : string = req.body.listid;
+    const name : string = req.body.name;
+
+    if (!id || id.length === 0) {
+        res.status(400).send({ Error: 'No listId provided', Details: 'listId is not provided or empty!' });
+        return;
+    }
+    if (!name || name.length === 0) {
+        res.status(400).send({ Error: 'No name provided', Details: 'name is not provided or empty!' });
+        return;
+    }
+    try {
+        await database.ShoppingList.updateShoppingList(name, id, res.locals.user.userid);
+        res.status(200).send();
+    } catch (err: any) {
+        console.log(err);
+        res.status(500).send({ Error: err, Details: err.stack });
+    }
+}
 
 export const createShoppingListItem = async (req: Request, res: Response) => {
     const itemName : string = req.body.name;
@@ -74,15 +95,18 @@ export const deleteShoppingListItem = async (req: Request, res: Response) => {
 };
 
 export const updateShoppingListItem = async (req: Request, res: Response) => {
-    const id : string = req.body.itemid;
-    const check : boolean = req.body.check;
+    const itemName : string | null = req.body.itemname || null;
+    const barcode : string | null = req.body.barcode || null;
+    const quantity : number | null = req.body.quantity || null;
+    const id : string | null = req.body.itemid || null;
+    const check : boolean |null = req.body.check || null;
 
     if (!id || id.length === 0) {
         res.status(400).send({ Error: 'No itemId provided', Details: 'itemId is not provided or empty!' });
         return;
     }
     try {
-        await database.ShoppingList.updateShoppingListItem(check, id);
+        await database.ShoppingList.updateShoppingListItem(itemName, barcode, quantity, check, id);
         res.status(200).send();
     } catch (err: any) {
         console.log(err);

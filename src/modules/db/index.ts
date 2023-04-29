@@ -1,6 +1,6 @@
 import pg from 'pg';
 import { createNewFeedback } from './feedback';
-import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem } from './shoppingList'
+import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem, updateShoppingList } from './shoppingList'
 import { deleteElementFromHistory, getElements, updateHistory } from './historyManagement';
 import { updatePassword } from './resetPassword';
 import { updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting } from './settingsManagement';
@@ -9,6 +9,7 @@ import { insert, getTrendingLocal, getTrendingGlobal, getCountryCode } from './t
 import { DatabaseInterface } from '../../../server_config';
 import { getProviderByName } from './oauth';
 import { getAllergenbyName } from './search';
+import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from './product';
 
 
 console.log('this is db_vars:', process.env.NODE_ENV, process.env.DB_USER, process.env.PG_PASSWORD, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
@@ -18,12 +19,12 @@ const connect = async () => {
 
     if (process.env.NODE_ENV !== 'production') {
         console.log('connect by using', connectionString);
-        db_adm_conn = new pg.Client({
+        db_adm_conn = new pg.Pool({
             connectionString: connectionString,
         });
     } else {
         console.log('connect by using', process.env.DATABASE_URL);
-        db_adm_conn = new pg.Client({
+        db_adm_conn = new pg.Pool({
             connectionString: process.env.DATABASE_URL,
             ssl: {
                 rejectUnauthorized: false
@@ -41,6 +42,7 @@ const end = async () => {
 const Database: DatabaseInterface = {
     ShoppingList: {
         createShoppingList,
+        updateShoppingList,
         createShoppingListItem,
         deleteShoppingList,
         deleteShoppingListItem,
@@ -92,8 +94,15 @@ const Database: DatabaseInterface = {
     Search: {
         getAllergenbyName,
     },
+    Product: {
+        getProductByBarcode,
+        getAllergensByBarcode,
+        getCategoriesByBarcode,
+        getIngredientsByBarcode,
+        getProductsByName
+    },
     connect,
     end
 };
 export default Database;
-export let db_adm_conn: pg.Client;
+export let db_adm_conn: pg.Pool;
