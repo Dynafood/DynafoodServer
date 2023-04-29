@@ -6,6 +6,8 @@ import requestIP from 'request-ip';
 import geoip from 'geoip-lite';
 import { sendVerificationEmail } from '../modules/email';
 
+const path = require('path');
+
 type RestrictionObj = {
     alertactivation: boolean,
     restrictionName: string
@@ -168,7 +170,7 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
 export const verifyEmail = async (req: Request, res: Response) : Promise<void> => {
     const email = req.query.email as string;
     await database.User.setEmailConfirmed(email);
-    res.status(200).sendFile(`/test.html`);
+    res.status(200).sendFile(`/test.html`, { root: path.join(__dirname, '') });
 }
 
 

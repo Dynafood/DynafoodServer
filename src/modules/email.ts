@@ -1,6 +1,7 @@
 import { mail_sender } from '../../server_config';
 
 const reset_password_template_id: string = 'd-c075a6859e224245aa76f0300e56f66b';
+const verification_template_id: string ='d-5fea6667ddf344bcbe00168e1d7ad728';
 const sender_email: string = 'info.dynafood@gmail.com';
 
 export const sendResetPasswordEmail = async (name: string, email: string, token: string) => {
@@ -32,9 +33,9 @@ export const sendVerificationEmail = async (name: string, email: string) => {
             email: email,
             name: name
         },
-        templateId: reset_password_template_id, // @todo change this to the other template
+        templateId: verification_template_id, // @todo change this to the other template
         dynamicTemplateData: {
-            token: new_email
+            link: new_email
         }
     });
     console.log(`verification email was sent to ${email}`);
