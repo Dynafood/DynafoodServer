@@ -4,6 +4,9 @@ import { Request, Response } from 'express';
 import { database, JWT } from '../../server_config';
 import requestIP from 'request-ip';
 import geoip from 'geoip-lite';
+import { sendVerificationEmail } from '../modules/email';
+
+const path = require('path');
 
 type RestrictionObj = {
     alertactivation: boolean,
@@ -62,7 +65,7 @@ export const createUser = async (req: Request, res: Response) => {
             return                                                                                                                 
         }   
 
-        const created: QueryResultRow = await database.User.createUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.email, req.body.phoneNumber, passcode, cc);
+        const created: QueryResultRow = await database.User.createUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.email, req.body.phoneNumber, passcode, false, cc);
         const userid: string = created.enduserid;
         const token: string = JWT.create(userid);
 
@@ -70,6 +73,7 @@ export const createUser = async (req: Request, res: Response) => {
             httpOnly: true
         });
         res.status(200).json(token);
+        await sendVerificationEmail("", req.body.email);
         return;
     } catch (error: any) {
         res.status(400).send({ Error: 'Unable to create new User.', Details: `${error.stack}` });
@@ -79,7 +83,7 @@ export const createUser = async (req: Request, res: Response) => {
 export const createUserOAuth = async (userdata: OAuthUserObj): Promise<string> => {
     try {
         // create the user in the normal enduser table
-        const created: QueryResultRow = await database.User.createUser(userdata.firstName, userdata.lastName, userdata.displayName, userdata.email, "00", "null", userdata.cc);
+        const created: QueryResultRow = await database.User.createUser(userdata.firstName, userdata.lastName, userdata.displayName, userdata.email, "00", "null", true, userdata.cc);
         const userid: string = created.enduserid;
 
         const google_provider_id = await database.OAuth.getProviderByName('google');
@@ -121,6 +125,27 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
 
         const user : Array<QueryResultRow> = await database.User.getUser(null, email);
 
+        const isEmailConfirmedRow: QueryResultRow = await database.User.getEmailConfirmed(email);
+
+        if (isEmailConfirmedRow === undefined) {
+            console.log(`There is no user with email = ${email}`);
+            res.status(401).send({ Error: "Unauthenticated", Details: `The user with email = ${email}tried to login without a confired email.`} );
+            return;
+        }
+
+        const isEmailConfirmed: boolean = isEmailConfirmedRow.emailconfirmed;
+
+        console.log("email confirmed:");
+        console.log(isEmailConfirmed);
+
+        if (!isEmailConfirmed) {
+            console.log(`The user with email = ${email} tried to login without a confired email.`);
+            res.status(401).send({ Error: "Unauthenticated", Details: `The user with email = ${email}tried to login without a confired email.`} );
+            return;
+        }
+
+
+
         if (user.length === 0) {
             console.log(`There is no user with the email: ${email}`);
             res.status(404).send({ Error: `There is no user with the email ${email}` });
@@ -141,3 +166,23 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
         res.status(500).send({ Error: error, details: error.stack });
     }
 };
+
+export const verifyEmail = async (req: Request, res: Response) : Promise<void> => {
+    const email = req.query.email as string;
+    await database.User.setEmailConfirmed(email);
+    res.status(200).sendFile(`/test.html`, { root: path.join(__dirname, '') });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
