@@ -1,0 +1,6001 @@
+{"array":[{
+	"id":"en:emulsifier-mono-and-diglycerides-of-fatty-acids",
+	"en":"emulsifier mono and diglycerides of fatty acids",
+	"fr":"émulsifiant mono et diglycérides d'acides gras",
+	"ge":"Emulgator Mono- und Diglyceride von Speisefettsäuren"
+},
+{
+	"id":"en:puffed-wheat",
+	"en":"puffed wheat",
+	"fr":"blé soufflé",
+	"ge":"gepuffter Weizen"
+},
+{
+	"id":"en:e332i",
+	"en":"e332i",
+	"fr":"e332i",
+	"ge":"e332i"
+},
+{
+	"id":"en:totally-hydrogenated-palm-fat",
+	"en":"totally hydrogenated palm fat",
+	"fr":"graisse de palme totalement hydrogénée",
+	"ge":"vollständig gehärtetes Palmfett"
+},
+{
+	"id":"en:tuber-magnatum",
+	"en":"tuber magnatum",
+	"fr":"tubercule magnatum",
+	"ge":"tuber magnatum"
+},
+{
+	"id":"en:essential-oil",
+	"en":"essential oil",
+	"fr":"huile essentielle",
+	"ge":"ätherisches Öl"
+},
+{
+	"id":"en:grape-seed",
+	"en":"grape seed",
+	"fr":"Pépin de raisin",
+	"ge":"Traubenkern"
+},
+{
+	"id":"en:pumpkin-seed-oil",
+	"en":"pumpkin seed oil",
+	"fr":"huile de pépins de courge",
+	"ge":"Kürbiskernöl"
+},
+{
+	"id":"en:grated-rye-bread",
+	"en":"grated rye bread",
+	"fr":"pain de seigle râpé",
+	"ge":"geriebenes Roggenbrot"
+},
+{
+	"id":"en:clam-meat",
+	"en":"clam meat",
+	"fr":"chair de palourde",
+	"ge":"Muschelfleisch"
+},
+{
+	"id":"en:cooking-water",
+	"en":"cooking water",
+	"fr":"eau de cuisson",
+	"ge":"Kochwasser"
+},
+{
+	"id":"en:garden-peas",
+	"en":"garden peas",
+	"fr":"petits pois",
+	"ge":"Gartenerbsen"
+},
+{
+	"id":"en:low-fat-cheese",
+	"en":"low fat cheese",
+	"fr":"fromage faible en gras",
+	"ge":"fettarmer Käse"
+},
+{
+	"id":"en:crunchy-peanut-butter",
+	"en":"crunchy peanut butter",
+	"fr":"beurre de cacahuète croustillant",
+	"ge":"knusprige Erdnussbutter"
+},
+{
+	"id":"en:organic-yogurt",
+	"en":"organic yogurt",
+	"fr":"yaourt bio",
+	"ge":"Bio-Joghurt"
+},
+{
+	"id":"en:red-fruits",
+	"en":"red fruits",
+	"fr":"fruits rouges",
+	"ge":"rote Früchte"
+},
+{
+	"id":"en:inulin",
+	"en":"inulin",
+	"fr":"inuline",
+	"ge":"Inulin"
+},
+{
+	"id":"en:octopus-aegina",
+	"en":"octopus aegina",
+	"fr":"Égine de poulpe",
+	"ge":"Tintenfisch Ägina"
+},
+{
+	"id":"en:fenugreek",
+	"en":"fenugreek",
+	"fr":"Fenugrec",
+	"ge":"Bockshornklee"
+},
+{
+	"id":"en:e343i",
+	"en":"e343i",
+	"fr":"e343i",
+	"ge":"e343i"
+},
+{
+	"id":"en:e174",
+	"en":"e174",
+	"fr":"e174",
+	"ge":"e174"
+},
+{
+	"id":"en:lupin-flour",
+	"en":"lupin flour",
+	"fr":"farine de lupin",
+	"ge":"Lupinenmehl"
+},
+{
+	"id":"en:spring-water",
+	"en":"spring water",
+	"fr":"eau de source",
+	"ge":"Quellwasser"
+},
+{
+	"id":"en:green-bean",
+	"en":"green bean",
+	"fr":"haricot vert",
+	"ge":"grüne Bohne"
+},
+{
+	"id":"en:e1450",
+	"en":"e1450",
+	"fr":"e1450",
+	"ge":"e1450"
+},
+{
+	"id":"en:vegetable",
+	"en":"vegetable",
+	"fr":"légume",
+	"ge":"Gemüse"
+},
+{
+	"id":"en:fresh-chervil",
+	"en":"fresh chervil",
+	"fr":"cerfeuil frais",
+	"ge":"frischer Kerbel"
+},
+{
+	"id":"en:grouper",
+	"en":"grouper",
+	"fr":"groupeur",
+	"ge":"Zackenbarsch"
+},
+{
+	"id":"en:vranac",
+	"en":"vranac",
+	"fr":"vranac",
+	"ge":"vranac"
+},
+{
+	"id":"en:marzipan",
+	"en":"marzipan",
+	"fr":"Massepain",
+	"ge":"Marzipan"
+},
+{
+	"id":"en:arabica-coffee-extract",
+	"en":"arabica coffee extract",
+	"fr":"extrait de café arabica",
+	"ge":"Arabica-Kaffee-Extrakt"
+},
+{
+	"id":"en:wheat-sourdough",
+	"en":"wheat sourdough",
+	"fr":"levain de blé",
+	"ge":"Weizen Sauerteig"
+},
+{
+	"id":"en:horseradish-paste",
+	"en":"horseradish paste",
+	"fr":"pâte de raifort",
+	"ge":"Meerrettichpaste"
+},
+{
+	"id":"en:heart-of-palm",
+	"en":"heart of palm",
+	"fr":"coeur de palmier",
+	"ge":"Herz der Palme"
+},
+{
+	"id":"en:whole-grain-buckwheat-flour",
+	"en":"whole grain buckwheat flour",
+	"fr":"farine de sarrasin à grains entiers",
+	"ge":"Vollkorn Buchweizenmehl"
+},
+{
+	"id":"en:sal-fat",
+	"en":"sal fat",
+	"fr":"graisse de sel",
+	"ge":"Sal Fett"
+},
+{
+	"id":"en:fresh-egg",
+	"en":"fresh egg",
+	"fr":"oeuf frais",
+	"ge":"frisches Ei"
+},
+{
+	"id":"en:celery-puree",
+	"en":"celery puree",
+	"fr":"purée de céleri",
+	"ge":"Selleriepüree"
+},
+{
+	"id":"en:solid-vegetable-fat-for-frying",
+	"en":"solid vegetable fat for frying",
+	"fr":"graisse végétale solide pour la friture",
+	"ge":"festes Pflanzenfett zum Braten"
+},
+{
+	"id":"en:partridge",
+	"en":"partridge",
+	"fr":"perdrix",
+	"ge":"Rebhuhn"
+},
+{
+	"id":"en:bleu-de-bresse",
+	"en":"bleu de bresse",
+	"fr":"bleu de bresse",
+	"ge":"blau de bresse"
+},
+{
+	"id":"en:semolina",
+	"en":"semolina",
+	"fr":"la semoule",
+	"ge":"Grieß"
+},
+{
+	"id":"en:double-gloucester",
+	"en":"double gloucester",
+	"fr":"double gloucester",
+	"ge":"Doppelgloster"
+},
+{
+	"id":"en:sugar-beet",
+	"en":"sugar beet",
+	"fr":"Betterave à sucre",
+	"ge":"Zuckerrübe"
+},
+{
+	"id":"en:e416",
+	"en":"e416",
+	"fr":"e416",
+	"ge":"e416"
+},
+{
+	"id":"en:lean-duck-liver",
+	"en":"lean duck liver",
+	"fr":"foie de canard maigre",
+	"ge":"magere Entenleber"
+},
+{
+	"id":"en:dehydrated-broth",
+	"en":"dehydrated broth",
+	"fr":"bouillon déshydraté",
+	"ge":"dehydrierte Brühe"
+},
+{
+	"id":"en:calcium",
+	"en":"calcium",
+	"fr":"calcium",
+	"ge":"Kalzium"
+},
+{
+	"id":"en:lentil-flour",
+	"en":"lentil flour",
+	"fr":"farine de lentilles",
+	"ge":"Linsenmehl"
+},
+{
+	"id":"en:whole-spelt",
+	"en":"whole spelt",
+	"fr":"épeautre entier",
+	"ge":"ganzer Dinkel"
+},
+{
+	"id":"en:ginger-powder",
+	"en":"ginger powder",
+	"fr":"poudre de gingembre",
+	"ge":"Ingwer Puder"
+},
+{
+	"id":"en:ravioli",
+	"en":"ravioli",
+	"fr":"Ravioli",
+	"ge":"Ravioli"
+},
+{
+	"id":"en:undulate-venus",
+	"en":"undulate venus",
+	"fr":"onduler vénus",
+	"ge":"wellige Venus"
+},
+{
+	"id":"en:cake",
+	"en":"cake",
+	"fr":"gâteau",
+	"ge":"Kuchen"
+},
+{
+	"id":"en:potassium",
+	"en":"potassium",
+	"fr":"potassium",
+	"ge":"Kalium"
+},
+{
+	"id":"en:e900a",
+	"en":"e900a",
+	"fr":"e900a",
+	"ge":"e900a"
+},
+{
+	"id":"en:strong-mustard",
+	"en":"strong mustard",
+	"fr":"moutarde forte",
+	"ge":"starker Senf"
+},
+{
+	"id":"en:wheat-flour-type-850-semi-white",
+	"en":"wheat flour type 850 semi white",
+	"fr":"farine de blé type 850 semi blanche",
+	"ge":"Weizenmehl Typ 850 halbweiß"
+},
+{
+	"id":"en:pink-clam",
+	"en":"pink clam",
+	"fr":"palourde rose",
+	"ge":"rosa Muschel"
+},
+{
+	"id":"en:e960",
+	"en":"e960",
+	"fr":"e960",
+	"ge":"e960"
+},
+{
+	"id":"en:milled-roasted-peanuts",
+	"en":"milled roasted peanuts",
+	"fr":"cacahuètes grillées moulues",
+	"ge":"gemahlene geröstete Erdnüsse"
+},
+{
+	"id":"en:camembert-from-pasteurised-milk",
+	"en":"camembert from pasteurised milk",
+	"fr":"camembert de lait pasteurisé",
+	"ge":"Camembert aus pasteurisierter Milch"
+},
+{
+	"id":"en:brown-lentils",
+	"en":"brown lentils",
+	"fr":"lentilles brunes",
+	"ge":"braune Linsen"
+},
+{
+	"id":"en:freshly-brewed-arabica-coffee",
+	"en":"freshly brewed arabica coffee",
+	"fr":"café arabica fraîchement infusé",
+	"ge":"frisch gebrühter Arabica-Kaffee"
+},
+{
+	"id":"en:e163f",
+	"en":"e163f",
+	"fr":"e163f",
+	"ge":"e163f"
+},
+{
+	"id":"en:blueberry",
+	"en":"blueberry",
+	"fr":"myrtille",
+	"ge":"Blaubeere"
+},
+{
+	"id":"en:round-green-beans",
+	"en":"round green beans",
+	"fr":"haricots verts ronds",
+	"ge":"runde grüne Bohnen"
+},
+{
+	"id":"en:organic-carrots",
+	"en":"organic carrots",
+	"fr":"carottes bio",
+	"ge":"Bio Karotten"
+},
+{
+	"id":"en:pyridoxine-dipalmitate",
+	"en":"pyridoxine dipalmitate",
+	"fr":"dipalmitate de pyridoxine",
+	"ge":"Pyridoxindipalmitat"
+},
+{
+	"id":"en:bamboo-fibre",
+	"en":"bamboo fibre",
+	"fr":"fibre de bambou",
+	"ge":"Bambusfaser"
+},
+{
+	"id":"en:cardamom-seed",
+	"en":"cardamom seed",
+	"fr":"cardamome Seed",
+	"ge":"Kardamomsamen"
+},
+{
+	"id":"en:coffee",
+	"en":"coffee",
+	"fr":"café",
+	"ge":"Kaffee"
+},
+{
+	"id":"en:poppy",
+	"en":"poppy",
+	"fr":"coquelicot",
+	"ge":"Mohn"
+},
+{
+	"id":"en:beef",
+	"en":"beef",
+	"fr":"bœuf",
+	"ge":"Rindfleisch"
+},
+{
+	"id":"en:organic-long-grain-white-rice",
+	"en":"organic long grain white rice",
+	"fr":"riz blanc à grains longs bio",
+	"ge":"Weißer Bio-Langkornreis"
+},
+{
+	"id":"en:whole-grain-barley-flakes",
+	"en":"whole grain barley flakes",
+	"fr":"flocons d'orge à grains entiers",
+	"ge":"Vollkorn-Gerstenflocken"
+},
+{
+	"id":"en:natural-sea-buckthorn-flavouring",
+	"en":"natural sea buckthorn flavouring",
+	"fr":"arôme naturel d'argousier",
+	"ge":"natürliches Sanddornaroma"
+},
+{
+	"id":"en:e450v",
+	"en":"e450v",
+	"fr":"e450v",
+	"ge":"e450v"
+},
+{
+	"id":"en:prepacked-mustard-sauce",
+	"en":"prepacked mustard sauce",
+	"fr":"sauce à la moutarde préemballée",
+	"ge":"abgepackte Senfsauce"
+},
+{
+	"id":"en:blue-stilton",
+	"en":"blue stilton",
+	"fr":"échasse bleue",
+	"ge":"blauer Stilton"
+},
+{
+	"id":"en:chocolate-sauce",
+	"en":"chocolate sauce",
+	"fr":"sauce au chocolat",
+	"ge":"Schokoladensoße"
+},
+{
+	"id":"en:sea-squirt",
+	"en":"sea squirt",
+	"fr":"jet de mer",
+	"ge":"Seescheide"
+},
+{
+	"id":"en:e905g",
+	"en":"e905g",
+	"fr":"e905g",
+	"ge":"e905g"
+},
+{
+	"id":"en:glycerol-monostearate",
+	"en":"glycerol monostearate",
+	"fr":"monostéarate de glycérol",
+	"ge":"Glycerinmonostearat"
+},
+{
+	"id":"en:baby-spinach",
+	"en":"baby spinach",
+	"fr":"bébé épinard",
+	"ge":"Baby Spinat"
+},
+{
+	"id":"en:e343ii",
+	"en":"e343ii",
+	"fr":"e343ii",
+	"ge":"e343ii"
+},
+{
+	"id":"en:smoked-sausage",
+	"en":"smoked sausage",
+	"fr":"saucisse fumée",
+	"ge":"geräucherte Wurst"
+},
+{
+	"id":"en:popcorn",
+	"en":"popcorn",
+	"fr":"Popcorn",
+	"ge":"Popcorn"
+},
+{
+	"id":"en:white-quinoa-flour",
+	"en":"white quinoa flour",
+	"fr":"farine de quinoa blanc",
+	"ge":"weißes Quinoamehl"
+},
+{
+	"id":"en:e326",
+	"en":"e326",
+	"fr":"e326",
+	"ge":"e326"
+},
+{
+	"id":"en:squid-ink-substitute",
+	"en":"squid ink substitute",
+	"fr":"substitut d'encre de seiche",
+	"ge":"Ersatz für Tintenfischtinte"
+},
+{
+	"id":"en:blend-of-honeys",
+	"en":"blend of honeys",
+	"fr":"mélange de miels",
+	"ge":"Mischung aus Honig"
+},
+{
+	"id":"en:courgette",
+	"en":"courgette",
+	"fr":"courgettes",
+	"ge":"Zucchini"
+},
+{
+	"id":"en:yellowfin-tuna",
+	"en":"yellowfin tuna",
+	"fr":"thon albacore",
+	"ge":"Gelbflossenthun"
+},
+{
+	"id":"en:e325",
+	"en":"e325",
+	"fr":"e325",
+	"ge":"e325"
+},
+{
+	"id":"en:cured-sausage",
+	"en":"cured sausage",
+	"fr":"saucisse séchée",
+	"ge":"gepökelte Wurst"
+},
+{
+	"id":"en:cholecalciferol",
+	"en":"cholecalciferol",
+	"fr":"cholécalciférol",
+	"ge":"Cholecalciferol"
+},
+{
+	"id":"en:acacia-honey",
+	"en":"acacia honey",
+	"fr":"miel d'acacia",
+	"ge":"Akazienhonig"
+},
+{
+	"id":"en:cream",
+	"en":"cream",
+	"fr":"crème",
+	"ge":"Creme"
+},
+{
+	"id":"en:grey-salt-from-guerande",
+	"en":"grey salt from guerande",
+	"fr":"sel gris de guerande",
+	"ge":"graues Salz aus Guerande"
+},
+{
+	"id":"en:chromium-nicotinate",
+	"en":"chromium nicotinate",
+	"fr":"nicotinate de chrome",
+	"ge":"Chromnicotinat"
+},
+{
+	"id":"en:green-flageolets",
+	"en":"green flageolets",
+	"fr":"flageolets verts",
+	"ge":"grüne Flageoletts"
+},
+{
+	"id":"en:salers",
+	"en":"salers",
+	"fr":"vendeurs",
+	"ge":"Verkäufer"
+},
+{
+	"id":"en:whole-grain-triticale-flour",
+	"en":"whole grain triticale flour",
+	"fr":"farine de triticale à grains entiers",
+	"ge":"Vollkorn-Triticale-Mehl"
+},
+{
+	"id":"en:kefir",
+	"en":"kefir",
+	"fr":"kéfir",
+	"ge":"Kefir"
+},
+{
+	"id":"en:flageolets",
+	"en":"flageolets",
+	"fr":"flageolets",
+	"ge":"Flageoletts"
+},
+{
+	"id":"en:e388",
+	"en":"e388",
+	"fr":"e388",
+	"ge":"e388"
+},
+{
+	"id":"en:e503",
+	"en":"e503",
+	"fr":"e503",
+	"ge":"e503"
+},
+{
+	"id":"en:alcohol",
+	"en":"alcohol",
+	"fr":"alcool",
+	"ge":"Alkohol"
+},
+{
+	"id":"en:modified-red-port",
+	"en":"modified red port",
+	"fr":"port rouge modifié",
+	"ge":"modifizierter roter Port"
+},
+{
+	"id":"en:organic-olive-oil",
+	"en":"organic olive oil",
+	"fr":"huile d'olive bio",
+	"ge":"Bio-Olivenöl"
+},
+{
+	"id":"en:oat-fibre",
+	"en":"oat fibre",
+	"fr":"fibre d'avoine",
+	"ge":"Haferfaser"
+},
+{
+	"id":"en:soft-cheese",
+	"en":"soft cheese",
+	"fr":"fromage à pâte molle",
+	"ge":"Weichkäse"
+},
+{
+	"id":"en:sweet-whey-powder",
+	"en":"sweet whey powder",
+	"fr":"poudre de lactosérum doux",
+	"ge":"Süßmolkenpulver"
+},
+{
+	"id":"en:low-erucic-acid-rapeseed-oil",
+	"en":"low erucic acid rapeseed oil",
+	"fr":"huile de colza à faible teneur en acide érucique",
+	"ge":"Rapsöl mit niedrigem Erucasäuregehalt"
+},
+{
+	"id":"en:hydrolysed-corn-protein",
+	"en":"hydrolysed corn protein",
+	"fr":"protéine de maïs hydrolysée",
+	"ge":"hydrolysiertes Maisprotein"
+},
+{
+	"id":"en:rice-from-italy",
+	"en":"rice from italy",
+	"fr":"riz d'italie",
+	"ge":"Reis aus Italien"
+},
+{
+	"id":"en:irish-whiskey",
+	"en":"irish whiskey",
+	"fr":"whisky irlandais",
+	"ge":"Irischer Whiskey"
+},
+{
+	"id":"en:e942",
+	"en":"e942",
+	"fr":"e942",
+	"ge":"e942"
+},
+{
+	"id":"en:farmed-trout",
+	"en":"farmed trout",
+	"fr":"truite d'élevage",
+	"ge":"gezüchtete Forelle"
+},
+{
+	"id":"en:flavouring",
+	"en":"flavouring",
+	"fr":"arôme",
+	"ge":"Aroma"
+},
+{
+	"id":"en:rooibos",
+	"en":"rooibos",
+	"fr":"rooïbos",
+	"ge":"Rotbusch"
+},
+{
+	"id":"en:e302",
+	"en":"e302",
+	"fr":"e302",
+	"ge":"e302"
+},
+{
+	"id":"en:atlantic-salmon",
+	"en":"atlantic salmon",
+	"fr":"Saumon atlantique",
+	"ge":"Atlantischer Lachs"
+},
+{
+	"id":"en:braised-lamb-leg",
+	"en":"braised lamb leg",
+	"fr":"gigot d'agneau braisé",
+	"ge":"geschmorte Lammkeule"
+},
+{
+	"id":"en:mediterranean-salt",
+	"en":"mediterranean salt",
+	"fr":"sel méditerranéen",
+	"ge":"Mittelmeersalz"
+},
+{
+	"id":"en:rice-bran",
+	"en":"rice bran",
+	"fr":"son de riz",
+	"ge":"Reiskleie"
+},
+{
+	"id":"en:rehydrated-onion",
+	"en":"rehydrated onion",
+	"fr":"oignon réhydraté",
+	"ge":"rehydrierte Zwiebel"
+},
+{
+	"id":"en:sweet-lime-flavouring",
+	"en":"sweet lime flavouring",
+	"fr":"arôme citron vert doux",
+	"ge":"süßes Limettenaroma"
+},
+{
+	"id":"en:nigari",
+	"en":"nigari",
+	"fr":"niger",
+	"ge":"Nigari"
+},
+{
+	"id":"en:garlic-extract",
+	"en":"garlic extract",
+	"fr":"extrait d'ail",
+	"ge":"Knoblauchextrakt"
+},
+{
+	"id":"en:very-fine-green-beans",
+	"en":"very fine green beans",
+	"fr":"haricots verts très fins",
+	"ge":"sehr feine grüne Bohnen"
+},
+{
+	"id":"en:fresh-broad-bean-to-shell",
+	"en":"fresh broad bean to shell",
+	"fr":"fève fraîche à écosser",
+	"ge":"frische Ackerbohne bis zur Schale"
+},
+{
+	"id":"en:condensed-milk",
+	"en":"condensed milk",
+	"fr":"lait condensé",
+	"ge":"Kondensmilch"
+},
+{
+	"id":"en:folic-acid",
+	"en":"folic acid",
+	"fr":"acide folique",
+	"ge":"Folsäure"
+},
+{
+	"id":"en:cooked-shrimp",
+	"en":"cooked shrimp",
+	"fr":"crevettes cuites",
+	"ge":"gekochte Garnelen"
+},
+{
+	"id":"en:extract-of-chicory",
+	"en":"extract of chicory",
+	"fr":"extrait de chicorée",
+	"ge":"Extrakt aus Chicorée"
+},
+{
+	"id":"en:pont-l-eveque",
+	"en":"pont l eveque",
+	"fr":"pont l'eveque",
+	"ge":"Pont l'Eveque"
+},
+{
+	"id":"en:forest-mushroom",
+	"en":"forest mushroom",
+	"fr":"champignon forestier",
+	"ge":"Waldpilz"
+},
+{
+	"id":"en:e932",
+	"en":"e932",
+	"fr":"e932",
+	"ge":"e932"
+},
+{
+	"id":"en:fully-hydrogenated-coconut-fat",
+	"en":"fully hydrogenated coconut fat",
+	"fr":"graisse de coco entièrement hydrogénée",
+	"ge":"vollständig gehärtetes Kokosfett"
+},
+{
+	"id":"en:corn-flour",
+	"en":"corn flour",
+	"fr":"farine de maïs",
+	"ge":"Maismehl"
+},
+{
+	"id":"en:e408",
+	"en":"e408",
+	"fr":"e408",
+	"ge":"e408"
+},
+{
+	"id":"en:eau-de-vie",
+	"en":"eau de vie",
+	"fr":"eau-de-vie",
+	"ge":"Eau de Vie"
+},
+{
+	"id":"en:peppermint-flavouring",
+	"en":"peppermint flavouring",
+	"fr":"arôme de menthe poivrée",
+	"ge":"Pfefferminz-Geschmack"
+},
+{
+	"id":"en:kvass-wort",
+	"en":"kvass wort",
+	"fr":"moût de kvas",
+	"ge":"Kwas-Würze"
+},
+{
+	"id":"en:sambal",
+	"en":"sambal",
+	"fr":"sambal",
+	"ge":"Sambal"
+},
+{
+	"id":"en:muscat-of-alexandria",
+	"en":"muscat of alexandria",
+	"fr":"muscat d'alexandrie",
+	"ge":"Muskat von Alexandria"
+},
+{
+	"id":"en:unrefined-sea-salt-from-the-atlantic",
+	"en":"unrefined sea salt from the atlantic",
+	"fr":"sel de mer non raffiné de l'atlantique",
+	"ge":"Unraffiniertes Meersalz aus dem Atlantik"
+},
+{
+	"id":"en:glucuronolactone",
+	"en":"glucuronolactone",
+	"fr":"glucuronolactone",
+	"ge":"Glucuronolacton"
+},
+{
+	"id":"en:hummus",
+	"en":"hummus",
+	"fr":"Hoummous",
+	"ge":"Hummus"
+},
+{
+	"id":"en:beet-sugar",
+	"en":"beet sugar",
+	"fr":"sucre de betterave",
+	"ge":"Zuckerrübe"
+},
+{
+	"id":"en:whole-soybean-grain",
+	"en":"whole soybean grain",
+	"fr":"graines de soja entières",
+	"ge":"ganze Sojabohnenkörner"
+},
+{
+	"id":"en:kale-puree",
+	"en":"kale puree",
+	"fr":"purée de chou frisé",
+	"ge":"Grünkohl Püree"
+},
+{
+	"id":"en:rosemary",
+	"en":"rosemary",
+	"fr":"Romarin",
+	"ge":"Rosmarin"
+},
+{
+	"id":"en:cream-flavouring",
+	"en":"cream flavouring",
+	"fr":"arôme de crème",
+	"ge":"Creme-Geschmack"
+},
+{
+	"id":"en:greek-yogurt",
+	"en":"greek yogurt",
+	"fr":"yaourt grec",
+	"ge":"griechischer Joghurt"
+},
+{
+	"id":"en:ashwagandha",
+	"en":"ashwagandha",
+	"fr":"ashwaganda",
+	"ge":"Ashwagandha"
+},
+{
+	"id":"en:hydrolysed-pea-protein",
+	"en":"hydrolysed pea protein",
+	"fr":"protéine de pois hydrolysée",
+	"ge":"hydrolysiertes Erbsenprotein"
+},
+{
+	"id":"en:e552",
+	"en":"e552",
+	"fr":"e552",
+	"ge":"e552"
+},
+{
+	"id":"en:barley-groats",
+	"en":"barley groats",
+	"fr":"gruaux d'orge",
+	"ge":"Gerstengrütze"
+},
+{
+	"id":"en:precooked-lentils",
+	"en":"precooked lentils",
+	"fr":"lentilles précuites",
+	"ge":"vorgekochte Linsen"
+},
+{
+	"id":"en:apple-pulp",
+	"en":"apple pulp",
+	"fr":"pulpe de pomme",
+	"ge":"Apfelbrei"
+},
+{
+	"id":"en:mushroom-flavouring",
+	"en":"mushroom flavouring",
+	"fr":"arôme champignon",
+	"ge":"Pilzaroma"
+},
+{
+	"id":"en:whole-cream",
+	"en":"whole cream",
+	"fr":"crème entière",
+	"ge":"ganze Sahne"
+},
+{
+	"id":"en:e468",
+	"en":"e468",
+	"fr":"e468",
+	"ge":"e468"
+},
+{
+	"id":"en:bifidus-actiregularis",
+	"en":"bifidus actiregularis",
+	"fr":"bifidus actiregularis",
+	"ge":"bifidus actiregularis"
+},
+{
+	"id":"en:pitted-cherry",
+	"en":"pitted cherry",
+	"fr":"cerise dénoyautée",
+	"ge":"entkernte Kirsche"
+},
+{
+	"id":"en:baby-lima-beans",
+	"en":"baby lima beans",
+	"fr":"petits haricots de Lima",
+	"ge":"Baby Limabohnen"
+},
+{
+	"id":"en:e450i",
+	"en":"e450i",
+	"fr":"e450i",
+	"ge":"e450i"
+},
+{
+	"id":"en:duck-gizzard",
+	"en":"duck gizzard",
+	"fr":"gésier de canard",
+	"ge":"Entenmagen"
+},
+{
+	"id":"en:whole-cow-s-milk",
+	"en":"whole cow s milk",
+	"fr":"lait entier de vache",
+	"ge":"Vollmilch der Kuh"
+},
+{
+	"id":"en:kosher-gelatin",
+	"en":"kosher gelatin",
+	"fr":"gélatine casher",
+	"ge":"koschere Gelatine"
+},
+{
+	"id":"en:semolina-flour",
+	"en":"semolina flour",
+	"fr":"farine de semoule",
+	"ge":"Grießmehl"
+},
+{
+	"id":"en:acerola-powder",
+	"en":"acerola powder",
+	"fr":"poudre d'acérola",
+	"ge":"Acerola-Pulver"
+},
+{
+	"id":"en:raw-spotted-wolffish",
+	"en":"raw spotted wolffish",
+	"fr":"loup tacheté cru",
+	"ge":"roher gefleckter Wolfsfisch"
+},
+{
+	"id":"en:pasteurized-milk-yogurt",
+	"en":"pasteurized milk yogurt",
+	"fr":"yaourt au lait pasteurisé",
+	"ge":"pasteurisierter Milchjoghurt"
+},
+{
+	"id":"en:celeriac",
+	"en":"celeriac",
+	"fr":"céleri-rave",
+	"ge":"Sellerie"
+},
+{
+	"id":"en:tulsi",
+	"en":"tulsi",
+	"fr":"tulsi",
+	"ge":"Tulsi"
+},
+{
+	"id":"en:wholemeal-rye-bread",
+	"en":"wholemeal rye bread",
+	"fr":"pain de seigle complet",
+	"ge":"Roggenvollkornbrot"
+},
+{
+	"id":"en:black-thai-rice",
+	"en":"black thai rice",
+	"fr":"riz thaï noir",
+	"ge":"schwarzer thailändischer reis"
+},
+{
+	"id":"en:skimmed-milk-yogurt-powder",
+	"en":"skimmed milk yogurt powder",
+	"fr":"poudre de yaourt au lait écrémé",
+	"ge":"Magermilch-Joghurtpulver"
+},
+{
+	"id":"en:pink-salt",
+	"en":"pink salt",
+	"fr":"sel rose",
+	"ge":"rosa Salz"
+},
+{
+	"id":"en:sauerkraut",
+	"en":"sauerkraut",
+	"fr":"Choucroute",
+	"ge":"Sauerkraut"
+},
+{
+	"id":"en:patagonian-grenadier",
+	"en":"patagonian grenadier",
+	"fr":"grenadier patagonien",
+	"ge":"Patagonischer Grenadier"
+},
+{
+	"id":"en:poulsard",
+	"en":"poulsard",
+	"fr":"poulsard",
+	"ge":"Poulsarde"
+},
+{
+	"id":"en:e233",
+	"en":"e233",
+	"fr":"e233",
+	"ge":"e233"
+},
+{
+	"id":"en:jalapeno-pepper",
+	"en":"jalapeno pepper",
+	"fr":"piment jalapeno",
+	"ge":"jalapeno-Chilischote"
+},
+{
+	"id":"en:riesling",
+	"en":"riesling",
+	"fr":"Riesling",
+	"ge":"Riesling"
+},
+{
+	"id":"en:sauce",
+	"en":"sauce",
+	"fr":"sauce",
+	"ge":"Soße"
+},
+{
+	"id":"en:creatine",
+	"en":"creatine",
+	"fr":"créatine",
+	"ge":"Kreatin"
+},
+{
+	"id":"en:red-swamp-crayfish",
+	"en":"red swamp crayfish",
+	"fr":"écrevisse de marais rouge",
+	"ge":"rote Sumpfkrebse"
+},
+{
+	"id":"en:cooked-lamb-hearts",
+	"en":"cooked lamb hearts",
+	"fr":"coeurs d'agneau cuits",
+	"ge":"gekochte Lammherzen"
+},
+{
+	"id":"en:stewed-pork",
+	"en":"stewed pork",
+	"fr":"porc mijoté",
+	"ge":"geschmortes Schweinefleisch"
+},
+{
+	"id":"en:thai-brown-rice",
+	"en":"thai brown rice",
+	"fr":"riz brun thaï",
+	"ge":"thailändischer brauner Reis"
+},
+{
+	"id":"en:extra-mature-cheddar",
+	"en":"extra mature cheddar",
+	"fr":"cheddar extra affiné",
+	"ge":"extra reifer Cheddar"
+},
+{
+	"id":"en:e392",
+	"en":"e392",
+	"fr":"e392",
+	"ge":"e392"
+},
+{
+	"id":"en:corn-tortilla",
+	"en":"corn tortilla",
+	"fr":"Tortilla de maïs",
+	"ge":"mais Tortilla"
+},
+{
+	"id":"en:shrimp",
+	"en":"shrimp",
+	"fr":"crevette",
+	"ge":"Garnele"
+},
+{
+	"id":"en:e508",
+	"en":"e508",
+	"fr":"e508",
+	"ge":"e508"
+},
+{
+	"id":"en:brandy-flavouring",
+	"en":"brandy flavouring",
+	"fr":"arôme de cognac",
+	"ge":"Brandy-Aroma"
+},
+{
+	"id":"en:tapioca-maltodextrin",
+	"en":"tapioca maltodextrin",
+	"fr":"maltodextrine de tapioca",
+	"ge":"Tapioka Maltodextrin"
+},
+{
+	"id":"en:liquorice-root",
+	"en":"liquorice root",
+	"fr":"Racine de réglisse",
+	"ge":"Süßholzwurzel"
+},
+{
+	"id":"en:sole",
+	"en":"sole",
+	"fr":"seul",
+	"ge":"Sohle, einzig, alleinig"
+},
+{
+	"id":"en:freshwater-fish",
+	"en":"freshwater fish",
+	"fr":"poisson d'eau douce",
+	"ge":"Süßwasserfisch"
+},
+{
+	"id":"en:sunflower-protein",
+	"en":"sunflower protein",
+	"fr":"protéine de tournesol",
+	"ge":"Sonnenblumenprotein"
+},
+{
+	"id":"en:fried-onion",
+	"en":"fried onion",
+	"fr":"oignon frit",
+	"ge":"Röstzwiebel"
+},
+{
+	"id":"en:modified-cornflour",
+	"en":"modified cornflour",
+	"fr":"farine de maïs modifiée",
+	"ge":"modifiziertes Maismehl"
+},
+{
+	"id":"en:tequila",
+	"en":"tequila",
+	"fr":"Tequila",
+	"ge":"Tequila"
+},
+{
+	"id":"en:lactarius-sanguifluus",
+	"en":"lactarius sanguifluus",
+	"fr":"lactaire sanguifluus",
+	"ge":"lactarius sanguifluus"
+},
+{
+	"id":"en:superior-quality-durum-wheat-semolina",
+	"en":"superior quality durum wheat semolina",
+	"fr":"semoule de blé dur de qualité supérieure",
+	"ge":"Hartweizengrieß von höchster Qualität"
+},
+{
+	"id":"en:lamb-shoulders",
+	"en":"lamb shoulders",
+	"fr":"épaules d'agneau",
+	"ge":"Lammschultern"
+},
+{
+	"id":"en:vermicelli",
+	"en":"vermicelli",
+	"fr":"vermicelle",
+	"ge":"Nudeln"
+},
+{
+	"id":"en:e375",
+	"en":"e375",
+	"fr":"e375",
+	"ge":"e375"
+},
+{
+	"id":"en:bramley-apple",
+	"en":"bramley apple",
+	"fr":"pomme bramley",
+	"ge":"Bramley-Apfel"
+},
+{
+	"id":"en:lactobacillus",
+	"en":"lactobacillus",
+	"fr":"lactobacille",
+	"ge":"Laktobazillen"
+},
+{
+	"id":"en:banana",
+	"en":"banana",
+	"fr":"banane",
+	"ge":"Banane"
+},
+{
+	"id":"en:dehydrated-onion",
+	"en":"dehydrated onion",
+	"fr":"oignon déshydraté",
+	"ge":"dehydrierte Zwiebel"
+},
+{
+	"id":"en:guarana-seed-extract",
+	"en":"guarana seed extract",
+	"fr":"extrait de graine de guarana",
+	"ge":"Guarana-Samen-Extrakt"
+},
+{
+	"id":"en:elderberry-juice-concentrate",
+	"en":"elderberry juice concentrate",
+	"fr":"concentré de jus de sureau",
+	"ge":"Holundersaftkonzentrat"
+},
+{
+	"id":"en:carbonated-water",
+	"en":"carbonated water",
+	"fr":"eau gazeuse",
+	"ge":"Wasser mit Kohlensäure"
+},
+{
+	"id":"en:e402",
+	"en":"e402",
+	"fr":"e402",
+	"ge":"e402"
+},
+{
+	"id":"en:guarana-extract",
+	"en":"guarana extract",
+	"fr":"extrait de guarana",
+	"ge":"Guarana-Extrakt"
+},
+{
+	"id":"en:chromium-iii-sulfate-and-its-hexahydrate",
+	"en":"chromium iii sulfate and its hexahydrate",
+	"fr":"sulfate de chrome iii et son hexahydrate",
+	"ge":"Chrom-III-Sulfat und sein Hexahydrat"
+},
+{
+	"id":"en:vitamins",
+	"en":"vitamins",
+	"fr":"vitamines",
+	"ge":"Vitamine"
+},
+{
+	"id":"en:wheat-bran",
+	"en":"wheat bran",
+	"fr":"son de blé",
+	"ge":"Weizenkleie"
+},
+{
+	"id":"en:grilled-aubergines",
+	"en":"grilled aubergines",
+	"fr":"aubergines grillées",
+	"ge":"gegrillte Auberginen"
+},
+{
+	"id":"en:cured-cheese",
+	"en":"cured cheese",
+	"fr":"fromage affiné",
+	"ge":"gereifter Käse"
+},
+{
+	"id":"en:wheat-flour-type-00",
+	"en":"wheat flour type 00",
+	"fr":"farine de blé type 00",
+	"ge":"Weizenmehl Typ 00"
+},
+{
+	"id":"en:e929",
+	"en":"e929",
+	"fr":"e929",
+	"ge":"e929"
+},
+{
+	"id":"en:sweet-almond",
+	"en":"sweet almond",
+	"fr":"amande douce",
+	"ge":"süße Mandel"
+},
+{
+	"id":"en:british-chicken",
+	"en":"british chicken",
+	"fr":"poulet britannique",
+	"ge":"britisches Huhn"
+},
+{
+	"id":"en:farmed-raw-carp",
+	"en":"farmed raw carp",
+	"fr":"carpe crue d'élevage",
+	"ge":"gezüchteter roher Karpfen"
+},
+{
+	"id":"en:liquorice-dragees",
+	"en":"liquorice dragees",
+	"fr":"dragées à la réglisse",
+	"ge":"Lakritz Dragees"
+},
+{
+	"id":"en:gluten-free-oat-flakes",
+	"en":"gluten free oat flakes",
+	"fr":"flocons d'avoine sans gluten",
+	"ge":"glutenfreie haferflocken"
+},
+{
+	"id":"en:80-unsalted-vegetable-fat",
+	"en":"80 unsalted vegetable fat",
+	"fr":"80 graisses végétales non salées",
+	"ge":"80 ungesalzenes Pflanzenfett"
+},
+{
+	"id":"en:pear-flavouring",
+	"en":"pear flavouring",
+	"fr":"arôme poire",
+	"ge":"Birnengeschmack"
+},
+{
+	"id":"en:retinol",
+	"en":"retinol",
+	"fr":"rétinol",
+	"ge":"Retinol"
+},
+{
+	"id":"en:e901",
+	"en":"e901",
+	"fr":"e901",
+	"ge":"e901"
+},
+{
+	"id":"en:peruvian-scallop-without-coral",
+	"en":"peruvian scallop without coral",
+	"fr":"pétoncle péruvien sans corail",
+	"ge":"peruanische Jakobsmuschel ohne Koralle"
+},
+{
+	"id":"en:e342",
+	"en":"e342",
+	"fr":"e342",
+	"ge":"e342"
+},
+{
+	"id":"en:canned-concentrated-tomato-paste",
+	"en":"canned concentrated tomato paste",
+	"fr":"pâte de tomate concentrée en conserve",
+	"ge":"Konservenkonzentriertes Tomatenmark"
+},
+{
+	"id":"en:pinot-meunier",
+	"en":"pinot meunier",
+	"fr":"pinot meunier",
+	"ge":"Pinot Meunier"
+},
+{
+	"id":"en:white-distilled-vinegar",
+	"en":"white distilled vinegar",
+	"fr":"vinaigre blanc distillé",
+	"ge":"Weißer destillierter Essig"
+},
+{
+	"id":"en:pork-sausage",
+	"en":"pork sausage",
+	"fr":"saucisse de porc",
+	"ge":"Schweinswurst"
+},
+{
+	"id":"en:red-lentil-flour",
+	"en":"red lentil flour",
+	"fr":"farine de lentille rouge",
+	"ge":"rotes Linsenmehl"
+},
+{
+	"id":"en:rice-flakes",
+	"en":"rice flakes",
+	"fr":"flocons de riz",
+	"ge":"Reisflocken"
+},
+{
+	"id":"en:rutabaga",
+	"en":"rutabaga",
+	"fr":"rutabaga",
+	"ge":"Steckrübe"
+},
+{
+	"id":"en:grana-padano-pdo-cheese",
+	"en":"grana padano pdo cheese",
+	"fr":"Fromage Grana Padano AOP",
+	"ge":"Grana Padano PDO-Käse"
+},
+{
+	"id":"en:decaffeinated-instant-coffee",
+	"en":"decaffeinated instant coffee",
+	"fr":"café instantané décaféiné",
+	"ge":"entkoffeinierter löslicher Kaffee"
+},
+{
+	"id":"en:pumpkin",
+	"en":"pumpkin",
+	"fr":"citrouille",
+	"ge":"Kürbis"
+},
+{
+	"id":"en:rice-vinegar",
+	"en":"rice vinegar",
+	"fr":"vinaigre de riz",
+	"ge":"Reisessig"
+},
+{
+	"id":"en:e559",
+	"en":"e559",
+	"fr":"e559",
+	"ge":"e559"
+},
+{
+	"id":"en:ling",
+	"en":"ling",
+	"fr":"lingue",
+	"ge":"ling"
+},
+{
+	"id":"en:sea-buckthorn",
+	"en":"sea buckthorn",
+	"fr":"argousier",
+	"ge":"Sanddorn"
+},
+{
+	"id":"en:orange-leaves",
+	"en":"orange leaves",
+	"fr":"feuilles d'oranger",
+	"ge":"orangefarbene Blätter"
+},
+{
+	"id":"en:ground-vanilla-beans",
+	"en":"ground vanilla beans",
+	"fr":"gousses de vanille moulues",
+	"ge":"gemahlene Vanilleschoten"
+},
+{
+	"id":"en:raw-anglerfish",
+	"en":"raw anglerfish",
+	"fr":"baudroie crue",
+	"ge":"roher Seeteufel"
+},
+{
+	"id":"en:e523",
+	"en":"e523",
+	"fr":"e523",
+	"ge":"e523"
+},
+{
+	"id":"en:prepacked-harissa",
+	"en":"prepacked harissa",
+	"fr":"harissa préemballée",
+	"ge":"vorverpackte Harissa"
+},
+{
+	"id":"en:sockeye-salmon",
+	"en":"sockeye salmon",
+	"fr":"saumon rouge",
+	"ge":"Rotlachs"
+},
+{
+	"id":"en:maltose",
+	"en":"maltose",
+	"fr":"maltose",
+	"ge":"Maltose"
+},
+{
+	"id":"en:natural-blueberry-flavouring",
+	"en":"natural blueberry flavouring",
+	"fr":"arôme naturel de myrtille",
+	"ge":"natürliches Heidelbeeraroma"
+},
+{
+	"id":"en:concentrated-puree",
+	"en":"concentrated puree",
+	"fr":"purée concentrée",
+	"ge":"konzentriertes Püree"
+},
+{
+	"id":"en:edible-crab",
+	"en":"edible crab",
+	"fr":"crabe comestible",
+	"ge":"essbare Krabbe"
+},
+{
+	"id":"en:graham-flour",
+	"en":"graham flour",
+	"fr":"Farine de graham",
+	"ge":"Weizenschrotmehl"
+},
+{
+	"id":"en:soapwort-extract",
+	"en":"soapwort extract",
+	"fr":"extrait de saponaire",
+	"ge":"Seifenkraut-Extrakt"
+},
+{
+	"id":"en:e1442",
+	"en":"e1442",
+	"fr":"e1442",
+	"ge":"e1442"
+},
+{
+	"id":"en:refined-sunflower-oil",
+	"en":"refined sunflower oil",
+	"fr":"huile de tournesol raffinée",
+	"ge":"raffiniertes Sonnenblumenöl"
+},
+{
+	"id":"en:unrefined-cane-sugar",
+	"en":"unrefined cane sugar",
+	"fr":"sucre de canne non raffiné",
+	"ge":"unraffinierter Rohrzucker"
+},
+{
+	"id":"en:penaeidae",
+	"en":"penaeidae",
+	"fr":"penaeidae",
+	"ge":"penaeidae"
+},
+{
+	"id":"en:shrimp-paste",
+	"en":"shrimp paste",
+	"fr":"pâte de crevettes",
+	"ge":"Garnelenpaste"
+},
+{
+	"id":"en:buffered-vinegar-powder",
+	"en":"buffered vinegar powder",
+	"fr":"poudre de vinaigre tamponnée",
+	"ge":"gepuffertes Essigpulver"
+},
+{
+	"id":"en:grape-juice",
+	"en":"grape juice",
+	"fr":"jus de raisin",
+	"ge":"Traubensaft"
+},
+{
+	"id":"en:sheeps-fat",
+	"en":"sheeps fat",
+	"fr":"graisse de mouton",
+	"ge":"Schafsfett"
+},
+{
+	"id":"en:european-sprat",
+	"en":"european sprat",
+	"fr":"sprat européen",
+	"ge":"Europäische Sprotte"
+},
+{
+	"id":"en:pomace-brandy",
+	"en":"pomace brandy",
+	"fr":"eau-de-vie de grignons",
+	"ge":"Tresterschnaps"
+},
+{
+	"id":"en:organic-brown-rice",
+	"en":"organic brown rice",
+	"fr":"riz brun biologique",
+	"ge":"brauner Bio-Reis"
+},
+{
+	"id":"en:frozen-raw-artichoke-bottom",
+	"en":"frozen raw artichoke bottom",
+	"fr":"fond d'artichaut cru surgelé",
+	"ge":"gefrorener roher Artischockenboden"
+},
+{
+	"id":"en:rose-water",
+	"en":"rose water",
+	"fr":"eau de rose",
+	"ge":"Rosenwasser"
+},
+{
+	"id":"en:magnesium-salts-of-orthophosphoric-acid",
+	"en":"magnesium salts of orthophosphoric acid",
+	"fr":"sels de magnésium de l'acide orthophosphorique",
+	"ge":"Magnesiumsalze von Orthophosphorsäure"
+},
+{
+	"id":"en:wheat-flour-type-550",
+	"en":"wheat flour type 550",
+	"fr":"farine de blé type 550",
+	"ge":"Weizenmehl Typ 550"
+},
+{
+	"id":"en:ruby-port",
+	"en":"ruby port",
+	"fr":"porto rubis",
+	"ge":"Rubin-Portwein"
+},
+{
+	"id":"en:morteaux-sausage",
+	"en":"morteaux sausage",
+	"fr":"saucisse de morteaux",
+	"ge":"Morteaux-Wurst"
+},
+{
+	"id":"en:red-wine",
+	"en":"red wine",
+	"fr":"vin rouge",
+	"ge":"Rotwein"
+},
+{
+	"id":"en:anti-bulking-agent",
+	"en":"anti bulking agent",
+	"fr":"agent anti-gonflant",
+	"ge":"Anti-Füllmittel"
+},
+{
+	"id":"en:laurel-extract",
+	"en":"laurel extract",
+	"fr":"extrait de laurier",
+	"ge":"Lorbeer-Extrakt"
+},
+{
+	"id":"en:colza-oil",
+	"en":"colza oil",
+	"fr":"L'huile de colza",
+	"ge":"Rapsöl"
+},
+{
+	"id":"en:natural-spring-water",
+	"en":"natural spring water",
+	"fr":"eau de source naturelle",
+	"ge":"natürliches Quellwasser"
+},
+{
+	"id":"en:organic-cocoa-mass-and-organic-cocoa-butter",
+	"en":"organic cocoa mass and organic cocoa butter",
+	"fr":"pâte de cacao bio et beurre de cacao bio",
+	"ge":"Bio-Kakaomasse und Bio-Kakaobutter"
+},
+{
+	"id":"en:whole-brown-cane-sugar",
+	"en":"whole brown cane sugar",
+	"fr":"sucre de canne complet roux",
+	"ge":"ganzer brauner Rohrzucker"
+},
+{
+	"id":"en:hydrogenated-coconut-oil",
+	"en":"hydrogenated coconut oil",
+	"fr":"huile de coco hydrogénée",
+	"ge":"gehärtetes Kokosöl"
+},
+{
+	"id":"en:durum-wheat-flour",
+	"en":"durum wheat flour",
+	"fr":"farine de blé dur",
+	"ge":"Hartweizenmehl"
+},
+{
+	"id":"en:e353",
+	"en":"e353",
+	"fr":"e353",
+	"ge":"e353"
+},
+{
+	"id":"en:corinthian-raisins",
+	"en":"corinthian raisins",
+	"fr":"raisins secs corinthiens",
+	"ge":"Korinthische Rosinen"
+},
+{
+	"id":"en:e321",
+	"en":"e321",
+	"fr":"e321",
+	"ge":"e321"
+},
+{
+	"id":"en:aniseed",
+	"en":"aniseed",
+	"fr":"anis",
+	"ge":"Anislikör"
+},
+{
+	"id":"en:mixed-fruit",
+	"en":"mixed fruit",
+	"fr":"fruits mélangés",
+	"ge":"gemischte Frucht"
+},
+{
+	"id":"en:distant-scallop",
+	"en":"distant scallop",
+	"fr":"coquille Saint-Jacques lointaine",
+	"ge":"entfernte Jakobsmuschel"
+},
+{
+	"id":"en:french-pomelo-juice-from-concentrate",
+	"en":"french pomelo juice from concentrate",
+	"fr":"jus de pomelo français fait de concentré",
+	"ge":"Französischer Pomelosaft aus Konzentrat"
+},
+{
+	"id":"en:sheep-s-whey",
+	"en":"sheep s whey",
+	"fr":"lactosérum de brebis",
+	"ge":"Schafsmolke"
+},
+{
+	"id":"en:e128",
+	"en":"e128",
+	"fr":"e128",
+	"ge":"e128"
+},
+{
+	"id":"en:kumquat-juice",
+	"en":"kumquat juice",
+	"fr":"jus de kumquat",
+	"ge":"Kumquat-Saft"
+},
+{
+	"id":"en:caffeine",
+	"en":"caffeine",
+	"fr":"caféine",
+	"ge":"Koffein"
+},
+{
+	"id":"en:cannellini-beans",
+	"en":"cannellini beans",
+	"fr":"haricots cannellini",
+	"ge":"Cannellini-Bohnen"
+},
+{
+	"id":"en:red-raspberries",
+	"en":"red raspberries",
+	"fr":"framboises rouges",
+	"ge":"rote Himbeeren"
+},
+{
+	"id":"en:orange-blossom-flavouring",
+	"en":"orange blossom flavouring",
+	"fr":"arôme fleur d'oranger",
+	"ge":"Orangenblütenaroma"
+},
+{
+	"id":"en:shellfish",
+	"en":"shellfish",
+	"fr":"fruits de mer",
+	"ge":"Schaltier"
+},
+{
+	"id":"en:liquid-egg-yolk",
+	"en":"liquid egg yolk",
+	"fr":"jaune d'oeuf liquide",
+	"ge":"flüssiges Eigelb"
+},
+{
+	"id":"en:cooked-calf-liver",
+	"en":"cooked calf liver",
+	"fr":"foie de veau cuit",
+	"ge":"gekochte Kalbsleber"
+},
+{
+	"id":"en:chipotle",
+	"en":"chipotle",
+	"fr":"chipotle",
+	"ge":"Chipotle"
+},
+{
+	"id":"en:natural-flavouring",
+	"en":"natural flavouring",
+	"fr":"arôme naturel",
+	"ge":"natürliches Aroma"
+},
+{
+	"id":"en:ferrous-gluconate-to-stabilize-color",
+	"en":"ferrous gluconate to stabilize color",
+	"fr":"gluconate ferreux pour stabiliser la couleur",
+	"ge":"Eisengluconat zur Farbstabilisierung"
+},
+{
+	"id":"en:black-eyed-pea",
+	"en":"black eyed pea",
+	"fr":"pois aux yeux noirs",
+	"ge":"schwarz-äugige Erbse"
+},
+{
+	"id":"en:mix-of-flower-honeys",
+	"en":"mix of flower honeys",
+	"fr":"mélange de miels de fleurs",
+	"ge":"Mischung aus Blütenhonig"
+},
+{
+	"id":"en:pangas",
+	"en":"pangas",
+	"fr":"panga",
+	"ge":"Pangas"
+},
+{
+	"id":"en:e411",
+	"en":"e411",
+	"fr":"e411",
+	"ge":"e411"
+},
+{
+	"id":"en:cooked-potato",
+	"en":"cooked potato",
+	"fr":"pomme de terre cuite",
+	"ge":"gekochte Kartoffel"
+},
+{
+	"id":"en:grilled-lamb-leg",
+	"en":"grilled lamb leg",
+	"fr":"gigot d'agneau grillé",
+	"ge":"gegrillte Lammkeule"
+},
+{
+	"id":"en:pomelo-juice",
+	"en":"pomelo juice",
+	"fr":"jus de pomelo",
+	"ge":"Pampelmusensaft"
+},
+{
+	"id":"en:mixture-of-palm-oil-and-palm-superolein",
+	"en":"mixture of palm oil and palm superolein",
+	"fr":"mélange d'huile de palme et de superoléine de palme",
+	"ge":"Mischung aus Palmöl und Palmsuperolein"
+},
+{
+	"id":"en:cider",
+	"en":"cider",
+	"fr":"Cidre",
+	"ge":"Apfelwein"
+},
+{
+	"id":"en:peanut-oil",
+	"en":"peanut oil",
+	"fr":"huile d'arachide",
+	"ge":"Erdnussöl"
+},
+{
+	"id":"en:e220",
+	"en":"e220",
+	"fr":"e220",
+	"ge":"e220"
+},
+{
+	"id":"en:vegetable-suet",
+	"en":"vegetable suet",
+	"fr":"suif de légumes",
+	"ge":"pflanzlicher Talg"
+},
+{
+	"id":"en:e916",
+	"en":"e916",
+	"fr":"e916",
+	"ge":"e916"
+},
+{
+	"id":"en:natural-preservative",
+	"en":"natural preservative",
+	"fr":"conservateur naturel",
+	"ge":"natürliches Konservierungsmittel"
+},
+{
+	"id":"en:sea-salt",
+	"en":"sea salt",
+	"fr":"sel de mer",
+	"ge":"Meersalz"
+},
+{
+	"id":"en:white-beans",
+	"en":"white beans",
+	"fr":"haricots blancs",
+	"ge":"weiße Bohnen"
+},
+{
+	"id":"en:enhancer",
+	"en":"enhancer",
+	"fr":"rehausseur",
+	"ge":"Verstärker"
+},
+{
+	"id":"en:liquorice-powder",
+	"en":"liquorice powder",
+	"fr":"poudre de réglisse",
+	"ge":"Lakritzpulver"
+},
+{
+	"id":"en:salmon-fillet",
+	"en":"salmon fillet",
+	"fr":"filet de saumon",
+	"ge":"Lachsfilet"
+},
+{
+	"id":"en:potato-flour",
+	"en":"potato flour",
+	"fr":"farine de pomme de terre",
+	"ge":"Kartoffelmehl"
+},
+{
+	"id":"en:bigeye-tuna",
+	"en":"bigeye tuna",
+	"fr":"thon obèse",
+	"ge":"Großaugen-Thunfisch"
+},
+{
+	"id":"en:natural-poultry-flavouring",
+	"en":"natural poultry flavouring",
+	"fr":"arôme naturel de volaille",
+	"ge":"natürliches Geflügelaroma"
+},
+{
+	"id":"en:grolleau",
+	"en":"grolleau",
+	"fr":"grolleau",
+	"ge":"grolleau"
+},
+{
+	"id":"en:raspberry-jam",
+	"en":"raspberry jam",
+	"fr":"confiture de framboise",
+	"ge":"Himbeermarmelade"
+},
+{
+	"id":"en:e154",
+	"en":"e154",
+	"fr":"e154",
+	"ge":"e154"
+},
+{
+	"id":"en:vicia-faba",
+	"en":"vicia faba",
+	"fr":"vicia faba",
+	"ge":"vicia faba"
+},
+{
+	"id":"en:parboiled-organic-long-grain-rice",
+	"en":"parboiled organic long grain rice",
+	"fr":"riz biologique à grains longs étuvé",
+	"ge":"Parboiled Bio-Langkornreis"
+},
+{
+	"id":"en:fish-sauce",
+	"en":"fish sauce",
+	"fr":"sauce poisson",
+	"ge":"Fischsoße"
+},
+{
+	"id":"en:curry-sauce",
+	"en":"curry sauce",
+	"fr":"sauce au curry",
+	"ge":"Curry Soße"
+},
+{
+	"id":"en:european-plaice",
+	"en":"european plaice",
+	"fr":"plie européenne",
+	"ge":"Europäische Scholle"
+},
+{
+	"id":"en:white-corn",
+	"en":"white corn",
+	"fr":"maïs blanc",
+	"ge":"weißer Mais"
+},
+{
+	"id":"en:oarfish",
+	"en":"oarfish",
+	"fr":"aviron",
+	"ge":"Riemenfisch"
+},
+{
+	"id":"en:hop-extract",
+	"en":"hop extract",
+	"fr":"extrait de houblon",
+	"ge":"Hopfenextrakt"
+},
+{
+	"id":"en:plantain",
+	"en":"plantain",
+	"fr":"banane plantain",
+	"ge":"Wegerich"
+},
+{
+	"id":"en:millet-groats",
+	"en":"millet groats",
+	"fr":"gruau de mil",
+	"ge":"Hirsegrütze"
+},
+{
+	"id":"en:corn-maltodextrin",
+	"en":"corn maltodextrin",
+	"fr":"maltodextrine de maïs",
+	"ge":"Mais-Maltodextrin"
+},
+{
+	"id":"en:almond-oil",
+	"en":"almond oil",
+	"fr":"huile d'amande",
+	"ge":"Mandelöl"
+},
+{
+	"id":"en:caramelized-malted-wheat-flour",
+	"en":"caramelized malted wheat flour",
+	"fr":"farine de blé malté caramélisée",
+	"ge":"karamellisiertes Weizenmalzmehl"
+},
+{
+	"id":"en:black-cumin",
+	"en":"black cumin",
+	"fr":"cumin noir",
+	"ge":"Schwarzkümmel"
+},
+{
+	"id":"en:fractionated-palm-oil",
+	"en":"fractionated palm oil",
+	"fr":"huile de palme fractionnée",
+	"ge":"fraktioniertes Palmöl"
+},
+{
+	"id":"en:lamb-meat",
+	"en":"lamb meat",
+	"fr":"viande d'agneau",
+	"ge":"Lammfleisch"
+},
+{
+	"id":"en:patty",
+	"en":"patty",
+	"fr":"petit pâté",
+	"ge":"Pastetchen"
+},
+{
+	"id":"en:germinated-rice",
+	"en":"germinated rice",
+	"fr":"riz germé",
+	"ge":"gekeimter Reis"
+},
+{
+	"id":"en:e544",
+	"en":"e544",
+	"fr":"e544",
+	"ge":"e544"
+},
+{
+	"id":"en:e125",
+	"en":"e125",
+	"fr":"e125",
+	"ge":"e125"
+},
+{
+	"id":"en:pineapple-juice",
+	"en":"pineapple juice",
+	"fr":"jus d'ananas",
+	"ge":"Ananassaft"
+},
+{
+	"id":"en:ferrous-l-pidolate",
+	"en":"ferrous l pidolate",
+	"fr":"ferreux l pidolate",
+	"ge":"Eisen l pidolat"
+},
+{
+	"id":"en:red-apple",
+	"en":"red apple",
+	"fr":"pomme rouge",
+	"ge":"roter Apfel"
+},
+{
+	"id":"en:waxy-corn",
+	"en":"waxy corn",
+	"fr":"maïs cireux",
+	"ge":"Wachsmais"
+},
+{
+	"id":"en:melon",
+	"en":"melon",
+	"fr":"melon",
+	"ge":"Melone"
+},
+{
+	"id":"en:raw-atlantic-bass",
+	"en":"raw atlantic bass",
+	"fr":"bar atlantique brut",
+	"ge":"Roher Atlantikbass"
+},
+{
+	"id":"en:garfish",
+	"en":"garfish",
+	"fr":"orphie",
+	"ge":"Hornhecht"
+},
+{
+	"id":"en:oligofructose",
+	"en":"oligofructose",
+	"fr":"oligofructose",
+	"ge":"Oligofruktose"
+},
+{
+	"id":"en:coconut-chips",
+	"en":"coconut chips",
+	"fr":"chips de noix de coco",
+	"ge":"Kokoschips"
+},
+{
+	"id":"en:verbena",
+	"en":"verbena",
+	"fr":"verveine",
+	"ge":"Eisenkraut"
+},
+{
+	"id":"en:sorrel",
+	"en":"sorrel",
+	"fr":"oseille",
+	"ge":"Sauerampfer"
+},
+{
+	"id":"en:meatball",
+	"en":"meatball",
+	"fr":"boulette de viande",
+	"ge":"Frikadelle"
+},
+{
+	"id":"en:hydrogenated-fat",
+	"en":"hydrogenated fat",
+	"fr":"graisse hydrogénée",
+	"ge":"gehärtetes Fett"
+},
+{
+	"id":"en:magnesium-potassium-citrate",
+	"en":"magnesium potassium citrate",
+	"fr":"citrate de magnésium et de potassium",
+	"ge":"Magnesium-Kalium-Citrat"
+},
+{
+	"id":"en:e1521",
+	"en":"e1521",
+	"fr":"e1521",
+	"ge":"e1521"
+},
+{
+	"id":"en:e409",
+	"en":"e409",
+	"fr":"e409",
+	"ge":"e409"
+},
+{
+	"id":"en:einkorn-flour",
+	"en":"einkorn flour",
+	"fr":"farine de petit épeautre",
+	"ge":"Einkornmehl"
+},
+{
+	"id":"en:vitamin-and-mineral-blend",
+	"en":"vitamin and mineral blend",
+	"fr":"mélange de vitamines et de minéraux",
+	"ge":"Vitamin- und Mineralstoffmischung"
+},
+{
+	"id":"en:green-pepper",
+	"en":"green pepper",
+	"fr":"poivre vert",
+	"ge":"grünes Pfeffer"
+},
+{
+	"id":"en:khorasan-wheat",
+	"en":"khorasan wheat",
+	"fr":"blé khorasan",
+	"ge":"Khorasan-Weizen"
+},
+{
+	"id":"en:lamb-saddle",
+	"en":"lamb saddle",
+	"fr":"selle d'agneau",
+	"ge":"Lammsattel"
+},
+{
+	"id":"en:raw-common-sole",
+	"en":"raw common sole",
+	"fr":"sole commune crue",
+	"ge":"rohe Seezunge"
+},
+{
+	"id":"en:sweetened-condensed-milk",
+	"en":"sweetened condensed milk",
+	"fr":"lait concentré sucré",
+	"ge":"gesüsste Kondensmilch"
+},
+{
+	"id":"en:organic-milk",
+	"en":"organic milk",
+	"fr":"lait bio",
+	"ge":"Bio-Milch"
+},
+{
+	"id":"en:unrefined-whole-cane-sugar",
+	"en":"unrefined whole cane sugar",
+	"fr":"sucre de canne entier non raffiné",
+	"ge":"unraffinierter Vollrohrzucker"
+},
+{
+	"id":"en:lamb-rib",
+	"en":"lamb rib",
+	"fr":"côte d'agneau",
+	"ge":"Lammrippe"
+},
+{
+	"id":"en:european-seabass",
+	"en":"european seabass",
+	"fr":"bar européen",
+	"ge":"Europäischer Wolfsbarsch"
+},
+{
+	"id":"en:dexpanthenol",
+	"en":"dexpanthenol",
+	"fr":"dexpanthénol",
+	"ge":"Dexpanthenol"
+},
+{
+	"id":"en:blueberry-flavouring",
+	"en":"blueberry flavouring",
+	"fr":"arôme myrtille",
+	"ge":"Heidelbeer-Geschmack"
+},
+{
+	"id":"en:red-pomelo",
+	"en":"red pomelo",
+	"fr":"pomelo rouge",
+	"ge":"rote Pampelmuse"
+},
+{
+	"id":"en:e225",
+	"en":"e225",
+	"fr":"e225",
+	"ge":"e225"
+},
+{
+	"id":"en:malt-vinegar",
+	"en":"malt vinegar",
+	"fr":"vinaigre de malt",
+	"ge":"Malzessig"
+},
+{
+	"id":"en:barley-flakes",
+	"en":"barley flakes",
+	"fr":"flocons d'orge",
+	"ge":"Gerstenflocken"
+},
+{
+	"id":"en:paneer",
+	"en":"paneer",
+	"fr":"panir",
+	"ge":"paneer"
+},
+{
+	"id":"en:chicken-broth",
+	"en":"chicken broth",
+	"fr":"bouillon de poulet",
+	"ge":"Hühnersuppe"
+},
+{
+	"id":"en:brine",
+	"en":"brine",
+	"fr":"eau salée",
+	"ge":"Sole"
+},
+{
+	"id":"en:whole-grain-quinoa-flour",
+	"en":"whole grain quinoa flour",
+	"fr":"farine de quinoa complet",
+	"ge":"Vollkorn-Quinoa-Mehl"
+},
+{
+	"id":"en:milk-chocolate-coating",
+	"en":"milk chocolate coating",
+	"fr":"enrobage chocolat au lait",
+	"ge":"Milchschokoladenüberzug"
+},
+{
+	"id":"en:e504",
+	"en":"e504",
+	"fr":"e504",
+	"ge":"e504"
+},
+{
+	"id":"en:crab-extract",
+	"en":"crab extract",
+	"fr":"extrait de crabe",
+	"ge":"Krabbenextrakt"
+},
+{
+	"id":"en:bitter-almond",
+	"en":"bitter almond",
+	"fr":"amande amère",
+	"ge":"Bittermandel"
+},
+{
+	"id":"en:apricot-kernels",
+	"en":"apricot kernels",
+	"fr":"les noyaux d'abricot",
+	"ge":"Aprikosenkerne"
+},
+{
+	"id":"en:romano-cheese",
+	"en":"romano cheese",
+	"fr":"fromage romano",
+	"ge":"Romano-Käse"
+},
+{
+	"id":"en:organic-dextrose",
+	"en":"organic dextrose",
+	"fr":"dextrose organique",
+	"ge":"Bio-Dextrose"
+},
+{
+	"id":"en:e1101",
+	"en":"e1101",
+	"fr":"e1101",
+	"ge":"e1101"
+},
+{
+	"id":"en:spice-or-bell-pepper",
+	"en":"spice or bell pepper",
+	"fr":"épice ou poivron",
+	"ge":"Gewürz oder Paprika"
+},
+{
+	"id":"en:caseinate",
+	"en":"caseinate",
+	"fr":"caséinate",
+	"ge":"Kaseinat"
+},
+{
+	"id":"en:natural-spice-extract",
+	"en":"natural spice extract",
+	"fr":"extrait d'épice naturel",
+	"ge":"natürlicher Gewürzextrakt"
+},
+{
+	"id":"en:natural-organic-vanilla-flavouring",
+	"en":"natural organic vanilla flavouring",
+	"fr":"arôme naturel de vanille bio",
+	"ge":"natürliches Bio-Vanille-Aroma"
+},
+{
+	"id":"en:brown-rice",
+	"en":"brown rice",
+	"fr":"riz brun",
+	"ge":"brauner Reis"
+},
+{
+	"id":"en:striped-bass",
+	"en":"striped bass",
+	"fr":"bar rayé",
+	"ge":"gestreifter Barsch"
+},
+{
+	"id":"en:e631",
+	"en":"e631",
+	"fr":"e631",
+	"ge":"e631"
+},
+{
+	"id":"en:oat-milk",
+	"en":"oat milk",
+	"fr":"lait d'avoine",
+	"ge":"hafermilch"
+},
+{
+	"id":"en:pork-heart",
+	"en":"pork heart",
+	"fr":"coeur de porc",
+	"ge":"Schweineherz"
+},
+{
+	"id":"en:lemon-zest",
+	"en":"lemon zest",
+	"fr":"zeste de citron",
+	"ge":"Zitronenschale"
+},
+{
+	"id":"en:pork-spare-ribs",
+	"en":"pork spare ribs",
+	"fr":"Côtes de porc",
+	"ge":"Schweinerippchen"
+},
+{
+	"id":"en:sweet-cherry",
+	"en":"sweet cherry",
+	"fr":"cerise sucrée",
+	"ge":"Süße Kirsche"
+},
+{
+	"id":"en:precooked-chicken-meat",
+	"en":"precooked chicken meat",
+	"fr":"viande de poulet précuite",
+	"ge":"vorgekochtes Hühnerfleisch"
+},
+{
+	"id":"en:bergamot-orange-flavouring",
+	"en":"bergamot orange flavouring",
+	"fr":"arôme bergamote",
+	"ge":"Bergamotte-Orangen-Aroma"
+},
+{
+	"id":"en:e634",
+	"en":"e634",
+	"fr":"e634",
+	"ge":"e634"
+},
+{
+	"id":"en:eucalyptus-honey",
+	"en":"eucalyptus honey",
+	"fr":"miel d'eucalyptus",
+	"ge":"Eukalyptushonig"
+},
+{
+	"id":"en:snail",
+	"en":"snail",
+	"fr":"escargot",
+	"ge":"Schnecke"
+},
+{
+	"id":"en:concentrated-lemon-juice",
+	"en":"concentrated lemon juice",
+	"fr":"jus de citron concentré",
+	"ge":"konzentrierter Zitronensaft"
+},
+{
+	"id":"en:concentrated-juice",
+	"en":"concentrated juice",
+	"fr":"jus concentré",
+	"ge":"konzentrierter Saft"
+},
+{
+	"id":"en:harissa",
+	"en":"harissa",
+	"fr":"Harissa",
+	"ge":"Harissa"
+},
+{
+	"id":"en:e470b",
+	"en":"e470b",
+	"fr":"e470b",
+	"ge":"e470b"
+},
+{
+	"id":"en:sorrel-or-acid",
+	"en":"sorrel or acid",
+	"fr":"oseille ou acide",
+	"ge":"Sauerampfer oder Säure"
+},
+{
+	"id":"en:natural-extract",
+	"en":"natural extract",
+	"fr":"extrait naturel",
+	"ge":"natürlicher Extrakt"
+},
+{
+	"id":"en:chartreuse-liqueur",
+	"en":"chartreuse liqueur",
+	"fr":"liqueur de chartreuse",
+	"ge":"Chartreuse-Likör"
+},
+{
+	"id":"en:dill",
+	"en":"dill",
+	"fr":"aneth",
+	"ge":"Dill"
+},
+{
+	"id":"en:l-carnitine",
+	"en":"l carnitine",
+	"fr":"la carnitine",
+	"ge":"l Carnitin"
+},
+{
+	"id":"en:disaccharide",
+	"en":"disaccharide",
+	"fr":"disaccharide",
+	"ge":"Disaccharid"
+},
+{
+	"id":"en:e928",
+	"en":"e928",
+	"fr":"e928",
+	"ge":"e928"
+},
+{
+	"id":"en:sterilised-whole-milk",
+	"en":"sterilised whole milk",
+	"fr":"lait entier stérilisé",
+	"ge":"sterilisierte Vollmilch"
+},
+{
+	"id":"en:plavina",
+	"en":"plavina",
+	"fr":"plavina",
+	"ge":"plavina"
+},
+{
+	"id":"en:e543",
+	"en":"e543",
+	"fr":"e543",
+	"ge":"e543"
+},
+{
+	"id":"en:no12",
+	"en":"no12",
+	"fr":"no12",
+	"ge":"nein12"
+},
+{
+	"id":"en:citrus-pectin",
+	"en":"citrus pectin",
+	"fr":"pectine d'agrumes",
+	"ge":"Zitruspektin"
+},
+{
+	"id":"en:chinese-chestnut",
+	"en":"chinese chestnut",
+	"fr":"châtaigne chinoise",
+	"ge":"chinesische Kastanie"
+},
+{
+	"id":"en:l-carnitine-l-tartrate",
+	"en":"l carnitine l tartrate",
+	"fr":"l carnitine l tartrate",
+	"ge":"l Carnitin l Tartrat"
+},
+{
+	"id":"en:red-currant-juice",
+	"en":"red currant juice",
+	"fr":"jus de groseille",
+	"ge":"roter Johannisbeersaft"
+},
+{
+	"id":"en:pork-leg",
+	"en":"pork leg",
+	"fr":"cuisse de porc",
+	"ge":"Schweinekeule"
+},
+{
+	"id":"en:thiamin",
+	"en":"thiamin",
+	"fr":"thiamine",
+	"ge":"Thiamin"
+},
+{
+	"id":"en:clam-or-mussel",
+	"en":"clam or mussel",
+	"fr":"palourde ou moule",
+	"ge":"Muschel oder Miesmuschel"
+},
+{
+	"id":"en:e1201",
+	"en":"e1201",
+	"fr":"e1201",
+	"ge":"e1201"
+},
+{
+	"id":"en:corn-salad",
+	"en":"corn salad",
+	"fr":"salade de maïs",
+	"ge":"Feldsalat"
+},
+{
+	"id":"en:beetroot-juice-powder",
+	"en":"beetroot juice powder",
+	"fr":"poudre de jus de betterave",
+	"ge":"Rote-Bete-Saft-Pulver"
+},
+{
+	"id":"en:reconstituted-lime-juice",
+	"en":"reconstituted lime juice",
+	"fr":"jus de citron vert reconstitué",
+	"ge":"rekonstituierter Limettensaft"
+},
+{
+	"id":"en:e435",
+	"en":"e435",
+	"fr":"e435",
+	"ge":"e435"
+},
+{
+	"id":"en:whole-durum-wheat-semolina",
+	"en":"whole durum wheat semolina",
+	"fr":"semoule complète de blé dur",
+	"ge":"ganzer Hartweizengrieß"
+},
+{
+	"id":"en:turkey-thigh",
+	"en":"turkey thigh",
+	"fr":"cuisse de dinde",
+	"ge":"Truthahnkeule"
+},
+{
+	"id":"en:chicken-wing",
+	"en":"chicken wing",
+	"fr":"aile de poulet",
+	"ge":"Hähnchenflügel"
+},
+{
+	"id":"en:split-pea",
+	"en":"split pea",
+	"fr":"pois cassé",
+	"ge":"gespaltene Erbse"
+},
+{
+	"id":"en:vitamin-d-yeast",
+	"en":"vitamin d yeast",
+	"fr":"levure vitamine d",
+	"ge":"Vitamin D Hefe"
+},
+{
+	"id":"en:e489",
+	"en":"e489",
+	"fr":"e489",
+	"ge":"e489"
+},
+{
+	"id":"en:hydrolysed-soy-protein",
+	"en":"hydrolysed soy protein",
+	"fr":"protéines de soja hydrolysées",
+	"ge":"hydrolysiertes Sojaprotein"
+},
+{
+	"id":"en:milk-minerals",
+	"en":"milk minerals",
+	"fr":"minéraux du lait",
+	"ge":"Milch Mineralien"
+},
+{
+	"id":"en:herbs-and-spices",
+	"en":"herbs and spices",
+	"fr":"herbes et épices",
+	"ge":"Kräuter und Gewürze"
+},
+{
+	"id":"en:malvasia",
+	"en":"malvasia",
+	"fr":"Malvoisie",
+	"ge":"malvasia"
+},
+{
+	"id":"en:cauliflower",
+	"en":"cauliflower",
+	"fr":"chou-fleur",
+	"ge":"Blumenkohl"
+},
+{
+	"id":"en:kale-juice",
+	"en":"kale juice",
+	"fr":"jus de chou frisé",
+	"ge":"Grünkohl Saft"
+},
+{
+	"id":"en:80-fat-salted-butter",
+	"en":"80 fat salted butter",
+	"fr":"80 matières grasses beurre salé",
+	"ge":"80 Fett gesalzene Butter"
+},
+{
+	"id":"en:sunflower",
+	"en":"sunflower",
+	"fr":"tournesol",
+	"ge":"Sonnenblume"
+},
+{
+	"id":"en:e627",
+	"en":"e627",
+	"fr":"e627",
+	"ge":"e627"
+},
+{
+	"id":"en:buckwheat-flakes",
+	"en":"buckwheat flakes",
+	"fr":"flocons de sarrasin",
+	"ge":"Buchweizenflocken"
+},
+{
+	"id":"en:crottin-cheese",
+	"en":"crottin cheese",
+	"fr":"fromage au crottin",
+	"ge":"Crottin-Käse"
+},
+{
+	"id":"en:ginger-syrup",
+	"en":"ginger syrup",
+	"fr":"sirop de gingembre",
+	"ge":"Ingwersirup"
+},
+{
+	"id":"en:seafood-flavouring",
+	"en":"seafood flavouring",
+	"fr":"arôme fruits de mer",
+	"ge":"Meeresfrüchte-Geschmack"
+},
+{
+	"id":"en:hemp-seed-oil",
+	"en":"hemp seed oil",
+	"fr":"huile de graines de chanvre",
+	"ge":"Hanföl"
+},
+{
+	"id":"en:lavander-honey-from-the-provence",
+	"en":"lavander honey from the provence",
+	"fr":"miel de lavande de provence",
+	"ge":"Lavendelhonig aus der Provence"
+},
+{
+	"id":"en:dehydrated-veal-fond",
+	"en":"dehydrated veal fond",
+	"fr":"fond de veau déshydraté",
+	"ge":"dehydrierter Kalbsfond"
+},
+{
+	"id":"en:omelette",
+	"en":"omelette",
+	"fr":"omelette",
+	"ge":"Omelette"
+},
+{
+	"id":"en:parsley",
+	"en":"parsley",
+	"fr":"persil",
+	"ge":"Petersilie"
+},
+{
+	"id":"en:chicory-fibre",
+	"en":"chicory fibre",
+	"fr":"fibre de chicorée",
+	"ge":"Chicorée-Faser"
+},
+{
+	"id":"en:long-grain-white-rice",
+	"en":"long grain white rice",
+	"fr":"riz blanc à grains longs",
+	"ge":"langkörniger weißer Reis"
+},
+{
+	"id":"en:forest-honey",
+	"en":"forest honey",
+	"fr":"miel de forêt",
+	"ge":"Waldhonig"
+},
+{
+	"id":"en:pangas-fillet",
+	"en":"pangas fillet",
+	"fr":"filet de pangas",
+	"ge":"Pangasfilet"
+},
+{
+	"id":"en:e491",
+	"en":"e491",
+	"fr":"e491",
+	"ge":"e491"
+},
+{
+	"id":"en:fortified-wheat-flour",
+	"en":"fortified wheat flour",
+	"fr":"farine de blé enrichie",
+	"ge":"angereichertes Weizenmehl"
+},
+{
+	"id":"en:cucumber-juice-from-concentrate",
+	"en":"cucumber juice from concentrate",
+	"fr":"jus de concombre fait de concentré",
+	"ge":"Gurkensaft aus Konzentrat"
+},
+{
+	"id":"en:organic-almond-flour",
+	"en":"organic almond flour",
+	"fr":"farine d'amande bio",
+	"ge":"Bio Mandelmehl"
+},
+{
+	"id":"en:semi-skimmed-cow-s-milk",
+	"en":"semi skimmed cow s milk",
+	"fr":"lait de vache demi-écrémé",
+	"ge":"teilentrahmte Kuhmilch"
+},
+{
+	"id":"en:with-other-natural-flavouring",
+	"en":"with other natural flavouring",
+	"fr":"avec d'autres arômes naturels",
+	"ge":"mit anderen natürlichen Aromen"
+},
+{
+	"id":"en:e463",
+	"en":"e463",
+	"fr":"e463",
+	"ge":"e463"
+},
+{
+	"id":"en:coriander-seed",
+	"en":"coriander seed",
+	"fr":"graine de coriandre",
+	"ge":"Koriandersamen"
+},
+{
+	"id":"en:cocoa-cream",
+	"en":"cocoa cream",
+	"fr":"crème de cacao",
+	"ge":"Kakaocreme"
+},
+{
+	"id":"en:dehydrated-poultry-stock",
+	"en":"dehydrated poultry stock",
+	"fr":"bouillon de volaille déshydraté",
+	"ge":"dehydrierte Geflügelbrühe"
+},
+{
+	"id":"en:organic-cocoa-beans",
+	"en":"organic cocoa beans",
+	"fr":"fèves de cacao bio",
+	"ge":"Bio-Kakaobohnen"
+},
+{
+	"id":"en:whole-wheat-flour",
+	"en":"whole wheat flour",
+	"fr":"farine de blé entier",
+	"ge":"Vollkornmehl"
+},
+{
+	"id":"en:e514ii",
+	"en":"e514ii",
+	"fr":"e514ii",
+	"ge":"e514ii"
+},
+{
+	"id":"en:semi-whole-durum-wheat-semolina",
+	"en":"semi whole durum wheat semolina",
+	"fr":"semoule de blé dur semi-complète",
+	"ge":"halbvoller Hartweizengrieß"
+},
+{
+	"id":"en:inedible-crust",
+	"en":"inedible crust",
+	"fr":"croûte non comestible",
+	"ge":"ungenießbare Kruste"
+},
+{
+	"id":"en:south-african-hake",
+	"en":"south african hake",
+	"fr":"merlu sud-africain",
+	"ge":"südafrikanischer Seehecht"
+},
+{
+	"id":"en:egg-yolk",
+	"en":"egg yolk",
+	"fr":"jaune d'œuf",
+	"ge":"Eigelb"
+},
+{
+	"id":"en:tabasco-chile",
+	"en":"tabasco chile",
+	"fr":"chili tabasco",
+	"ge":"Tabasco-Chile"
+},
+{
+	"id":"en:durian",
+	"en":"durian",
+	"fr":"durian",
+	"ge":"Durian"
+},
+{
+	"id":"en:cream-cheese",
+	"en":"cream cheese",
+	"fr":"Fromage Frais",
+	"ge":"Frischkäse"
+},
+{
+	"id":"en:acid-whey",
+	"en":"acid whey",
+	"fr":"lactosérum acide",
+	"ge":"saure Molke"
+},
+{
+	"id":"en:safflower",
+	"en":"safflower",
+	"fr":"carthame",
+	"ge":"Färberdistel"
+},
+{
+	"id":"en:e493",
+	"en":"e493",
+	"fr":"e493",
+	"ge":"e493"
+},
+{
+	"id":"en:organic-pumpkin-seed-oil",
+	"en":"organic pumpkin seed oil",
+	"fr":"huile de pépins de courge bio",
+	"ge":"Bio-Kürbiskernöl"
+},
+{
+	"id":"en:vinegar",
+	"en":"vinegar",
+	"fr":"vinaigre",
+	"ge":"Essig"
+},
+{
+	"id":"en:rocamadour",
+	"en":"rocamadour",
+	"fr":"rocamadour",
+	"ge":"Rocamadour"
+},
+{
+	"id":"en:no11",
+	"en":"no11",
+	"fr":"no11",
+	"ge":"Nr. 11"
+},
+{
+	"id":"en:e390",
+	"en":"e390",
+	"fr":"e390",
+	"ge":"e390"
+},
+{
+	"id":"en:turkey-thigh-meat",
+	"en":"turkey thigh meat",
+	"fr":"viande de cuisse de dinde",
+	"ge":"Putenkeulenfleisch"
+},
+{
+	"id":"en:granulated-sugar",
+	"en":"granulated sugar",
+	"fr":"Sucre en poudre",
+	"ge":"Kristallzucker"
+},
+{
+	"id":"en:red-quinoa",
+	"en":"red quinoa",
+	"fr":"quinoa rouge",
+	"ge":"rote Quinoa"
+},
+{
+	"id":"en:e161g",
+	"en":"e161g",
+	"fr":"e161g",
+	"ge":"e161g"
+},
+{
+	"id":"en:choline",
+	"en":"choline",
+	"fr":"choline",
+	"ge":"Cholin"
+},
+{
+	"id":"en:dough",
+	"en":"dough",
+	"fr":"pâte",
+	"ge":"Teig"
+},
+{
+	"id":"en:e541i",
+	"en":"e541i",
+	"fr":"e541i",
+	"ge":"e541i"
+},
+{
+	"id":"en:unhydrogenated-palm-and-coconut-oil",
+	"en":"unhydrogenated palm and coconut oil",
+	"fr":"huile de palme et de noix de coco non hydrogénée",
+	"ge":"ungehärtetes Palm- und Kokosnussöl"
+},
+{
+	"id":"en:whole-grain-ivory-teff-flour",
+	"en":"whole grain ivory teff flour",
+	"fr":"farine de teff ivoire à grains entiers",
+	"ge":"Vollkorn-Elfenbein-Teff-Mehl"
+},
+{
+	"id":"en:e170i",
+	"en":"e170i",
+	"fr":"e170i",
+	"ge":"e170i"
+},
+{
+	"id":"en:pineapple-juice-from-concentrate",
+	"en":"pineapple juice from concentrate",
+	"fr":"jus d'ananas fait de concentré",
+	"ge":"Ananassaft aus Konzentrat"
+},
+{
+	"id":"en:pasteurized-semi-skimmed-milk",
+	"en":"pasteurized semi skimmed milk",
+	"fr":"lait demi-écrémé pasteurisé",
+	"ge":"pasteurisierte teilentrahmte Milch"
+},
+{
+	"id":"en:e155",
+	"en":"e155",
+	"fr":"e155",
+	"ge":"e155"
+},
+{
+	"id":"en:sprouted-soybeans",
+	"en":"sprouted soybeans",
+	"fr":"graines de soja germées",
+	"ge":"gekeimte Sojabohnen"
+},
+{
+	"id":"en:soya-flower",
+	"en":"soya flower",
+	"fr":"fleur de soja",
+	"ge":"Soja-Blume"
+},
+{
+	"id":"en:rehydrated-nuckwheat",
+	"en":"rehydrated nuckwheat",
+	"fr":"sarrasin réhydraté",
+	"ge":"rehydrierter Nuckweizen"
+},
+{
+	"id":"en:e407",
+	"en":"e407",
+	"fr":"e407",
+	"ge":"e407"
+},
+{
+	"id":"en:tigernut",
+	"en":"tigernut",
+	"fr":"souchet",
+	"ge":"Erdmandel"
+},
+{
+	"id":"en:e500ii",
+	"en":"e500ii",
+	"fr":"e500ii",
+	"ge":"e500ii"
+},
+{
+	"id":"en:e389",
+	"en":"e389",
+	"fr":"e389",
+	"ge":"e389"
+},
+{
+	"id":"en:dried-lovage",
+	"en":"dried lovage",
+	"fr":"livèche séchée",
+	"ge":"getrockneter Liebstöckel"
+},
+{
+	"id":"en:pre-fried-onions",
+	"en":"pre fried onions",
+	"fr":"oignons pré frits",
+	"ge":"vorgebratene Zwiebeln"
+},
+{
+	"id":"en:whole-grain-millet-flour",
+	"en":"whole grain millet flour",
+	"fr":"farine de millet complet",
+	"ge":"Vollkorn Hirsemehl"
+},
+{
+	"id":"en:unrefined-salt",
+	"en":"unrefined salt",
+	"fr":"sel non raffiné",
+	"ge":"unraffiniertes Salz"
+},
+{
+	"id":"en:e261",
+	"en":"e261",
+	"fr":"e261",
+	"ge":"e261"
+},
+{
+	"id":"en:e461",
+	"en":"e461",
+	"fr":"e461",
+	"ge":"e461"
+},
+{
+	"id":"en:smoke",
+	"en":"smoke",
+	"fr":"fumée",
+	"ge":"Rauch"
+},
+{
+	"id":"en:virgin-hazelnut-oil",
+	"en":"virgin hazelnut oil",
+	"fr":"huile vierge de noisette",
+	"ge":"natives Haselnussöl"
+},
+{
+	"id":"en:nielluccio",
+	"en":"nielluccio",
+	"fr":"nielluccio",
+	"ge":"nielluccio"
+},
+{
+	"id":"en:e172i",
+	"en":"e172i",
+	"fr":"e172i",
+	"ge":"e172i"
+},
+{
+	"id":"en:peanut-flour",
+	"en":"peanut flour",
+	"fr":"farine d'arachide",
+	"ge":"Erdnussmehl"
+},
+{
+	"id":"en:e457",
+	"en":"e457",
+	"fr":"e457",
+	"ge":"e457"
+},
+{
+	"id":"en:e524",
+	"en":"e524",
+	"fr":"e524",
+	"ge":"e524"
+},
+{
+	"id":"en:chicken-cutlet",
+	"en":"chicken cutlet",
+	"fr":"escalope de poulet",
+	"ge":"Hühnerschnitzel"
+},
+{
+	"id":"en:light-soy-sauce",
+	"en":"light soy sauce",
+	"fr":"Sauce soja légère",
+	"ge":"milde Sojasauce"
+},
+{
+	"id":"en:whole-wheat-groats",
+	"en":"whole wheat groats",
+	"fr":"gruaux de blé entier",
+	"ge":"Vollkorngrütze"
+},
+{
+	"id":"en:argentine-shortfin-squid",
+	"en":"argentine shortfin squid",
+	"fr":"calmar argentin",
+	"ge":"argentinischer Kurzflossen-Tintenfisch"
+},
+{
+	"id":"en:free-range-egg-yolk",
+	"en":"free range egg yolk",
+	"fr":"jaune d'oeuf fermier",
+	"ge":"Eigelb aus Freilandhaltung"
+},
+{
+	"id":"en:ascophyllum",
+	"en":"ascophyllum",
+	"fr":"ascophyllum",
+	"ge":"ascophyllum"
+},
+{
+	"id":"en:raw-tub-gurnard",
+	"en":"raw tub gurnard",
+	"fr":"grondin cru",
+	"ge":"roher Knurrhahn"
+},
+{
+	"id":"en:large-lima-beans",
+	"en":"large lima beans",
+	"fr":"gros haricots de Lima",
+	"ge":"große Limabohnen"
+},
+{
+	"id":"en:whole-walnuts",
+	"en":"whole walnuts",
+	"fr":"noix entières",
+	"ge":"ganze Walnüsse"
+},
+{
+	"id":"en:superior-cooked-ham",
+	"en":"superior cooked ham",
+	"fr":"jambon cuit supérieur",
+	"ge":"überlegener Kochschinken"
+},
+{
+	"id":"en:blue-mussel",
+	"en":"blue mussel",
+	"fr":"moule bleue",
+	"ge":"blaue Muschel"
+},
+{
+	"id":"en:e954",
+	"en":"e954",
+	"fr":"e954",
+	"ge":"e954"
+},
+{
+	"id":"en:ergocalciferol",
+	"en":"ergocalciferol",
+	"fr":"ergocalciférol",
+	"ge":"Ergocalciferol"
+},
+{
+	"id":"en:raw-cacao-butter",
+	"en":"raw cacao butter",
+	"fr":"beurre de cacao cru",
+	"ge":"rohe Kakaobutter"
+},
+{
+	"id":"en:cep",
+	"en":"cep",
+	"fr":"cèpe",
+	"ge":"cep"
+},
+{
+	"id":"en:millet-seed",
+	"en":"millet seed",
+	"fr":"graine de mil",
+	"ge":"Hirsesamen"
+},
+{
+	"id":"en:rapeseed-lecithin",
+	"en":"rapeseed lecithin",
+	"fr":"lécithine de colza",
+	"ge":"Rapslecithin"
+},
+{
+	"id":"en:prepacked-bearnaise-sauce",
+	"en":"prepacked bearnaise sauce",
+	"fr":"sauce béarnaise préemballée",
+	"ge":"vorverpackte Sauce Bearnaise"
+},
+{
+	"id":"en:e218",
+	"en":"e218",
+	"fr":"e218",
+	"ge":"e218"
+},
+{
+	"id":"en:natural-rum-flavouring",
+	"en":"natural rum flavouring",
+	"fr":"arôme naturel de rhum",
+	"ge":"natürliches Rum-Aroma"
+},
+{
+	"id":"en:pork-knuckle",
+	"en":"pork knuckle",
+	"fr":"jarret de porc",
+	"ge":"Eisbein"
+},
+{
+	"id":"en:e442",
+	"en":"e442",
+	"fr":"e442",
+	"ge":"e442"
+},
+{
+	"id":"en:asiago-medium-cheese",
+	"en":"asiago medium cheese",
+	"fr":"fromage asiago moyen",
+	"ge":"Asiago mittlerer Käse"
+},
+{
+	"id":"en:bigeye-scad",
+	"en":"bigeye scad",
+	"fr":"escroquerie au thon obèse",
+	"ge":"Großaugen-Schaden"
+},
+{
+	"id":"en:e1422",
+	"en":"e1422",
+	"fr":"e1422",
+	"ge":"e1422"
+},
+{
+	"id":"en:liquorice",
+	"en":"liquorice",
+	"fr":"réglisse",
+	"ge":"Lakritze"
+},
+{
+	"id":"en:highly-fat-reduced-cocoa",
+	"en":"highly fat reduced cocoa",
+	"fr":"cacao très faible en matières grasses",
+	"ge":"stark fettreduzierter Kakao"
+},
+{
+	"id":"en:e546",
+	"en":"e546",
+	"fr":"e546",
+	"ge":"e546"
+},
+{
+	"id":"en:concentrated-pumpkin-juice",
+	"en":"concentrated pumpkin juice",
+	"fr":"jus de citrouille concentré",
+	"ge":"konzentrierter Kürbissaft"
+},
+{
+	"id":"en:salmon",
+	"en":"salmon",
+	"fr":"saumon",
+	"ge":"Lachs"
+},
+{
+	"id":"en:decaffeinated-green-tea",
+	"en":"decaffeinated green tea",
+	"fr":"thé vert décaféiné",
+	"ge":"entkoffeinierter grüner tee"
+},
+{
+	"id":"en:natural-eucalyptus-flavouring",
+	"en":"natural eucalyptus flavouring",
+	"fr":"arôme naturel d'eucalyptus",
+	"ge":"natürliches Eukalyptus-Aroma"
+},
+{
+	"id":"en:oyster-mushroom",
+	"en":"oyster mushroom",
+	"fr":"pleurotes",
+	"ge":"Austern Pilz"
+},
+{
+	"id":"en:tomato-cubes",
+	"en":"tomato cubes",
+	"fr":"cubes de tomates",
+	"ge":"Tomatenwürfel"
+},
+{
+	"id":"en:calvados",
+	"en":"calvados",
+	"fr":"Calvados",
+	"ge":"Calvados"
+},
+{
+	"id":"en:soba",
+	"en":"soba",
+	"fr":"Soba",
+	"ge":"soba"
+},
+{
+	"id":"en:duck-breast",
+	"en":"duck breast",
+	"fr":"magret de canard",
+	"ge":"Entenbrust"
+},
+{
+	"id":"en:melado",
+	"en":"melado",
+	"fr":"mélado",
+	"ge":"Melodie"
+},
+{
+	"id":"en:ferrous-ammonium-phosphate",
+	"en":"ferrous ammonium phosphate",
+	"fr":"phosphate ferreux d'ammonium",
+	"ge":"Eisenammoniumphosphat"
+},
+{
+	"id":"en:e1430",
+	"en":"e1430",
+	"fr":"e1430",
+	"ge":"e1430"
+},
+{
+	"id":"en:chokeberry-juice",
+	"en":"chokeberry juice",
+	"fr":"jus d'aronia",
+	"ge":"Apfelbeersaft"
+},
+{
+	"id":"en:maroilles",
+	"en":"maroilles",
+	"fr":"maroilles",
+	"ge":"maroilles"
+},
+{
+	"id":"en:cherry",
+	"en":"cherry",
+	"fr":"cerise",
+	"ge":"Kirsche"
+},
+{
+	"id":"en:egg-powder",
+	"en":"egg powder",
+	"fr":"poudre d'oeuf",
+	"ge":"Eipulver"
+},
+{
+	"id":"en:grilled-tomato",
+	"en":"grilled tomato",
+	"fr":"tomate grillée",
+	"ge":"gegrillte Tomate"
+},
+{
+	"id":"en:tonguesole",
+	"en":"tonguesole",
+	"fr":"languette",
+	"ge":"Zungensohle"
+},
+{
+	"id":"en:artificial-flavouring",
+	"en":"artificial flavouring",
+	"fr":"arôme artificiel",
+	"ge":"künstliches Aroma"
+},
+{
+	"id":"en:nile-perch",
+	"en":"nile perch",
+	"fr":"perche du Nil",
+	"ge":"Nilbarsch"
+},
+{
+	"id":"en:sweet-potato",
+	"en":"sweet potato",
+	"fr":"patate douce",
+	"ge":"Süßkartoffel"
+},
+{
+	"id":"en:bifidobacterium-longum",
+	"en":"bifidobacterium longum",
+	"fr":"bifidobactérie longue",
+	"ge":"Bifidobacterium longum"
+},
+{
+	"id":"en:yellow-grapefruit",
+	"en":"yellow grapefruit",
+	"fr":"pamplemousse jaune",
+	"ge":"gelbe Grapefruit"
+},
+{
+	"id":"en:concentrated-grape-juice",
+	"en":"concentrated grape juice",
+	"fr":"jus de raisin concentré",
+	"ge":"konzentrierter Traubensaft"
+},
+{
+	"id":"en:e282",
+	"en":"e282",
+	"fr":"e282",
+	"ge":"e282"
+},
+{
+	"id":"en:gluten",
+	"en":"gluten",
+	"fr":"gluten",
+	"ge":"Gluten"
+},
+{
+	"id":"en:natural-rice-sourdough",
+	"en":"natural rice sourdough",
+	"fr":"levain de riz naturel",
+	"ge":"natürlicher Reissauerteig"
+},
+{
+	"id":"en:natural-hop",
+	"en":"natural hop",
+	"fr":"houblon naturel",
+	"ge":"natürlicher Hopfen"
+},
+{
+	"id":"en:haymilk",
+	"en":"haymilk",
+	"fr":"lait de foin",
+	"ge":"Heumilch"
+},
+{
+	"id":"en:e352ii",
+	"en":"e352ii",
+	"fr":"e352ii",
+	"ge":"e352ii"
+},
+{
+	"id":"en:e320",
+	"en":"e320",
+	"fr":"e320",
+	"ge":"e320"
+},
+{
+	"id":"en:organic-sugar",
+	"en":"organic sugar",
+	"fr":"sucre organique",
+	"ge":"Bio-Zucker"
+},
+{
+	"id":"en:sprouted-spelt",
+	"en":"sprouted spelt",
+	"fr":"épeautre germé",
+	"ge":"gekeimter Dinkel"
+},
+{
+	"id":"en:crepe",
+	"en":"crepe",
+	"fr":"crêpe",
+	"ge":"Krepp"
+},
+{
+	"id":"en:e483",
+	"en":"e483",
+	"fr":"e483",
+	"ge":"e483"
+},
+{
+	"id":"en:fruit-pectin",
+	"en":"fruit pectin",
+	"fr":"pectine de fruits",
+	"ge":"Fruchtpektin"
+},
+{
+	"id":"en:coffee-powder",
+	"en":"coffee powder",
+	"fr":"poudre de café",
+	"ge":"Kaffeepulver"
+},
+{
+	"id":"en:dark-chocolate",
+	"en":"dark chocolate",
+	"fr":"chocolat noir",
+	"ge":"dunkle Schokolade"
+},
+{
+	"id":"en:apple-pectin",
+	"en":"apple pectin",
+	"fr":"pectine de pomme",
+	"ge":"Apfelpektin"
+},
+{
+	"id":"en:lactose-containing-galacto-oligosaccharides",
+	"en":"lactose containing galacto oligosaccharides",
+	"fr":"lactose contenant des galacto oligosaccharides",
+	"ge":"laktosehaltige Galakto-Oligosaccharide"
+},
+{
+	"id":"en:grilled-pork-chop",
+	"en":"grilled pork chop",
+	"fr":"côtelette de porc grillée",
+	"ge":"gegrilltes Schweinekotelett"
+},
+{
+	"id":"en:papaya",
+	"en":"papaya",
+	"fr":"papaye",
+	"ge":"Papaya"
+},
+{
+	"id":"en:whole-fresh-eggs",
+	"en":"whole fresh eggs",
+	"fr":"oeufs frais entiers",
+	"ge":"ganze frische eier"
+},
+{
+	"id":"en:milk-enriched-with-cream",
+	"en":"milk enriched with cream",
+	"fr":"lait enrichi en crème",
+	"ge":"mit Sahne angereicherte Milch"
+},
+{
+	"id":"en:fruit-puree",
+	"en":"fruit puree",
+	"fr":"Purée de fruits",
+	"ge":"Fruchtpüree"
+},
+{
+	"id":"en:e160d",
+	"en":"e160d",
+	"fr":"e160d",
+	"ge":"e160d"
+},
+{
+	"id":"en:ground-coffee",
+	"en":"ground coffee",
+	"fr":"café moulu",
+	"ge":"gemahlenen Kaffee"
+},
+{
+	"id":"en:italian-black-parboiled-brown-rice",
+	"en":"italian black parboiled brown rice",
+	"fr":"riz brun étuvé noir italien",
+	"ge":"italienischer schwarzer parboiled brauner reis"
+},
+{
+	"id":"en:e350",
+	"en":"e350",
+	"fr":"e350",
+	"ge":"e350"
+},
+{
+	"id":"en:orange-extract",
+	"en":"orange extract",
+	"fr":"extrait d'orange",
+	"ge":"Orangenextrakt"
+},
+{
+	"id":"en:blue-ling",
+	"en":"blue ling",
+	"fr":"lingue bleue",
+	"ge":"Blauling"
+},
+{
+	"id":"en:lamb-leg",
+	"en":"lamb leg",
+	"fr":"gigot d'agneau",
+	"ge":"Lamm Bein"
+},
+{
+	"id":"en:tomme",
+	"en":"tomme",
+	"fr":"tomme",
+	"ge":"Tomme"
+},
+{
+	"id":"en:modified-cognac",
+	"en":"modified cognac",
+	"fr":"cognac modifié",
+	"ge":"modifizierter Cognac"
+},
+{
+	"id":"en:protein",
+	"en":"protein",
+	"fr":"protéine",
+	"ge":"Eiweiß"
+},
+{
+	"id":"en:grilled-pistachio-nut",
+	"en":"grilled pistachio nut",
+	"fr":"pistache grillée",
+	"ge":"gegrillte Pistazien"
+},
+{
+	"id":"en:black-tea-extract",
+	"en":"black tea extract",
+	"fr":"extrait de thé noir",
+	"ge":"Schwarztee-Extrakt"
+},
+{
+	"id":"en:bifidobacterium-lactis",
+	"en":"bifidobacterium lactis",
+	"fr":"bifidobacterium lactis",
+	"ge":"Bifidobacterium lactis"
+},
+{
+	"id":"en:calcium-bisglycinate",
+	"en":"calcium bisglycinate",
+	"fr":"bisglycinate de calcium",
+	"ge":"Calciumbisglycinat"
+},
+{
+	"id":"en:pink-shrimps",
+	"en":"pink shrimps",
+	"fr":"crevettes roses",
+	"ge":"rosa Garnelen"
+},
+{
+	"id":"en:flax-flour",
+	"en":"flax flour",
+	"fr":"farine de lin",
+	"ge":"Flachsmehl"
+},
+{
+	"id":"en:puffed-cereal",
+	"en":"puffed cereal",
+	"fr":"céréales soufflées",
+	"ge":"gepufftes Müsli"
+},
+{
+	"id":"en:lean-pork",
+	"en":"lean pork",
+	"fr":"porc maigre",
+	"ge":"mageres Schweinefleisch"
+},
+{
+	"id":"en:natural-crustaceans-flavouring",
+	"en":"natural crustaceans flavouring",
+	"fr":"arôme naturel de crustacés",
+	"ge":"natürliches Krebstieraroma"
+},
+{
+	"id":"en:natural-blackcurrant-flavouring",
+	"en":"natural blackcurrant flavouring",
+	"fr":"arôme naturel de cassis",
+	"ge":"natürliches Johannisbeeraroma"
+},
+{
+	"id":"en:coating",
+	"en":"coating",
+	"fr":"enrobage",
+	"ge":"Beschichtung"
+},
+{
+	"id":"en:transglutaminase",
+	"en":"transglutaminase",
+	"fr":"transglutaminase",
+	"ge":"Transglutaminase"
+},
+{
+	"id":"en:norway-lobster",
+	"en":"norway lobster",
+	"fr":"langoustine",
+	"ge":"Kaisergranat"
+},
+{
+	"id":"en:e542",
+	"en":"e542",
+	"fr":"e542",
+	"ge":"e542"
+},
+{
+	"id":"en:filtered-water",
+	"en":"filtered water",
+	"fr":"eau filtrée",
+	"ge":"gefiltertes Wasser"
+},
+{
+	"id":"en:cane-invert-syrup",
+	"en":"cane invert syrup",
+	"fr":"sirop inverti de canne",
+	"ge":"Rohrinvertsirup"
+},
+{
+	"id":"en:lettuce",
+	"en":"lettuce",
+	"fr":"laitue",
+	"ge":"Kopfsalat"
+},
+{
+	"id":"en:pork-stock",
+	"en":"pork stock",
+	"fr":"bouillon de porc",
+	"ge":"Schweinefond"
+},
+{
+	"id":"en:fairy-ring-mushroom",
+	"en":"fairy ring mushroom",
+	"fr":"champignon anneau de fée",
+	"ge":"Feenring Pilz"
+},
+{
+	"id":"en:mandarin",
+	"en":"mandarin",
+	"fr":"mandarin",
+	"ge":"Mandarin"
+},
+{
+	"id":"en:fresh-parsley",
+	"en":"fresh parsley",
+	"fr":"Persil frais",
+	"ge":"frische Petersilie"
+},
+{
+	"id":"en:onion-puree",
+	"en":"onion puree",
+	"fr":"purée d'oignon",
+	"ge":"Zwiebelpüree"
+},
+{
+	"id":"en:tea-extract",
+	"en":"tea extract",
+	"fr":"extrait de thé",
+	"ge":"Tee-Extrakt"
+},
+{
+	"id":"en:black-botifarra",
+	"en":"black botifarra",
+	"fr":"botifarra noir",
+	"ge":"schwarze botifarra"
+},
+{
+	"id":"en:sour-cream",
+	"en":"sour cream",
+	"fr":"Crème fraîche",
+	"ge":"Sauerrahm"
+},
+{
+	"id":"en:pan-fried-lamb-leg",
+	"en":"pan fried lamb leg",
+	"fr":"gigot d'agneau poêlé",
+	"ge":"gebratene Lammkeule"
+},
+{
+	"id":"en:d-pantothenate-sodium",
+	"en":"d pantothenate sodium",
+	"fr":"d pantothénate de sodium",
+	"ge":"d Pantothenat-Natrium"
+},
+{
+	"id":"en:candied-orange-peel",
+	"en":"candied orange peel",
+	"fr":"écorce d'orange confite",
+	"ge":"kandierte Orangenschale"
+},
+{
+	"id":"en:raw-cream",
+	"en":"raw cream",
+	"fr":"crème crue",
+	"ge":"rohe Sahne"
+},
+{
+	"id":"en:organic-hops",
+	"en":"organic hops",
+	"fr":"houblon biologique",
+	"ge":"Bio-Hopfen"
+},
+{
+	"id":"en:syrah",
+	"en":"syrah",
+	"fr":"syrah",
+	"ge":"Syrah"
+},
+{
+	"id":"en:husked-and-grilled-sesame-seed",
+	"en":"husked and grilled sesame seed",
+	"fr":"graines de sésame décortiquées et grillées",
+	"ge":"geschälter und gegrillter Sesam"
+},
+{
+	"id":"en:e472a",
+	"en":"e472a",
+	"fr":"e472a",
+	"ge":"e472a"
+},
+{
+	"id":"en:soured-milk",
+	"en":"soured milk",
+	"fr":"lait caillé",
+	"ge":"saure Milch"
+},
+{
+	"id":"en:concentrated-date-juice",
+	"en":"concentrated date juice",
+	"fr":"jus de dattes concentré",
+	"ge":"konzentrierter Dattelsaft"
+},
+{
+	"id":"en:vanilla-sugar",
+	"en":"vanilla sugar",
+	"fr":"sucre vanillé",
+	"ge":"Vanillezucker"
+},
+{
+	"id":"en:capers",
+	"en":"capers",
+	"fr":"câpres",
+	"ge":"Kapern"
+},
+{
+	"id":"en:pasteurized-whipping-cream",
+	"en":"pasteurized whipping cream",
+	"fr":"crème fouettée pasteurisée",
+	"ge":"pasteurisierte Schlagsahne"
+},
+{
+	"id":"en:wild-garlic",
+	"en":"wild garlic",
+	"fr":"ail sauvage",
+	"ge":"wilder Knoblauch"
+},
+{
+	"id":"en:lemon-pulp",
+	"en":"lemon pulp",
+	"fr":"pulpe de citron",
+	"ge":"Zitronenmark"
+},
+{
+	"id":"en:wheat-syrup",
+	"en":"wheat syrup",
+	"fr":"sirop de blé",
+	"ge":"Weizensirup"
+},
+{
+	"id":"en:jodenkoeken",
+	"en":"jodenkoeken",
+	"fr":"jodenkoeken",
+	"ge":"jodenkoeken"
+},
+{
+	"id":"en:malted-barley",
+	"en":"malted barley",
+	"fr":"orge maltée",
+	"ge":"gemälzte Gerste"
+},
+{
+	"id":"en:anglerfish",
+	"en":"anglerfish",
+	"fr":"lotte de mer",
+	"ge":"Seeteufel"
+},
+{
+	"id":"en:eggs-yolk-powder-from-free-range-hens",
+	"en":"eggs yolk powder from free range hens",
+	"fr":"Poudre de jaune d'œuf de poules élevées en plein air",
+	"ge":"Eigelbpulver von freilaufenden Hühnern"
+},
+{
+	"id":"en:shellfish-extract",
+	"en":"shellfish extract",
+	"fr":"extrait de crustacés",
+	"ge":"Schalentier-Extrakt"
+},
+{
+	"id":"en:e639",
+	"en":"e639",
+	"fr":"e639",
+	"ge":"e639"
+},
+{
+	"id":"en:mandarin-juice-from-concentrate",
+	"en":"mandarin juice from concentrate",
+	"fr":"jus de mandarine fait de concentré",
+	"ge":"Mandarinensaft aus Konzentrat"
+},
+{
+	"id":"en:turkey-liver",
+	"en":"turkey liver",
+	"fr":"foie de dinde",
+	"ge":"Putenleber"
+},
+{
+	"id":"en:soya-oil",
+	"en":"soya oil",
+	"fr":"huile de soja",
+	"ge":"Sojaöl"
+},
+{
+	"id":"en:menaquinone",
+	"en":"menaquinone",
+	"fr":"ménaquinone",
+	"ge":"Menachinon"
+},
+{
+	"id":"en:penicillium-candidum",
+	"en":"penicillium candidum",
+	"fr":"pénicillium candidum",
+	"ge":"penicillium candidum"
+},
+{
+	"id":"en:wholemeal-flour",
+	"en":"wholemeal flour",
+	"fr":"farine complète",
+	"ge":"Vollkornmehl"
+},
+{
+	"id":"en:calcium-pantothenate",
+	"en":"calcium pantothenate",
+	"fr":"pantothénate de calcium",
+	"ge":"Calciumpantothenat"
+},
+{
+	"id":"en:fresh-basil",
+	"en":"fresh basil",
+	"fr":"basilic frais",
+	"ge":"frischer Basilikum"
+},
+{
+	"id":"en:e332ii",
+	"en":"e332ii",
+	"fr":"e332ii",
+	"ge":"e332ii"
+},
+{
+	"id":"en:e478",
+	"en":"e478",
+	"fr":"e478",
+	"ge":"e478"
+},
+{
+	"id":"en:american-cranberry",
+	"en":"american cranberry",
+	"fr":"canneberge américaine",
+	"ge":"amerikanische Preiselbeere"
+},
+{
+	"id":"en:yellow-and-brown-mustard-seeds",
+	"en":"yellow and brown mustard seeds",
+	"fr":"graines de moutarde jaune et brune",
+	"ge":"gelbe und braune Senfkörner"
+},
+{
+	"id":"en:black-rice",
+	"en":"black rice",
+	"fr":"riz noir",
+	"ge":"schwarzer Reis"
+},
+{
+	"id":"en:vanilla-pod",
+	"en":"vanilla pod",
+	"fr":"gousse de vanille",
+	"ge":"Vanilleschote"
+},
+{
+	"id":"en:soy-bran",
+	"en":"soy bran",
+	"fr":"son de soja",
+	"ge":"Sojakleie"
+},
+{
+	"id":"en:white-stilton",
+	"en":"white stilton",
+	"fr":"échasse blanche",
+	"ge":"weißer Stilton"
+},
+{
+	"id":"en:kombu",
+	"en":"kombu",
+	"fr":"kombu",
+	"ge":"kombu"
+},
+{
+	"id":"en:white-basmati-rice",
+	"en":"white basmati rice",
+	"fr":"riz basmati blanc",
+	"ge":"weißer Basmatireis"
+},
+{
+	"id":"en:marsala-wine",
+	"en":"marsala wine",
+	"fr":"vin marsala",
+	"ge":"Marsala-Wein"
+},
+{
+	"id":"en:natural-fig-flavouring",
+	"en":"natural fig flavouring",
+	"fr":"arôme naturel de figue",
+	"ge":"natürliches Feigenaroma"
+},
+{
+	"id":"en:e343",
+	"en":"e343",
+	"fr":"e343",
+	"ge":"e343"
+},
+{
+	"id":"en:toasted-hazelnuts",
+	"en":"toasted hazelnuts",
+	"fr":"noisettes grillées",
+	"ge":"geröstete Haselnüsse"
+},
+{
+	"id":"en:organic-cane-sugar",
+	"en":"organic cane sugar",
+	"fr":"sucre de canne bio",
+	"ge":"Bio-Rohrzucker"
+},
+{
+	"id":"en:coriander",
+	"en":"coriander",
+	"fr":"coriandre",
+	"ge":"Koriander"
+},
+{
+	"id":"en:einkorn-wheat",
+	"en":"einkorn wheat",
+	"fr":"petit épeautre",
+	"ge":"Einkornweizen"
+},
+{
+	"id":"en:e440i",
+	"en":"e440i",
+	"fr":"e440i",
+	"ge":"e440i"
+},
+{
+	"id":"en:alcohol-vinegar",
+	"en":"alcohol vinegar",
+	"fr":"vinaigre d'alcool",
+	"ge":"Alkohol Essig"
+},
+{
+	"id":"en:lime-pulp",
+	"en":"lime pulp",
+	"fr":"pulpe de citron vert",
+	"ge":"Kalkbrei"
+},
+{
+	"id":"en:pepperoni",
+	"en":"pepperoni",
+	"fr":"pepperoni",
+	"ge":"Peperoni"
+},
+{
+	"id":"en:mozzarella",
+	"en":"mozzarella",
+	"fr":"mozzarella",
+	"ge":"Mozzarella"
+},
+{
+	"id":"en:blackcurrant-flavouring",
+	"en":"blackcurrant flavouring",
+	"fr":"arôme cassis",
+	"ge":"Aroma schwarze Johannisbeere"
+},
+{
+	"id":"en:duck-foie-gras",
+	"en":"duck foie gras",
+	"fr":"foie gras de canard",
+	"ge":"Entenstopfleber"
+},
+{
+	"id":"en:palm-and-rapeseed",
+	"en":"palm and rapeseed",
+	"fr":"palmier et colza",
+	"ge":"Palme und Raps"
+},
+{
+	"id":"en:brown-rice-flour",
+	"en":"brown rice flour",
+	"fr":"farine de riz brun",
+	"ge":"braunes Reismehl"
+},
+{
+	"id":"en:sodium-salts-of-orthophosphoric-acid",
+	"en":"sodium salts of orthophosphoric acid",
+	"fr":"sels de sodium de l'acide orthophosphorique",
+	"ge":"Natriumsalze von Orthophosphorsäure"
+},
+{
+	"id":"en:disodium-inosine-5-monophosphate",
+	"en":"disodium inosine 5 monophosphate",
+	"fr":"inosine 5 monophosphate disodique",
+	"ge":"Dinatriuminosin-5-monophosphat"
+},
+{
+	"id":"en:quinoa",
+	"en":"quinoa",
+	"fr":"quinoa",
+	"ge":"Andenhirse"
+},
+{
+	"id":"en:capsicum-extract",
+	"en":"capsicum extract",
+	"fr":"extrait de poivron",
+	"ge":"Paprika-Extrakt"
+},
+{
+	"id":"en:e553aii",
+	"en":"e553aii",
+	"fr":"e553aii",
+	"ge":"e553ai"
+},
+{
+	"id":"en:lemon-pectin",
+	"en":"lemon pectin",
+	"fr":"pectine de citron",
+	"ge":"Zitronenpektin"
+},
+{
+	"id":"en:instant-coffee",
+	"en":"instant coffee",
+	"fr":"café instantané",
+	"ge":"Pulverkaffee"
+},
+{
+	"id":"en:natural-chicken-flavouring",
+	"en":"natural chicken flavouring",
+	"fr":"arôme naturel de poulet",
+	"ge":"natürliches Hühneraroma"
+},
+{
+	"id":"en:wholemeal-oat",
+	"en":"wholemeal oat",
+	"fr":"avoine complète",
+	"ge":"Vollkorn Hafer"
+},
+{
+	"id":"en:morbier",
+	"en":"morbier",
+	"fr":"morbier",
+	"ge":"mörderischer"
+},
+{
+	"id":"en:lemon-puree",
+	"en":"lemon puree",
+	"fr":"purée de citron",
+	"ge":"Zitronenpüree"
+},
+{
+	"id":"en:cellulase",
+	"en":"cellulase",
+	"fr":"cellulase",
+	"ge":"Cellulase"
+},
+{
+	"id":"en:e484",
+	"en":"e484",
+	"fr":"e484",
+	"ge":"e484"
+},
+{
+	"id":"en:aniseed-oil",
+	"en":"aniseed oil",
+	"fr":"huile d'anis",
+	"ge":"Anisöl"
+},
+{
+	"id":"en:colored-beetroot-powder",
+	"en":"colored beetroot powder",
+	"fr":"poudre de betterave colorée",
+	"ge":"farbiges Rote-Bete-Pulver"
+},
+{
+	"id":"en:natural-vanilla",
+	"en":"natural vanilla",
+	"fr":"vanille naturelle",
+	"ge":"natürliche Vanille"
+},
+{
+	"id":"en:british-pork-belly",
+	"en":"british pork belly",
+	"fr":"poitrine de porc britannique",
+	"ge":"britischer Schweinebauch"
+},
+{
+	"id":"en:pork-meat",
+	"en":"pork meat",
+	"fr":"la viande de porc",
+	"ge":"Schweinefleisch"
+},
+{
+	"id":"en:potato-protein",
+	"en":"potato protein",
+	"fr":"protéine de pomme de terre",
+	"ge":"Kartoffelprotein"
+},
+{
+	"id":"en:curry-paste",
+	"en":"curry paste",
+	"fr":"pâte au curry",
+	"ge":"Currypaste"
+},
+{
+	"id":"en:raw-wild-mediterranean-bass",
+	"en":"raw wild mediterranean bass",
+	"fr":"bar méditerranéen sauvage cru",
+	"ge":"roher wilder Mittelmeerbarsch"
+},
+{
+	"id":"en:maple-syrup",
+	"en":"maple syrup",
+	"fr":"sirop d'érable",
+	"ge":"Ahornsirup"
+},
+{
+	"id":"en:tagliatelle",
+	"en":"tagliatelle",
+	"fr":"tagliatelles",
+	"ge":"Tagliatelle"
+},
+{
+	"id":"en:chestnut-from-the-eu",
+	"en":"chestnut from the eu",
+	"fr":"châtaigne de l'ue",
+	"ge":"Kastanie aus der eu"
+},
+{
+	"id":"en:cooked-beef-meat",
+	"en":"cooked beef meat",
+	"fr":"viande de bœuf cuite",
+	"ge":"gekochtes Rindfleisch"
+},
+{
+	"id":"en:e160",
+	"en":"e160",
+	"fr":"160 e",
+	"ge":"e160"
+},
+{
+	"id":"en:stuffed-tomatoes",
+	"en":"stuffed tomatoes",
+	"fr":"tomates farcies",
+	"ge":"Gefüllte Tomaten"
+},
+{
+	"id":"en:wheat-or-corn-dextrose",
+	"en":"wheat or corn dextrose",
+	"fr":"dextrose de blé ou de maïs",
+	"ge":"Weizen- oder Mais-Dextrose"
+},
+{
+	"id":"en:cooked-egg-white",
+	"en":"cooked egg white",
+	"fr":"blanc d'oeuf cuit",
+	"ge":"gekochtes Eiweiß"
+},
+{
+	"id":"en:organic-apple",
+	"en":"organic apple",
+	"fr":"pomme bio",
+	"ge":"Bio-Apfel"
+},
+{
+	"id":"en:monosaccharide",
+	"en":"monosaccharide",
+	"fr":"monosaccharide",
+	"ge":"Monosaccharid"
+},
+{
+	"id":"en:shelled-sunflower-seeds",
+	"en":"shelled sunflower seeds",
+	"fr":"graines de tournesol décortiquées",
+	"ge":"geschälte Sonnenblumenkerne"
+},
+{
+	"id":"en:marinade",
+	"en":"marinade",
+	"fr":"Marinade",
+	"ge":"Marinade"
+},
+{
+	"id":"en:grapefruit-juice",
+	"en":"grapefruit juice",
+	"fr":"jus de pamplemousse",
+	"ge":"Grapefruitsaft"
+},
+{
+	"id":"en:duck-fat",
+	"en":"duck fat",
+	"fr":"graisse de canard",
+	"ge":"Entenfett"
+},
+{
+	"id":"en:e172ii",
+	"en":"e172ii",
+	"fr":"e172ii",
+	"ge":"e172ii"
+},
+{
+	"id":"en:e356",
+	"en":"e356",
+	"fr":"e356",
+	"ge":"e356"
+},
+{
+	"id":"en:dried-cayenne-pepper",
+	"en":"dried cayenne pepper",
+	"fr":"piment de Cayenne séché",
+	"ge":"getrockneter Cayennepfeffer"
+},
+{
+	"id":"en:horseradish-flavouring",
+	"en":"horseradish flavouring",
+	"fr":"arôme de raifort",
+	"ge":"Meerrettich-Geschmack"
+},
+{
+	"id":"en:concentrated-white-grape-juice",
+	"en":"concentrated white grape juice",
+	"fr":"jus de raisin blanc concentré",
+	"ge":"konzentrierter weißer Traubensaft"
+},
+{
+	"id":"en:e314",
+	"en":"e314",
+	"fr":"e314",
+	"ge":"e314"
+},
+{
+	"id":"en:e333iii",
+	"en":"e333iii",
+	"fr":"e333iii",
+	"ge":"e333iii"
+},
+{
+	"id":"en:stuffed-pasta",
+	"en":"stuffed pasta",
+	"fr":"pâtes farcies",
+	"ge":"gefüllte Nudeln"
+},
+{
+	"id":"en:organic-red-lentils",
+	"en":"organic red lentils",
+	"fr":"lentilles corail bio",
+	"ge":"rote Bio-Linsen"
+},
+{
+	"id":"en:sweetened-condensed-semi-skimmed-milk",
+	"en":"sweetened condensed semi skimmed milk",
+	"fr":"lait demi-écrémé concentré sucré",
+	"ge":"gesüßte kondensierte teilentrahmte Milch"
+},
+{
+	"id":"en:smoked-atlantic-salmon",
+	"en":"smoked atlantic salmon",
+	"fr":"saumon atlantique fumé",
+	"ge":"geräucherter Atlantischer Lachs"
+},
+{
+	"id":"en:seed",
+	"en":"seed",
+	"fr":"graine",
+	"ge":"Samen"
+},
+{
+	"id":"en:e152",
+	"en":"e152",
+	"fr":"e152",
+	"ge":"e152"
+},
+{
+	"id":"en:pear",
+	"en":"pear",
+	"fr":"poire",
+	"ge":"Birne"
+},
+{
+	"id":"en:trout",
+	"en":"trout",
+	"fr":"truite",
+	"ge":"Forelle"
+},
+{
+	"id":"en:e635",
+	"en":"e635",
+	"fr":"e635",
+	"ge":"e635"
+},
+{
+	"id":"en:e586",
+	"en":"e586",
+	"fr":"e586",
+	"ge":"e586"
+},
+{
+	"id":"en:blackberry",
+	"en":"blackberry",
+	"fr":"mûre",
+	"ge":"Brombeere"
+},
+{
+	"id":"en:mixed-peel",
+	"en":"mixed peel",
+	"fr":"peeling mixte",
+	"ge":"Gemischte schale"
+},
+{
+	"id":"en:salt-substitute",
+	"en":"salt substitute",
+	"fr":"succédané de sel",
+	"ge":"Salzersatz"
+},
+{
+	"id":"en:sponge-cake",
+	"en":"sponge cake",
+	"fr":"gateau éponge",
+	"ge":"Biskuitkuchen"
+},
+{
+	"id":"en:chinese-hibiscus",
+	"en":"chinese hibiscus",
+	"fr":"hibiscus chinois",
+	"ge":"Chinesischer Hibiskus"
+},
+{
+	"id":"en:pan-fried-lamb-chop-fillet",
+	"en":"pan fried lamb chop fillet",
+	"fr":"filet de côtelette d'agneau poêlé",
+	"ge":"gebratenes Lammkotelettfilet"
+},
+{
+	"id":"en:e350i",
+	"en":"e350i",
+	"fr":"e350i",
+	"ge":"e350i"
+},
+{
+	"id":"en:e418",
+	"en":"e418",
+	"fr":"e418",
+	"ge":"e418"
+},
+{
+	"id":"en:e556",
+	"en":"e556",
+	"fr":"e556",
+	"ge":"e556"
+},
+{
+	"id":"en:nemipterus-spp",
+	"en":"nemipterus spp",
+	"fr":"espèces de nemipterus",
+	"ge":"Nemitterus spp"
+},
+{
+	"id":"en:e494",
+	"en":"e494",
+	"fr":"e494",
+	"ge":"e494"
+},
+{
+	"id":"en:e251",
+	"en":"e251",
+	"fr":"e251",
+	"ge":"e251"
+},
+{
+	"id":"en:single-cream",
+	"en":"single cream",
+	"fr":"crème liquide",
+	"ge":"einzelne Creme"
+},
+{
+	"id":"en:cocoa-flavouring",
+	"en":"cocoa flavouring",
+	"fr":"arôme de cacao",
+	"ge":"Kakao-Aroma"
+},
+{
+	"id":"en:sweet-soy-sauce",
+	"en":"sweet soy sauce",
+	"fr":"sauce soja sucrée",
+	"ge":"süße Sojasauce"
+},
+{
+	"id":"en:okra",
+	"en":"okra",
+	"fr":"gombo",
+	"ge":"Okra"
+},
+{
+	"id":"en:e264",
+	"en":"e264",
+	"fr":"e264",
+	"ge":"e264"
+},
+{
+	"id":"en:e961",
+	"en":"e961",
+	"fr":"e961",
+	"ge":"e961"
+},
+{
+	"id":"en:skimmed-and-whole-milk-powder",
+	"en":"skimmed and whole milk powder",
+	"fr":"poudre de lait écrémé et entier",
+	"ge":"Mager- und Vollmilchpulver"
+},
+{
+	"id":"en:atlantic-bay-scallop",
+	"en":"atlantic bay scallop",
+	"fr":"pétoncle de l'atlantique",
+	"ge":"Jakobsmuschel aus der Atlantischen Bucht"
+},
+{
+	"id":"en:chicken-egg",
+	"en":"chicken egg",
+	"fr":"œuf de poule",
+	"ge":"Hühnerei"
+},
+{
+	"id":"en:organic-chicken-egg",
+	"en":"organic chicken egg",
+	"fr":"œuf de poule bio",
+	"ge":"Bio Hühnerei"
+},
+{
+	"id":"en:whole-egg",
+	"en":"whole egg",
+	"fr":"oeuf entier",
+	"ge":"ganzes Ei"
+},
+{
+	"id":"en:cooked-white-rice",
+	"en":"cooked white rice",
+	"fr":"riz blanc cuit",
+	"ge":"gekochter weißer Reis"
+},
+{
+	"id":"en:non-hydrogenated-vegetable-fats",
+	"en":"non hydrogenated vegetable fats",
+	"fr":"graisses végétales non hydrogénées",
+	"ge":"ungehärtete Pflanzenfette"
+},
+{
+	"id":"en:whole-cane-sugar",
+	"en":"whole cane sugar",
+	"fr":"sucre de canne complet",
+	"ge":"Vollrohrzucker"
+},
+{
+	"id":"en:e333ii",
+	"en":"e333ii",
+	"fr":"e333ii",
+	"ge":"e333ii"
+},
+{
+	"id":"en:beef-kidney",
+	"en":"beef kidney",
+	"fr":"rognon de boeuf",
+	"ge":"Rindfleisch Niere"
+},
+{
+	"id":"en:e182",
+	"en":"e182",
+	"fr":"e182",
+	"ge":"e182"
+},
+{
+	"id":"en:peach-paste",
+	"en":"peach paste",
+	"fr":"pâte de pêche",
+	"ge":"Pfirsichpaste"
+},
+{
+	"id":"en:snow-pea",
+	"en":"snow pea",
+	"fr":"pois gourmand",
+	"ge":"Schneeerbse"
+},
+{
+	"id":"en:concentrated-apple-juice",
+	"en":"concentrated apple juice",
+	"fr":"jus de pomme concentré",
+	"ge":"konzentrierter Apfelsaft"
+},
+{
+	"id":"en:yellow-carrot",
+	"en":"yellow carrot",
+	"fr":"carotte jaune",
+	"ge":"gelbe Karotte"
+},
+{
+	"id":"en:british-chicken-breast",
+	"en":"british chicken breast",
+	"fr":"poitrine de poulet britannique",
+	"ge":"britische Hähnchenbrust"
+},
+{
+	"id":"en:fermented-milk-products",
+	"en":"fermented milk products",
+	"fr":"produits laitiers fermentés",
+	"ge":"fermentierte Milchprodukte"
+},
+{
+	"id":"en:liquid-whole-egg",
+	"en":"liquid whole egg",
+	"fr":"oeuf entier liquide",
+	"ge":"flüssiges Vollei"
+},
+{
+	"id":"en:camembert",
+	"en":"camembert",
+	"fr":"Camembert",
+	"ge":"Camembert"
+},
+{
+	"id":"en:e525",
+	"en":"e525",
+	"fr":"e525",
+	"ge":"e525"
+},
+{
+	"id":"en:red-and-green-bell-peppers",
+	"en":"red and green bell peppers",
+	"fr":"poivrons rouges et verts",
+	"ge":"rote und grüne Paprika"
+},
+{
+	"id":"en:thyme-oil",
+	"en":"thyme oil",
+	"fr":"huile de thym",
+	"ge":"Thymianöl"
+},
+{
+	"id":"en:condiment",
+	"en":"condiment",
+	"fr":"condiment",
+	"ge":"Würze"
+},
+{
+	"id":"en:e535",
+	"en":"e535",
+	"fr":"e535",
+	"ge":"e535"
+},
+{
+	"id":"en:bifidus",
+	"en":"bifidus",
+	"fr":"bifidus",
+	"ge":"Bifidus"
+},
+{
+	"id":"en:wheat-fiber",
+	"en":"wheat fiber",
+	"fr":"fibre de blé",
+	"ge":"Weizenfaser"
+},
+{
+	"id":"en:atlantic-herring",
+	"en":"atlantic herring",
+	"fr":"hareng atlantique",
+	"ge":"Atlantischer Hering"
+},
+{
+	"id":"en:elderberry-juice",
+	"en":"elderberry juice",
+	"fr":"jus de sureau",
+	"ge":"Holundersaft"
+},
+{
+	"id":"en:70-unsalted-vegetable-fat",
+	"en":"70 unsalted vegetable fat",
+	"fr":"70 graisses végétales non salées",
+	"ge":"70 ungesalzenes Pflanzenfett"
+},
+{
+	"id":"en:e129",
+	"en":"e129",
+	"fr":"e129",
+	"ge":"e129"
+},
+{
+	"id":"en:e952",
+	"en":"e952",
+	"fr":"e952",
+	"ge":"e952"
+},
+{
+	"id":"en:dried-rosemary",
+	"en":"dried rosemary",
+	"fr":"romarin séché",
+	"ge":"getrockneter Rosmarin"
+},
+{
+	"id":"en:curry",
+	"en":"curry",
+	"fr":"curry",
+	"ge":"Curry"
+},
+{
+	"id":"en:organic-brown-sugar",
+	"en":"organic brown sugar",
+	"fr":"sucre roux bio",
+	"ge":"brauner Bio-Zucker"
+},
+{
+	"id":"en:fd-c",
+	"en":"fd c",
+	"fr":"fdc",
+	"ge":"fd c"
+},
+{
+	"id":"en:ricotta",
+	"en":"ricotta",
+	"fr":"ricotta",
+	"ge":"Ricotta"
+},
+{
+	"id":"en:natural-parsley-flavouring",
+	"en":"natural parsley flavouring",
+	"fr":"arôme naturel de persil",
+	"ge":"natürliches Petersilienaroma"
+},
+{
+	"id":"en:cooked-lamb-livers",
+	"en":"cooked lamb livers",
+	"fr":"foies d'agneau cuits",
+	"ge":"gekochte Lammleber"
+},
+{
+	"id":"en:dried-vegetables",
+	"en":"dried vegetables",
+	"fr":"légumes secs",
+	"ge":"getrocknetes Gemüse"
+},
+{
+	"id":"en:carrot",
+	"en":"carrot",
+	"fr":"carotte",
+	"ge":"Karotte"
+},
+{
+	"id":"en:freeze-dried-raspberry-pieces",
+	"en":"freeze dried raspberry pieces",
+	"fr":"morceaux de framboises lyophilisées",
+	"ge":"gefriergetrocknete Himbeerstücke"
+},
+{
+	"id":"en:manganese",
+	"en":"manganese",
+	"fr":"manganèse",
+	"ge":"Mangan"
+},
+{
+	"id":"en:e260",
+	"en":"e260",
+	"fr":"e260",
+	"ge":"e260"
+},
+{
+	"id":"en:blend-of-eu-honeys",
+	"en":"blend of eu honeys",
+	"fr":"mélange de miels de l'ue",
+	"ge":"Mischung aus EU-Honig"
+},
+{
+	"id":"en:thai-long-grain-rice",
+	"en":"thai long grain rice",
+	"fr":"riz thaï à grains longs",
+	"ge":"thailändischer Langkornreis"
+},
+{
+	"id":"en:dried-banana",
+	"en":"dried banana",
+	"fr":"banane séchée",
+	"ge":"getrocknete Banane"
+},
+{
+	"id":"en:pork-bone",
+	"en":"pork bone",
+	"fr":"os de porc",
+	"ge":"Schweineknochen"
+},
+{
+	"id":"en:blanches-almonds",
+	"en":"blanches almonds",
+	"fr":"amandes blanches",
+	"ge":"blanchiert Mandeln"
+},
+{
+	"id":"en:superior-quality-organic-long-grain-rice",
+	"en":"superior quality organic long grain rice",
+	"fr":"riz biologique à grains longs de qualité supérieure",
+	"ge":"Bio-Langkornreis von höchster Qualität"
+},
+{
+	"id":"en:goat-milk",
+	"en":"goat milk",
+	"fr":"lait de chèvre",
+	"ge":"Ziegenmilch"
+},
+{
+	"id":"en:wholemeal-rye-flour",
+	"en":"wholemeal rye flour",
+	"fr":"farine de seigle complet",
+	"ge":"Roggenvollkornmehl"
+},
+{
+	"id":"en:borage",
+	"en":"borage",
+	"fr":"bourrache",
+	"ge":"Borretsch"
+},
+{
+	"id":"en:e515",
+	"en":"e515",
+	"fr":"e515",
+	"ge":"e515"
+},
+{
+	"id":"en:smoked-bacon",
+	"en":"smoked bacon",
+	"fr":"lard fumé",
+	"ge":"geräucherter Speck"
+},
+{
+	"id":"en:skimmed-milk-soft-cheese",
+	"en":"skimmed milk soft cheese",
+	"fr":"fromage à pâte molle au lait écrémé",
+	"ge":"entrahmter Weichkäse"
+},
+{
+	"id":"en:carbonated-spring-water",
+	"en":"carbonated spring water",
+	"fr":"eau de source gazéifiée",
+	"ge":"kohlensäurehaltiges Quellwasser"
+},
+{
+	"id":"en:natural-orange-flavouring",
+	"en":"natural orange flavouring",
+	"fr":"arôme naturel d'orange",
+	"ge":"natürliches Orangenaroma"
+},
+{
+	"id":"en:wasabi",
+	"en":"wasabi",
+	"fr":"wasabi",
+	"ge":"Wasabi"
+},
+{
+	"id":"en:caramel-filling",
+	"en":"caramel filling",
+	"fr":"garniture au caramel",
+	"ge":"Karamell-Füllung"
+},
+{
+	"id":"en:e467",
+	"en":"e467",
+	"fr":"e467",
+	"ge":"e467"
+},
+{
+	"id":"en:precooked-tuna",
+	"en":"precooked tuna",
+	"fr":"thon précuit",
+	"ge":"vorgekochter Thunfisch"
+},
+{
+	"id":"en:rhubarb-juice",
+	"en":"rhubarb juice",
+	"fr":"jus de rhubarbe",
+	"ge":"Rhabarbersaft"
+},
+{
+	"id":"en:pork-collagen",
+	"en":"pork collagen",
+	"fr":"collagène de porc",
+	"ge":"Schweinekollagen"
+},
+{
+	"id":"en:pea-protein-isolate",
+	"en":"pea protein isolate",
+	"fr":"isolat de protéines de pois",
+	"ge":"Erbsenproteinisolat"
+},
+{
+	"id":"en:condensed-skimmed-milk",
+	"en":"condensed skimmed milk",
+	"fr":"lait concentré écrémé",
+	"ge":"kondensierte Magermilch"
+},
+{
+	"id":"en:organic-pomegranate-juice",
+	"en":"organic pomegranate juice",
+	"fr":"jus de grenade bio",
+	"ge":"Bio-Granatapfelsaft"
+},
+{
+	"id":"en:garlic-powder",
+	"en":"garlic powder",
+	"fr":"poudre d'ail",
+	"ge":"Knoblauchpulver"
+},
+{
+	"id":"en:hazelnut-oil",
+	"en":"hazelnut oil",
+	"fr":"Huile de noisette",
+	"ge":"Haselnussöl"
+},
+{
+	"id":"en:young-goat",
+	"en":"young goat",
+	"fr":"chevreau",
+	"ge":"junge Ziege"
+},
+{
+	"id":"en:peppercorns",
+	"en":"peppercorns",
+	"fr":"poivres",
+	"ge":"Pfefferkörner"
+},
+{
+	"id":"en:chocolate-chunk",
+	"en":"chocolate chunk",
+	"fr":"morceau de chocolat",
+	"ge":"Schokoladenstückchen"
+},
+{
+	"id":"en:dark-rum",
+	"en":"dark rum",
+	"fr":"rhum brun",
+	"ge":"dunkler Rum"
+},
+{
+	"id":"en:prunes-from-agen",
+	"en":"prunes from agen",
+	"fr":"pruneaux d'agen",
+	"ge":"Pflaumen aus Agen"
+},
+{
+	"id":"en:baker-s-yeast",
+	"en":"baker s yeast",
+	"fr":"La levure de boulanger",
+	"ge":"Bäckerhefe"
+},
+{
+	"id":"en:reduced-fat-mayonnaise",
+	"en":"reduced fat mayonnaise",
+	"fr":"mayonnaise réduite en matières grasses",
+	"ge":"fettreduzierte Mayonnaise"
+},
+{
+	"id":"en:sheeps-or-goat-milk",
+	"en":"sheeps or goat milk",
+	"fr":"lait de brebis ou de chèvre",
+	"ge":"Schaf- oder Ziegenmilch"
+},
+{
+	"id":"en:black-cherry",
+	"en":"black cherry",
+	"fr":"cerise noire",
+	"ge":"Schwarzkirsche"
+},
+{
+	"id":"en:e171",
+	"en":"e171",
+	"fr":"e171",
+	"ge":"e171"
+},
+{
+	"id":"en:yellow-foot",
+	"en":"yellow foot",
+	"fr":"pied jaune",
+	"ge":"gelber Fuß"
+},
+{
+	"id":"en:pomelo-pulp",
+	"en":"pomelo pulp",
+	"fr":"pulpe de pomelo",
+	"ge":"Pampelmuse"
+},
+{
+	"id":"en:vermouth",
+	"en":"vermouth",
+	"fr":"Vermouth",
+	"ge":"Wermut"
+},
+{
+	"id":"en:hazelnut-praline",
+	"en":"hazelnut praline",
+	"fr":"praliné noisette",
+	"ge":"Haselnuss Praline"
+},
+{
+	"id":"en:pita",
+	"en":"pita",
+	"fr":"Pita",
+	"ge":"Pita-Brot"
+},
+{
+	"id":"en:barley",
+	"en":"barley",
+	"fr":"orge",
+	"ge":"Gerste"
+},
+{
+	"id":"en:copper-gluconate",
+	"en":"copper gluconate",
+	"fr":"gluconate de cuivre",
+	"ge":"Kupfergluconat"
+},
+{
+	"id":"en:juice",
+	"en":"juice",
+	"fr":"jus",
+	"ge":"Saft"
+},
+{
+	"id":"en:soy-and-sesame-sauce",
+	"en":"soy and sesame sauce",
+	"fr":"sauce soja et sésame",
+	"ge":"Soja- und Sesamsauce"
+},
+{
+	"id":"en:oxtail",
+	"en":"oxtail",
+	"fr":"soupe à la queue de boeuf",
+	"ge":"Ochsenschwanz"
+},
+{
+	"id":"en:bayonne-ham",
+	"en":"bayonne ham",
+	"fr":"jambon de bayonne",
+	"ge":"Bayonne-Schinken"
+},
+{
+	"id":"en:common-cooked-octopus",
+	"en":"common cooked octopus",
+	"fr":"poulpe commun cuit",
+	"ge":"gewöhnlicher gekochter Oktopus"
+},
+{
+	"id":"en:couscous",
+	"en":"couscous",
+	"fr":"couscous",
+	"ge":"Couscous"
+},
+{
+	"id":"en:sunflower-honey",
+	"en":"sunflower honey",
+	"fr":"miel de tournesol",
+	"ge":"Sonnenblumenhonig"
+},
+{
+	"id":"en:ham-in-cube",
+	"en":"ham in cube",
+	"fr":"jambon en cube",
+	"ge":"Schinken im Würfel"
+},
+{
+	"id":"en:yellow-onion",
+	"en":"yellow onion",
+	"fr":"oignon jaune",
+	"ge":"gelbe Zwiebel"
+},
+{
+	"id":"en:e307c",
+	"en":"e307c",
+	"fr":"e307c",
+	"ge":"e307c"
+},
+{
+	"id":"en:ferric-diphosphate",
+	"en":"ferric diphosphate",
+	"fr":"diphosphate ferrique",
+	"ge":"Eisendiphosphat"
+},
+{
+	"id":"en:blue-cheese-from-cow-s-milk",
+	"en":"blue cheese from cow s milk",
+	"fr":"fromage bleu au lait de vache",
+	"ge":"Blauschimmelkäse aus Kuhmilch"
+},
+{
+	"id":"en:manganese-citrate",
+	"en":"manganese citrate",
+	"fr":"citrate de manganèse",
+	"ge":"Mangancitrat"
+},
+{
+	"id":"en:pasteurised-cow-s-milk",
+	"en":"pasteurised cow s milk",
+	"fr":"lait de vache pasteurisé",
+	"ge":"pasteurisierte Kuhmilch"
+},
+{
+	"id":"en:cuttlefish",
+	"en":"cuttlefish",
+	"fr":"seiche",
+	"ge":"Tintenfisch"
+},
+{
+	"id":"en:dehydrated-spirulina",
+	"en":"dehydrated spirulina",
+	"fr":"spiruline déshydratée",
+	"ge":"dehydrierte Spirulina"
+},
+{
+	"id":"en:vegetable-juice",
+	"en":"vegetable juice",
+	"fr":"jus de légumes",
+	"ge":"Gemüsesaft"
+},
+{
+	"id":"en:mantis-shrimp",
+	"en":"mantis shrimp",
+	"fr":"crevette mante",
+	"ge":"Fangschreckenkrebse"
+},
+{
+	"id":"en:red-miso-paste",
+	"en":"red miso paste",
+	"fr":"pâte de miso rouge",
+	"ge":"rote Misopaste"
+},
+{
+	"id":"en:mountain-spring-water",
+	"en":"mountain spring water",
+	"fr":"eau de source de montagne",
+	"ge":"Bergquellwasser"
+},
+{
+	"id":"en:rye",
+	"en":"rye",
+	"fr":"seigle",
+	"ge":"Roggen"
+},
+{
+	"id":"en:bourbon-vanilla-natural-flavouring",
+	"en":"bourbon vanilla natural flavouring",
+	"fr":"arôme naturel de vanille bourbon",
+	"ge":"Bourbon-Vanille natürliches Aroma"
+},
+{
+	"id":"en:waffle",
+	"en":"waffle",
+	"fr":"gaufre",
+	"ge":"Waffel"
+},
+{
+	"id":"en:peanut-oil-or-hazelnut-oil",
+	"en":"peanut oil or hazelnut oil",
+	"fr":"huile d'arachide ou huile de noisette",
+	"ge":"Erdnussöl oder Haselnussöl"
+},
+{
+	"id":"en:cereals-containing-gluten",
+	"en":"cereals containing gluten",
+	"fr":"céréales contenant du gluten",
+	"ge":"glutenhaltiges Getreide"
+},
+{
+	"id":"en:dry-white-wine",
+	"en":"dry white wine",
+	"fr":"vin blanc sec",
+	"ge":"trockener Weißwein"
+},
+{
+	"id":"en:goose-liver",
+	"en":"goose liver",
+	"fr":"foie gras",
+	"ge":"Gänseleber"
+},
+{
+	"id":"en:e528",
+	"en":"e528",
+	"fr":"e528",
+	"ge":"e528"
+},
+{
+	"id":"en:tender-garlic",
+	"en":"tender garlic",
+	"fr":"ail tendre",
+	"ge":"zarter Knoblauch"
+},
+{
+	"id":"en:mackerel",
+	"en":"mackerel",
+	"fr":"maquereau",
+	"ge":"Makrele"
+},
+{
+	"id":"en:chorizo",
+	"en":"chorizo",
+	"fr":"chorizo",
+	"ge":"Chorizo"
+},
+{
+	"id":"en:bread-improver",
+	"en":"bread improver",
+	"fr":"améliorant de pain",
+	"ge":"Brotverbesserer"
+},
+{
+	"id":"en:e441",
+	"en":"e441",
+	"fr":"e441",
+	"ge":"e441"
+},
+{
+	"id":"en:smoked-cured-sausage",
+	"en":"smoked cured sausage",
+	"fr":"saucisson fumé",
+	"ge":"geräucherte Wurst"
+},
+{
+	"id":"en:sea-belt",
+	"en":"sea belt",
+	"fr":"ceinture marine",
+	"ge":"Meeresgürtel"
+},
+{
+	"id":"en:english-mustard",
+	"en":"english mustard",
+	"fr":"moutarde anglaise",
+	"ge":"Englischer Senf"
+},
+{
+	"id":"en:concentrated-whey-protein",
+	"en":"concentrated whey protein",
+	"fr":"protéine de lactosérum concentrée",
+	"ge":"konzentriertes Molkenprotein"
+},
+{
+	"id":"en:red-beetroot",
+	"en":"red beetroot",
+	"fr":"betterave rouge",
+	"ge":"Rote Beete"
+},
+{
+	"id":"en:brown-cane-sugar",
+	"en":"brown cane sugar",
+	"fr":"sucre de canne roux",
+	"ge":"brauner Rohrzucker"
+},
+{
+	"id":"en:plum-flavouring",
+	"en":"plum flavouring",
+	"fr":"arôme de prune",
+	"ge":"Pflaumenaroma"
+},
+{
+	"id":"en:raw-wild-gilthead-seabream",
+	"en":"raw wild gilthead seabream",
+	"fr":"dorade royale sauvage crue",
+	"ge":"rohe wilde Dorade"
+},
+{
+	"id":"en:boron",
+	"en":"boron",
+	"fr":"bore",
+	"ge":"Bor"
+},
+{
+	"id":"en:taleggio",
+	"en":"taleggio",
+	"fr":"taleggio",
+	"ge":"Taleggio"
+},
+{
+	"id":"en:e466",
+	"en":"e466",
+	"fr":"e466",
+	"ge":"e466"
+},
+{
+	"id":"en:paprika-powder",
+	"en":"paprika powder",
+	"fr":"poudre de paprika",
+	"ge":"Paprikapulver"
+},
+{
+	"id":"en:e230",
+	"en":"e230",
+	"fr":"230 e",
+	"ge":"e230"
+},
+{
+	"id":"en:preserved-chili-pepper",
+	"en":"preserved chili pepper",
+	"fr":"piment confit",
+	"ge":"konservierte Chilischote"
+},
+{
+	"id":"en:herb",
+	"en":"herb",
+	"fr":"herbe",
+	"ge":"Kraut"
+},
+{
+	"id":"en:mango-flavouring",
+	"en":"mango flavouring",
+	"fr":"arôme de mangue",
+	"ge":"Mango-Geschmack"
+},
+{
+	"id":"en:fresh-whole-milk",
+	"en":"fresh whole milk",
+	"fr":"lait entier frais",
+	"ge":"frische Vollmilch"
+},
+{
+	"id":"en:long-grain-rice",
+	"en":"long grain rice",
+	"fr":"riz à grain long",
+	"ge":"Langkornreis"
+},
+{
+	"id":"en:nucleotides",
+	"en":"nucleotides",
+	"fr":"nucléotides",
+	"ge":"Nukleotide"
+},
+{
+	"id":"en:fractionated-palm-kernel-oil",
+	"en":"fractionated palm kernel oil",
+	"fr":"huile de palmiste fractionnée",
+	"ge":"fraktioniertes Palmkernöl"
+},
+{
+	"id":"en:pasteurised-free-range-egg-yolk",
+	"en":"pasteurised free range egg yolk",
+	"fr":"jaune d'œuf fermier pasteurisé",
+	"ge":"pasteurisiertes Eigelb aus Freilandhaltung"
+},
+{
+	"id":"en:e472c",
+	"en":"e472c",
+	"fr":"e472c",
+	"ge":"e472c"
+},
+{
+	"id":"en:grated-emmental-cheese",
+	"en":"grated emmental cheese",
+	"fr":"emmental râpé",
+	"ge":"geriebener Emmentaler"
+},
+{
+	"id":"en:pear-preparation",
+	"en":"pear preparation",
+	"fr":"préparation poire",
+	"ge":"Birnen-Zubereitung"
+},
+{
+	"id":"en:lovage",
+	"en":"lovage",
+	"fr":"livèche",
+	"ge":"Liebstöckel"
+},
+{
+	"id":"en:mukimame",
+	"en":"mukimame",
+	"fr":"mukimamé",
+	"ge":"mukimame"
+},
+{
+	"id":"en:glucose-syrup",
+	"en":"glucose syrup",
+	"fr":"sirop de glucose",
+	"ge":"Glucosesirup"
+},
+{
+	"id":"en:munster",
+	"en":"munster",
+	"fr":"Munster",
+	"ge":"Münster"
+},
+{
+	"id":"en:e387",
+	"en":"e387",
+	"fr":"e387",
+	"ge":"e387"
+},
+{
+	"id":"en:fruit-juices-and-purees-from-concentrate",
+	"en":"fruit juices and purees from concentrate",
+	"fr":"jus et purées de fruits à base de concentré",
+	"ge":"Fruchtsäfte und -pürees aus Konzentrat"
+},
+{
+	"id":"en:50-63-unsalted-vegetable-fat-high-in-omega-3",
+	"en":"50 63 unsalted vegetable fat high in omega 3",
+	"fr":"50 63 matières grasses végétales non salées riches en oméga 3",
+	"ge":"50 63 ungesalzenes Pflanzenfett mit hohem Omega-3-Gehalt"
+},
+{
+	"id":"en:arborio-rice",
+	"en":"arborio rice",
+	"fr":"riz arborio",
+	"ge":"Arborioreis"
+},
+{
+	"id":"en:european-hake",
+	"en":"european hake",
+	"fr":"merlu européen",
+	"ge":"Europäischer Seehecht"
+},
+{
+	"id":"en:e462",
+	"en":"e462",
+	"fr":"e462",
+	"ge":"e462"
+},
+{
+	"id":"en:lobster",
+	"en":"lobster",
+	"fr":"homard",
+	"ge":"Hummer"
+},
+{
+	"id":"en:greek-style-marinated-mushrooms",
+	"en":"greek style marinated mushrooms",
+	"fr":"champignons marinés à la grecque",
+	"ge":"marinierte Champignons nach griechischer Art"
+},
+{
+	"id":"en:torula-yeast",
+	"en":"torula yeast",
+	"fr":"levure torula",
+	"ge":"Torula-Hefe"
+},
+{
+	"id":"en:extra-fine-green-beans",
+	"en":"extra fine green beans",
+	"fr":"haricots verts extra-fins",
+	"ge":"extra feine grüne Bohnen"
+},
+{
+	"id":"en:organic-maltose-syrup",
+	"en":"organic maltose syrup",
+	"fr":"sirop de maltose bio",
+	"ge":"Bio-Maltosesirup"
+},
+{
+	"id":"en:lactose-free-milk",
+	"en":"lactose free milk",
+	"fr":"lait sans lactose",
+	"ge":"laktosefreie Milch"
+},
+{
+	"id":"en:duck-liver",
+	"en":"duck liver",
+	"fr":"foie de canard",
+	"ge":"Entenleber"
+},
+{
+	"id":"en:pholiota",
+	"en":"pholiota",
+	"fr":"pholiote",
+	"ge":"Pholiota"
+},
+{
+	"id":"en:d-biotin",
+	"en":"d biotin",
+	"fr":"d biotine",
+	"ge":"d Biotin"
+},
+{
+	"id":"en:sea-buckthorn-juice",
+	"en":"sea buckthorn juice",
+	"fr":"jus d'argousier",
+	"ge":"Sanddornsaft"
+},
+{
+	"id":"en:white-chocolate",
+	"en":"white chocolate",
+	"fr":"chocolat blanc",
+	"ge":"weiße Schokolade"
+},
+{
+	"id":"en:organic-agave-syrup",
+	"en":"organic agave syrup",
+	"fr":"sirop d'agave bio",
+	"ge":"Bio-Agavensirup"
+},
+{
+	"id":"en:organic-liquorice",
+	"en":"organic liquorice",
+	"fr":"réglisse bio",
+	"ge":"Bio-Lakritz"
+},
+{
+	"id":"en:wheat-flour",
+	"en":"wheat flour",
+	"fr":"farine de blé",
+	"ge":"Weizenmehl"
+},
+{
+	"id":"en:pantothenic-acid",
+	"en":"pantothenic acid",
+	"fr":"acide pantothénique",
+	"ge":"Pantothensäure"
+},
+{
+	"id":"en:cherry-juice",
+	"en":"cherry juice",
+	"fr":"jus de cerise",
+	"ge":"Kirschsaft"
+},
+{
+	"id":"en:royal-jelly",
+	"en":"royal jelly",
+	"fr":"gelée royale",
+	"ge":"Gelée Royale"
+},
+{
+	"id":"en:spanish-organic-olive-oil",
+	"en":"spanish organic olive oil",
+	"fr":"huile d'olive biologique espagnole",
+	"ge":"Spanisches Bio-Olivenöl"
+},
+{
+	"id":"en:hydrolyzed-wheat-protein",
+	"en":"hydrolyzed wheat protein",
+	"fr":"protéine de blé hydrolysée",
+	"ge":"hydrolysiertes Weizenprotein"
+},
+{
+	"id":"en:rainbow-trout",
+	"en":"rainbow trout",
+	"fr":"truite arc-en-ciel",
+	"ge":"Regenbogenforelle"
+},
+{
+	"id":"en:celery-salt",
+	"en":"celery salt",
+	"fr":"sel de céleri",
+	"ge":"Sellerie Salz"
+},
+{
+	"id":"en:pine-flavouring",
+	"en":"pine flavouring",
+	"fr":"arôme de pin",
+	"ge":"Kieferngeschmack"
+},
+{
+	"id":"en:sweet-and-sour-sauce",
+	"en":"sweet and sour sauce",
+	"fr":"sauce aigre douce",
+	"ge":"Süß-saure Soße"
+},
+{
+	"id":"en:cane-sugar",
+	"en":"cane sugar",
+	"fr":"sucre de canne",
+	"ge":"Rohrzucker"
+},
+{
+	"id":"en:camargue-whole-long-grain-black-rice",
+	"en":"camargue whole long grain black rice",
+	"fr":"riz noir complet de camargue à grains longs",
+	"ge":"schwarzer Vollkornreis der Camargue"
+},
+{
+	"id":"en:nameko",
+	"en":"nameko",
+	"fr":"nomko",
+	"ge":"nameko"
+},
+{
+	"id":"en:bamboo-shoot-fiber",
+	"en":"bamboo shoot fiber",
+	"fr":"fibre de pousse de bambou",
+	"ge":"Faser aus Bambussprossen"
+},
+{
+	"id":"en:sea-trout",
+	"en":"sea trout",
+	"fr":"truite de mer",
+	"ge":"Meerforelle"
+},
+{
+	"id":"en:egg",
+	"en":"egg",
+	"fr":"œuf",
+	"ge":"Ei"
+},
+{
+	"id":"en:chickpea-flour",
+	"en":"chickpea flour",
+	"fr":"farine de pois chiche",
+	"ge":"Kichererbsenmehl"
+},
+{
+	"id":"en:e452",
+	"en":"e452",
+	"fr":"e452",
+	"ge":"e452"
+},
+{
+	"id":"en:mustard-seed",
+	"en":"mustard seed",
+	"fr":"graine de moutarde",
+	"ge":"Senfkörner"
+},
+{
+	"id":"en:pumpkin-seed-flour",
+	"en":"pumpkin seed flour",
+	"fr":"farine de pépins de courge",
+	"ge":"Kürbiskernmehl"
+},
+{
+	"id":"en:pan-fried-lamb-rib",
+	"en":"pan fried lamb rib",
+	"fr":"côte d'agneau poêlée",
+	"ge":"gebratene Lammrippe"
+},
+{
+	"id":"en:brown-long-grain-rice",
+	"en":"brown long grain rice",
+	"fr":"riz brun à grains longs",
+	"ge":"brauner Langkornreis"
+},
+{
+	"id":"en:poached-egg",
+	"en":"poached egg",
+	"fr":"oeuf poché",
+	"ge":"pochiertes Ei"
+},
+{
+	"id":"en:e415",
+	"en":"e415",
+	"fr":"e415",
+	"ge":"e415"
+},
+{
+	"id":"en:pork-tongue",
+	"en":"pork tongue",
+	"fr":"langue de porc",
+	"ge":"Schweinezunge"
+},
+{
+	"id":"en:alfalfa",
+	"en":"alfalfa",
+	"fr":"luzerne",
+	"ge":"Alfalfa"
+},
+{
+	"id":"en:grapefruit",
+	"en":"grapefruit",
+	"fr":"pamplemousse",
+	"ge":"Grapefruit"
+},
+{
+	"id":"en:teff-seed",
+	"en":"teff seed",
+	"fr":"graine de teff",
+	"ge":"Teffsamen"
+},
+{
+	"id":"en:lime-flavouring",
+	"en":"lime flavouring",
+	"fr":"arôme citron vert",
+	"ge":"Limettenaroma"
+},
+{
+	"id":"en:deodorized-sunflower-oil",
+	"en":"deodorized sunflower oil",
+	"fr":"huile de tournesol désodorisée",
+	"ge":"desodoriertes Sonnenblumenöl"
+},
+{
+	"id":"en:seabream",
+	"en":"seabream",
+	"fr":"dorade",
+	"ge":"Dorade"
+},
+{
+	"id":"en:natural-basil-flavouring",
+	"en":"natural basil flavouring",
+	"fr":"arôme naturel de basilic",
+	"ge":"natürliches Basilikumaroma"
+},
+{
+	"id":"en:abalone",
+	"en":"abalone",
+	"fr":"ormeau",
+	"ge":"abalone"
+},
+{
+	"id":"en:grapefruit-syrup",
+	"en":"grapefruit syrup",
+	"fr":"sirop de pamplemousse",
+	"ge":"Grapefruitsirup"
+},
+{
+	"id":"en:pepper",
+	"en":"pepper",
+	"fr":"poivre",
+	"ge":"Pfeffer"
+},
+{
+	"id":"en:cress",
+	"en":"cress",
+	"fr":"cresson",
+	"ge":"Kresse"
+},
+{
+	"id":"en:prebiotics",
+	"en":"prebiotics",
+	"fr":"prébiotiques",
+	"ge":"Präbiotika"
+},
+{
+	"id":"en:chicken-skin",
+	"en":"chicken skin",
+	"fr":"peau de poulet",
+	"ge":"Hühnerhaut"
+},
+{
+	"id":"en:tapioca-dextrin",
+	"en":"tapioca dextrin",
+	"fr":"dextrine de tapioca",
+	"ge":"Tapiokadextrin"
+},
+{
+	"id":"en:e357",
+	"en":"e357",
+	"fr":"e357",
+	"ge":"e357"
+},
+{
+	"id":"en:celtic-sea-salt",
+	"en":"celtic sea salt",
+	"fr":"sel de mer celtique",
+	"ge":"Keltisches Meersalz"
+},
+{
+	"id":"en:wheat-starch",
+	"en":"wheat starch",
+	"fr":"amidon de blé",
+	"ge":"Weizenstärke"
+},
+{
+	"id":"en:natural-flavor-of-turmeric",
+	"en":"natural flavor of turmeric",
+	"fr":"arôme naturel de curcuma",
+	"ge":"natürliches Aroma von Kurkuma"
+},
+{
+	"id":"en:romanesco-broccoli",
+	"en":"romanesco broccoli",
+	"fr":"brocoli romanesco",
+	"ge":"Romanesco Brokkoli"
+},
+{
+	"id":"en:unrefined-olive-oil",
+	"en":"unrefined olive oil",
+	"fr":"huile d'olive non raffinée",
+	"ge":"unraffiniertes Olivenöl"
+},
+{
+	"id":"en:sweetened-plain-yogurt",
+	"en":"sweetened plain yogurt",
+	"fr":"yaourt nature sucré",
+	"ge":"gesüßter Naturjoghurt"
+},
+{
+	"id":"en:whiteleg-shrimp",
+	"en":"whiteleg shrimp",
+	"fr":"crevettes pattes blanches",
+	"ge":"Weißbeingarnelen"
+},
+{
+	"id":"en:jack-mackerel",
+	"en":"jack mackerel",
+	"fr":"chinchard",
+	"ge":"Makrele"
+},
+{
+	"id":"en:crab",
+	"en":"crab",
+	"fr":"crabe",
+	"ge":"Krabbe"
+},
+{
+	"id":"en:lingonberry",
+	"en":"lingonberry",
+	"fr":"airelle",
+	"ge":"Preiselbeere"
+},
+{
+	"id":"en:caramelised-sugar-syrup",
+	"en":"caramelised sugar syrup",
+	"fr":"sirop de sucre caramélisé",
+	"ge":"Karamellisierter Zuckersirup"
+},
+{
+	"id":"en:superior-quality-long-grain-parboiled-brown-rice",
+	"en":"superior quality long grain parboiled brown rice",
+	"fr":"riz brun étuvé à grains longs de qualité supérieure",
+	"ge":"Parboiled brauner Langkornreis von höchster Qualität"
+},
+{
+	"id":"en:imazalil",
+	"en":"imazalil",
+	"fr":"imazalil",
+	"ge":"Imazalil"
+},
+{
+	"id":"en:freeze-dried-strawberries",
+	"en":"freeze dried strawberries",
+	"fr":"fraises lyophilisées",
+	"ge":"gefriergetrocknete Erdbeeren"
+},
+{
+	"id":"en:cheese-made-from-pasteurized-milk",
+	"en":"cheese made from pasteurized milk",
+	"fr":"fromage au lait pasteurisé",
+	"ge":"Käse aus pasteurisierter Milch"
+},
+{
+	"id":"en:fresh-organic-pasteurised-semi-skimmed-milk",
+	"en":"fresh organic pasteurised semi skimmed milk",
+	"fr":"lait demi-écrémé frais bio pasteurisé",
+	"ge":"frische pasteurisierte teilentrahmte Milch aus biologischem Anbau"
+},
+{
+	"id":"en:lychee",
+	"en":"lychee",
+	"fr":"litchi",
+	"ge":"Litschi"
+},
+{
+	"id":"en:walnut",
+	"en":"walnut",
+	"fr":"noyer",
+	"ge":"Nussbaum"
+},
+{
+	"id":"en:prune",
+	"en":"prune",
+	"fr":"prune",
+	"ge":"Pflaume"
+},
+{
+	"id":"en:lemon-flavouring",
+	"en":"lemon flavouring",
+	"fr":"arôme citron",
+	"ge":"Zitronenaroma"
+},
+{
+	"id":"en:prepacked-marzipan",
+	"en":"prepacked marzipan",
+	"fr":"pâte d'amande préemballée",
+	"ge":"vorverpacktes Marzipan"
+},
+{
+	"id":"en:e386",
+	"en":"e386",
+	"fr":"e386",
+	"ge":"e386"
+},
+{
+	"id":"en:roasted-lean-lamb-shoulder",
+	"en":"roasted lean lamb shoulder",
+	"fr":"épaule d'agneau maigre rôtie",
+	"ge":"gebratene magere Lammschulter"
+},
+{
+	"id":"en:e625",
+	"en":"e625",
+	"fr":"e625",
+	"ge":"e625"
+},
+{
+	"id":"en:cooked-fresh-past",
+	"en":"cooked fresh pasta",
+	"fr":"pâtes fraîches cuites",
+	"ge":"gekochte frische Nudeln"
+}
+]}

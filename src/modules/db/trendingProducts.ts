@@ -28,6 +28,8 @@ export const getTrendingGlobal = async (count: number): Promise<Array<QueryResul
 }
 
 export const insert = async (userID: string, barcode: string, productName: string, imageLink: string): Promise<void> => {
+    if (productName.replaceAll(/\s/g,'').length == 0)
+        return
     const res = await db_adm_conn.query(`
         SELECT country_code FROM EndUser
         WHERE enduserid = '${userID}'

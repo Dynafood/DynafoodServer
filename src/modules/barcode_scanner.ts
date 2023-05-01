@@ -261,7 +261,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             warings: [],
             ecoscoreData: null,
             packing: [],
-            images: [],
+            images: "",
             ingredients: [],
             nutriments_g_pro_100g: [],
             nutriments_scores: [],
@@ -284,7 +284,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             }
         }
         await database.History.updateHistory(userID, req.params.barcode, response);
-        await database.TrendingProducts.insert(userID, req.params.barcode, response.name, response.images[0]);
+        await database.TrendingProducts.insert(userID, req.params.barcode, response.name, response.images);
         res.status(200).send(response);
     }
     catch (error) {
