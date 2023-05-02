@@ -16,6 +16,12 @@ export const createUser = async (firstName: string, lastName: string, userName: 
                 ${email_confimed},
                 '${checkInputBeforeSqlQuery(cc)}'
             ) RETURNING *;`);
+    const restrictions : QueryResult = await db_adm_conn.query(`
+    INSERT INTO public.enduser_restriction(
+       alertactivation, enduserid, restrictionid, strongness)
+        VALUES 
+            (true, '${user.rows[0].enduserid}', '061d4ae1-d88d-4f2c-b1de-9095bcbd0ce4', 0), 
+            (true, '${user.rows[0].enduserid}', '4c87174b-e3ff-4fa4-aaf3-ea7f2e7f22b5', 0) returning *;`);
     return user.rows[0];
 };
 
