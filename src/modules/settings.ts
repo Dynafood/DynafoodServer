@@ -15,6 +15,12 @@ export const getRestrictionIdByName = async (req: Request, res: Response, next: 
             return;
         }
         res.locals.restrictionID = restrictionID;
+
+        const strongness = req.body.strongness || null
+        if (strongness == null) {
+            res.status(400).send({ Error: 'BadRequest', Details: 'Missing strongness' });
+            return;
+        }
         next();
     } catch (err: any) {
         console.log(err);
@@ -51,7 +57,7 @@ export const getSettings = async (req: Request, res: Response) : Promise<void> =
 
 export const postSettings = async (req: Request, res: Response) : Promise<void> => {
     try {
-        await database.Settings.createSetting(req.body.alertActivation, res.locals.user.userid, res.locals.restrictionID);
+        await database.Settings.createSetting(req.body.alertActivation, res.locals.user.userid, res.locals.restrictionID, req.body.strongness);
         res.status(200).send();
     } catch (err: any) {
         console.log(err);
@@ -61,7 +67,7 @@ export const postSettings = async (req: Request, res: Response) : Promise<void> 
 
 export const patchSettings = async (req: Request, res: Response): Promise<void> => {
     try {
-        await database.Settings.updateAlertSetting(res.locals.user.userid, req.body.alertActivation, res.locals.restrictionID);
+        await database.Settings.updateAlertSetting(res.locals.user.userid, req.body.alertActivation, res.locals.restrictionID, req.body.strongness);
         res.status(200).send();
     } catch (err: any) {
         console.log(err);

@@ -23,30 +23,31 @@ export const userHasRestriction = async (userid: string, restrictionid: string) 
 
 export const getAlertSettings = async (userid: string) : Promise<Array<QueryResultRow>> => {
     const result: QueryResult = await db_adm_conn.query(`
-    SELECT R.category_name as restrictionName, ER.alertActivation
+    SELECT R.category_name as restrictionName, ER.alertActivation, ER.strongness
     FROM own_restriction R
     LEFT JOIN EndUser_Restriction ER ON ER.restrictionID = R.restrictionID
     WHERE ER.endUserID = '${checkInputBeforeSqlQuery(userid)}';`);
     return result.rows;
 };
 
-export const createSetting = async (alertActivation: string, userid: string, restrictionid:string) => {
+export const createSetting = async (alertActivation: string, userid: string, restrictionid:string, strongness: number) => {
     await db_adm_conn.query(`
-            INSERT INTO EndUser_Restriction (alertActivation, endUserId, restrictionID)
+            INSERT INTO EndUser_Restriction (alertActivation, endUserId, restrictionID, strongness)
             SELECT
                 ${checkInputBeforeSqlQuery(alertActivation)},
                 '${checkInputBeforeSqlQuery(userid)}',
-                '${checkInputBeforeSqlQuery(restrictionid)}'
+                '${checkInputBeforeSqlQuery(restrictionid)}',
+                '${strongness}'
             WHERE NOT EXISTS (SELECT * FROM EndUser_Restriction EU
             WHERE EU.endUserID = '${checkInputBeforeSqlQuery(userid)}'
             AND EU.restrictionID = '${checkInputBeforeSqlQuery(restrictionid)}');
         `);
 };
 
-export const updateAlertSetting = async (userid: string, alertActivation: string, restrictionID: string) => {
+export const updateAlertSetting = async (userid: string, alertActivation: string, restrictionID: string, strongness: number) => {
     await db_adm_conn.query(`
     UPDATE EndUser_Restriction
-    SET alertActivation = ${checkInputBeforeSqlQuery(alertActivation)}
+    SET (alertActivation, strongness) = (${checkInputBeforeSqlQuery(alertActivation)}, ${strongness})
     WHERE restrictionID = '${checkInputBeforeSqlQuery(restrictionID)}'
     AND endUserID = '${checkInputBeforeSqlQuery(userid)}';
         `);
