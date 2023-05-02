@@ -8,9 +8,8 @@ import { getEmailConfirmed, setEmailConfirmed, createUser, createUserOAuth, dele
 import { insert, getTrendingLocal, getTrendingGlobal, getCountryCode } from './trendingProducts';
 import { DatabaseInterface } from '../../../server_config';
 import { getProviderByName } from './oauth';
-import { getAllergenbyName } from './search';
+import { getAllergenbyName, directQuery } from './search';
 import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from './product';
-
 
 console.log('this is db_vars:', process.env.NODE_ENV, process.env.DB_USER, process.env.PG_PASSWORD, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
 
@@ -38,8 +37,10 @@ const connect = async () => {
 const end = async () => {
     await db_adm_conn.end();
 };
-
 const Database: DatabaseInterface = {
+    Query: {
+        query: directQuery
+    },
     ShoppingList: {
         createShoppingList,
         updateShoppingList,

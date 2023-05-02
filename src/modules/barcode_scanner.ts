@@ -4,6 +4,54 @@ import { JsonObject } from 'swagger-ui-express';
 import { database } from '../../server_config';
 import { translate_ingredient, translate_nutriment } from './translation/translation';
 import { EcoScoreInterface } from './algorithm';
+import { checkInputBeforeSqlQuery } from './db/scripts';
+import { QueryResult } from 'pg';
+
+const checkAlergenAlert = async (userID: string, barcode: string, response: JsonObject) => {
+    let alerts: { [key: string]: null | boolean } = {
+        "vegan": true,
+        "vegetarian": true
+    }
+
+    let query = `SELECT r.category_name FROM enduser e 
+    JOIN enduser_restriction er ON er.enduserid = e.enduserid
+    JOIN own_restriction r ON r.restrictionID = er.restrictionid
+	WHERE r.category_name in ('vegan', 'vegetarian')`;
+    let preference_response: QueryResult = await database.Query.query(query);
+
+
+    let ingredients = response.ingredients.ingredients
+    query = `SELECT i.eng_name FROM enduser e 
+    JOIN enduser_restriction er ON er.enduserid = e.enduserid
+    JOIN own_restriction r ON r.restrictionID = er.restrictionid
+    JOIN ingredient_restriction ir ON ir.restriction_id = r.restrictionID
+    JOIN ingredient i ON i.ingredientid = ir.ingredient_id
+    WHERE lower(i.eng_name) IN (`
+
+    for (let i = 0; i < ingredients.length; i++) {
+        //generate query
+        query += `'${checkInputBeforeSqlQuery(ingredients[i].name.toLowerCase())}'`
+        if (i < ingredients.length - 1) {
+            query += ", "
+        }
+
+        //check for vegan/vegetarian
+        for (let row of preference_response.rows) {
+            if (ingredients[i][row.category_name] == false) {
+                console.log(ingredients[i], row.category_name)
+                response[row.category_name + "_alert"] = true
+            }
+            if (ingredients[i][row.category_name] == null && alerts[row.category_name]) {
+                alerts[row.category_name] = null
+            }
+        }
+    }
+    query += ");"
+    let alert_response: QueryResult = await database.Query.query(query);
+    if (alert_response.rowCount > 0) {
+        response.alergen_alert = true
+    }
+} 
 
 const getInnerIngredients = (ingredient: JsonObject, language: string): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
     const inner : Array<object> = [];
@@ -265,7 +313,9 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             ingredients: [],
             nutriments_g_pro_100g: [],
             nutriments_scores: [],
-            vegetarian_alert: false
+            vegetarian_alert: false,
+            vegan_alert: false,
+            alergen_alert: false,
         };
         const fields: string = 'generic_name,_keywords,allergens_hierarchy,categories,data_quality_tags,data_quality_warnings_tags,packaging,product_name,ecoscore_score,ecoscore_data,ecoscore_grade,image_front_url,image_small_url,nutriments,nutriscore_data,nutriscore_grade,ingredients';
         const url: string = `https://world.openfoodfacts.org/api/2/product/${req.params.barcode}.json?fields=${fields}`;
@@ -283,6 +333,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
                 return;
             }
         }
+        await checkAlergenAlert(userID, req.params.barcode, response)
         await database.History.updateHistory(userID, req.params.barcode, response);
         await database.TrendingProducts.insert(userID, req.params.barcode, response.name, response.images);
         res.status(200).send(response);

@@ -23,6 +23,9 @@ import { UserInterface } from './include/userInterface';
 import bodyParser from "body-parser";
 
 export interface DatabaseInterface {
+    Query: {
+        query: (query: string) => Promise<any>
+    }
     ShoppingList: {
         createShoppingList: (name: string, userid: string) => Promise<void>
         updateShoppingList: (name: string, listID: string, userid: string) => Promise<void>
