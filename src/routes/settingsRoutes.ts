@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
-import { getSettings, postSettings, patchSettings, deleteSettings, getRestrictionIdByName, hasRestriction } from '../modules/settings';
+import { getSettings, getAllSettings, postSettings, patchSettings, deleteSettings, getRestrictionIdByName, hasRestriction } from '../modules/settings';
 
 const router : Router = Router();
 
@@ -67,6 +67,8 @@ const router : Router = Router();
  *                 $ref: '#/components/schemas/Error'
 */
 router.get('/settings', secureRouteMiddleware, getSettings);
+
+router.get('/settings/all', secureRouteMiddleware, getAllSettings);
 
 /**
  * @swagger

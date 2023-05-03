@@ -55,6 +55,20 @@ export const getSettings = async (req: Request, res: Response) : Promise<void> =
     }
 };
 
+export const getAllSettings = async (req: Request, res: Response) : Promise<void> => {
+    try {
+        const userSettings : Array<QueryResultRow> = await database.Settings.getAllSettings();
+        if (userSettings.length === 0) {
+            res.status(204).send();
+            return;
+        }
+        res.status(200).send(userSettings.map((restriciton) => restriciton.restrictionname));
+    } catch (err: any) {
+        console.log(err);
+        res.status(500).send({ Error: err, Details: err.stack });
+    }
+};
+
 export const postSettings = async (req: Request, res: Response) : Promise<void> => {
     try {
         await database.Settings.createSetting(req.body.alertActivation, res.locals.user.userid, res.locals.restrictionID, req.body.strongness);

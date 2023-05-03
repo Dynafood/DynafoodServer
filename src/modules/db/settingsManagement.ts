@@ -30,6 +30,13 @@ export const getAlertSettings = async (userid: string) : Promise<Array<QueryResu
     return result.rows;
 };
 
+export const getAllSettings = async () : Promise<Array<QueryResultRow>> => {
+    const result: QueryResult = await db_adm_conn.query(`
+    SELECT R.category_name as restrictionName
+    FROM own_restriction R;`);
+    return result.rows;
+};
+
 export const createSetting = async (alertActivation: string, userid: string, restrictionid:string, strongness: number) => {
     await db_adm_conn.query(`
             INSERT INTO EndUser_Restriction (alertActivation, endUserId, restrictionID, strongness)

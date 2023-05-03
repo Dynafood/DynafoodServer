@@ -60,6 +60,7 @@ export interface DatabaseInterface {
     Settings: {
         getRestrictionIdByName: (restrictionName: string) => Promise<string | null>
         userHasRestriction: (userid: string, restrictionid: string) => Promise<boolean>
+        getAllSettings: () => Promise<Array<QueryResultRow>>
         getAlertSettings: (userid: string) => Promise<Array<QueryResultRow>>
         updateAlertSetting: (userid: string, alertActivation: string, restrictionID: string, strongness: number) => Promise<void>
         deleteAlertSetting: (userid: string, restrictionID: string) => Promise<void>

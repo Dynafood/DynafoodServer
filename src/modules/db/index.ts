@@ -3,7 +3,7 @@ import { createNewFeedback } from './feedback';
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem, updateShoppingList } from './shoppingList'
 import { deleteElementFromHistory, getElements, updateHistory } from './historyManagement';
 import { updatePassword } from './resetPassword';
-import { updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting } from './settingsManagement';
+import { updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting, getAllSettings } from './settingsManagement';
 import { getEmailConfirmed, setEmailConfirmed, createUser, createUserOAuth, deleteUser, getUser, getPasswordResetToken, setPasswordResetToken } from './userManagement';
 import { insert, getTrendingLocal, getTrendingGlobal, getCountryCode } from './trendingProducts';
 import { DatabaseInterface } from '../../../server_config';
@@ -71,6 +71,7 @@ const Database: DatabaseInterface = {
         getRestrictionIdByName,
         userHasRestriction,
         getAlertSettings,
+        getAllSettings,
         updateAlertSetting,
         deleteAlertSetting,
         createSetting
