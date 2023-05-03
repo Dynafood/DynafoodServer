@@ -10,6 +10,7 @@ import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteS
 import { QueryResultRow } from "pg";
 import {getAllergenbyName} from "./mock_search";
 import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from "./mock_product";
+import { getEmailConfirmed, setEmailConfirmed } from "../../../../src/modules/db/userManagement";
 
 
 
@@ -41,7 +42,9 @@ const mock_db: DatabaseInterface = {
         getUser: getUser,
         deleteUser: deleteUser,
         getPasswordResetToken: getPasswordResetToken,
-        setPasswordResetToken: setPasswordResetToken
+        setPasswordResetToken: setPasswordResetToken,
+        setEmailConfirmed: setEmailConfirmed,
+        getEmailConfirmed: getEmailConfirmed,
     },
     Settings: {
         createSetting: createSettings,

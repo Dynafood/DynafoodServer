@@ -10,6 +10,7 @@ import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteS
 import { getTrendingGlobal, getCountryCode, getTrendingLocal, insert } from "./mock_trending";
 import { getAllergenbyName } from "./mock_search";
 import { getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductByBarcode, getProductsByName } from "./mock_product";
+import { getEmailConfirmed, setEmailConfirmed } from "../../../../src/modules/db/userManagement";
 
 
 
@@ -42,7 +43,9 @@ const mock_db: DatabaseInterface = {
         getUser: getUser,
         deleteUser: deleteUser,
         getPasswordResetToken: getPasswordResetToken,
-        setPasswordResetToken: setPasswordResetToken
+        setPasswordResetToken: setPasswordResetToken,
+        setEmailConfirmed: setEmailConfirmed,
+        getEmailConfirmed: getEmailConfirmed
     },
     Settings: {
         createSetting: createSettings,

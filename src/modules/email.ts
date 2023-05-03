@@ -23,7 +23,7 @@ export const sendResetPasswordEmail = async (name: string, email: string, token:
 };
 
 export const sendVerificationEmail = async (name: string, email: string) => {
-    const new_email = `http://localhost:8081/verifyEmail?email=${email}`
+    const new_email = `http://x2024dynafood545437452001.westeurope.cloudapp.azure.com:8081/verifyEmail?email=${email}`
     await mail_sender.send({
         from: {
             email: sender_email,
@@ -33,7 +33,7 @@ export const sendVerificationEmail = async (name: string, email: string) => {
             email: email,
             name: name
         },
-        templateId: verification_template_id, // @todo change this to the other template
+        templateId: verification_template_id,
         dynamicTemplateData: {
             link: new_email
         }

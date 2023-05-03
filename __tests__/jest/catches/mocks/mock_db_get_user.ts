@@ -10,6 +10,7 @@ import { getTrendingGlobal, getTrendingLocal, insert, getCountryCode } from "./m
 import { createUser, createUserOAuth, deleteUser, getPasswordResetToken, setPasswordResetToken } from "./mock_user";
 import { getAllergenbyName } from "./mock_search";
 import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from "./mock_product";
+import { getEmailConfirmed, setEmailConfirmed } from "../../../../src/modules/db/userManagement";
 
 export const getUser = async (userid: string | null = null, email: string | null = null) : Promise<Array<QueryResultRow>> => {
     throw new Error("ErrorMock")
@@ -44,7 +45,9 @@ const mock_db: DatabaseInterface = {
         getUser: getUser,
         deleteUser: deleteUser,
         getPasswordResetToken: getPasswordResetToken,
-        setPasswordResetToken: setPasswordResetToken
+        setPasswordResetToken: setPasswordResetToken,
+        setEmailConfirmed: setEmailConfirmed,
+        getEmailConfirmed: getEmailConfirmed,
     },
     Settings: {
         createSetting: createSettings,
