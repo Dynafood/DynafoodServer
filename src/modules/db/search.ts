@@ -13,7 +13,7 @@ export const getAllergenbyName = async (name: string, language: string) : Promis
             OR ${language} LIKE '${escaped_search}%'
         ORDER BY Similarity DESC`
     );
-    return ret.rows.map((obj) => obj[language])
+    return ret.rows.map((obj) => obj[language]).filter((obj: string) => !obj.startsWith("veg"));
 } 
 
 export const directQuery = async (query: string): Promise<any> => {

@@ -64,7 +64,7 @@ export const searchAllergen = async (req: Request, res: Response) => {
         let order_lang: string = ""
         if (language == "en") {
             order_lang = "eng_name"
-        } else if (language == "ge") {
+        } else if (language == "de") {
             order_lang = "ger_name"
         } else if (language == "fr") {
             order_lang = "frz_name"
