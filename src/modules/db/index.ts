@@ -3,14 +3,13 @@ import { createNewFeedback } from './feedback';
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem, updateShoppingList } from './shoppingList'
 import { deleteElementFromHistory, getElements, updateHistory } from './historyManagement';
 import { updatePassword } from './resetPassword';
-import { updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting } from './settingsManagement';
+import { updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting, getAllSettings } from './settingsManagement';
 import { getEmailConfirmed, setEmailConfirmed, createUser, createUserOAuth, deleteUser, getUser, getPasswordResetToken, setPasswordResetToken } from './userManagement';
 import { insert, getTrendingLocal, getTrendingGlobal, getCountryCode } from './trendingProducts';
 import { DatabaseInterface } from '../../../server_config';
 import { getProviderByName } from './oauth';
-import { getAllergenbyName } from './search';
+import { getAllergenbyName, directQuery } from './search';
 import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from './product';
-
 
 console.log('this is db_vars:', process.env.NODE_ENV, process.env.DB_USER, process.env.PG_PASSWORD, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
 
@@ -38,8 +37,10 @@ const connect = async () => {
 const end = async () => {
     await db_adm_conn.end();
 };
-
 const Database: DatabaseInterface = {
+    Query: {
+        query: directQuery
+    },
     ShoppingList: {
         createShoppingList,
         updateShoppingList,
@@ -70,6 +71,7 @@ const Database: DatabaseInterface = {
         getRestrictionIdByName,
         userHasRestriction,
         getAlertSettings,
+        getAllSettings,
         updateAlertSetting,
         deleteAlertSetting,
         createSetting

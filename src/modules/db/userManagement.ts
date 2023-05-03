@@ -16,6 +16,12 @@ export const createUser = async (firstName: string, lastName: string, userName: 
                 ${email_confimed},
                 '${checkInputBeforeSqlQuery(cc)}'
             ) RETURNING *;`);
+    const restrictions : QueryResult = await db_adm_conn.query(`
+    INSERT INTO public.enduser_restriction(
+       alertactivation, enduserid, restrictionid, strongness)
+        VALUES 
+            (true, '${user.rows[0].enduserid}', '061d4ae1-d88d-4f2c-b1de-9095bcbd0ce4', 0), 
+            (true, '${user.rows[0].enduserid}', '4c87174b-e3ff-4fa4-aaf3-ea7f2e7f22b5', 0) returning *;`);
     return user.rows[0];
 };
 
@@ -45,10 +51,10 @@ export const createUserOAuth = async (userid: string, provider_id: string, userN
 
 export const getUser = async (userid: string | null = null, email: string | null = null) : Promise<Array<QueryResultRow>> => {
     let query: string = `
-    SELECT EU.enduserid, EU.passcode, EU.firstName, EU.lastName, EU.userName, EU.email, EU.phoneNumber, EU.country_code, ER.alertActivation, R.eng_name as restrictionName
+    SELECT EU.enduserid, EU.passcode, EU.firstName, EU.lastName, EU.userName, EU.email, EU.phoneNumber, EU.country_code, ER.alertActivation, R.category_name as restrictionName
     FROM EndUser EU
     LEFT JOIN EndUser_Restriction ER ON ER.endUserID = EU.endUserID
-    LEFT JOIN Restriction R ON R.restrictionID = ER.restrictionID
+    LEFT JOIN own_Restriction R ON R.restrictionID = ER.restrictionID
     `;
     if (userid != null) { query += `WHERE EU.endUserID = '${checkInputBeforeSqlQuery(userid)}';`; } else if (email != null) { query += `WHERE EU.email = lower('${checkInputBeforeSqlQuery(email)}');`; } else { throw Error('one argument must be provided'); }
     const newUser : QueryResult = await db_adm_conn.query(query);

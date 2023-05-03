@@ -23,6 +23,9 @@ import { UserInterface } from './include/userInterface';
 import bodyParser from "body-parser";
 
 export interface DatabaseInterface {
+    Query: {
+        query: (query: string) => Promise<any>
+    }
     ShoppingList: {
         createShoppingList: (name: string, userid: string) => Promise<void>
         updateShoppingList: (name: string, listID: string, userid: string) => Promise<void>
@@ -57,10 +60,11 @@ export interface DatabaseInterface {
     Settings: {
         getRestrictionIdByName: (restrictionName: string) => Promise<string | null>
         userHasRestriction: (userid: string, restrictionid: string) => Promise<boolean>
+        getAllSettings: () => Promise<Array<QueryResultRow>>
         getAlertSettings: (userid: string) => Promise<Array<QueryResultRow>>
-        updateAlertSetting: (userid: string, alertActivation: string, restrictionID: string) => Promise<void>
+        updateAlertSetting: (userid: string, alertActivation: string, restrictionID: string, strongness: number) => Promise<void>
         deleteAlertSetting: (userid: string, restrictionID: string) => Promise<void>
-        createSetting: (alertactivation: string, userid: string, restrictionid: string) => Promise<void>
+        createSetting: (alertactivation: string, userid: string, restrictionid: string, strongness: number) => Promise<void>
     },
     ResetPassword: {
         updatePassword: (email: string, newPassword: string, code: string) => Promise<string>
