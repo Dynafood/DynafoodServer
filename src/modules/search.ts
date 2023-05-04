@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import axios, { AxiosResponse } from 'axios';
 import { database } from '../../server_config';
 import { object } from 'joi';
+import { getAllSettings } from './settings';
 
 export const searchProduct = async (req: Request, res: Response) => {
     try {
@@ -54,7 +55,7 @@ export const searchAllergen = async (req: Request, res: Response) => {
         const language = req.query.language || null;
 
         if (name == null || name == "") {
-            res.status(400).send({ Error: 'BadRequest', Details: 'Missing allergen name'});
+            getAllSettings(req, res)
             return;
         }
         if (language == null || language == "") {
