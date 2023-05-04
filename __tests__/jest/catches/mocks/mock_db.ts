@@ -2,7 +2,7 @@ import { DatabaseInterface, init_db } from "../../../../server_config"
 import { JsonObject } from "swagger-ui-express";
 import { createUser, deleteUser, getUser, createUserOAuth, getPasswordResetToken, setPasswordResetToken } from "./mock_user";
 import { createNewFeedback } from "./mock_feedback";
-import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, updateSettings, userHasRestriction } from "./mock_settings";
+import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, getAllSettings, updateSettings, userHasRestriction } from "./mock_settings";
 import { deleteElementFromHistory, getElements, updateHistory } from "./mock_history";
 import { QueryResultRow } from "pg";
 import { updatePassword } from "./mock_password";
@@ -12,10 +12,17 @@ import { getAllergenbyName } from "./mock_search";
 import { getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductByBarcode, getProductsByName } from "./mock_product";
 import { getEmailConfirmed, setEmailConfirmed } from "../../../../src/modules/db/userManagement";
 
-
+const directQuery = (quer: string) => {
+    return new Promise((resolve, reject) => {
+        resolve({rowCount: 1})
+    })
+}
 
 
 const mock_db: DatabaseInterface = {
+    Query: {
+        query: directQuery
+    },
     ShoppingList: {
         createShoppingList: createShoppingList,
         createShoppingListItem: createShoppingListItem,
@@ -51,6 +58,7 @@ const mock_db: DatabaseInterface = {
         createSetting: createSettings,
         deleteAlertSetting: deleteSettings,
         getAlertSettings: getSettings,
+        getAllSettings: getAllSettings,
         getRestrictionIdByName: getRestrictionIdByName,
         updateAlertSetting: updateSettings,
         userHasRestriction: userHasRestriction

@@ -11,8 +11,9 @@ const logger = (req: Request, res: Response, next: NextFunction): void => {
 const outgoingLogger = (req: Request, res: Response, next: NextFunction) => {
     const originalSend = res.send;
     res.send = function (body: any): Response {
-      if (typeof body != "string")
+      if (typeof body != "string") {
         console.log("res:\n\t", res.statusCode, JSON.stringify(body), "\n");
+      }
       originalSend.call(this, body);
       return res
     };

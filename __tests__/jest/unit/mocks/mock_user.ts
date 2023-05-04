@@ -67,3 +67,12 @@ export const getPasswordResetToken = async (userid: string) : Promise<QueryResul
 export const createUserOAuth = async (userid: string, provider_id: string, userName: string, pictureLink: string, email: string, userProviderId: string) : Promise<QueryResultRow> => {
     return {}
 };
+
+export const setEmailConfirmed = async (email: string) : Promise<QueryResultRow> => {
+    return new Promise (() => {});
+}
+
+export const getEmailConfirmed = async (email: string) : Promise<QueryResultRow> => {
+
+    return new Promise((resolve, reject)=> {return resolve({emailconfirmed: true})})
+}

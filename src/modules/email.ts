@@ -24,20 +24,22 @@ export const sendResetPasswordEmail = async (name: string, email: string, token:
 
 export const sendVerificationEmail = async (name: string, email: string) => {
     const new_email = `http://x2024dynafood545437452001.westeurope.cloudapp.azure.com:8081/verifyEmail?email=${email}`
-    await mail_sender.send({
-        from: {
-            email: sender_email,
-            name: 'DynaFood'
-        },
-        to: {
-            email: email,
-            name: name
-        },
-        templateId: verification_template_id,
-        dynamicTemplateData: {
-            link: new_email
-        }
-    });
+    if (mail_sender != undefined) {
+        await mail_sender.send({
+            from: {
+                email: sender_email,
+                name: 'DynaFood'
+            },
+            to: {
+                email: email,
+                name: name
+            },
+            templateId: verification_template_id,
+            dynamicTemplateData: {
+                link: new_email
+            }
+        });
+    }
     console.log(`verification email was sent to ${email}`);
 }
 

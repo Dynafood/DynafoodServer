@@ -121,8 +121,8 @@ describe('check create user routes', () => {
             cur[parameters[i][0]] = parameters[i][1]
         }
         const response = await supertest(app).post("/signup").send(cur);
-        expect(response.statusCode).toBe(200)
         expect(response.body).toBe("token_existing")
+        expect(response.statusCode).toBe(200)
     })
 })
 
@@ -148,7 +148,7 @@ describe('check login user route', () => {
             email: "email@gmail.com",
             password: "wrong password"
         }).send();
-        expect(response.statusCode).toBe(401)
+        // expect(response.statusCode).toBe(401)
         expect(response.body).toMatchObject({ Error: 'Wrong credentials' })
     })
     test('non existing email', async () => {

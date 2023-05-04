@@ -6,13 +6,33 @@ export const getSettings = async (userid: string | null) : Promise<Array<QueryRe
             resolve( [] )
         resolve( [{
             "restrictionname": "peanut",
-            "alertactivation": true
+            "alertactivation": true,
+            "strongness": 2
         },
         {
             "restrictionname": "apple",
-            "alertactivation": false
+            "alertactivation": false,
+            "strongness": 2
         }])
     });
+}
+
+export const getAllSettings = async ()  : Promise<Array<QueryResultRow>> => {
+    return new Promise((resolve, rejet) => {
+        resolve( [{
+            "categoryname": "peanuts",
+        },
+        {
+            "categoryname": "tree nuts",
+        },
+    
+        {
+            "categoryname": "vegan",
+        },
+        {
+            "categoryname": "vegetarian",
+        }])
+    })
 }
 
 export const getRestrictionIdByName = async (restrictionName: string) : Promise<string | null> => {

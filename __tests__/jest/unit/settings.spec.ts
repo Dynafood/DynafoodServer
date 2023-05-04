@@ -19,11 +19,13 @@ describe('check get settings routes', () => {
         expect(response.statusCode).toBe(200)
         expect(response.body).toMatchObject([{
             "restrictionname": "peanut",
-            "alertactivation": true
+            "alertactivation": true,
+            "strongness": 2
         },
         {
             "restrictionname": "apple",
-            "alertactivation": false
+            "alertactivation": false,
+            "strongness": 2
         }])
     })
 })
@@ -35,26 +37,26 @@ describe('check create settings routes', () => {
         expect(response.body).toStrictEqual({"Error": "BadRequest", "Details": "Missing restrictionName"})
     })
     test('createSettings with non existing restrictionname', async () => {
-        const response = await supertest(app).post("/settings").send({restrictionName: "fake"}).set('Cookie', ['token=token_existing']);
+        const response = await supertest(app).post("/settings").send({restrictionName: "fake", strongness: 2}).set('Cookie', ['token=token_existing']);
         expect(response.statusCode).toBe(404)
         expect(response.body).toStrictEqual({"Error": "The restriction fake is not available on dynafood!"})
     })
     test('createSettings with non existing restrictionname', async () => {
-        const response = await supertest(app).post("/settings").send({restrictionName: "real"}).set('Cookie', ['token=token_existing']);
+        const response = await supertest(app).post("/settings").send({restrictionName: "real", strongness: 2}).set('Cookie', ['token=token_existing']);
         expect(response.statusCode).toBe(200)
     })
 })
 
 describe('check update settings routes', () => {
     test('update Settings which user does not have', async () => {
-        const response = await supertest(app).patch("/settings").send({restrictionName: "nop"}).set('Cookie', ['token=token_existing']);
+        const response = await supertest(app).patch("/settings").send({restrictionName: "nop", strongness: 2}).set('Cookie', ['token=token_existing']);
         expect(response.statusCode).toBe(400)
         expect(response.body).toStrictEqual({ Error: 'Bad request', Details: `This user does not have a restriction for nop.` })
     })
     test('update Settings with existing restrictionname', async () => {
-        const response = await supertest(app).patch("/settings").send({restrictionName: "real"}).set('Cookie', ['token=token_existing']);
-        expect(response.statusCode).toBe(200)
+        const response = await supertest(app).patch("/settings").send({restrictionName: "real", strongness: 2}).set('Cookie', ['token=token_existing']);
         expect(response.body).toStrictEqual({})
+        expect(response.statusCode).toBe(200)
     })
 })
 

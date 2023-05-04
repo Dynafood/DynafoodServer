@@ -1,20 +1,26 @@
 import { DatabaseInterface, init_db } from "../../../../server_config"
 import { JsonObject } from "swagger-ui-express";
-import { createUser, deleteUser, getUser, setPasswordResetToken, createUserOAuth, getPasswordResetToken } from "./mock_user";
+import { createUser, deleteUser, getUser, setPasswordResetToken, createUserOAuth, getPasswordResetToken, setEmailConfirmed, getEmailConfirmed } from "./mock_user";
 import { createNewFeedback } from "./mock_feedback";
 import { updateHistory, getElements, deleteElementFromHistory } from "./mock_history";
 import { insert, getCountryCode, getTrendingGlobal, getTrendingLocal} from "./mock_trendingProduct"
-import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, updateSettings, userHasRestriction } from "./mock_settings";
+import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, getAllSettings, updateSettings, userHasRestriction } from "./mock_settings";
 import { updatePassword } from "./mock_password"
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingList, updateShoppingListItem } from "./mock_shoppinglist"
 import { QueryResultRow } from "pg";
 import {getAllergenbyName} from "./mock_search";
 import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from "./mock_product";
-import { getEmailConfirmed, setEmailConfirmed } from "../../../../src/modules/db/userManagement";
 
-
+const directQuery = (quer: string) => {
+    return new Promise((resolve, reject) => {
+        resolve({rowCount: 1, rows: []})
+    })
+}
 
 const mock_db: DatabaseInterface = {
+    Query: {
+        query: directQuery
+    },
     ShoppingList: {
         createShoppingList: createShoppingList,
         createShoppingListItem: createShoppingListItem,
@@ -50,6 +56,7 @@ const mock_db: DatabaseInterface = {
         createSetting: createSettings,
         deleteAlertSetting: deleteSettings,
         getAlertSettings: getSettings,
+        getAllSettings: getAllSettings,
         getRestrictionIdByName: getRestrictionIdByName,
         updateAlertSetting: updateSettings,
         userHasRestriction: userHasRestriction

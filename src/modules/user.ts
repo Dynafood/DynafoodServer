@@ -72,8 +72,8 @@ export const createUser = async (req: Request, res: Response) => {
         res.cookie('token', token, {
             httpOnly: true
         });
-        res.status(200).json(token);
         await sendVerificationEmail("", req.body.email);
+        res.status(200).json(token);
         return;
     } catch (error: any) {
         res.status(400).send({ Error: 'Unable to create new User.', Details: `${error.stack}` });

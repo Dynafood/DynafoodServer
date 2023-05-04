@@ -8,6 +8,10 @@ export const getRestrictionIdByName = async (restrictionName: string) : Promise<
     });
 }
 
+export const getAllSettings = async ()  : Promise<Array<QueryResultRow>> => {
+    throw new Error("ErrorMock")
+}
+
 export const createSettings = async (alertactivation: string, userid: string, restrictionid: string) : Promise<void> => {
     throw new Error("ErrorMock")
 };

@@ -4,7 +4,7 @@ import { JsonObject } from "swagger-ui-express";
 import { createNewFeedback } from "./mock_feedback";
 import { deleteElementFromHistory, getElements, updateHistory } from "./mock_history";
 import { updatePassword } from "./mock_password";
-import { createSettings, deleteSettings, getSettings, getRestrictionIdByName, updateSettings, userHasRestriction } from "./mock_settings";
+import { createSettings, deleteSettings, getSettings, getRestrictionIdByName, updateSettings, userHasRestriction, getAllSettings } from "./mock_settings";
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, updateShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingList } from "./mock_shoppinglist";
 import { getTrendingGlobal, getTrendingLocal, insert, getCountryCode } from "./mock_trending";
 import { createUser, createUserOAuth, deleteUser, getPasswordResetToken, setPasswordResetToken } from "./mock_user";
@@ -18,6 +18,9 @@ export const getUser = async (userid: string | null = null, email: string | null
 
 
 const mock_db: DatabaseInterface = {
+    Query: {
+        query: (text: string) => {return new Promise(() => {})}
+    },
     ShoppingList: {
         createShoppingList: createShoppingList,
         createShoppingListItem: createShoppingListItem,
@@ -50,6 +53,7 @@ const mock_db: DatabaseInterface = {
         getEmailConfirmed: getEmailConfirmed,
     },
     Settings: {
+        getAllSettings: getAllSettings,
         createSetting: createSettings,
         deleteAlertSetting: deleteSettings,
         getAlertSettings: getSettings,

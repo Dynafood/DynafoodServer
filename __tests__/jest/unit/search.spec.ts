@@ -39,11 +39,11 @@ describe('check search products route', () => {
 })
 
 describe('check search route for allergens', () => {
-    test ('valid milk search ge', async () => {
+    test ('valid milk search de', async () => {
         const response = await supertest(app).get("/searchAllergen")
             .query({
                 name: 'milk',
-                language: 'ge'
+                language: 'de'
             }).send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(200)
         expect(response.body).toStrictEqual(["I milk your mom"]);
