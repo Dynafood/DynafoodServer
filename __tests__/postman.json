@@ -3762,7 +3762,7 @@
 							"    pm.expect(jsonData[\"Details\"]).to.contain(\"Missing allergen name\");\r",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript".
 					}
 				}
 			],

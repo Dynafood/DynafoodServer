@@ -3,21 +3,15 @@ import { Request, Response } from 'express';
 import { JsonObject } from 'swagger-ui-express';
 import { database } from '../../server_config';
 import { translate_ingredient, translate_nutriment } from './translation/translation';
-import { EcoScoreInterface } from './algorithm';
+import { EcoScoreInterface, Product, calculate_score } from './algorithm';
 import { checkInputBeforeSqlQuery } from './db/scripts';
 import { QueryResult } from 'pg';
 
 const checkAlergenAlert = async (userID: string, barcode: string, response: JsonObject) => {
-    let alerts: { [key: string]: null | boolean } = {
-        "vegan": true,
-        "vegetarian": true
-    }
-
-    let query = `SELECT r.category_name FROM enduser e 
+    let query = `SELECT r.category_name, er.strongness FROM enduser e 
     JOIN enduser_restriction er ON er.enduserid = e.enduserid
     JOIN own_restriction r ON r.restrictionID = er.restrictionid
 	WHERE r.category_name in ('vegan', 'vegetarian');`;
-    console.log(query);
     let preference_response: QueryResult = await database.Query.query(query);
 
 
@@ -39,10 +33,16 @@ const checkAlergenAlert = async (userID: string, barcode: string, response: Json
         //check for vegan/vegetarian
         for (let row of preference_response.rows) {
             if (ingredients[i][row.category_name] == false) {
-                response[row.category_name + "_alert"] = true
+                response[row.category_name] = false
+                if (row.strongness != 0) {
+                    response[row.category_name + "_alert"] = true
+                }
             }
-            if (ingredients[i][row.category_name] == null && alerts[row.category_name]) {
-                alerts[row.category_name] = null
+            if (ingredients[i][row.category_name] == null && response[row.category_name] == true) {
+                response[row.category_name] = null
+                if (row.strongness != 0) {
+                    response[row.category_name + "_alert"] = null
+                }
             }
         }
     }
@@ -304,22 +304,25 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
         const userID: string = res.locals.user.userid;
         const language: string = <string>(req.query.language || 'en');
 
-        const response : JsonObject = {
-            name: null,
+        const response : Product = {
+            name: "null",
             keywords: [],
             allergens: [],
             categories: [],
             qualities: [],
             warings: [],
             ecoscoreData: null,
-            packing: [],
+            packing: "",
             images: "",
-            ingredients: [],
-            nutriments_g_pro_100g: [],
-            nutriments_scores: [],
+            ingredients: {vegan: null, vegetarian: null, ingredients: []},
+            nutriments_g_pro_100g: null,
+            nutriments_scores: null,
             vegetarian_alert: false,
             vegan_alert: false,
             alergen_alert: false,
+            vegan: true,
+            vegetarian: true,
+            score: 0
         };
         const fields: string = 'generic_name,_keywords,allergens_hierarchy,categories,data_quality_tags,data_quality_warnings_tags,packaging,product_name,ecoscore_score,ecoscore_data,ecoscore_grade,image_front_url,image_small_url,nutriments,nutriscore_data,nutriscore_grade,ingredients';
         const url: string = `https://world.openfoodfacts.org/api/2/product/${req.params.barcode}.json?fields=${fields}`;
@@ -332,12 +335,13 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             parseProductFromOFF(product, response, userID, language);
         } else {
             await parseProductFromDB(req.params.barcode, response, userID, language);
-            if (response.name == null) {
+            if (response.name == "null") {
                 res.status(204).send({ response: 'Product not found' });
                 return;
             }
         }
         await checkAlergenAlert(userID, req.params.barcode, response)
+        await calculate_score(response, userID)
         await database.History.updateHistory(userID, req.params.barcode, response);
         await database.TrendingProducts.insert(userID, req.params.barcode, response.name, response.images);
         res.status(200).send(response);
