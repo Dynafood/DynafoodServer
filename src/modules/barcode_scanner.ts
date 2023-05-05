@@ -16,7 +16,8 @@ const checkAlergenAlert = async (userID: string, barcode: string, response: Json
     let query = `SELECT r.category_name FROM enduser e 
     JOIN enduser_restriction er ON er.enduserid = e.enduserid
     JOIN own_restriction r ON r.restrictionID = er.restrictionid
-	WHERE r.category_name in ('vegan', 'vegetarian')`;
+	WHERE r.category_name in ('vegan', 'vegetarian');`;
+    console.log(query);
     let preference_response: QueryResult = await database.Query.query(query);
 
 
@@ -38,7 +39,6 @@ const checkAlergenAlert = async (userID: string, barcode: string, response: Json
         //check for vegan/vegetarian
         for (let row of preference_response.rows) {
             if (ingredients[i][row.category_name] == false) {
-                console.log(ingredients[i], row.category_name)
                 response[row.category_name + "_alert"] = true
             }
             if (ingredients[i][row.category_name] == null && alerts[row.category_name]) {
@@ -47,6 +47,10 @@ const checkAlergenAlert = async (userID: string, barcode: string, response: Json
         }
     }
     query += ");"
+    if (query.endsWith("();")) {
+        return
+    }
+
     let alert_response: QueryResult = await database.Query.query(query);
     if (alert_response.rowCount > 0) {
         response.alergen_alert = true
