@@ -126,7 +126,12 @@ const getNutriments = (nutriments: JsonObject, language: string): JsonObject | n
             'vitamin B': { name: translate_nutriment('vitamin B', language), score: nutriments['vitamin-b_100g'] },
             'vitamin C': { name: translate_nutriment('vitamin C', language), score: nutriments['vitamin-c_100g'] },
             'vitamin D': { name: translate_nutriment('vitamin D', language), score: nutriments['vitamin-d_100g'] },
-            'vitamin E': { name: translate_nutriment('vitamin E', language), score: nutriments['vitamin-e_100g'] }
+            'vitamin E': { name: translate_nutriment('vitamin E', language), score: nutriments['vitamin-e_100g'] },
+            'fruits': {name: 'fruits', score: nutriments['fruits-vegetables-nuts-estimate-from-ingredients_100g'] },
+            'is_water': {name: 'is_water', score: nutriments['is_water'] },
+            'is_beverage': {name: 'is_beverage', score: nutriments['is_beverage'] },
+            'is_fat': {name: 'is_fat', score: nutriments['is_fat'] },
+            'is_cheese': {name: 'is_cheese', score: nutriments['is_cheese'] }
         };
     }
     return null;
@@ -158,6 +163,7 @@ const getNutrimentsScore = (data: JsonObject): {
             total_grade: data.nutriscore_grade
         };
         if (ret.negative_points && ret.positive_points) { ret.total_score = ret.positive_points - ret.negative_points; }
+        return ret
     }
     return {
         energy_points: null,
