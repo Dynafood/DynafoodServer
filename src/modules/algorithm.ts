@@ -548,54 +548,67 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                         }
                         product.nutriments_scores.total_score = nutriscore_a - nutriscore_c
                     }
-                    let nu_score =  product.nutriments_scores.total_score
-                    if (is_drink) {
-                        switch (true) {
-                            case nu_score < 1 || nutriments.is_water:
-                                product.nutriments_scores.total_grade = 'a'
-                                break;
-                            case nu_score < 2:
-                                product.nutriments_scores.total_grade = 'b'
-                                break;
-                            case nu_score < 6:
-                                product.nutriments_scores.total_grade = 'c'
-                                break;
-                            case nu_score < 9:
-                                product.nutriments_scores.total_grade = 'd'
-                                break;
-                            case nu_score >= 9:
-                                product.nutriments_scores.total_grade = 'e'
-                                break;
-                            default: 
-                                break;
-                        }
-                    } else {
-                        switch (true) {
-                            case nu_score < 0:
-                                product.nutriments_scores.total_grade = 'a'
-                                break;
-                            case nu_score < 3:
-                                product.nutriments_scores.total_grade = 'b'
-                                break;
-                            case nu_score < 10:
-                                product.nutriments_scores.total_grade = 'c'
-                                break;
-                            case nu_score < 19:
-                                product.nutriments_scores.total_grade = 'd'
-                                break;
-                            case nu_score >= 19:
-                                product.nutriments_scores.total_grade = 'e'
-                                break;
-                            default: 
-                                break;
-                        }
+                }
+            } else {
+                product.nutriments_scores = {
+                    energy_points: null ,
+                    fiber_points: null ,
+                    negative_points: nutriscore_a ,
+                    positive_points: nutriscore_c,
+                    proteins_points: null ,
+                    saturated_fat_points: null ,
+                    sodium_points: null ,
+                    sugars_points: null ,
+                    total_grade: null,
+                    total_score: nutriscore_a - nutriscore_c
+                }
+            } 
+            if (product.nutriments_scores.total_score) {
+                let nu_score =  product.nutriments_scores.total_score
+                if (is_drink) {
+                    switch (true) {
+                        case nu_score < 1 || nutriments.is_water:
+                            product.nutriments_scores.total_grade = 'a'
+                            break;
+                        case nu_score < 2:
+                            product.nutriments_scores.total_grade = 'b'
+                            break;
+                        case nu_score < 6:
+                            product.nutriments_scores.total_grade = 'c'
+                            break;
+                        case nu_score < 9:
+                            product.nutriments_scores.total_grade = 'd'
+                            break;
+                        case nu_score >= 9:
+                            product.nutriments_scores.total_grade = 'e'
+                            break;
+                        default: 
+                            break;
+                    }
+                } else {
+                    switch (true) {
+                        case nu_score < 0:
+                            product.nutriments_scores.total_grade = 'a'
+                            break;
+                        case nu_score < 3:
+                            product.nutriments_scores.total_grade = 'b'
+                            break;
+                        case nu_score < 10:
+                            product.nutriments_scores.total_grade = 'c'
+                            break;
+                        case nu_score < 19:
+                            product.nutriments_scores.total_grade = 'd'
+                            break;
+                        case nu_score >= 19:
+                            product.nutriments_scores.total_grade = 'e'
+                            break;
+                        default: 
+                            break;
                     }
                 }
             }
             score -= (nutriscore_a - nutriscore_c)
             max_score += max_nutri_score
-            console.log(max_nutri_score)
-            console.log(nutriscore_a)
         }
         
 

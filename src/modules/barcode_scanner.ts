@@ -301,7 +301,12 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
         'vitamin B': { name: translate_nutriment('vitamin B', language), score: product.vitamin_b },
         'vitamin C': { name: translate_nutriment('vitamin C', language), score: product.vitamin_c },
         'vitamin D': { name: translate_nutriment('vitamin D', language), score: product.vitamin_d },
-        'vitamin E': { name: translate_nutriment('vitamin E', language), score: product.vitamin_e }
+        'vitamin E': { name: translate_nutriment('vitamin E', language), score: product.vitamin_e },
+        'fruits': {name: 'fruits', score: 0 },
+        'is_water': {name: 'is_water', score: product['is_water'] },
+        'is_beverage': {name: 'is_beverage', score: product['is_beverage'] },
+        'is_fat': {name: 'is_fat', score: product['is_fat'] },
+        'is_cheese': {name: 'is_cheese', score: product['is_cheese'] }
     };
 }
 
