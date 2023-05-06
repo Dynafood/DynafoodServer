@@ -613,6 +613,34 @@ export const calculate_score = async (product: Product, enduserid: string) => {
         
 
         //ecoscore implementation
+        if (product.ecoscoreData?.eco_grade != null) {
+            max_score += 20
+            switch (product.ecoscoreData.eco_grade) {
+                case 'a':
+                case '1':
+                    score += 20;
+                    break;
+                case 'b':
+                case '2':
+                    score += 15;
+                    break;
+                case 'c':
+                case '3':
+                    score += 10;
+                    break;
+                case 'd':
+                case '4':
+                    score += 5;
+                    break;
+                case 'e':
+                case '5':
+                    score += 0;
+                    break;
+                default:
+                    console.log(product.ecoscoreData.eco_grade)
+                    break;
+            }
+        }
 
         product.score = (score/max_score) * 100
         if (product.score < 1) {
