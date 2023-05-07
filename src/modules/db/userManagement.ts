@@ -64,7 +64,7 @@ export const getUser = async (userid: string | null = null, email: string | null
 export const getPasswordResetToken = async (email: string) : Promise<QueryResultRow | undefined>  => {
     const query: string = `
     SELECT password_reset_token FROM EndUser
-    WHERE email = lower('${checkInputBeforeSqlQuery(email)}');
+    WHERE lower(email) = lower('${checkInputBeforeSqlQuery(email)}');
     `;
     const result: QueryResult = await db_adm_conn.query(query);
     return result.rows[0];
@@ -91,7 +91,7 @@ export const setEmailConfirmed = async (email: string) : Promise<QueryResultRow>
     const response: QueryResult = await db_adm_conn.query(`
         UPDATE enduser
         SET emailConfirmed = true
-        WHERE email = '${checkInputBeforeSqlQuery(email)}'
+        WHERE lower(email) = lower('${checkInputBeforeSqlQuery(email)}')
     `);
     return response.rows[0];
 }
@@ -99,7 +99,7 @@ export const setEmailConfirmed = async (email: string) : Promise<QueryResultRow>
 export const getEmailConfirmed = async (email: string) : Promise<QueryResultRow> => {
     const response: QueryResult = await db_adm_conn.query(`
         SELECT emailConfirmed FROM enduser
-        WHERE email = '${checkInputBeforeSqlQuery(email)}'
+        WHERE lower(email) = lower('${checkInputBeforeSqlQuery(email)}')
     `);
     return response.rows[0];
 }
