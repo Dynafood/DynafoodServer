@@ -11,7 +11,7 @@ const checkAlergenAlert = async (userID: string, barcode: string, response: Json
     let query = `SELECT r.category_name, er.strongness FROM enduser e 
     JOIN enduser_restriction er ON er.enduserid = e.enduserid
     JOIN own_restriction r ON r.restrictionID = er.restrictionid
-	WHERE r.category_name in ('vegan', 'vegetarian');`;
+	WHERE r.category_name in ('vegan', 'vegetarian') and er.strongness != 0;`;
     let preference_response: QueryResult = await database.Query.query(query);
 
 
@@ -31,20 +31,20 @@ const checkAlergenAlert = async (userID: string, barcode: string, response: Json
         }
 
         //check for vegan/vegetarian
-        for (let row of preference_response.rows) {
-            if (ingredients[i][row.category_name] == false) {
-                response[row.category_name] = false
-                if (row.strongness != 0) {
-                    response[row.category_name + "_alert"] = true
-                }
-            }
-            if (ingredients[i][row.category_name] == null && response[row.category_name] == true) {
-                response[row.category_name] = null
-                if (row.strongness != 0) {
-                    response[row.category_name + "_alert"] = null
-                }
-            }
-        }
+        // for (let row of preference_response.rows) {
+        //     if (ingredients[i][row.category_name] == false) {
+        //         response[row.category_name] = false
+        //         if (row.strongness != 0) {
+        //             response[row.category_name + "_alert"] = true
+        //         }
+        //     }
+        //     if (ingredients[i][row.category_name] == null && response[row.category_name] == true) {
+        //         response[row.category_name] = null
+        //         if (row.strongness != 0) {
+        //             response[row.category_name + "_alert"] = null
+        //         }
+        //     }
+        // }
     }
     query += ");"
     if (query.endsWith("();")) {
@@ -55,6 +55,25 @@ const checkAlergenAlert = async (userID: string, barcode: string, response: Json
     if (alert_response.rowCount > 0) {
         response.alergen_alert = true
     }
+
+    if (preference_response.rows.filter((row) => row.category_name == "vegan").length > 0) {
+        if (response.ingredients.vegan == false) {
+            response.vegan_alert = true
+        }
+        if (response.ingredients.vegan == null) {
+            response.vegan_alert = null
+        } 
+    }
+    if (preference_response.rows.filter((row) => row.category_name == "vegetarian").length > 0) {
+        if (response.ingredients.vegetarian == false) {
+            response.vegetarian_alert = true
+        }
+        if (response.ingredients.vegetarian == null) {
+            response.vegetarian_alert = null
+        } 
+    }
+    response.vegan = response.ingredients.vegan
+    response.vegetarian = response.ingredients.vegetarian
 } 
 
 const getInnerIngredients = (ingredient: JsonObject, language: string): {vegan: boolean | null, vegetarian: boolean | null, ingredients: Array<JsonObject>} => {
@@ -62,13 +81,13 @@ const getInnerIngredients = (ingredient: JsonObject, language: string): {vegan: 
     let vegan : boolean | null = true;
     let vegetarian : boolean | null = true;
     if (typeof ingredient.ingredients !== 'undefined' && ingredient.ingredients !== null) {
-        for (let i = 0; i < ingredient.ingredients.length; i++) {
-            const name = translate_ingredient(ingredient.ingredients[i].id, language);
+        for (const element of ingredient.ingredients) {
+            const name = translate_ingredient(element.id, language);
             const tmp = {
-                name: name || ingredient.ingredients[i].text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match: string) => match.toUpperCase()),
-                vegan: ingredient.ingredients[i].vegan == "yes" ? true : ingredient.ingredients[i].vegan,
-                vegetarian: ingredient.ingredients[i].vegetarian == "yes" ? true : ingredient.ingredients[i].vegetarian,
-                ingredients: getInnerIngredients(ingredient.ingredients[i], language)
+                name: name || element.text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match: string) => match.toUpperCase()),
+                vegan: element.vegan == "yes" ? true : element.vegan,
+                vegetarian: element.vegetarian == "yes" ? true : element.vegetarian,
+                ingredients: getInnerIngredients(element, language)
             };
             if (tmp.vegan == false || tmp.vegan == "no") {
                 vegan = false;
@@ -126,7 +145,12 @@ const getNutriments = (nutriments: JsonObject, language: string): JsonObject | n
             'vitamin B': { name: translate_nutriment('vitamin B', language), score: nutriments['vitamin-b_100g'] },
             'vitamin C': { name: translate_nutriment('vitamin C', language), score: nutriments['vitamin-c_100g'] },
             'vitamin D': { name: translate_nutriment('vitamin D', language), score: nutriments['vitamin-d_100g'] },
-            'vitamin E': { name: translate_nutriment('vitamin E', language), score: nutriments['vitamin-e_100g'] }
+            'vitamin E': { name: translate_nutriment('vitamin E', language), score: nutriments['vitamin-e_100g'] },
+            'fruits': {name: 'fruits', score: nutriments['fruits-vegetables-nuts-estimate-from-ingredients_100g'] },
+            'is_water': {name: 'is_water', score: nutriments['is_water'] },
+            'is_beverage': {name: 'is_beverage', score: nutriments['is_beverage'] },
+            'is_fat': {name: 'is_fat', score: nutriments['is_fat'] },
+            'is_cheese': {name: 'is_cheese', score: nutriments['is_cheese'] }
         };
     }
     return null;
@@ -158,6 +182,7 @@ const getNutrimentsScore = (data: JsonObject): {
             total_grade: data.nutriscore_grade
         };
         if (ret.negative_points && ret.positive_points) { ret.total_score = ret.positive_points - ret.negative_points; }
+        return ret
     }
     return {
         energy_points: null,
@@ -295,7 +320,12 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
         'vitamin B': { name: translate_nutriment('vitamin B', language), score: product.vitamin_b },
         'vitamin C': { name: translate_nutriment('vitamin C', language), score: product.vitamin_c },
         'vitamin D': { name: translate_nutriment('vitamin D', language), score: product.vitamin_d },
-        'vitamin E': { name: translate_nutriment('vitamin E', language), score: product.vitamin_e }
+        'vitamin E': { name: translate_nutriment('vitamin E', language), score: product.vitamin_e },
+        'fruits': {name: 'fruits', score: 0 },
+        'is_water': {name: 'is_water', score: product['is_water'] },
+        'is_beverage': {name: 'is_beverage', score: product['is_beverage'] },
+        'is_fat': {name: 'is_fat', score: product['is_fat'] },
+        'is_cheese': {name: 'is_cheese', score: product['is_cheese'] }
     };
 }
 
