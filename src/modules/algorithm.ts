@@ -646,5 +646,8 @@ export const calculate_score = async (product: Product, enduserid: string) => {
         if (product.score < 1) {
             product.score = 1
         }
+        if (product.score > 100) {
+            product.score = 100
+        }
         product.score = Math.round(product.score)
 }
