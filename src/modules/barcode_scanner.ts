@@ -11,7 +11,8 @@ const checkAlergenAlert = async (userID: string, barcode: string, response: Json
     let query = `SELECT r.category_name, er.strongness FROM enduser e 
     JOIN enduser_restriction er ON er.enduserid = e.enduserid
     JOIN own_restriction r ON r.restrictionID = er.restrictionid
-	WHERE r.category_name in ('vegan', 'vegetarian') and er.strongness != 0;`;
+	WHERE r.category_name in ('vegan', 'vegetarian') and er.strongness != 0
+    AND er.enduserid = '${checkInputBeforeSqlQuery(userID)}';`;
     let preference_response: QueryResult = await database.Query.query(query);
 
 
@@ -46,7 +47,7 @@ const checkAlergenAlert = async (userID: string, barcode: string, response: Json
         //     }
         // }
     }
-    query += ");"
+    query += `) AND er.enduserid = '${checkInputBeforeSqlQuery(userID)}';`
     if (query.endsWith("();")) {
         return
     }

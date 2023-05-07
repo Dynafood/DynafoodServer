@@ -33,7 +33,7 @@ export const getAlertSettings = async (userid: string) : Promise<Array<QueryResu
 export const getAllSettings = async () : Promise<Array<QueryResultRow>> => {
     const result: QueryResult = await db_adm_conn.query(`
     SELECT R.category_name as restrictionName
-    FROM own_restriction R;`);
+    FROM own_restriction R WHERE category_name NOT IN ('vegan', 'vegetarian');`);
     return result.rows;
 };
 
