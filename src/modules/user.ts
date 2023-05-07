@@ -120,7 +120,7 @@ export const deleteUser = async (req: Request, res: Response) : Promise<void> =>
 
 export const getToken = async (req: Request, res: Response) : Promise<void> => {
     try {
-        const email: string = <string> req.query.email;
+        const email: string = (<string> req.query.email).toLowerCase();
         const password: string = <string>req.query.password;
 
         const user : Array<QueryResultRow> = await database.User.getUser(null, email);
