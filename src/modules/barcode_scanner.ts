@@ -22,7 +22,7 @@ const checkAlergenAlert = async (userID: string, barcode: string, response: Json
     JOIN own_restriction r ON r.restrictionID = er.restrictionid
     JOIN ingredient_restriction ir ON ir.restriction_id = r.restrictionID
     JOIN ingredient i ON i.ingredientid = ir.ingredient_id
-    WHERE lower(i.eng_name) IN (`
+    WHERE er.enduserid = '${checkInputBeforeSqlQuery(userID)}' AND lower(i.eng_name) IN (`
 
     for (let i = 0; i < ingredients.length; i++) {
         //generate query
@@ -47,7 +47,7 @@ const checkAlergenAlert = async (userID: string, barcode: string, response: Json
         //     }
         // }
     }
-    query += `) AND er.enduserid = '${checkInputBeforeSqlQuery(userID)}';`
+    query += `);`
     if (query.endsWith("();")) {
         return
     }

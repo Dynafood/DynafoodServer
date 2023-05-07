@@ -611,6 +611,10 @@ export const calculate_score = async (product: Product, enduserid: string) => {
             max_score += max_nutri_score
         }
         
+        if (product.nutriments_g_pro_100g?.is_water) {
+            score = max_score
+        }
+        
 
         //ecoscore implementation
         if (product.ecoscoreData?.eco_grade != null) {
