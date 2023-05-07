@@ -298,7 +298,6 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
             vegetarian = false
         }
     });
-    response.vegetarian_alert = vegetarian
     response.ingredients.vegan = vegan
     response.ingredients.vegetarian = vegetarian
 
