@@ -1,5 +1,5 @@
 import { mail_sender } from '../../server_config';
-
+import { Request, Response } from 'express';
 const reset_password_template_id: string = 'd-c075a6859e224245aa76f0300e56f66b';
 const verification_template_id: string ='d-5fea6667ddf344bcbe00168e1d7ad728';
 const sender_email: string = 'info.dynafood@gmail.com';
@@ -42,6 +42,73 @@ export const sendVerificationEmail = async (name: string, email: string) => {
     }
     console.log(`verification email was sent to ${email}`);
 }
+
+
+export const sendInvalidDataEmail = async (req : Request, res: Response) : Promise<void> => {
+    await mail_sender.send({
+        from: {
+            email: sender_email,
+            name: 'DynaFood'
+        },
+        to: {
+            email: "pol-antoine.loiseau@epitech.eu",
+            name: "Polo"
+        },
+        subject: "Invalid data on product",
+        html: "The product "+ req.body.productname + " got invalid data on " + req.body.productdesc + ". Barcode : " + req.body.barcode
+    });
+    console.log(`email was sent to info.dynafood@gmail.com for an invalid data`);
+    res.status(200).send({response : "Email Sent"})
+};
+
+export const sendInvalidDataEmailBis = async (barcode : string, productname : string, productdesc : string) : Promise<void> => {
+    await mail_sender.send({
+        from: {
+            email: sender_email,
+            name: 'DynaFood'
+        },
+        to: {
+            email: "pol-antoine.loiseau@epitech.eu",
+            name: "Polo"
+        },
+        subject: "Invalid data on product",
+        html: "The product "+ productname + " got invalid data on " + productdesc + ". Barcode :" + barcode
+    });
+    console.log(`email was sent to info.dynafood@gmail.com for an invalid data`);
+};
+
+export const sendMissingProductEmail = async (req : Request, res: Response) : Promise<void> => {
+    await mail_sender.send({
+        from: {
+            email: sender_email,
+            name: 'DynaFood'
+        },
+        to: {
+            email: "pol-antoine.loiseau@epitech.eu",
+            name: "Polo"
+        },
+        subject: "missing product",
+        html: "The product "+ req.body.productname + " is missing, Barcode : " + req.body.barcode
+    });
+    console.log(`email was sent to info.dynafood@gmail.com for an missing product`);
+    res.status(200).send({response : "Email Sent"})
+};
+
+export const sendMissingProductEmailBis = async (barcode : string, productname : string) => {
+    await mail_sender.send({
+        from: {
+            email: sender_email,
+            name: 'DynaFood'
+        },
+        to: {
+            email: "pol-antoine.loiseau@epitech.eu",
+            name: "Polo"
+        },
+        subject: "missing product",
+        html: "The product "+ productname + " is missing, Barcode : " + barcode
+    });
+    console.log(`email was sent to info.dynafood@gmail.com for an missing product`);
+};
 
 // export const sendVerifyEmail = async (name: string, email: string) => {
 //     mail_sender.send({

@@ -50,6 +50,21 @@ export const getSettings = async (req: Request, res: Response) : Promise<void> =
     }
 };
 
+export const getSettings2 = async (userID : string) : Promise<Array<string>> => {
+    const userSettings : Array<QueryResultRow> = await database.Settings.getAlertSettings(userID);
+    const userSettingsString : Array<string> = [];
+    console.log(userSettings)
+    if (userSettings.length === 0) {
+        return [];
+    }
+    userSettings.forEach(element => {
+        if (element.alertactivation == true)
+            userSettingsString.push(element.restrictionname.toLowerCase());
+    })
+    console.log(userSettingsString)
+    return userSettingsString;
+};
+
 export const getAllSettings = async (req: Request, res: Response) : Promise<void> => {
     try {
         const userSettings : Array<QueryResultRow> = await database.Settings.getAllSettings();
