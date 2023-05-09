@@ -11,5 +11,5 @@ router.get('/invalidDataMail', sendInvalidDataEmail);
 
 router.get('/invalidproductDB/', secureRouteMiddleware, getElementsFromInvalidData);
 router.delete('/invalidproductDBDel/:elementID', secureRouteMiddleware, deleteElementFromInvalidData);
-router.get('/invalidproductDBInsert/', secureRouteMiddleware, InsertElementsInvalidData);
+router.post('/invalidproductDBInsert/', secureRouteMiddleware, InsertElementsInvalidData);
 export default router;

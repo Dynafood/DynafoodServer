@@ -79,6 +79,6 @@ router.get('/missingproductDB/', secureRouteMiddleware, getElementsFromMissingPr
  */
 router.delete('/missingproductDBDel/:elementID', secureRouteMiddleware, deleteElementFromMissingProduct)
 
-router.get('/missingproductDBInsert/', secureRouteMiddleware, InsertElementsInMissingProduct)
+router.post('/missingproductDBInsert/', secureRouteMiddleware, InsertElementsInMissingProduct)
 
 export default router;
