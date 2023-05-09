@@ -15,6 +15,10 @@ import feedbackRouter from './src/routes/feedbackRoutes'
 import searchRouter from './src/routes/searchRoutes'
 import trendingRouter from './src/routes/trendingProducts'
 import shoppingListRouter from './src/routes/shoppingListRoutes';
+import halalRouter from './src/routes/halalRoutes';
+import missingProductRouter from './src/routes/missingProductRoutes';
+import pictureRouter from './src/routes/pictureRoutes'
+import invalidDataRouter from './src/routes/invalidDataRoutes';
 import oauthRouter from './src/routes/oauthRoutes';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
@@ -160,6 +164,10 @@ app.use(feedbackRouter)
 app.use(searchRouter)
 app.use(trendingRouter)
 app.use(shoppingListRouter)
+app.use(invalidDataRouter)
+app.use(missingProductRouter)
+app.use(pictureRouter)
+app.use(halalRouter)
 app.use(
     session({
       overwrite: false,
