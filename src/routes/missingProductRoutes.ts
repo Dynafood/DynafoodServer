@@ -1,7 +1,8 @@
 import { Router } from 'express'
 const router: Router = Router();
+import multer from "multer";
 import { urlencoded } from 'express';
-
+const upload = multer({ dest: "uploads/" });
 import { getElementsFromMissingProduct, deleteElementFromMissingProduct, InsertElementsInMissingProduct } from '../modules/db/missingProductManagement'
 import { secureRouteMiddleware } from '../middleware/security/secureRouting'
 
@@ -79,6 +80,7 @@ router.get('/missingproductDB/', secureRouteMiddleware, getElementsFromMissingPr
  */
 router.delete('/missingproductDBDel/:elementID', secureRouteMiddleware, deleteElementFromMissingProduct)
 
-router.post('/missingproductDBInsert/', secureRouteMiddleware, InsertElementsInMissingProduct)
+router.post('/missingproductDBInsert/', secureRouteMiddleware, upload.array("files"), InsertElementsInMissingProduct)
+router.post('/upload', secureRouteMiddleware, upload.array("files"), InsertElementsInMissingProduct)
 
 export default router;

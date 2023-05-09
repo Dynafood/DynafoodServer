@@ -4,24 +4,24 @@ import { checkInputBeforeSqlQuery } from './scripts';
 import { Request, Response, NextFunction } from 'express'
 import { JsonObject } from "swagger-ui-express";
 import {sendMissingProductEmailBis} from "../../modules/email"
-import {uploadImageSub} from "../../modules/db/pictureManagement"
+import {uploadImages} from "../../modules/db/pictureManagement"
 
-
-export const updateMissingProduct = async (userID: string, barcode: string, product: string, productImage: string) : Promise<void> => {
-    const response : QueryResult = await db_adm_conn.query(`
-    SELECT COUNT (missingProductId) 
-    FROM MissingProduct
-    WHERE barcode = '${checkInputBeforeSqlQuery(barcode)}'
-        AND enduserId = '${checkInputBeforeSqlQuery(userID)}';`)
-    if (response.rows[0].count == 1) {
-        await updateMissingProductElement(userID, barcode, product, productImage)
-    } else { 
-        if (response.rows[0].count > 1) {
-            await cleanDublicateMissingProduct(userID, barcode)
-        }
-        await insertIntoMissingProduct(userID, barcode, product, productImage)
-    }
-}
+//even when we have already a product in our db we might want to double check everything
+// export const updateMissingProduct = async (userID: string, barcode: string, product: string, files: any) : Promise<void> => {
+//     const response : QueryResult = await db_adm_conn.query(`
+//     SELECT COUNT (missingProductId) 
+//     FROM MissingProduct
+//     WHERE barcode = '${checkInputBeforeSqlQuery(barcode)}'
+//         AND enduserId = '${checkInputBeforeSqlQuery(userID)}';`)
+//     if (response.rows[0].count == 1) {
+//         await updateMissingProductElement(userID, barcode, product, productImage)
+//     } else { 
+//         if (response.rows[0].count > 1) {
+//             await cleanDublicateMissingProduct(userID, barcode)
+//         }
+//         await insertIntoMissingProduct(userID, barcode, product, files)
+//     }
+// }
 
 export const cleanDublicateMissingProduct = async (userID: string, barcode: string) : Promise<void> => {
     let response : QueryResult = await db_adm_conn.query(`
@@ -42,16 +42,18 @@ export const updateMissingProductElement = async (userID: string, barcode: strin
         AND enduserId = '${checkInputBeforeSqlQuery(userID)}';`)
 }
 
-export const insertIntoMissingProduct = async (userID: string, barcode: string, product: string, productImage: string) : Promise<void> => {
+export const insertIntoMissingProduct = async (userID: string, barcode: string, product: string, files: any) : Promise<void> => {
 
     userID = checkInputBeforeSqlQuery(userID);
     barcode = checkInputBeforeSqlQuery(barcode);
     product = checkInputBeforeSqlQuery(product);
-    productImage = await uploadImageSub(productImage);
-    console.log(productImage);
-    await db_adm_conn.query(`
-    INSERT INTO MissingProduct (endUserID, barcode, productName, picture) 
-    VALUES ('${userID}', '${barcode}', '${product}', '${productImage}');`)
+    const imageLinks = await uploadImages(files);
+    imageLinks.forEach(async (imageLink) => {
+        await db_adm_conn.query(`
+        INSERT INTO MissingProduct (endUserID, barcode, productName, picture) 
+        VALUES ('${userID}', '${barcode}', '${product}', '${imageLink}');`)
+    })
+    
 }
 
 export const deleteElementFromMissingProduct = async (req: Request, res: Response) : Promise<void> => {
@@ -75,7 +77,7 @@ export const getElementsFromMissingProduct = async (req: Request, res: Response)
 
 
 export const InsertElementsInMissingProduct = async (req: Request, res: Response) : Promise<void> => {
-    updateMissingProduct(res.locals.user.userid , req.body.barcode , req.body.productname , req.body.productImage)
+    await insertIntoMissingProduct(res.locals.user.userid , req.body.barcode , req.body.productname , req.files)
     sendMissingProductEmailBis(req.body.barcode, req.body.productname)
     res.send("add in DB")
 
