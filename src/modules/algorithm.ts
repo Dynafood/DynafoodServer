@@ -76,7 +76,7 @@ export interface Product {
     } | null,
     vegetarian_alert: boolean | null,
     vegan_alert: boolean | null,
-    alergen_alert: boolean | null,
+    allergen_alert: boolean | null,
     vegan: boolean | null,
     vegetarian: boolean | null,
     score: number
@@ -85,7 +85,7 @@ export interface Product {
 export const calculate_score = async (product: Product, enduserid: string) => {
     let max_score = 0;
     let score = 0;
-    if (product.alergen_alert){
+    if (product.allergen_alert){
         product.score = 1;
         return
     }
