@@ -4,6 +4,7 @@ import { checkInputBeforeSqlQuery } from './scripts';
 import { Request, Response, NextFunction } from 'express'
 import { JsonObject } from "swagger-ui-express";
 import {sendMissingProductEmailBis} from "../../modules/email"
+import {uploadImageSub} from "../../modules/db/pictureManagement"
 
 
 export const updateMissingProduct = async (userID: string, barcode: string, product: string, productImage: string) : Promise<void> => {
@@ -46,7 +47,8 @@ export const insertIntoMissingProduct = async (userID: string, barcode: string, 
     userID = checkInputBeforeSqlQuery(userID);
     barcode = checkInputBeforeSqlQuery(barcode);
     product = checkInputBeforeSqlQuery(product);
-
+    productImage = await uploadImageSub(productImage);
+    console.log(productImage);
     await db_adm_conn.query(`
     INSERT INTO MissingProduct (endUserID, barcode, productName, picture) 
     VALUES ('${userID}', '${barcode}', '${product}', '${productImage}');`)
