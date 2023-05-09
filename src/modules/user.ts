@@ -125,6 +125,11 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
 
         const user : Array<QueryResultRow> = await database.User.getUser(null, email);
 
+        if (user.length === 0) {
+            console.log(`There is no user with the email: ${email}`);
+            res.status(404).send({ Error: `There is no user with the email ${email}` });
+            return;
+        }
         const isEmailConfirmedRow: QueryResultRow = await database.User.getEmailConfirmed(email);
 
         if (isEmailConfirmedRow === undefined) {
@@ -146,11 +151,6 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
 
 
 
-        if (user.length === 0) {
-            console.log(`There is no user with the email: ${email}`);
-            res.status(404).send({ Error: `There is no user with the email ${email}` });
-            return;
-        }
         const correctPassword: boolean = await bcrypt.compare(password, user[0].passcode);
         if (user[0].email === email && correctPassword) {
             const userid : string = user[0].enduserid;
