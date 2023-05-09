@@ -33,5 +33,6 @@ export const uploadImageSub = async (image : any) : Promise<string> => {
 export const uploadImageEnd = async (req: Request, res: Response) : Promise<void> => {
 
     const urltest = await uploadImageSub(req.body.image).then((url) => res.status(200).send(url)).catch((err) => res.status(500).send(err))
+    console.log(urltest)
 }
 
