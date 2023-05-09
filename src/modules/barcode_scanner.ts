@@ -7,7 +7,7 @@ import { EcoScoreInterface, Product, calculate_score } from './algorithm';
 import { checkInputBeforeSqlQuery } from './db/scripts';
 import { QueryResult } from 'pg';
 
-const checkAlergenAlert = async (userID: string, barcode: string, response: JsonObject) => {
+const checkAllergenAlert = async (userID: string, barcode: string, response: JsonObject) => {
     let query = `SELECT r.category_name, er.strongness FROM enduser e 
     JOIN enduser_restriction er ON er.enduserid = e.enduserid
     JOIN own_restriction r ON r.restrictionID = er.restrictionid
@@ -54,7 +54,7 @@ const checkAlergenAlert = async (userID: string, barcode: string, response: Json
 
     let alert_response: QueryResult = await database.Query.query(query);
     if (alert_response.rowCount > 0) {
-        response.alergen_alert = true
+        response.allergen_alert = true
     }
 
     if (preference_response.rows.filter((row) => row.category_name == "vegan").length > 0) {
@@ -359,7 +359,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             nutriments_scores: null,
             vegetarian_alert: false,
             vegan_alert: false,
-            alergen_alert: false,
+            allergen_alert: false,
             vegan: true,
             vegetarian: true,
             score: 0
@@ -380,7 +380,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
                 return;
             }
         }
-        await checkAlergenAlert(userID, req.params.barcode, response)
+        await checkAllergenAlert(userID, req.params.barcode, response)
         await calculate_score(response, userID)
         await database.History.updateHistory(userID, req.params.barcode, response);
         await database.TrendingProducts.insert(userID, req.params.barcode, response.name, response.images);
