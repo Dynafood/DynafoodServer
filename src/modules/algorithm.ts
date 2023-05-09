@@ -57,10 +57,6 @@ export interface Product {
         "vitamin D": nutriment
         "vitamin E": nutriment
         fruits: nutriment
-        'is_water': nutriment
-        'is_beverage': nutriment
-        'is_fat': nutriment
-        'is_cheese': nutriment
     } | null,
     nutriments_scores: {
         energy_points: null | number,
@@ -73,6 +69,10 @@ export interface Product {
         sugars_points: null | number
         total_grade: null | string
         total_score: null | number
+        is_water: null | number
+        is_beverage: null | number
+        is_fat: null | number
+        is_cheese: null | number
     } | null,
     vegetarian_alert: boolean | null,
     vegan_alert: boolean | null,
@@ -134,15 +134,18 @@ export const calculate_score = async (product: Product, enduserid: string) => {
 
     //no implementation of halal
     let nutriments = product.nutriments_g_pro_100g
-
+    let drink_categories = ["drink", "boisson", "juice", "nectar", "getränk", "water", "eau"]
+    let drinking_categories = product.keywords.filter((keyword) => {return (drink_categories.includes(keyword.toLowerCase()))})
+    let water_categories = ["water", "eau", "wasser", "mineralwasser"]
+    let is_water = product.keywords.filter((keyword) => {return (water_categories.includes(keyword.toLowerCase()))}).length > 0
         //nutriscore implementation
         if (nutriments != null) {
             let nutriscore_a = 0
             let nutriscore_c = 0
             let max_nutri_score = 0
-            let drink_categories = ["drink", "boisson", "juice", "nectar", "getränk", "water", "eau"]
-            let drinking_categories = product.keywords.filter((keyword) => {return (drink_categories.includes(keyword.toLowerCase()))})
-            let is_drink = (nutriments.is_beverage.score == 1 || nutriments.is_water.score == 1 || drinking_categories.length > 0)
+            
+
+            let is_drink = (product.nutriments_scores?.is_beverage == 1 || product.nutriments_scores?.is_water == 1 || drinking_categories.length > 0 || is_water == true)
             //nutriscore_a
             if (is_drink) { // its a drink and needs other calculation
                 if ((nutriments?.kcal?.score ?? -1) != -1) {
@@ -323,7 +326,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 let satures = (nutriments?.['saturated fat']?.score ?? 0)
                 max_nutri_score += 10
                 score += 10
-                if (nutriments.is_fat) {
+                if (product.nutriments_scores?.is_fat) {
                     switch (true) {
                         case satures <= 10:
                             nutriscore_a += 0;
@@ -560,14 +563,18 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                     sodium_points: null ,
                     sugars_points: null ,
                     total_grade: null,
-                    total_score: nutriscore_a - nutriscore_c
+                    total_score: nutriscore_a - nutriscore_c,
+                    is_beverage: Number(drinking_categories.length > 0),
+                    is_water: null,
+                    is_cheese: null,
+                    is_fat: null
                 }
             } 
             if (product.nutriments_scores.total_score) {
                 let nu_score =  product.nutriments_scores.total_score
                 if (is_drink) {
                     switch (true) {
-                        case nu_score < 1 || nutriments.is_water:
+                        case nu_score < 1 || product.nutriments_scores.is_water || is_water:
                             product.nutriments_scores.total_grade = 'a'
                             break;
                         case nu_score < 2:
@@ -611,7 +618,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
             max_score += max_nutri_score
         }
         
-        if (product.nutriments_g_pro_100g?.is_water) {
+        if (product.nutriments_scores?.is_water || is_water) {
             score = max_score
         }
         
@@ -642,13 +649,17 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                     break;
                 default:
                     console.log(product.ecoscoreData.eco_grade)
+                    max_score -= 20
                     break;
             }
         }
-
         product.score = (score/max_score) * 100
         if (product.score < 1) {
             product.score = 1
+        }
+        console.log(max_score)
+        if (max_score == 0) {
+            product.score = 100
         }
         if (product.score > 100) {
             product.score = 100
