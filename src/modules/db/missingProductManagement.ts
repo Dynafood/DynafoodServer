@@ -42,16 +42,18 @@ export const updateMissingProductElement = async (userID: string, barcode: strin
         AND enduserId = '${checkInputBeforeSqlQuery(userID)}';`)
 }
 
-export const insertIntoMissingProduct = async (userID: string, barcode: string, product: string, files: any) : Promise<void> => {
+export const insertIntoMissingProduct = async (userID: string, barcode: string, product: string, files: any, company: string, size: string) : Promise<void> => {
 
     userID = checkInputBeforeSqlQuery(userID);
     barcode = checkInputBeforeSqlQuery(barcode);
     product = checkInputBeforeSqlQuery(product);
+    company = checkInputBeforeSqlQuery(company);
+    size = checkInputBeforeSqlQuery(size);
     const imageLinks = await uploadImages(files);
     imageLinks.forEach(async (imageLink) => {
         await db_adm_conn.query(`
-        INSERT INTO MissingProduct (endUserID, barcode, productName, picture) 
-        VALUES ('${userID}', '${barcode}', '${product}', '${imageLink}');`)
+        INSERT INTO MissingProduct (endUserID, barcode, productName, picture, company, size) 
+        VALUES ('${userID}', '${barcode}', '${product}', '${imageLink}', '${company}', '${size}');`)
     })
     
 }
@@ -77,7 +79,7 @@ export const getElementsFromMissingProduct = async (req: Request, res: Response)
 
 
 export const InsertElementsInMissingProduct = async (req: Request, res: Response) : Promise<void> => {
-    await insertIntoMissingProduct(res.locals.user.userid , req.body.barcode , req.body.productname , req.files)
+    await insertIntoMissingProduct(res.locals.user.userid , req.body.barcode , req.body.productname , req.files, req.body.company, req.body.size)
     sendMissingProductEmailBis(req.body.barcode, req.body.productname)
     res.send("add in DB")
 
