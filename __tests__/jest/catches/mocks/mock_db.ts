@@ -1,6 +1,6 @@
 import { DatabaseInterface, init_db } from "../../../../server_config"
 import { JsonObject } from "swagger-ui-express";
-import { createUser, deleteUser, getUser, createUserOAuth, getPasswordResetToken, setPasswordResetToken } from "./mock_user";
+import { createUser, deleteUser, getUser, createUserOAuth, getPasswordResetToken, setPasswordResetToken, updateUserByRefreshToken } from "./mock_user";
 import { createNewFeedback } from "./mock_feedback";
 import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, getAllSettings, updateSettings, userHasRestriction } from "./mock_settings";
 import { deleteElementFromHistory, getElements, updateHistory } from "./mock_history";
@@ -52,7 +52,8 @@ const mock_db: DatabaseInterface = {
         getPasswordResetToken: getPasswordResetToken,
         setPasswordResetToken: setPasswordResetToken,
         setEmailConfirmed: setEmailConfirmed,
-        getEmailConfirmed: getEmailConfirmed
+        getEmailConfirmed: getEmailConfirmed,
+        updateUserByRefreshToken: updateUserByRefreshToken
     },
     Settings: {
         createSetting: createSettings,

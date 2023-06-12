@@ -15,6 +15,7 @@ export const getUser = async (userid: string | null = null, email: string | null
                         phonenumber: "00000000",
                         alertactivation: true,
                         restrictionname: "peanut",
+                        refresh_token: "token_existing",
                     }
                 ] )
             }
@@ -33,7 +34,8 @@ export const createUser = async (firstName: string, lastName: string, userName: 
             username: "testUser123",
             email: "email@gmail.com",
             phonenumber: "00000000",
-            country_code: "DE"
+            country_code: "DE",
+            refresh_token: "token_existing"
         })
     });
 }
@@ -75,4 +77,25 @@ export const setEmailConfirmed = async (email: string) : Promise<QueryResultRow>
 export const getEmailConfirmed = async (email: string) : Promise<QueryResultRow> => {
 
     return new Promise((resolve, reject)=> {return resolve({emailconfirmed: true})})
+}
+
+export const updateUserByRefreshToken = async (refresh_token: string) : Promise<Array<QueryResultRow>> => {
+    return new Promise((resolve, reject) => {
+        {
+            resolve( [
+                {
+                    enduserid: "none",
+                    passcode: "$2b$10$TQ1P6jaOk8YHzLC3JYlciepXBkf45LVQKIL77VfEmJG7B5PVM.JSG",
+                    firstname: "test",
+                    lastname: "user",
+                    username: "testUser123",
+                    email: "email@gmail.com",
+                    phonenumber: "00000000",
+                    alertactivation: true,
+                    restrictionname: "peanut",
+                    refresh_token: "token_existing"
+                }
+            ] )
+        }
+    });
 }

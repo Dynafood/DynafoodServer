@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { verifyEmail, getUser, deleteUser, createUser, getToken } from '../modules/user';
+import { verifyEmail, getUser, deleteUser, createUser, getToken, refresh_token } from '../modules/user';
 import { checkCreateUserReq } from '../middleware/security/user';
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
 
@@ -148,6 +148,7 @@ router.delete('/user', secureRouteMiddleware, deleteUser);
 
 router.get('/token', getToken);
 router.get('/login', getToken);
+router.get('/refresh', refresh_token);
 
 router.get('/verifyEmail', verifyEmail);
 

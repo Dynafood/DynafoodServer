@@ -21,6 +21,7 @@ export const getUser = async (userid: string | null = null, email: string | null
                         email: "email@gmail.com",
                         phonenumber: "00000000",
                         country_code: "DE",
+                        refresh_token: "token_existing"
                     }
                 ] )
             }
@@ -121,7 +122,8 @@ describe('check create user routes', () => {
             cur[parameters[i][0]] = parameters[i][1]
         }
         const response = await supertest(app).post("/signup").send(cur);
-        expect(response.body).toBe("token_existing")
+        expect(response.body.token).toBe("token_existing");
+        expect(response.body.refresh_token).toBe("token_existing");
         expect(response.statusCode).toBe(200)
     })
 })
@@ -165,6 +167,7 @@ describe('check login user route', () => {
             password: "password"
         }).send();
         expect(response.statusCode).toBe(200)
-        expect(response.body).toBe("token_existing")
+        expect(response.body.token).toBe("token_existing");
+        expect(response.body.refresh_token).toBe("token_existing");
     })
 })
