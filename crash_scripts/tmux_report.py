@@ -3,8 +3,11 @@ import time
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from dotenv import load_dotenv
 import os
 from colorama import Fore, Back, Style
+
+load_dotenv()
 
 def execute_script(script_path):
     try:
@@ -86,7 +89,7 @@ process_name = 'npm'
 fallback_script = "INSERT SCRIPT LATER HERE"
 
 # SendGrid configuration
-sendgrid_api_key = env_vars.get("SENDGRID_KEY")
+sendgrid_api_key = os.getenv("SENDGRID_KEY")
 sender_email = "info.dynafood@gmail.com"
 receiver_email = "semetiqcookiez@gmail.com" #TODO: INSERT EMAIL TO SEND TO HERE //use the dynafood crators email
 email_subject = "Server Crashed"
