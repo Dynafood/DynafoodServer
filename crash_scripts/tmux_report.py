@@ -66,7 +66,7 @@ def check_tmux_process(session_name, process_name):
                     output += f"\nstdout: {error_output.stdout.decode('utf-8')[-1000:]}"
                 if error_output.stderr != None:
                     output += f"\nstderr:\n{error_output.stderr.decode('utf-8')[-1000:]}"
-                email_message = f"The server crashed.\n\n{output}\n\\n Executing fallback script."
+                email_message = f"The server crashed.\n\n{output}\n\n Executing fallback script."
                 print(output)
                 execute_script(fallback_script)
                 send_email(sendgrid_api_key, sender_email, receiver_email, email_subject, email_message)
@@ -79,7 +79,7 @@ def check_tmux_process(session_name, process_name):
                     output += f"\nstdout: {error_output.stdout.decode('utf-8')[-1000:]}\n"
                 if error_output.stderr != None:
                    output += f"\nstderr: {error_output.stderr.decode('utf-8')[-1000:]}"
-                email_message = f"The server crashed.\n\n{output}\n\\n Executing fallback script."
+                email_message = f"The server crashed.\n\n{output}\n\n Executing fallback script."
                 print(output)
                 execute_script(fallback_script)
                 send_email(sendgrid_api_key, sender_email, receiver_email, email_subject, email_message)
