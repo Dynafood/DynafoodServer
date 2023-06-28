@@ -22,12 +22,12 @@ def check_tmux_process(session_name, process_name):
             process_running = subprocess.run(['ps', '-p', pid], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             if process_running.returncode == 0:
                 print(f"Process '{command}' is running.")
-                error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, text=True)
-                print(f"Process '{command}' has exited with error output:\n{error_output.stdout}")
+                error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
+                print(f"Process '{command}' has exited with error output:\nstdout: {error_output.stdout}\nstderr: {error_output.stderr}")
             else:
                 # Retrieve the error output
-                error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, text=True)
-                print(f"Process '{command}' has exited with error output:\n{error_output.stdout}")
+                error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
+                print(f"Process '{command}' has exited with error output:\nstdout: {error_output.stdout}\nstderr: {error_output.stderr}")
 
     if not process_found:
         print(f"Process '{process_name}' not found in session '{session_name}'.")
