@@ -62,10 +62,10 @@ def check_tmux_process(session_name, process_name):
                 print(f"Process '{command}' is running.")
                 error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
                 output = "Last output from 'npm':\n"
-                # if error_output.stdout != None:
-                #     output += f"\nstdout: {error_output.stdout.decode('utf-8')[-1000:]}"
-                # if error_output.stderr != None:
-                #     output += f"\nstderr:\n{error_output.stderr.decode('utf-8')[-1000:]}"
+                if error_output.stdout != None:
+                    output += f"\nstdout: {error_output.stdout.decode('utf-8')[-1000:]}"
+                if error_output.stderr != None:
+                    output += f"\nstderr:\n{error_output.stderr.decode('utf-8')[-1000:]}"
                 email_message = f"The server crashed.\n\n{output}\n\\n Executing fallback script."
                 print(output)
                 execute_script(fallback_script)
@@ -75,10 +75,10 @@ def check_tmux_process(session_name, process_name):
                 # Retrieve the error output
                 error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
                 output = f"Process '{command}' has exited with error output:\n"
-                # if error_output.stdout != None:
-                #     output += f"\nstdout: {error_output.stdout.decode('utf-8')[-1000:]}\n"
-                # if error_output.stderr != None:
-                #    output += f"\nstderr: {error_output.stderr.decode('utf-8')[-1000:]}"
+                if error_output.stdout != None:
+                    output += f"\nstdout: {error_output.stdout.decode('utf-8')[-1000:]}\n"
+                if error_output.stderr != None:
+                   output += f"\nstderr: {error_output.stderr.decode('utf-8')[-1000:]}"
                 email_message = f"The server crashed.\n\n{output}\n\\n Executing fallback script."
                 print(output)
                 execute_script(fallback_script)
