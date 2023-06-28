@@ -5,7 +5,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import os
 from colorama import Fore, Back, Style
-from dotenv import dotenv_values
 
 def execute_script(script_path):
     try:
