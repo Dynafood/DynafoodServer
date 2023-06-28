@@ -61,9 +61,9 @@ def check_tmux_process(session_name, process_name):
             elif process_running.returncode == 0 and command == "bash":
                 print(f"Process '{command}' is running.")
                 error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-                output = "Last output from 'npm':\n"
+                output = "Last output from 'npm':\n\n"
                 if error_output.stdout != None:
-                    output += f"\nstdout: {error_output.stdout.decode('utf-8')[-1000:]}"
+                    output += f"stdout: {error_output.stdout.decode('utf-8')[-1000:]}"
                 # if error_output.stderr != None:
                 #     output += f"\nstderr:\n{error_output.stderr.decode('utf-8')[-1000:]}"
                 email_message = f"The server crashed.\n\n{output}\n\n Executing fallback script."
