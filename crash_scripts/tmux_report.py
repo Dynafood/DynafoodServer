@@ -8,6 +8,17 @@ import os
 import datetime
 
 load_dotenv()
+# Example usage
+session_name = 'DynafoodServerDev' #'DevelopmentDynafood'
+# Path to the script to execute if the API endpoint is inaccessible
+fallback_script = "INSERT SCRIPT LATER HERE"
+
+# SendGrid configuration
+sendgrid_api_key = os.getenv("SENDGRID_KEY")
+sender_email = "info.dynafood@gmail.com"
+receiver_email = "semetiqcookiez@gmail.com" #TODO: INSERT EMAIL TO SEND TO HERE //use the dynafood crators email
+email_subject = "Server Crashed"
+last_sent = None
 
 def execute_script(script_path):
     try:
@@ -19,6 +30,7 @@ def execute_script(script_path):
         print("Error executing the script.")
 
 def send_email(api_key, sender, recipient, subject, message):
+    global last_sent
     msg = MIMEMultipart()
     msg["From"] = sender
     msg["To"] = recipient
@@ -85,18 +97,6 @@ def check_tmux_process(session_name):
                 sleeper = 1800
             time.sleep(sleeper)
 
-
-# Example usage
-session_name = 'DynafoodServerDev' #'DevelopmentDynafood'
-# Path to the script to execute if the API endpoint is inaccessible
-fallback_script = "INSERT SCRIPT LATER HERE"
-
-# SendGrid configuration
-sendgrid_api_key = os.getenv("SENDGRID_KEY")
-sender_email = "info.dynafood@gmail.com"
-receiver_email = "semetiqcookiez@gmail.com" #TODO: INSERT EMAIL TO SEND TO HERE //use the dynafood crators email
-email_subject = "Server Crashed"
-last_sent = None
 while True:
     check_tmux_process(session_name)
     if last_sent == None or last_sent < datetime.datetime.now() - datetime.timedelta(hours=24):
