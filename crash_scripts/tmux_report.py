@@ -42,7 +42,7 @@ def check_tmux_process(session_name, process_name):
         return
 
     # Get the process status from the tmux session
-    process_status = subprocess.run(['tmux', 'list-panes', '-t', session_name, '-F', '#F #{pane_pid} #{pane_current_command}'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    process_status = subprocess.run(['tmux', 'list-panes', '-t', session_name, '-F', '#F #{pane_pid} #{pane_current_command}'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     process_list = process_status.stdout.strip().split('\n')
     process_found = False
 
@@ -60,7 +60,7 @@ def check_tmux_process(session_name, process_name):
                 print(Fore.GREEN + f"Process '{command}' is running.")
             elif process_running.returncode == 0 and command == "bash":
                 print(Fore.RED + f"Process '{command}' is running.")
-                error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
+                error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
                 output = f"Last output from 'npm':\nstdout: {error_output.stdout[-1000:]}\nstderr: {error_output.stderr[-1000:]}"
                 email_message = f"The server crashed.\n\n{output}\n\\n Executing fallback script."
                 print(Style.RESET_ALL + output)
