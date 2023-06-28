@@ -30,5 +30,5 @@ def check_tmux_process(session_name, process_name):
 
 # Example usage
 session_name = 'DynafoodServerDev'
-process_name = '1'
+process_name = 'npm'
 check_tmux_process(session_name, process_name)
