@@ -43,7 +43,7 @@ def check_tmux_process(session_name, process_name):
 
     # Get the process status from the tmux session
     process_status = subprocess.run(['tmux', 'list-panes', '-t', session_name, '-F', '#F #{pane_pid} #{pane_current_command}'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    process_list = process_status.stdout.strip().split('\n')
+    process_list = process_status.stdout.decode('utf-8').strip().split('\n')
     process_found = False
 
     sleeper = 1
