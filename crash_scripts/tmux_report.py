@@ -16,7 +16,7 @@ fallback_script = "INSERT SCRIPT LATER HERE"
 # SendGrid configuration
 sendgrid_api_key = os.getenv("SENDGRID_KEY")
 sender_email = "info.dynafood@gmail.com"
-receiver_email = "semetiqcookiez@gmail.com" #TODO: INSERT EMAIL TO SEND TO HERE //use the dynafood crators email
+receiver_email = "karlstoerzel@gmail.com" #TODO: INSERT EMAIL TO SEND TO HERE //use the dynafood crators email
 email_subject = "Server Crashed"
 last_sent = None
 
