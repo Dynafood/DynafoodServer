@@ -1,4 +1,35 @@
 import subprocess
+import time
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import os
+from dotenv import dotenv_values
+
+def execute_script(script_path):
+    try:
+        # subprocess.run(["python", script_path])
+        print("execute new script")
+    except FileNotFoundError:
+        print(f"Script not found at {script_path}")
+    except subprocess.SubprocessError:
+        print("Error executing the script.")
+
+def send_email(api_key, sender, recipient, subject, message):
+    msg = MIMEMultipart()
+    msg["From"] = sender
+    msg["To"] = recipient
+    msg["Subject"] = subject
+    msg.attach(MIMEText(message, "plain"))
+
+    try:
+        with smtplib.SMTP("smtp.sendgrid.net", 587) as server:
+            server.starttls()
+            server.login("apikey", api_key)
+            server.send_message(msg)
+        print("Email sent successfully.")
+    except smtplib.SMTPException as e:
+        print("Error sending email:", str(e))
 
 def check_tmux_process(session_name, process_name):
     # Check if the tmux session exists
@@ -12,6 +43,8 @@ def check_tmux_process(session_name, process_name):
     process_list = process_status.stdout.strip().split('\n')
     process_found = False
 
+    sleeper = 1
+
     for process_info in process_list:
         process_info_parts = process_info.split()
         if len(process_info_parts) >= 2:
@@ -20,20 +53,43 @@ def check_tmux_process(session_name, process_name):
             process_found = True
             # Check if the process is still running
             process_running = subprocess.run(['ps', '-p', pid], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            if process_running.returncode == 0:
+            if process_running.returncode == 0 and command == "npm":
+                print(f"Process '{command}' is running.")
+            elif process_running.returncode == 0 and command == "bash":
                 print(f"Process '{command}' is running.")
                 error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
-                print(f"Process '{command}' has exited with error output:\nstdout: {error_output.stdout}\nstderr: {error_output.stderr}")
+                output = f"Last output from 'npm':\nstdout: {error_output.stdout[-1000:]}\nstderr: {error_output.stderr[-1000:]}"
+                email_message = f"The server crashed.\n\n{output}\n\\n Executing fallback script."
+                print(output)
+                execute_script(fallback_script)
+                send_email(sendgrid_api_key, sender_email, receiver_email, email_subject, email_message)
+                sleeper = 1800
             else:
                 # Retrieve the error output
                 error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
-                print(f"Process '{command}' has exited with error output:\nstdout: {error_output.stdout}\nstderr: {error_output.stderr}")
+                output= f"Process '{command}' has exited with error output:\nstdout: {error_output.stdout[-1000:]}\nstderr: {error_output.stderr[-1000:]}"
+                email_message = f"The server crashed.\n\n{output}\n\\n Executing fallback script."
+                print(output)
+                execute_script(fallback_script)
+                send_email(sendgrid_api_key, sender_email, receiver_email, email_subject, email_message)
+                sleeper = 1800
+            time.sleep(sleeper)
 
     if not process_found:
         print(f"Process '{process_name}' not found in session '{session_name}'.")
 
 
 # Example usage
-session_name = 'DynafoodServerDev'
+session_name = 'DevelopmentDynafood'
 process_name = 'npm'
-check_tmux_process(session_name, process_name)
+# Path to the script to execute if the API endpoint is inaccessible
+fallback_script = "INSERT SCRIPT LATER HERE"
+
+# SendGrid configuration
+sendgrid_api_key = env_vars.get("SENDGRID_KEY")
+sender_email = "info.dynafood@gmail.com"
+receiver_email = "semetiqcookiez@gmail.com" #TODO: INSERT EMAIL TO SEND TO HERE //use the dynafood crators email
+email_subject = "Server Crashed"
+
+while True:
+    check_tmux_process(session_name, process_name)
