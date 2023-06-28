@@ -38,10 +38,10 @@ def send_email(api_key, sender, recipient, subject, message):
     msg.attach(MIMEText(message, "plain"))
 
     try:
-        with smtplib.SMTP("smtp.sendgrid.net", 587) as server:
-            server.starttls()
-            server.login("apikey", api_key)
-            server.send_message(msg)
+        # with smtplib.SMTP("smtp.sendgrid.net", 587) as server:
+        #     server.starttls()
+        #     server.login("apikey", api_key)
+        #     server.send_message(msg)
         print("Email sent successfully.")
         last_sent = datetime.datetime.now()
     except smtplib.SMTPException as e:
@@ -100,4 +100,5 @@ def check_tmux_process(session_name):
 while True:
     check_tmux_process(session_name)
     if last_sent == None or last_sent < datetime.datetime.now() - datetime.timedelta(hours=24):
+        print(last_sent, datetime.datetime.now(), datetime.datetime.now() - datetime.timedelta(hours=24))
         send_email(sendgrid_api_key, sender_email, receiver_email, "Server Run Confirmation", "Server is currently runnning")
