@@ -17,17 +17,15 @@ def check_tmux_process(session_name, process_name):
         if len(process_info_parts) >= 2:
             pid = process_info_parts[1]
             command = ' '.join(process_info_parts[2:])
-            if command == process_name:
-                process_found = True
-                # Check if the process is still running
-                process_running = subprocess.run(['ps', '-p', pid], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-                if process_running.returncode == 0:
-                    print(f"Process '{process_name}' is running.")
-                else:
-                    # Retrieve the error output
-                    error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-                    print(f"Process '{process_name}' has exited with error output:\n{error_output.stdout}")
-                break
+            process_found = True
+            # Check if the process is still running
+            process_running = subprocess.run(['ps', '-p', pid], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            if process_running.returncode == 0:
+                print(f"Process '{command}' is running.")
+            else:
+                # Retrieve the error output
+                error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+                print(f"Process '{command}' has exited with error output:\n{error_output.stdout}")
 
     if not process_found:
         print(f"Process '{process_name}' not found in session '{session_name}'.")
