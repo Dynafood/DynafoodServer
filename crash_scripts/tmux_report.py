@@ -99,5 +99,5 @@ email_subject = "Server Crashed"
 last_sent = None
 while True:
     check_tmux_process(session_name)
-    if last_sent != None or last_sent < datetime.datetime.now() - datetime.timedelta(hours=24):
+    if last_sent == None or last_sent < datetime.datetime.now() - datetime.timedelta(hours=24):
         send_email(sendgrid_api_key, sender_email, receiver_email, "Server Run Confirmation", "Server is currently runnning")
