@@ -38,10 +38,10 @@ def send_email(api_key, sender, recipient, subject, message):
     msg.attach(MIMEText(message, "plain"))
 
     try:
-        # with smtplib.SMTP("smtp.sendgrid.net", 587) as server:
-        #     server.starttls()
-        #     server.login("apikey", api_key)
-        #     server.send_message(msg)
+        with smtplib.SMTP("smtp.sendgrid.net", 587) as server:
+            server.starttls()
+            server.login("apikey", api_key)
+            server.send_message(msg)
         print("Email sent successfully.")
         last_sent = datetime.datetime.now()
     except smtplib.SMTPException as e:
