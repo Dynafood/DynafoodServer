@@ -4,6 +4,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import os
+from colorama import Fore, Back, Style
 from dotenv import dotenv_values
 
 def execute_script(script_path):
@@ -54,20 +55,20 @@ def check_tmux_process(session_name, process_name):
             # Check if the process is still running
             process_running = subprocess.run(['ps', '-p', pid], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             if process_running.returncode == 0 and command == "npm":
-                print(f"Process '{command}' is running.")
+                print(Fore.GREEN + f"Process '{command}' is running.")
             elif process_running.returncode == 0 and command == "bash":
-                print(f"Process '{command}' is running.")
+                print(Fore.RED + f"Process '{command}' is running.")
                 error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
                 output = f"Last output from 'npm':\nstdout: {error_output.stdout[-1000:]}\nstderr: {error_output.stderr[-1000:]}"
                 email_message = f"The server crashed.\n\n{output}\n\\n Executing fallback script."
-                print(output)
+                print(Style.RESET_ALL + output)
                 execute_script(fallback_script)
                 send_email(sendgrid_api_key, sender_email, receiver_email, email_subject, email_message)
                 sleeper = 1800
             else:
                 # Retrieve the error output
                 error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
-                output= f"Process '{command}' has exited with error output:\nstdout: {error_output.stdout[-1000:]}\nstderr: {error_output.stderr[-1000:]}"
+                output= Fore.RED + f"Process '{command}' has exited with error output:\n" + Style.RESET_ALL + f"stdout: {error_output.stdout[-1000:]}\nstderr: {error_output.stderr[-1000:]}"
                 email_message = f"The server crashed.\n\n{output}\n\\n Executing fallback script."
                 print(output)
                 execute_script(fallback_script)
