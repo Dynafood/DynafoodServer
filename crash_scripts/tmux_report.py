@@ -61,7 +61,11 @@ def check_tmux_process(session_name, process_name):
             elif process_running.returncode == 0 and command == "bash":
                 print(Fore.RED + f"Process '{command}' is running.")
                 error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-                output = f"Last output from 'npm':\nstdout: {error_output.stdout.decode('utf-8')[-1000:]}\nstderr: {error_output.stderr.decode('utf-8')[-1000:]}"
+                output = "Last output from 'npm':\n"
+                if error_output.stdout != None:
+                    output += f"\nstdout: {error_output.stdout.decode('utf-8')[-1000:]}"
+                if error_output.stderr != None:
+                    output += f"\nstderr:\n{error_output.stderr.decode('utf-8')[-1000:]}"
                 email_message = f"The server crashed.\n\n{output}\n\\n Executing fallback script."
                 print(Style.RESET_ALL + output)
                 execute_script(fallback_script)
@@ -70,7 +74,11 @@ def check_tmux_process(session_name, process_name):
             else:
                 # Retrieve the error output
                 error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
-                output= Fore.RED + f"Process '{command}' has exited with error output:\n" + Style.RESET_ALL + f"stdout: {error_output.stdout.decode('utf-8')[-1000:]}\nstderr: {error_output.stderr[-1000:]}"
+                output = Fore.RED + f"Process '{command}' has exited with error output:\n" + Style.RESET_ALL
+                if error_output.stdout != None:
+                    output += f"\nstdout: {error_output.stdout.decode('utf-8')[-1000:]}\n"
+                if error_output.stderr != None:
+                   output += f"\nstderr: {error_output.stderr[-1000:]}"
                 email_message = f"The server crashed.\n\n{output}\n\\n Executing fallback script."
                 print(output)
                 execute_script(fallback_script)
