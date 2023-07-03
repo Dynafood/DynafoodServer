@@ -14,7 +14,7 @@ const server: http.Server = new http.Server(app);
 
 const jwt_obj: JWT = {
     create: (userid: string) : string => {
-        return <string>jwt.sign({ userid: userid }, <string>process.env.JWT_SECRET, { expiresIn: '1h' });
+        return <string>jwt.sign({ userid: userid }, <string>process.env.JWT_SECRET, { expiresIn: '1m' });
     },
     validate: (token: string) : UserInterface => {
         return <UserInterface>(jwt.verify(token, <string>process.env.JWT_SECRET));
