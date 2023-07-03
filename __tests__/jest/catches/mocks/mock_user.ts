@@ -14,7 +14,8 @@ export const getUser = async (userid: string | null = null, email: string | null
                         email: "email@gmail.com",
                         phonenumber: "00000000",
                         alertactivation: true,
-                        restrictionname: "peanut"
+                        restrictionname: "peanut",
+                        refresh_token: "token_existing"
                     }
                 ] )
             }
@@ -22,6 +23,10 @@ export const getUser = async (userid: string | null = null, email: string | null
             throw new Error("ErrorMock")
         resolve( [] )
     });
+}
+
+export const updateUserByRefreshToken = async (refresh_token: string) : Promise<Array<QueryResultRow>> => {
+    throw new Error("ErrorMock")
 }
 
 export const createUser = async (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string) : Promise<QueryResultRow> =>  {

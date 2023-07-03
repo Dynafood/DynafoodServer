@@ -33,6 +33,7 @@ const getUser = async (userid: string | null = null, email: string | null = null
                         phonenumber: "00000000",
                         country_code: "DE",
                         password_reset_token: "123456",
+                        refresh_token: "token_existing"
                     }
                 ] )
             }

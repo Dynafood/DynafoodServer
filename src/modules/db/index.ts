@@ -4,7 +4,7 @@ import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteS
 import { deleteElementFromHistory, getElements, updateHistory } from './historyManagement';
 import { updatePassword } from './resetPassword';
 import { updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting, getAllSettings } from './settingsManagement';
-import { getEmailConfirmed, setEmailConfirmed, createUser, createUserOAuth, deleteUser, getUser, getPasswordResetToken, setPasswordResetToken } from './userManagement';
+import { getEmailConfirmed, setEmailConfirmed, createUser, createUserOAuth, deleteUser, getUser, getPasswordResetToken, setPasswordResetToken, updateUserByRefreshToken } from './userManagement';
 import { insert, getTrendingLocal, getTrendingGlobal, getCountryCode } from './trendingProducts';
 import { DatabaseInterface } from '../../../server_config';
 import { getProviderByName } from './oauth';
@@ -65,7 +65,8 @@ const Database: DatabaseInterface = {
         getPasswordResetToken,
         setPasswordResetToken,
         setEmailConfirmed,
-        getEmailConfirmed
+        getEmailConfirmed,
+        updateUserByRefreshToken
     },
     Settings: {
         getRestrictionIdByName,
