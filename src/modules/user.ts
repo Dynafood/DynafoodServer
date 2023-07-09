@@ -5,6 +5,7 @@ import { database, JWT } from '../../server_config';
 import requestIP from 'request-ip';
 import geoip from 'geoip-lite';
 import { sendVerificationEmail } from '../modules/email';
+import { isUUID } from './db/scripts';
 
 const path = require('path');
 
@@ -181,6 +182,10 @@ export const refresh_token = async (req: Request, res: Response) : Promise<void>
             res.status(400).send({ Error: "Bad Request", Details: `No request_token provided.`});
             return;
         }
+        if (!isUUID(refresh_token)) {
+            res.status(400).send({ Error: "Bad Request", Details: `Request token is no UUID.`});
+            return;
+        }
         const users : Array<QueryResultRow> = await database.User.updateUserByRefreshToken(refresh_token);
 
         if (users.length == 0) {
@@ -198,17 +203,3 @@ export const refresh_token = async (req: Request, res: Response) : Promise<void>
         res.status(500).send({ Error: error, details: error.stack });
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
