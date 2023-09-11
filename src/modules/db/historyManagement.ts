@@ -17,7 +17,20 @@ export const updateHistory = async (userID: string, barcode: string, product: Js
         }
         await insertIntoHistory(userID, barcode, product);
     }
+    await cleanAllDublicateHistoryData(userID)
 };
+
+const cleanAllDublicateHistoryData = async (userID: string) => {
+    await db_adm_conn.query(`
+    DELETE FROM history
+WHERE enduserid = '${checkInputBeforeSqlQuery(userID)}' and lastused NOT IN (
+	SELECT MIN(lastused)
+    FROM history
+	where enduserid = '${checkInputBeforeSqlQuery(userID)}'
+    GROUP BY barcode
+	ORDER BY MIN(lastused)
+);`);
+}
 
 const cleanDublicateHistory = async (userID: string, barcode: string) : Promise<void> => {
     await db_adm_conn.query(`
