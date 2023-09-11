@@ -9,7 +9,7 @@ export const updateHistory = async (userID: string, barcode: string, product: Js
     FROM History
     WHERE barcode = '${checkInputBeforeSqlQuery(barcode)}'
         AND enduserId = '${checkInputBeforeSqlQuery(userID)}';`);
-    if (response.rows[0].count === 1) {
+    if (response.rows[0].count == 1) {
         await updateHistoryElement(userID, barcode, product);
     } else {
         if (response.rows[0].count > 1) {
