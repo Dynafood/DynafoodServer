@@ -35,10 +35,14 @@ const schema = Joi.object({
         .max(20)
         .required(),
     password: Joi.string()
+        .min(8)
+        .max(72)
         .required(),
 });
 
 export const checkPassword = (password: string) : string => {
+    if (password.length < 8) { return "Password has to have at least 8 characters"; }
+
     const regexplower = new RegExp('^(?=.*[a-z]).+$'); // eslint-disable-line prefer-regex-literals
     const regexpupper = new RegExp('^(?=.*[A-Z]).+$'); // eslint-disable-line prefer-regex-literals
     const regexpNumber = new RegExp('^(?=.*[0-9]).+$'); // eslint-disable-line prefer-regex-literals
@@ -47,24 +51,24 @@ export const checkPassword = (password: string) : string => {
     if (regexpupper.test(password) === false) { return 'Need a uppercase'; }
     if (regexpNumber.test(password) === false) { return 'Need a digit'; }
     if (regexpCharacter.test(password) === false) { return 'Need a special character (@, #, $, %, ^, &, +, -, !, ?, _, *, ., or ,)'; }
-    if (password.length < 8) { return 'Password needs to have at least 8 characters'}
     return 'Good';
 };
 
 export const checkCreateUserReq = async (req: Request, res: Response, next: NextFunction) : Promise<void> => {
+    
+    const passwordCheck: string = checkPassword(req.body.password ?? "");
+    if (passwordCheck !== 'Good') {
+        res.status(400).send({ Error: passwordCheck, reason: "password"  });
+        return;
+    }
     const { error } = schema.validate(req.body);
     if (error !== undefined) {
         res.status(400).send({ Error: error, reason: "email" });
         return;
     }
-    const passwordCheck: string = checkPassword(req.body.password);
-    if (passwordCheck !== 'Good') {
-        res.status(400).send({ Error: passwordCheck, reason: "password"  });
-        return;
-    }
     const prevCheckEmail : Array<QueryResultRow> = await database.User.getUser(null, req.body.email);
     if (prevCheckEmail.length !== 0) {
-        res.status(409).send({ Error: 'email already exists', reason: "email" });
+        res.status(409).send({ Error: 'email already exists' });
         return;
     }
     next();
