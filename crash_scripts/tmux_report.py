@@ -11,7 +11,7 @@ load_dotenv()
 # Example usage
 session_name = 'DynafoodServerDev' #'DevelopmentDynafood'
 # Path to the script to execute if the API endpoint is inaccessible
-fallback_script = "INSERT SCRIPT LATER HERE"
+fallback_script = "crash_fix.sh"
 
 # SendGrid configuration
 sendgrid_api_key = os.getenv("SENDGRID_KEY")
@@ -22,8 +22,8 @@ last_sent = None
 
 def execute_script(script_path):
     try:
-        # subprocess.run(["python", script_path])
-        print("execute new script")
+        execution_output = subprocess.run(["bash", script_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        print(execution_output.stdout.decode('utf-8').strip())
     except FileNotFoundError:
         print(f"Script not found at {script_path}")
     except subprocess.SubprocessError:
