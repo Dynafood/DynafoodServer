@@ -58,7 +58,7 @@ def check_tmux_process(session_name):
     process_status = subprocess.run(['tmux', 'list-panes', '-t', session_name, '-F', '#F #{pane_pid} #{pane_current_command}'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     process_list = process_status.stdout.decode('utf-8').strip().split('\n')
 
-    sleeper = 60
+    sleeper = 5
 
     for process_info in process_list:
         process_info_parts = process_info.split()
@@ -68,9 +68,9 @@ def check_tmux_process(session_name):
             # Check if the process is still running
             process_running = subprocess.run(['ps', '-p', pid], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             if process_running.returncode == 0 and command == "npm":
-                print(f"\033[32mProcess '{command}' is running.\033[0m")
+                print(f"\033[32mProcess '{command}' is running.\033[0m", datetime.datetime.now().timestamp())
             elif process_running.returncode == 0 and command == "bash":
-                print(f"\033[31mProcess '{command}' is running..\033[0m")
+                print(f"\033[31mProcess '{command}' is running.\033[0m", datetime.datetime.now().timestamp())
                 error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
                 output = "Last output from 'npm':\n\n"
                 if error_output.stdout != None:
