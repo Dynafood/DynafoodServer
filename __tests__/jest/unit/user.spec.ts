@@ -71,16 +71,17 @@ describe('check get user routes', () => {
 
 describe('check create user routes', () => {
     const parameters = [
+        ["password", "aA1asbfdoazierf-"],
         ["firstName", "karl"],
         ["lastName", "stoer"],
         ["userName", "karl123"],
         ["email", "karl@gmail.com"],
-        ["phoneNumber", "00000000"],
-        ["password", "aA1asbfdoazierf-"]
+        ["phoneNumber", "00000000"]
     ]
     test('wrong arguments signup', async () => { 
         let cur : any = {}
-        for (let i = 0; i < parameters.length; i++)  {
+        cur[parameters[0][0]] = parameters[0][1]
+        for (let i = 1; i < parameters.length; i++)  {
             const response = await supertest(app).post("/signup").send(cur);
             expect(response.statusCode).toBe(400)
             expect(response.body).toMatchObject({Error: {details: [{message: "\"" + parameters[i][0] + "\" is required"}]}})
