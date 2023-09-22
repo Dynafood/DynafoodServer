@@ -81,7 +81,7 @@ def check_tmux_process(session_name):
                 print(output)
                 execute_script(fallback_script)
                 send_email(sendgrid_api_key, sender_email, receiver_email, email_subject, email_message)
-                sleeper = 1800
+                sleeper = 10
             else:
                 # Retrieve the error output
                 error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
@@ -94,7 +94,7 @@ def check_tmux_process(session_name):
                 print(output)
                 execute_script(fallback_script)
                 send_email(sendgrid_api_key, sender_email, receiver_email, email_subject, email_message)
-                sleeper = 1800
+                sleeper = 10
             time.sleep(sleeper)
 
 while True:
