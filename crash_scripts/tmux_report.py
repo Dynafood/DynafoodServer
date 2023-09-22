@@ -68,16 +68,16 @@ def check_tmux_process(session_name):
             # Check if the process is still running
             process_running = subprocess.run(['ps', '-p', pid], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             if process_running.returncode == 0 and command == "npm":
-                print(f"\033[32mProcess '{command}' is running.\033[0m", datetime.fromtimestamp(datetime.datetime.now().timestamp()).strftime('%d.%m.%Y %H:%M:%S'))
+                print(f"\033[32mProcess '{command}' is running.\033[0m", datetime.datetime.fromtimestamp(datetime.datetime.now().timestamp()).strftime('%d.%m.%Y %H:%M:%S'))
             elif process_running.returncode == 0 and command == "bash":
-                print(f"\033[31mProcess '{command}' is running.\033[0m", datetime.fromtimestamp(datetime.datetime.now().timestamp()).strftime('%d.%m.%Y %H:%M:%S'))
+                print(f"\033[31mProcess '{command}' is running.\033[0m", datetime.datetime.fromtimestamp(datetime.datetime.now().timestamp()).strftime('%d.%m.%Y %H:%M:%S'))
                 error_output = subprocess.run(['tmux', 'capture-pane', '-pt', session_name], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
                 output = "Last output from 'npm':\n\n"
                 if error_output.stdout != None:
                     output += f"stdout: {error_output.stdout.decode('utf-8')[-1000:]}"
                 if error_output.stderr != None:
                     output += f"\nstderr:\n{error_output.stderr.decode('utf-8')[-1000:]}"
-                email_message = f"The server crashed at {datetime.fromtimestamp(datetime.datetime.now().timestamp()).strftime('%d.%m.%Y %H:%M:%S')}.\n\n{output}\n\n Executing fallback script."
+                email_message = f"The server crashed at {datetime.datetime.fromtimestamp(datetime.datetime.now().timestamp()).strftime('%d.%m.%Y %H:%M:%S')}.\n\n{output}\n\n Executing fallback script."
                 print(output)
                 execute_script(fallback_script)
                 send_email(sendgrid_api_key, sender_email, receiver_email, email_subject, email_message)
