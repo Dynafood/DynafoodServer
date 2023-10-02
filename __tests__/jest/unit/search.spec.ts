@@ -2,6 +2,7 @@ import supertest from "supertest"
 import {app} from "../../../server_config"
 import jwt from "../unit/mocks/mock_jwt"
 import db from "./mocks/mock_db"
+import translation from "./../../../translation.json"
 
 jwt.init()
 db.init()
@@ -23,7 +24,7 @@ describe('check search products route', () => {
             }).send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(400)
         expect(response.body).toStrictEqual(
-            { Error: 'Unable to get product', Details: "'value' is missing." }
+            { Error: 'Unable to get product', Details: translation["'value' is missing."] }
         );
     })
     test('count undefined', async () => {
@@ -33,7 +34,7 @@ describe('check search products route', () => {
             }).send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(400)
         expect(response.body).toStrictEqual(
-            { Error: 'Unable to get product', Details: "'count' is missing." }
+            { Error: 'Unable to get product', Details: translation["'count' is missing."] }
         );
     })
 })
@@ -80,7 +81,7 @@ describe('check search route for allergens', () => {
                 name: 'milk',
             }).send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(400)
-        expect(response.body).toStrictEqual({"Error" : "BadRequest", Details: "Missing language"});
+        expect(response.body).toStrictEqual({"Error" : "BadRequest", Details: translation["Missing language"] });
     });
     test ('invalid milk search empty name', async () => {
         const response = await supertest(app).get("/searchAllergen")
@@ -98,7 +99,7 @@ describe('check search route for allergens', () => {
                 name: 'milk',
             }).send().set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(400)
-        expect(response.body).toStrictEqual({"Error" : "BadRequest", Details: "Missing language"});
+        expect(response.body).toStrictEqual({"Error" : "BadRequest", Details: translation["Missing language"] });
     });
     test ('invalid milk search wrong language', async () => {
         const response = await supertest(app).get("/searchAllergen")
@@ -109,5 +110,4 @@ describe('check search route for allergens', () => {
         expect(response.statusCode).toBe(400)
         expect(response.body).toStrictEqual({"Error" : "BadRequest", Details: "language 'f' no existing"});
     });
-    
 })

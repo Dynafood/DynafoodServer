@@ -1,0 +1,258 @@
+{
+  "IP lookup failed.": {
+    "en": "IP lookup failed.",
+    "de": "IP-Abfrage fehlgeschlagen.",
+    "it": "Ricerca IP non riuscita.",
+    "es": "Error al buscar la dirección IP.",
+    "pr": "Falha na consulta do IP.",
+    "fr": "Échec de la recherche de l'adresse IP."
+  },
+  "User tried to login without a confirmed email.": {
+    "en": "User tried to login without a confirmed email.",
+    "de": "Benutzer hat versucht, sich ohne bestätigte E-Mail anzumelden.",
+    "it": "L'utente ha tentato di accedere senza una email confermata.",
+    "es": "El usuario intentó iniciar sesión sin un correo electrónico confirmado.",
+    "pr": "O usuário tentou fazer login sem um email confirmado.",
+    "fr": "L'utilisateur a essayé de se connecter sans e-mail confirmé."
+  },
+  "No request_token provided.": {
+    "en": "No request_token provided.",
+    "de": "Kein request_token angegeben.",
+    "it": "Nessun request_token fornito.",
+    "es": "No se proporcionó request_token.",
+    "pr": "Nenhum request_token fornecido.",
+    "fr": "Aucun request_token fourni."
+  },
+  "User tried to login without a valid token.": {
+    "en": "User tried to login without a valid token.",
+    "de": "Benutzer hat versucht, sich ohne gültiges Token anzumelden.",
+    "it": "L'utente ha tentato di accedere senza un token valido.",
+    "es": "El usuario intentó iniciar sesión sin un token válido.",
+    "pr": "O usuário tentou fazer login sem um token válido.",
+    "fr": "L'utilisateur a essayé de se connecter sans jeton valide."
+  },
+  "'count' is not defined.": {
+    "en": "'count' is not defined.",
+    "de": "'count' ist nicht definiert.",
+    "it": "'count' non è definito.",
+    "es": "'count' no está definido.",
+    "pr": "'count' não está definido.",
+    "fr": "'count' n'est pas défini."
+  },
+  "'count' is negative.": {
+    "en": "'count' is negative.",
+    "de": "'count' ist negativ.",
+    "it": "'count' è negativo.",
+    "es": "'count' es negativo.",
+    "pr": "'count' é negativo.",
+    "fr": "'count' est négatif."
+  },
+  "Missing restrictionName.": {
+    "en": "Missing restrictionName.",
+    "de": "Fehlender restrictionName.",
+    "it": "Manca il nome della restrizione.",
+    "es": "Falta el nombre de la restricción.",
+    "pr": "Nome da restrição não fornecido.",
+    "fr": "restrictionName manquant."
+  },
+  "This user does not have this restriction.": {
+    "en": "This user does not have this restriction.",
+    "de": "Dieser Benutzer hat diese Einschränkung nicht.",
+    "it": "Questo utente non ha questa restrizione.",
+    "es": "Este usuario no tiene esta restricción.",
+    "pr": "Este usuário não possui essa restrição.",
+    "fr": "Cet utilisateur n'a pas cette restriction."
+  },
+  "Missing strongness.": {
+    "en": "Missing strongness.",
+    "de": "Stärke fehlt.",
+    "it": "Manca la forza.",
+    "es": "Falta la fortaleza.",
+    "pr": "Falta a força.",
+    "fr": "strongness manquante."
+  },
+  "name is not provided or empty!": {
+    "en": "name is not provided or empty!",
+    "de": "Name wurde nicht angegeben oder ist leer!",
+    "it": "Nome non fornito o vuoto!",
+    "es": "¡El nombre no se proporciona o está vacío!",
+    "pr": "Nome não fornecido ou vazio!",
+    "fr": "Le nom n'est pas fourni ou est vide !"
+  },
+  "listId is not provided or empty!": {
+    "en": "listId is not provided or empty!",
+    "de": "listId wurde nicht angegeben oder ist leer!",
+    "it": "listId non fornito o vuoto!",
+    "es": "¡listId no se proporciona o está vacío!",
+    "pr": "listId não fornecido ou vazio!",
+    "fr": "listId n'est pas fourni ou est vide !"
+  },
+  "itemName is not provided or empty!": {
+    "en": "itemName is not provided or empty!",
+    "de": "itemName wurde nicht angegeben oder ist leer!",
+    "it": "itemName non fornito o vuoto!",
+    "es": "¡itemName no se proporciona o está vacío!",
+    "pr": "itemName não fornecido ou vazio!",
+    "fr": "itemName n'est pas fourni ou est vide !"
+  },
+  "itemId is not provided or empty!": {
+    "en": "itemId is not provided or empty!",
+    "de": "itemId wurde nicht angegeben oder ist leer!",
+    "it": "itemId non fornito o vuoto!",
+    "es": "¡itemId no se proporciona o está vacío!",
+    "pr": "itemId não fornecido ou vazio!",
+    "fr": "itemId n'est pas fourni ou est vide !"
+  },
+  "'value' is missing.": {
+    "en": "'value' is missing.",
+    "de": "'value' fehlt.",
+    "it": "'value' mancante.",
+    "es": "Falta 'value'.",
+    "pr": "'value' está faltando.",
+    "fr": "'value' est manquant."
+  },
+  "'count' is missing.": {
+    "en": "'count' is missing.",
+    "de": "'count' fehlt.",
+    "it": "'count' mancante.",
+    "es": "Falta 'count'.",
+    "pr": "'count' está faltando.",
+    "fr": "'count' est manquant."
+  },
+  "request to openfoodfacts failed": {
+    "en": "request to openfoodfacts failed",
+    "de": "Anforderung an OpenFoodFacts ist fehlgeschlagen.",
+    "it": "La richiesta a OpenFoodFacts non è riuscita.",
+    "es": "La solicitud a OpenFoodFacts falló.",
+    "pr": "Falha na solicitação para OpenFoodFacts.",
+    "fr": "Échec de la requête à OpenFoodFacts."
+  },
+  "Missing language": {
+    "en": "Missing language",
+    "de": "Sprache fehlt.",
+    "it": "Lingua mancante.",
+    "es": "Falta el idioma.",
+    "pr": "Idioma não fornecido.",
+    "fr": "Langue manquante."
+  },
+  "Language does not exist": {
+    "en": "Language does not exist",
+    "de": "Sprache existiert nicht.",
+    "it": "La lingua non esiste.",
+    "es": "El idioma no existe.",
+    "pr": "O idioma não existe.",
+    "fr": "La langue n'existe pas."
+  },
+  "No code provided": {
+    "en": "No code provided",
+    "de": "Kein Code angegeben.",
+    "it": "Nessun codice fornito.",
+    "es": "No se proporcionó ningún código.",
+    "pr": "Nenhum código fornecido.",
+    "fr": "Aucun code fourni."
+  },
+  "No email provided": {
+    "en": "No email provided",
+    "de": "Keine E-Mail-Adresse angegeben.",
+    "it": "Nessuna email fornita.",
+    "es": "No se proporcionó ningún correo electrónico.",
+    "pr": "Nenhum email fornecido.",
+    "fr": "Aucun e-mail fourni."
+  },
+  "The user has not requested a code recently": {
+    "en": "The user has not requested a code recently",
+    "de": "Der Benutzer hat in letzter Zeit keinen Code angefordert.",
+    "it": "L'utente non ha richiesto un codice di recente.",
+    "es": "El usuario no ha solicitado un código recientemente.",
+    "pr": "O usuário não solicitou um código recentemente.",
+    "fr": "L'utilisateur n'a pas demandé de code récemment."
+  },
+  "Code is not matching": {
+    "en": "Code is not matching",
+    "de": "Code stimmt nicht überein.",
+    "it": "Il codice non corrisponde.",
+    "es": "El código no coincide.",
+    "pr": "O código não corresponde.",
+    "fr": "Le code ne correspond pas."
+  },
+  "No user with this email": {
+    "en": "No user with this email",
+    "de": "Kein Benutzer mit dieser E-Mail-Adresse.",
+    "it": "Nessun utente con questa email.",
+    "es": "No hay usuario con este correo electrónico.",
+    "pr": "Nenhum usuário com este e-mail.",
+    "fr": "Aucun utilisateur avec cet e-mail."
+  },
+  "No password provided": {
+    "en": "No password provided",
+    "de": "Kein Passwort angegeben.",
+    "it": "Nessuna password fornita.",
+    "es": "No se proporcionó ninguna contraseña.",
+    "pr": "Nenhuma senha fornecida.",
+    "fr": "Aucun mot de passe fourni."
+  },
+  "No email provided in body": {
+    "en": "No email provided in body",
+    "de": "Keine E-Mail-Adresse im Inhalt angegeben.",
+    "it": "Nessuna email fornita nel corpo.",
+    "es": "No se proporcionó ningún correo electrónico en el cuerpo.",
+    "pr": "Nenhum e-mail fornecido no corpo.",
+    "fr": "Aucun e-mail fourni dans le corps."
+  },
+  "No property 'code' in body provided": {
+    "en": "No property 'code' in body provided",
+    "de": "Keine Eigenschaft 'code' im Inhalt angegeben.",
+    "it": "Nessuna proprietà 'code' fornita nel corpo.",
+    "es": "No se proporcionó la propiedad 'code' en el cuerpo.",
+    "pr": "Nenhuma propriedade 'code' fornecida no corpo.",
+    "fr": "Aucune propriété 'code' fournie dans le corps."
+  },
+  "Content is not provided or empty!": {
+    "en": "Content is not provided or empty!",
+    "de": "Inhalt wurde nicht angegeben oder ist leer!",
+    "it": "Contenuto non fornito o vuoto!",
+    "es": "¡No se proporciona contenido o está vacío!",
+    "pr": "Conteúdo não fornecido ou vazio!",
+    "fr": "Le contenu n'est pas fourni ou est vide !"
+  },
+  "Reason is not provided or empty!": {
+    "en": "Reason is not provided or empty!",
+    "de": "Grund wurde nicht angegeben oder ist leer!",
+    "it": "Motivo non fornito o vuoto!",
+    "es": "¡No se proporciona un motivo o está vacío!",
+    "pr": "Motivo não fornecido ou vazio!",
+    "fr": "La raison n'est pas fournie ou est vide !"
+  },
+  "Need a lowerCase": {
+    "en": "Need a lowerCase",
+    "de": "Benötigt einen Kleinbuchstaben",
+    "it": "Necessita di una lettera minuscola",
+    "es": "Necesita una minúscula",
+    "pr": "Precisa de uma letra minúscula",
+    "fr": "Besoin d'une minuscule"
+  },
+  "Need a uppercase": {
+    "en": "Need a uppercase",
+    "de": "Benötigt einen Großbuchstaben",
+    "it": "Necessita di una lettera maiuscola",
+    "es": "Necesita una mayúscula",
+    "pr": "Precisa de uma letra maiúscula",
+    "fr": "Besoin d'une majuscule"
+  },
+  "Need a digit": {
+    "en": "Need a digit",
+    "de": "Benötigt eine Ziffer",
+    "it": "Necessita di una cifra",
+    "es": "Necesita un dígito",
+    "pr": "Precisa de um dígito",
+    "fr": "Besoin d'un chiffre"
+  },
+  "Need a special character (@, #, $, %, ^, &, +, -, !, ?, _, *, ., or ,)": {
+    "en": "Need a special character (@, #, $, %, ^, &, +, -, !, ?, _, *, ., or ,)",
+    "de": "Benötigt ein Sonderzeichen (@, #, $, %, ^, &, +, -, !, ?, _, *, . oder ,)",
+    "it": "Necessita di un carattere speciale (@, #, $, %, ^, &, +, -, !, ?, _, *, . o ,)",
+    "es": "Necesita un carácter especial (@, #, $, %, ^, &, +, -, !, ?, _, *, . o ,)",
+    "pr": "Precisa de um caractere especial (@, #, $, %, ^, &, +, -, !, ?, _, *, . ou ,)",
+    "fr": "Besoin d'un caractère spécial (@, #, $, %, ^, &, +, -, !, ?, _, *, . ou ,)"
+  }
+}

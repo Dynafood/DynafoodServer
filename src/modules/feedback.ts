@@ -1,5 +1,7 @@
 import { Request, Response } from 'express';
 import { database } from '../../server_config';
+import translations from "../../translation.json";
+
 
 const _feedbackReasons = [
     'bug',
@@ -13,11 +15,11 @@ export const createFeedback = async (req: Request, res: Response) => {
     const reason : string = req.body.reason;
 
     if (!content || content.length === 0) {
-        res.status(400).send({ Error: 'No content provided', Details: 'Content is not provided or empty!' });
+        res.status(400).send({ Error: 'No content provided', Details: translations['Content is not provided or empty!'] });
         return;
     }
     if (!reason || reason.length === 0) {
-        res.status(400).send({ Error: 'No reason provided', Details: 'Reason is not provided or empty!' });
+        res.status(400).send({ Error: 'No reason provided', Details: translations['Reason is not provided or empty!'] });
         return;
     }
     if (!_feedbackReasons.includes(reason)) {

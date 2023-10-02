@@ -3,24 +3,25 @@ import axios, { AxiosResponse } from 'axios';
 import { database } from '../../server_config';
 import { object } from 'joi';
 import { getAllSettings } from './settings';
+import translations from "../../translation.json";
 
 export const searchProduct = async (req: Request, res: Response) => {
     try {
         const value = req.query.value;
         if (value === undefined) {
-            res.status(400).send({ Error: 'Unable to get product', Details: "'value' is missing." });
+            res.status(400).send({ Error: 'Unable to get product', Details: translations["'value' is missing."] });
             return;
         }
         const count = req.query.count;
         if (count === undefined) {
-            res.status(400).send({ Error: 'Unable to get product', Details: "'count' is missing." });
+            res.status(400).send({ Error: 'Unable to get product', Details: translations["'count' is missing."] });
             return;
         }
         const url: string = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${value}&search_simple=1&pagesize=${count}&json=1`
         const response: AxiosResponse = await axios.get(url);
 
         if (response === undefined) {
-            res.status(400).send({ Error: 'Unable to get product', Details: 'request to openfoodfacts failed' });
+            res.status(400).send({ Error: 'Unable to get product', Details: translations['request to openfoodfacts failed'] });
             return;
         }
 
@@ -59,7 +60,7 @@ export const searchAllergen = async (req: Request, res: Response) => {
             return;
         }
         if (language == null || language == "") {
-            res.status(400).send({ Error: 'BadRequest', Details: 'Missing language'});
+            res.status(400).send({ Error: 'BadRequest', Details: translations['Missing language']});
             return;
         }
         let order_lang: string = ""

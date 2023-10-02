@@ -19,7 +19,7 @@ import halalRouter from './src/routes/halalRoutes';
 import missingProductRouter from './src/routes/missingProductRoutes';
 import pictureRouter from './src/routes/pictureRoutes'
 import invalidDataRouter from './src/routes/invalidDataRoutes';
-import oauthRouter from './src/routes/oauthRoutes';
+//import oauthRouter from './src/routes/oauthRoutes';
 import downloadRouter from './src/routes/download';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
@@ -179,4 +179,4 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(oauthRouter);
+//app.use(oauthRouter);

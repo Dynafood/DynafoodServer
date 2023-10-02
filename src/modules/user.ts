@@ -8,6 +8,8 @@ import { sendVerificationEmail } from '../modules/email';
 import CryptoJS from 'crypto-js';
 import { isUUID } from './db/scripts';
 
+const translations = require("../../translation.json")
+
 const path = require('path');
 
 type RestrictionObj = {
@@ -63,7 +65,7 @@ export const createUser = async (req: Request, res: Response) => {
         const cc: string | undefined = geoip.lookup(ip)?.country;
 
         if (cc === undefined) {                                                                                                    
-            res.status(400).send({ Error: 'Unable to create new User.', Details: `IP lookup failed ${ip}` });                            
+            res.status(400).send({ Error: 'Unable to create new User.', Details: translations["IP lookup failed"] });                            
             return                                                                                                                 
         }   
 
