@@ -255,7 +255,13 @@ const parseProductFromOFF = (product: AxiosResponse, response: JsonObject, userI
         response.ecoscoreData = getEcoScore(data);
         response.packing = data.packaging;
         response.name = product.data.product.product_name;
-        if (typeof data.image_front_url === 'undefined' || data.image_front_url == null) { response.images = null; } else { response.images = data.image_small_url; }
+        if (typeof data.image_front_url === 'undefined' || data.image_front_url == null) { 
+            response.images = "http://localhost:8081/placeholderImage";
+            //response.images = null; 
+        } else { 
+            response.images = data.image_small_url; 
+        }
+
         if (product.data.product) {
             response.ingredients = getInnerIngredients(product.data.product, language);
         }
