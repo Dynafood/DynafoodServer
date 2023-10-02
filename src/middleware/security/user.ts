@@ -3,6 +3,7 @@ import { QueryResultRow } from 'pg';
 import Joi from 'joi';
 import { Request, Response, NextFunction } from 'express';
 import { database } from '../../../server_config';
+import translation from "./../../../translation.json"
 
 const schema = Joi.object({
     firstName: Joi.string()

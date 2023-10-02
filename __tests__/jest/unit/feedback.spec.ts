@@ -2,6 +2,7 @@ import supertest from "supertest"
 import {app} from "../../../server_config"
 import jwt from "./mocks/mock_jwt"
 import db from "./mocks/mock_db"
+import translation from "./../../../translation.json"
 
 jwt.init()
 db.init()
@@ -29,14 +30,14 @@ describe('check create feedback routes', () => {
             reason: "appreciation"
         }).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(400)
-        expect(response.body).toStrictEqual({"Error": "No content provided", "Details": `Content is not provided or empty!`})
+        expect(response.body).toStrictEqual({"Error": "No content provided", "Details": translation[`Content is not provided or empty!`] })
     })
     test('create feedback missing reason', async () => {
         const response = await supertest(app).post("/feedback").send({            
             content: "fooocking awesome!!!",
         }).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(400)
-        expect(response.body).toStrictEqual({"Error": "No reason provided", "Details": `Reason is not provided or empty!`})
+        expect(response.body).toStrictEqual({"Error": "No reason provided", "Details": translation[`Reason is not provided or empty!`]})
     })
     test('create feedback invalid reason', async () => {
         const response = await supertest(app).post("/feedback").send({            

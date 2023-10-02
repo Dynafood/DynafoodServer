@@ -1,12 +1,13 @@
 import { Request, Response, NextFunction } from 'express';
 import { QueryResultRow } from 'pg';
 import { database } from '../../server_config';
+import translations from "../../translation.json";
 
 export const getRestrictionIdByName = async (req: Request, res: Response, next: NextFunction) : Promise<void> => {
     try {
         const restrictionName = req.body.restrictionName || null;
         if (restrictionName == null) {
-            res.status(400).send({ Error: 'BadRequest', Details: 'Missing restrictionName' });
+            res.status(400).send({ Error: 'BadRequest', Details: translations['Missing restrictionName.'] });
             return;
         }
         const restrictionID : string | null = await database.Settings.getRestrictionIdByName(restrictionName);
@@ -83,7 +84,7 @@ export const postSettings = async (req: Request, res: Response) : Promise<void> 
     try {
         const strongness = req.body.strongness || null
         if (strongness == null) {
-            res.status(400).send({ Error: 'BadRequest', Details: 'Missing strongness' });
+            res.status(400).send({ Error: 'BadRequest', Details: translations['Missing strongness.'] });
             return;
         }
         await database.Settings.createSetting(req.body.alertActivation, res.locals.user.userid, res.locals.restrictionID, req.body.strongness);
@@ -98,7 +99,7 @@ export const patchSettings = async (req: Request, res: Response): Promise<void> 
     try {
         const strongness = req.body.strongness || null
         if (strongness == null) {
-            res.status(400).send({ Error: 'BadRequest', Details: 'Missing strongness' });
+            res.status(400).send({ Error: 'BadRequest', Details: translations['Missing strongness.'] });
             return;
         }
         await database.Settings.updateAlertSetting(res.locals.user.userid, req.body.alertActivation, res.locals.restrictionID, req.body.strongness);

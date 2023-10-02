@@ -2,6 +2,7 @@ import supertest from "supertest"
 import {app} from "../../../server_config"
 import jwt from "./mocks/mock_jwt"
 import db from "./mocks/mock_db"
+import translation from './../../../translation.json'
 
 jwt.init()
 db.init()
@@ -34,7 +35,7 @@ describe('check create settings routes', () => {
     test('createSettings without restrictionname', async () => {
         const response = await supertest(app).post("/settings").send().set('Cookie', ['token=token_existing']);
         expect(response.statusCode).toBe(400)
-        expect(response.body).toStrictEqual({"Error": "BadRequest", "Details": "Missing restrictionName"})
+        expect(response.body).toStrictEqual({"Error": "BadRequest", "Details": translation["Missing restrictionName."]})
     })
     test('createSettings with non existing restrictionname', async () => {
         const response = await supertest(app).post("/settings").send({restrictionName: "fake", strongness: 2}).set('Cookie', ['token=token_existing']);

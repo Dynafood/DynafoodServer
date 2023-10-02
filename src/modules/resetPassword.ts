@@ -4,15 +4,16 @@ import { Request, Response } from 'express';
 import { sendResetPasswordEmail } from './email';
 import { database } from '../../server_config';
 import { checkPassword } from '../middleware/security/user';
+import translations from "../../translation.json";
 
 export const verifyCode = async (req: Request, res: Response) => {
     try {
         if (typeof req.body.code === 'undefined' || req.body.code === '') {
-            res.status(400).send({ Error: 'No code provided', Details: 'No code provided' });
+            res.status(400).send({ Error: 'No code provided', Details: translations['No code provided'] });
             return;
         }
         if (typeof req.body.email === 'undefined' || req.body.email === '') {
-            res.status(400).send({ Error: 'No email provided', Details: 'No email provided' });
+            res.status(400).send({ Error: 'No email provided', Details: translations['No email provided'] });
             return;
         }
 
@@ -32,7 +33,7 @@ export const verifyCode = async (req: Request, res: Response) => {
         const old_code = old_code_row.password_reset_token;
 
         if (code !== old_code) {
-            res.status(403).send({ Error: 'Code is not matching', Details: 'Code is not matching' });
+            res.status(403).send({ Error: 'Code is not matching', Details: translations['Code is not matching'] });
             return;
         }
 
@@ -59,7 +60,7 @@ export const triggerResetPasswordEmail = async (req: Request, res: Response) => 
         const email: string = req.query.email as string;
 
         if (typeof email === 'undefined' || email === '' || email === null) {
-            res.status(400).send({ Error: 'No email provided', Details: 'No email provided' });
+            res.status(400).send({ Error: 'No email provided', Details: translations['No email provided'] });
             return;
         }
 
@@ -68,11 +69,11 @@ export const triggerResetPasswordEmail = async (req: Request, res: Response) => 
         const user = await database.User.getUser(null, email);
 
         if (user.length === 0) {
-            res.status(204).send({ Error: 'No user with this email', Details: 'No user with this email' });
+            res.status(204).send({ Error: 'No user with this email', Details: translations['No user with this email'] });
             return;
         }
         if (typeof user[0].enduserid === 'undefined') {
-            res.status(204).send({ Error: 'No user with this email', Details: 'No user with this email' });
+            res.status(204).send({ Error: 'No user with this email', Details: translations['No user with this email'] });
             return;
         }
         await database.User.setPasswordResetToken(email, token);
@@ -90,15 +91,15 @@ export const resetPassword = async (req: Request, res: Response) => {
         let code: string | null = req.body.code || null;
 
         if (newPassword === null || typeof newPassword === 'undefined') {
-            res.status(400).send({ Error: 'No password provided', Details: 'No password provided' });
+            res.status(400).send({ Error: 'No password provided', Details: translations['No password provided'] });
             return;
         }
         if (email == null) {
-            res.status(400).send({Error: 'No email provided', Details: 'No email provided in body'})
+            res.status(400).send({Error: 'No email provided', Details: translations['No email provided in body']})
             return;
         }
         if (code == null) {
-            res.status(400).send({Error: 'No Verfifier code provided', Details: 'No property "code" in body provided'})
+            res.status(400).send({Error: 'No Verfifier code provided', Details: translations["No property 'code' in body provided"]})
             return;
         }
 
