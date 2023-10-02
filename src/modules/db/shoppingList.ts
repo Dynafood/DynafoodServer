@@ -83,7 +83,7 @@ export const getShoppingListItems = async (listID: string, userid: string) => {
     FROM ShoppingListItem sli
     JOIN ShoppingList sl ON sl.listID = sli.listID
     WHERE sl.listID = '${checkInputBeforeSqlQuery(listID)}'
-        AND sl.enduserId = '${checkInputBeforeSqlQuery(userid)}' ORDER BY productName;`);
+        AND sl.enduserId = '${checkInputBeforeSqlQuery(userid)}' ORDER BY lower(productName), productName;`);
     return response.rows
 };
 
@@ -91,7 +91,7 @@ export const getShoppingLists = async (userid: string) => {
     const response : QueryResult = await db_adm_conn.query(`
     SELECT listName, listID
     FROM ShoppingList
-    WHERE enduserId = '${checkInputBeforeSqlQuery(userid)}' ORDER BY listName;`);
+    WHERE enduserId = '${checkInputBeforeSqlQuery(userid)}' ORDER BY lower(listName), listName;`);
     return response.rows
 };
 

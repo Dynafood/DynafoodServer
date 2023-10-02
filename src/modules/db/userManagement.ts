@@ -51,12 +51,22 @@ export const createUserOAuth = async (userid: string, provider_id: string, userN
 
 export const getUser = async (userid: string | null = null, email: string | null = null) : Promise<Array<QueryResultRow>> => {
     let query: string = `
-    SELECT EU.enduserid, EU.passcode, EU.firstName, EU.lastName, EU.userName, EU.email, EU.phoneNumber, EU.country_code, ER.alertActivation, R.category_name as restrictionName
+    SELECT EU.enduserid, EU.passcode, EU.firstName, EU.lastName, EU.userName, EU.email, EU.phoneNumber, EU.country_code, ER.alertActivation, R.category_name as restrictionName, refresh_token
     FROM EndUser EU
     LEFT JOIN EndUser_Restriction ER ON ER.endUserID = EU.endUserID
     LEFT JOIN own_Restriction R ON R.restrictionID = ER.restrictionID
     `;
     if (userid != null) { query += `WHERE EU.endUserID = '${checkInputBeforeSqlQuery(userid)}';`; } else if (email != null) { query += `WHERE EU.email = lower('${checkInputBeforeSqlQuery(email)}');`; } else { throw Error('one argument must be provided'); }
+    const newUser : QueryResult = await db_adm_conn.query(query);
+    return newUser.rows;
+};
+
+export const updateUserByRefreshToken = async (refresh_token: string) : Promise<Array<QueryResultRow>> => {
+    let query: string = `
+    UPDATE enduser
+	SET refresh_token=gen_random_uuid()
+    WHERE refresh_token = '${checkInputBeforeSqlQuery(refresh_token)}'
+    RETURNING *;`;
     const newUser : QueryResult = await db_adm_conn.query(query);
     return newUser.rows;
 };

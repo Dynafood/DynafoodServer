@@ -4,14 +4,14 @@ import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteS
 import { deleteElementFromHistory, getElements, updateHistory } from './historyManagement';
 import { updatePassword } from './resetPassword';
 import { updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting, getAllSettings } from './settingsManagement';
-import { getEmailConfirmed, setEmailConfirmed, createUser, createUserOAuth, deleteUser, getUser, getPasswordResetToken, setPasswordResetToken } from './userManagement';
+import { getEmailConfirmed, setEmailConfirmed, createUser, createUserOAuth, deleteUser, getUser, getPasswordResetToken, setPasswordResetToken, updateUserByRefreshToken } from './userManagement';
 import { insert, getTrendingLocal, getTrendingGlobal, getCountryCode } from './trendingProducts';
 import { DatabaseInterface } from '../../../server_config';
 import { getProviderByName } from './oauth';
 import { getAllergenbyName, directQuery } from './search';
 import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from './product';
 
-console.log('this is db_vars:', process.env.NODE_ENV, process.env.DB_USER, process.env.PG_PASSWORD, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
+// console.log('this is db_vars:', process.env.NODE_ENV, process.env.DB_USER, process.env.PG_PASSWORD, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
 
 const connect = async () => {
     const connectionString: string = `postgresql://${process.env.PG_USER}:${process.env.PG_PASSWORD}@${process.env.PG_HOST}:${process.env.PG_PORT}/${process.env.PG_DATABASE}`;
@@ -65,7 +65,8 @@ const Database: DatabaseInterface = {
         getPasswordResetToken,
         setPasswordResetToken,
         setEmailConfirmed,
-        getEmailConfirmed
+        getEmailConfirmed,
+        updateUserByRefreshToken
     },
     Settings: {
         getRestrictionIdByName,

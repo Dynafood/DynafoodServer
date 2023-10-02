@@ -6,6 +6,7 @@ import requestIP from 'request-ip';
 import geoip from 'geoip-lite';
 import { sendVerificationEmail } from '../modules/email';
 import CryptoJS from 'crypto-js';
+import { isUUID } from './db/scripts';
 
 const path = require('path');
 
@@ -74,7 +75,7 @@ export const createUser = async (req: Request, res: Response) => {
             httpOnly: true
         });
         await sendVerificationEmail("", req.body.email);
-        res.status(200).json(token);
+        res.status(200).json({token: token, refresh_token: created.refresh_token});
         return;
     } catch (error: any) {
         res.status(400).send({ Error: 'Unable to create new User.', Details: `${error.stack}` });
@@ -157,7 +158,7 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
             res.cookie('token', token, {
                 httpOnly: true
             });
-            res.status(200).json(token);
+            res.status(200).json({token: token, refresh_token: user[0].refresh_token});
             return;
         }
         res.status(401).send({ Error: 'Wrong credentials' });
@@ -174,16 +175,32 @@ export const verifyEmail = async (req: Request, res: Response) : Promise<void> =
     res.status(200).sendFile(`/test.html`, { root: path.join(__dirname, '') });
 }
 
+export const refresh_token = async (req: Request, res: Response) : Promise<void> => {
+    try {
+        const refresh_token: string = <string> req.query.refresh_token;
 
+        if (!refresh_token) {
+            res.status(400).send({ Error: "Bad Request", Details: `No request_token provided.`});
+            return;
+        }
+        if (!isUUID(refresh_token)) {
+            res.status(400).send({ Error: "Bad Request", Details: `Request token is no UUID.`});
+            return;
+        }
+        const users : Array<QueryResultRow> = await database.User.updateUserByRefreshToken(refresh_token);
 
+        if (users.length == 0) {
+            console.log(`There is no user with this refresh_token = ${refresh_token}`);
+            res.status(401).send({ Error: "Unauthenticated", Details: `The user with refresh_token = ${refresh_token} tried to login without a valid token. Check if the email is confirmed and the token is correct.`} );
+            return;
+        }
 
-
-
-
-
-
-
-
-
-
-
+        const token : string = JWT.create(users[0].enduserid);
+        res.cookie('token', token, {
+            httpOnly: true
+        });
+        res.status(200).json({token: token, refresh_token: users[0].refresh_token});
+    } catch (error: any) {
+        res.status(500).send({ Error: error, details: error.stack });
+    }
+}

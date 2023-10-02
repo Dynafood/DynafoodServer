@@ -41,6 +41,8 @@ const schema = Joi.object({
 });
 
 export const checkPassword = (password: string) : string => {
+    if (password.length < 8) { return "Password has to have at least 8 characters"; }
+
     const regexplower = new RegExp('^(?=.*[a-z]).+$'); // eslint-disable-line prefer-regex-literals
     const regexpupper = new RegExp('^(?=.*[A-Z]).+$'); // eslint-disable-line prefer-regex-literals
     const regexpNumber = new RegExp('^(?=.*[0-9]).+$'); // eslint-disable-line prefer-regex-literals
@@ -53,14 +55,15 @@ export const checkPassword = (password: string) : string => {
 };
 
 export const checkCreateUserReq = async (req: Request, res: Response, next: NextFunction) : Promise<void> => {
-    const { error } = schema.validate(req.body);
-    if (error !== undefined) {
-        res.status(400).send({ Error: error });
+    
+    const passwordCheck: string = checkPassword(req.body.password ?? "");
+    if (passwordCheck !== 'Good') {
+        res.status(400).send({ Error: passwordCheck, reason: "password"  });
         return;
     }
-    const passwordCheck: string = checkPassword(req.body.password);
-    if (passwordCheck !== 'Good') {
-        res.status(400).send({ Error: passwordCheck });
+    const { error } = schema.validate(req.body);
+    if (error !== undefined) {
+        res.status(400).send({ Error: error, reason: "email" });
         return;
     }
     const prevCheckEmail : Array<QueryResultRow> = await database.User.getUser(null, req.body.email);

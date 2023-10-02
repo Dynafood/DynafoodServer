@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "description": "EIP PROJECT EPITECH",
   "scripts": {
-    "start": "nodemon -e js,mjs -r dotenv/config ./server.ts",
+    "start": "ts-node -r dotenv/config ./server.ts",
     "test": "jest -c ./jest.unit.json",
     "test:coverage": "jest --coverage -c ./jest.unit.json",
     "build": "tsc --project ./tsconfig.json"

@@ -21,6 +21,7 @@ export const getUser = async (userid: string | null = null, email: string | null
                         email: "email@gmail.com",
                         phonenumber: "00000000",
                         country_code: "DE",
+                        refresh_token: "token_existing"
                     }
                 ] )
             }
@@ -70,16 +71,17 @@ describe('check get user routes', () => {
 
 describe('check create user routes', () => {
     const parameters = [
+        ["password", "aA1asbfdoazierf-"],
         ["firstName", "karl"],
         ["lastName", "stoer"],
         ["userName", "karl123"],
         ["email", "karl@gmail.com"],
-        ["phoneNumber", "00000000"],
-        ["password", "aA1asbfdoazierf-"]
+        ["phoneNumber", "00000000"]
     ]
     test('wrong arguments signup', async () => { 
         let cur : any = {}
-        for (let i = 0; i < parameters.length; i++)  {
+        cur[parameters[0][0]] = parameters[0][1]
+        for (let i = 1; i < parameters.length; i++)  {
             const response = await supertest(app).post("/signup").send(cur);
             expect(response.statusCode).toBe(400)
             expect(response.body).toMatchObject({Error: {details: [{message: "\"" + parameters[i][0] + "\" is required"}]}})
@@ -121,7 +123,8 @@ describe('check create user routes', () => {
             cur[parameters[i][0]] = parameters[i][1]
         }
         const response = await supertest(app).post("/signup").send(cur);
-        expect(response.body).toBe("token_existing")
+        expect(response.body.token).toBe("token_existing");
+        expect(response.body.refresh_token).toBe("token_existing");
         expect(response.statusCode).toBe(200)
     })
 })
@@ -165,6 +168,7 @@ describe('check login user route', () => {
             password: "password"
         }).send();
         expect(response.statusCode).toBe(200)
-        expect(response.body).toBe("token_existing")
+        expect(response.body.token).toBe("token_existing");
+        expect(response.body.refresh_token).toBe("token_existing");
     })
 })

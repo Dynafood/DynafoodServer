@@ -31,7 +31,7 @@ export const secureRouteMiddleware = async (req: Request, res: Response, next: N
     } else
     if (typeof header_token !== 'undefined' && header_token != null) {
         try {
-            if (header_token.indexOf('Bearer ') !== 0) {
+            if (!header_token.startsWith('Bearer ')) {
                 throw new Error('no valid bearer');
             }
             header_token = header_token.substring(7);

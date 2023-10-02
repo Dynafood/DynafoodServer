@@ -33,6 +33,7 @@ const getUser = async (userid: string | null = null, email: string | null = null
                         phonenumber: "00000000",
                         country_code: "DE",
                         password_reset_token: "123456",
+                        refresh_token: "token_existing"
                     }
                 ] )
             }
@@ -84,22 +85,27 @@ describe('reset password via verification email', () => {
         expect(response.body).toStrictEqual({ Error: 'No password provided', Details: 'No password provided' })
     })
     test('reset password via verification email too short new password (no lowercase)', async () => {
-        const response = await supertest(app).post("/resetPassword").send({password: "123", email: "i@i.com", code: "1"}).set('authorization', 'Bearer token_existing');
+        const response = await supertest(app).post("/resetPassword").send({password: "Ab3-", email: "i@i.com", code: "1"}).set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(409)
+        expect(response.body).toStrictEqual({Error: "Password is not strong enough", Details: "Password has to have at least 8 characters"})
+    })
+    test('reset password via verification email too short new password (no lowercase)', async () => {
+        const response = await supertest(app).post("/resetPassword").send({password: "12345678", email: "i@i.com", code: "1"}).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(409)
         expect(response.body).toStrictEqual({Error: "Password is not strong enough", Details: "Need a lowerCase"})
     })
     test('reset password via verification email too short new password (no uppercase)', async () => {
-        const response = await supertest(app).post("/resetPassword").send({password: "123i", email: "i@i.com", code: "1"}).set('authorization', 'Bearer token_existing');
+        const response = await supertest(app).post("/resetPassword").send({password: "123i5678", email: "i@i.com", code: "1"}).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(409)
         expect(response.body).toStrictEqual({Error: "Password is not strong enough", Details: "Need a uppercase"})
     })
     test('reset password via verification email too short new password (no number)', async () => {
-        const response = await supertest(app).post("/resetPassword").send({password: "aBaB", email: "i@i.com", code: "1"}).set('authorization', 'Bearer token_existing');
+        const response = await supertest(app).post("/resetPassword").send({password: "aBabbbbb", email: "i@i.com", code: "1"}).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(409)
         expect(response.body).toStrictEqual({Error: "Password is not strong enough", Details: "Need a digit"})
     })
     test('reset password via verification email too short new password (no special)', async () => {
-        const response = await supertest(app).post("/resetPassword").send({password: "33abBd", email: "i@i.com", code: "1"}).set('authorization', 'Bearer token_existing');
+        const response = await supertest(app).post("/resetPassword").send({password: "33abBdbb", email: "i@i.com", code: "1"}).set('authorization', 'Bearer token_existing');
         expect(response.statusCode).toBe(409)
         expect(response.body).toStrictEqual({Error: "Password is not strong enough", Details: "Need a special character (@, #, $, %, ^, &, +, -, !, ?, _, *, ., or ,)"})
     })

@@ -255,12 +255,14 @@ const parseProductFromOFF = (product: AxiosResponse, response: JsonObject, userI
         response.ecoscoreData = getEcoScore(data);
         response.packing = data.packaging;
         response.name = product.data.product.product_name;
+
         if (typeof data.image_front_url === 'undefined' || data.image_front_url == null) { 
-            response.images = "http://localhost:8081/placeholderImage";
-            //response.images = null; 
+            response.images = "http://x2024dynafood545437452001.westeurope.cloudapp.azure.com:8081/placeholderImage";
         } else { 
             response.images = data.image_small_url; 
         }
+
+        response.images = (typeof data.image_front_url === 'undefined' || data.image_front_url == null) ? null : data.image_front_url;
 
         if (product.data.product) {
             response.ingredients = getInnerIngredients(product.data.product, language);

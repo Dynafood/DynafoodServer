@@ -61,6 +61,7 @@ export interface DatabaseInterface {
         setPasswordResetToken: (userid: string, token: string) => Promise<QueryResultRow>
         setEmailConfirmed: (email: string) => Promise<QueryResultRow>
         getEmailConfirmed: (email: string) => Promise<QueryResultRow>
+        updateUserByRefreshToken: (refresh_token: string) => Promise<Array<QueryResultRow>>
     }
     Settings: {
         getRestrictionIdByName: (restrictionName: string) => Promise<string | null>
