@@ -5,6 +5,7 @@ import { database, JWT } from '../../server_config';
 import requestIP from 'request-ip';
 import geoip from 'geoip-lite';
 import { sendVerificationEmail } from '../modules/email';
+import CryptoJS from 'crypto-js';
 
 const path = require('path');
 
@@ -149,8 +150,6 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
             return;
         }
 
-
-
         const correctPassword: boolean = await bcrypt.compare(password, user[0].passcode);
         if (user[0].email === email && correctPassword) {
             const userid : string = user[0].enduserid;
@@ -168,7 +167,9 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
 };
 
 export const verifyEmail = async (req: Request, res: Response) : Promise<void> => {
-    const email = req.query.email as string;
+    const words = CryptoJS.enc.Base64.parse(req.query.email as string);
+    const base64email = CryptoJS.enc.Utf8.stringify(words);
+    const email = base64email.substring(11, base64email.length - 3);
     await database.User.setEmailConfirmed(email);
     res.status(200).sendFile(`/test.html`, { root: path.join(__dirname, '') });
 }
