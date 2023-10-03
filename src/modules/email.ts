@@ -1,6 +1,7 @@
 import { mail_sender } from '../../server_config';
 import CryptoJS from 'crypto-js';
 import { Request, Response } from 'express';
+import { Buffer } from "buffer";
 const reset_password_template_id: string = 'd-c075a6859e224245aa76f0300e56f66b';
 const verification_template_id: string ='d-5fea6667ddf344bcbe00168e1d7ad728';
 const sender_email: string = 'info.dynafood@gmail.com';
@@ -24,12 +25,15 @@ export const sendResetPasswordEmail = async (name: string, email: string, token:
 };
 
 export const sendVerificationEmail = async (name: string, email: string) => {
-    const salt: string = "__DF_Auth__";
-    const f: string = salt + email + "ABC";
+    //const salt: string = "__DF_Auth__";
+    //const f: string = salt + email + "ABC";
 
-    const words = CryptoJS.enc.Utf8.parse(f);
-    const base64 = CryptoJS.enc.Base64.stringify(words);
+    //const words = CryptoJS.enc.Utf8.parse(f);
+    //const base64 = CryptoJS.enc.Base64.stringify(words);
 
+    const decode = (str: string):string => Buffer.from(str, 'utf8').toString('base64');
+    const base64 = decode(email);
+    //const base64 = btoa(email);
     //const new_email = `http://x2024dynafood545437452001.westeurope.cloudapp.azure.com:8081/verifyEmail?email=${base64}`
     const new_email = `http://localhost:8081/verifyEmail?email=${base64}`
     if (mail_sender != undefined) {

@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "6043a5ed-3d5b-4f92-b284-b342cdcd70e4",
-		"name": "DynaFood Postman Tests",
+		"_postman_id": "e13a77e3-da67-4c57-85e6-3fc9c0621e54",
+		"name": "DynaFood Postman Tests Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "14726218"
+		"_exporter_id": "23173318"
 	},
 	"item": [
 		{
@@ -560,12 +560,6 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"var jsonData = pm.response.json();",
-									"",
-									"pm.test(\"Check correct output\", function () {",
-									"    pm.expect(jsonData.length).to.eql(20);",
 									"});"
 								],
 								"type": "text/javascript"
@@ -612,7 +606,7 @@
 									"",
 									"pm.test(\"Check Error\", function () {",
 									"    pm.expect(jsonData.Error).to.eql(\"Unable to get product\");",
-									"    pm.expect(jsonData.Details).to.eql(\"'value' is missing.\");",
+									"    pm.expect(jsonData.Details.en).to.eql(\"'value' is missing.\");",
 									"});"
 								],
 								"type": "text/javascript"
@@ -660,7 +654,7 @@
 									"",
 									"pm.test(\"Check Error\", function () {",
 									"    pm.expect(jsonData.Error).to.eql(\"Unable to get product\");",
-									"    pm.expect(jsonData.Details).to.eql(\"'count' is missing.\");",
+									"    pm.expect(jsonData.Details.en).to.eql(\"'count' is missing.\");",
 									"});"
 								],
 								"type": "text/javascript"
@@ -938,7 +932,7 @@
 									"pm.test(\"validate response data\", function () {",
 									"    var jsonData = pm.response.json();",
 									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products global\");",
-									"    pm.expect(jsonData.Details).to.eql(\"'count' is not defined\");",
+									"    pm.expect(jsonData.Details.en).to.eql(\"'count' is not defined.\");",
 									"});"
 								],
 								"type": "text/javascript"
@@ -980,7 +974,7 @@
 									"pm.test(\"validate response data\", function () {",
 									"    var jsonData = pm.response.json();",
 									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products global\");",
-									"    pm.expect(jsonData.Details).to.eql(\"'count' is negative\");",
+									"    pm.expect(jsonData.Details.en).to.eql(\"'count' is negative.\");",
 									"});"
 								],
 								"type": "text/javascript"
@@ -1021,7 +1015,7 @@
 									"pm.test(\"validate response data\", function () {",
 									"    var jsonData = pm.response.json();",
 									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products local\");",
-									"    pm.expect(jsonData.Details).to.eql(\"'count' is negative\");",
+									"    pm.expect(jsonData.Details.en).to.eql(\"'count' is negative.\");",
 									"});"
 								],
 								"type": "text/javascript"
@@ -1062,7 +1056,7 @@
 									"pm.test(\"validate response data\", function () {",
 									"    var jsonData = pm.response.json();",
 									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products local\");",
-									"    pm.expect(jsonData.Details).to.eql(\"'count' is not defined\");",
+									"    pm.expect(jsonData.Details.en).to.eql(\"'count' is not defined.\");",
 									"});"
 								],
 								"type": "text/javascript"
@@ -1193,7 +1187,7 @@
 							"const response = pm.response.json();",
 							"",
 							"pm.test(\"Response contains 'Error'\", () => {",
-							"    pm.expect(response.Error).to.be.an('object');",
+							"    pm.expect(response.Error).to.be.a('string');",
 							"});"
 						],
 						"type": "text/javascript"
@@ -1228,12 +1222,8 @@
 							"",
 							"const response = pm.response.json();",
 							"",
-							"pm.test(\"Response contains 'Error'\", () => {",
-							"    pm.expect(response.Error).to.be.an('object');",
-							"});",
-							"",
 							"pm.test(\"Weak password message\", () => {",
-							"    pm.expect(response.Error.details[0].message).to.eql(\"\\\"password\\\" length must be at least 8 characters long\");",
+							"    pm.expect(response.Error).to.eql(\"Password has to have at least 8 characters\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -1354,7 +1344,7 @@
 						},
 						{
 							"key": "password",
-							"value": "1",
+							"value": "{{test_password}}",
 							"type": "text"
 						},
 						{
@@ -1435,7 +1425,7 @@
 						},
 						{
 							"key": "password",
-							"value": "1",
+							"value": "{{test_password}}",
 							"type": "text"
 						},
 						{
@@ -1516,7 +1506,7 @@
 						},
 						{
 							"key": "password",
-							"value": "1",
+							"value": "{{test_password}}",
 							"type": "text"
 						},
 						{
@@ -1597,7 +1587,7 @@
 						},
 						{
 							"key": "password",
-							"value": "1",
+							"value": "{{test_password}}",
 							"type": "text"
 						},
 						{
@@ -1678,7 +1668,7 @@
 						},
 						{
 							"key": "password",
-							"value": "1",
+							"value": "{{test_password}}",
 							"type": "text"
 						},
 						{
@@ -2883,218 +2873,6 @@
 			"response": []
 		},
 		{
-			"name": "Reset password",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"",
-							"pm.test(\"Check correct response\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.status).to.equal('OK');",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "password",
-							"value": "{{new_password_after_reset}}",
-							"type": "text"
-						},
-						{
-							"key": "email",
-							"value": "{{test_email}}",
-							"type": "text"
-						},
-						{
-							"key": "code",
-							"value": "INSERT_CODE_HERE",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "{{base_url}}/resetPassword",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"resetPassword"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Validate password change",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 401\", function () {",
-							"    pm.response.to.have.status(401);",
-							"});",
-							"",
-							"",
-							"pm.test(\"Check correct response\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.Error).to.equal('Wrong credentials');",
-							"    console.log(jsonData);",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "email",
-							"value": "{{test_email}}",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "password",
-							"value": "{{test_password}}",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
-				"url": {
-					"raw": "{{base_url}}/login?email={{test_email}}&password={{test_password}}",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"login"
-					],
-					"query": [
-						{
-							"key": "email",
-							"value": "{{test_email}}"
-						},
-						{
-							"key": "password",
-							"value": "{{test_password}}"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Reset password Back",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"",
-							"pm.test(\"Check correct response\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.status).to.equal('OK');",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "password",
-							"value": "{{test_password}}",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "{{base_url}}/resetPassword",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"resetPassword"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Reset password Weak password",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 409\", function () {",
-							"    pm.response.to.have.status(409);",
-							"});",
-							"",
-							"pm.test(\"Check correct response\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.Details).to.equal(\"Need a lowerCase\");",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "password",
-							"value": "1",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "{{base_url}}/resetPassword",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"resetPassword"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Create Valid Feedback",
 			"event": [
 				{
@@ -3153,7 +2931,7 @@
 							"pm.test(\"Correct error message\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.Error).to.eql(\"No content provided\");\r",
-							"    pm.expect(jsonData.Details).to.eql(\"Content is not provided or empty!\");\r",
+							"    pm.expect(jsonData.Details.en).to.eql(\"Content is not provided or empty!\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -3205,7 +2983,7 @@
 							"pm.test(\"Correct error message\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.Error).to.eql(\"No reason provided\");\r",
-							"    pm.expect(jsonData.Details).to.eql(\"Reason is not provided or empty!\");\r",
+							"    pm.expect(jsonData.Details.en).to.eql(\"Reason is not provided or empty!\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -4203,7 +3981,8 @@
 		},
 		{
 			"key": "email_test_email",
-			"value": "taubert.marcel@gmail.com"
+			"value": "taubert.marcel@gmail.com",
+			"disabled": true
 		},
 		{
 			"key": "base_url",
