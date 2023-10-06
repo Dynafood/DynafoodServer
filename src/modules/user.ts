@@ -5,7 +5,11 @@ import { database, JWT } from '../../server_config';
 import requestIP from 'request-ip';
 import geoip from 'geoip-lite';
 import { sendVerificationEmail } from '../modules/email';
+import CryptoJS from 'crypto-js';
 import { isUUID } from './db/scripts';
+import { Buffer } from "buffer";
+
+const translations = require("../../translation.json")
 
 const path = require('path');
 
@@ -62,11 +66,14 @@ export const createUser = async (req: Request, res: Response) => {
         const cc: string | undefined = geoip.lookup(ip)?.country;
 
         if (cc === undefined) {                                                                                                    
-            res.status(400).send({ Error: 'Unable to create new User.', Details: `IP lookup failed ${ip}` });                            
+            res.status(400).send({ Error: 'Unable to create new User.', Details: translations["IP lookup failed"] });                            
             return                                                                                                                 
         }   
 
-        const created: QueryResultRow = await database.User.createUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.email, req.body.phoneNumber, passcode, false, cc);
+        // for testing.
+        const email_confirmed: boolean = req.body.email === 'taubert.marcel@gmail.com';
+
+        const created: QueryResultRow = await database.User.createUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.email, req.body.phoneNumber, passcode, email_confirmed, cc);
         const userid: string = created.enduserid;
         const token: string = JWT.create(userid);
 
@@ -150,8 +157,6 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
             return;
         }
 
-
-
         const correctPassword: boolean = await bcrypt.compare(password, user[0].passcode);
         if (user[0].email === email && correctPassword) {
             const userid : string = user[0].enduserid;
@@ -169,8 +174,14 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
 };
 
 export const verifyEmail = async (req: Request, res: Response) : Promise<void> => {
-    const email = req.query.email as string;
+    //const words = CryptoJS.enc.Base64.parse(req.query.email as string);
+    //const base64email = CryptoJS.enc.Utf8.stringify(words);
+    //const email = base64email.substring(11, base64email.length - 3);
+    console.log("email ------------------------" + req.query.email as string + "--");
+    const encode = (str: string):string => Buffer.from(str, 'base64').toString('utf8');
+    const email = encode(req.query.email as string);
     await database.User.setEmailConfirmed(email);
+
     res.status(200).sendFile(`/test.html`, { root: path.join(__dirname, '') });
 }
 
