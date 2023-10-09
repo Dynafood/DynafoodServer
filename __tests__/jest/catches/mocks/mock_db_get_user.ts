@@ -1,6 +1,7 @@
 import { QueryResultRow } from "pg"
 import { DatabaseInterface, init_db } from "../../../../server_config"
 import { JsonObject } from "swagger-ui-express";
+import { create, remove } from "./mock_bookmarking"
 import { createNewFeedback } from "./mock_feedback";
 import { deleteElementFromHistory, getElements, updateHistory } from "./mock_history";
 import { updatePassword } from "./mock_password";
@@ -72,7 +73,7 @@ const mock_db: DatabaseInterface = {
         getCountryCode: getCountryCode
     },
     OAuth: {
-        getProviderByName: async (name: string) : Promise<QueryResultRow> => {throw "ErrorMock"}
+        getProviderByName: async (name: string) : Promise<QueryResultRow> => {throw new Error("ErrorMock")}
     },
     Search: {
         getAllergenbyName: getAllergenbyName
@@ -84,8 +85,12 @@ const mock_db: DatabaseInterface = {
         getIngredientsByBarcode,
         getProductsByName
     },
-    connect: async () => {throw "ErrorMock"},
-    end: async () => {throw "ErrorMock"}
+    Bookmarking: {
+        create,
+        remove
+    },
+    connect: async () => {throw new Error("ErrorMock")},
+    end: async () => {throw new Error("ErrorMock")}
 }
 
 const init = () => {

@@ -17,8 +17,8 @@ describe('check create user routes', () => {
     ]
     test('right signup catch', async () => {
         let cur : any = {}
-        for (let i = 0; i < parameters.length; i++)  {
-            cur[parameters[i][0]] = parameters[i][1]
+        for (const element of parameters)  {
+            cur[element[0]] = element[1]
         }
         const response = await supertest(app).post("/signup").send(cur);
         expect(response.statusCode).toBe(400)
