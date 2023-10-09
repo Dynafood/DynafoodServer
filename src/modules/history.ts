@@ -24,7 +24,10 @@ export const getElementsFromHistory = async (req: Request, res: Response) : Prom
                 "time": `${localtime.getHours().toString().padStart(2, '0')}:${localtime.getMinutes().toString().padStart(2, '0')}`
             }
         })
-        res.send({ elements: response });
+        const bookmarked = response.filter((el)=> el.bookmarked)
+        const non_bookmarked = response.filter((el)=> !el.bookmarked)
+        console.log(bookmarked, non_bookmarked)
+        res.send({ elements: bookmarked.concat(non_bookmarked) });
     } catch (err: any) {
         res.status(500).send({ Error: err, Details: err.stack });
     }

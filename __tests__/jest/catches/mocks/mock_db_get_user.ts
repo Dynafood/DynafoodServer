@@ -1,6 +1,5 @@
 import { QueryResultRow } from "pg"
 import { DatabaseInterface, init_db } from "../../../../server_config"
-import { JsonObject } from "swagger-ui-express";
 import { create, remove } from "./mock_bookmarking"
 import { createNewFeedback } from "./mock_feedback";
 import { deleteElementFromHistory, getElements, updateHistory } from "./mock_history";
