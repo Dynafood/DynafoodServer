@@ -10,6 +10,7 @@ import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteS
 import { QueryResultRow } from "pg";
 import {getAllergenbyName} from "./mock_search";
 import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from "./mock_product";
+import { cleanDublicateInvalidData, deleteElementFromInvalidData, getElementsFromInvalidData, insertIntoInvalidData, updateInvalidData, updateInvalidDataElement } from './mock_invalidData';
 
 const directQuery = (quer: string) => {
     return new Promise((resolve, reject) => {
@@ -83,6 +84,14 @@ const mock_db: DatabaseInterface = {
         getCategoriesByBarcode,
         getIngredientsByBarcode,
         getProductsByName
+    },
+    InvalidDataManagement: {
+        updateInvalidData: updateInvalidData,
+        cleanDublicateInvalidData: cleanDublicateInvalidData,
+        updateInvalidDataElement: updateInvalidDataElement,
+        insertIntoInvalidData: insertIntoInvalidData,
+        deleteElementFromInvalidData: deleteElementFromInvalidData,
+        getElementsFromInvalidData: getElementsFromInvalidData,
     },
     connect: async () : Promise<void> => {},
     end: async () : Promise<void> => {}

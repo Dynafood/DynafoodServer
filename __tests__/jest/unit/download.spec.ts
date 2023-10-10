@@ -11,4 +11,8 @@ describe('check download route', () => {
         const response = await supertest(app).get("/download").send();
         expect(response.statusCode).toBe(200)
     })
+    test('check placeholer image route', async () => {
+        const response = await supertest(app).get("/placeholderImage").send();
+        expect(response.statusCode).toBe(200)
+    })
 })

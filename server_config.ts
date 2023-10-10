@@ -1,6 +1,6 @@
 import session from "cookie-session";
 import passport from "passport";
-import express, { Express } from 'express';
+import express, { Express, Request, Response } from 'express';
 import logger from './src/middleware/logger';
 import swaggerUI, { JsonObject } from 'swagger-ui-express';
 import swaggerJSDoc from 'swagger-jsdoc';
@@ -94,7 +94,15 @@ export interface DatabaseInterface {
         getIngredientsByBarcode: (barcode: string, order_lang: string) => Promise<Array<JsonObject>>
         getProductsByName: (name: string) => Promise<Array<JsonObject>>
 
-    }
+    },
+    InvalidDataManagement: {
+        updateInvalidData: (userID: string, barcode: string, product: string, productDesc: string) => Promise<void>,
+        cleanDublicateInvalidData: (userID: string, barcode: string) => Promise<void>,
+        updateInvalidDataElement: (userID: string, barcode: string, product: string, productDesc : string) => Promise<void>,
+        insertIntoInvalidData: (userID: string, barcode: string, product: string, productDesc : string) => Promise<void>,
+        deleteElementFromInvalidData: (elementID: string, userid: string) => Promise<void>,
+        getElementsFromInvalidData: (userid: string) => Promise<Array<QueryResultRow>>,
+    },
     connect: () => Promise<void>
     end: () => Promise<void>
 }

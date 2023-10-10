@@ -1,11 +1,9 @@
-import {db_adm_conn} from "./index";
-import { QueryResult } from "pg";
+import { db_adm_conn } from "./index";
+import { QueryResult, QueryResultRow } from "pg";
 import { checkInputBeforeSqlQuery } from './scripts';
-import { Request, Response, NextFunction } from 'express'
-import { JsonObject } from "swagger-ui-express";
-
-import {sendInvalidDataEmailBis} from "../../modules/email"
-
+//import { Request, Response, NextFunction } from 'express'
+//import { JsonObject } from "swagger-ui-express";
+//import {sendInvalidDataEmailBis} from "../../modules/email"
 
 export const updateInvalidData = async (userID: string, barcode: string, product: string, productDesc: string) : Promise<void> => {
     const response : QueryResult = await db_adm_conn.query(`
@@ -53,28 +51,26 @@ export const insertIntoInvalidData = async (userID: string, barcode: string, pro
     VALUES ('${userID}', '${barcode}', '${product}', '${productDesc}');`)
 }
 
-export const deleteElementFromInvalidData = async (req: Request, res: Response) : Promise<void> => {
-    const elementID: string = checkInputBeforeSqlQuery(req.params.elementID);
+export const deleteElementFromInvalidData = async (elementID: string, userid: string) : Promise<void> => {
     await db_adm_conn.query(`
     DELETE FROM InvalidData 
-    WHERE invalidDataId = '${elementID}' AND enduserid = '${checkInputBeforeSqlQuery(res.locals.user.userid)}';`)
-    res.send("DELETED")
+        WHERE invalidDataId = '${checkInputBeforeSqlQuery(elementID)}' 
+        AND   enduserid     = '${checkInputBeforeSqlQuery(userid)}';`);
 }
 
-export const getElementsFromInvalidData = async (req: Request, res: Response) : Promise<void> => {
-    const userID: string = checkInputBeforeSqlQuery(res.locals.user.userid);
+export const getElementsFromInvalidData = async (userID: string) : Promise<Array<QueryResultRow>> => {
     var response : QueryResult = await db_adm_conn.query(`
     SELECT H.invalidDataId, H.barcode, H.productName, H.productDesc
     FROM InvalidData H
     JOIN EndUser EU ON EU.endUserID = H.endUserID
-    WHERE EU.endUserID = '${userID}'
+    WHERE EU.endUserID = '${checkInputBeforeSqlQuery(userID)}'
     ORDER BY H.invalidDataId DESC;`)
-    res.send( { elements: response.rows })
+    return response.rows;
 }
 
 
-export const InsertElementsInvalidData = async (req: Request, res: Response) : Promise<void> => {
-    updateInvalidData(res.locals.user.userid , req.body.barcode , req.body.productname , req.body.productDesc)
-    sendInvalidDataEmailBis(req.body.barcode , req.body.productname , req.body.productDesc)
-    res.send("add in DB")
-}
+//export const InsertElementsInvalidData = async (req: Request, res: Response) : Promise<void> => {
+    //updateInvalidData(res.locals.user.userid , req.body.barcode , req.body.productname , req.body.productDesc)
+    //sendInvalidDataEmailBis(req.body.barcode , req.body.productname , req.body.productDesc)
+    //res.send("add in DB")
+//}

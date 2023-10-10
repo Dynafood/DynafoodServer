@@ -4,6 +4,13 @@ export const getSettings = async (userid: string | null) : Promise<Array<QueryRe
     return new Promise((resolve, reject) => {
         if (userid == "existing_no_settings")
             resolve( [] )
+        if (userid == "existing_vegan") {
+            resolve( [{
+                "restrictionname": "vegan",
+                "alertactivation": true,
+                "strongness": 2
+            }])
+        }
         resolve( [{
             "restrictionname": "peanut",
             "alertactivation": true,
