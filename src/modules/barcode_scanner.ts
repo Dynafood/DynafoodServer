@@ -389,6 +389,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
             }
         }
         await checkAllergenAlert(userID, req.params.barcode, response)
+        console.log(response);
         await calculate_score(response, userID)
         await database.History.updateHistory(userID, req.params.barcode, response);
         await database.TrendingProducts.insert(userID, req.params.barcode, response.name, response.images);

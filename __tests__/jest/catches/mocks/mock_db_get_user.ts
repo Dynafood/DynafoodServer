@@ -11,6 +11,7 @@ import { createUser, createUserOAuth, deleteUser, getPasswordResetToken, setPass
 import { getAllergenbyName } from "./mock_search";
 import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from "./mock_product";
 import { getEmailConfirmed, setEmailConfirmed } from "../../../../src/modules/db/userManagement";
+import { cleanDublicateInvalidData, deleteElementFromInvalidData, getElementsFromInvalidData, insertIntoInvalidData, updateInvalidData, updateInvalidDataElement } from './mock_invalidData';
 
 export const getUser = async (userid: string | null = null, email: string | null = null) : Promise<Array<QueryResultRow>> => {
     throw new Error("ErrorMock")
@@ -83,6 +84,14 @@ const mock_db: DatabaseInterface = {
         getCategoriesByBarcode,
         getIngredientsByBarcode,
         getProductsByName
+    },
+    InvalidDataManagement: {
+        updateInvalidData: updateInvalidData,
+        cleanDublicateInvalidData: cleanDublicateInvalidData,
+        updateInvalidDataElement: updateInvalidDataElement,
+        insertIntoInvalidData: insertIntoInvalidData,
+        deleteElementFromInvalidData: deleteElementFromInvalidData,
+        getElementsFromInvalidData: getElementsFromInvalidData,
     },
     connect: async () => {throw "ErrorMock"},
     end: async () => {throw "ErrorMock"}

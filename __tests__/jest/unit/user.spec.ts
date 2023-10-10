@@ -172,3 +172,25 @@ describe('check login user route', () => {
         expect(response.body.refresh_token).toBe("token_existing");
     })
 })
+
+describe('check refresh route', () => {
+    test('invalid refersh_token', async () => {
+        const response = await supertest(app).get("/refresh").query({
+            refresh_token: "123",
+        }).send();
+        expect(response.statusCode).toBe(400)
+        expect(response.body).toMatchObject({ Error: "Bad Request", Details: `Request token is no UUID.`})
+    })
+    test('no refersh_token', async () => {
+        const response = await supertest(app).get("/refresh").query({
+        }).send();
+        expect(response.statusCode).toBe(400)
+        expect(response.body).toMatchObject({ Error: "Bad Request", Details: `No request_token provided.`})
+    })
+    test('valid refersh_token', async () => {
+        const response = await supertest(app).get("/refresh").query({
+            refresh_token: "7e39b530-b868-40f5-91f8-77d1bbe7f218",
+        }).send();
+        expect(response.statusCode).toBe(200)
+    })
+})

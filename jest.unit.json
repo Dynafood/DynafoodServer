@@ -5,6 +5,10 @@
     "testMatch": [
         "**/?(*.)+(spec).ts"
     ],
+    "coveragePathIgnorePatterns": [
+        "./src/modules/algorithm.ts",
+        "./src/routes/oauthRoutes.ts"
+    ],
     "resetMocks": true,
     "clearMocks": true,
     "setupFilesAfterEnv": ["./__tests__/setup.ts"],

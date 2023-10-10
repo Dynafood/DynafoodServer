@@ -88,28 +88,28 @@ export const createUser = async (req: Request, res: Response) => {
     }
 };
 
-export const createUserOAuth = async (userdata: OAuthUserObj): Promise<string> => {
-    try {
-        // create the user in the normal enduser table
-        const created: QueryResultRow = await database.User.createUser(userdata.firstName, userdata.lastName, userdata.displayName, userdata.email, "00", "null", true, userdata.cc);
-        const userid: string = created.enduserid;
+//export const createUserOAuth = async (userdata: OAuthUserObj): Promise<string> => {
+    //try {
+        //// create the user in the normal enduser table
+        //const created: QueryResultRow = await database.User.createUser(userdata.firstName, userdata.lastName, userdata.displayName, userdata.email, "00", "null", true, userdata.cc);
+        //const userid: string = created.enduserid;
 
-        const google_provider_id = await database.OAuth.getProviderByName('google');
+        //const google_provider_id = await database.OAuth.getProviderByName('google');
 
-        const createOAuth: QueryResultRow = await database.User.createUserOAuth(userid, google_provider_id.oauthproviderid, userdata.displayName, userdata.imageLink, userdata.email, "");
+        //const createOAuth: QueryResultRow = await database.User.createUserOAuth(userid, google_provider_id.oauthproviderid, userdata.displayName, userdata.imageLink, userdata.email, "");
 
-        const token: string = JWT.create(userid);
-        //res.cookie('token', token, {
-            //httpOnly: true
-        //});
-        //res.status(200).json(token);
-        return token;
-    } catch (error: any) {
-        return error.stack;
-        //res.status(400).send({ Error: 'Unable to create new User.', Details: `${error.stack}` });
-    }
-    return "";
-};
+        //const token: string = JWT.create(userid);
+        ////res.cookie('token', token, {
+            ////httpOnly: true
+        ////});
+        ////res.status(200).json(token);
+        //return token;
+    //} catch (error: any) {
+        //return error.stack;
+        ////res.status(400).send({ Error: 'Unable to create new User.', Details: `${error.stack}` });
+    //}
+    //return "";
+//};
 
 export const getUser = async (req: Request, res: Response) : Promise<void> => {
     const user : Array<QueryResultRow> = await database.User.getUser(res.locals.user.userid, null);

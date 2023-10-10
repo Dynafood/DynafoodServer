@@ -665,4 +665,6 @@ export const calculate_score = async (product: Product, enduserid: string) => {
             product.score = 100
         }
         product.score = Math.round(product.score)
+
+        console.log("---- score: " + product.score);
 }

@@ -1,5 +1,6 @@
 import supertest from "supertest"
 import {app} from "../../../server_config"
+import { calculate_score, Product } from "../../../src/modules/algorithm"
 import jwt from "../unit/mocks/mock_jwt"
 import db from "./mocks/mock_db"
 
