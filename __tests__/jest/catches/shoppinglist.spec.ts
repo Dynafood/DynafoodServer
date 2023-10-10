@@ -61,4 +61,8 @@ describe('check update shoppinglist items routes', () => {
         const response = await supertest(app).patch("/shoppingList/Item").send({"itemid": "1234"}).set('Cookie', ['token=token_existing']);
         expect(response.statusCode).toBe(500)
     })
+    test('update list with throw', async () => {
+        const response = await supertest(app).patch("/shoppingList").send({"listid": "1234", "name": "some name"}).set('Cookie', ['token=token_existing']);
+        expect(response.statusCode).toBe(500)
+    })
 })
