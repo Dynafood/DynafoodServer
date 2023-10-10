@@ -87,7 +87,17 @@ describe('check create user routes', () => {
             expect(response.body).toMatchObject({Error: {details: [{message: "\"" + parameters[i][0] + "\" is required"}]}})
             cur[parameters[i][0]] = parameters[i][1]
         }
-        
+     })
+    test('no password', async () => { 
+        const cur = {
+            "firstName": "asdf",
+            "lastName": "adf",
+            "userName": "asdf",
+            "email": "adf@gmail.com",
+            "phoneNumber": "00000000",
+        };
+        const response = await supertest(app).post("/signup").send(cur);
+        expect(response.statusCode).toBe(400)
      })
      test('wrong password fail', async () => {
         let cur : any = {}
