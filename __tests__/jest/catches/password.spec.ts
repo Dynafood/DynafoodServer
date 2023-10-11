@@ -1,5 +1,5 @@
 import supertest from "supertest"
-import {app, database} from "../../../server_config"
+import {app} from "../../../server_config"
 import jwt from "../unit/mocks/mock_jwt"
 import db from "./mocks/mock_db"
 import mail from "./mocks/mock_mail"

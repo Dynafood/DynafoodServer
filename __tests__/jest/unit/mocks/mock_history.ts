@@ -17,14 +17,16 @@ export const getElements = async (userid: string) : Promise<Array<QueryResultRow
             "barcode": "00000",
             "productname": "Pizza",
             "lastused": "2022-06-02T14:46:02.434Z",
-            "picturelink": "https://images.openfoodfacts.org/images/products/00000/front_fr.27.200.jpg"
+            "picturelink": "https://images.openfoodfacts.org/images/products/00000/front_fr.27.200.jpg",
+            "bookmarked": false
         },
         {
             "historyid": "e8a34c9b-7992-4f6f-8736-066205d0ab2f",
             "barcode": "42376095",
             "productname": "Mineralwasser still",
             "lastused": "2022-06-02T14:45:55.504Z",
-            "picturelink": "https://images.openfoodfacts.org/images/products/42376095/front_en.3.200.jpg"
+            "picturelink": "https://images.openfoodfacts.org/images/products/42376095/front_en.3.200.jpg",
+            "bookmarked": true
         }
     ]
     

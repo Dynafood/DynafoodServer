@@ -5,7 +5,7 @@ WHITE='\033[0m'
 current_command=$(tmux list-panes -t "DynafoodServerDev:1" -F "#{pane_current_command}")
 
 npm_string="npm"
-while [ "$current_command" == *"$npm_string"* ] 
+while [ $current_command == $npm_string ] 
 do
     echo -e "{RED}kill npm process"
     tmux send-keys -t "DynafoodServerDev:1" C-c
@@ -21,7 +21,7 @@ sleep 2
 
 current_command=$(tmux list-panes -t "DynafoodServerDev:1" -F "#{pane_current_command}")
 
-if [[ "$current_command" == *"$npm_string"* ]]; then
+if [[ $current_command == $npm_string ]]; then
     echo -e "{GREEN}server restarted, npm running"
 else 
     echo -e "{RED}restart not successfull!!!"
