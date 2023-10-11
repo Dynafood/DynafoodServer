@@ -21,6 +21,7 @@ import pictureRouter from './src/routes/pictureRoutes'
 import invalidDataRouter from './src/routes/invalidDataRoutes';
 //import oauthRouter from './src/routes/oauthRoutes';
 import downloadRouter from './src/routes/download';
+import bookmarkrouter from './src/routes/bookmarking';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { QueryResultRow } from 'pg';
@@ -95,6 +96,10 @@ export interface DatabaseInterface {
         getProductsByName: (name: string) => Promise<Array<JsonObject>>
 
     }
+    Bookmarking: {
+        create: (barcode: string, userid: string) => Promise<number>,
+        remove: (barcode: string, userid: string) => Promise<number>
+    },
     connect: () => Promise<void>
     end: () => Promise<void>
 }
@@ -171,6 +176,7 @@ app.use(invalidDataRouter)
 app.use(missingProductRouter)
 app.use(pictureRouter)
 app.use(halalRouter)
+app.use(bookmarkrouter)
 app.use(
     session({
       overwrite: false,

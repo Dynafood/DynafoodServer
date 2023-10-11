@@ -16,7 +16,18 @@ export const getElementsFromHistory = async (req: Request, res: Response) : Prom
     const userID: string = res.locals.user.userid;
     try {
         const response : Array<QueryResultRow> = await database.History.getElements(userID);
-        res.send({ elements: response });
+        response.forEach(el => {
+            const tmp = el.lastused
+            const localtime = new Date(tmp)
+            el.datetime = {
+                "date": `${localtime.getDate().toString().padStart(2, '0')}.${(localtime.getMonth() + 1).toString().padStart(2, '0')}.${localtime.getFullYear()}`,
+                "time": `${localtime.getHours().toString().padStart(2, '0')}:${localtime.getMinutes().toString().padStart(2, '0')}`
+            }
+        })
+        const bookmarked = response.filter((el)=> el.bookmarked)
+        const non_bookmarked = response.filter((el)=> !el.bookmarked)
+        console.log(bookmarked, non_bookmarked)
+        res.send({ elements: bookmarked.concat(non_bookmarked) });
     } catch (err: any) {
         res.status(500).send({ Error: err, Details: err.stack });
     }

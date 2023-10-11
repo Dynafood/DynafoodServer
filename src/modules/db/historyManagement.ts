@@ -72,7 +72,7 @@ export const deleteElementFromHistory = async (elementid: string, userid: string
 export const getElements = async (userid: string) : Promise<Array<QueryResultRow>> => {
     const userID: string = checkInputBeforeSqlQuery(userid);
     const response : QueryResult = await db_adm_conn.query(`
-    SELECT H.historyID, H.barcode, H.productName, H.lastUsed, H.pictureLink
+    SELECT H.historyID, H.barcode, H.productName, H.lastUsed, H.pictureLink, H.bookmarked
     FROM History H
     JOIN EndUser EU ON EU.endUserID = H.endUserID
     WHERE EU.endUserID = '${userID}'

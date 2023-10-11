@@ -21,9 +21,7 @@ export const updateSettings = async (userid: string, alertActivation: string, re
 export const userHasRestriction = async (userid: string, restrictionID: string) : Promise<boolean>=> {
     if (restrictionID == "throw2")
         throw new Error("ErrorMock")
-    return new Promise((resolve, reject) => {
-        resolve(restrictionID == "real")
-    })
+    return Promise.resolve(restrictionID == "real")
 }
 
 export const deleteSettings = async (userid: string, restrictionid: string) : Promise<void> => {
