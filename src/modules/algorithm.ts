@@ -549,7 +549,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                             product.nutriments_scores.negative_points = nutriscore_a
                             product.nutriments_scores.positive_points = nutriscore_c
                         }
-                        product.nutriments_scores.total_score = nutriscore_a - nutriscore_c
+                        product.nutriments_scores.total_score = nutriscore_c - nutriscore_a
                     }
                 }
             } else {
