@@ -614,7 +614,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                     }
                 }
             }
-            score -= (nutriscore_a - nutriscore_c)
+            score -= (nutriscore_c - nutriscore_a)
             max_score += max_nutri_score
         }
         
