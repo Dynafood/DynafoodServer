@@ -546,24 +546,24 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 if (product.nutriments_scores.total_grade == null) {
                     if (product.nutriments_scores.total_score == null) {
                         if (product.nutriments_scores.negative_points == null || product.nutriments_scores.positive_points == null) {
-                            product.nutriments_scores.negative_points = nutriscore_a
-                            product.nutriments_scores.positive_points = nutriscore_c
+                            product.nutriments_scores.negative_points = nutriscore_c
+                            product.nutriments_scores.positive_points = nutriscore_a
                         }
-                        product.nutriments_scores.total_score = nutriscore_c - nutriscore_a
+                        product.nutriments_scores.total_score = nutriscore_a - nutriscore_c
                     }
                 }
             } else {
                 product.nutriments_scores = {
                     energy_points: null ,
                     fiber_points: null ,
-                    negative_points: nutriscore_a ,
-                    positive_points: nutriscore_c,
+                    negative_points: nutriscore_c ,
+                    positive_points: nutriscore_a,
                     proteins_points: null ,
                     saturated_fat_points: null ,
                     sodium_points: null ,
                     sugars_points: null ,
                     total_grade: null,
-                    total_score: nutriscore_c - nutriscore_a,
+                    total_score: nutriscore_a - nutriscore_c,
                     is_beverage: Number(drinking_categories.length > 0),
                     is_water: null,
                     is_cheese: null,
