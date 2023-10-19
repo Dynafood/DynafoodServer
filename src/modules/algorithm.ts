@@ -563,7 +563,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                     sodium_points: null ,
                     sugars_points: null ,
                     total_grade: null,
-                    total_score: nutriscore_a - nutriscore_c,
+                    total_score: nutriscore_c - nutriscore_a,
                     is_beverage: Number(drinking_categories.length > 0),
                     is_water: null,
                     is_cheese: null,
