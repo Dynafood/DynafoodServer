@@ -609,11 +609,11 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 }
             }
             if (product.nutriments_scores.total_score != null) {
-                max_score += max_nutri_score
-                score += (max_nutri_score + product.nutriments_scores.total_score) / 2
+                max_score += max_nutri_score * 1.5
+                score += (max_nutri_score + (product.nutriments_scores.total_score)) * 1.5
             }
         }
-
+        
         
         if (product.nutriments_scores?.is_water || is_water) {
             score = max_score
@@ -648,7 +648,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                     break;
             }
         }
-        product.score = (score/max_score) * 100
+            product.score = (score/max_score) * 100
         if (product.score < 1) {
             product.score = 1
         }
