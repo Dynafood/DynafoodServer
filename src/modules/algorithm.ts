@@ -85,52 +85,10 @@ export interface Product {
 export const calculate_score = async (product: Product, enduserid: string) => {
     let max_score = 0;
     let score = 0;
-    if (product.allergen_alert){
-        product.score = 1;
-        return
-    }
     let veg_strongess = await database.Settings.getAlertSettings(enduserid);
     let vegetarian_strongness = veg_strongess.filter((row) => row.restrictionname == "vegetarian")[0].strongness
     let vegan_strongness = veg_strongess.filter((row) => row.restrictionname == "vegan")[0].strongness
-    if (vegetarian_strongness != 0 || vegan_strongness != 0) {
-
-        //vegan checks
-        if (vegan_strongness == 0) { // dont care about vegan
-            max_score += 5
-            if (product.vegan == true) {
-                score += 5
-            }
-        }
-        else if (vegan_strongness == 1) { //partly care about vegan
-            max_score += 12
-            if (product.vegan == true) {
-                score += 12
-            } else {
-                score -= 12
-            }
-        }
-        else if (vegan_strongness == 2 && product.vegan == false) { //strictly vegan
-            product.score = 1
-            return
-        }
-
-        //vegetarian checks
-        if (vegetarian_strongness == 0) { // dont care about vegetarian
-         // do nothing
-        }
-        else if (vegetarian_strongness == 1) { //partly care about vegetarian
-            max_score += 12
-            if (product.vegetarian == true) {
-                score += 12
-            } else {
-                score -= 12
-            }
-        }
-        else if (vegetarian_strongness == 2 && product.vegetarian == false) { //strictly vegetarian
-            product.score = 1
-            return
-        }
-    }
+    
 
     //no implementation of halal
     let nutriments = product.nutriments_g_pro_100g
@@ -643,7 +601,50 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                     break;
             }
         }
+        if (vegetarian_strongness != 0 || vegan_strongness != 0) {
+
+            //vegan checks
+            if (vegan_strongness == 0) { // dont care about vegan
+                max_score += 5
+                if (product.vegan == true) {
+                    score += 5
+                }
+            }
+            else if (vegan_strongness == 1) { //partly care about vegan
+                max_score += 12
+                if (product.vegan == true) {
+                    score += 12
+                } else {
+                    score -= 12
+                }
+            }
+            else if (vegan_strongness == 2 && product.vegan == false) { //strictly vegan
+                product.score = 1
+                return
+            }
+    
+            //vegetarian checks
+            if (vegetarian_strongness == 0) { // dont care about vegetarian
+             // do nothing
+            }
+            else if (vegetarian_strongness == 1) { //partly care about vegetarian
+                max_score += 12
+                if (product.vegetarian == true) {
+                    score += 12
+                } else {
+                    score -= 12
+                }
+            }
+            else if (vegetarian_strongness == 2 && product.vegetarian == false) { //strictly vegetarian
+                product.score = 1
+                return
+            }
+        }
             product.score = (score/max_score) * 100
+        if (product.allergen_alert){
+            product.score = 1;
+            return
+        }
         if (product.score < 1) {
             product.score = 1
         }
