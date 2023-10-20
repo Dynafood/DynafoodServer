@@ -151,7 +151,6 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 if ((nutriments?.kcal?.score ?? -1) != -1) {
                     let kj = (nutriments?.kcal?.score ?? 0) * 4.184
                     max_nutri_score += 10
-                    score += 10
                     switch (true) {
                         case kj <= 0:
                             nutriscore_a += 0;
@@ -194,7 +193,6 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 if ((nutriments?.sugars?.score ?? -1) != -1) {
                     let sugars = (nutriments?.sugars?.score ?? 0)
                     max_nutri_score += 10
-                    score += 10
                     switch (true) {
                         case sugars <= 0:
                             nutriscore_a += 0;
@@ -238,7 +236,6 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 if ((nutriments?.kcal?.score ?? -1) != -1) {
                     let kj = (nutriments?.kcal?.score ?? 0) * 4.184
                     max_nutri_score += 10
-                    score += 10
                     switch (true) {
                         case kj <= 335:
                             nutriscore_a += 0;
@@ -281,7 +278,6 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 if ((nutriments?.sugars?.score ?? -1) != -1) {
                     let sugars = (nutriments?.sugars?.score ?? 0)
                     max_nutri_score += 10
-                    score += 10
                     switch (true) {
                         case sugars <= 4.5:
                             nutriscore_a += 0;
@@ -325,7 +321,6 @@ export const calculate_score = async (product: Product, enduserid: string) => {
             if ((nutriments?.['saturated fat']?.score ?? -1) != -1) {
                 let satures = (nutriments?.['saturated fat']?.score ?? 0)
                 max_nutri_score += 10
-                score += 10
                 if (product.nutriments_scores?.is_fat) {
                     switch (true) {
                         case satures <= 10:
@@ -409,7 +404,6 @@ export const calculate_score = async (product: Product, enduserid: string) => {
             if ((nutriments?.sodium?.score ?? -1) != -1) {
                 let sodium = (nutriments?.sodium?.score ?? 0)
                 max_nutri_score += 10
-                score += 10
                 switch (true) {
                     case sodium <= 90:
                         nutriscore_a += 0;
@@ -546,24 +540,24 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 if (product.nutriments_scores.total_grade == null) {
                     if (product.nutriments_scores.total_score == null) {
                         if (product.nutriments_scores.negative_points == null || product.nutriments_scores.positive_points == null) {
-                            product.nutriments_scores.negative_points = nutriscore_c
-                            product.nutriments_scores.positive_points = nutriscore_a
+                            product.nutriments_scores.negative_points = nutriscore_a
+                            product.nutriments_scores.positive_points = nutriscore_c
                         }
-                        product.nutriments_scores.total_score = nutriscore_a - nutriscore_c
+                        product.nutriments_scores.total_score = nutriscore_c - nutriscore_a
                     }
                 }
             } else {
                 product.nutriments_scores = {
                     energy_points: null ,
                     fiber_points: null ,
-                    negative_points: nutriscore_c ,
-                    positive_points: nutriscore_a,
+                    negative_points: nutriscore_a ,
+                    positive_points: nutriscore_c,
                     proteins_points: null ,
                     saturated_fat_points: null ,
                     sodium_points: null ,
                     sugars_points: null ,
                     total_grade: null,
-                    total_score: nutriscore_a - nutriscore_c,
+                    total_score: nutriscore_c - nutriscore_a,
                     is_beverage: Number(drinking_categories.length > 0),
                     is_water: null,
                     is_cheese: null,
@@ -574,19 +568,19 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 let nu_score =  product.nutriments_scores.total_score
                 if (is_drink) {
                     switch (true) {
-                        case nu_score < 1 || product.nutriments_scores.is_water || is_water:
+                        case nu_score > -1 || product.nutriments_scores.is_water || is_water:
                             product.nutriments_scores.total_grade = 'a'
                             break;
-                        case nu_score < 2:
+                        case nu_score > -2:
                             product.nutriments_scores.total_grade = 'b'
                             break;
-                        case nu_score < 6:
+                        case nu_score > -6:
                             product.nutriments_scores.total_grade = 'c'
                             break;
-                        case nu_score < 9:
+                        case nu_score > -9:
                             product.nutriments_scores.total_grade = 'd'
                             break;
-                        case nu_score >= 9:
+                        case nu_score <= -9:
                             product.nutriments_scores.total_grade = 'e'
                             break;
                         default: 
@@ -594,19 +588,19 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                     }
                 } else {
                     switch (true) {
-                        case nu_score < 0:
+                        case nu_score > -0:
                             product.nutriments_scores.total_grade = 'a'
                             break;
-                        case nu_score < 3:
+                        case nu_score > -3:
                             product.nutriments_scores.total_grade = 'b'
                             break;
-                        case nu_score < 10:
+                        case nu_score > -10:
                             product.nutriments_scores.total_grade = 'c'
                             break;
-                        case nu_score < 19:
+                        case nu_score > -19:
                             product.nutriments_scores.total_grade = 'd'
                             break;
-                        case nu_score >= 19:
+                        case nu_score <= -19:
                             product.nutriments_scores.total_grade = 'e'
                             break;
                         default: 
@@ -614,15 +608,17 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                     }
                 }
             }
-            score -= (nutriscore_c - nutriscore_a)
-            max_score += max_nutri_score
+            if (product.nutriments_scores.total_score != null) {
+                max_score += max_nutri_score
+                score += (max_nutri_score + product.nutriments_scores.total_score) / 2
+            }
         }
+
         
         if (product.nutriments_scores?.is_water || is_water) {
             score = max_score
         }
         
-
         //ecoscore implementation
         if (product.ecoscoreData?.eco_grade != null) {
             max_score += 20
@@ -648,7 +644,6 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                     score += 0;
                     break;
                 default:
-                    console.log(product.ecoscoreData.eco_grade)
                     max_score -= 20
                     break;
             }
@@ -657,7 +652,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
         if (product.score < 1) {
             product.score = 1
         }
-        console.log(max_score)
+        
         if (max_score == 0) {
             product.score = 100
         }

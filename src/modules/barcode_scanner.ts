@@ -256,13 +256,7 @@ const parseProductFromOFF = (product: AxiosResponse, response: JsonObject, userI
         response.packing = data.packaging;
         response.name = product.data.product.product_name;
 
-        if (typeof data.image_front_url === 'undefined' || data.image_front_url == null) { 
-            response.images = "http://x2024dynafood545437452001.westeurope.cloudapp.azure.com:8081/placeholderImage";
-        } else { 
-            response.images = data.image_small_url; 
-        }
-
-        response.images = (typeof data.image_front_url === 'undefined' || data.image_front_url == null) ? null : data.image_front_url;
+        response.images = (typeof data.image_front_url === 'undefined' || data.image_front_url == null || data.image_front_url == "") ? "http://x2024dynafood545437452001.westeurope.cloudapp.azure.com:8081/placeholderImage" : data.image_front_url;
 
         if (product.data.product) {
             response.ingredients = getInnerIngredients(product.data.product, language);
@@ -350,7 +344,11 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
 export const getProduct = async (req: Request, res: Response) : Promise<void> => {
     try {
         const userID: string = res.locals.user.userid;
-        const language: string = <string>(req.query.language || 'en');
+        let language: string = <string>(req.query.language || 'en');
+
+        if (!["de", "en", "fr"].includes(language)) {
+            language = "en"
+        }
 
         const response : Product = {
             name: "null",
