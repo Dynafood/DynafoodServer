@@ -535,17 +535,10 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 }
             }
 
-            
             if (product.nutriments_scores != null) {
-                if (product.nutriments_scores.total_grade == null) {
-                    if (product.nutriments_scores.total_score == null) {
-                        if (product.nutriments_scores.negative_points == null || product.nutriments_scores.positive_points == null) {
-                            product.nutriments_scores.negative_points = nutriscore_a
-                            product.nutriments_scores.positive_points = nutriscore_c
-                        }
-                        product.nutriments_scores.total_score = nutriscore_c - nutriscore_a
-                    }
-                }
+                product.nutriments_scores.negative_points = nutriscore_a
+                product.nutriments_scores.positive_points = nutriscore_c
+                product.nutriments_scores.total_score = nutriscore_c - nutriscore_a
             } else {
                 product.nutriments_scores = {
                     energy_points: null ,
@@ -608,9 +601,11 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                     }
                 }
             }
+            console.log(product.nutriments_scores)
             if (product.nutriments_scores.total_score != null) {
-                max_score += max_nutri_score * 1.5
-                score += (max_nutri_score + (product.nutriments_scores.total_score)) * 1.5
+                console.log(score, max_score, product.nutriments_scores.total_score, max_nutri_score)
+                max_score += 40
+                score += 40 * ((max_nutri_score + product.nutriments_scores.total_score) / max_nutri_score)
             }
         }
         
