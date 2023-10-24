@@ -13,6 +13,15 @@ export const getSettings = async (userid: string | null) : Promise<Array<QueryRe
             "restrictionname": "apple",
             "alertactivation": false,
             "strongness": 2
+        }, {
+            "restrictionname": "vegan",
+            "alertactivation": true,
+            "strongness": 0
+        },
+        {
+            "restrictionname": "vegetarian",
+            "alertactivation": false,
+            "strongness": 0
         }])
     });
 }

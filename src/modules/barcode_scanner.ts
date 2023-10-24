@@ -17,16 +17,16 @@ const checkAllergenAlert = async (userID: string, barcode: string, response: Jso
 
 
     let ingredients = response.ingredients.ingredients
-    query = `SELECT i.eng_name FROM enduser e 
+    query = `SELECT i.off_id FROM enduser e 
     JOIN enduser_restriction er ON er.enduserid = e.enduserid
     JOIN own_restriction r ON r.restrictionID = er.restrictionid
     JOIN ingredient_restriction ir ON ir.restriction_id = r.restrictionID
     JOIN ingredient i ON i.ingredientid = ir.ingredient_id
-    WHERE er.enduserid = '${checkInputBeforeSqlQuery(userID)}' AND lower(i.eng_name) IN (`
+    WHERE er.enduserid = '${checkInputBeforeSqlQuery(userID)}' AND lower(i.off_id) IN (`
 
     for (let i = 0; i < ingredients.length; i++) {
         //generate query
-        query += `'${checkInputBeforeSqlQuery(ingredients[i].name.toLowerCase())}'`
+        query += `'${checkInputBeforeSqlQuery(ingredients[i].id.toLowerCase())}'`
         if (i < ingredients.length - 1) {
             query += ", "
         }
@@ -88,7 +88,8 @@ const getInnerIngredients = (ingredient: JsonObject, language: string): {vegan: 
                 name: name || element.text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match: string) => match.toUpperCase()),
                 vegan: element.vegan == "yes" ? true : element.vegan,
                 vegetarian: element.vegetarian == "yes" ? true : element.vegetarian,
-                ingredients: getInnerIngredients(element, language)
+                ingredients: getInnerIngredients(element, language),
+                id: element.id
             };
             if (tmp.vegan == false || tmp.vegan == "no") {
                 vegan = false;
@@ -392,8 +393,8 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
         await database.TrendingProducts.insert(userID, req.params.barcode, response.name, response.images);
         res.status(200).send(response);
     }
-    catch (error) {
+    catch (error: any) {
         console.log(error);
-        res.status(500).send('Internal Server Error');
+        res.status(500).send({ Error: error, details: error.stack });
     }
 };
