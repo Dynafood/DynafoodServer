@@ -516,55 +516,109 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 }
             } 
             if (product.nutriments_scores.total_score) {
-                let nu_score =  product.nutriments_scores.total_score
-                if (is_drink) {
+                let nu_score =  product.nutriments_scores.total_score * -1
+                {
+                // if (is_drink) {
+                //     switch (true) {
+                //         case nu_score > -1 || product.nutriments_scores.is_water || is_water:
+                //             product.nutriments_scores.total_grade = 'a'
+                //             break;
+                //         case nu_score > -2:
+                //             product.nutriments_scores.total_grade = 'b'
+                //             break;
+                //         case nu_score > -6:
+                //             product.nutriments_scores.total_grade = 'c'
+                //             break;
+                //         case nu_score > -9:
+                //             product.nutriments_scores.total_grade = 'd'
+                //             break;
+                //         case nu_score <= -9:
+                //             product.nutriments_scores.total_grade = 'e'
+                //             break;
+                //         default: 
+                //             break;
+                //     }
+                // } else {
+                //     switch (true) {
+                //         case nu_score > -0:
+                //             product.nutriments_scores.total_grade = 'a'
+                //             break;
+                //         case nu_score > -3:
+                //             product.nutriments_scores.total_grade = 'b'
+                //             break;
+                //         case nu_score > -10:
+                //             product.nutriments_scores.total_grade = 'c'
+                //             break;
+                //         case nu_score > -19:
+                //             product.nutriments_scores.total_grade = 'd'
+                //             break;
+                //         case nu_score <= -19:
+                //             product.nutriments_scores.total_grade = 'e'
+                //             break;
+                //         default: 
+                //             break;
+                //     }
+                // }
+                }
+                if (product.nutriments_scores.total_score != null && product.nutriments_scores.total_grade != null) {
+                    console.log(score, max_score, product.nutriments_scores.total_score, max_nutri_score)
+                    const points = {
+                        a : 40,
+                        b : 35,
+                        c : 20,
+                        d : 25,
+                        e : 0
+                    }
+                    const total_scores_drink = {
+                        a: 1,
+                        b: 2,
+                        c: 6,
+                        d: 9,
+                        e: 40
+                    }
+                    const total_scores_food = {
+                        a: 0,
+                        b: 3,
+                        c: 10,
+                        d: 19,
+                        e: 40
+                    }
+
+                    const total_scores = is_drink ? total_scores_drink: total_scores_food
                     switch (true) {
-                        case nu_score > -1 || product.nutriments_scores.is_water || is_water:
+                        case nu_score < total_scores.a || product.nutriments_scores.is_water || is_water:
                             product.nutriments_scores.total_grade = 'a'
+                            score += points.a
                             break;
-                        case nu_score > -2:
+                        case nu_score < total_scores.b:
                             product.nutriments_scores.total_grade = 'b'
+                            score += points.b
+                            score += (1 - (nu_score - total_scores.a) / (total_scores.b - total_scores.a)) * (points.b - points.a)
                             break;
-                        case nu_score > -6:
+                        case nu_score < total_scores.c:
                             product.nutriments_scores.total_grade = 'c'
+                            score += points.c
+                            console.log("(1- (", nu_score, " - ", total_scores.b, ") / (", total_scores.c, " - ", total_scores.b, ")) * (", points.b, " - ", points.c, "))")
+                            console.log(score, (1- (nu_score - total_scores.b) / (total_scores.c - total_scores.b)) * (points.b - points.c))
+                            score += (1- (nu_score - total_scores.b) / (total_scores.c - total_scores.b)) * (points.b - points.c)
                             break;
-                        case nu_score > -9:
+                        case nu_score < total_scores.d:
                             product.nutriments_scores.total_grade = 'd'
+                            score += points.d
+                            score += (1 - (nu_score - total_scores.c) / (total_scores.d - total_scores.c)) * (points.c - points.d)
                             break;
-                        case nu_score <= -9:
+                        case nu_score >= total_scores.d:
                             product.nutriments_scores.total_grade = 'e'
+                            score += (1- (nu_score - total_scores.d) / (40 - total_scores.d)) * (points.d - points.e)
                             break;
                         default: 
                             break;
                     }
-                } else {
-                    switch (true) {
-                        case nu_score > -0:
-                            product.nutriments_scores.total_grade = 'a'
-                            break;
-                        case nu_score > -3:
-                            product.nutriments_scores.total_grade = 'b'
-                            break;
-                        case nu_score > -10:
-                            product.nutriments_scores.total_grade = 'c'
-                            break;
-                        case nu_score > -19:
-                            product.nutriments_scores.total_grade = 'd'
-                            break;
-                        case nu_score <= -19:
-                            product.nutriments_scores.total_grade = 'e'
-                            break;
-                        default: 
-                            break;
-                    }
+                    max_score += 40
+                    // score += 40 * ((max_nutri_score + product.nutriments_scores.total_score) / max_nutri_score)
                 }
             }
             console.log(product.nutriments_scores)
-            if (product.nutriments_scores.total_score != null) {
-                console.log(score, max_score, product.nutriments_scores.total_score, max_nutri_score)
-                max_score += 40
-                score += 40 * ((max_nutri_score + product.nutriments_scores.total_score) / max_nutri_score)
-            }
         }
         
         
@@ -640,7 +694,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 return
             }
         }
-            product.score = (score/max_score) * 100
+        product.score = (score/max_score) * 100
         if (product.allergen_alert){
             product.score = 1;
             return
