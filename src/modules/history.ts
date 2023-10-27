@@ -14,7 +14,7 @@ export const deleteElementFromHistory = async (req: Request, res: Response) : Pr
 
 export const getElementsFromHistory = async (req: Request, res: Response) : Promise<void> => {
     const userID: string = res.locals.user.userid;
-    const bookmarked_query = req.query.bookmarked ?? false
+    const bookmarked_query: boolean = (req.query.bookmarked === "true")
     try {
         const response : Array<QueryResultRow> = await database.History.getElements(userID);
         response.forEach(el => {
@@ -25,7 +25,7 @@ export const getElementsFromHistory = async (req: Request, res: Response) : Prom
                 "time": `${localtime.getHours().toString().padStart(2, '0')}:${localtime.getMinutes().toString().padStart(2, '0')}`
             }
         })
-        if (bookmarked_query) {
+        if (bookmarked_query == true) {
             const bookmarked = response.filter((el)=> el.bookmarked)
             const non_bookmarked = response.filter((el)=> !el.bookmarked)
             console.log(bookmarked, non_bookmarked)
