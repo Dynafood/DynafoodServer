@@ -561,12 +561,12 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 // }
                 }
                 if (product.nutriments_scores.total_score != null && product.nutriments_scores.total_grade != null) {
-                    console.log(score, max_score, product.nutriments_scores.total_score, max_nutri_score)
+                    const points_multiplayer = 7
                     const points = {
-                        a : 40,
-                        b : 35,
-                        c : 20,
-                        d : 25,
+                        a : 20 * points_multiplayer,
+                        b : 15 * points_multiplayer,
+                        c : 10 * points_multiplayer,
+                        d : 5  * points_multiplayer,
                         e : 0
                     }
                     const total_scores_drink = {
@@ -589,36 +589,34 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                         case nu_score < total_scores.a || product.nutriments_scores.is_water || is_water:
                             product.nutriments_scores.total_grade = 'a'
                             score += points.a
-                            break;
+                    break;
                         case nu_score < total_scores.b:
                             product.nutriments_scores.total_grade = 'b'
                             score += points.b
                             score += (1 - (nu_score - total_scores.a) / (total_scores.b - total_scores.a)) * (points.b - points.a)
-                            break;
+                    break;
                         case nu_score < total_scores.c:
                             product.nutriments_scores.total_grade = 'c'
                             score += points.c
-                            console.log("(1- (", nu_score, " - ", total_scores.b, ") / (", total_scores.c, " - ", total_scores.b, ")) * (", points.b, " - ", points.c, "))")
-                            console.log(score, (1- (nu_score - total_scores.b) / (total_scores.c - total_scores.b)) * (points.b - points.c))
                             score += (1- (nu_score - total_scores.b) / (total_scores.c - total_scores.b)) * (points.b - points.c)
-                            break;
+                    break;
                         case nu_score < total_scores.d:
                             product.nutriments_scores.total_grade = 'd'
                             score += points.d
                             score += (1 - (nu_score - total_scores.c) / (total_scores.d - total_scores.c)) * (points.c - points.d)
-                            break;
+                    break;
                         case nu_score >= total_scores.d:
                             product.nutriments_scores.total_grade = 'e'
                             score += (1- (nu_score - total_scores.d) / (40 - total_scores.d)) * (points.d - points.e)
-                            break;
+                    break;
                         default: 
                             break;
                     }
-                    max_score += 40
+                    max_score += points.a
                     // score += 40 * ((max_nutri_score + product.nutriments_scores.total_score) / max_nutri_score)
                 }
             }
-            console.log(product.nutriments_scores)
+            console.log(score, max_score)
         }
         
         
@@ -694,6 +692,8 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 return
             }
         }
+        console.log(score, max_score)
+
         product.score = (score/max_score) * 100
         if (product.allergen_alert){
             product.score = 1;
