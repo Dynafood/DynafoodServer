@@ -13,5 +13,5 @@
 
 // console.log(data?.kcal?.score ?? 0)
 
-let drink_categories = ["drink", "boisson", "juice", "nectar", "getränk"]
+// let drink_categories = ["drink", "boisson", "juice", "nectar", "getränk"]
 // console.log(["nice", "hallo", "drink", "JuIce"].filter((keyword) => {return (drink_categories.includes(keyword.toLowerCase()))}))
