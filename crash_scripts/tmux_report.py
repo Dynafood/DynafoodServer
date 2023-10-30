@@ -21,7 +21,6 @@ email_subject = "Server Crashed"
 timestamp_path = "last_sent.txt"
 date_format = "%Y-%m-%d %H:%M:%S.%f"
 last_sent = None
-script_path = "crash_fix.sh"
 
 with open(timestamp_path, "r") as file:
     file_content = file.read()
