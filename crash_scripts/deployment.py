@@ -62,11 +62,11 @@ def restart_server():
     print(GREEN + "restarted server")
 
 def start_crash_check():
-    subprocess.run(['tmux', 'send-keys', '-t', "CrashReports:1", "python tmux_report.py", 'C-m'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.run(['tmux', 'send-keys', '-t', "CrashReports", "python tmux_report.py", 'C-m'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print(GREEN + "restarted crash checker")
 
 def stop_crash_check():
-    subprocess.run(['tmux', 'send-keys', '-t', "CrashReports:1", 'C-c'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.run(['tmux', 'send-keys', '-t', "CrashReports", 'C-c'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print(RED + "stopped crash checker")
 
 while (True):
