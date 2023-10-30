@@ -18,7 +18,13 @@ sendgrid_api_key = os.getenv("SENDGRID_KEY")
 sender_email = "info.dynafood@gmail.com"
 receiver_email = "karl-erik.stoerzel@epitech.eu, karlstoerzel@gmail.com, niklas.scheffler@epitech.eu, marcel.taubert@epitech.eu, dynafoodcreators@gmail.com" #TODO: INSERT EMAIL TO SEND TO HERE //use the dynafood crators email
 email_subject = "Server Crashed"
+timestamp_path = "last_sent.txt"
+date_format = "%Y-%m-%d %H:%M:%S.%f"
 last_sent = None
+
+with open(timestamp_path, "r") as file:
+    file_content = file.read()
+    last_sent = nowst = datetime.datetime.strptime(file_content, date_format)
 
 def execute_script(script_path):
     try:
@@ -44,6 +50,8 @@ def send_email(api_key, sender, recipient, subject, message):
             server.send_message(msg)
         print("Email sent successfully.")
         last_sent = datetime.datetime.now()
+        with open(timestamp_path, "w") as file:
+            file.write(str(last_sent))
     except smtplib.SMTPException as e:
         print("Error sending email:", str(e))
 
