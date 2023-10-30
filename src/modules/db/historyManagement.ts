@@ -45,8 +45,8 @@ const updateHistoryElement = async (userID: string, barcode: string, product: Js
     product.images = checkInputBeforeSqlQuery(product.images);
     await db_adm_conn.query(`
     UPDATE History
-    SET (lastused, productName, pictureLink)
-       = (current_timestamp, '${product.name}', '${product.images}')
+    SET (lastused, productName, pictureLink, score)
+       = (current_timestamp, '${product.name}', '${product.images}', '${product.score}')
     WHERE barcode = '${checkInputBeforeSqlQuery(barcode)}'
         AND enduserId = '${checkInputBeforeSqlQuery(userID)}';`);
 };
@@ -58,8 +58,8 @@ const insertIntoHistory = async (userID: string, barcode: string, product: JsonO
     product.images = checkInputBeforeSqlQuery(product.images);
 
     await db_adm_conn.query(`
-    INSERT INTO history (endUserID, barcode, productName, pictureLink)
-    VALUES ('${userID}', '${barcode}', '${product.name}', '${product.images}');`);
+    INSERT INTO history (endUserID, barcode, productName, pictureLink, score)
+    VALUES ('${userID}', '${barcode}', '${product.name}', '${product.images}', '${product.score}');`);
 };
 
 export const deleteElementFromHistory = async (elementid: string, userid: string) : Promise<void> => {
@@ -72,10 +72,10 @@ export const deleteElementFromHistory = async (elementid: string, userid: string
 export const getElements = async (userid: string) : Promise<Array<QueryResultRow>> => {
     const userID: string = checkInputBeforeSqlQuery(userid);
     const response : QueryResult = await db_adm_conn.query(`
-    SELECT H.historyID, H.barcode, H.productName, H.lastUsed, H.pictureLink, H.bookmarked
+    SELECT H.historyID, H.barcode, H.productName, H.lastUsed, H.pictureLink, H.bookmarked, H.score
     FROM History H
     JOIN EndUser EU ON EU.endUserID = H.endUserID
-    WHERE EU.endUserID = '${userID}'
+    WHERE EU.endUserID = '${userid}'
     ORDER BY H.lastused DESC;`);
     return response.rows;
 };
