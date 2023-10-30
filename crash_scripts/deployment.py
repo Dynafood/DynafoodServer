@@ -60,7 +60,7 @@ def check_git_deploy():
         restart_server()
         start_crash_check()
         print(GREEN + "deployment completed")
-        git_log = subprocess.run(['git', 'show'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        git_log = subprocess.run(['git', 'log', '--no-merges', '-5'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         send_email(sendgrid_api_key, sender_email, receiver_email, email_subject, git_log.stdout.decode())
     else:
         print(RED + "Error" + WHITE)
