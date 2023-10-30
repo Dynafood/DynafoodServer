@@ -57,17 +57,17 @@ def check_git_deploy():
         print(process_running.stdout)
 
 def restart_server():
-    print(RED + "restarting server...")
+    print(RED + "restarting server..." + WHITE)
     subprocess.run(['tmux', 'send-keys', '-t', "DynafoodServerDev:1", "npm start", 'C-m'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print(GREEN + "restarted server")
 
 def start_crash_check():
     subprocess.run(['tmux', 'send-keys', '-t', "CrashReports", "python tmux_report.py", 'C-m'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    print(GREEN + "restarted crash checker")
+    print(GREEN + "restarted crash checker" + WHITE)
 
 def stop_crash_check():
     subprocess.run(['tmux', 'send-keys', '-t', "CrashReports", 'C-c'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    print(RED + "stopped crash checker")
+    print(RED + "stopped crash checker" + WHITE)
 
 while (True):
     check_git_deploy()
