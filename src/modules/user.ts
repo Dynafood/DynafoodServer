@@ -209,7 +209,7 @@ export const refresh_token = async (req: Request, res: Response) : Promise<void>
             return;
         }
 
-        const token : string = JWT.create(users[0].enduserid);
+        const token : string = JWT.create(users[0].userid);
         res.cookie('token', token, {
             httpOnly: true
         });
