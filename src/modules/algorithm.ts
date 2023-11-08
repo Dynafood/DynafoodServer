@@ -560,7 +560,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 //     }
                 // }
                 }
-                if (product.nutriments_scores.total_score != null && product.nutriments_scores.total_grade != null) {
+                if (product.nutriments_scores.total_score != null) {
                     const points_multiplayer = 7
                     const points = {
                         a : 20 * points_multiplayer,
