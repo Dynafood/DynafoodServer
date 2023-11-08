@@ -7,7 +7,7 @@ import { updatePassword } from "./mock_password";
 import { createSettings, deleteSettings, getSettings, getRestrictionIdByName, updateSettings, userHasRestriction, getAllSettings } from "./mock_settings";
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, updateShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingList } from "./mock_shoppinglist";
 import { getTrendingGlobal, getTrendingLocal, insert, getCountryCode } from "./mock_trending";
-import { createUser, createUserOAuth, deleteUser, getPasswordResetToken, setPasswordResetToken, updateUserByRefreshToken } from "./mock_user";
+import { createUser, createUserOAuth, deleteUser, getPasswordResetToken, setPasswordResetToken, updateRefreshToken, createRefreshToken } from "./mock_user";
 import { getAllergenbyName } from "./mock_search";
 import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from "./mock_product";
 import { getEmailConfirmed, setEmailConfirmed } from "../../../../src/modules/db/userManagement";
@@ -51,7 +51,8 @@ const mock_db: DatabaseInterface = {
         setPasswordResetToken: setPasswordResetToken,
         setEmailConfirmed: setEmailConfirmed,
         getEmailConfirmed: getEmailConfirmed,
-        updateUserByRefreshToken: updateUserByRefreshToken
+        updateRefreshToken: updateRefreshToken,
+        createRefreshToken: createRefreshToken
     },
     Settings: {
         getAllSettings: getAllSettings,

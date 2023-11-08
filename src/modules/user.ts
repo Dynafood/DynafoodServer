@@ -80,8 +80,10 @@ export const createUser = async (req: Request, res: Response) => {
         res.cookie('token', token, {
             httpOnly: true
         });
+        const refresh_token = await database.User.createRefreshToken(userid)
+
         await sendVerificationEmail("", req.body.email);
-        res.status(200).json({token: token, refresh_token: created.refresh_token});
+        res.status(200).json({token: token, refresh_token: refresh_token[0].token});
         return;
     } catch (error: any) {
         res.status(400).send({ Error: 'Unable to create new User.', Details: `${error.stack}` });
@@ -161,10 +163,12 @@ export const getToken = async (req: Request, res: Response) : Promise<void> => {
         if (user[0].email === email && correctPassword) {
             const userid : string = user[0].enduserid;
             const token : string = JWT.create(userid);
+            const refresh_token = await database.User.createRefreshToken(userid)
+            console.log(refresh_token)
             res.cookie('token', token, {
                 httpOnly: true
             });
-            res.status(200).json({token: token, refresh_token: user[0].refresh_token});
+            res.status(200).json({token: token, refresh_token: refresh_token[0].token});
             return;
         }
         res.status(401).send({ Error: 'Wrong credentials' });
@@ -197,7 +201,7 @@ export const refresh_token = async (req: Request, res: Response) : Promise<void>
             res.status(400).send({ Error: "Bad Request", Details: `Request token is no UUID.`});
             return;
         }
-        const users : Array<QueryResultRow> = await database.User.updateUserByRefreshToken(refresh_token);
+        const users : Array<QueryResultRow> = await database.User.updateRefreshToken(refresh_token);
 
         if (users.length == 0) {
             console.log(`There is no user with this refresh_token = ${refresh_token}`);
@@ -209,7 +213,7 @@ export const refresh_token = async (req: Request, res: Response) : Promise<void>
         res.cookie('token', token, {
             httpOnly: true
         });
-        res.status(200).json({token: token, refresh_token: users[0].refresh_token});
+        res.status(200).json({token: token, refresh_token: users[0].token});
     } catch (error: any) {
         res.status(500).send({ Error: error, details: error.stack });
     }

@@ -25,7 +25,11 @@ export const getUser = async (userid: string | null = null, email: string | null
     });
 }
 
-export const updateUserByRefreshToken = async (refresh_token: string) : Promise<Array<QueryResultRow>> => {
+export const updateRefreshToken = async (refresh_token: string) : Promise<Array<QueryResultRow>> => {
+    throw new Error("ErrorMock")
+}
+
+export const createRefreshToken = async (refresh_token: string) : Promise<Array<QueryResultRow>> => {
     throw new Error("ErrorMock")
 }
 
