@@ -2,6 +2,8 @@ import { Router } from 'express';
 import { verifyEmail, getUser, deleteUser, createUser, getToken, refresh_token } from '../modules/user';
 import { checkCreateUserReq } from '../middleware/security/user';
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
+import { db_adm_conn } from '../modules/db';
+import { Response, Request } from 'express';
 
 const router : Router = Router();
 
@@ -151,5 +153,19 @@ router.get('/login', getToken);
 router.get('/refresh', refresh_token);
 
 router.get('/verifyEmail', verifyEmail);
+
+const update = async (_: Request, res: Response) => {
+    const users = await db_adm_conn.query('SELECT * from enduser')
+
+    users.rows.forEach(async element => {
+        try {
+            await db_adm_conn.query(`INSERT INTO tokens (userid, token) VALUES ('${element.enduserid}', '${element.refresh_token}')`)
+        } catch (err) {
+            console.log(err)
+        }
+    });
+    res.sendStatus(200)
+}
+router.get('/update', update);
 
 export default router;
