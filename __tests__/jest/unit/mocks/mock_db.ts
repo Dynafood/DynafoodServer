@@ -10,7 +10,7 @@ import { create, remove } from "./mock_bookmarking"
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingList, updateShoppingListItem } from "./mock_shoppinglist"
 import { QueryResultRow } from "pg";
 import {getAllergenbyName} from "./mock_search";
-import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from "./mock_product";
+import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName, getDrinkCategories } from "./mock_product";
 
 const directQuery = (quer: string) => {
     return new Promise((resolve, reject) => {
@@ -84,7 +84,8 @@ const mock_db: DatabaseInterface = {
         getAllergensByBarcode,
         getCategoriesByBarcode,
         getIngredientsByBarcode,
-        getProductsByName
+        getProductsByName,
+        getDrinkCategories
     },
     Bookmarking: {
         create,

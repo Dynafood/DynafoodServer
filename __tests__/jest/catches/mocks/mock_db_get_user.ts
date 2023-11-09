@@ -9,7 +9,7 @@ import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteS
 import { getTrendingGlobal, getTrendingLocal, insert, getCountryCode } from "./mock_trending";
 import { createUser, createUserOAuth, deleteUser, getPasswordResetToken, setPasswordResetToken, updateRefreshToken, createRefreshToken } from "./mock_user";
 import { getAllergenbyName } from "./mock_search";
-import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from "./mock_product";
+import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName, getDrinkCategories } from "./mock_product";
 import { getEmailConfirmed, setEmailConfirmed } from "../../../../src/modules/db/userManagement";
 
 export const getUser = async (userid: string | null = null, email: string | null = null) : Promise<Array<QueryResultRow>> => {
@@ -83,7 +83,8 @@ const mock_db: DatabaseInterface = {
         getAllergensByBarcode,
         getCategoriesByBarcode,
         getIngredientsByBarcode,
-        getProductsByName
+        getProductsByName,
+        getDrinkCategories
     },
     Bookmarking: {
         create,

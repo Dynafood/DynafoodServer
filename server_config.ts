@@ -95,7 +95,7 @@ export interface DatabaseInterface {
         getCategoriesByBarcode: (barcode: string) => Promise<Array<string>>
         getIngredientsByBarcode: (barcode: string, order_lang: string) => Promise<Array<JsonObject>>
         getProductsByName: (name: string) => Promise<Array<JsonObject>>
-
+        getDrinkCategories: () => Promise<Array<string>>
     }
     Bookmarking: {
         create: (barcode: string, userid: string) => Promise<number>,

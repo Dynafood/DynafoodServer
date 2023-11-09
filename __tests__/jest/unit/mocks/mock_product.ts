@@ -24,3 +24,7 @@ export const getProductsByName = async (name: string) => {
     return [{"product_name":"pesto bomba calabrese","image_front_url":"https://i.imgur.com/pkfKFcK.jpg","code":"7340083459436"},
     {"product_name":"pesto nicer","image_front_url":"unkonow.jpg","code":"45678324"}]
 };
+
+export const getDrinkCategories = async () => {
+    return ["drink", "boisson", "juice", "nectar", "getränk", "water", "eau"]
+};

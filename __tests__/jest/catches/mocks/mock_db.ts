@@ -9,7 +9,7 @@ import { updatePassword } from "./mock_password";
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingList, updateShoppingListItem } from "./mock_shoppinglist";
 import { getTrendingGlobal, getCountryCode, getTrendingLocal, insert } from "./mock_trending";
 import { getAllergenbyName } from "./mock_search";
-import { getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductByBarcode, getProductsByName } from "./mock_product";
+import { getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductByBarcode, getProductsByName, getDrinkCategories } from "./mock_product";
 import { getEmailConfirmed, setEmailConfirmed } from "../../../../src/modules/db/userManagement";
 
 const directQuery = (quer: string) => {
@@ -83,7 +83,8 @@ const mock_db: DatabaseInterface = {
         getAllergensByBarcode,
         getCategoriesByBarcode,
         getIngredientsByBarcode,
-        getProductsByName
+        getProductsByName,
+        getDrinkCategories
     },
     Bookmarking: {
         create,

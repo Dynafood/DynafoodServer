@@ -10,7 +10,7 @@ import { DatabaseInterface } from '../../../server_config';
 import { getProviderByName } from './oauth';
 import { create, remove } from './bookmarking';
 import { getAllergenbyName, directQuery } from './search';
-import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from './product';
+import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName, getDrinkCategories } from './product';
 
 // console.log('this is db_vars:', process.env.NODE_ENV, process.env.DB_USER, process.env.PG_PASSWORD, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
 
@@ -104,7 +104,8 @@ const Database: DatabaseInterface = {
         getAllergensByBarcode,
         getCategoriesByBarcode,
         getIngredientsByBarcode,
-        getProductsByName
+        getProductsByName,
+        getDrinkCategories
     },
     Bookmarking: {
         create,

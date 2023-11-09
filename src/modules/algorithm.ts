@@ -92,8 +92,11 @@ export const calculate_score = async (product: Product, enduserid: string) => {
 
     //no implementation of halal
     let nutriments = product.nutriments_g_pro_100g
-    let drink_categories = ["drink", "boisson", "juice", "nectar", "getränk", "water", "eau"]
-    let drinking_categories = product.keywords.filter((keyword) => {return (drink_categories.includes(keyword.toLowerCase()))})
+    let drink_categories = await database.Product.getDrinkCategories()
+    let drinking_categories_1 = product.keywords.filter((keyword) => {return (drink_categories.includes(keyword.trim().toLowerCase()))})
+    let drinking_categories_2 = product.categories.filter((keyword) => {return (drink_categories.includes(keyword.trim().toLowerCase()))})
+    
+    let drinking_categories = drinking_categories_1.concat(drinking_categories_2)
     let water_categories = ["water", "eau", "wasser", "mineralwasser"]
     let is_water = product.keywords.filter((keyword) => {return (water_categories.includes(keyword.toLowerCase()))}).length > 0
         //nutriscore implementation
@@ -515,7 +518,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                     is_fat: null
                 }
             } 
-            if (product.nutriments_scores.total_score) {
+            if (product.nutriments_scores.total_score !== undefined && product.nutriments_scores.total_score !== null) {
                 let nu_score =  product.nutriments_scores.total_score * -1
                 {
                 // if (is_drink) {
