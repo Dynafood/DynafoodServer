@@ -93,6 +93,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
     //no implementation of halal
     let nutriments = product.nutriments_g_pro_100g
     let drink_categories = await database.Product.getDrinkCategories()
+    console.log(drink_categories)
     let drinking_categories_1 = product.keywords.filter((keyword) => {return (drink_categories.includes(keyword.trim().toLowerCase()))})
     let drinking_categories_2 = product.categories.filter((keyword) => {return (drink_categories.includes(keyword.trim().toLowerCase()))})
     

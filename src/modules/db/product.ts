@@ -5,8 +5,7 @@ import { JsonObject } from 'swagger-ui-express';
 
 export const getDrinkCategories = async (): Promise<Array<string>> => {
     const res = await db_adm_conn.query(`select * from drink_categories`)
-    res.rows.map(el => {el.keyword})
-    return res.rows
+    return res.rows.map(el => el.keyword)
 }
 
 export const getProductByBarcode = async (barcode: string): Promise<QueryResultRow> => {
