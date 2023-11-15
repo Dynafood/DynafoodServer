@@ -24,4 +24,10 @@ describe('check get product routes', () => {
         expect(response.body.name).toBe( "Nutella")
         expect(response.body.vegetarian_alert).toBe(false)
     })
+    test('test placeholder image', async () => {
+        // TODO(MARCEL) look for a product that has no image
+        const response = await supertest(app).get("/products/barcode/3700009274323?language=fr").send().set('authorization', 'Bearer token_existing');
+        expect(response.statusCode).toBe(200)
+        expect(response.body.images).toEqual('http://x2024dynafood545437452001.westeurope.cloudapp.azure.com:8081/placeholderImage');
+    })
 })
