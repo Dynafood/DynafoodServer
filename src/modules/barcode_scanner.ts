@@ -7,6 +7,20 @@ import { EcoScoreInterface, Product, calculate_score } from './algorithm';
 import { checkInputBeforeSqlQuery } from './db/scripts';
 import { QueryResult } from 'pg';
 
+
+class NotFoundError extends Error {
+    constructor(message?: string) {
+        super(message);
+    }
+}
+
+class NoResponseError extends Error {
+    constructor(message?: string) {
+        super(message);
+    }
+}
+
+
 const checkAllergenAlert = async (userID: string, barcode: string, response: JsonObject) => {
     let query = `SELECT r.category_name, er.strongness FROM enduser e 
     JOIN enduser_restriction er ON er.enduserid = e.enduserid
@@ -342,59 +356,71 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
     };
 }
 
+export const generateResponse = async (barcode: string, userID: string, language: string) => {
+
+    if (!["de", "en", "fr"].includes(language)) {
+        language = "en"
+    }
+
+    const response : Product = {
+        name: "null",
+        keywords: [],
+        allergens: [],
+        categories: [],
+        qualities: [],
+        warings: [],
+        ecoscoreData: null,
+        packing: "",
+        images: "",
+        ingredients: {vegan: null, vegetarian: null, ingredients: []},
+        nutriments_g_pro_100g: null,
+        nutriments_scores: null,
+        vegetarian_alert: false,
+        vegan_alert: false,
+        allergen_alert: false,
+        vegan: true,
+        vegetarian: true,
+        score: 0
+    };
+    const fields: string = 'generic_name,_keywords,allergens_hierarchy,categories,data_quality_tags,data_quality_warnings_tags,packaging,product_name,ecoscore_score,ecoscore_data,ecoscore_grade,image_front_url,image_small_url,nutriments,nutriscore_data,nutriscore_grade,ingredients';
+    const url: string = `https://world.openfoodfacts.org/api/2/product/${barcode}.json?fields=${fields}`;
+    const product: AxiosResponse = await axios.get(url);
+    if (typeof product === 'undefined' || product == null) {
+        throw new NoResponseError('undefined response from OpenFoodFacts Api');
+    }
+
+    if (product.data.status == 1) {
+        parseProductFromOFF(product, response, userID, language);
+    } else {
+        await parseProductFromDB(barcode, response, userID, language);
+        if (response.name == "null") {
+            throw new NotFoundError('Product not found');
+        }
+    }
+    await checkAllergenAlert(userID, barcode, response)
+    await calculate_score(response, userID)
+    await database.History.updateHistory(userID, barcode, response);
+    return response
+}
+
 export const getProduct = async (req: Request, res: Response) : Promise<void> => {
     try {
         const userID: string = res.locals.user.userid;
         let language: string = <string>(req.query.language || 'en');
-
-        if (!["de", "en", "fr"].includes(language)) {
-            language = "en"
-        }
-
-        const response : Product = {
-            name: "null",
-            keywords: [],
-            allergens: [],
-            categories: [],
-            qualities: [],
-            warings: [],
-            ecoscoreData: null,
-            packing: "",
-            images: "",
-            ingredients: {vegan: null, vegetarian: null, ingredients: []},
-            nutriments_g_pro_100g: null,
-            nutriments_scores: null,
-            vegetarian_alert: false,
-            vegan_alert: false,
-            allergen_alert: false,
-            vegan: true,
-            vegetarian: true,
-            score: 0
-        };
-        const fields: string = 'generic_name,_keywords,allergens_hierarchy,categories,data_quality_tags,data_quality_warnings_tags,packaging,product_name,ecoscore_score,ecoscore_data,ecoscore_grade,image_front_url,image_small_url,nutriments,nutriscore_data,nutriscore_grade,ingredients';
-        const url: string = `https://world.openfoodfacts.org/api/2/product/${req.params.barcode}.json?fields=${fields}`;
-        const product: AxiosResponse = await axios.get(url);
-        if (typeof product === 'undefined' || product == null) {
-            res.status(500).send({ error: 'undefined response from OpenFoodFacts Api' });
-        }
-
-        if (product.data.status == 1) {
-            parseProductFromOFF(product, response, userID, language);
-        } else {
-            await parseProductFromDB(req.params.barcode, response, userID, language);
-            if (response.name == "null") {
-                res.status(204).send({ response: 'Product not found' });
-                return;
-            }
-        }
-        await checkAllergenAlert(userID, req.params.barcode, response)
-        await calculate_score(response, userID)
-        await database.History.updateHistory(userID, req.params.barcode, response);
-        await database.TrendingProducts.insert(userID, req.params.barcode, response.name, response.images);
+        const barcode: string = <string>req.params.barcode
+    
+    const response = await generateResponse(barcode, userID, language)
+    await database.TrendingProducts.insert(userID, barcode, response.name, response.images);
         res.status(200).send(response);
     }
     catch (error: any) {
-        console.log(error);
-        res.status(500).send({ Error: error, details: error.stack });
+        if (error instanceof NoResponseError) {
+            res.status(500).send({ error: 'undefined response from OpenFoodFacts Api' });
+        } else if (error instanceof NotFoundError) {
+            res.status(204).send({ response: 'Product not found' });
+        } else {
+            console.log(error);
+            res.status(500).send({ Error: error, details: error.stack });
+        }
     }
 };

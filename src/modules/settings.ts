@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { QueryResultRow } from 'pg';
 import { database } from '../../server_config';
 import translations from "../../translation.json";
+import { recalculat_scores as recalculate_scores } from './algorithm';
 
 export const getRestrictionIdByName = async (req: Request, res: Response, next: NextFunction) : Promise<void> => {
     try {
@@ -83,11 +84,14 @@ export const getAllSettings = async (req: Request, res: Response) : Promise<void
 export const postSettings = async (req: Request, res: Response) : Promise<void> => {
     try {
         const strongness = req.body.strongness || null
+        const userid = res.locals.user.userid
+        const restrictionid = res.locals.restrictionID
         if (strongness == null) {
             res.status(400).send({ Error: 'BadRequest', Details: translations['Missing strongness.'] });
             return;
         }
-        await database.Settings.createSetting(req.body.alertActivation, res.locals.user.userid, res.locals.restrictionID, req.body.strongness);
+        await database.Settings.createSetting(req.body.alertActivation, userid, restrictionid, req.body.strongness);
+        recalculate_scores(userid)
         res.status(200).send();
     } catch (err: any) {
         console.log(err);
@@ -98,11 +102,14 @@ export const postSettings = async (req: Request, res: Response) : Promise<void> 
 export const patchSettings = async (req: Request, res: Response): Promise<void> => {
     try {
         const strongness = req.body.strongness || null
+        const userid = res.locals.user.userid
+        const restrictionid = res.locals.restrictionID
         if (strongness == null) {
             res.status(400).send({ Error: 'BadRequest', Details: translations['Missing strongness.'] });
             return;
         }
-        await database.Settings.updateAlertSetting(res.locals.user.userid, req.body.alertActivation, res.locals.restrictionID, req.body.strongness);
+        await database.Settings.updateAlertSetting(userid, req.body.alertActivation, restrictionid, req.body.strongness);
+        recalculate_scores(userid);
         res.status(200).send();
     } catch (err: any) {
         console.log(err);
@@ -112,7 +119,10 @@ export const patchSettings = async (req: Request, res: Response): Promise<void> 
 
 export const deleteSettings = async (req: Request, res: Response) : Promise<void> => {
     try {
-        await database.Settings.deleteAlertSetting(res.locals.user.userid, res.locals.restrictionID);
+        const userid = res.locals.user.userid
+        const restrictionid = res.locals.restrictionID
+        await database.Settings.deleteAlertSetting(userid, restrictionid);
+        recalculate_scores(userid);
         res.status(200).send();
     } catch (err: any) {
         console.log(err);

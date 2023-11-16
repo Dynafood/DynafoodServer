@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { database } from '../../server_config';
 import { db_adm_conn } from './db';
 import { JsonObject } from 'swagger-ui-express';
+import { generateResponse } from './barcode_scanner';
 
 export interface EcoScoreInterface {
     eco_grade : null | string | number,
@@ -714,4 +715,13 @@ export const calculate_score = async (product: Product, enduserid: string) => {
             product.score = 100
         }
         product.score = Math.round(product.score)
+}
+
+export const recalculat_scores = async (userid: string) => {
+    const history = await database.History.getElements(userid);
+    for(const product of history) {
+        const response = await generateResponse(product.barcode, userid, 'en')
+        calculate_score(response, userid);
+        await database.History.updateHistory(userid, product.barcode, response);
+    }
 }
