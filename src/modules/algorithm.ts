@@ -697,8 +697,6 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 return
             }
         }
-        console.log(score, max_score)
-
         product.score = (score/max_score) * 100
         if (product.allergen_alert){
             product.score = 1;
