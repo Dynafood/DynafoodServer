@@ -59,6 +59,11 @@ describe('check update settings routes', () => {
         expect(response.body).toStrictEqual({})
         expect(response.statusCode).toBe(200)
     })
+    test('update Settings with missing strongness', async () => {
+        const response = await supertest(app).patch("/settings").send({restrictionName: "real"}).set('Cookie', ['token=token_existing']);
+        expect(response.body).toStrictEqual({ Error: "BadRequest", Details: translation["Missing strongness."] })
+        expect(response.statusCode).toBe(400)
+    })
 })
 
 describe('check delete settings routes', () => {
