@@ -51,6 +51,7 @@ const updateHistoryElement = async (userID: string, barcode: string, product: Js
         AND enduserId = '${checkInputBeforeSqlQuery(userID)}';`);
 };
 
+
 const insertIntoHistory = async (userID: string, barcode: string, product: JsonObject) : Promise<void> => {
     userID = checkInputBeforeSqlQuery(userID);
     barcode = checkInputBeforeSqlQuery(barcode);
