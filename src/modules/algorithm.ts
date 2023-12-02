@@ -12,9 +12,22 @@ export interface EcoScoreInterface {
     packaging : JsonObject | null, // information about packaging, // mostly empty
     agribalyse : JsonObject | null,
 }
+
 interface nutriment {
     name: string
     score: null | number
+}
+
+export enum nutrimentColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+interface nutriment_traffic_light {
+    name: string,
+    score: null | number,
+    color: nutrimentColor,
 }
 
 export interface Product {
@@ -40,17 +53,17 @@ export interface Product {
     }
     nutriments_g_pro_100g: {
         calcium: nutriment
-        carbohydrates: nutriment
+        carbohydrates: nutriment_traffic_light
         cholesterol: nutriment
-        kcal: nutriment
-        fat: nutriment
+        kcal: nutriment_traffic_light
+        fat: nutriment_traffic_light
         fiber:nutriment
         iron: nutriment
-        proteins: nutriment
-        salt:nutriment
-        "saturated fat": nutriment
+        proteins: nutriment_traffic_light
+        salt: nutriment_traffic_light
+        "saturated fat": nutriment_traffic_light
         sodium: nutriment
-        sugars: nutriment
+        sugars: nutriment_traffic_light
         "trans fat": nutriment
         "vitamin A": nutriment
         "vitamin B": nutriment
@@ -80,7 +93,7 @@ export interface Product {
     allergen_alert: boolean | null,
     vegan: boolean | null,
     vegetarian: boolean | null,
-    score: number
+    score: number,
 }
 
 export const calculate_score = async (product: Product, enduserid: string) => {

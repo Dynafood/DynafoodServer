@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import { JsonObject } from 'swagger-ui-express';
 import { database } from '../../server_config';
 import { translate_ingredient, translate_nutriment } from './translation/translation';
-import { EcoScoreInterface, Product, calculate_score } from './algorithm';
+import { EcoScoreInterface, Product, calculate_score, nutrimentColor } from './algorithm';
 import { checkInputBeforeSqlQuery } from './db/scripts';
 import { QueryResult } from 'pg';
 
@@ -143,19 +143,26 @@ const getAllAllergenes = (hierarchy: Array<string>) : Array<string> => {
 
 const getNutriments = (nutriments: JsonObject, language: string): JsonObject | null => {
     if (typeof nutriments !== 'undefined' && nutriments != null) {
+        const fat_color: nutrimentColor = nutriments.fat_100g <= 3 ? nutrimentColor.Green : (nutriments.fat_100g <= 17.5 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const saturates_color: nutrimentColor = nutriments['saturated-fat_100g'] <= 1.5 ? nutrimentColor.Green : (nutriments['saturated-fat_100g'] <= 5 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const sugar_color: nutrimentColor = nutriments.sugars_100g <= 5 ? nutrimentColor.Green : (nutriments.sugars_100g <= 22.5 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const salt_color: nutrimentColor = nutriments.salt_100g <= 0.3 ? nutrimentColor.Green : (nutriments.salt_100g <= 1.5 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const protein_color: nutrimentColor = nutriments.proteins_100g >= 10 ? nutrimentColor.Green : (nutriments.proteins_100g >= 5 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const carbs_color: nutrimentColor = nutriments.carbohydrates_100g <= 30 ? nutrimentColor.Green : (nutriments.carbohydrates_100g <= 60 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const calories_color: nutrimentColor = nutriments.energy_100g <= 100 ? nutrimentColor.Green : (nutriments.energy_100g <= 200 ? nutrimentColor.Yellow : nutrimentColor.Red);
         return {
             calcium: { name: translate_nutriment('calcium', language), score: nutriments.calcium_100g },
-            carbohydrates: { name: translate_nutriment('carbohydrates', language), score: nutriments.carbohydrates_100g },
+            carbohydrates: { name: translate_nutriment('carbohydrates', language), score: nutriments.carbohydrates_100g, color: carbs_color },
             cholesterol: { name: translate_nutriment('cholesterol', language), score: nutriments.cholesterol_100g },
-            kcal: { name: translate_nutriment('kcal', language), score: nutriments.energy_100g },
-            fat: { name: translate_nutriment('fat', language), score: nutriments.fat_100g },
+            kcal: { name: translate_nutriment('kcal', language), score: nutriments.energy_100g, color: calories_color},
+            fat: { name: translate_nutriment('fat', language), score: nutriments.fat_100g, color: fat_color },
             fiber: { name: translate_nutriment('fiber', language), score: nutriments.fiber_100g },
             iron: { name: translate_nutriment('iron', language), score: nutriments.iron_100g },
-            proteins: { name: translate_nutriment('proteins', language), score: nutriments.proteins_100g },
-            salt: { name: translate_nutriment('salt', language), score: nutriments.salt_100g },
-            'saturated fat': { name: translate_nutriment('saturated fat', language), score: nutriments['saturated-fat_100g'] },
+            proteins: { name: translate_nutriment('proteins', language), score: nutriments.proteins_100g, color: protein_color },
+            salt: { name: translate_nutriment('salt', language), score: nutriments.salt_100g, color: salt_color},
+            'saturated fat': { name: translate_nutriment('saturated fat', language), score: nutriments['saturated-fat_100g'], color: saturates_color },
             sodium: { name: translate_nutriment('sodium', language), score: nutriments.sodium_100g },
-            sugars: { name: translate_nutriment('sugars', language), score: nutriments.sugars_100g },
+            sugars: { name: translate_nutriment('sugars', language), score: nutriments.sugars_100g, color: sugar_color },
             'trans fat': { name: translate_nutriment('trans fat', language), score: nutriments['trans-fat_100g'] },
             'vitamin A': { name: translate_nutriment('vitamin A', language), score: nutriments['vitamin-a_100g'] },
             'vitamin B': { name: translate_nutriment('vitamin B', language), score: nutriments['vitamin-b_100g'] },
@@ -411,7 +418,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
     
     const response = await generateResponse(barcode, userID, language)
     await database.TrendingProducts.insert(userID, barcode, response.name, response.images);
-        res.status(200).send(response);
+    res.status(200).send(response);
     }
     catch (error: any) {
         if (error instanceof NoResponseError) {
