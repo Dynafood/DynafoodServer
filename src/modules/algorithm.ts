@@ -52,14 +52,14 @@ export interface Product {
     }
     nutriments_g_pro_100g: {
         calcium: nutriment
-        carbohydrates: nutriment
+        carbohydrates: nutriment_traffic_light
         cholesterol: nutriment
-        kcal: nutriment
+        kcal: nutriment_traffic_light
         fat: nutriment_traffic_light
         fiber:nutriment
         iron: nutriment
-        proteins: nutriment
-        salt:nutriment_traffic_light
+        proteins: nutriment_traffic_light
+        salt: nutriment_traffic_light
         "saturated fat": nutriment_traffic_light
         sodium: nutriment
         sugars: nutriment_traffic_light

@@ -132,15 +132,18 @@ const getNutriments = (nutriments: JsonObject, language: string): JsonObject | n
         const saturates_color: nutrimentColor = nutriments['saturated-fat_100g'] <= 1.5 ? nutrimentColor.Green : (nutriments['saturated-fat_100g'] <= 5 ? nutrimentColor.Yellow : nutrimentColor.Red);
         const sugar_color: nutrimentColor = nutriments.sugars_100g <= 5 ? nutrimentColor.Green : (nutriments.sugars_100g <= 22.5 ? nutrimentColor.Yellow : nutrimentColor.Red);
         const salt_color: nutrimentColor = nutriments.salt_100g <= 0.3 ? nutrimentColor.Green : (nutriments.salt_100g <= 1.5 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const protein_color: nutrimentColor = nutriments.proteins_100g >= 10 ? nutrimentColor.Green : (nutriments.proteins_100g >= 5 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const carbs_color: nutrimentColor = nutriments.carbohydrates_100g <= 30 ? nutrimentColor.Green : (nutriments.carbohydrates_100g <= 60 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const calories_color: nutrimentColor = nutriments.energy_100g <= 100 ? nutrimentColor.Green : (nutriments.energy_100g <= 200 ? nutrimentColor.Yellow : nutrimentColor.Red);
         return {
             calcium: { name: translate_nutriment('calcium', language), score: nutriments.calcium_100g },
-            carbohydrates: { name: translate_nutriment('carbohydrates', language), score: nutriments.carbohydrates_100g },
+            carbohydrates: { name: translate_nutriment('carbohydrates', language), score: nutriments.carbohydrates_100g, color: carbs_color },
             cholesterol: { name: translate_nutriment('cholesterol', language), score: nutriments.cholesterol_100g },
-            kcal: { name: translate_nutriment('kcal', language), score: nutriments.energy_100g },
+            kcal: { name: translate_nutriment('kcal', language), score: nutriments.energy_100g, color: calories_color},
             fat: { name: translate_nutriment('fat', language), score: nutriments.fat_100g, color: fat_color },
             fiber: { name: translate_nutriment('fiber', language), score: nutriments.fiber_100g },
             iron: { name: translate_nutriment('iron', language), score: nutriments.iron_100g },
-            proteins: { name: translate_nutriment('proteins', language), score: nutriments.proteins_100g },
+            proteins: { name: translate_nutriment('proteins', language), score: nutriments.proteins_100g, color: protein_color },
             salt: { name: translate_nutriment('salt', language), score: nutriments.salt_100g, color: salt_color},
             'saturated fat': { name: translate_nutriment('saturated fat', language), score: nutriments['saturated-fat_100g'], color: saturates_color },
             sodium: { name: translate_nutriment('sodium', language), score: nutriments.sodium_100g },
