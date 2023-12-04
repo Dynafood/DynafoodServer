@@ -8,7 +8,7 @@ import { getEmailConfirmed, setEmailConfirmed, createUser, createUserOAuth, dele
 import { insert, getTrendingLocal, getTrendingGlobal, getCountryCode } from './trendingProducts';
 import { DatabaseInterface } from '../../../server_config';
 import { getProviderByName } from './oauth';
-import { create, remove } from './bookmarking';
+import { create, remove, check } from './bookmarking';
 import { getAllergenbyName, directQuery } from './search';
 import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName, getDrinkCategories } from './product';
 
@@ -109,7 +109,8 @@ const Database: DatabaseInterface = {
     },
     Bookmarking: {
         create,
-        remove
+        remove,
+        check
     },
     connect,
     end

@@ -4,7 +4,7 @@ import { createNewFeedback } from "./mock_feedback";
 import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, getAllSettings, updateSettings, userHasRestriction } from "./mock_settings";
 import { deleteElementFromHistory, getElements, updateHistory } from "./mock_history";
 import { QueryResultRow } from "pg";
-import { create, remove } from "./mock_bookmarking"
+import { check, create, remove } from "./mock_bookmarking"
 import { updatePassword } from "./mock_password";
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingList, updateShoppingListItem } from "./mock_shoppinglist";
 import { getTrendingGlobal, getCountryCode, getTrendingLocal, insert } from "./mock_trending";
@@ -88,7 +88,8 @@ const mock_db: DatabaseInterface = {
     },
     Bookmarking: {
         create,
-        remove
+        remove,
+        check
     },
     connect: async () => {throw new Error("ErrorMock")},
     end: async () => {throw new Error("ErrorMock")}

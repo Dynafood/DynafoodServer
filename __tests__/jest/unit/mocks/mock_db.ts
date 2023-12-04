@@ -1,12 +1,11 @@
 import { DatabaseInterface, init_db } from "../../../../server_config"
-import { JsonObject } from "swagger-ui-express";
 import { createUser, deleteUser, getUser, setPasswordResetToken, createUserOAuth, getPasswordResetToken, setEmailConfirmed, getEmailConfirmed, updateRefreshToken, createRefreshToken } from "./mock_user";
 import { createNewFeedback } from "./mock_feedback";
 import { updateHistory, getElements, deleteElementFromHistory } from "./mock_history";
 import { insert, getCountryCode, getTrendingGlobal, getTrendingLocal} from "./mock_trendingProduct"
 import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, getAllSettings, updateSettings, userHasRestriction } from "./mock_settings";
 import { updatePassword } from "./mock_password"
-import { create, remove } from "./mock_bookmarking"
+import { check, create, remove } from "./mock_bookmarking"
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingList, updateShoppingListItem } from "./mock_shoppinglist"
 import { QueryResultRow } from "pg";
 import {getAllergenbyName} from "./mock_search";
@@ -89,7 +88,8 @@ const mock_db: DatabaseInterface = {
     },
     Bookmarking: {
         create,
-        remove
+        remove,
+        check
     },
     connect: async () : Promise<void> => {},
     end: async () : Promise<void> => {}
