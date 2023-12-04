@@ -44,6 +44,7 @@ export interface DatabaseInterface {
     }
     Feedback: {
         createNewFeedback: (reason: string, content: string, userid: string) => Promise<void>
+        createContactForm: (email: string, content: string) => Promise<void>
     }
     History: {
         deleteElementFromHistory: (elementid: string, userid: string) => Promise<void>

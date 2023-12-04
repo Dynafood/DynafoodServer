@@ -1,5 +1,5 @@
 import pg from 'pg';
-import { createNewFeedback } from './feedback';
+import { createNewFeedback, createContactForm } from './feedback';
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem, updateShoppingList } from './shoppingList'
 import { deleteElementFromHistory, getElements, updateHistory } from './historyManagement';
 import { updatePassword } from './resetPassword';
@@ -53,7 +53,8 @@ const Database: DatabaseInterface = {
         getShoppingLists
     },
     Feedback: {
-        createNewFeedback
+        createNewFeedback,
+        createContactForm
     },
     Password: {
         updatePassword

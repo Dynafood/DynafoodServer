@@ -34,3 +34,25 @@ export const createFeedback = async (req: Request, res: Response) => {
         res.status(500).send({ Error: err, Details: err.stack });
     }
 };
+
+export const createContactForm = async (req: Request, res: Response) => {
+    const content: string = req.body.content;
+    const email: string = req.body.email;
+
+    
+    if (!content || content.length === 0) {
+        res.status(400).send({ Error: 'No content provided', Details: translations['Content is not provided or empty!'] });
+        return;
+    }
+    if (!email || email.length === 0) {
+        res.status(400).send({ Error: 'No email provided', Details: 'email is not provided or empty!'});
+        return;
+    }
+    try {
+        await database.Feedback.createContactForm(email, content);
+        res.status(200).send();
+    } catch (err: any) {
+        console.log(err);
+        res.status(500).send({ Error: err, Details: err.stack });
+    }
+}

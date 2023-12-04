@@ -9,3 +9,10 @@ export const createNewFeedback = async (reason: string, content: string, userid:
             VALUES ('${checkInputBeforeSqlQuery(reason)}', '${checkInputBeforeSqlQuery(content)}', '${checkInputBeforeSqlQuery(Md5.hashStr(userid))}');
         `);
 };
+
+export const createContactForm = async (email: string, content: string) => {
+    await db_adm_conn.query(`
+            INSERT INTO contact_form (email, content)
+            VALUES ('${checkInputBeforeSqlQuery(email)}', '${checkInputBeforeSqlQuery(content)}');
+        `);
+}

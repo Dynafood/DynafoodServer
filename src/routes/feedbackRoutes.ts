@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import { secureRouteMiddleware } from '../middleware/security/secureRouting';
-import { createFeedback } from '../modules/feedback';
+import { createFeedback, createContactForm } from '../modules/feedback';
 const router : Router = Router();
 
 /**
@@ -64,5 +64,7 @@ const router : Router = Router();
  *                 $ref: '#/components/schemas/Error'
 */
 router.post('/feedback', secureRouteMiddleware, createFeedback);
+router.post('/contactForm', createContactForm);
+
 
 export default router;
