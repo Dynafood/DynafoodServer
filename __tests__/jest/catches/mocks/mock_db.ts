@@ -1,6 +1,6 @@
 import { DatabaseInterface, init_db } from "../../../../server_config"
 import { createUser, deleteUser, getUser, createUserOAuth, getPasswordResetToken, setPasswordResetToken, updateRefreshToken, createRefreshToken } from "./mock_user";
-import { createNewFeedback } from "./mock_feedback";
+import { createNewFeedback, createContactForm } from "./mock_feedback";
 import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, getAllSettings, updateSettings, userHasRestriction } from "./mock_settings";
 import { deleteElementFromHistory, getElements, updateHistory } from "./mock_history";
 import { QueryResultRow } from "pg";
@@ -32,7 +32,8 @@ const mock_db: DatabaseInterface = {
         getShoppingLists: getShoppingLists
     },
     Feedback: {
-        createNewFeedback: createNewFeedback
+        createNewFeedback: createNewFeedback,
+        createContactForm: createContactForm
     },
     History: {
         deleteElementFromHistory: deleteElementFromHistory,
