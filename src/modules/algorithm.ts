@@ -94,6 +94,7 @@ export interface Product {
     vegan: boolean | null,
     vegetarian: boolean | null,
     score: number,
+    bookmarked: boolean
 }
 
 export const calculate_score = async (product: Product, enduserid: string) => {

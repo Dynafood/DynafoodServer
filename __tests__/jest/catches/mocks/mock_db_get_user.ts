@@ -1,6 +1,6 @@
 import { QueryResultRow } from "pg"
 import { DatabaseInterface, init_db } from "../../../../server_config"
-import { create, remove } from "./mock_bookmarking"
+import { check, create, remove } from "./mock_bookmarking"
 import { createNewFeedback } from "./mock_feedback";
 import { deleteElementFromHistory, getElements, updateHistory } from "./mock_history";
 import { updatePassword } from "./mock_password";
@@ -88,7 +88,8 @@ const mock_db: DatabaseInterface = {
     },
     Bookmarking: {
         create,
-        remove
+        remove,
+        check
     },
     connect: async () => {throw new Error("ErrorMock")},
     end: async () => {throw new Error("ErrorMock")}

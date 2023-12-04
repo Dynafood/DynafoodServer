@@ -99,7 +99,8 @@ export interface DatabaseInterface {
     }
     Bookmarking: {
         create: (barcode: string, userid: string) => Promise<number>,
-        remove: (barcode: string, userid: string) => Promise<number>
+        remove: (barcode: string, userid: string) => Promise<number>,
+        check:  (barcode: string, userid: string) => Promise<boolean>,
     },
     connect: () => Promise<void>
     end: () => Promise<void>

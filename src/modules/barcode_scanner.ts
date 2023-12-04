@@ -387,7 +387,8 @@ export const generateResponse = async (barcode: string, userID: string, language
         allergen_alert: false,
         vegan: true,
         vegetarian: true,
-        score: 0
+        score: 0,
+        bookmarked: false
     };
     const fields: string = 'generic_name,_keywords,allergens_hierarchy,categories,data_quality_tags,data_quality_warnings_tags,packaging,product_name,ecoscore_score,ecoscore_data,ecoscore_grade,image_front_url,image_small_url,nutriments,nutriscore_data,nutriscore_grade,ingredients';
     const url: string = `https://world.openfoodfacts.org/api/2/product/${barcode}.json?fields=${fields}`;
@@ -418,6 +419,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
     
     const response = await generateResponse(barcode, userID, language)
     await database.TrendingProducts.insert(userID, barcode, response.name, response.images);
+    response.bookmarked = await database.Bookmarking.check(barcode, userID);
     res.status(200).send(response);
     }
     catch (error: any) {
