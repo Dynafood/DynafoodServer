@@ -388,7 +388,8 @@ export const generateResponse = async (barcode: string, userID: string, language
         vegan: true,
         vegetarian: true,
         score: 0,
-        bookmarked: false
+        bookmarked: false,
+        score_description: [],
     };
     const fields: string = 'generic_name,_keywords,allergens_hierarchy,categories,data_quality_tags,data_quality_warnings_tags,packaging,product_name,ecoscore_score,ecoscore_data,ecoscore_grade,image_front_url,image_small_url,nutriments,nutriscore_data,nutriscore_grade,ingredients';
     const url: string = `https://world.openfoodfacts.org/api/2/product/${barcode}.json?fields=${fields}`;
