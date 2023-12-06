@@ -543,7 +543,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 let nu_score =  product.nutriments_scores.total_score * -1
 
                 // this is just the base of the calculation, from nutriments per 100g
-                product.score_description.push({ reason: "calculated based on amount of nutriments per 100g, total_score", value: nu_score.toString() });
+                //product.score_description.push({ reason: "calculated based on amount of nutriments per 100g, total_score", value: nu_score.toString() });
                 {
                 // if (is_drink) {
                 //     switch (true) {
@@ -617,13 +617,13 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                         case nu_score < total_scores.a || product.nutriments_scores.is_water || is_water:
                             product.nutriments_scores.total_grade = 'a'
                             score += points.a
-                            product.score_description.push({ reason: "nutriscore A", value: Math.round(score).toString() + " of " + max_score.toString() });
+                            product.score_description.push({ reason: "nutriscore A", value: "+" + points.a.toString() });
                     break;
                         case nu_score < total_scores.b:
                             product.nutriments_scores.total_grade = 'b'
                             score += points.b
                             score += (1 - (nu_score - total_scores.a) / (total_scores.b - total_scores.a)) * (points.b - points.a)
-                            product.score_description.push({ reason: "nutriscore B", value: Math.round(score).toString() + " of " + max_score.toString() });
+                            product.score_description.push({ reason: "nutriscore B", value: "+" + (points.b +  (1 - (nu_score - total_scores.a) / (total_scores.b - total_scores.a)) * (points.b - points.a)).toString() });
                             //product.score_description.push({ reason: "nutriscore B", value: "+" + points.b.toString() });
                             //product.score_description.push({ reason: "nutriscore B", value: "+" + (1 - (nu_score - total_scores.a) / (total_scores.b - total_scores.a)) * (points.b - points.a) });
                     break;
@@ -631,7 +631,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                             product.nutriments_scores.total_grade = 'c'
                             score += points.c
                             score += (1- (nu_score - total_scores.b) / (total_scores.c - total_scores.b)) * (points.b - points.c)
-                            product.score_description.push({ reason: "nutriscore C", value: Math.round(score).toString() + " of " + max_score.toString() });
+                            product.score_description.push({ reason: "nutriscore C", value: "+" + (points.c + (1- (nu_score - total_scores.b) / (total_scores.c - total_scores.b)) * (points.b - points.c)).toString() });
                             //product.score_description.push({ reason: "nutriscore C", value: "+" + points.c.toString() });
                             //product.score_description.push({ reason: "nutriscore C", value: "+" + (1- (nu_score - total_scores.b) / (total_scores.c - total_scores.b)) * (points.b - points.c) });
                     break;
@@ -639,14 +639,14 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                             product.nutriments_scores.total_grade = 'd'
                             score += points.d
                             score += (1 - (nu_score - total_scores.c) / (total_scores.d - total_scores.c)) * (points.c - points.d)
-                            product.score_description.push({ reason: "nutriscore D", value: Math.round(score).toString() + " of " + max_score.toString() });
+                            product.score_description.push({ reason: "nutriscore D", value: "+" + (points.d + (1 - (nu_score - total_scores.c) / (total_scores.d - total_scores.c)) * (points.c - points.d)).toString() });
                             //product.score_description.push({ reason: "nutriscore D", value: "+" + points.d.toString() });
                             //product.score_description.push({ reason: "nutriscore D", value: "+" + (1 - (nu_score - total_scores.c) / (total_scores.d - total_scores.c)) * (points.c - points.d) });
                     break;
                         case nu_score >= total_scores.d:
                             product.nutriments_scores.total_grade = 'e'
                             score += (1- (nu_score - total_scores.d) / (40 - total_scores.d)) * (points.d - points.e)
-                            product.score_description.push({ reason: "nutriscore E", value: Math.round(score).toString() + " of " + max_score.toString() });
+                            product.score_description.push({ reason: "nutriscore E", value: "+" + ((1- (nu_score - total_scores.d) / (40 - total_scores.d)) * (points.d - points.e)).toString() });
                             //product.score_description.push({ reason: "nutriscore E", value: "+" + points.e.toString() });
                             //product.score_description.push({ reason: "nutriscore E", value: "+" + (1- (nu_score - total_scores.d) / (40 - total_scores.d)) * (points.d - points.e) });
                     break;
@@ -672,31 +672,31 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 case '1':
                     score += 20;
                     //product.score_description.push({ reason: "ecoscore A", value: "+20" });
-                    product.score_description.push({ reason: "ecoscore A", value: Math.round(score).toString() + " of " + max_score.toString() });
+                    product.score_description.push({ reason: "ecoscore A", value: "+20" });
                     break;
                 case 'b':
                 case '2':
                     score += 15;
                     //product.score_description.push({ reason: "ecoscore B", value: "+15" });
-                    product.score_description.push({ reason: "ecoscore B", value: Math.round(score).toString() + " of " + max_score.toString() });
+                    product.score_description.push({ reason: "ecoscore B", value: "+15" });
                     break;
                 case 'c':
                 case '3':
                     score += 10;
                     //product.score_description.push({ reason: "ecoscore C", value: "+10" });
-                    product.score_description.push({ reason: "ecoscore C", value: Math.round(score).toString() + " of " + max_score.toString() });
+                    product.score_description.push({ reason: "ecoscore C", value: "+10" });
                     break;
                 case 'd':
                 case '4':
                     score += 5;
                     //product.score_description.push({ reason: "ecoscore D", value: "+5" });
-                    product.score_description.push({ reason: "ecoscore D", value: Math.round(score).toString() + " of " + max_score.toString() });
+                    product.score_description.push({ reason: "ecoscore D", value: "+5" });
                     break;
                 case 'e':
                 case '5':
                     score += 0;
                     //product.score_description.push({ reason: "ecoscore E", value: "+0" });
-                    product.score_description.push({ reason: "ecoscore E", value: Math.round(score).toString() + " of " + max_score.toString() });
+                    product.score_description.push({ reason: "ecoscore E", value: "0" });
                     break;
                 default:
                     max_score -= 20
@@ -711,18 +711,18 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 if (product.vegan == true) {
                     score += 5
                     //product.score_description.push({ reason: "product is vegan", value: "+5" });
-                    product.score_description.push({ reason: "product is vegan", value: Math.round(score).toString() + " of " + max_score.toString() });
+                    product.score_description.push({ reason: "product is vegan", value: "+5" });
                 }
             }
             else if (vegan_strongness == 1) { //partly care about vegan
                 max_score += 12
                 if (product.vegan == true) {
                     score += 12
-                    product.score_description.push({ reason: "casually vegan & product is vegan", value: Math.round(score).toString() + " of " + max_score.toString() });
+                    product.score_description.push({ reason: "casually vegan & product is vegan", value: "+12" });
                     //product.score_description.push({ reason: "casually vegan & product is vegan", value: "+12" });
                 } else {
                     score -= 12
-                    product.score_description.push({ reason: "casually vegan & product is not vegan", value: Math.round(score).toString() + " of " + max_score.toString() });
+                    product.score_description.push({ reason: "casually vegan & product is not vegan", value: "-12" });
                     //product.score_description.push({ reason: "casually vegan & product is not vegan", value: "-12" });
                 }
             }
@@ -730,7 +730,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 // delete all entries if score is set to 1
                 product.score_description = [];
                 //product.score_description.push({ reason: "product violates allergen restriction", value: "score = 1" });
-                product.score_description.push({ reason: "product violates allergen restriction", value: Math.round(score).toString() + " of " + max_score.toString() });
+                product.score_description.push({ reason: "product violates allergen restriction", value: "1" });
                 product.score = 1
                 return
             }
@@ -743,19 +743,19 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 max_score += 12
                 if (product.vegetarian == true) {
                     score += 12
-                    //product.score_description.push({ reason: "casually vegetarian & product is vegetarian", value: "+12" });
-                    product.score_description.push({ reason: "casually vegetarian & product is vegetarian", value: Math.round(score).toString() + " of " + max_score.toString() });
+                    product.score_description.push({ reason: "casually vegetarian & product is vegetarian", value: "+12" });
+                    //product.score_description.push({ reason: "casually vegetarian & product is vegetarian", value: Math.round(score).toString() });
                 } else {
                     score -= 12
-                    product.score_description.push({ reason: "casually vegetarian & product is vegetarian", value: Math.round(score).toString() + " of " + max_score.toString() });
-                    //product.score_description.push({ reason: "casually vegetarian & product is not vegetarian", value: "-12" });
+                    //product.score_description.push({ reason: "casually vegetarian & product is vegetarian", value: Math.round(score).toString() });
+                    product.score_description.push({ reason: "casually vegetarian & product is not vegetarian", value: "-12" });
                 }
             }
             else if (vegetarian_strongness == 2 && product.vegetarian == false) { //strictly vegetarian
                 // delete all entries if score is set to 1
                 product.score_description = [];
-                //product.score_description.push({ reason: "product violates allergen restriction", value: "score = 1" });
-                product.score_description.push({ reason: "product violates allergen restriction", value: Math.round(score).toString() + " of " + max_score.toString() });
+                product.score_description.push({ reason: "product violates allergen restriction", value: "1" });
+                //product.score_description.push({ reason: "product violates allergen restriction", value: Math.round(score).toString() });
                 product.score = 1
                 return
             }
@@ -765,8 +765,8 @@ export const calculate_score = async (product: Product, enduserid: string) => {
             product.score = 1;
             // delete all entries if score is set to 1
             product.score_description = [];
-            //product.score_description.push({ reason: "product violates allergen restriction", value: "score = 1" });
-            product.score_description.push({ reason: "product violates allergen restriction", value: Math.round(product.score).toString() + " of " + max_score.toString() });
+            product.score_description.push({ reason: "product violates allergen restriction", value: "1" });
+            //product.score_description.push({ reason: "product violates allergen restriction", value: Math.round(product.score).toString() });
             return
         }
         if (product.score < 1) {
@@ -780,6 +780,11 @@ export const calculate_score = async (product: Product, enduserid: string) => {
             product.score = 100
         }
         product.score = Math.round(product.score)
+
+        for (let entry of product.score_description) {
+            let value: number = +entry.value
+            entry.value = (Math.round((value / max_score) * 100)).toString()
+        }
 }
 
 export const recalculat_scores = async (userid: string) => {
