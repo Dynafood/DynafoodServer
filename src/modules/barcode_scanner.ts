@@ -5,7 +5,7 @@ import { database } from '../../server_config';
 import { translate_ingredient, translate_nutriment } from './translation/translation';
 import { EcoScoreInterface, Product, calculate_score, nutrimentColor } from './algorithm';
 import { checkInputBeforeSqlQuery } from './db/scripts';
-import { QueryResult } from 'pg';
+import { QueryResult, QueryResultRow } from 'pg';
 
 
 class NotFoundError extends Error {
@@ -150,27 +150,38 @@ const getNutriments = (nutriments: JsonObject, language: string): JsonObject | n
         const protein_color: nutrimentColor = nutriments.proteins_100g >= 10 ? nutrimentColor.Green : (nutriments.proteins_100g >= 5 ? nutrimentColor.Yellow : nutrimentColor.Red);
         const carbs_color: nutrimentColor = nutriments.carbohydrates_100g <= 30 ? nutrimentColor.Green : (nutriments.carbohydrates_100g <= 60 ? nutrimentColor.Yellow : nutrimentColor.Red);
         const calories_color: nutrimentColor = nutriments.energy_100g <= 100 ? nutrimentColor.Green : (nutriments.energy_100g <= 200 ? nutrimentColor.Yellow : nutrimentColor.Red);
-        return {
-            calcium: { name: translate_nutriment('calcium', language), score: nutriments.calcium_100g },
-            carbohydrates: { name: translate_nutriment('carbohydrates', language), score: nutriments.carbohydrates_100g, color: carbs_color },
-            cholesterol: { name: translate_nutriment('cholesterol', language), score: nutriments.cholesterol_100g },
-            kcal: { name: translate_nutriment('kcal', language), score: nutriments.energy_100g, color: calories_color},
-            fat: { name: translate_nutriment('fat', language), score: nutriments.fat_100g, color: fat_color },
-            fiber: { name: translate_nutriment('fiber', language), score: nutriments.fiber_100g },
-            iron: { name: translate_nutriment('iron', language), score: nutriments.iron_100g },
-            proteins: { name: translate_nutriment('proteins', language), score: nutriments.proteins_100g, color: protein_color },
-            salt: { name: translate_nutriment('salt', language), score: nutriments.salt_100g, color: salt_color},
-            'saturated fat': { name: translate_nutriment('saturated fat', language), score: nutriments['saturated-fat_100g'], color: saturates_color },
-            sodium: { name: translate_nutriment('sodium', language), score: nutriments.sodium_100g },
-            sugars: { name: translate_nutriment('sugars', language), score: nutriments.sugars_100g, color: sugar_color },
-            'trans fat': { name: translate_nutriment('trans fat', language), score: nutriments['trans-fat_100g'] },
-            'vitamin A': { name: translate_nutriment('vitamin A', language), score: nutriments['vitamin-a_100g'] },
-            'vitamin B': { name: translate_nutriment('vitamin B', language), score: nutriments['vitamin-b_100g'] },
-            'vitamin C': { name: translate_nutriment('vitamin C', language), score: nutriments['vitamin-c_100g'] },
-            'vitamin D': { name: translate_nutriment('vitamin D', language), score: nutriments['vitamin-d_100g'] },
-            'vitamin E': { name: translate_nutriment('vitamin E', language), score: nutriments['vitamin-e_100g'] },
-            'fruits': {name: 'fruits', score: nutriments['fruits-vegetables-nuts-estimate-from-ingredients_100g'] },
+
+        const result: JsonObject = {};
+
+        const addNutrient = (nutrientName: string, nutrientKey: string, color?: nutrimentColor) => {
+            const score = nutriments[nutrientKey];
+            if (!(!score)) {
+                result[nutrientKey] = { name: translate_nutriment(nutrientName, language), score: score, color: color };
+            } else {
+            }
         };
+
+        addNutrient('calcium', 'calcium_100g');
+        addNutrient('carbohydrates', 'carbohydrates_100g', carbs_color);
+        addNutrient('cholesterol', 'cholesterol_100g');
+        addNutrient('kcal', 'energy_100g', calories_color);
+        addNutrient('fat', 'fat_100g', fat_color);
+        addNutrient('fiber', 'fiber_100g');
+        addNutrient('iron', 'iron_100g');
+        addNutrient('proteins', 'proteins_100g', protein_color);
+        addNutrient('salt', 'salt_100g', salt_color);
+        addNutrient('saturated fat', 'saturated-fat_100g', saturates_color);
+        addNutrient('sodium', 'sodium_100g');
+        addNutrient('sugars', 'sugars_100g', sugar_color);
+        addNutrient('trans fat', 'trans-fat_100g');
+        addNutrient('vitamin A', 'vitamin-a_100g');
+        addNutrient('vitamin B', 'vitamin-b_100g');
+        addNutrient('vitamin C', 'vitamin-c_100g');
+        addNutrient('vitamin D', 'vitamin-d_100g');
+        addNutrient('vitamin E', 'vitamin-e_100g');
+        addNutrient('fruits', 'fruits-vegetables-nuts-estimate-from-ingredients_100g');
+
+        return result;
     }
     return null;
 };

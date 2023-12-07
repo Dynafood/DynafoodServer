@@ -52,25 +52,25 @@ export interface Product {
         }>
     }
     nutriments_g_pro_100g: {
-        calcium: nutriment
-        carbohydrates: nutriment_traffic_light
-        cholesterol: nutriment
-        kcal: nutriment_traffic_light
-        fat: nutriment_traffic_light
-        fiber:nutriment
-        iron: nutriment
-        proteins: nutriment_traffic_light
-        salt: nutriment_traffic_light
-        "saturated fat": nutriment_traffic_light
-        sodium: nutriment
-        sugars: nutriment_traffic_light
-        "trans fat": nutriment
-        "vitamin A": nutriment
-        "vitamin B": nutriment
-        "vitamin C": nutriment
-        "vitamin D": nutriment
-        "vitamin E": nutriment
-        fruits: nutriment
+        calcium: nutriment | null
+        carbohydrates: nutriment_traffic_light | null
+        cholesterol: nutriment | null
+        kcal: nutriment_traffic_light | null
+        fat: nutriment_traffic_light | null
+        fiber:nutriment | null
+        iron: nutriment | null
+        proteins: nutriment_traffic_light | null
+        salt: nutriment_traffic_light | null
+        "saturated fat": nutriment_traffic_light | null
+        sodium: nutriment | null
+        sugars: nutriment_traffic_light | null
+        "trans fat": nutriment | null
+        "vitamin A": nutriment | null
+        "vitamin B": nutriment | null
+        "vitamin C": nutriment | null
+        "vitamin D": nutriment | null
+        "vitamin E": nutriment | null
+        fruits: nutriment | null
     } | null,
     nutriments_scores: {
         energy_points: null | number,
@@ -108,7 +108,6 @@ export const calculate_score = async (product: Product, enduserid: string) => {
     //no implementation of halal
     let nutriments = product.nutriments_g_pro_100g
     let drink_categories = await database.Product.getDrinkCategories()
-    console.log(drink_categories)
     let drinking_categories_1 = product.keywords.filter((keyword) => {return (drink_categories.includes(keyword.trim().toLowerCase()))})
     let drinking_categories_2 = product.categories.filter((keyword) => {return (drink_categories.includes(keyword.trim().toLowerCase()))})
     
@@ -635,7 +634,6 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                     // score += 40 * ((max_nutri_score + product.nutriments_scores.total_score) / max_nutri_score)
                 }
             }
-            console.log(score, max_score)
         }
         
         
