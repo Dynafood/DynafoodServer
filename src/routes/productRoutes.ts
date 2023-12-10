@@ -178,6 +178,8 @@ const router : Router = Router();
  * /products/barcode/{id}:
  *   get:
  *     summary: get a product via barcode
+ *     tags:
+ *       - products
  *     parameters:
  *          - in: cookie
  *            name: token

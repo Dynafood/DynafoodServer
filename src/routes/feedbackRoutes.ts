@@ -31,6 +31,9 @@ const router : Router = Router();
  *         Details:
  *           type: string
  *           description: Details of the occurred error.
+ * tags:
+ *   - name: feedback
+ *     description: Operations related to sending feedback
 */
 
 /**
@@ -38,6 +41,8 @@ const router : Router = Router();
  * /feedback:
  *   post:
  *     summary: Creates feedback for developer.
+ *     tags:
+ *       - feedback
  *     parameters:
  *       - in: cookie
  *         name: token
@@ -47,9 +52,7 @@ const router : Router = Router();
  *         description: JWT user got on login.
  *       - in: body
  *         schema:
- *           type: array
- *           items:
- *             $ref: '#/components/schemas/Feedback'
+ *           $ref: '#/components/schemas/Feedback'
  *         required: true
  *     responses:
  *       200:
@@ -64,6 +67,54 @@ const router : Router = Router();
  *                 $ref: '#/components/schemas/Error'
 */
 router.post('/feedback', secureRouteMiddleware, createFeedback);
+
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     contactForm:
+ *       type: object
+ *       properties:
+ *         content:
+ *           type: string
+ *           description: The written feedback of the user.
+ *         email:
+ *           type: string
+ *           description: The email of the user.
+ *     Error:
+ *       type: object
+ *       properties:
+ *         Error:
+ *           type: string
+ *           description: The error string.
+ *         Details:
+ *           type: string
+ *           description: Details of the occurred error.
+*/
+
+/**
+ * @swagger
+ * /contactForm:
+ *   post:
+ *     summary: Stores contact form from user.
+ *     tags:
+ *       - feedback
+ *     parameters:
+ *       - in: body
+ *         schema:
+ *           $ref: '#/components/schemas/contactForm'
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: No errors.
+ *       500:
+ *         description: Internal server error.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+*/
 router.post('/contactForm', createContactForm);
 
 

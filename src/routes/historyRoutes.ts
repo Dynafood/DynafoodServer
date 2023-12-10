@@ -26,6 +26,9 @@ const router: Router = Router();
  *         pictureLink:
  *           type: string
  *           description: link to a picure of the product
+ * tags:
+ *   - name: history
+ *     description: Operations related to the history    
  */
 
 /**
@@ -33,6 +36,8 @@ const router: Router = Router();
  * /history:
  *   get:
  *     summary: Returns the list of all history elements from the user doing the request
+ *     tags:
+ *       - history
  *     parameters:
  *          - in: cookie
  *            name: token
@@ -57,6 +62,8 @@ router.get('/history/', secureRouteMiddleware, getElementsFromHistory);
  * /history/{elementID}:
  *   delete:
  *     summary: Deletes a history element from the user doing the request
+ *     tags:
+ *       - history
  *     parameters:
  *          - in: cookie
  *            name: token

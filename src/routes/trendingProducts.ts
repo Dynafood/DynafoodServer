@@ -36,6 +36,8 @@ const router: Router = Router();
  * /trendingProductsGlobal:
  *   get:
  *     summary: get all trending products in the country of the user
+ *     tags:
+ *       - products
  *     responses:
  *       200:
  *         description: trending products
@@ -69,6 +71,8 @@ router.get('/trendingProductsGlobal', secureRouteMiddleware, trendingProductsGlo
  * /trendingProductsLocal:
  *   get:
  *     summary: get all trending products in the country of the user
+ *     tags:
+ *       - products
  *     responses:
  *       200:
  *         description: trending products

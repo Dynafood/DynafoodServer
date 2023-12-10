@@ -30,13 +30,19 @@ import { secureRouteMiddleware } from '../middleware/security/secureRouting'
  *         pictureLink:
  *           type: string
  *           description: link to a picure of the product
+ * tags:
+ *   - name: missingProduct
+ *     description: Operations related to missing products    
  */
+
 
 /**
  * @swagger
  * /missingproduct:
  *   get:
  *     summary: Returns the list of all missing product elements from the user doing the request
+ *     tags:
+ *       - missingProduct
  *     parameters:
  *          - in: cookie
  *            name: token
@@ -61,6 +67,8 @@ router.get('/missingproductDB/', secureRouteMiddleware, getElementsFromMissingPr
  * /missingProduct/{elementID}:
  *   delete:
  *     summary: Deletes a missingProduct element from the user doing the request
+ *     tags:
+ *       - missingProduct
  *     parameters:
  *          - in: cookie
  *            name: token

@@ -26,6 +26,9 @@ const router : Router = Router();
  *           type: string
  *         password:
  *           type: string
+ * tags:
+ *   - name: user
+ *     description: Operations related to the user himself    
  */
 
 /**
@@ -33,6 +36,8 @@ const router : Router = Router();
  * /user:
  *   get:
  *     summary: get information about the user
+ *     tags:
+ *       - user
  *     parameters:
  *          - in: cookie
  *            name: token
@@ -55,6 +60,8 @@ router.get('/user', secureRouteMiddleware, getUser);
  * /signup:
  *   post:
  *     summary: create new user
+ *     tags:
+ *       - user
  *     requestBody:
  *          required: true
  *          content:
@@ -83,6 +90,8 @@ router.post('/signup', checkCreateUserReq, createUser);
  * /user:
  *   post:
  *     summary: create new user
+ *     tags:
+ *       - user
  *     requestBody:
  *          required: true
  *          content:
@@ -104,6 +113,8 @@ router.post('/signup', checkCreateUserReq, createUser);
  * /user:
  *   delete:
  *     summary: delete user who is logged in
+ *     tags:
+ *       - user
  *     parameters:
  *          - in: cookie
  *            name: token
@@ -121,6 +132,8 @@ router.delete('/user', secureRouteMiddleware, deleteUser);
  * /login:
  *   get:
  *     summary: loging in for user
+ *     tags:
+ *       - user
  *     parameters:
  *          - in: query
  *            name: email

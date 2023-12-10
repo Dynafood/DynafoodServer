@@ -26,13 +26,18 @@ const router : Router = Router();
  *         Details:
  *           type: string
  *           description: Details of the occurred error.
-*/
+ * tags:
+ *   - name: settings
+ *     description: Operations related to the user settings    
+ */
 
 /**
  * @swagger
  * /settings:
  *   get:
  *     summary: Returns the settings for this users.
+ *     tags:
+ *       - settings
  *     parameters:
  *       - in: cookie
  *         name: token
@@ -75,6 +80,8 @@ router.get('/settings/all', secureRouteMiddleware, getAllSettings);
  * /settings:
  *   post:
  *     summary: Adds new settings to the user.
+ *     tags:
+ *       - settings
  *     parameters:
  *       - in: cookie
  *         name: token
@@ -107,6 +114,8 @@ router.post('/settings', secureRouteMiddleware, getRestrictionIdByName, postSett
  * /settings:
  *   patch:
  *     summary: Modifies the settings of the user.
+ *     tags:
+ *       - settings
  *     parameters:
  *       - in: cookie
  *         name: token
@@ -139,6 +148,8 @@ router.patch('/settings', secureRouteMiddleware, getRestrictionIdByName, hasRest
  * /settings:
  *   delete:
  *     summary: Deletes the given setting of the user.
+ *     tags:
+ *       - settings
  *     parameters:
  *       - in: cookie
  *         name: token
