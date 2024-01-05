@@ -9,7 +9,7 @@ import datetime
 
 load_dotenv()
 # Example usage
-session_name = 'DynafoodServerDev' #'DevelopmentDynafood'
+session_name = 'DynafoodServer:1' #'DevelopmentDynafood'
 # Path to the script to execute if the API endpoint is inaccessible
 fallback_script = "crash_fix.sh"
 
