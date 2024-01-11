@@ -42,16 +42,16 @@ const schema = Joi.object({
 });
 
 export const checkPassword = (password: string) : string => {
-    if (password.length < 8) { return "Password has to have at least 8 characters"; }
-
+    const base = "Password has to have"
+    if (password.length < 8) { return base + " at least 8 characters"; }
     const regexplower = new RegExp('^(?=.*[a-z]).+$'); // eslint-disable-line prefer-regex-literals
     const regexpupper = new RegExp('^(?=.*[A-Z]).+$'); // eslint-disable-line prefer-regex-literals
     const regexpNumber = new RegExp('^(?=.*[0-9]).+$'); // eslint-disable-line prefer-regex-literals
     const regexpCharacter = new RegExp('^(?=.*[-+_!@#$%^&*.,?]).+$'); // eslint-disable-line prefer-regex-literals
-    if (regexplower.test(password) === false) { return 'Need a lowerCase'; }
-    if (regexpupper.test(password) === false) { return 'Need a uppercase'; }
-    if (regexpNumber.test(password) === false) { return 'Need a digit'; }
-    if (regexpCharacter.test(password) === false) { return 'Need a special character (@, #, $, %, ^, &, +, -, !, ?, _, *, ., or ,)'; }
+    if (regexplower.test(password) === false) { return base + ' a lowerCase letter'; }
+    if (regexpupper.test(password) === false) { return base + ' an uppercase letter'; }
+    if (regexpNumber.test(password) === false) { return base + ' a digit'; }
+    if (regexpCharacter.test(password) === false) { return base + ' a special character (@, #, $, %, ^, &, +, -, !, ?, _, *, ., or ,)'; }
     return 'Good';
 };
 

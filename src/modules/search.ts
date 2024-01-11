@@ -13,7 +13,7 @@ export const searchProduct = async (req: Request, res: Response) => {
             return;
         }
         const count = req.query.count;
-        if (count === undefined) {
+        if (typeof count != 'string') {
             res.status(400).send({ Error: 'Unable to get product', Details: translations["'count' is missing."] });
             return;
         }
@@ -26,8 +26,8 @@ export const searchProduct = async (req: Request, res: Response) => {
         }
 
         let products: any[] = []
-
-        for (let i = 0; i < +count; i++) {
+        let intCount = parseInt(count)
+        for (let i = 0; i < intCount; i++) {
             const product = response.data.products[i];
             if (product == undefined) break;
             let newProduct = {
@@ -35,8 +35,11 @@ export const searchProduct = async (req: Request, res: Response) => {
                 imageLink: product.image_front_url,
                 barcode: product.code,
             };
-            if (newProduct.name && newProduct.name.length != 0)
+            if (newProduct.name && newProduct.name.length != 0) {
                 products.push(newProduct);
+            } else {
+                intCount++;
+            }
         }
         (await database.Product.getProductsByName(<string>value)).forEach(object => {
             products.push({

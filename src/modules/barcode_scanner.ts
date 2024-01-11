@@ -29,7 +29,6 @@ const checkAllergenAlert = async (userID: string, barcode: string, response: Jso
     AND er.enduserid = '${checkInputBeforeSqlQuery(userID)}';`;
     let preference_response: QueryResult = await database.Query.query(query);
 
-
     let ingredients = response.ingredients.ingredients
     query = `SELECT i.off_id FROM enduser e 
     JOIN enduser_restriction er ON er.enduserid = e.enduserid
@@ -327,7 +326,7 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
     response.ecoscoreData = {}
     response.images = product.picturelink
     response.ingredients = {vegan : true, vegetarian: true, ingredients: []}
-    ingredients.forEach((ingredient) => {response.ingredients.ingredients.push({vegan: ingredient.vegan, vegetarian: ingredient.vegetarian, name: ingredient.name, ingredients: [{
+    ingredients.forEach((ingredient) => {response.ingredients.ingredients.push({vegan: ingredient.vegan, vegetarian: ingredient.vegetarian, name: ingredient.name, id:ingredient.off_id, ingredients: [{
         "vegan": null,
         "vegetarian": null,
         "ingredients": []

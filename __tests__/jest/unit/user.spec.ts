@@ -95,16 +95,16 @@ describe('check create user routes', () => {
             cur[parameters[i][0]] = parameters[i][1]
         }
         const passwords = [
-            ["UUUUUUUU", "Need a lowerCase"],
-            ["llllllll", "Need a uppercase"],
-            ["UUUUllll", "Need a digit"],
-            ["UUUUllll1234", "Need a special character (@, #, $, %, ^, &, +, -, !, ?, _, *, ., or ,)"]
+            ["UUUUUUUU", " lowerCase letter"],
+            ["llllllll", "n uppercase letter"],
+            ["UUUUllll", " digit"],
+            ["UUUUllll1234", " special character (@, #, $, %, ^, &, +, -, !, ?, _, *, ., or ,)"]
         ]
         for (const password of passwords) {
             cur["password"] = password[0]
             const response = await supertest(app).post("/signup").send(cur);
             expect(response.statusCode).toBe(400)
-            expect(response.body).toMatchObject({Error: password[1]})
+            expect(response.body).toMatchObject({Error: "Password has to have a" + password[1]})
         }
     })
     test('signup existing email', async () => {

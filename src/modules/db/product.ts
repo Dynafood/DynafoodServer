@@ -39,7 +39,7 @@ export const getIngredientsByBarcode = async (barcode: string, order_lang: strin
     join productingredient on productingredient.productid = product.productid
     join ingredient on productingredient.ingredientid = ingredient.ingredientid
     where barcode = '${checkInputBeforeSqlQuery(barcode)}'
-    `)).rows.map((obj) => { return {name: (obj[order_lang] == null ? obj.off_id : obj[order_lang]), vegan: obj.vegan, vegetarian: obj.vegetarian}})
+    `)).rows.map((obj) => { return {name: (obj[order_lang] == null ? obj.off_id : obj[order_lang]), vegan: obj.vegan, vegetarian: obj.vegetarian, off_id: obj.off_id}})
 }
 
 export const getProductsByName = async (name: string) => {
