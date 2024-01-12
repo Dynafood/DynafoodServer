@@ -25,6 +25,8 @@ mail_1.setApiKey(process.env.SENDGRID_KEY!);
 init_jwt(jwt_obj)
 init_db(Database)
 init_mail(mail_1)
+import mail from "./__tests__/jest/unit/mocks/mock_mail"
+mail.init()
 database.connect()
 server.listen(PORT, () =>
     console.log(`[LOGGER] The server is listening on port ${PORT}`)

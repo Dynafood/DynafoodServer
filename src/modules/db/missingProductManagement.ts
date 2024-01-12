@@ -79,8 +79,11 @@ export const getElementsFromMissingProduct = async (req: Request, res: Response)
 
 
 export const InsertElementsInMissingProduct = async (req: Request, res: Response) : Promise<void> => {
-    await insertIntoMissingProduct(res.locals.user.userid , req.body.barcode , req.body.productname , req.files, req.body.company, req.body.size)
-    sendMissingProductEmailBis(req.body.barcode, req.body.productname)
-    res.send("add in DB")
+    if (!res.locals.user.userid || !req.body.barcode || !req.body.productname || !req.files || !req.body.company || !req.body.size) {
+        res.sendStatus(400);
+    }
+    await insertIntoMissingProduct(res.locals.user.userid , req.body.barcode , req.body.productname , req.files, req.body.company, req.body.size);
+    sendMissingProductEmailBis(req.body.barcode, req.body.productname);
+    res.send("add in DB");
 
 }
