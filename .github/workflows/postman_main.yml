@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: sed -i "s/DEFAULT_BASE_URL/https:\/\/dynafood-deployment.herokuapp.com/g" ./__tests__/postman.json
       - uses: matt-ball/newman-action@master
         with:
           collection: ./__tests__/postman.json
