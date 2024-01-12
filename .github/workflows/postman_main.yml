@@ -7,6 +7,8 @@ jobs:
   run_postman_test:
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for 1 minute
+        run: sleep 60
       - uses: actions/checkout@v2
       - uses: matt-ball/newman-action@master
         with:
