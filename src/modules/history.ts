@@ -17,8 +17,8 @@ export const getElementsFromHistory = async (req: Request, res: Response) : Prom
     const bookmarked_query: boolean = (req.query.bookmarked === "true")
 
     try {
-        const offset = parseInt(req.query.offset as string);
-        const wanted = parseInt(req.query.wanted as string);
+        const offset = parseInt(req.query.offset as string) || -1;
+        const wanted = parseInt(req.query.wanted as string) || -1;
         console.log("History got: offset: " + offset + " wanted: " + wanted);
         const response : Array<QueryResultRow> = await database.History.getElements(userID, offset, wanted);
         response.forEach(el => {
