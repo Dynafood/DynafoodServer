@@ -70,13 +70,26 @@ export const deleteElementFromHistory = async (elementid: string, userid: string
     WHERE historyID = '${elementID}' AND enduserid = '${checkInputBeforeSqlQuery(userid)}';`);
 };
 
-export const getElements = async (userid: string) : Promise<Array<QueryResultRow>> => {
-    const userID: string = checkInputBeforeSqlQuery(userid);
-    const response : QueryResult = await db_adm_conn.query(`
-    SELECT H.historyID, H.barcode, H.productName, H.lastUsed, H.pictureLink, H.bookmarked, H.score
-    FROM History H
-    JOIN EndUser EU ON EU.endUserID = H.endUserID
-    WHERE EU.endUserID = '${userid}'
-    ORDER BY H.lastused DESC;`);
+export const getElements = async (userid: string, offset: number, wanted: number) : Promise<Array<QueryResultRow>> => {
+    let query = "";
+    // full reload
+    if (offset == -1 && wanted == -1) {
+        query = `
+        SELECT H.historyID, H.barcode, H.productName, H.lastUsed, H.pictureLink, H.bookmarked, H.score
+        FROM History H
+        JOIN EndUser EU ON EU.endUserID = H.endUserID
+        WHERE EU.endUserID = '${userid}'
+        ORDER BY H.lastused DESC;`
+    } else {
+        query = `
+        SELECT H.historyID, H.barcode, H.productName, H.lastUsed, H.pictureLink, H.bookmarked, H.score
+        FROM History H
+        JOIN EndUser EU ON EU.endUserID = H.endUserID
+        WHERE EU.endUserID = '${userid}'
+        ORDER BY H.lastused DESC
+        LIMIT ${wanted} OFFSET ${offset};`
+    }
+    //const userID: string = checkInputBeforeSqlQuery(userid);
+    const response : QueryResult = await db_adm_conn.query(query);
     return response.rows;
 };

@@ -15,8 +15,12 @@ export const deleteElementFromHistory = async (req: Request, res: Response) : Pr
 export const getElementsFromHistory = async (req: Request, res: Response) : Promise<void> => {
     const userID: string = res.locals.user.userid;
     const bookmarked_query: boolean = (req.query.bookmarked === "true")
+
     try {
-        const response : Array<QueryResultRow> = await database.History.getElements(userID);
+        const offset = parseInt(req.query.offset as string);
+        const wanted = parseInt(req.query.wanted as string);
+        console.log("History got: offset: " + offset + " wanted: " + wanted);
+        const response : Array<QueryResultRow> = await database.History.getElements(userID, offset, wanted);
         response.forEach(el => {
             const tmp = el.lastused
             const localtime = new Date(tmp)
