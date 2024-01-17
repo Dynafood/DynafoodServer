@@ -251,6 +251,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                             nutriscore_a += 0;
                             break;
                     }
+                    console.log('kcal', nutriscore_a, nutriscore_c)
                 }
                 if ((nutriments?.sugars?.score ?? -1) != -1) {
                     let sugars = (nutriments?.sugars?.score ?? 0)
@@ -293,6 +294,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                             nutriscore_a += 0;
                             break;
                     }
+                    console.log('sugar', nutriscore_a, nutriscore_c)
                 }
             }
             if ((nutriments?.['saturated fat']?.score ?? -1) != -1) {
@@ -376,10 +378,12 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                             nutriscore_a += 0;
                             break;
                     }
+                    console.log('satured fat', nutriscore_a, nutriscore_c)
                 }
             }
             if ((nutriments?.sodium?.score ?? -1) != -1) {
                 let sodium = (nutriments?.sodium?.score ?? 0)
+                sodium *= 1000
                 max_nutri_score += 10
                 switch (true) {
                     case sodium <= 90:
@@ -419,6 +423,50 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                         nutriscore_a += 0;
                         break;
                 }
+                console.log('sodium', nutriscore_a, nutriscore_c)
+            } else if ((nutriments?.salt?.score ?? -1) != -1) {
+                let salt = (nutriments?.salt?.score ?? 0)
+                let sodium = (salt / 2.54) * 1000
+                max_nutri_score += 10
+                switch (true) {
+                    case sodium <= 90:
+                        nutriscore_a += 0;
+                        break;
+                    case sodium <= 180:
+                        nutriscore_a += 1;
+                        break;
+                    case sodium <= 270:
+                        nutriscore_a += 2;
+                        break;
+                    case sodium <= 360:
+                        nutriscore_a += 3;
+                        break;
+                    case sodium <= 450:
+                        nutriscore_a += 4;
+                        break;
+                    case sodium <= 540:
+                        nutriscore_a += 5;
+                        break;
+                    case sodium <= 630:  
+                        nutriscore_a += 6;
+                        break;
+                    case sodium <= 720:
+                        nutriscore_a += 7;
+                        break;
+                    case sodium <= 810:
+                        nutriscore_a += 8;
+                        break;
+                    case sodium <= 900:
+                        nutriscore_a += 9;
+                        break;
+                    case sodium > 900:
+                        nutriscore_a += 10;
+                        break;
+                    default:
+                        nutriscore_a += 0;
+                        break;
+                }
+                console.log('salt', nutriscore_a, nutriscore_c)
             }
             
             //nutriscore_c
@@ -457,6 +505,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                             nutriscore_c += 0
                             break;
                     }
+                console.log('fruits', nutriscore_a, nutriscore_c)
                 }
             }
             if ((nutriments?.fiber?.score ?? -1) != -1) {
@@ -484,6 +533,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                         nutriscore_c += 0
                         break;
                 }
+                console.log('fiber', nutriscore_a, nutriscore_c)
             }
             if ((nutriments?.proteins?.score ?? -1) != -1) {
                 let proteins = (nutriments?.proteins?.score ?? 0)
@@ -510,8 +560,9 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                         nutriscore_c += 0
                         break;
                 }
+                console.log('proteins', nutriscore_a, nutriscore_c)
             }
-
+            console.log("My output:", nutriments)
             if (product.nutriments_scores != null) {
                 product.nutriments_scores.negative_points = nutriscore_a
                 product.nutriments_scores.positive_points = nutriscore_c

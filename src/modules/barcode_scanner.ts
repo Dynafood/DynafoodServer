@@ -155,7 +155,7 @@ const getNutriments = (nutriments: JsonObject, language: string): JsonObject | n
         const addNutrient = (nutrientName: string, nutrientKey: string, color?: nutrimentColor) => {
             const score = nutriments[nutrientKey];
             if (!(!score)) {
-                result[nutrientKey] = { name: translate_nutriment(nutrientName, language), score: score, color: color };
+                result[nutrientName] = { name: translate_nutriment(nutrientName, language), score: score, color: color };
             } else {
             }
         };
@@ -163,7 +163,7 @@ const getNutriments = (nutriments: JsonObject, language: string): JsonObject | n
         addNutrient('calcium', 'calcium_100g');
         addNutrient('carbohydrates', 'carbohydrates_100g', carbs_color);
         addNutrient('cholesterol', 'cholesterol_100g');
-        addNutrient('kcal', 'energy_100g', calories_color);
+        addNutrient('kcal', 'energy-kcal_100g', calories_color);
         addNutrient('fat', 'fat_100g', fat_color);
         addNutrient('fiber', 'fiber_100g');
         addNutrient('iron', 'iron_100g');
