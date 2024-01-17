@@ -562,7 +562,6 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                 }
                 console.log('proteins', nutriscore_a, nutriscore_c)
             }
-            console.log("My output:", nutriments)
             if (product.nutriments_scores != null) {
                 product.nutriments_scores.negative_points = nutriscore_a
                 product.nutriments_scores.positive_points = nutriscore_c
@@ -668,15 +667,15 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                             product.nutriments_scores.total_grade = 'a'
                             score += points.a
                             product.score_description.push({ reason: "nutriscore A", value: "+" + points.a.toString() });
-                    break;
+                            break;
                         case nu_score < total_scores.b:
                             product.nutriments_scores.total_grade = 'b'
                             score += points.b
-                            score += (1 - (nu_score - total_scores.a) / (total_scores.b - total_scores.a)) * (points.b - points.a)
+                            score += (1 - (nu_score - total_scores.a) / (total_scores.b - total_scores.a)) * (points.a - points.b)
                             product.score_description.push({ reason: "nutriscore B", value: "+" + (points.b +  (1 - (nu_score - total_scores.a) / (total_scores.b - total_scores.a)) * (points.b - points.a)).toString() });
                             //product.score_description.push({ reason: "nutriscore B", value: "+" + points.b.toString() });
                             //product.score_description.push({ reason: "nutriscore B", value: "+" + (1 - (nu_score - total_scores.a) / (total_scores.b - total_scores.a)) * (points.b - points.a) });
-                    break;
+                            break;
                         case nu_score < total_scores.c:
                             product.nutriments_scores.total_grade = 'c'
                             score += points.c
@@ -684,22 +683,22 @@ export const calculate_score = async (product: Product, enduserid: string) => {
                             product.score_description.push({ reason: "nutriscore C", value: "+" + (points.c + (1- (nu_score - total_scores.b) / (total_scores.c - total_scores.b)) * (points.b - points.c)).toString() });
                             //product.score_description.push({ reason: "nutriscore C", value: "+" + points.c.toString() });
                             //product.score_description.push({ reason: "nutriscore C", value: "+" + (1- (nu_score - total_scores.b) / (total_scores.c - total_scores.b)) * (points.b - points.c) });
-                    break;
+                            break;
                         case nu_score < total_scores.d:
                             product.nutriments_scores.total_grade = 'd'
                             score += points.d
                             score += (1 - (nu_score - total_scores.c) / (total_scores.d - total_scores.c)) * (points.c - points.d)
                             product.score_description.push({ reason: "nutriscore D", value: "+" + (points.d + (1 - (nu_score - total_scores.c) / (total_scores.d - total_scores.c)) * (points.c - points.d)).toString() });
                             //product.score_description.push({ reason: "nutriscore D", value: "+" + points.d.toString() });
-                            //product.score_description.push({ reason: "nutriscore D", value: "+" + (1 - (nu_score - total_scores.c) / (total_scores.d - total_scores.c)) * (points.c - points.d) });
-                    break;
+                            //product.score_description.push({ reason: "nutriscore Dh", value: "+" + (1 - (nu_score - total_scores.c) / (total_scores.d - total_scores.c)) * (points.c - points.d) });
+                            break;
                         case nu_score >= total_scores.d:
                             product.nutriments_scores.total_grade = 'e'
                             score += (1- (nu_score - total_scores.d) / (40 - total_scores.d)) * (points.d - points.e)
                             product.score_description.push({ reason: "nutriscore E", value: "+" + ((1- (nu_score - total_scores.d) / (40 - total_scores.d)) * (points.d - points.e)).toString() });
                             //product.score_description.push({ reason: "nutriscore E", value: "+" + points.e.toString() });
                             //product.score_description.push({ reason: "nutriscore E", value: "+" + (1- (nu_score - total_scores.d) / (40 - total_scores.d)) * (points.d - points.e) });
-                    break;
+                            break;
                         default: 
                             break;
                     }
@@ -838,9 +837,9 @@ export const calculate_score = async (product: Product, enduserid: string) => {
 
 export const recalculat_scores = async (userid: string) => {
     const history = await database.History.getElements(userid, -1, -1);
-    for(const product of history) {
+    for(const product of history.reverse()) {
         const response = await generateResponse(product.barcode, userid, 'en')
-        calculate_score(response, userid);
+        await calculate_score(response, userid);
         await database.History.updateHistory(userid, product.barcode, response);
     }
 }

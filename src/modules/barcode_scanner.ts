@@ -426,8 +426,7 @@ export const getProduct = async (req: Request, res: Response) : Promise<void> =>
     try {
         const userID: string = res.locals.user.userid;
         let language: string = <string>(req.query.language || 'en');
-        const barcode: string = <string>req.params.barcode
-    
+        const barcode: string = <string>req.params.barcode.trim()
     const response = await generateResponse(barcode, userID, language)
     await database.TrendingProducts.insert(userID, barcode, response.name, response.images);
     response.bookmarked = await database.Bookmarking.check(barcode, userID);
