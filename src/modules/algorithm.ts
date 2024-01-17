@@ -836,7 +836,7 @@ export const calculate_score = async (product: Product, enduserid: string) => {
 }
 
 export const recalculat_scores = async (userid: string) => {
-    const history = await database.History.getElements(userid, -1, -1);
+    const history = await database.History.getElements(userid, -1, -1, false);
     for(const product of history.reverse()) {
         const response = await generateResponse(product.barcode, userid, 'en')
         await calculate_score(response, userid);

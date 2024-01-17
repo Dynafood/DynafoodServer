@@ -10,6 +10,6 @@ export const deleteElementFromHistory = async (elementid: string, userid: string
     throw new Error("ErrorMock")
 };
 
-export const getElements = async (userid: string, offset: number, wanted: number) : Promise<Array<QueryResultRow>> => {
+export const getElements = async (userid: string, offset: number, wanted: number, isBookmark: boolean) : Promise<Array<QueryResultRow>> => {
     throw new Error("ErrorMock")
 };

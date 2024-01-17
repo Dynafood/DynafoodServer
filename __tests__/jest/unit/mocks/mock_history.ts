@@ -10,7 +10,7 @@ export const deleteElementFromHistory = async (elementid: string, userid: string
 
 };
 
-export const getElements = async (userid: string, offset: number, wanted: number) : Promise<Array<QueryResultRow>> => {
+export const getElements = async (userid: string, offset: number, wanted: number, isBookmark: boolean) : Promise<Array<QueryResultRow>> => {
     return [
         {
             "historyid": "d245f854-0f55-4bb5-b5a9-087b7102a729",

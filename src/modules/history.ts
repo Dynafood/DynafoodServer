@@ -20,7 +20,7 @@ export const getElementsFromHistory = async (req: Request, res: Response) : Prom
         const offset = parseInt(req.query.offset as string) || -1;
         const wanted = parseInt(req.query.wanted as string) || -1;
         console.log("History got: offset: " + offset + " wanted: " + wanted);
-        const response : Array<QueryResultRow> = await database.History.getElements(userID, offset, wanted);
+        const response : Array<QueryResultRow> = await database.History.getElements(userID, offset, wanted, bookmarked_query);
         response.forEach(el => {
             const tmp = el.lastused
             const localtime = new Date(tmp)
@@ -29,14 +29,15 @@ export const getElementsFromHistory = async (req: Request, res: Response) : Prom
                 "time": `${localtime.getHours().toString().padStart(2, '0')}:${localtime.getMinutes().toString().padStart(2, '0')}`
             }
         })
-        if (bookmarked_query == true) {
-            const bookmarked = response.filter((el)=> el.bookmarked)
-            const non_bookmarked = response.filter((el)=> !el.bookmarked)
-            console.log(bookmarked, non_bookmarked)
-            res.send({ elements: bookmarked });
-        } else {
-            res.send({ elements: response });
-        }
+        res.send({ elements: response });
+        //if (bookmarked_query == true) {
+            //const bookmarked = response.filter((el)=> el.bookmarked)
+            //const non_bookmarked = response.filter((el)=> !el.bookmarked)
+            //console.log(bookmarked, non_bookmarked)
+            //res.send({ elements: bookmarked });
+        //} else {
+            //res.send({ elements: response });
+        //}
     } catch (err: any) {
         res.status(500).send({ Error: err, Details: err.stack });
     }

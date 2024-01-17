@@ -48,7 +48,7 @@ export interface DatabaseInterface {
     }
     History: {
         deleteElementFromHistory: (elementid: string, userid: string) => Promise<void>
-        getElements: (userid: string, offset: number, wanted: number) => Promise<Array<QueryResultRow>>
+        getElements: (userid: string, offset: number, wanted: number, isBookmark: boolean) => Promise<Array<QueryResultRow>>
         updateHistory: (userID: string, barcode: string, product: JsonObject) => Promise<void>
     }
     Password: {
