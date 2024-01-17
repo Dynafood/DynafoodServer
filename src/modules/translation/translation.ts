@@ -2,40 +2,49 @@ import german_ingreds from './de.json'
 import italian_ingreds from './it.json' 
 import frensh_ingreds from './fr.json' 
 import english_ingreds from './en.json' 
+import portugese_ingreds from './pl.json' 
+import spanish_ingreds from './es.json' 
+import netherlands_ingreds from './nt.json' 
 
 export const INGREDIENT_TRANSLATION = [
     german_ingreds,
     italian_ingreds,
     frensh_ingreds,
-    english_ingreds
+    english_ingreds,
+    portugese_ingreds,
+    spanish_ingreds,
+    netherlands_ingreds
 ]
 
 export const LANGUAGES  = [
     "de",
     "it",
     "fr",
-    "en"
+    "en",
+    "pt",
+    "es",
+    "nt"
 ]
 
 export const NUTRIMENT_TRANSLATION = [
-    {id: 'calcium',       translation:['Kalzium',         'calcio'        ,   'calcium',       'calcium',      ]},
-    {id: 'carbohydrates', translation:['Kohlenhydrate',   'carboidrati'   ,   'les glucides',  'carbohydrates',]},
-    {id: 'cholesterol',   translation:['Cholesterin',     'colesterolo'   ,   'cholestérol',   'cholesterol',  ]},
-    {id: 'kcal',          translation:['kcal',            'kcal'          ,   'kcal',          'kcal',         ]},
-    {id: 'fat',           translation:['Fett',            'Grasso'        ,   'gros',          'fat',          ]},
-    {id: 'fiber',         translation:['Ballaststoffe',   'fibra'         ,   'fibre',         'fiber',        ]},
-    {id: 'iron',          translation:['Eisen',           'ferro da stiro',   'le fer',        'iron',         ]},
-    {id: 'proteins',      translation:['Eiweiße',         'proteine'      ,   'protéines',     'proteins',     ]},
-    {id: 'salt',          translation:['Salz',            'Sale'          ,   'sel',           'salt',         ]},
-    {id: 'saturated fat', translation:['Kalzium',         'calcio'        ,   'saturé',        'saturated fat',]},
-    {id: 'sodium',        translation:['Natrium',         'sodio'         ,   'sodium',        'sodium',       ]},
-    {id: 'sugars',        translation:['Zucker',          'zucchero'      ,   'sucres',        'sugars',       ]},
-    {id: 'trans fat',     translation:['Transfett',       'grasso trans'  ,   'trans',         'trans fat',    ]},
-    {id: 'vitamin A',     translation:['Vitamin A',       'Vitamina A'    ,   'vitamine A',    'vitamin A',    ]},
-    {id: 'vitamin B',     translation:['Vitamin B',       'Vitamina B'    ,   'vitamine B',    'vitamin B',    ]},
-    {id: 'vitamin C',     translation:['Vitamin C',       'Vitamina C'    ,   'vitamine C',    'vitamin C',    ]},
-    {id: 'vitamin D',     translation:['Vitamin D',       'Vitamina D'    ,   'vitamine D',    'vitamin D',    ]},
-    {id: 'vitamin E',     translation:['Vitamin E',       'Vitamina E'    ,   'vitamine E',    'vitamin E',    ]},
+    {id: 'calcium',       translation:['Kalzium',              'calcio'        ,   'calcium',       'calcium',      'Cálcio',          'calcio'       ,'calcium']},
+    {id: 'carbohydrates', translation:['Kohlenhydrate',        'carboidrati'   ,   'les glucides',  'carbohydrates','Kohlenidrato',    'carbohidratos','koolhydraten']},
+    {id: 'cholesterol',   translation:['Cholesterin',          'colesterolo'   ,   'cholestérol',   'cholesterol',  'Colesterina',     'colesterol'   ,'cholesterol']},
+    {id: 'kcal',          translation:['kcal',                 'kcal'          ,   'kcal',          'kcal',         'calorias',        'calorías'     ,'kcal']},
+    {id: 'fat',           translation:['Fett',                 'Grasso'        ,   'gros',          'fat',          'Fet',             'Gordo'        ,'Vet']},
+    {id: 'fiber',         translation:['Ballaststoffe',        'fibra'         ,   'fibre',         'fiber',        'Balastro',        'fibra'        ,'vezel']},
+    {id: 'iron',          translation:['Eisen',                'ferro da stiro',   'le fer',        'iron',         'Eisen',           'hierro'       ,'ijzer']},
+    {id: 'proteins',      translation:['Eiweiße',              'proteine'      ,   'protéines',     'proteins',     'Eiweiße',         'proteínas'    ,'eiwitten']},
+    {id: 'salt',          translation:['Salz',                 'Sale'          ,   'sel',           'salt',         'sal',             'Sal'          ,'Zout']},
+    {id: 'saturated fat', translation:['gesättigte Fettsäuren','grassi saturi' ,   'saturé',        'saturated fat','gordura saturada','saturado'     ,'verzadigde vetzuren']},
+    {id: 'sodium',        translation:['Natrium',              'sodio'         ,   'sodium',        'sodium',       'Sódio',           'sodio'        ,'natrium']},
+    {id: 'sugars',        translation:['Zucker',               'zucchero'      ,   'sucres',        'sugars',       'Zucker',          'Azúcar'       ,'Suiker']},
+    {id: 'trans fat',     translation:['Transfett',            'grasso trans'  ,   'trans',         'trans fat',    'Transfett',       'Grasas trans' ,'Trans vet']},
+    {id: 'vitamin A',     translation:['Vitamin A',            'Vitamina A'    ,   'vitamine A',    'vitamin A',    'vitamina A',      'Vitamina A'   ,'vitamine A']},
+    {id: 'vitamin B',     translation:['Vitamin B',            'Vitamina B'    ,   'vitamine B',    'vitamin B',    'vitamina B',      'Vitamina B'   ,'vitamine B']},
+    {id: 'vitamin C',     translation:['Vitamin C',            'Vitamina C'    ,   'vitamine C',    'vitamin C',    'vitamina C',      'Vitamina C'   ,'vitamine C']},
+    {id: 'vitamin D',     translation:['Vitamin D',            'Vitamina D'    ,   'vitamine D',    'vitamin D',    'vitamina D',      'Vitamina D'   ,'vitamine D']},
+    {id: 'vitamin E',     translation:['Vitamin E',            'Vitamina E'    ,   'vitamine E',    'vitamin E',    'vitamina E',      'Vitamina E'   ,'vitamine E']},
 ]
 
 export const get_language_key = (language: string) : number => {
