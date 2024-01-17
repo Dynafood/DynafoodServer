@@ -375,7 +375,7 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
 
 export const generateResponse = async (barcode: string, userID: string, language: string) => {
 
-    if (!["de", "en", "fr", "nt", "es", "it", "pl"].includes(language)) {
+    if (!["de", "en", "fr", "nt", "es", "it", "pt"].includes(language)) {
         language = "en"
     }
 
