@@ -305,10 +305,18 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
     let order_lang: string = ""
     if (language == "en") {
         order_lang = "eng_name"
-    } else if (language == "ge") {
+    } else if (language == "de") {
         order_lang = "ger_name"
     } else if (language == "fr") {
         order_lang = "frz_name"
+    } else if (language == "nt") {
+        order_lang = "dut_name"
+    } else if (language == "it") {
+        order_lang = "ita_name"
+    } else if (language == "pt") {
+        order_lang = "por_name"
+    } else if (language == "es") {
+        order_lang = "spa_name"
     }
     if (order_lang == "") {
         return;
@@ -316,7 +324,7 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
     const product = await database.Product.getProductByBarcode(barcode)
     if (product== null || product == undefined || JSON.stringify(product) == JSON.stringify({})) return
     
-    const allergens = await database.Product.getAllergensByBarcode(barcode, order_lang)
+    const allergens = []//await database.Product.getAllergensByBarcode(barcode, order_lang)
     const categories =  await database.Product.getCategoriesByBarcode(barcode)
     const ingredients = await database.Product.getIngredientsByBarcode(barcode, order_lang)
 
