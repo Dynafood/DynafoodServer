@@ -26,13 +26,18 @@ const router: Router = Router();
  *         Details:
  *           type: string
  *           description: Details of the occurred error.
-*/
+ * tags:
+ *   - name: missingPassword
+ *     description: Operations related to a missing password    
+ */
 
 /**
  * @swagger
  * /resetPassword:
  *   get:
  *     summary: trigger an email to be send to the user
+ *     tags:
+ *       - missingPassword
  *     responses:
  *       200:
  *         description: OK, email send (not working right now)
@@ -60,6 +65,8 @@ router.get('/resetPassword', triggerResetPasswordEmail);
  * /resetPassword:
  *   post:
  *     summary: update the password of the user
+ *     tags:
+ *       - missingPassword
  *     responses:
  *       200:
  *         description: OK, password got updated
@@ -103,6 +110,8 @@ router.post('/resetPassword', resetPassword);
  * /verifyCode:
  *   post:
  *     summary: Used to check if the code provided by the user is correct
+ *     tags:
+ *       - missingPassword
  *     responses:
  *       200:
  *         description: OK, code is correct

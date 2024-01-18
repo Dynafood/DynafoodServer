@@ -21,6 +21,7 @@ import pictureRouter from './src/routes/pictureRoutes'
 import invalidDataRouter from './src/routes/invalidDataRoutes';
 //import oauthRouter from './src/routes/oauthRoutes';
 import downloadRouter from './src/routes/download';
+import bookmarkrouter from './src/routes/bookmarking';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { QueryResultRow } from 'pg';
@@ -43,10 +44,11 @@ export interface DatabaseInterface {
     }
     Feedback: {
         createNewFeedback: (reason: string, content: string, userid: string) => Promise<void>
+        createContactForm: (email: string, content: string) => Promise<void>
     }
     History: {
         deleteElementFromHistory: (elementid: string, userid: string) => Promise<void>
-        getElements: (userid: string) => Promise<Array<QueryResultRow>>
+        getElements: (userid: string, offset: number, wanted: number, isBookmark: boolean) => Promise<Array<QueryResultRow>>
         updateHistory: (userID: string, barcode: string, product: JsonObject) => Promise<void>
     }
     Password: {
@@ -61,7 +63,8 @@ export interface DatabaseInterface {
         setPasswordResetToken: (userid: string, token: string) => Promise<QueryResultRow>
         setEmailConfirmed: (email: string) => Promise<QueryResultRow>
         getEmailConfirmed: (email: string) => Promise<QueryResultRow>
-        updateUserByRefreshToken: (refresh_token: string) => Promise<Array<QueryResultRow>>
+        updateRefreshToken: (refresh_token: string) => Promise<Array<QueryResultRow>>
+        createRefreshToken: (userid: string) => Promise<Array<QueryResultRow>>
     }
     Settings: {
         getRestrictionIdByName: (restrictionName: string) => Promise<string | null>
@@ -93,7 +96,7 @@ export interface DatabaseInterface {
         getCategoriesByBarcode: (barcode: string) => Promise<Array<string>>
         getIngredientsByBarcode: (barcode: string, order_lang: string) => Promise<Array<JsonObject>>
         getProductsByName: (name: string) => Promise<Array<JsonObject>>
-
+        getDrinkCategories: () => Promise<Array<string>>
     },
     InvalidDataManagement: {
         updateInvalidData: (userID: string, barcode: string, product: string, productDesc: string) => Promise<void>,
@@ -102,6 +105,11 @@ export interface DatabaseInterface {
         insertIntoInvalidData: (userID: string, barcode: string, product: string, productDesc : string) => Promise<void>,
         deleteElementFromInvalidData: (elementID: string, userid: string) => Promise<void>,
         getElementsFromInvalidData: (userid: string) => Promise<Array<QueryResultRow>>,
+    },
+    Bookmarking: {
+        create: (barcode: string, userid: string) => Promise<number>,
+        remove: (barcode: string, userid: string) => Promise<number>,
+        check:  (barcode: string, userid: string) => Promise<boolean>,
     },
     connect: () => Promise<void>
     end: () => Promise<void>
@@ -144,7 +152,7 @@ const options : object = {
         },
         servers: [
             {
-                url: 'http://localhost:8081'
+                url: 'http://20.101.128.91:8081'
             }
         ]
     }
@@ -179,6 +187,7 @@ app.use(invalidDataRouter)
 app.use(missingProductRouter)
 app.use(pictureRouter)
 app.use(halalRouter)
+app.use(bookmarkrouter)
 app.use(
     session({
       overwrite: false,

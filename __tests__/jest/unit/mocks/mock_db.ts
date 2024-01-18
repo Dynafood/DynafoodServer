@@ -1,16 +1,16 @@
 import { DatabaseInterface, init_db } from "../../../../server_config"
-import { JsonObject } from "swagger-ui-express";
-import { createUser, deleteUser, getUser, setPasswordResetToken, createUserOAuth, getPasswordResetToken, setEmailConfirmed, getEmailConfirmed, updateUserByRefreshToken } from "./mock_user";
-import { createNewFeedback } from "./mock_feedback";
+import { createUser, deleteUser, getUser, setPasswordResetToken, createUserOAuth, getPasswordResetToken, setEmailConfirmed, getEmailConfirmed, updateRefreshToken, createRefreshToken } from "./mock_user";
+import { createNewFeedback, createContactForm } from "./mock_feedback";
 import { updateHistory, getElements, deleteElementFromHistory } from "./mock_history";
 import { insert, getCountryCode, getTrendingGlobal, getTrendingLocal} from "./mock_trendingProduct"
 import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, getAllSettings, updateSettings, userHasRestriction } from "./mock_settings";
 import { updatePassword } from "./mock_password"
+import { check, create, remove } from "./mock_bookmarking"
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingList, updateShoppingListItem } from "./mock_shoppinglist"
 import { QueryResultRow } from "pg";
 import {getAllergenbyName} from "./mock_search";
-import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from "./mock_product";
-import { cleanDublicateInvalidData, deleteElementFromInvalidData, getElementsFromInvalidData, insertIntoInvalidData, updateInvalidData, updateInvalidDataElement } from './mock_invalidData';
+import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName, getDrinkCategories } from "./mock_product";
+import { cleanDublicateInvalidData, deleteElementFromInvalidData, getElementsFromInvalidData, insertIntoInvalidData, updateInvalidData, updateInvalidDataElement } from "./mock_invalidData";
 
 const directQuery = (quer: string) => {
     return new Promise((resolve, reject) => {
@@ -33,7 +33,8 @@ const mock_db: DatabaseInterface = {
         getShoppingLists: getShoppingLists
     },
     Feedback: {
-        createNewFeedback: createNewFeedback
+        createNewFeedback: createNewFeedback,
+        createContactForm: createContactForm
     },
     History: {
         deleteElementFromHistory: deleteElementFromHistory,
@@ -52,7 +53,8 @@ const mock_db: DatabaseInterface = {
         setPasswordResetToken: setPasswordResetToken,
         setEmailConfirmed: setEmailConfirmed,
         getEmailConfirmed: getEmailConfirmed,
-        updateUserByRefreshToken: updateUserByRefreshToken
+        updateRefreshToken: updateRefreshToken,
+        createRefreshToken: createRefreshToken
     },
     Settings: {
         createSetting: createSettings,
@@ -83,7 +85,13 @@ const mock_db: DatabaseInterface = {
         getAllergensByBarcode,
         getCategoriesByBarcode,
         getIngredientsByBarcode,
-        getProductsByName
+        getProductsByName,
+        getDrinkCategories
+    },
+    Bookmarking: {
+        create,
+        remove,
+        check
     },
     InvalidDataManagement: {
         updateInvalidData: updateInvalidData,

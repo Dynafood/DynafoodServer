@@ -17,6 +17,8 @@ const router : Router = Router();
  *           type: string
  *         name:
  *           type: string
+ *     tags:
+ *       - products
  */
 
 /**
@@ -24,6 +26,8 @@ const router : Router = Router();
  * /searchProduct:
  *   get:
  *     summary: get information about the user
+ *     tags:
+ *       - products
  *     parameters:
  *          - in: cookie
  *            name: token

@@ -1,5 +1,5 @@
 const checkInputBeforeSqlQuery = (arg) => {
-    if (!arg) { return ''; }
+    if (!arg || typeof arg != "string") { return ''; }
     arg = arg.replaceAll("'", "''");
 
     return arg;

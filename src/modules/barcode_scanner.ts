@@ -3,9 +3,23 @@ import { Request, Response } from 'express';
 import { JsonObject } from 'swagger-ui-express';
 import { database } from '../../server_config';
 import { translate_ingredient, translate_nutriment } from './translation/translation';
-import { EcoScoreInterface, Product, calculate_score } from './algorithm';
+import { EcoScoreInterface, Product, calculate_score, nutrimentColor } from './algorithm';
 import { checkInputBeforeSqlQuery } from './db/scripts';
-import { QueryResult } from 'pg';
+import { QueryResult, QueryResultRow } from 'pg';
+
+
+class NotFoundError extends Error {
+    constructor(message?: string) {
+        super(message);
+    }
+}
+
+class NoResponseError extends Error {
+    constructor(message?: string) {
+        super(message);
+    }
+}
+
 
 const checkAllergenAlert = async (userID: string, barcode: string, response: JsonObject) => {
     let query = `SELECT r.category_name, er.strongness FROM enduser e 
@@ -15,18 +29,17 @@ const checkAllergenAlert = async (userID: string, barcode: string, response: Jso
     AND er.enduserid = '${checkInputBeforeSqlQuery(userID)}';`;
     let preference_response: QueryResult = await database.Query.query(query);
 
-
     let ingredients = response.ingredients.ingredients
-    query = `SELECT i.eng_name FROM enduser e 
+    query = `SELECT i.off_id FROM enduser e 
     JOIN enduser_restriction er ON er.enduserid = e.enduserid
     JOIN own_restriction r ON r.restrictionID = er.restrictionid
     JOIN ingredient_restriction ir ON ir.restriction_id = r.restrictionID
     JOIN ingredient i ON i.ingredientid = ir.ingredient_id
-    WHERE er.enduserid = '${checkInputBeforeSqlQuery(userID)}' AND lower(i.eng_name) IN (`
+    WHERE er.enduserid = '${checkInputBeforeSqlQuery(userID)}' AND lower(i.off_id) IN (`
 
     for (let i = 0; i < ingredients.length; i++) {
         //generate query
-        query += `'${checkInputBeforeSqlQuery(ingredients[i].name.toLowerCase())}'`
+        query += `'${checkInputBeforeSqlQuery(ingredients[i].id.toLowerCase())}'`
         if (i < ingredients.length - 1) {
             query += ", "
         }
@@ -88,7 +101,8 @@ const getInnerIngredients = (ingredient: JsonObject, language: string): {vegan: 
                 name: name || element.text.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, (match: string) => match.toUpperCase()),
                 vegan: element.vegan == "yes" ? true : element.vegan,
                 vegetarian: element.vegetarian == "yes" ? true : element.vegetarian,
-                ingredients: getInnerIngredients(element, language)
+                ingredients: getInnerIngredients(element, language),
+                id: element.id
             };
             if (tmp.vegan == false || tmp.vegan == "no") {
                 vegan = false;
@@ -128,27 +142,45 @@ const getAllAllergenes = (hierarchy: Array<string>) : Array<string> => {
 
 const getNutriments = (nutriments: JsonObject, language: string): JsonObject | null => {
     if (typeof nutriments !== 'undefined' && nutriments != null) {
-        return {
-            calcium: { name: translate_nutriment('calcium', language), score: nutriments.calcium_100g },
-            carbohydrates: { name: translate_nutriment('carbohydrates', language), score: nutriments.carbohydrates_100g },
-            cholesterol: { name: translate_nutriment('cholesterol', language), score: nutriments.cholesterol_100g },
-            kcal: { name: translate_nutriment('kcal', language), score: nutriments.energy_100g },
-            fat: { name: translate_nutriment('fat', language), score: nutriments.fat_100g },
-            fiber: { name: translate_nutriment('fiber', language), score: nutriments.fiber_100g },
-            iron: { name: translate_nutriment('iron', language), score: nutriments.iron_100g },
-            proteins: { name: translate_nutriment('proteins', language), score: nutriments.proteins_100g },
-            salt: { name: translate_nutriment('salt', language), score: nutriments.salt_100g },
-            'saturated fat': { name: translate_nutriment('saturated fat', language), score: nutriments['saturated-fat_100g'] },
-            sodium: { name: translate_nutriment('sodium', language), score: nutriments.sodium_100g },
-            sugars: { name: translate_nutriment('sugars', language), score: nutriments.sugars_100g },
-            'trans fat': { name: translate_nutriment('trans fat', language), score: nutriments['trans-fat_100g'] },
-            'vitamin A': { name: translate_nutriment('vitamin A', language), score: nutriments['vitamin-a_100g'] },
-            'vitamin B': { name: translate_nutriment('vitamin B', language), score: nutriments['vitamin-b_100g'] },
-            'vitamin C': { name: translate_nutriment('vitamin C', language), score: nutriments['vitamin-c_100g'] },
-            'vitamin D': { name: translate_nutriment('vitamin D', language), score: nutriments['vitamin-d_100g'] },
-            'vitamin E': { name: translate_nutriment('vitamin E', language), score: nutriments['vitamin-e_100g'] },
-            'fruits': {name: 'fruits', score: nutriments['fruits-vegetables-nuts-estimate-from-ingredients_100g'] },
+        const fat_color: nutrimentColor = nutriments.fat_100g <= 3 ? nutrimentColor.Green : (nutriments.fat_100g <= 17.5 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const saturates_color: nutrimentColor = nutriments['saturated-fat_100g'] <= 1.5 ? nutrimentColor.Green : (nutriments['saturated-fat_100g'] <= 5 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const sugar_color: nutrimentColor = nutriments.sugars_100g <= 5 ? nutrimentColor.Green : (nutriments.sugars_100g <= 22.5 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const salt_color: nutrimentColor = nutriments.salt_100g <= 0.3 ? nutrimentColor.Green : (nutriments.salt_100g <= 1.5 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const protein_color: nutrimentColor = nutriments.proteins_100g >= 10 ? nutrimentColor.Green : (nutriments.proteins_100g >= 5 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const carbs_color: nutrimentColor = nutriments.carbohydrates_100g <= 30 ? nutrimentColor.Green : (nutriments.carbohydrates_100g <= 60 ? nutrimentColor.Yellow : nutrimentColor.Red);
+        const calories_color: nutrimentColor = nutriments.energy_100g <= 100 ? nutrimentColor.Green : (nutriments.energy_100g <= 200 ? nutrimentColor.Yellow : nutrimentColor.Red);
+
+        const result: JsonObject = {};
+
+        const addNutrient = (nutrientName: string, nutrientKey: string, color?: nutrimentColor) => {
+            const score = nutriments[nutrientKey];
+            if (!(!score)) {
+                result[nutrientName] = { name: translate_nutriment(nutrientName, language), score: score, color: color };
+            } else {
+            }
         };
+
+        addNutrient('calcium', 'calcium_100g');
+        addNutrient('carbohydrates', 'carbohydrates_100g', carbs_color);
+        addNutrient('cholesterol', 'cholesterol_100g');
+        addNutrient('kcal', 'energy-kcal_100g', calories_color);
+        addNutrient('fat', 'fat_100g', fat_color);
+        addNutrient('fiber', 'fiber_100g');
+        addNutrient('iron', 'iron_100g');
+        addNutrient('proteins', 'proteins_100g', protein_color);
+        addNutrient('salt', 'salt_100g', salt_color);
+        addNutrient('saturated fat', 'saturated-fat_100g', saturates_color);
+        addNutrient('sodium', 'sodium_100g');
+        addNutrient('sugars', 'sugars_100g', sugar_color);
+        addNutrient('trans fat', 'trans-fat_100g');
+        addNutrient('vitamin A', 'vitamin-a_100g');
+        addNutrient('vitamin B', 'vitamin-b_100g');
+        addNutrient('vitamin C', 'vitamin-c_100g');
+        addNutrient('vitamin D', 'vitamin-d_100g');
+        addNutrient('vitamin E', 'vitamin-e_100g');
+        addNutrient('fruits', 'fruits-vegetables-nuts-estimate-from-ingredients_100g');
+
+        return result;
     }
     return null;
 };
@@ -300,7 +332,7 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
     response.ecoscoreData = {}
     response.images = product.picturelink
     response.ingredients = {vegan : true, vegetarian: true, ingredients: []}
-    ingredients.forEach((ingredient) => {response.ingredients.ingredients.push({vegan: ingredient.vegan, vegetarian: ingredient.vegetarian, name: ingredient.name, ingredients: [{
+    ingredients.forEach((ingredient) => {response.ingredients.ingredients.push({vegan: ingredient.vegan, vegetarian: ingredient.vegetarian, name: ingredient.name, id:ingredient.off_id, ingredients: [{
         "vegan": null,
         "vegetarian": null,
         "ingredients": []
@@ -347,56 +379,73 @@ const parseProductFromDB = async (barcode: string, response: JsonObject, userID:
     };
 }
 
+export const generateResponse = async (barcode: string, userID: string, language: string) => {
+
+    if (!["de", "en", "fr", "nt", "es", "it", "pt"].includes(language)) {
+        language = "en"
+    }
+
+    const response : Product = {
+        name: "null",
+        keywords: [],
+        allergens: [],
+        categories: [],
+        qualities: [],
+        warings: [],
+        ecoscoreData: null,
+        packing: "",
+        images: "",
+        ingredients: {vegan: null, vegetarian: null, ingredients: []},
+        nutriments_g_pro_100g: null,
+        nutriments_scores: null,
+        vegetarian_alert: false,
+        vegan_alert: false,
+        allergen_alert: false,
+        vegan: true,
+        vegetarian: true,
+        score: 0,
+        bookmarked: false,
+        score_description: [],
+    };
+    const fields: string = 'generic_name,_keywords,allergens_hierarchy,categories,data_quality_tags,data_quality_warnings_tags,packaging,product_name,ecoscore_score,ecoscore_data,ecoscore_grade,image_front_url,image_small_url,nutriments,nutriscore_data,nutriscore_grade,ingredients';
+    const url: string = `https://world.openfoodfacts.org/api/2/product/${barcode}.json?fields=${fields}`;
+    const product: AxiosResponse = await axios.get(url);
+    if (typeof product === 'undefined' || product == null) {
+        throw new NoResponseError('undefined response from OpenFoodFacts Api');
+    }
+
+    if (product.data.status == 1) {
+        parseProductFromOFF(product, response, userID, language);
+    } else {
+        await parseProductFromDB(barcode, response, userID, language);
+        if (response.name == "null") {
+            throw new NotFoundError('Product not found');
+        }
+    }
+    await checkAllergenAlert(userID, barcode, response)
+    await calculate_score(response, userID)
+    await database.History.updateHistory(userID, barcode, response);
+    return response
+}
+
 export const getProduct = async (req: Request, res: Response) : Promise<void> => {
     try {
         const userID: string = res.locals.user.userid;
-        const language: string = <string>(req.query.language || 'en');
-
-        const response : Product = {
-            name: "null",
-            keywords: [],
-            allergens: [],
-            categories: [],
-            qualities: [],
-            warings: [],
-            ecoscoreData: null,
-            packing: "",
-            images: "",
-            ingredients: {vegan: null, vegetarian: null, ingredients: []},
-            nutriments_g_pro_100g: null,
-            nutriments_scores: null,
-            vegetarian_alert: false,
-            vegan_alert: false,
-            allergen_alert: false,
-            vegan: true,
-            vegetarian: true,
-            score: 0
-        };
-        const fields: string = 'generic_name,_keywords,allergens_hierarchy,categories,data_quality_tags,data_quality_warnings_tags,packaging,product_name,ecoscore_score,ecoscore_data,ecoscore_grade,image_front_url,image_small_url,nutriments,nutriscore_data,nutriscore_grade,ingredients';
-        const url: string = `https://world.openfoodfacts.org/api/2/product/${req.params.barcode}.json?fields=${fields}`;
-        const product: AxiosResponse = await axios.get(url);
-        if (typeof product === 'undefined' || product == null) {
-            res.status(500).send({ error: 'undefined response from OpenFoodFacts Api' });
-        }
-
-        if (product.data.status == 1) {
-            parseProductFromOFF(product, response, userID, language);
-        } else {
-            await parseProductFromDB(req.params.barcode, response, userID, language);
-            if (response.name == "null") {
-                res.status(204).send({ response: 'Product not found' });
-                return;
-            }
-        }
-        await checkAllergenAlert(userID, req.params.barcode, response)
-        console.log(response);
-        await calculate_score(response, userID)
-        await database.History.updateHistory(userID, req.params.barcode, response);
-        await database.TrendingProducts.insert(userID, req.params.barcode, response.name, response.images);
-        res.status(200).send(response);
+        let language: string = <string>(req.query.language || 'en');
+        const barcode: string = <string>req.params.barcode.trim()
+    const response = await generateResponse(barcode, userID, language)
+    await database.TrendingProducts.insert(userID, barcode, response.name, response.images);
+    response.bookmarked = await database.Bookmarking.check(barcode, userID);
+    res.status(200).send(response);
     }
-    catch (error) {
-        console.log(error);
-        res.status(500).send('Internal Server Error');
+    catch (error: any) {
+        if (error instanceof NoResponseError) {
+            res.status(500).send({ error: 'undefined response from OpenFoodFacts Api' });
+        } else if (error instanceof NotFoundError) {
+            res.status(204).send({ response: 'Product not found' });
+        } else {
+            console.log(error);
+            res.status(500).send({ Error: error, details: error.stack });
+        }
     }
 };

@@ -24,8 +24,7 @@ export const getUser = async (userid: string | null = null, email: string | null
 }
 
 export const createUser = async (firstName: string, lastName: string, userName: string, email: string, phoneNumber: string, password: string) : Promise<QueryResultRow> =>  {
-    return new Promise((resolve, reject) => {
-        resolve(
+    return Promise.resolve(
         {
             enduserid: "existing",
             passcode: "$2b$10$TQ1P6jaOk8YHzLC3JYlciepXBkf45LVQKIL77VfEmJG7B5PVM.JSG",
@@ -37,12 +36,10 @@ export const createUser = async (firstName: string, lastName: string, userName: 
             country_code: "DE",
             refresh_token: "token_existing"
         })
-    });
 }
 
 export const deleteUser = async (userid: string) : Promise<QueryResultRow> => {
-    return new Promise((resolve, reject) => {
-        resolve(
+    return Promise.resolve(
         {
             enduserid: "existing",
             passcode: "$2b$10$TQ1P6jaOk8YHzLC3JYlciepXBkf45LVQKIL77VfEmJG7B5PVM.JSG",
@@ -53,13 +50,10 @@ export const deleteUser = async (userid: string) : Promise<QueryResultRow> => {
             phonenumber: "00000000",
             country_code: "DE"
         })
-    });
 }
 
 export const setPasswordResetToken = async (userid: string, token: string) : Promise<QueryResultRow> => {
-    return new Promise((resolve, reject) => {
-        resolve({})
-    });
+    return Promise.resolve({})
 }
 
 export const getPasswordResetToken = async (userid: string) : Promise<QueryResultRow | undefined> => {
@@ -79,23 +73,20 @@ export const getEmailConfirmed = async (email: string) : Promise<QueryResultRow>
     return new Promise((resolve, reject)=> {return resolve({emailconfirmed: true})})
 }
 
-export const updateUserByRefreshToken = async (refresh_token: string) : Promise<Array<QueryResultRow>> => {
-    return new Promise((resolve, reject) => {
+export const updateRefreshToken = async (refresh_token: string) : Promise<Array<QueryResultRow>> => {
+    return Promise.resolve( [
         {
-            resolve( [
-                {
-                    enduserid: "none",
-                    passcode: "$2b$10$TQ1P6jaOk8YHzLC3JYlciepXBkf45LVQKIL77VfEmJG7B5PVM.JSG",
-                    firstname: "test",
-                    lastname: "user",
-                    username: "testUser123",
-                    email: "email@gmail.com",
-                    phonenumber: "00000000",
-                    alertactivation: true,
-                    restrictionname: "peanut",
-                    refresh_token: "token_existing"
-                }
-            ] )
+            userid: "none",
+            token: "token_existing"
         }
-    });
+    ] )
+}
+
+export const createRefreshToken = async (refresh_token: string) : Promise<Array<QueryResultRow>> => {
+    return Promise.resolve( [
+        {
+            userid: "none",
+            token: "token_existing"
+        }
+    ] )
 }

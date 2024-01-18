@@ -45,11 +45,12 @@ const updateHistoryElement = async (userID: string, barcode: string, product: Js
     product.images = checkInputBeforeSqlQuery(product.images);
     await db_adm_conn.query(`
     UPDATE History
-    SET (lastused, productName, pictureLink)
-       = (current_timestamp, '${product.name}', '${product.images}')
+    SET (lastused, productName, pictureLink, score)
+       = (current_timestamp, '${product.name}', '${product.images}', '${product.score}')
     WHERE barcode = '${checkInputBeforeSqlQuery(barcode)}'
         AND enduserId = '${checkInputBeforeSqlQuery(userID)}';`);
 };
+
 
 const insertIntoHistory = async (userID: string, barcode: string, product: JsonObject) : Promise<void> => {
     userID = checkInputBeforeSqlQuery(userID);
@@ -58,8 +59,8 @@ const insertIntoHistory = async (userID: string, barcode: string, product: JsonO
     product.images = checkInputBeforeSqlQuery(product.images);
 
     await db_adm_conn.query(`
-    INSERT INTO history (endUserID, barcode, productName, pictureLink)
-    VALUES ('${userID}', '${barcode}', '${product.name}', '${product.images}');`);
+    INSERT INTO history (endUserID, barcode, productName, pictureLink, score)
+    VALUES ('${userID}', '${barcode}', '${product.name}', '${product.images}', '${product.score}');`);
 };
 
 export const deleteElementFromHistory = async (elementid: string, userid: string) : Promise<void> => {
@@ -69,13 +70,36 @@ export const deleteElementFromHistory = async (elementid: string, userid: string
     WHERE historyID = '${elementID}' AND enduserid = '${checkInputBeforeSqlQuery(userid)}';`);
 };
 
-export const getElements = async (userid: string) : Promise<Array<QueryResultRow>> => {
-    const userID: string = checkInputBeforeSqlQuery(userid);
-    const response : QueryResult = await db_adm_conn.query(`
-    SELECT H.historyID, H.barcode, H.productName, H.lastUsed, H.pictureLink
-    FROM History H
-    JOIN EndUser EU ON EU.endUserID = H.endUserID
-    WHERE EU.endUserID = '${userID}'
-    ORDER BY H.lastused DESC;`);
+export const getElements = async (userid: string, offset: number, wanted: number, isBookmark: boolean) : Promise<Array<QueryResultRow>> => {
+    let wantedText = wanted.toString();
+    if (offset <= 0) {
+        offset = 0;
+    }
+
+    if (wanted <= 0) {
+        wantedText = "ALL";
+    }
+    let query = "";
+    if (isBookmark) {
+        query = `
+        SELECT H.historyID, H.barcode, H.productName, H.lastUsed, H.pictureLink, H.bookmarked, H.score
+        FROM History H
+        JOIN EndUser EU ON EU.endUserID = H.endUserID
+        WHERE EU.endUserID = '${userid}'
+        AND H.bookmarked = true
+        ORDER BY H.lastused DESC
+        LIMIT ${wantedText} OFFSET ${offset};`
+    } else {
+    query = `
+        SELECT H.historyID, H.barcode, H.productName, H.lastUsed, H.pictureLink, H.bookmarked, H.score
+        FROM History H
+        JOIN EndUser EU ON EU.endUserID = H.endUserID
+        WHERE EU.endUserID = '${userid}'
+        ORDER BY H.lastused DESC
+        LIMIT ${wantedText} OFFSET ${offset};`
+    }
+
+    //const userID: string = checkInputBeforeSqlQuery(userid);
+    const response : QueryResult = await db_adm_conn.query(query);
     return response.rows;
 };

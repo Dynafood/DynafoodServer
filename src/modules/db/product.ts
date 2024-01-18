@@ -3,6 +3,11 @@ import { db_adm_conn } from './index';
 import { QueryResultRow } from 'pg';
 import { JsonObject } from 'swagger-ui-express';
 
+export const getDrinkCategories = async (): Promise<Array<string>> => {
+    const res = await db_adm_conn.query(`select * from drink_categories`)
+    return res.rows.map(el => el.keyword)
+}
+
 export const getProductByBarcode = async (barcode: string): Promise<QueryResultRow> => {
     return (await db_adm_conn.query(`select *
     from product 
@@ -34,7 +39,7 @@ export const getIngredientsByBarcode = async (barcode: string, order_lang: strin
     join productingredient on productingredient.productid = product.productid
     join ingredient on productingredient.ingredientid = ingredient.ingredientid
     where barcode = '${checkInputBeforeSqlQuery(barcode)}'
-    `)).rows.map((obj) => { return {name: (obj[order_lang] == null ? obj.off_id : obj[order_lang]), vegan: obj.vegan, vegetarian: obj.vegetarian}})
+    `)).rows.map((obj) => { return {name: (obj[order_lang] == null ? obj.off_id : obj[order_lang]), vegan: obj.vegan, vegetarian: obj.vegetarian, off_id: obj.off_id}})
 }
 
 export const getProductsByName = async (name: string) => {

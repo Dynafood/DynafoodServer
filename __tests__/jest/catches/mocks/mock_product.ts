@@ -20,3 +20,8 @@ export const getIngredientsByBarcode = async (barcode: string, order_lang: strin
 export const getProductsByName = async (name: string) => {
     throw new Error("ErrorMock")
 };
+
+export const getDrinkCategories = async () => {
+    throw new Error("ErrorMock")
+};
+

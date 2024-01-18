@@ -27,8 +27,9 @@ export const sendResetPasswordEmail = async (name: string, email: string, token:
 export const sendVerificationEmail = async (name: string, email: string) => {
     const decode = (str: string):string => Buffer.from(str, 'utf8').toString('base64');
     const base64 = decode(email);
+    //const base64 = btoa(email);
     const new_email = `http://x2024dynafood545437452001.westeurope.cloudapp.azure.com:8081/verifyEmail?email=${base64}`
-    //const new_email = `http://localhost:8081/verifyEmail?email=${base64}`
+    // const new_email = `http://localhost:8081/verifyEmail?email=${base64}`
     if (mail_sender != undefined) {
         await mail_sender.send({
             from: {

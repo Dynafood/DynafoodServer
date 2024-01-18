@@ -1,0 +1,4522 @@
+{
+	"info": {
+		"_postman_id": "61342632-b343-471d-a618-2b6889cd7786",
+		"name": "DynaFood Postman Tests lts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14726218"
+	},
+	"item": [
+		{
+			"name": "Email test with actual login",
+			"item": [
+				{
+					"name": "API Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/welcome",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"welcome"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp real email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    var jsonData = pm.response.json();",
+									"",
+									"    pm.collectionVariables.set(\"token\", jsonData.token);",
+									"",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Marcel",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Taubert",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "Marcel",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{email_test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login email not confirmed",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login?email={{email_test_email}}&password={{test_password}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{email_test_email}}"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerifyEmail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 409\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/verifyEmail?email={{verify_code}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verifyEmail"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{verify_code}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login email test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    var jsonData = pm.response.json();",
+									"",
+									"    pm.collectionVariables.set(\"token\", jsonData.token);",
+									"",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login?email={{email_test_email}}&password={{test_password}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{email_test_email}}"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset password email trigger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/resetPassword?email={{email_test_email}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"resetPassword"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{email_test_email}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerifyCode Not Matching",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});",
+									"",
+									"pm.test(\"Check correct response\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.equal('Code is not matching');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "code",
+									"value": "1234567",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/verifyCode",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verifyCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerifyCode No code provided",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Check correct response\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.equal('No code provided');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "code",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/verifyCode",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verifyCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerifyCode No email provided",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Check correct response\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.equal('No email provided');",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "code",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/verifyCode",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verifyCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset password Weak password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 409\", function () {",
+									"    pm.response.to.have.status(409);",
+									"});",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Weak password message\", () => {",
+									"    pm.expect(response.Error).to.eql(\"Password is not strong enough. Password has to have a lowerCase letter\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "1234566678",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dynafoodcreators@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "000000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/resetPassword",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "SuperSecurePassword2-",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dynafoodcreators@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "000000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/resetPassword",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login old password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login?email={{email_test_email}}&password={{test_password}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{email_test_email}}"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login new password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    var jsonData = pm.response.json();",
+									"",
+									"    pm.collectionVariables.set(\"token\", jsonData.token);",
+									"",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login?email={{email_test_email}}&password=SuperSecurePassword2-",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{email_test_email}}"
+								},
+								{
+									"key": "password",
+									"value": "SuperSecurePassword2-"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Search coke",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Check correct output\", function () {",
+									"    pm.expect(jsonData.length).to.eql(20);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/searchProduct?value={{test_search}}&count=20",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"searchProduct"
+							],
+							"query": [
+								{
+									"key": "value",
+									"value": "{{test_search}}"
+								},
+								{
+									"key": "count",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search without value",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Check Error\", function () {",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get product\");",
+									"    pm.expect(jsonData.Details.en).to.eql(\"'value' is missing.\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/searchProduct?count=20",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"searchProduct"
+							],
+							"query": [
+								{
+									"key": "value",
+									"value": "{{test_search}}",
+									"disabled": true
+								},
+								{
+									"key": "count",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search without count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Check Error\", function () {",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get product\");",
+									"    pm.expect(jsonData.Details.en).to.eql(\"'count' is missing.\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/searchProduct?value={{test_search}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"searchProduct"
+							],
+							"query": [
+								{
+									"key": "value",
+									"value": "{{test_search}}"
+								},
+								{
+									"key": "count",
+									"value": "20",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TrendingProducts",
+			"item": [
+				{
+					"name": "TrendingProductsGlobal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.be.an(\"Array\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsGlobal?count=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsGlobal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsLocal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsLocal?count=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsLocal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsGlobal wihtout count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products global\");",
+									"    pm.expect(jsonData.Details.en).to.eql(\"'count' is not defined.\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsGlobal",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsGlobal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsGlobal with negative count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products global\");",
+									"    pm.expect(jsonData.Details.en).to.eql(\"'count' is negative.\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsGlobal?count=-2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsGlobal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "-2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsLocal with negative count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products local\");",
+									"    pm.expect(jsonData.Details.en).to.eql(\"'count' is negative.\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsLocal?count=-2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsLocal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "-2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TrendingProductsLocal wihtout count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Unable to get trending products local\");",
+									"    pm.expect(jsonData.Details.en).to.eql(\"'count' is not defined.\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/trendingProductsLocal",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trendingProductsLocal"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SignUpErrors",
+			"item": [
+				{
+					"name": "SignUp no credentials",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Response contains 'Error'\", () => {",
+									"    pm.expect(response.Error).to.eql(\"Password has to have at least 8 characters\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp WeakPassword short",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"const response = pm.response.json();",
+									"",
+									"",
+									"pm.test(\"Weak password message\", () => {",
+									"    pm.expect(response.Error).to.eql(\"Password has to have at least 8 characters\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "SuperSe",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp WeakPassword A",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Weak password message\", () => {",
+									"    pm.expect(response.Error).to.eql(\"Password has to have an uppercase letter\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "supersecurepassword",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp WeakPassword a",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Weak password message\", () => {",
+									"    pm.expect(response.Error).to.eql(\"Password has to have a lowerCase letter\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "SUPERSECUREPASSWORD",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp WeakPassword 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Weak password message\", () => {",
+									"    pm.expect(response.Error).to.eql(\"Password has to have a digit\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "SuperSecurePassword",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp WeakPassword -",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Weak password message\", () => {",
+									"    pm.expect(response.Error).to.eql(\"Password has to have a special character (@, #, $, %, ^, &, +, -, !, ?, _, *, ., or ,)\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "SuperSecurePassword1",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp invalid email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Response contains 'Error'\", () => {",
+									"    pm.expect(response.Error).to.be.an('object');",
+									"});",
+									"",
+									"pm.test(\"Invalid email message\", () => {",
+									"    pm.expect(response.Error.details[0].message).to.eql(\"\\\"email\\\" must be a valid email\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "this is not an email",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp invalid username",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Response contains 'Error'\", () => {",
+									"    pm.expect(response.Error).to.be.an('object');",
+									"});",
+									"",
+									"pm.test(\"Invalid username message\", () => {",
+									"    pm.expect(response.Error.details[0].message).to.eql(\"\\\"userName\\\" length must be less than or equal to 20 characters long\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "this is a really really really really long username that should not be allowed",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp invalid firstname",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Response contains 'Error'\", () => {",
+									"    pm.expect(response.Error).to.be.an('object');",
+									"});",
+									"",
+									"pm.test(\"Invalid firstname message\", () => {",
+									"    pm.expect(response.Error.details[0].message).to.eql(\"\\\"firstName\\\" length must be less than or equal to 20 characters long\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Testddddddddddddddddddddddddddddddddddddddddddddddddddd",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp invalid lastname",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Response contains 'Error'\", () => {",
+									"    pm.expect(response.Error).to.be.an('object');",
+									"});",
+									"",
+									"pm.test(\"Invalid lastname message\", () => {",
+									"    pm.expect(response.Error.details[0].message).to.eql(\"\\\"lastName\\\" length must be less than or equal to 20 characters long\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Testddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp invalid phonenumber",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Response contains 'Error'\", () => {",
+									"    pm.expect(response.Error).to.be.an('object');",
+									"});",
+									"",
+									"pm.test(\"Invalid phonenumber message\", () => {",
+									"    pm.expect(response.Error.details[0].message).to.eql(\"\\\"phoneNumber\\\" length must be at least 8 characters long\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp duplicated email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 409\", function () {",
+									"    pm.response.to.have.status(409);",
+									"});",
+									"",
+									"const res = pm.response.json();",
+									"",
+									"pm.test(\"Right error description\", () => {",
+									"    pm.expect(res.Error).to.eql(\"email already exists\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "TestUser",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "{{test_ip}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LoginError",
+			"item": [
+				{
+					"name": "Login wrong email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"",
+									"pm.test(\"Correct error message\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"There is no user with the email 111dynafoodcreators@gmail.com\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login?email=111{{test_email}}&password={{test_password}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "111{{test_email}}"
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login wrong password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});",
+									"",
+									"pm.test(\"Correct error message\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"Wrong credentials\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login?email={{test_email}}&password=111{{test_password}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{test_email}}"
+								},
+								{
+									"key": "password",
+									"value": "111{{test_password}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserTests",
+			"item": [
+				{
+					"name": "Login email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"var jsonData = pm.response.json();",
+									"pm.collectionVariables.set(\"refresh_token\", jsonData.refresh_token);",
+									"pm.collectionVariables.set(\"token\", jsonData.token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "{{test_email}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "{{test_password}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login?email={{email_test_email}}&password=SuperSecurePassword2-",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{email_test_email}}"
+								},
+								{
+									"key": "password",
+									"value": "SuperSecurePassword2-"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User without restrictions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.firstName).to.eql(\"Marcel\");",
+									"    pm.expect(jsonData.lastName).to.eql(\"Taubert\");",
+									"    pm.expect(jsonData.userName).to.eql(\"Marcel\");",
+									"    pm.expect(jsonData.email).to.eql(\"dynafoodcreators@gmail.com\");",
+									"    pm.expect(jsonData.phoneNumber).to.eql(\"123123123\");",
+									"    pm.expect(jsonData.restriction).to.eql([",
+									"        {",
+									"            \"alertactivation\": true,",
+									"            \"restrictionName\": \"vegan\"",
+									"        },",
+									"        {",
+									"            \"alertactivation\": true,",
+									"            \"restrictionName\": \"vegetarian\"",
+									"        }",
+									"    ]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"set new refresh token\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.collectionVariables.set(\"refresh_token\", jsonData.refresh_token);\r",
+									"    pm.collectionVariables.set(\"token\", jsonData.token);\r",
+									"\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/refresh?refresh_token={{refresh_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"refresh"
+							],
+							"query": [
+								{
+									"key": "refresh_token",
+									"value": "{{refresh_token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductRequest",
+			"item": [
+				{
+					"name": "Product Request Logged in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Respnse contains correct name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.name).to.eql(\"Mineralwasser still\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/products/barcode/42376101",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"barcode",
+								"42376101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Request Invalid code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/products/barcode/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"barcode",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "History",
+			"item": [
+				{
+					"name": "History Logged in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"check if 'elements' is present\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.elements).to.be.an('array');",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"pm.test(\"check correct element content\", function () {",
+									"    pm.expect(jsonData.elements[0].barcode).to.eql(\"42376101\");",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"history_id\", jsonData.elements[0].historyid);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/history",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete history",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/history/{{history_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"history",
+								"{{history_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Settings",
+			"item": [
+				{
+					"name": "settings empty",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.eql([",
+									"        {",
+									"            \"alertactivation\": true,",
+									"            \"restrictionname\": \"vegan\",",
+									"            \"strongness\": \"0\"",
+									"        },",
+									"        {",
+									"            \"alertactivation\": true,",
+									"            \"restrictionname\": \"vegetarian\",",
+									"            \"strongness\": \"0\"",
+									"        }",
+									"    ]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "settings add",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "alertActivation",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "restrictionName",
+									"value": "peanuts",
+									"type": "text"
+								},
+								{
+									"key": "strongness",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "settings non empty",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Check correct restriction name and alertactivation\", function () {",
+									"   var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.eql([",
+									"        {",
+									"            \"alertactivation\": true,",
+									"            \"restrictionname\": \"vegan\",",
+									"            \"strongness\": \"0\"",
+									"        },",
+									"        {",
+									"            \"alertactivation\": true,",
+									"            \"restrictionname\": \"vegetarian\",",
+									"            \"strongness\": \"0\"",
+									"        }, {",
+									"            \"alertactivation\": true,",
+									"            \"restrictionname\": \"peanuts\",",
+									"            \"strongness\": \"2\"",
+									"        }",
+									"    ]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User with restrictions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"validate response data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"     pm.expect(jsonData.firstName).to.eql(\"Marcel\");",
+									"    pm.expect(jsonData.lastName).to.eql(\"Taubert\");",
+									"    pm.expect(jsonData.userName).to.eql(\"Marcel\");",
+									"    pm.expect(jsonData.email).to.eql(\"dynafoodcreators@gmail.com\");",
+									"    pm.expect(jsonData.phoneNumber).to.eql(\"123123123\");",
+									"    ",
+									"     pm.expect(jsonData.restriction).to.eql([",
+									"        {",
+									"            \"alertactivation\": true,",
+									"            \"restrictionName\": \"vegan\"",
+									"        },",
+									"        {",
+									"            \"alertactivation\": true,",
+									"            \"restrictionName\": \"vegetarian\"",
+									"        }, {",
+									"            \"alertactivation\": true,",
+									"            \"restrictionName\": \"peanuts\"",
+									"        }",
+									"    ]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "settings patch valid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "restrictionName",
+									"value": "peanuts",
+									"type": "text"
+								},
+								{
+									"key": "alertActivation",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "strongness",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "settings patch invalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TODO THIS IS NOT WORKING YET. Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"",
+									"pm.test(\"TODO: Check correct Error message\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"The restriction peanutsdfa is not available on dynafood!\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "restrictionName",
+									"value": "peanutsdfa",
+									"type": "text"
+								},
+								{
+									"key": "alertActivation",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "settings non empty check alert change",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Check correct restriction name and alertactivation\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.eql([{",
+									"            \"alertactivation\": true,",
+									"            \"restrictionname\": \"vegan\",",
+									"            \"strongness\": \"0\"",
+									"        },",
+									"        {",
+									"            \"alertactivation\": true,",
+									"            \"restrictionname\": \"vegetarian\",",
+									"            \"strongness\": \"0\"",
+									"        }, {",
+									"            \"alertactivation\": false,",
+									"            \"restrictionname\": \"peanuts\",",
+									"            \"strongness\": \"0\"",
+									"        }",
+									"    ]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "settings remove",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "restrictionName",
+									"value": "peanuts",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Feedback",
+			"item": [
+				{
+					"name": "Create Valid Feedback",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reason",
+									"value": "appreciation",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "fooocking awesome!!!",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/feedback",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Feedback missing content",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct error message\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.Error).to.eql(\"No content provided\");\r",
+									"    pm.expect(jsonData.Details.en).to.eql(\"Content is not provided or empty!\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reason",
+									"value": "appreciation",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "fooocking awesome!!!",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/feedback",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Feedback missing reason",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct error message\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.Error).to.eql(\"No reason provided\");\r",
+									"    pm.expect(jsonData.Details.en).to.eql(\"Reason is not provided or empty!\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reason",
+									"value": "appreciation",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "content",
+									"value": "fooocking awesome!!!",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/feedback",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Feedback invalid reason",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct error message\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.Error).to.eql(\"Reason not valid\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reason",
+									"value": "random_reason",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "fooocking awesome!!!",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/feedback",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ShoppingList",
+			"item": [
+				{
+					"name": "create shoppinglist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/shoppingList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shoppingList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getting ShoppingLists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct response content\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.elements[0]).to.be.an('object');\r",
+									"    pm.expect(jsonData.elements[0].listname).to.be.eql('test');\r",
+									"    pm.collectionVariables.set(\"listid\", jsonData.elements[0].listid);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/shoppingList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shoppingList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ShoppingListItemCreation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "shoppingList",
+									"value": "{{listid}}",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "barcode",
+									"value": "hallo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/shoppingList/Item",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shoppingList",
+								"Item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getting shopping list items",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct response content\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.elements[0]).to.be.an('object');\r",
+									"    pm.expect(jsonData.elements[0].productname).to.be.eql('test');\r",
+									"    pm.expect(jsonData.elements[0].barcode).to.be.eql('hallo');\r",
+									"    pm.expect(jsonData.elements[0].done).to.be.eql(false);\r",
+									"    pm.expect(jsonData.elements[0].quantity).to.be.eql(2);\r",
+									"    pm.collectionVariables.set(\"itemid\", jsonData.elements[0].itemid);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/shoppingList/Item?listid={{listid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shoppingList",
+								"Item"
+							],
+							"query": [
+								{
+									"key": "listid",
+									"value": "{{listid}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changing a list item to done",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "itemid",
+									"value": "{{itemid}}",
+									"type": "text"
+								},
+								{
+									"key": "check",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/shoppingList/Item",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shoppingList",
+								"Item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getting shopping list items changed",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct response content\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.elements[0]).to.be.an('object');\r",
+									"    pm.expect(jsonData.elements[0].productname).to.be.eql('test');\r",
+									"    pm.expect(jsonData.elements[0].barcode).to.be.eql('hallo');\r",
+									"    pm.expect(jsonData.elements[0].done).to.be.eql(true);\r",
+									"    pm.expect(jsonData.elements[0].quantity).to.be.eql(2);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/shoppingList/Item?listid={{listid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shoppingList",
+								"Item"
+							],
+							"query": [
+								{
+									"key": "listid",
+									"value": "{{listid}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a list item",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "itemid",
+									"value": "{{itemid}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/shoppingList/Item",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shoppingList",
+								"Item"
+							],
+							"query": [
+								{
+									"key": "itemid",
+									"value": "d5f8f14a-5429-4235-912c-fc8068f011e5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getting shopping list items deleted",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct response content\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.elements.length).to.eql(0);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/shoppingList/Item?listid={{listid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shoppingList",
+								"Item"
+							],
+							"query": [
+								{
+									"key": "listid",
+									"value": "{{listid}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a shoppinglist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "listId",
+									"value": "{{listid}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/shoppingList?listid={{listid}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shoppingList"
+							],
+							"query": [
+								{
+									"key": "listid",
+									"value": "{{listid}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getting ShoppingLists deleted",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct response content\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.elements.length).to.eql(0)\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/shoppingList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shoppingList"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AllergenSearch",
+			"item": [
+				{
+					"name": "searchForAllergen",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Check correct results\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0]).to.eql(\"milk\");\r",
+									"    pm.expect(jsonData.length).to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/searchAllergen?name=milk&language=en",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"searchAllergen"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "milk"
+								},
+								{
+									"key": "language",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchForAllergen wrong lang",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Check correct results\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[\"Error\"]).to.contain(\"BadRequest\");\r",
+									"    pm.expect(jsonData[\"Details\"]).to.contain(\"language 'e' no existing\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/searchAllergen?name=milk&language=e",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"searchAllergen"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "milk"
+								},
+								{
+									"key": "language",
+									"value": "e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchForAllergen no name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Check correct results\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql([\r",
+									"    \"tree nuts\",\r",
+									"    \"eggs\",\r",
+									"    \"milk\",\r",
+									"    \"mustard\",\r",
+									"    \"celery\",\r",
+									"    \"sesame\",\r",
+									"    \"lupin\",\r",
+									"    \"gluten\",\r",
+									"    \"fish\",\r",
+									"    \"wheat\",\r",
+									"    \"soy\",\r",
+									"    \"peanuts\",\r",
+									"    \"crustaceans\"\r",
+									"])\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/searchAllergen?name=&language=en",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"searchAllergen"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "language",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DeletedUser",
+			"item": [
+				{
+					"name": "Delete User <- also deletes jwt",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Correct response content\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Deleted).to.be.an('object');",
+									"    pm.expect(jsonData.Deleted.email).to.eql(\"dynafoodcreators@gmail.com\");",
+									"});",
+									"",
+									"// deleting jwt because the following requests should not have a valid token",
+									"const cookieJar = pm.cookies.jar();",
+									"cookieJar.unset(\"https://dynafood.herokuapp.com\", \"token\", (error) => {});",
+									"cookieJar.unset(\"localhost\", \"token\", (error) => {});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "try settings unauthorized",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});",
+									"pm.test(\"Check error content\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"401 Unauthorized\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "try settings add unauthorized",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});",
+									"pm.test(\"Check error content\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"401 Unauthorized\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "alertActivation",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "restrictionName",
+									"value": "peanut",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "try settings patch unauthorized",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});",
+									"pm.test(\"Check error content\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"401 Unauthorized\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "restrictionName",
+									"value": "peanut",
+									"type": "text"
+								},
+								{
+									"key": "alertActivation",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "History Not logged in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});",
+									"",
+									"pm.test(\"Check error content\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"401 Unauthorized\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/history",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete history not logged in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});",
+									"pm.test(\"Check error content\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.Error).to.eql(\"401 Unauthorized\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/history/{{history_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"history",
+								"{{history_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Request not Logged in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/products/barcode/42376095",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"barcode",
+								"42376095"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "test_email",
+			"value": "dynafoodcreators@gmail.com"
+		},
+		{
+			"key": "test_password",
+			"value": "SuperSecurePassword123-"
+		},
+		{
+			"key": "history_id",
+			"value": ""
+		},
+		{
+			"key": "new_password_after_reset",
+			"value": "#SuperSecurePassword123-"
+		},
+		{
+			"key": "email_test_email",
+			"value": "taubert.marcel@gmail.com",
+			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "http://20.101.128.91:8081",
+			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "DEFAULT_BASE_URL",
+			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "http://localhost:8081",
+			"type": "string"
+		},
+		{
+			"key": "test_search",
+			"value": "coke"
+		},
+		{
+			"key": "email_test_email",
+			"value": "dynafoodcreators@gmail.com"
+		},
+		{
+			"key": "listid",
+			"value": "07d6f872-ca04-44d8-aa39-67a881f45812"
+		},
+		{
+			"key": "itemid",
+			"value": "07d6f872-ca04-44d8-aa39-67a881f45812"
+		},
+		{
+			"key": "refresh_token",
+			"value": ""
+		},
+		{
+			"key": "verify_code",
+			"value": "ZHluYWZvb2RjcmVhdG9yc0BnbWFpbC5jb20",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}

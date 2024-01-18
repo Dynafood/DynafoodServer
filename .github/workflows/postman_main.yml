@@ -7,8 +7,9 @@ jobs:
   run_postman_test:
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for 1 minute
+        run: sleep 60
       - uses: actions/checkout@v2
-      - run: sed -i "s/DEFAULT_BASE_URL/https:\/\/dynafood-deployment.herokuapp.com/g" ./__tests__/postman.json
       - uses: matt-ball/newman-action@master
         with:
           collection: ./__tests__/postman.json

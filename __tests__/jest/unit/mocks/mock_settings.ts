@@ -20,13 +20,21 @@ export const getSettings = async (userid: string | null) : Promise<Array<QueryRe
             "restrictionname": "apple",
             "alertactivation": false,
             "strongness": 2
+        }, {
+            "restrictionname": "vegan",
+            "alertactivation": true,
+            "strongness": 0
+        },
+        {
+            "restrictionname": "vegetarian",
+            "alertactivation": false,
+            "strongness": 0
         }])
     });
 }
 
 export const getAllSettings = async ()  : Promise<Array<QueryResultRow>> => {
-    return new Promise((resolve, rejet) => {
-        resolve( [{
+    return Promise.resolve( [{
             "categoryname": "peanuts",
         },
         {
@@ -39,7 +47,6 @@ export const getAllSettings = async ()  : Promise<Array<QueryResultRow>> => {
         {
             "categoryname": "vegetarian",
         }])
-    })
 }
 
 export const getRestrictionIdByName = async (restrictionName: string) : Promise<string | null> => {
@@ -57,9 +64,7 @@ export const updateSettings = async (userid: string, alertActivation: string, re
 
 };
 export const userHasRestriction = async (userid: string, restrictionID: string) : Promise<boolean>=> {
-    return new Promise((resolve, reject) => {
-        resolve(restrictionID == "real")
-    })
+    return Promise.resolve(restrictionID == "real")
 };
 
 export const deleteSettings = async (userid: string, restrictionid: string) : Promise<void> => {

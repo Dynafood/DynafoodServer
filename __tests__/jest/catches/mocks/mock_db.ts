@@ -1,22 +1,20 @@
 import { DatabaseInterface, init_db } from "../../../../server_config"
-import { JsonObject } from "swagger-ui-express";
-import { createUser, deleteUser, getUser, createUserOAuth, getPasswordResetToken, setPasswordResetToken, updateUserByRefreshToken } from "./mock_user";
-import { createNewFeedback } from "./mock_feedback";
+import { createUser, deleteUser, getUser, createUserOAuth, getPasswordResetToken, setPasswordResetToken, updateRefreshToken, createRefreshToken } from "./mock_user";
+import { createNewFeedback, createContactForm } from "./mock_feedback";
 import { createSettings, deleteSettings, getRestrictionIdByName, getSettings, getAllSettings, updateSettings, userHasRestriction } from "./mock_settings";
 import { deleteElementFromHistory, getElements, updateHistory } from "./mock_history";
 import { QueryResultRow } from "pg";
+import { check, create, remove } from "./mock_bookmarking"
 import { updatePassword } from "./mock_password";
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingList, updateShoppingListItem } from "./mock_shoppinglist";
 import { getTrendingGlobal, getCountryCode, getTrendingLocal, insert } from "./mock_trending";
 import { getAllergenbyName } from "./mock_search";
-import { getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductByBarcode, getProductsByName } from "./mock_product";
+import { getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductByBarcode, getProductsByName, getDrinkCategories } from "./mock_product";
 import { getEmailConfirmed, setEmailConfirmed } from "../../../../src/modules/db/userManagement";
 import { cleanDublicateInvalidData, deleteElementFromInvalidData, getElementsFromInvalidData, insertIntoInvalidData, updateInvalidData, updateInvalidDataElement } from './mock_invalidData';
 
 const directQuery = (quer: string) => {
-    return new Promise((resolve, reject) => {
-        resolve({rowCount: 1})
-    })
+    return Promise.resolve({rowCount: 1})
 }
 
 
@@ -35,7 +33,8 @@ const mock_db: DatabaseInterface = {
         getShoppingLists: getShoppingLists
     },
     Feedback: {
-        createNewFeedback: createNewFeedback
+        createNewFeedback: createNewFeedback,
+        createContactForm: createContactForm
     },
     History: {
         deleteElementFromHistory: deleteElementFromHistory,
@@ -54,7 +53,8 @@ const mock_db: DatabaseInterface = {
         setPasswordResetToken: setPasswordResetToken,
         setEmailConfirmed: setEmailConfirmed,
         getEmailConfirmed: getEmailConfirmed,
-        updateUserByRefreshToken: updateUserByRefreshToken
+        updateRefreshToken: updateRefreshToken,
+        createRefreshToken: createRefreshToken
     },
     Settings: {
         createSetting: createSettings,
@@ -75,7 +75,7 @@ const mock_db: DatabaseInterface = {
         getCountryCode: getCountryCode
     },
     OAuth: {
-        getProviderByName: async (name: string) : Promise<QueryResultRow> => {throw "ErrorMock"}
+        getProviderByName: async (name: string) : Promise<QueryResultRow> => {throw new Error("ErrorMock")}
     },
     Search: {
         getAllergenbyName: getAllergenbyName
@@ -85,7 +85,8 @@ const mock_db: DatabaseInterface = {
         getAllergensByBarcode,
         getCategoriesByBarcode,
         getIngredientsByBarcode,
-        getProductsByName
+        getProductsByName,
+        getDrinkCategories
     },
     InvalidDataManagement: {
         updateInvalidData: updateInvalidData,
@@ -95,8 +96,13 @@ const mock_db: DatabaseInterface = {
         deleteElementFromInvalidData: deleteElementFromInvalidData,
         getElementsFromInvalidData: getElementsFromInvalidData,
     },
-    connect: async () => {throw "ErrorMock"},
-    end: async () => {throw "ErrorMock"}
+    Bookmarking: {
+        create,
+        remove,
+        check
+    },
+    connect: async () => {throw new Error("ErrorMock")},
+    end: async () => {throw new Error("ErrorMock")}
 }
 
 const init = () => {

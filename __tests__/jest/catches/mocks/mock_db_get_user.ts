@@ -1,15 +1,15 @@
 import { QueryResultRow } from "pg"
 import { DatabaseInterface, init_db } from "../../../../server_config"
-import { JsonObject } from "swagger-ui-express";
-import { createNewFeedback } from "./mock_feedback";
+import { check, create, remove } from "./mock_bookmarking"
+import { createNewFeedback, createContactForm } from "./mock_feedback";
 import { deleteElementFromHistory, getElements, updateHistory } from "./mock_history";
 import { updatePassword } from "./mock_password";
 import { createSettings, deleteSettings, getSettings, getRestrictionIdByName, updateSettings, userHasRestriction, getAllSettings } from "./mock_settings";
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, updateShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingList } from "./mock_shoppinglist";
 import { getTrendingGlobal, getTrendingLocal, insert, getCountryCode } from "./mock_trending";
-import { createUser, createUserOAuth, deleteUser, getPasswordResetToken, setPasswordResetToken, updateUserByRefreshToken } from "./mock_user";
+import { createUser, createUserOAuth, deleteUser, getPasswordResetToken, setPasswordResetToken, updateRefreshToken, createRefreshToken } from "./mock_user";
 import { getAllergenbyName } from "./mock_search";
-import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from "./mock_product";
+import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName, getDrinkCategories } from "./mock_product";
 import { getEmailConfirmed, setEmailConfirmed } from "../../../../src/modules/db/userManagement";
 import { cleanDublicateInvalidData, deleteElementFromInvalidData, getElementsFromInvalidData, insertIntoInvalidData, updateInvalidData, updateInvalidDataElement } from './mock_invalidData';
 
@@ -33,7 +33,8 @@ const mock_db: DatabaseInterface = {
         getShoppingLists: getShoppingLists
     },
     Feedback: {
-        createNewFeedback: createNewFeedback
+        createNewFeedback: createNewFeedback,
+        createContactForm: createContactForm
     },
     History: {
         deleteElementFromHistory: deleteElementFromHistory,
@@ -52,7 +53,8 @@ const mock_db: DatabaseInterface = {
         setPasswordResetToken: setPasswordResetToken,
         setEmailConfirmed: setEmailConfirmed,
         getEmailConfirmed: getEmailConfirmed,
-        updateUserByRefreshToken: updateUserByRefreshToken
+        updateRefreshToken: updateRefreshToken,
+        createRefreshToken: createRefreshToken
     },
     Settings: {
         getAllSettings: getAllSettings,
@@ -73,7 +75,7 @@ const mock_db: DatabaseInterface = {
         getCountryCode: getCountryCode
     },
     OAuth: {
-        getProviderByName: async (name: string) : Promise<QueryResultRow> => {throw "ErrorMock"}
+        getProviderByName: async (name: string) : Promise<QueryResultRow> => {throw new Error("ErrorMock")}
     },
     Search: {
         getAllergenbyName: getAllergenbyName
@@ -83,7 +85,13 @@ const mock_db: DatabaseInterface = {
         getAllergensByBarcode,
         getCategoriesByBarcode,
         getIngredientsByBarcode,
-        getProductsByName
+        getProductsByName,
+        getDrinkCategories
+    },
+    Bookmarking: {
+        create,
+        remove,
+        check
     },
     InvalidDataManagement: {
         updateInvalidData: updateInvalidData,
@@ -93,8 +101,8 @@ const mock_db: DatabaseInterface = {
         deleteElementFromInvalidData: deleteElementFromInvalidData,
         getElementsFromInvalidData: getElementsFromInvalidData,
     },
-    connect: async () => {throw "ErrorMock"},
-    end: async () => {throw "ErrorMock"}
+    connect: async () => {throw new Error("ErrorMock")},
+    end: async () => {throw new Error("ErrorMock")}
 }
 
 const init = () => {

@@ -1,16 +1,17 @@
 import pg from 'pg';
-import { createNewFeedback } from './feedback';
+import { createNewFeedback, createContactForm } from './feedback';
 import { createShoppingList, createShoppingListItem, deleteShoppingList, deleteShoppingListItem, getShoppingListItems, getShoppingLists, updateShoppingListItem, updateShoppingList } from './shoppingList'
 import { deleteElementFromHistory, getElements, updateHistory } from './historyManagement';
 import { updatePassword } from './resetPassword';
 import { updateAlertSetting, getAlertSettings, getRestrictionIdByName, userHasRestriction, deleteAlertSetting, createSetting, getAllSettings } from './settingsManagement';
-import { getEmailConfirmed, setEmailConfirmed, createUser, createUserOAuth, deleteUser, getUser, getPasswordResetToken, setPasswordResetToken, updateUserByRefreshToken } from './userManagement';
+import { getEmailConfirmed, setEmailConfirmed, createUser, createUserOAuth, deleteUser, getUser, getPasswordResetToken, setPasswordResetToken, updateRefreshToken, createRefreshToken } from './userManagement';
 import { insert, getTrendingLocal, getTrendingGlobal, getCountryCode } from './trendingProducts';
 import { DatabaseInterface } from '../../../server_config';
 import { getProviderByName } from './oauth';
+import { create, remove, check } from './bookmarking';
 import { getAllergenbyName, directQuery } from './search';
-import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName } from './product';
 import { cleanDublicateInvalidData, deleteElementFromInvalidData, getElementsFromInvalidData, insertIntoInvalidData, updateInvalidData, updateInvalidDataElement } from './invalidDataManagements';
+import { getProductByBarcode, getAllergensByBarcode, getCategoriesByBarcode, getIngredientsByBarcode, getProductsByName, getDrinkCategories } from './product';
 
 // console.log('this is db_vars:', process.env.NODE_ENV, process.env.DB_USER, process.env.PG_PASSWORD, process.env.DB_PORT, process.env.DB_HOST, process.env.DB_DATABASE);
 
@@ -53,7 +54,8 @@ const Database: DatabaseInterface = {
         getShoppingLists
     },
     Feedback: {
-        createNewFeedback
+        createNewFeedback,
+        createContactForm
     },
     Password: {
         updatePassword
@@ -67,7 +69,8 @@ const Database: DatabaseInterface = {
         setPasswordResetToken,
         setEmailConfirmed,
         getEmailConfirmed,
-        updateUserByRefreshToken
+        updateRefreshToken,
+        createRefreshToken
     },
     Settings: {
         getRestrictionIdByName,
@@ -103,7 +106,13 @@ const Database: DatabaseInterface = {
         getAllergensByBarcode,
         getCategoriesByBarcode,
         getIngredientsByBarcode,
-        getProductsByName
+        getProductsByName,
+        getDrinkCategories
+    },
+    Bookmarking: {
+        create,
+        remove,
+        check
     },
     InvalidDataManagement: {
         updateInvalidData,

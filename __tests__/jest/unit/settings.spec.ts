@@ -27,7 +27,17 @@ describe('check get settings routes', () => {
             "restrictionname": "apple",
             "alertactivation": false,
             "strongness": 2
-        }])
+        }, {
+            "restrictionname": "vegan",
+            "alertactivation": true,
+            "strongness": 0
+        },
+        {
+            "restrictionname": "vegetarian",
+            "alertactivation": false,
+            "strongness": 0
+        }
+    ])
     })
 })
 
